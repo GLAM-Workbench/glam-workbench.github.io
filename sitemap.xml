@@ -56,6 +56,21 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://glam-workbench.github.io/records-of-resistance/</loc>
+     <lastmod>2019-01-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://glam-workbench.github.io/glam-data-portals/</loc>
      <lastmod>2019-01-23</lastmod>
      <changefreq>daily</changefreq>
@@ -68,11 +83,6 @@
     <url>
      <loc>https://glam-workbench.github.io/naa-asio/</loc>
      <lastmod>2019-01-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
      <changefreq>daily</changefreq>
     </url>
 </urlset>
