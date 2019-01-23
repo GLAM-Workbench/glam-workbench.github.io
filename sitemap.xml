@@ -36,6 +36,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://glam-workbench.github.io/trove-unpublished/</loc>
+     <lastmod>2019-01-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://glam-workbench.github.io/recordsearch/</loc>
      <lastmod>2019-01-23</lastmod>
      <changefreq>daily</changefreq>
