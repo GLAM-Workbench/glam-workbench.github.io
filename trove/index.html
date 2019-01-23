@@ -109,7 +109,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#useful-links" tabindex="1" class="md-skip">
+      <a href="#whats-an-api" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -209,9 +209,12 @@
 
 
 
+
+
+
 <!-- Repository containing source -->
 
-  <a href="" title="Go to repository"
+  <a href="https://github.com/GLAM-Workbench/trove-api-intro" title="Go to repository"
       class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
@@ -221,7 +224,7 @@
       </div>
     
     <div class="md-source__repository">
-      
+      trove-api-intro
     </div>
   </a>
 
@@ -318,9 +321,12 @@
 
 
 
+
+
+
 <!-- Repository containing source -->
 
-  <a href="" title="Go to repository"
+  <a href="https://github.com/GLAM-Workbench/trove-api-intro" title="Go to repository"
       class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
@@ -330,7 +336,7 @@
       </div>
     
     <div class="md-source__repository">
-      
+      trove-api-intro
     </div>
   </a>
 
@@ -424,6 +430,20 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whats-an-api" title="What's an API?" class="md-nav__link">
+    What's an API?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-tips-examples" title="Tools, tips, examples" class="md-nav__link">
+    Tools, tips, examples
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#useful-links" title="Useful links" class="md-nav__link">
@@ -683,6 +703,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#whats-an-api" title="What's an API?" class="md-nav__link">
+    What's an API?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-tips-examples" title="Tools, tips, examples" class="md-nav__link">
+    Tools, tips, examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#useful-links" title="Useful links" class="md-nav__link">
     Useful links
   </a>
@@ -712,10 +746,33 @@
                 
                 <p>Trove provides access to much of it's data through an API (Application Programming Interface). The notebooks in this section provide many examples of using the API to harvest data and analyse the contents of Trove.</p>
 <p>Before you can use the API you need to obtain a key — it's free and quick. Just <a href="http://help.nla.gov.au/trove/building-with-trove/api">follow these instructions</a>.</p>
+<h2 id="whats-an-api">What's an API?<a class="headerlink" href="#whats-an-api" title="Permanent link">&para;</a></h2>
+<p>An API is an Application Programming Interface. It's a set of predefined requests and responses that enables computer programs talk to each other.</p>
+<p>Web APIs are generally used to deliver data. While humans can easily interpret information on a web page, computers need more help. APIs provide data in a form that computers can understand and use (we call this machine-readable data).</p>
+<p>The Trove API works much like the Trove website. You make queries and you get back results. But instead of going through a nicely-designed web interface, requests to the API are just URLs, and the results are just structured data.</p>
+<p>While you can just type an API request into the location box of your web browser, most of the time requests and responses will be handled by a computer script or program. APIs don't care what programming language you use as long as you structure requests in the way they expect.</p>
+<p>In these notebooks we'll be using the programming language Python. No prior knowledge of Python is expected or required -- just follow along! The examples and approaches used could be easily translated into any another programming language.</p>
+<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-api-intro/master"><img alt="Binder" src="../images/Explore live on-Binder-579ACA.svg" /></a></p>
+<h2 id="tools-tips-examples">Tools, tips, examples<a class="headerlink" href="#tools-tips-examples" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-api-intro/blob/master/Your-first-API-request.ipynb"><strong>Your first API request</strong></a><br />
+    In this notebook we're going to learn how to send a request for information to the Trove API. API requests are just like normal urls. However, instead of sending us back a web page, they deliver data in a form that computers can understand. We can then use that data in our own programs.</p>
+</li>
+<li>
+<p><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-api-intro/blob/master/Working-with-zones.ipynb"><strong>Working with zones</strong></a><br />
+    Trove's zones are important in constructing API requests and interpreting the results. So let's explore them a bit.</p>
+</li>
+<li>
+<p><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-api-intro/blob/master/Exploring-facets.ipynb"><strong>Exploring facets</strong></a><br />
+    Facets aggregate collection data in interesting and useful ways, allowing us to build pictures of the collection. This notebook shows you how to get facet data from Trove.)</p>
+</li>
+</ul>
 <h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="http://help.nla.gov.au/trove/building-with-trove/api-version-2-technical-guide">Trove API Documentation</a></li>
 <li><a href="http://troveconsole.herokuapp.com/">Trove API console</a></li>
+<li><a href="https://github.com/staplegun/using-apis">Introduction to using APIs</a></li>
 </ul>
                 
                   
