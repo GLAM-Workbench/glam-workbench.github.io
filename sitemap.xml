@@ -2,92 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://glam-workbench.github.io/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/about/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/getting-started/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/trove/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/trove-newspapers/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/trove-harvester/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/trove-lists/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/trove-unpublished/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/recordsearch/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/archway/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/digitalnz/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/tepapa/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://glam-workbench.github.io/lac/</loc>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/records-of-resistance/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/facial-detection/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/image-tagging/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/glam-data-portals/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/naa-wap/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://glam-workbench.github.io/naa-asio/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
