@@ -849,6 +849,10 @@
 <p><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-books/blob/master/Metadata-for-Trove-digitised-works.ipynb"><strong>Metadata for Trove digitised works</strong></a><br />
     In poking around to try and find a way of automating the download of OCR text from Trove's digitised books, I discovered that there's lots of useful metadata embedded in the page of a digitised work. Most of this metadata isn't available through the Trove API.</p>
 </li>
+<li>
+<p><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-books/blob/master/Getting-Trove-books-from-Internet-Archive.ipynb"><strong>Getting the text of Trove books from the Internet Archive</strong></a><br />
+    Previously I've harvested the text of books digitised by the National Library of Australia and made available through Trove. But it occured to me it might be possible to get the full text of other books in Trove by making use of the links to the Open Library.</p>
+</li>
 </ul>
 <h2 id="data-and-text">Data and text<a class="headerlink" href="#data-and-text" title="Permanent link">&para;</a></h2>
 <ul>
@@ -874,6 +878,29 @@
 <li><code>trove_id</code> – unique identifier</li>
 <li><code>url</code> – link to the metadata record in Trove</li>
 <li><code>volume</code> – volume/part number</li>
+</ul>
+</li>
+<li>
+<p><strong>OCRd text from the Internet Archive of 'Australian' books listed in Trove</strong><br />
+    I've harvested 1,513 text files from the Internet Archive of 'Australian' books listed in Trove using the notebook above. Trove's 'Australian content' filter was used to try to limit the results to books published in, or about, Australia. However, this is not always accurate and some of the harvested works don't seem to have an Australian connection. You can <a href="https://cloudstor.aarnet.edu.au/plus/s/3h3GHfS3tQTDLaX">browse the collection in CloudStor</a>.</p>
+</li>
+<li>
+<p><strong>CSV formatted list of 'Australian' books in Trove with full text versions in the Internet Archive (24 May 2019)</strong><br />
+    This file includes metadata of 1,511 'Australian' books listed in Trove that have freely available text versions in the Internet Archive. You can <a href="https://github.com/GLAM-Workbench/trove-books/blob/master/trove-books-in-ia.csv">download the CSV file</a>, or <a href="https://docs.google.com/spreadsheets/d/1QgWaziVsryBaL-TX_iqoR_RmAwUy6CJ82CcYApoHkHA/edit?usp=sharing">browse the metadata using Google Sheets</a>.</p>
+<p>This file includes the following columns:</p>
+<ul>
+<li><code>creators</code> – pipe-separated list of creators</li>
+<li><code>date</code> – publication date</li>
+<li><code>ia_formats</code> – pipe-separated list of file formats available from the Internet Archive (these can be downloaded from the IA)</li>
+<li><code>ia_id</code> – Internet Archive identifier</li>
+<li><code>ia_url</code> – link to more information in the Internet Archive</li>
+<li><code>ol_id</code> – Open Library identifier</li>
+<li><code>publisher</code> – publisher</li>
+<li><code>text_filename</code> – name of the downloaded text file</li>
+<li><code>title</code> – title of the book</li>
+<li><code>trove_url</code> – link to more information in Trove</li>
+<li><code>version_id</code> – Trove version identifier</li>
+<li><code>work_id</code> – Trove work identifier</li>
 </ul>
 </li>
 </ul>
