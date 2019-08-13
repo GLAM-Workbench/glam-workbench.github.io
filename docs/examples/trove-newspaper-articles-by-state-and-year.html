@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@3.3.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@4"></script>
+</head>
+<body>
+    <header style="font-family: Arial">
+        <h1>Number of newspaper articles in Trove by state and year</h1>
+        <p>For more information <a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/visualise-total-newspaper-articles-by-state-year.ipynb">see this notebook</a>.</p>
+    <header>
+  <div id="vis"></div>
+  <script>
+      var spec = {"config": {"view": {"width": 400, "height": 300}, "mark": {"tooltip": null}}, "vconcat": [{"hconcat": [{"data": {"url": "altair-data-66de58accbc01bdc00b0a4a452e93f5d.json", "format": {"type": "json"}}, "mark": "area", "encoding": {"color": {"value": "lightgray", "condition": {"type": "nominal", "field": "state", "legend": null, "selection": "selector001"}}, "tooltip": [{"type": "nominal", "field": "state"}, {"type": "quantitative", "field": "term", "title": "Year"}, {"type": "quantitative", "field": "total_results", "format": ",", "title": "Articles"}], "x": {"type": "quantitative", "axis": {"format": "c", "title": "Year"}, "field": "term"}, "y": {"type": "quantitative", "axis": {"format": ",d", "title": "Number of articles"}, "field": "total_results", "stack": true}}, "height": 400, "selection": {"selector001": {"type": "multi", "encodings": ["color"]}}, "transform": [{"filter": {"selection": "selector001"}}], "width": 700}, {"data": {"url": "altair-data-623e29814e134e526de4eae483a56aaa.json", "format": {"type": "json"}}, "mark": "rect", "encoding": {"color": {"value": "lightgray", "condition": {"type": "nominal", "field": "state", "legend": null, "selection": "selector001"}}, "y": {"type": "nominal", "axis": {"orient": "right", "title": null}, "field": "state"}}, "selection": {"selector001": {"type": "multi", "encodings": ["color"]}}}]}, {"data": {"url": "altair-data-623e29814e134e526de4eae483a56aaa.json", "format": {"type": "json"}}, "mark": "bar", "encoding": {"color": {"value": "lightgray", "condition": {"type": "nominal", "field": "state", "legend": null, "selection": "selector001"}}, "tooltip": [{"type": "nominal", "field": "state", "title": "State"}, {"type": "quantitative", "field": "total_results", "format": ",", "title": "Articles"}], "x": {"type": "nominal", "field": "state", "title": "State"}, "y": {"type": "quantitative", "axis": {"format": ",d", "title": "Number of articles"}, "field": "total_results"}}, "height": 150, "selection": {"selector001": {"type": "multi", "encodings": ["color"]}}, "width": 700}], "$schema": "https://vega.github.io/schema/vega-lite/v3.3.0.json"};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+
+  </script>
+</body>
+</html>

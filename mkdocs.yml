@@ -1,0 +1,96 @@
+site_name: GLAM Workbench
+
+site_description: 'A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums'
+site_author: 'Tim Sherratt'
+site_url: 'https://glam-workbench.github.io'
+
+# Repository
+#repo_name: 'squidfunk/mkdocs-material'
+repo_url: 'https://github.com/glam-workbench/glam-workbench.github.io'
+
+# Copyright
+copyright: 'Copyright &copy; 2019 <a href="https://timsherratt.org">Tim Sherratt</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.'
+
+# Configuration
+theme:
+  name: 'material'
+  custom_dir: 'theme'
+  language: 'en'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+# Customization
+extra:
+  manifest: 'manifest.webmanifest'
+  social:
+    - type: 'github'
+      link: 'https://github.com/glam-workbench'
+    - type: 'twitter'
+      link: 'https://twitter.com/wragge'
+    - type: 'facebook'
+      link: 'https://www.facebook.com/101dhhacks/'
+    - type: 'patreon'
+      link: 'https://www.patreon.com/timsherratt'
+
+extra_css:
+  - 'stylesheets/extra.css'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - meta
+
+plugins:
+    - search
+    - redirects
+
+redirects:
+    'trove_newspapers/index': 'trove-newspapers/index'
+
+nav:
+    - Home: index.md
+    - about.md
+    - suggest-a-topic.md
+    - getting-started.md
+    - Workshops:
+        - umdigitalstudio2019.md
+    - General:
+        - csv-explorer.md
+    - Trove:
+        - trove.md
+        - trove-newspapers.md
+        - trove-harvester.md
+        - trove-books.md
+        - trove-journals.md
+        - trove-lists.md
+        - trove-maps.md
+        - trove-unpublished.md
+    - National Archives of Australia:
+        - recordsearch.md
+        - naa-wap.md
+        - naa-asio.md
+    - nma.md
+    - State Library of NSW:
+        - Tribune negatives:
+            - records-of-resistance.md
+            - facial-detection.md
+            - image-tagging.md
+    - nsw-state-archives.md
+    - qsa.md
+    - Australian government:
+        - glam-data-portals.md
+        - hansard.md
+        - pm-transcripts.md
+    - National Archives of NZ:
+        - archway.md
+    - digitalnz.md
+    - tepapa.md
+    - lac.md
