@@ -4,7 +4,7 @@ repo_url: https://github.com/GLAM-Workbench/trove-journals
 repo_name: trove-journals
 ---
 
-Trove's 'journals' zone includes journals and journal articles, as well as other research outputs and things like press releases. You can access metadata from the book zone through the Trove API.
+Trove's 'journals' zone includes journals and journal articles, as well as other research outputs and things like press releases. You can access metadata from the journal zone through the Trove API, but to get text and images you need to use some screen scraping.
 
 [![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master)
 

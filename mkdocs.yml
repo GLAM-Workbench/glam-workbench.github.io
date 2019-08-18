@@ -60,7 +60,7 @@ nav:
     - about.md
     - suggest-a-topic.md
     - getting-started.md
-    - Workshops:
+    - Workshops/Tutorials:
         - umdigitalstudio2019.md
     - General:
         - csv-explorer.md
