@@ -1133,7 +1133,31 @@
 <li><a href="https://github.com/GLAM-Workbench/ozglam-data/blob/master/glam_datasets_csvs_from_datagovau.csv">GLAM datasets from data.gov.au – CSVs only (CSV)</a></li>
 </ul>
 <p>Datasets by format:</p>
-<div class="codehilite"><pre><span></span>CSV           586
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>CSV           586
 XML            81
 JSON           74
 XLSX           61
@@ -1159,10 +1183,32 @@ CSS             1
 WMS             1
 PAGE            1
 </pre></div>
-
+</td></tr></table>
 
 <p>Datasets by organisation:</p>
-<div class="codehilite"><pre><span></span>State Library of Queensland                                                        204
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>State Library of Queensland                                                        204
 Queensland State Archives                                                          172
 State Library of Western Australia                                                 147
 State Library of South Australia                                                   140
@@ -1186,10 +1232,21 @@ Mount Gambier Library                                                           
 Tasmanian Museum and Art Gallery                                                     2
 National Portrait Gallery                                                            2
 </pre></div>
-
+</td></tr></table>
 
 <p>Datasets by licence:</p>
-<div class="codehilite"><pre><span></span>Creative Commons Attribution                       250
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Creative Commons Attribution                       250
 Creative Commons Attribution 3.0 Australia         244
 Creative Commons Attribution 4.0                   237
 Creative Commons Attribution 4.0 International     146
@@ -1202,24 +1259,51 @@ Creative Commons Attribution 3.0                     3
 Creative Commons Attribution Non-Commercial 4.0      2
 Custom (Other)                                       1
 </pre></div>
-
+</td></tr></table>
 
 <h3 id="results-april-2018">Results (April 2018)<a class="headerlink" href="#results-april-2018" title="Permanent link">&para;</a></h3>
 <p>Here's a <a href="https://github.com/GLAM-Workbench/ozglam-data/blob/master/gov-glam-datasets-all-formats.csv">CSV containing details of <strong>all</strong> the datasets</a> I found. I've also <a href="https://docs.google.com/spreadsheets/d/1OUbgQPRWnDLOvr8Wes0E-UAno1mk_8f12PFd08pVGGo/edit?usp=sharing">uploaded it</a> to Google Sheets.</p>
 <p>There are duplicates in the data because some datasets are listed on more than one portal. While my interest is in datasets containing collection data, the list also includes datasets created by the operations of GLAM organisations, such as borrowing data or FOI reports. I might filter these out later on.</p>
 <p>There are currently 790 datasets in this list.</p>
 <p>Here's the number of datasets by data portal:</p>
-<div class="codehilite"><pre><span></span>data.gov.au        271
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>data.gov.au        271
 data.qld.gov.au    214
 data.sa.gov.au     173
 data.wa.gov.au      96
 data.nsw.gov.au     30
 data.vic.gov.au      6
 </pre></div>
-
+</td></tr></table>
 
 <p>And the number of datasets by organisation:</p>
-<div class="codehilite"><pre><span></span>State Library of South Australia                      121
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>State Library of South Australia                      121
 Housing and Public Works                              117
 State Library of Western Australia                    114
 Natural Resources, Mines and Energy                    79
@@ -1243,10 +1327,45 @@ Mount Gambier Library                                   2
 Australian Museum                                       1
 City of Sydney                                          1
 </pre></div>
-
+</td></tr></table>
 
 <p>I've attempted to identify the format of each dataset by checking the file extension. If there's no file extension I use the <code>format</code> value in the package metadata. These values don't always seem reliable. Here's the number of datasets by format:</p>
-<div class="codehilite"><pre><span></span>csv                           499
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>csv                           499
 xml                            66
 wms                            35
 xlsx                           27
@@ -1283,24 +1402,29 @@ url                             1
 wfs                             1
 plain                           1
 </pre></div>
-
+</td></tr></table>
 
 <p>For each dataset, I've fired off a <code>HEAD</code> request for the url to see if the link still works. Here's the number of datasets by HTTP status code  (<code>200</code> is ok, <code>404</code> is not found):</p>
-<div class="codehilite"><pre><span></span>200    746
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>200    746
 404     39
 400      3
 403      2
 </pre></div>
-
+</td></tr></table>
 
 <p>I've created <a href="https://github.com/GLAM-Workbench/ozglam-data/blob/master/gov-glam-datasets.csv">a CSV of <strong>just the CSV-formatted</strong> datasets</a>. I've also <a href="https://docs.google.com/spreadsheets/d/1gCcLZEe-pdYEn8DfLrhM9WwfJ2jgfPV39ZRiodzhm78/edit?usp=sharing">uploaded it</a> to Google Sheets.</p>
 <p>There are 499 CSV-formatted datasets in this list.</p>
 <p>Here are results of the HEAD requests for CSV-formatted datasets:</p>
-<div class="codehilite"><pre><span></span>200    493
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>200    493
 404      4
 400      2
 </pre></div>
-
+</td></tr></table>
 
 <h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
 <p>Sherratt, Tim. (2019, November 21). GLAM-Workbench/ozglam-data (Version v0.1.0). Zenodo. <a href="http://doi.org/10.5281/zenodo.3549113">http://doi.org/10.5281/zenodo.3549113</a></p>
