@@ -11,7 +11,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://glam-workbench.github.io/suggest-a-topic/</loc>
+     <loc>https://glam-workbench.github.io/presentations/</loc>
      <lastmod>2020-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -86,6 +86,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://glam-workbench.github.io/digitalnz/</loc>
+     <lastmod>2020-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://glam-workbench.github.io/recordsearch/</loc>
      <lastmod>2020-02-27</lastmod>
      <changefreq>daily</changefreq>
@@ -101,7 +106,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://glam-workbench.github.io/nma/</loc>
+     <loc>https://glam-workbench.github.io/nsw-state-archives/</loc>
+     <lastmod>2020-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://glam-workbench.github.io/archway/</loc>
+     <lastmod>2020-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://glam-workbench.github.io/qsa/</loc>
      <lastmod>2020-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -126,12 +141,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://glam-workbench.github.io/nsw-state-archives/</loc>
+     <loc>https://glam-workbench.github.io/lac/</loc>
      <lastmod>2020-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://glam-workbench.github.io/qsa/</loc>
+     <loc>https://glam-workbench.github.io/nma/</loc>
+     <lastmod>2020-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://glam-workbench.github.io/tepapa/</loc>
      <lastmod>2020-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -151,22 +171,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://glam-workbench.github.io/archway/</loc>
-     <lastmod>2020-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://glam-workbench.github.io/digitalnz/</loc>
-     <lastmod>2020-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://glam-workbench.github.io/tepapa/</loc>
-     <lastmod>2020-02-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://glam-workbench.github.io/lac/</loc>
+     <loc>https://glam-workbench.github.io/suggest-a-topic/</loc>
      <lastmod>2020-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
