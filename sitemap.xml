@@ -136,6 +136,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://glam-workbench.github.io/slsa/</loc>
+     <lastmod>2020-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://glam-workbench.github.io/slv/</loc>
      <lastmod>2020-02-27</lastmod>
      <changefreq>daily</changefreq>
