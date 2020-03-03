@@ -112,7 +112,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#tools-tips-and-examples" tabindex="1" class="md-skip">
+      <a href="#your-harvested-data" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -621,6 +621,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-harvested-data" title="Your harvested data" class="md-nav__link">
+    Your harvested data
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#tools-tips-and-examples" title="Tools, tips, and examples" class="md-nav__link">
@@ -1239,6 +1246,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#your-harvested-data" title="Your harvested data" class="md-nav__link">
+    Your harvested data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tools-tips-and-examples" title="Tools, tips, and examples" class="md-nav__link">
     Tools, tips, and examples
   </a>
@@ -1307,7 +1321,52 @@
                 
                   <h1>Trove newspaper harvester</h1>
                 
-                <p>Download large quantities of digitised newspaper articles from Trove using the <a href="https://github.com/wragge/troveharvester">Trove Harvester</a> tool.</p>
+                <p>The Trove Newspaper Harvester makes it easy to download large quantities of digitised newspaper articles from Trove. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis. You can also save the full text of every article, and even a PDF. While the web interface will only show you the first 2,000 results matching your search, the Newspaper Harvester will get <strong>everything</strong>.</p>
+<p>You can install the Harvester as a <a href="https://pypi.org/project/troveharvester/">Python command line tool</a>, or use it in one of these notebooks below:</p>
+<ul>
+<li><a href="#using-troveharvester-to-get-newspaper-articles-in-bulk">Using TroveHarvester to get newspaper articles in bulk</a> – shows you how to use the command line tool in a Jupyter notebook</li>
+<li><a href="#trove-harvester-web-app">Trove Harvester web app</a> – provides a simple web interface to the newspaper harvester</li>
+</ul>
+<p>Both notebooks can be run live, online using the Binder service, so you can start harvesting articles straight away without installing any software. All you need to get started is:</p>
+<ul>
+<li>A search url – just construct your search using the <a href="http://trove.nla.gov.au/newspaper/">Trove web interface</a>), and when you're happy with the results, copy the url.</li>
+<li>A <a href="http://help.nla.gov.au/trove/building-with-trove/apihttp://help.nla.gov.au/trove/building-with-trove/api">Trove API key</a>.</li>
+</ul>
+<h2 id="your-harvested-data">Your harvested data<a class="headerlink" href="#your-harvested-data" title="Permanent link">&para;</a></h2>
+<p>When you start a new harvest, the harvester looks for a directory called <a href="data">data</a>. Within this directory it creates another directory for your harvest. The name of this directory will be in the form of a unix timestamp – a very large number that represents the number of seconds since 1 January 1970. So this means the directory with the largest number will contain the most recent harvest.</p>
+<p>The harvester saves your results inside this directory. There will be at least two files created for each harvest:</p>
+<ul>
+<li><code>results.csv</code> – a text file containing the details of all harvested articles</li>
+<li><code>metadata.json</code> – a configuration file which stores all the details of the harvest</li>
+</ul>
+<p>If you’ve asked for PDFs or text files, there will be additional directories containing those files.</p>
+<p>The <code>results.csv</code> file is a plain text CSV (Comma Separated Values) file. You can open it with any spreadsheet program. The details recorded for each article are:</p>
+<ul>
+<li><code>article_id</code> – a unique identifier for the article</li>
+<li><code>title</code> – the title of the article</li>
+<li><code>newspaper_id</code> – a unique identifier for the newspaper (this can be used to retrieve more information or build a link to the web interface)</li>
+<li><code>newspaper_title</code> – the name of the newspaper</li>
+<li><code>page</code> – page number (of course), but might also indicate the page is part of a supplement or special section</li>
+<li><code>date</code> – in ISO format, YYYY-MM-DD</li>
+<li><code>category</code> – one of ‘Article’, ‘Advertising’, ‘Detailed lists, results, guides’, ‘Family Notices’, or ‘Literature’</li>
+<li><code>words</code> – number of words in the article</li>
+<li><code>illustrated</code> – is it illustrated (values are y or n)</li>
+<li><code>corrections</code> – number of text corrections</li>
+<li><code>url</code> – the persistent url for the article</li>
+<li><code>page_url</code> – the persistent url of the page on which the article is published</li>
+</ul>
+<p>Files containing the OCRd text of the articles will be saved in a directory named <code>text</code>. These are just plain text files, stripped on any HTML. These files include some basic metadata in their file titles – the date of the article, the id number of the newspaper, and the id number of the article. So, for example, the filename <code>19460104-1002-206680758.txt</code> tells you:</p>
+<ul>
+<li><code>19460104</code> – the article was published on 4 January 1946 (YYYYMMDD)</li>
+<li><code>1002</code> – the article was published in <a href="https://trove.nla.gov.au/newspaper/title/1002"><em>The Tribune</em></a></li>
+<li><code>206680758</code> – the <a href="http://nla.gov.au/nla.news-article206680758">article's unique identifier</a></li>
+</ul>
+<p>As you can see, you can use the newspaper and article ids to create direct links into Trove:</p>
+<ul>
+<li>to a newspaper <code>https://trove.nla.gov.au/newspaper/title/[newspaper id]</code></li>
+<li>to an article <code>http://nla.gov.au/nla.news-article[article id]</code></li>
+</ul>
+<p>Once you have your data you can start exploring! You'll find some Jupyter notebooks below that provide examples of analysing and visualising both the metadata and the full text.</p>
 <p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master"><img alt="Binder" src="../images/Explore live on-Binder-579ACA.svg" /></a></p>
 <h2 id="tools-tips-and-examples">Tools, tips, and examples<a class="headerlink" href="#tools-tips-and-examples" title="Permanent link">&para;</a></h2>
 <h3 id="using-troveharvester-to-get-newspaper-articles-in-bulk">Using TroveHarvester to get newspaper articles in bulk<a class="headerlink" href="#using-troveharvester-to-get-newspaper-articles-in-bulk" title="Permanent link">&para;</a></h3>
