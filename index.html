@@ -1335,7 +1335,7 @@ url = 'https://data.nma.gov.au/object?limit=1&text='
 response = requests.get(url + keyword)
 results = response.json()
 total = results['meta']['results']
-print(f'There are {total} {keyword}s!')
+print(f'There are {total} {keyword}s in the NMA!')
 </pre>
 
 <p>Congratulations, you're coding! If you can click, edit, and hit a few keys, you can use Jupyter notebooks.</p>
