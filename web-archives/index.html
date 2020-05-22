@@ -1123,6 +1123,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#get-the-archived-version-of-a-page-closest-to-a-particular-date" title="Get the archived version of a page closest to a particular date" class="md-nav__link">
+    Get the archived version of a page closest to a particular date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#harvesting-collections-of-text-from-archived-web-pages" title="Harvesting collections of text from archived web pages" class="md-nav__link">
     Harvesting collections of text from archived web pages
   </a>
@@ -1429,6 +1436,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#get-the-archived-version-of-a-page-closest-to-a-particular-date" title="Get the archived version of a page closest to a particular date" class="md-nav__link">
+    Get the archived version of a page closest to a particular date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#harvesting-collections-of-text-from-archived-web-pages" title="Harvesting collections of text from archived web pages" class="md-nav__link">
     Harvesting collections of text from archived web pages
   </a>
@@ -1548,6 +1562,7 @@
 <p>For more information on web archives projects, training, technologies, and standards see the <a href="https://github.com/iipc/awesome-web-archiving">Awesome Web Archiving</a> list.</p>
 <p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=lab"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
 <h2 id="types-of-data">Types of data<a class="headerlink" href="#types-of-data" title="Permanent link">&para;</a></h2>
+<p>As noted, we're focusing here on on web archive data that's freely available through APIs. There's also data available through data dumps, such as the <a href="https://doi.org/10.5259/ukwa.ds.2/1">JISC UK Web Domain Dataset (1996-2013)</a> and the annual web harvests from <a href="https://commoncrawl.org/">Common Crawl</a>, but they tend to be huge.</p>
 <h3 id="timegates-timemaps-and-mementos">Timegates, Timemaps, and Mementos<a class="headerlink" href="#timegates-timemaps-and-mementos" title="Permanent link">&para;</a></h3>
 <p>Systems supporting the Memento protocol provide machine-readable information about web archive captures, even if other APIs are not available. In this notebook we'll look at the way the Memento protocol is supported across four web archive repositories – the UK Web Archive, the National Library of Australia, the National Library of New Zealand, and the Internet Archive.</p>
 <ul>
@@ -1577,6 +1592,13 @@
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/lab/tree/getting_all_snapshots_timemap_vs_cdx.ipynb">Run live on Binder</a></li>
 </ul>
 <h2 id="harvesting-data-and-creating-datasets">Harvesting data and creating datasets<a class="headerlink" href="#harvesting-data-and-creating-datasets" title="Permanent link">&para;</a></h2>
+<h3 id="get-the-archived-version-of-a-page-closest-to-a-particular-date">Get the archived version of a page closest to a particular date<a class="headerlink" href="#get-the-archived-version-of-a-page-closest-to-a-particular-date" title="Permanent link">&para;</a></h3>
+<p>To get the archived version of a page closest to a particular date we can use the Memento API. The functions in this notebook smooth out these variations to provide a (mostly) consistent interface to the UK Web Archive, Australian Web Archive, New Zealand Web Archive, and the Internet Archive. They could be easily modified to work with other Memento-compliant repositories.</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/web-archives/blob/master/get_a_memento.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/web-archives/blob/master/get_a_memento.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/lab/tree/get_a_memento.ipynb">Run live on Binder</a></li>
+</ul>
 <h3 id="harvesting-collections-of-text-from-archived-web-pages">Harvesting collections of text from archived web pages<a class="headerlink" href="#harvesting-collections-of-text-from-archived-web-pages" title="Permanent link">&para;</a></h3>
 <p>This notebook helps you assemble datasets of text extracted from all available captures of archived web pages. You can then feed these datasets to the text analysis tool of your choice to analyse changes over time.</p>
 <ul>
