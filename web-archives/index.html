@@ -1130,6 +1130,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#find-all-the-archived-versions-of-a-web-page" title="Find all the archived versions of a web page" class="md-nav__link">
+    Find all the archived versions of a web page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#harvesting-collections-of-text-from-archived-web-pages" title="Harvesting collections of text from archived web pages" class="md-nav__link">
     Harvesting collections of text from archived web pages
   </a>
@@ -1144,8 +1151,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#harvesting-domains" title="Harvesting domains" class="md-nav__link">
-    Harvesting domains
+  <a href="#harvesting-data-about-a-domain-using-the-ia-cdx-api" title="Harvesting data about a domain using the IA CDX API" class="md-nav__link">
+    Harvesting data about a domain using the IA CDX API
   </a>
   
 </li>
@@ -1164,8 +1171,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#show-changes-between-versions-of-a-web-page" title="Show changes between versions of a web page" class="md-nav__link">
-    Show changes between versions of a web page
+  <a href="#compare-two-versions-of-an-archived-web-page" title="Compare two versions of an archived web page" class="md-nav__link">
+    Compare two versions of an archived web page
   </a>
   
 </li>
@@ -1443,6 +1450,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#find-all-the-archived-versions-of-a-web-page" title="Find all the archived versions of a web page" class="md-nav__link">
+    Find all the archived versions of a web page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#harvesting-collections-of-text-from-archived-web-pages" title="Harvesting collections of text from archived web pages" class="md-nav__link">
     Harvesting collections of text from archived web pages
   </a>
@@ -1457,8 +1471,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#harvesting-domains" title="Harvesting domains" class="md-nav__link">
-    Harvesting domains
+  <a href="#harvesting-data-about-a-domain-using-the-ia-cdx-api" title="Harvesting data about a domain using the IA CDX API" class="md-nav__link">
+    Harvesting data about a domain using the IA CDX API
   </a>
   
 </li>
@@ -1477,8 +1491,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#show-changes-between-versions-of-a-web-page" title="Show changes between versions of a web page" class="md-nav__link">
-    Show changes between versions of a web page
+  <a href="#compare-two-versions-of-an-archived-web-page" title="Compare two versions of an archived web page" class="md-nav__link">
+    Compare two versions of an archived web page
   </a>
   
 </li>
@@ -1564,6 +1578,7 @@
 <h2 id="types-of-data">Types of data<a class="headerlink" href="#types-of-data" title="Permanent link">&para;</a></h2>
 <p>As noted, we're focusing here on on web archive data that's freely available through APIs. There's also data available through data dumps, such as the <a href="https://doi.org/10.5259/ukwa.ds.2/1">JISC UK Web Domain Dataset (1996-2013)</a> and the annual web harvests from <a href="https://commoncrawl.org/">Common Crawl</a>, but they tend to be huge.</p>
 <h3 id="timegates-timemaps-and-mementos">Timegates, Timemaps, and Mementos<a class="headerlink" href="#timegates-timemaps-and-mementos" title="Permanent link">&para;</a></h3>
+<p><em>Works with AWA, NZWA, IA, &amp; UKWA</em></p>
 <p>Systems supporting the Memento protocol provide machine-readable information about web archive captures, even if other APIs are not available. In this notebook we'll look at the way the Memento protocol is supported across four web archive repositories – the UK Web Archive, the National Library of Australia, the National Library of New Zealand, and the Internet Archive.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/web-archives/blob/master/memento.ipynb">Download from GitHub</a></li>
@@ -1571,6 +1586,7 @@
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/lab/tree/memento.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="exploring-the-internet-archives-cdx-api">Exploring the Internet Archive's CDX API<a class="headerlink" href="#exploring-the-internet-archives-cdx-api" title="Permanent link">&para;</a></h3>
+<p><em>Works with IA</em></p>
 <p>Some web archives provide indexes of the web pages they've archived through an API. These CDX APIs can be queried by a number of fields including capture date, url, and mimetype. This notebook looks in detail at the data provided by the Internet Archive's CDX API.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/web-archives/blob/master/exploring_cdx_api.ipynb">Download from GitHub</a></li>
@@ -1578,6 +1594,7 @@
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/lab/tree/exploring_cdx_api.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="comparing-cdx-apis">Comparing CDX APIs<a class="headerlink" href="#comparing-cdx-apis" title="Permanent link">&para;</a></h3>
+<p><em>Works with AWA, IA, &amp; UKWA</em></p>
 <p>This notebook documents differences between the Internet Archive's Wayback CDX API and the PyWb CDX API, such as those available from the UK Web Archive, and the Australian Web Archive.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/web-archives/blob/master/comparing_cdx_apis.ipynb">Download from GitHub</a></li>
@@ -1585,6 +1602,7 @@
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/lab/tree/comparing_cdx_apis.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="timemaps-vs-cdx-apis">Timemaps vs CDX APIs<a class="headerlink" href="#timemaps-vs-cdx-apis" title="Permanent link">&para;</a></h3>
+<p><em>Works with IA</em></p>
 <p>Both Timemaps and CDX APIs can give us a list of captures from a particular web page, so I was wondering what the difference was. The answer, from looking at the Internet Archive, is not much.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/web-archives/blob/master/getting_all_snapshots_timemap_vs_cdx.ipynb">Download from GitHub</a></li>
@@ -1593,13 +1611,23 @@
 </ul>
 <h2 id="harvesting-data-and-creating-datasets">Harvesting data and creating datasets<a class="headerlink" href="#harvesting-data-and-creating-datasets" title="Permanent link">&para;</a></h2>
 <h3 id="get-the-archived-version-of-a-page-closest-to-a-particular-date">Get the archived version of a page closest to a particular date<a class="headerlink" href="#get-the-archived-version-of-a-page-closest-to-a-particular-date" title="Permanent link">&para;</a></h3>
+<p><em>Works with AWA, NZWA, IA, &amp; UKWA</em></p>
 <p>To get the archived version of a page closest to a particular date we can use the Memento API. The functions in this notebook smooth out these variations to provide a (mostly) consistent interface to the UK Web Archive, Australian Web Archive, New Zealand Web Archive, and the Internet Archive. They could be easily modified to work with other Memento-compliant repositories.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/web-archives/blob/master/get_a_memento.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/web-archives/blob/master/get_a_memento.ipynb">View using NBViewer</a></li>
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/lab/tree/get_a_memento.ipynb">Run live on Binder</a></li>
 </ul>
+<h3 id="find-all-the-archived-versions-of-a-web-page">Find all the archived versions of a web page<a class="headerlink" href="#find-all-the-archived-versions-of-a-web-page" title="Permanent link">&para;</a></h3>
+<p><em>Works with AWA, NZWA, IA, &amp; UKWA</em></p>
+<p>You can find all the archived versions of a web page by requesting a Timemap from a Memento-compliant repository. If the repository has a CDX API, you can get much the same data by doing an exact url search. This code and examples in this notebook help you to work with both.</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/web-archives/blob/master/find_all_captures.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/web-archives/blob/master/find_all_captures.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/lab/tree/find_all_captures.ipynb">Run live on Binder</a></li>
+</ul>
 <h3 id="harvesting-collections-of-text-from-archived-web-pages">Harvesting collections of text from archived web pages<a class="headerlink" href="#harvesting-collections-of-text-from-archived-web-pages" title="Permanent link">&para;</a></h3>
+<p><em>Works with AWA, NZWA, IA, &amp; UKWA</em></p>
 <p>This notebook helps you assemble datasets of text extracted from all available captures of archived web pages. You can then feed these datasets to the text analysis tool of your choice to analyse changes over time.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/web-archives/blob/master/getting_text_from_web_pages.ipynb">Download from GitHub</a></li>
@@ -1607,6 +1635,7 @@
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/lab/tree/getting_text_from_web_pages.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="find-and-explore-powerpoint-presentations-from-a-specific-domain">Find and explore Powerpoint presentations from a specific domain<a class="headerlink" href="#find-and-explore-powerpoint-presentations-from-a-specific-domain" title="Permanent link">&para;</a></h3>
+<p><em>Works with IA</em></p>
 <p><img alt="Title slide from presentation" src="../images/au-gov-defence-army-hna-docs-hna-20general-20presentation-ppt-20070911062046.png" /><img alt="Title slide from presentation" src="../images/au-gov-defence-army-hna-docs-ncw-20model-ppt-20070911061846.png" /></p>
 <p>This notebook helps you find, download, and explore all the presentation files captured from a particular domain, like <code>defence.gov.au</code>. It includes a series of processing steps to: harvest capture data; remove duplicates from capture data and download files; convert Powerpoint files to PDFs; extract screenshots and text from the PDFs; save metadata, screenshots, and text into an SQLite database; open the SQLite db in Datasette for exploration. Here's an <a href="https://defencegovau-powerpoints.glitch.me/">example of the SQLite database</a> created by harvesting Powerpoint files from the <code>defence.gov.au</code> domain, running in Datasette on Glitch.</p>
 <ul>
@@ -1614,16 +1643,23 @@
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/web-archives/blob/master/explore_presentations.ipynb">View using NBViewer</a></li>
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/lab/tree/explore_presentations.ipynb">Run live on Binder</a></li>
 </ul>
-<h3 id="harvesting-domains">Harvesting domains<a class="headerlink" href="#harvesting-domains" title="Permanent link">&para;</a></h3>
-<p>To come...</p>
+<h3 id="harvesting-data-about-a-domain-using-the-ia-cdx-api">Harvesting data about a domain using the IA CDX API<a class="headerlink" href="#harvesting-data-about-a-domain-using-the-ia-cdx-api" title="Permanent link">&para;</a></h3>
+<p>In this notebook we'll look at how we can get domain level data from the IA CDX API. In most other notebooks using the CDX API we've harvested data into memory and then saved to disk later on. Because we're potentially harvesting much larger quantities of data, we're going to reverse this and save harvested data to disk as we download it.</p>
 <h2 id="exploring-change-over-time">Exploring change over time<a class="headerlink" href="#exploring-change-over-time" title="Permanent link">&para;</a></h2>
-<h3 id="show-changes-between-versions-of-a-web-page">Show changes between versions of a web page<a class="headerlink" href="#show-changes-between-versions-of-a-web-page" title="Permanent link">&para;</a></h3>
-<p>To come...</p>
+<h3 id="compare-two-versions-of-an-archived-web-page">Compare two versions of an archived web page<a class="headerlink" href="#compare-two-versions-of-an-archived-web-page" title="Permanent link">&para;</a></h3>
+<p><em>Works with AWA, NZWA, IA, &amp; UKWA</em></p>
+<p>This notebook demonstrates a number of different ways of comparing versions of archived web pages. Just choose a repository, enter a url, and select two dates to see comparisons based on: page metadata, basic statistics such as file size and number of words, numbers of internal and external links, cosine similarity of text, line by line differences in text or code, and screenshots.</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/web-archives/blob/master/show_diffs.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/web-archives/blob/master/show_diffs.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/apps/show_diffs.ipynb">Run live in Appmode on Binder</a></li>
+</ul>
 <h3 id="observing-change-in-a-web-page-over-time">Observing change in a web page over time<a class="headerlink" href="#observing-change-in-a-web-page-over-time" title="Permanent link">&para;</a></h3>
 <p>To come...</p>
 <h3 id="observing-change-in-a-domain-over-time">Observing change in a domain over time<a class="headerlink" href="#observing-change-in-a-domain-over-time" title="Permanent link">&para;</a></h3>
 <p>To come...</p>
 <h3 id="create-and-compare-full-page-screenshots-from-archived-web-pages">Create and compare full page screenshots from archived web pages<a class="headerlink" href="#create-and-compare-full-page-screenshots-from-archived-web-pages" title="Permanent link">&para;</a></h3>
+<p><em>Works with AWA, NZWA, IA, &amp; UKWA</em></p>
 <p><img alt="Screenshot of notebook" src="../images/web-archives-screenshots.png" /></p>
 <p>This notebook makes it easy to create a full page screenshot from an archived web page. You can add additional screenshots to compare captures, versions, and pages.</p>
 <ul>
@@ -1632,6 +1668,7 @@
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/apps/save_screenshot.ipynb">Run live in Appmode on Binder</a></li>
 </ul>
 <h3 id="using-screenshots-to-visualise-change-in-a-page-over-time">Using screenshots to visualise change in a page over time<a class="headerlink" href="#using-screenshots-to-visualise-change-in-a-page-over-time" title="Permanent link">&para;</a></h3>
+<p><em>Works with AWA, NZWA, IA, &amp; UKWA</em></p>
 <p><img alt="Composite screenshots" src="../images/abc-net-au.png" /></p>
 <p>This notebook helps you visualise changes in a web page by generating full page screenshots for each year from the captures available in an archive. You can then combine the individual screenshots into a single composite image.</p>
 <ul>
@@ -1640,6 +1677,7 @@
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/lab/tree/screenshots_over_time_using_timemaps.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="display-changes-in-the-text-of-an-archived-web-page-over-time">Display changes in the text of an archived web page over time<a class="headerlink" href="#display-changes-in-the-text-of-an-archived-web-page-over-time" title="Permanent link">&para;</a></h3>
+<p><em>Works with AWA, NZWA, IA, &amp; UKWA</em></p>
 <p><img alt="Screenshot of notebook" src="../images/web-archive-text-changes.png" /></p>
 <p>This notebook displays changes in the text content of a web page over time. It retrieves a list of available captures from a Memento Timemap, then compares each capture with its predecessor, displaying changes side-by-side.</p>
 <ul>
@@ -1648,6 +1686,7 @@
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=apps/display-text-changes-from-timemap.ipynb">Run live in Appmode on Binder</a></li>
 </ul>
 <h3 id="find-when-a-piece-of-text-appears-in-an-archived-web-page">Find when a piece of text appears in an archived web page<a class="headerlink" href="#find-when-a-piece-of-text-appears-in-an-archived-web-page" title="Permanent link">&para;</a></h3>
+<p><em>Works with AWA, NZWA, IA, &amp; UKWA</em></p>
 <p><img alt="Animated gif showing notebook in action" src="../images/web-archives-text-appearance.gif" /></p>
 <p>This notebook helps you find when a particular piece of text appears in, or disappears from, a web page. Using Memento Timemaps, it gets a list of available captures from the selected web archive. It then searches each capture for the desired text, displaying the results. You can select the direction in which the notebook searches:</p>
 <ul>
