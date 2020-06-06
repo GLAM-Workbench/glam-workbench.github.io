@@ -16,3 +16,9 @@ The XML files are made available on the Australian Parliament website under a CC
 
 ### [Harvesting Commonwealth Hansard](https://nbviewer.jupyter.org/github/GLAM-Workbench/australian-commonwealth-hansard/blob/master/Harvesting-Commonwealth-Hansard.ipynb)
 Results in ParlInfo are generated from well-structured XML files which can be downloaded individually from the web interface – one XML file for each sitting day. This notebook shows you how to download all the XML files for large scale analysis. It's an updated version of the code I used to harvest Hansard in 2016.
+
+## Cite as
+
+Sherratt, Tim. (2019, November 17). GLAM-Workbench/australian-commonwealth-hansard (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3544706>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3544706.svg)](https://doi.org/10.5281/zenodo.3544706)

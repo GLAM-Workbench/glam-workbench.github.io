@@ -74,9 +74,9 @@ This notebook explores the [Politicians talking about 'immigrants' and 'refugees
 ## Data and text
 
 ### CSV formatted list of journals available from Trove in digital form
-Harvested: 5 July 2019
+Harvested: 25 August 2019
 
-This file provides metadata of 2,381 journals that are available from Trove in a digital form. You can [download the CSV file](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/digital-journals.csv).
+This file provides metadata of 2,620 journals that are available from Trove in a digital form. You can [download the CSV file](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/digital-journals.csv).
 
 This file includes the following columns:
 
@@ -86,9 +86,9 @@ This file includes the following columns:
 + `trove_url` – url of the journal's metadata record in Trove
 
 ### CSV formatted list of journals with OCRd text
-Harvested: 5 July 2019  
+Harvested: 25 August 2019  
 
-This file provides metadata of 384 digitised journals in Trove that have OCRd text for download. You can [download the CSV file](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.csv).
+This file provides metadata of 720 digitised journals in Trove that have OCRd text for download. You can [download the CSV file](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.csv). You can also [browse a human-readable list](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.md).
 
 This file includes the following columns:
 
@@ -101,15 +101,15 @@ This file includes the following columns:
 + `directory` – the directory in which the files from this journal have been saved (relative to the output directory)
 
 ### OCRd text from Trove digitised journals
-Harvested: 5 July 2019
+Harvested: 25 August 2019
 
 Using the notebook above I harvested metadata and OCRd text from Trove's digitised journals.
 
-+ 384 journals had OCRd text available for download
-+ OCRd text was downloaded from 30,462 journal issues
-+ About 7gb of text was downloaded
++ 719 journals had OCRd text available for download
++ OCRd text was downloaded from 33,035 journal issues
++ About 8gb of text was downloaded
 
-The complete collection of text files for all the journals can be browsed and downloaded [using this repository on CloudStor](https://cloudstor.aarnet.edu.au/plus/s/QOmnqpGQCNCSC2h).
+The complete collection of text files for all the journals can be [browsed here](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.md) and downloaded [using this repository on CloudStor](https://cloudstor.aarnet.edu.au/plus/s/QOmnqpGQCNCSC2h).
 
 ### Editorial cartoons from The Bulletin, 1886 to 1952
 
@@ -135,3 +135,9 @@ To make it easier to browse the images, I've compiled them into a series of PDFs
 
 ### Politicians talking about 'immigrants' and 'refugees'  
 Using the notebook above I harvested parliamentary press releases that included any of the terms 'immigrant', 'asylum seeker', 'boat people', 'illegal arrivals', or 'boat arrivals'. A total of 12,619 text files were harvested. You can [browse the files on CloudStor](https://cloudstor.aarnet.edu.au/plus/s/Msoj978Zlrud40g), or download the [complete dataset as a zip file (43mb)](https://cloudstor.aarnet.edu.au/plus/s/diwB0tnpv1X1ORN).
+
+## Cite as
+
+Sherratt, Tim. (2019, November 18). GLAM-Workbench/trove-journals (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3545216>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3545216.svg)](https://doi.org/10.5281/zenodo.3545216)

@@ -10,10 +10,16 @@ repo_url: https://github.com/GLAM-Workbench/csv-explorer
 
 Cultural institutions are making collection data available as machine readable downloads. But how can researchers explore the shape and meaning of this data? How do they know what types of questions they can ask? This notebook provides a quick overview of CSV-formatted data files, particularly those created by GLAM institutions (galleries, libraries, archives, and museums).
 
-You can select one of more than 400 GLAM datasets [shared on data.gov.au](/glam-data-portals) or upload your own.
+You can select one of more than 600 GLAM datasets [shared on government data portals](/glam-data-portals) or upload your own.
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/csv-explorer/blob/master/csv-explorer.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/csv-explorer/blob/master/csv-explorer.ipynb)
 * [Run live on Binder in Appmode](https://mybinder.org/v2/gh/GLAM-Workbench/csv-explorer/master?urlpath=%2Fapps%2Fcsv-explorer.ipynb)
 
 ![Screen capture](images/csv-explorer.gif)
+
+## Cite as
+
+Sherratt, Tim. (2019, November 17). GLAM-Workbench/csv-explorer (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3544712>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3544712.svg)](https://doi.org/10.5281/zenodo.3544712)

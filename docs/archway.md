@@ -11,6 +11,9 @@ Unfortunately Archway doesn't provide access to machine-readable data through an
 
 [![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/archway-harvesting/master)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3544700.svg)](https://doi.org/10.5281/zenodo.3544700)
+
+
 ## Tools, tips, and examples
 
 ### Harvesting a records search  
@@ -27,7 +30,7 @@ Functions provide an alternative way of finding relevant series and records — 
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/archway-harvesting/blob/master/harvesting_functions_from_archway.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/archway-harvesting/master?filepath=harvesting_functions_from_archway.ipynb)
 
-### Who's responsible? 
+### Who's responsible?
 Archives New Zealand divides government activities up into 303 functions. Over time, different agencies have been made responsible for these functions, and it can be interesting to track how these responsibilities have shifted. This notebook uses data about functions harvested from Archway to create a a simple visualisation of the agencies responsible for a selected function.
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/archway-harvesting/blob/master/display_agencies_responsible_for_function.ipynb)
@@ -36,3 +39,9 @@ Archives New Zealand divides government activities up into 303 functions. Over t
 * [Run live on Binder in Appmode](https://mybinder.org/v2/gh/GLAM-Workbench/archway-harvesting/master?urlpath=apps%2Fdisplay_agencies_responsible_for_function.ipynb)
 
 ![Screen capture](images/nz-agencies-function.gif)
+
+## Cite as
+
+Sherratt, Tim. (2019, November 17). GLAM-Workbench/archway-harvesting (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3544700>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3544700.svg)](https://doi.org/10.5281/zenodo.3544700)

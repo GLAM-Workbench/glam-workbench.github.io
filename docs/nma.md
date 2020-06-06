@@ -49,3 +49,9 @@ In this notebook we'll explore the spatial dimensions of the object data. Where 
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/national-museum-australia/master?urlpath=lab%2Ftree%2Fexplore_objects_and_places.ipynb)
 
 ![Map showing places where objects were created and collected](images/nma-places-objects.png)
+
+## Cite as
+
+Sherratt, Tim. (2019, November 17). GLAM-Workbench/national-museum-australia (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3544747>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3544747.svg)](https://doi.org/10.5281/zenodo.3544747)

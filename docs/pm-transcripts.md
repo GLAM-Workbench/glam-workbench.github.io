@@ -8,7 +8,7 @@ The Department of Prime Minister and Cabinet provides transcripts of more than [
 
 [![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/australian-commonwealth-hansard/master)
 
-A [full harvest of the XML files from the PM Transcripts site](https://github.com/wragge/hansard-xml) is available if you don't want to do it yourself.
+A [full harvest of the XML files from the PM Transcripts site](https://github.com/wragge/pm-transcripts) is available if you don't want to do it yourself.
 
 The XML files are made available by the Department of Prime Minister and Cabinet under a Creative Commons Attribution 3.0 Australia Licence.
 
@@ -49,3 +49,9 @@ All of the harvested XML files are available from [this repository](https://gith
 
 * a single zip file for each prime minister containing all their XML transcripts;
 * a single text file for each prime minister containing the text extracted from all of their XML transcripts.
+
+## Cite as
+
+Sherratt, Tim. (2019, November 21). GLAM-Workbench/pm-transcripts (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549588>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3549588.svg)](https://doi.org/10.5281/zenodo.3549588)

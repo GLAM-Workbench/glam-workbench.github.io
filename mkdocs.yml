@@ -39,11 +39,16 @@ extra:
 extra_css:
   - 'stylesheets/extra.css'
 
+extra_javascript:
+    - 'scripts/juniper.min.js'
+    - 'scripts/script.js'
+
 # Extensions
 markdown_extensions:
   - admonition
   - codehilite:
       guess_lang: false
+      linenums: true
   - toc:
       permalink: true
   - meta
@@ -57,13 +62,21 @@ redirects:
 
 nav:
     - Home: index.md
-    - about.md
-    - suggest-a-topic.md
-    - getting-started.md
-    - Workshops/Tutorials:
-        - umdigitalstudio2019.md
-    - General:
-        - csv-explorer.md
+    - About:
+        - about.md
+        - presentations.md
+    - Help:
+        - getting-started.md
+        - Workshops/Tutorials:
+            - umdigitalstudio2019.md
+    - Data sources:
+        - Australia:
+            - glam-data-list.md
+            - Data portals:
+                - glam-data-portals.md
+                - glam-datasets-from-gov-portals.md
+            - csv-explorer.md
+    - glam-labs.md
     - Trove:
         - trove.md
         - trove-newspapers.md
@@ -72,25 +85,34 @@ nav:
         - trove-journals.md
         - trove-lists.md
         - trove-maps.md
+        - trove-images.md
         - trove-unpublished.md
-    - National Archives of Australia:
-        - recordsearch.md
-        - naa-wap.md
-        - naa-asio.md
-    - nma.md
-    - State Library of NSW:
-        - Tribune negatives:
-            - records-of-resistance.md
-            - facial-detection.md
-            - image-tagging.md
-    - nsw-state-archives.md
-    - qsa.md
-    - Australian government:
-        - glam-data-portals.md
-        - hansard.md
-        - pm-transcripts.md
-    - National Archives of NZ:
-        - archway.md
+        - trove-random.md
     - digitalnz.md
-    - tepapa.md
-    - lac.md
+    - Archives:
+        - National Archives of Australia:
+            - recordsearch.md
+            - naa-wap.md
+            - naa-asio.md
+        - nsw-state-archives.md
+        - National Archives of NZ:
+            - archway.md
+        - qsa.md
+    - Libraries:
+        - State Library of NSW:
+            - Tribune negatives:
+                - records-of-resistance.md
+                - facial-detection.md
+                - image-tagging.md
+        - slsa.md
+        - slv.md
+        - lac.md
+    - web-archives.md
+    - Museums:
+        - nma.md
+        - tepapa.md
+    - Government:
+        - Australia:
+            - hansard.md
+            - pm-transcripts.md
+    - suggest-a-topic.md

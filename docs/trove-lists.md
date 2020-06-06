@@ -39,3 +39,9 @@ Harvested: 20 September 2018
 + `number_items` – number of items in list
 + `title` – title of list
 + `updated` – date last updated
+
+## Cite as
+
+Sherratt, Tim. (2019, November 21). GLAM-Workbench/trove-lists (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549454>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3549454.svg)](https://doi.org/10.5281/zenodo.3549454)

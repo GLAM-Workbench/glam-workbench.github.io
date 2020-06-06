@@ -31,3 +31,9 @@ Summarise the data from a single series.
 To browse information about the harvested series start with the [summary of all harvested series notebook](https://nbviewer.jupyter.org/github/GLAM-Workbench/ozglam-workbench-naa-wap/blob/master/RecordSearch/Summary%20of%20all%20harvested%20series.ipynb). There you'll find a live version of the table below with links to individual series summaries and visualisations.
 
 [![Table of harvested series](images/naa-wap-series.png)](https://nbviewer.jupyter.org/github/GLAM-Workbench/ozglam-workbench-naa-wap/blob/master/RecordSearch/Summary%20of%20all%20harvested%20series.ipynb).
+
+## Cite as
+
+Sherratt, Tim. (2019). GLAM-Workbench/ozglam-workbench-naa-wap (Version v0.1.0) [Data set]. Zenodo. <http://doi.org/10.5281/zenodo.3549592>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3549592.svg)](https://doi.org/10.5281/zenodo.3549592)

@@ -69,12 +69,12 @@ Uses the `has:corrections` parameter to get the total number of newspaper articl
 ![Screen capture](images/corrections-ticker.gif)
 
 ### Save a Trove newspaper article as an image
-This notebook grabs the page on which an article was published, and then crops the page image to the boundaries of the article. The result is an image which presents the article as it was originally published.  
+Sometimes you want to be able to save a Trove newspaper article as an image. Unfortunately, the Trove web interface doesn't make this easy. The 'Download JPG' option actually loads an HTML page, and while you could individually save the images embedded in the HTML page, often articles are sliced up in ways that make the whole thing hard to read and use. This notebook grabs the page on which an article was published, and then crops the page image to the boundaries of the article. The result is a complete, intact image which presents the article as it was originally published. And if the article is split across multiple pages, you'll get one image per page.
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspapers/blob/master/Save-Trove-newspaper-article-as-image.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/Save-Trove-newspaper-article-as-image.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?filepath=Save-Trove-newspaper-article-as-image.ipynb)
-* [Run as an app using Voila](http://trove-newspaper-apps.herokuapp.com/voila/render/Save-Trove-newspaper-article-as-image-app.ipynb)
+* [Run as an app using Voila](http://trove-newspaper-apps.herokuapp.com/voila/render/Save-Trove-newspaper-article-as-image-app.ipynb) (the easiest, no code option!)
 
 ![Screen capture](images/run_save_images.gif)
 
@@ -134,4 +134,4 @@ The Trove API includes an option to retrieve details of digitised newspaper titl
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspapers/blob/master/Get_newspaper_titles_not_including_gazettes.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/Get_newspaper_titles_not_including_gazettes.ipynb)
-* [Run live on Binder in Appmode](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?filepath=Get_newspaper_titles_not_including_gazettes.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?filepath=Get_newspaper_titles_not_including_gazettes.ipynb)

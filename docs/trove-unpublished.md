@@ -24,3 +24,9 @@ Some ways of exploring the data harvested above.
 
 * [Download CSV file  (1.8mb)](https://github.com/GLAM-Workbench/trove-unpublished/blob/master/unpublished_works_entering_pd_20181006.csv)
 * [View on Google Sheets](https://docs.google.com/spreadsheets/d/1pcVgDHXMW-PKiQh3qXk2y5L_M8IFTyz05CQ2u-CbGsI/edit?usp=sharing)
+
+## Cite as
+
+Sherratt, Tim. (2019, November 21). GLAM-Workbench/trove-unpublished (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549344>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3549344.svg)](https://doi.org/10.5281/zenodo.3549344)

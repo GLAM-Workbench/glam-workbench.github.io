@@ -43,3 +43,10 @@ This notebooks lets you harvest large amounts of data for [Papers Past](https://
 * [Download from GitHub](https://github.com/GLAM-Workbench/digitalnz/blob/master/Harvest-data-from-PapersPast.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/digitalnz/blob/master/Harvest-data-from-PapersPast.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/digitalnz/master?filepath=Harvest-data-from-PapersPast.ipynb)
+
+
+# Cite as
+
+Sherratt, Tim. (2019, November 17). GLAM-Workbench/digitalnz (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3544729>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3544729.svg)](https://doi.org/10.5281/zenodo.3544729)
