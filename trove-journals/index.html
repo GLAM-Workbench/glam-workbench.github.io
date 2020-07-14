@@ -1534,63 +1534,63 @@
                   <h1>Trove journals</h1>
                 
                 <p>Trove's 'journals' zone includes journals and journal articles, as well as other research outputs and things like press releases. You can access metadata from the journal zone through the Trove API, but to get text and images you need to use some screen scraping.</p>
-<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
+<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
 <h2 id="tips-tools-and-examples">Tips, tools, and examples<a class="headerlink" href="#tips-tools-and-examples" title="Permanent link">&para;</a></h2>
 <h3 id="create-a-list-of-troves-digitised-journals">Create a list of Trove's digitised journals<a class="headerlink" href="#create-a-list-of-troves-digitised-journals" title="Permanent link">&para;</a></h3>
 <p>Everyone know's about Trove's newspapers, but there is also a growing collection of digitised journals available in the journals zone. They're not easy to find, however, which is why I created the <a href="https://trove-titles.herokuapp.com/">Trove Titles</a> web app. This notebook uses the Trove API to harvest metadata relating to digitised journals – or more accurately, journals that are freely available online in a digital form. This includes some born digital publications that are available to view in formats like PDF and MOBI, but excludes some digital journals that have access restrictions.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/Create-digitised-journals-list.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Create-digitised-journals-list.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?filepath=Create-digitised-journals-list.ipynb">Run live on Binder</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Create-digitised-journals-list.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="get-ocrd-text-from-a-digitised-journal-in-trove">Get OCRd text from a digitised journal in Trove<a class="headerlink" href="#get-ocrd-text-from-a-digitised-journal-in-trove" title="Permanent link">&para;</a></h3>
 <p>Many of the digitised journals available in Trove make OCRd text available for download – one text file for each journal issue. However, while there are records for journals and articles in Trove (and available through the API), there are no records for issues. So how do we find them? This notebook shows how to extract issue data from a digitised journal and download OCRd text for each issue.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/Get-text-from-a-Trove-journal.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Get-text-from-a-Trove-journal.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?filepath=Get-text-from-a-Trove-journal.ipynb">Run live on Binder</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Get-text-from-a-Trove-journal.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="get-covers-or-any-other-pages-from-a-digitised-journal-in-trove">Get covers (or any other pages) from a digitised journal in Trove<a class="headerlink" href="#get-covers-or-any-other-pages-from-a-digitised-journal-in-trove" title="Permanent link">&para;</a></h3>
 <p>In another notebook, I showed how to get issue metadata and OCRd texts from a digitised journal in Trove. It's also possible to download page images and PDFs. This notebook shows how to download all the cover images from a specified journal. With some minor modifications you could download any page, or range of pages.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/Get-page-images-from-a-Trove-journal.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Get-page-images-from-a-Trove-journal.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?filepath=Get-page-images-from-a-Trove-journal.ipynb">Run live on Binder</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Get-page-images-from-a-Trove-journal.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="download-the-ocrd-text-for-all-the-digitised-journals-in-trove">Download the OCRd text for ALL the digitised journals in Trove!<a class="headerlink" href="#download-the-ocrd-text-for-all-the-digitised-journals-in-trove" title="Permanent link">&para;</a></h3>
 <p>Using the code and data from the previous two notebooks, you can download the OCRd text from every digitised journal. If you're going to try this, you'll need a lots of patience and lots of disk space. Needless to say, don't try this on a cloud service like Binder. Fortunately you don't have to do it yourself, as I've already run the harvest and made all the text files available. See below for details. I repeat, you probably don't want to do this yourself. The point of this notebook is really to document the methodology used to create the repository.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/Download-text-for-all-digitised-journals.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Download-text-for-all-digitised-journals.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?filepath=Download-text-for-all-digitised-journals.ipynb">Run live on Binder</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Download-text-for-all-digitised-journals.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="harvest-parliament-press-releases-from-trove">Harvest parliament press releases from Trove<a class="headerlink" href="#harvest-parliament-press-releases-from-trove" title="Permanent link">&para;</a></h3>
 <p>Trove includes more than 370,000 press releases, speeches, and interview transcripts issued by Australian federal politicians and saved by the Parliamentary Library. You can view them all in Trove by searching for nuc:"APAR:PR" in the journals zone. This notebook shows you how to harvest both metadata and full text from a search of the parliamentary press releases. The metadata is available from Trove, but to get the full text we have to go back to the Parliamentary Library's database, ParlInfo.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/Harvest-parliament-press-releases.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Harvest-parliament-press-releases.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?filepath=Harvest-parliament-press-releases.ipynb">Run live on Binder</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Harvest-parliament-press-releases.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="harvesting-data-from-the-bulletin">Harvesting data from the Bulletin<a class="headerlink" href="#harvesting-data-from-the-bulletin" title="Permanent link">&para;</a></h3>
 <p>This is a more specific example of harvesting metadata and OCRd text from a digitised journal, in this case <em>The Bulletin</em>. It also shows how you can get the front cover images (or any other page).</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/Harvesting-data-from-the-Bulletin.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Harvesting-data-from-the-Bulletin.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?filepath=Harvesting-data-from-the-Bulletin.ipynb">Run live on Binder</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Harvesting-data-from-the-Bulletin.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="finding-editorial-cartoons-in-the-bulletin">Finding editorial cartoons in the Bulletin<a class="headerlink" href="#finding-editorial-cartoons-in-the-bulletin" title="Permanent link">&para;</a></h3>
 <p>In another notebook I showed how you could download all the front pages of The Bulletin (and other journals) as images. Amongst the front pages you'll find a number of full page editorial cartoons under The Bulletin's masthead. But you'll also find that many of the front pages are advertising wrap arounds. The full page editorial cartoons were a consistent feature of The Bulletin for many decades, but they moved around between pages one and eleven. That makes them hard to find. I wanted to try and assemble a collection of all the editorial cartoons, but how?</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/Finding_editorial_cartoons_in_the_Bulletin.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Finding_editorial_cartoons_in_the_Bulletin.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?filepath=Finding_editorial_cartoons_in_the_Bulletin.ipynb">Run live on Binder</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Finding_editorial_cartoons_in_the_Bulletin.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="harvesting-data-from-home">Harvesting data from Home<a class="headerlink" href="#harvesting-data-from-home" title="Permanent link">&para;</a></h3>
 <p>This is a more specific example of harvesting metadata and OCRd text from a digitised journal, in this case <em>The Home</em>. It also shows how you can get the front cover images (or any other page).</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/Harvesting-data-from-the-Home.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Harvesting-data-from-the-Home.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?filepath=Harvesting-data-from-the-Home.ipynb">Run live on Binder</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Harvesting-data-from-the-Home.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="topic-modelling-of-australian-parliamentary-press-releases-by-adel-rahmani">Topic Modelling of Australian Parliamentary Press Releases by  <a href="https://twitter.com/dinkumdata">Adel Rahmani</a><a class="headerlink" href="#topic-modelling-of-australian-parliamentary-press-releases-by-adel-rahmani" title="Permanent link">&para;</a></h3>
 <p>This notebook explores the <a href="#politicians-talking-about-immigrants-and-refugees">Politicians talking about 'immigrants' and 'refugees'</a> collection of press releases (see below). Adel notes: 'I was curious about the contents of the press releases, however, at more than 12,000 documents the collection is too overwhelming to read through, so I thought I'd get the computer to do it for me, and use topic modelling to poke aroung the corpus.'</p>
@@ -1599,35 +1599,39 @@
 </ul>
 <h2 id="data-and-text">Data and text<a class="headerlink" href="#data-and-text" title="Permanent link">&para;</a></h2>
 <h3 id="csv-formatted-list-of-journals-available-from-trove-in-digital-form">CSV formatted list of journals available from Trove in digital form<a class="headerlink" href="#csv-formatted-list-of-journals-available-from-trove-in-digital-form" title="Permanent link">&para;</a></h3>
-<p>Harvested: 25 August 2019</p>
-<p>This file provides metadata of 2,620 journals that are available from Trove in a digital form. You can <a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/digital-journals.csv">download the CSV file</a>.</p>
+<p>Harvested: 12 July 2020</p>
+<p>This file provides metadata of 2,698 journals that are available from Trove in a digital form. Note that this list contains 2,730 records as there are some duplicates where multiple Trove work records point to the same digitised journal. The duplicates have been left in as they include different metadata, and can be easily removed with Pandas. You can <a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals.csv">download the CSV file</a>.</p>
+<p>Note also that, unlike previous harvests, this one excluded periodicals with the format 'government publication' – so the total amount harvested has decreased. Government publications are actually spread across both the books and journals zone, so I'm planning to do a separate harvest just for them.</p>
 <p>This file includes the following columns:</p>
 <ul>
 <li><code>fulltext_url</code> – the url of the landing page of the digital version of the journal</li>
 <li><code>title</code> – the title of the journal</li>
 <li><code>trove_id</code> – the 'nla.obj' part of the fulltext_url, a unique identifier for the digital journal</li>
 <li><code>trove_url</code> – url of the journal's metadata record in Trove</li>
+<li><code>nla_digitised</code> – True/False indicates whether the journal is identified as being digitised by the NLA</li>
 </ul>
 <h3 id="csv-formatted-list-of-journals-with-ocrd-text">CSV formatted list of journals with OCRd text<a class="headerlink" href="#csv-formatted-list-of-journals-with-ocrd-text" title="Permanent link">&para;</a></h3>
-<p>Harvested: 25 August 2019  </p>
-<p>This file provides metadata of 720 digitised journals in Trove that have OCRd text for download. You can <a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.csv">download the CSV file</a>. You can also <a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.md">browse a human-readable list</a>.</p>
+<p>Harvested: 12 July 2020  </p>
+<p>This file provides metadata of 397 digitised journals in Trove that have OCRd text for download. You can <a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.csv">download the CSV file</a>. You can also <a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.md">browse a human-readable list</a>.</p>
+<p>Note that, unlike previous harvests, this one excluded periodicals with the format 'government publication' – so the total amount harvested has decreased. Government publications are actually spread across both the books and journals zone, so I'm planning to do a separate harvest just for them.</p>
 <p>This file includes the following columns:</p>
 <ul>
 <li><code>fulltext_url</code> – the url of the landing page of the digital version of the journal</li>
 <li><code>title</code> – the title of the journal</li>
 <li><code>trove_id</code> – the 'nla.obj' part of the fulltext_url, a unique identifier for the digital journal</li>
 <li><code>trove_url</code> – url of the journal's metadata record in Trove</li>
+<li><code>nla_digitised</code> – True/False indicates whether the journal is identified as being digitised by the NLA</li>
 <li><code>issues</code> – the number of available issues</li>
 <li><code>issues_with_text</code> – the number of issues that OCRd text could be downloaded from</li>
 <li><code>directory</code> – the directory in which the files from this journal have been saved (relative to the output directory)</li>
 </ul>
 <h3 id="ocrd-text-from-trove-digitised-journals">OCRd text from Trove digitised journals<a class="headerlink" href="#ocrd-text-from-trove-digitised-journals" title="Permanent link">&para;</a></h3>
-<p>Harvested: 25 August 2019</p>
+<p>Harvested: 12 July 2020</p>
 <p>Using the notebook above I harvested metadata and OCRd text from Trove's digitised journals.</p>
 <ul>
-<li>719 journals had OCRd text available for download</li>
-<li>OCRd text was downloaded from 33,035 journal issues</li>
-<li>About 8gb of text was downloaded</li>
+<li>397 journals had OCRd text available for download</li>
+<li>OCRd text was downloaded from 26,234 journal issues</li>
+<li>About 6gb of text was downloaded</li>
 </ul>
 <p>The complete collection of text files for all the journals can be <a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.md">browsed here</a> and downloaded <a href="https://cloudstor.aarnet.edu.au/plus/s/QOmnqpGQCNCSC2h">using this repository on CloudStor</a>.</p>
 <h3 id="editorial-cartoons-from-the-bulletin-1886-to-1952">Editorial cartoons from The Bulletin, 1886 to 1952<a class="headerlink" href="#editorial-cartoons-from-the-bulletin-1886-to-1952" title="Permanent link">&para;</a></h3>
