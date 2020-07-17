@@ -1192,6 +1192,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#convert-a-years-worth-of-historic-hansard-into-a-dataframe-for-analysis" title="Convert a year's worth of Historic Hansard into a dataframe for analysis" class="md-nav__link">
+    Convert a year's worth of Historic Hansard into a dataframe for analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#harvesting-commonwealth-hansard" title="Harvesting Commonwealth Hansard" class="md-nav__link">
     Harvesting Commonwealth Hansard
   </a>
@@ -1288,6 +1295,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#convert-a-years-worth-of-historic-hansard-into-a-dataframe-for-analysis" title="Convert a year's worth of Historic Hansard into a dataframe for analysis" class="md-nav__link">
+    Convert a year's worth of Historic Hansard into a dataframe for analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#harvesting-commonwealth-hansard" title="Harvesting Commonwealth Hansard" class="md-nav__link">
     Harvesting Commonwealth Hansard
   </a>
@@ -1328,12 +1342,24 @@
                   <h1>Commonwealth Hansard</h1>
                 
                 <p>The proceedings of Australia's Commonwealth Parliament are recorded in Hansard, which is available online through the Parliamentary Library's <a href="https://parlinfo.aph.gov.au/parlInfo/search/summary/summary.w3p;adv=yes;orderBy=_fragment_number,doc_date-rev;query=Dataset:hansardr,hansardr80;resCount=Default">ParlInfo</a> database. This repository includes Jupyter notebooks to harvest and explore XML formatted versions of Hansard.</p>
-<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/australian-commonwealth-hansard/master"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
+<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/australian-commonwealth-hansard/master?urlpath=lab"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
 <p>You can access a <a href="https://github.com/wragge/hansard-xml">full harvest of the XML files for both houses between 1901 and 1980</a> from this repository.</p>
 <p>The XML files are made available on the Australian Parliament website under a CC-BY-NC-ND licence.</p>
 <h2 id="tools-tips-and-examples">Tools, tips, and examples<a class="headerlink" href="#tools-tips-and-examples" title="Permanent link">&para;</a></h2>
-<h3 id="harvesting-commonwealth-hansard"><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/australian-commonwealth-hansard/blob/master/Harvesting-Commonwealth-Hansard.ipynb">Harvesting Commonwealth Hansard</a><a class="headerlink" href="#harvesting-commonwealth-hansard" title="Permanent link">&para;</a></h3>
+<h3 id="convert-a-years-worth-of-historic-hansard-into-a-dataframe-for-analysis">Convert a year's worth of Historic Hansard into a dataframe for analysis<a class="headerlink" href="#convert-a-years-worth-of-historic-hansard-into-a-dataframe-for-analysis" title="Permanent link">&para;</a></h3>
+<p>This notebook analyses Commonwealth Hansard XML files. Give it a year (between 1901 and 1980), and a house (either 'hofreps' or 'senate'), and it will download all the proceedings of that year and house, extract some basic data about debates and speeches, and provide the results as a dataframe for exploration.</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/australian-commonwealth-hansard/blob/master/convert-a-year-to-dataframe.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/australian-commonwealth-hansard/blob/master/convert-a-year-to-dataframe.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/australian-commonwealth-hansard/master?urlpath=lab/tree/convert-a-year-to-dataframe.ipynb">Run live on Binder</a></li>
+</ul>
+<h3 id="harvesting-commonwealth-hansard">Harvesting Commonwealth Hansard<a class="headerlink" href="#harvesting-commonwealth-hansard" title="Permanent link">&para;</a></h3>
 <p>Results in ParlInfo are generated from well-structured XML files which can be downloaded individually from the web interface – one XML file for each sitting day. This notebook shows you how to download all the XML files for large scale analysis. It's an updated version of the code I used to harvest Hansard in 2016.</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/australian-commonwealth-hansard/blob/master/Harvesting-Commonwealth-Hansard.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/australian-commonwealth-hansard/blob/master/Harvesting-Commonwealth-Hansard.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/australian-commonwealth-hansard/master?urlpath=lab/tree/Harvesting-Commonwealth-Hansard.ipynb">Run live on Binder</a></li>
+</ul>
 <h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
 <p>Sherratt, Tim. (2019, November 17). GLAM-Workbench/australian-commonwealth-hansard (Version v0.1.0). Zenodo. <a href="http://doi.org/10.5281/zenodo.3544706">http://doi.org/10.5281/zenodo.3544706</a></p>
 <p><a href="https://doi.org/10.5281/zenodo.3544706"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3544706.svg" /></a></p>
