@@ -42,7 +42,7 @@
     
     
       
-        <title>Trove newspaper harvester</title>
+        <title>Trove newspaper & gazette harvester</title>
       
     
     
@@ -137,7 +137,7 @@
               GLAM Workbench
             </span>
             <span class="md-header-nav__topic">
-              Trove newspaper harvester
+              Trove newspaper & gazette harvester
             </span>
           
         </div>
@@ -667,11 +667,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Trove newspaper harvester
+        Trove newspaper & gazette harvester
       </label>
     
-    <a href="./" title="Trove newspaper harvester" class="md-nav__link md-nav__link--active">
-      Trove newspaper harvester
+    <a href="./" title="Trove newspaper & gazette harvester" class="md-nav__link md-nav__link--active">
+      Trove newspaper & gazette harvester
     </a>
     
       
@@ -698,8 +698,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-troveharvester-to-get-newspaper-articles-in-bulk" title="Using TroveHarvester to get newspaper articles in bulk" class="md-nav__link">
-    Using TroveHarvester to get newspaper articles in bulk
+  <a href="#using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk" title="Using TroveHarvester to get newspaper and gazette articles in bulk" class="md-nav__link">
+    Using TroveHarvester to get newspaper and gazette articles in bulk
   </a>
   
 </li>
@@ -1340,8 +1340,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-troveharvester-to-get-newspaper-articles-in-bulk" title="Using TroveHarvester to get newspaper articles in bulk" class="md-nav__link">
-    Using TroveHarvester to get newspaper articles in bulk
+  <a href="#using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk" title="Using TroveHarvester to get newspaper and gazette articles in bulk" class="md-nav__link">
+    Using TroveHarvester to get newspaper and gazette articles in bulk
   </a>
   
 </li>
@@ -1405,13 +1405,13 @@
                   <a href="https://github.com/glam-workbench/docs/edit/master/docs/trove-harvester.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Trove newspaper harvester</h1>
+                  <h1>Trove newspaper & gazette harvester</h1>
                 
-                <p>The Trove Newspaper Harvester makes it easy to download large quantities of digitised newspaper articles from Trove. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis. You can also save the full text of every article, as well as copies of the articles as JPG images, and even PDFs. While the web interface will only show you the first 2,000 results matching your search, the Newspaper Harvester will get <strong>everything</strong>.</p>
+                <p>The Trove Newspaper &amp; Gazette Harvester makes it easy to download large quantities of digitised articles from Trove's newspapers and gazettes. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis. You can also save the full text of every article, as well as copies of the articles as JPG images, and even PDFs. While the web interface will only show you the first 2,000 results matching your search, the Newspaper &amp; Gazette Harvester will get <strong>everything</strong>.</p>
 <p>You can install the Harvester as a <a href="https://pypi.org/project/troveharvester/">Python command line tool</a>, or use it in one of these notebooks below:</p>
 <ul>
-<li><a href="#using-troveharvester-to-get-newspaper-articles-in-bulk">Using TroveHarvester to get newspaper articles in bulk</a> – shows you how to use the command line tool in a Jupyter notebook</li>
-<li><a href="#trove-harvester-web-app">Trove Harvester web app</a> – provides a simple web interface to the newspaper harvester</li>
+<li><a href="#using-troveharvester-to-get-newspaper-articles-in-bulk">Using TroveHarvester to get newspaper and gazette articles in bulk</a> – shows you how to use the command line tool in a Jupyter notebook</li>
+<li><a href="#trove-harvester-web-app">Trove Harvester web app</a> – provides a simple web interface to the newspaper &amp; gazette harvester</li>
 </ul>
 <p>Both notebooks can be run live, online using the Binder service, so you can start harvesting articles straight away without installing any software. All you need to get started is:</p>
 <ul>
@@ -1430,8 +1430,8 @@
 <ul>
 <li><code>article_id</code> – a unique identifier for the article</li>
 <li><code>title</code> – the title of the article</li>
-<li><code>newspaper_id</code> – a unique identifier for the newspaper (this can be used to retrieve more information or build a link to the web interface)</li>
-<li><code>newspaper_title</code> – the name of the newspaper</li>
+<li><code>newspaper_id</code> – a unique identifier for the newspaper or gazette title (this can be used to retrieve more information or build a link to the web interface)</li>
+<li><code>newspaper_title</code> – the name of the newspaper (or gazette)</li>
 <li><code>page</code> – page number (of course), but might also indicate the page is part of a supplement or special section</li>
 <li><code>date</code> – in ISO format, YYYY-MM-DD</li>
 <li><code>category</code> – one of ‘Article’, ‘Advertising’, ‘Detailed lists, results, guides’, ‘Family Notices’, or ‘Literature’</li>
@@ -1449,7 +1449,7 @@
 </ul>
 <p>As you can see, you can use the newspaper and article ids to create direct links into Trove:</p>
 <ul>
-<li>to a newspaper <code>https://trove.nla.gov.au/newspaper/title/[newspaper id]</code></li>
+<li>to a newspaper or gazette <code>https://trove.nla.gov.au/newspaper/title/[newspaper id]</code></li>
 <li>to an article <code>http://nla.gov.au/nla.news-article[article id]</code></li>
 </ul>
 <p>Similarly, if you've asked for copies of the articles as images, they'll be in a directory named <code>image</code>. The image file names are similar to the text files, but with an extra id number for the page from which the image was extracted. So, for example, the image filename <code>19250411-460-140772994-11900413.jpg</code> tells you:</p>
@@ -1462,8 +1462,8 @@
 <p>Once you have your data you can start exploring! You'll find some Jupyter notebooks below that provide examples of analysing and visualising both the metadata and the full text.</p>
 <p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
 <h2 id="tools-tips-and-examples">Tools, tips, and examples<a class="headerlink" href="#tools-tips-and-examples" title="Permanent link">&para;</a></h2>
-<h3 id="using-troveharvester-to-get-newspaper-articles-in-bulk">Using TroveHarvester to get newspaper articles in bulk<a class="headerlink" href="#using-troveharvester-to-get-newspaper-articles-in-bulk" title="Permanent link">&para;</a></h3>
-<p>An introduction to the Trove Harvester command line tool. Edit a few cells and you'll be harvesting metadata and full text of thousands of newspaper articles in minutes.</p>
+<h3 id="using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk">Using TroveHarvester to get newspaper and gazette articles in bulk<a class="headerlink" href="#using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk" title="Permanent link">&para;</a></h3>
+<p>An introduction to the Trove Harvester command line tool. Edit a few cells and you'll be harvesting metadata and full text of thousands of articles in minutes.</p>
 <ul>
 <li><a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb">View using NBViewer</a></li>
