@@ -1300,6 +1300,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-sitting-days-1901-to-2005" class="md-nav__link">
+    List of sitting days, 1901 to 2005
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cite-as" class="md-nav__link">
     Cite as
   </a>
@@ -1416,6 +1436,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-sitting-days-1901-to-2005" class="md-nav__link">
+    List of sitting days, 1901 to 2005
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cite-as" class="md-nav__link">
     Cite as
   </a>
@@ -1446,7 +1486,7 @@
                 
                 <p>The proceedings of Australia's Commonwealth Parliament are recorded in Hansard, which is available online through the Parliamentary Library's <a href="https://parlinfo.aph.gov.au/parlInfo/search/summary/summary.w3p;adv=yes;orderBy=_fragment_number,doc_date-rev;query=Dataset:hansardr,hansardr80;resCount=Default">ParlInfo</a> database. This repository includes Jupyter notebooks to harvest and explore XML formatted versions of Hansard.</p>
 <p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/australian-commonwealth-hansard/master?urlpath=lab"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
-<p>You can access a <a href="https://github.com/wragge/hansard-xml">full harvest of the XML files for both houses between 1901 and 1980</a> from this repository.</p>
+<p>You can access a <a href="https://github.com/wragge/hansard-xml">harvest of the XML files for both houses from 1901 to 1980 and 1998 to 2005</a> from this repository. No XML files are currently available for 1981 to 1997. Open Australia provides access to <a href="http://data.openaustralia.org.au/">Hansard XML files from 2006 onwards</a>.</p>
 <p>The XML files are made available on the Australian Parliament website under a CC-BY-NC-ND licence.</p>
 <h2 id="tools-tips-and-examples">Tools, tips, and examples<a class="headerlink" href="#tools-tips-and-examples" title="Permanent link">&para;</a></h2>
 <h3 id="convert-a-years-worth-of-historic-hansard-into-a-dataframe-for-analysis">Convert a year's worth of Historic Hansard into a dataframe for analysis<a class="headerlink" href="#convert-a-years-worth-of-historic-hansard-into-a-dataframe-for-analysis" title="Permanent link">&para;</a></h3>
@@ -1462,6 +1502,15 @@
 <li><a href="https://github.com/GLAM-Workbench/australian-commonwealth-hansard/blob/master/Harvesting-Commonwealth-Hansard.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/australian-commonwealth-hansard/blob/master/Harvesting-Commonwealth-Hansard.ipynb">View using NBViewer</a></li>
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/australian-commonwealth-hansard/master?urlpath=lab/tree/Harvesting-Commonwealth-Hansard.ipynb">Run live on Binder</a></li>
+</ul>
+<h2 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h2>
+<h3 id="list-of-sitting-days-1901-to-2005">List of sitting days, 1901 to 2005<a class="headerlink" href="#list-of-sitting-days-1901-to-2005" title="Permanent link">&para;</a></h3>
+<p>The harvesting process documented in the notebook above, extracts a list of sitting days and XML files from searches in ParlInfo. This <a href="https://github.com/GLAM-Workbench/australian-commonwealth-hansard/blob/master/data/all-sitting-days.csv">CSV file combines this data for all years and both houses</a>. It contains the following fields:</p>
+<ul>
+<li><code>date</code> – date of sitting day in YYYY-MM-DD format</li>
+<li><code>url</code> – url for XML file (where available)</li>
+<li><code>year</code></li>
+<li><code>house</code> – 'hofreps' or 'senate'</li>
 </ul>
 <h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
 <p>Sherratt, Tim. (2019, November 17). GLAM-Workbench/australian-commonwealth-hansard (Version v0.1.0). Zenodo. <a href="http://doi.org/10.5281/zenodo.3544706">http://doi.org/10.5281/zenodo.3544706</a></p>
