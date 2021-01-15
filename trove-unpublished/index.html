@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums">
       
       
-        <link rel="canonical" href="https://glam-workbench.github.io/trove-unpublished/">
-      
       
         <meta name="author" content="Tim Sherratt">
       
+      
+        <link rel="canonical" href="https://glam-workbench.github.io/trove-unpublished/">
+      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.63b94e9e.min.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/palette.7f672a1f.min.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.15aa0b43.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.75751829.min.css">
         
-        <meta name="theme-color" content="#3f51b5">
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -59,7 +60,10 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+      
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -77,7 +81,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://glam-workbench.github.io" title="GLAM Workbench" class="md-header-nav__button md-logo" aria-label="GLAM Workbench">
       
@@ -89,18 +95,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             GLAM Workbench
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               Trove unpublished
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -111,7 +119,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -177,7 +185,7 @@
 
   <div class="md-source__icon md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.326 1.973a1.2 1.2 0 011.49-.832c.387.112.977.307 1.575.602.586.291 1.243.71 1.7 1.296.022.027.042.056.061.084A13.22 13.22 0 018 3c.67 0 1.289.037 1.861.108l.051-.07c.457-.586 1.114-1.004 1.7-1.295a9.654 9.654 0 011.576-.602 1.2 1.2 0 011.49.832c.14.493.356 1.347.479 2.29.079.604.123 1.28.07 1.936.541.977.773 2.11.773 3.301C16 13 14.5 15 8 15s-8-2-8-5.5c0-1.034.238-2.128.795-3.117-.08-.712-.034-1.46.052-2.12.122-.943.34-1.797.479-2.29zM8 13.065c6 0 6.5-2 6-4.27C13.363 5.905 11.25 5 8 5s-5.363.904-6 3.796c-.5 2.27 0 4.27 6 4.27z"/><path d="M4 8a1 1 0 012 0v1a1 1 0 01-2 0V8zm2.078 2.492c-.083-.264.146-.492.422-.492h3c.276 0 .505.228.422.492C9.67 11.304 8.834 12 8 12c-.834 0-1.669-.696-1.922-1.508zM10 8a1 1 0 112 0v1a1 1 0 11-2 0V8z"/></svg>
   </div>
 
 <div class="md-source__repository">
@@ -191,8 +199,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -200,7 +206,8 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <!--
@@ -293,7 +300,7 @@
 
   <div class="md-source__icon md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.326 1.973a1.2 1.2 0 011.49-.832c.387.112.977.307 1.575.602.586.291 1.243.71 1.7 1.296.022.027.042.056.061.084A13.22 13.22 0 018 3c.67 0 1.289.037 1.861.108l.051-.07c.457-.586 1.114-1.004 1.7-1.295a9.654 9.654 0 011.576-.602 1.2 1.2 0 011.49.832c.14.493.356 1.347.479 2.29.079.604.123 1.28.07 1.936.541.977.773 2.11.773 3.301C16 13 14.5 15 8 15s-8-2-8-5.5c0-1.034.238-2.128.795-3.117-.08-.712-.034-1.46.052-2.12.122-.943.34-1.797.479-2.29zM8 13.065c6 0 6.5-2 6-4.27C13.363 5.905 11.25 5 8 5s-5.363.904-6 3.796c-.5 2.27 0 4.27 6 4.27z"/><path d="M4 8a1 1 0 012 0v1a1 1 0 01-2 0V8zm2.078 2.492c-.083-.264.146-.492.422-.492h3c.276 0 .505.228.422.492C9.67 11.304 8.834 12 8 12c-.834 0-1.669-.696-1.922-1.508zM10 8a1 1 0 112 0v1a1 1 0 11-2 0V8z"/></svg>
   </div>
 
 <div class="md-source__repository">
@@ -311,8 +318,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
+    <a href=".." class="md-nav__link">
       Home
     </a>
   </li>
@@ -323,21 +331,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     
     <label class="md-nav__link" for="nav-2">
       About
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="About" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         About
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -348,8 +355,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../about/" title="Some background" class="md-nav__link">
+    <a href="../about/" class="md-nav__link">
       Some background
     </a>
   </li>
@@ -360,8 +368,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../presentations/" title="Presentations and workshops about the GLAM Workbench" class="md-nav__link">
+    <a href="../presentations/" class="md-nav__link">
       Presentations and workshops about the GLAM Workbench
     </a>
   </li>
@@ -377,21 +386,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
     
     <label class="md-nav__link" for="nav-3">
       Help
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Help" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Help
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -402,8 +410,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../getting-started/" title="Getting started" class="md-nav__link">
+    <a href="../getting-started/" class="md-nav__link">
       Getting started
     </a>
   </li>
@@ -414,21 +423,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
     
     <label class="md-nav__link" for="nav-3-2">
       Workshops/Tutorials
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Workshops/Tutorials" data-md-level="2">
       <label class="md-nav__title" for="nav-3-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Workshops/Tutorials
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -439,8 +447,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../umdigitalstudio2019/" title="GLAM Workbench workshop, 15 August 2019" class="md-nav__link">
+    <a href="../umdigitalstudio2019/" class="md-nav__link">
       GLAM Workbench workshop, 15 August 2019
     </a>
   </li>
@@ -461,21 +470,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
     
     <label class="md-nav__link" for="nav-4">
       Data sources
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Data sources" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Data sources
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -486,21 +494,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1" >
     
     <label class="md-nav__link" for="nav-4-1">
       Australia
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Australia" data-md-level="2">
       <label class="md-nav__title" for="nav-4-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Australia
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -511,8 +518,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../glam-data-list/" title="GLAM Data sources" class="md-nav__link">
+    <a href="../glam-data-list/" class="md-nav__link">
       GLAM Data sources
     </a>
   </li>
@@ -523,21 +531,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-2" type="checkbox" id="nav-4-1-2">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-2" type="checkbox" id="nav-4-1-2" >
     
     <label class="md-nav__link" for="nav-4-1-2">
       Data portals
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Data portals" data-md-level="3">
       <label class="md-nav__title" for="nav-4-1-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Data portals
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -548,8 +555,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../glam-data-portals/" title="Gov data portals" class="md-nav__link">
+    <a href="../glam-data-portals/" class="md-nav__link">
       Gov data portals
     </a>
   </li>
@@ -560,8 +568,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../glam-datasets-from-gov-portals/" title="GLAM datasets from government data portals" class="md-nav__link">
+    <a href="../glam-datasets-from-gov-portals/" class="md-nav__link">
       GLAM datasets from government data portals
     </a>
   </li>
@@ -577,8 +586,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../csv-explorer/" title="GLAM CSV Explorer" class="md-nav__link">
+    <a href="../csv-explorer/" class="md-nav__link">
       GLAM CSV Explorer
     </a>
   </li>
@@ -599,8 +609,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../glam-labs/" title="GLAM Labs" class="md-nav__link">
+    <a href="../glam-labs/" class="md-nav__link">
       GLAM Labs
     </a>
   </li>
@@ -610,24 +621,23 @@
       
       
 
+
   
 
 
+  
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
     
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       Trove
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Trove" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Trove
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -638,8 +648,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../trove/" title="Trove API introduction" class="md-nav__link">
+    <a href="../trove/" class="md-nav__link">
       Trove API introduction
     </a>
   </li>
@@ -650,8 +661,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../trove-newspapers/" title="Trove newspapers" class="md-nav__link">
+    <a href="../trove-newspapers/" class="md-nav__link">
       Trove newspapers
     </a>
   </li>
@@ -662,8 +674,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../trove-harvester/" title="Trove newspaper & gazette harvester" class="md-nav__link">
+    <a href="../trove-harvester/" class="md-nav__link">
       Trove newspaper & gazette harvester
     </a>
   </li>
@@ -674,8 +687,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../trove-books/" title="Trove books" class="md-nav__link">
+    <a href="../trove-books/" class="md-nav__link">
       Trove books
     </a>
   </li>
@@ -686,8 +700,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../trove-journals/" title="Trove journals" class="md-nav__link">
+    <a href="../trove-journals/" class="md-nav__link">
       Trove journals
     </a>
   </li>
@@ -698,8 +713,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../trove-lists/" title="Trove lists" class="md-nav__link">
+    <a href="../trove-lists/" class="md-nav__link">
       Trove lists
     </a>
   </li>
@@ -710,8 +726,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../trove-maps/" title="Trove maps" class="md-nav__link">
+    <a href="../trove-maps/" class="md-nav__link">
       Trove maps
     </a>
   </li>
@@ -722,8 +739,22 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../trove-images/" title="Trove images" class="md-nav__link">
+    <a href="../trove-music/" class="md-nav__link">
+      Trove music and sound
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../trove-images/" class="md-nav__link">
       Trove images
     </a>
   </li>
@@ -732,6 +763,7 @@
           
           
           
+
 
   
 
@@ -745,12 +777,10 @@
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Trove unpublished
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="Trove unpublished" class="md-nav__link md-nav__link--active">
+    <a href="./" class="md-nav__link md-nav__link--active">
       Trove unpublished
     </a>
     
@@ -762,9 +792,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -835,8 +863,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../trove-random/" title="Random items from Trove" class="md-nav__link">
+    <a href="../trove-random/" class="md-nav__link">
       Random items from Trove
     </a>
   </li>
@@ -852,8 +881,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../digitalnz/" title="DigitalNZ" class="md-nav__link">
+    <a href="../digitalnz/" class="md-nav__link">
       DigitalNZ
     </a>
   </li>
@@ -864,21 +894,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
     
     <label class="md-nav__link" for="nav-8">
       Archives
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Archives" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Archives
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -889,8 +918,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../anu-archives/" title="ANU Archives" class="md-nav__link">
+    <a href="../anu-archives/" class="md-nav__link">
       ANU Archives
     </a>
   </li>
@@ -901,21 +931,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" >
     
     <label class="md-nav__link" for="nav-8-2">
       NAA
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="NAA" data-md-level="2">
       <label class="md-nav__title" for="nav-8-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         NAA
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -926,8 +955,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../recordsearch/" title="RecordSearch" class="md-nav__link">
+    <a href="../recordsearch/" class="md-nav__link">
       RecordSearch
     </a>
   </li>
@@ -938,8 +968,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../naa-wap/" title="White Australia Policy archives" class="md-nav__link">
+    <a href="../naa-wap/" class="md-nav__link">
       White Australia Policy archives
     </a>
   </li>
@@ -950,8 +981,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../naa-asio/" title="ASIO archives" class="md-nav__link">
+    <a href="../naa-asio/" class="md-nav__link">
       ASIO archives
     </a>
   </li>
@@ -967,8 +999,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../nsw-state-archives/" title="NSW State Archives" class="md-nav__link">
+    <a href="../nsw-state-archives/" class="md-nav__link">
       NSW State Archives
     </a>
   </li>
@@ -979,21 +1012,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-4" type="checkbox" id="nav-8-4">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-4" type="checkbox" id="nav-8-4" >
     
     <label class="md-nav__link" for="nav-8-4">
       National Archives of NZ
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="National Archives of NZ" data-md-level="2">
       <label class="md-nav__title" for="nav-8-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         National Archives of NZ
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1004,8 +1036,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../archway/" title="Archway" class="md-nav__link">
+    <a href="../archway/" class="md-nav__link">
       Archway
     </a>
   </li>
@@ -1021,8 +1054,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../qsa/" title="Queensland State Archives" class="md-nav__link">
+    <a href="../qsa/" class="md-nav__link">
       Queensland State Archives
     </a>
   </li>
@@ -1038,21 +1072,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
     
     <label class="md-nav__link" for="nav-9">
       Libraries
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Libraries" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Libraries
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1063,21 +1096,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-1" type="checkbox" id="nav-9-1">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-1" type="checkbox" id="nav-9-1" >
     
     <label class="md-nav__link" for="nav-9-1">
       State Library of NSW
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="State Library of NSW" data-md-level="2">
       <label class="md-nav__title" for="nav-9-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         State Library of NSW
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1088,21 +1120,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-1-1" type="checkbox" id="nav-9-1-1">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-1-1" type="checkbox" id="nav-9-1-1" >
     
     <label class="md-nav__link" for="nav-9-1-1">
       Tribune negatives
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Tribune negatives" data-md-level="3">
       <label class="md-nav__title" for="nav-9-1-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Tribune negatives
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1113,8 +1144,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../records-of-resistance/" title="Tribune metadata" class="md-nav__link">
+    <a href="../records-of-resistance/" class="md-nav__link">
       Tribune metadata
     </a>
   </li>
@@ -1125,8 +1157,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../facial-detection/" title="Facial detection" class="md-nav__link">
+    <a href="../facial-detection/" class="md-nav__link">
       Facial detection
     </a>
   </li>
@@ -1137,8 +1170,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../image-tagging/" title="Image tagging" class="md-nav__link">
+    <a href="../image-tagging/" class="md-nav__link">
       Image tagging
     </a>
   </li>
@@ -1159,8 +1193,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../slsa/" title="State Library of South Australia" class="md-nav__link">
+    <a href="../slsa/" class="md-nav__link">
       State Library of South Australia
     </a>
   </li>
@@ -1171,8 +1206,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../slv/" title="State Library of Victoria" class="md-nav__link">
+    <a href="../slv/" class="md-nav__link">
       State Library of Victoria
     </a>
   </li>
@@ -1183,8 +1219,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../lac/" title="Library Archives Canada" class="md-nav__link">
+    <a href="../lac/" class="md-nav__link">
       Library Archives Canada
     </a>
   </li>
@@ -1200,8 +1237,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../web-archives/" title="Web Archives" class="md-nav__link">
+    <a href="../web-archives/" class="md-nav__link">
       Web Archives
     </a>
   </li>
@@ -1212,21 +1250,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
     
     <label class="md-nav__link" for="nav-11">
       Museums
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Museums" data-md-level="1">
       <label class="md-nav__title" for="nav-11">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Museums
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1237,8 +1274,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../nma/" title="National Museum of Australia" class="md-nav__link">
+    <a href="../nma/" class="md-nav__link">
       National Museum of Australia
     </a>
   </li>
@@ -1249,8 +1287,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../tepapa/" title="Te Papa" class="md-nav__link">
+    <a href="../tepapa/" class="md-nav__link">
       Te Papa
     </a>
   </li>
@@ -1261,8 +1300,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../museumsvictoria/" title="Museums Victoria" class="md-nav__link">
+    <a href="../museumsvictoria/" class="md-nav__link">
       Museums Victoria
     </a>
   </li>
@@ -1278,21 +1318,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" >
     
     <label class="md-nav__link" for="nav-12">
       Government
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Government" data-md-level="1">
       <label class="md-nav__title" for="nav-12">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Government
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1303,21 +1342,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-1" type="checkbox" id="nav-12-1">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-1" type="checkbox" id="nav-12-1" >
     
     <label class="md-nav__link" for="nav-12-1">
       Australia
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Australia" data-md-level="2">
       <label class="md-nav__title" for="nav-12-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Australia
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1328,8 +1366,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../hansard/" title="Commonwealth Hansard" class="md-nav__link">
+    <a href="../hansard/" class="md-nav__link">
       Commonwealth Hansard
     </a>
   </li>
@@ -1340,8 +1379,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../pm-transcripts/" title="PMs Transcripts" class="md-nav__link">
+    <a href="../pm-transcripts/" class="md-nav__link">
       PMs Transcripts
     </a>
   </li>
@@ -1362,8 +1402,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../suggest-a-topic/" title="Suggest a topic" class="md-nav__link">
+    <a href="../suggest-a-topic/" class="md-nav__link">
       Suggest a topic
     </a>
   </li>
@@ -1374,8 +1415,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../ask-a-question/" title="Ask a question" class="md-nav__link">
+    <a href="../ask-a-question/" class="md-nav__link">
       Ask a question
     </a>
   </li>
@@ -1394,7 +1436,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1405,9 +1448,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -1481,9 +1522,6 @@
                   <a href="https://github.com/GLAM-Workbench/docs/edit/master/docs/trove-unpublished.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
-                
-                
-                  
                 
                 
                 <h1 id="trove-unpublished-works">Trove unpublished works<a class="headerlink" href="#trove-unpublished-works" title="Permanent link">&para;</a></h1>
@@ -1652,15 +1690,15 @@
       
     </div>
     
-      <script src="../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
