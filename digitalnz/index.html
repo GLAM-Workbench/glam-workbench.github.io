@@ -834,6 +834,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#select-a-randomish-record-from-digitalnz" class="md-nav__link">
+    Select a random(ish) record from DigitalNZ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#find-results-by-country-in-digitalnz" class="md-nav__link">
     Find results by country in DigitalNZ
   </a>
@@ -1433,6 +1440,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#select-a-randomish-record-from-digitalnz" class="md-nav__link">
+    Select a random(ish) record from DigitalNZ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#find-results-by-country-in-digitalnz" class="md-nav__link">
     Find results by country in DigitalNZ
   </a>
@@ -1472,7 +1486,7 @@
                 
                 <p><a href="https://digitalnz.org/">DigitalNZ</a> aggregates collections from across New Zealand and makes the aggregated metadata available <a href="https://digitalnz.org/developers">through an API</a>.</p>
 <p>You'll need an <a href="https://digitalnz.org/developers/getting-started">API key</a> to work with DigitalNZ data.</p>
-<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/digitalnz/master"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
+<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/digitalnz/master?urlpath=lab"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
 <h2 id="tips-tools-and-examples">Tips, tools, and examples<a class="headerlink" href="#tips-tools-and-examples" title="Permanent link">&para;</a></h2>
 <h3 id="getting-some-top-level-data-from-the-digitalnz-api">Getting some top-level data from the DigitalNZ API<a class="headerlink" href="#getting-some-top-level-data-from-the-digitalnz-api" title="Permanent link">&para;</a></h3>
 <p>This notebook pokes around at the top-level of DigitalNZ, mainly using facets to generate some collection overviews and summaries.</p>
@@ -1481,6 +1495,14 @@
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/digitalnz/blob/master/Top-level-data-in-DigitalNZ.ipynb">View using NBViewer</a></li>
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/digitalnz/master?filepath=Top-level-data-in-DigitalNZ.ipynb">Run live on Binder</a></li>
 </ul>
+<h3 id="select-a-randomish-record-from-digitalnz">Select a random(ish) record from DigitalNZ<a class="headerlink" href="#select-a-randomish-record-from-digitalnz" title="Permanent link">&para;</a></h3>
+<p>The DigitalNZ API doesn't provide a random sort option. You can jump to a randomly selected page of results, but you can't do any deeper than 100,000 pages into a results set (that's 1,000,000 records if you set the per_page value to 100). So we need to find some way of filtering the results until there's less than 1,000,000, then we can grab a random page and record. This notebook examines the available facets, then uses them to reduce the size of the results set until it's possible to select a random record. It provides a series of examples of retrieving random records using different filters and facets.</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/digitalnz/blob/master/select_a_random_record.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/digitalnz/blob/master/select_a_random_record.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/digitalnz/master?urlpath=lab/tree/select_a_random_record.ipynb">Run live on Binder</a></li>
+</ul>
+<p><img alt="Screenshot showing results of selecting a rnadom item using a specific content partner" src="../images/dnz-random.png" /></p>
 <h3 id="find-results-by-country-in-digitalnz">Find results by country in DigitalNZ<a class="headerlink" href="#find-results-by-country-in-digitalnz" title="Permanent link">&para;</a></h3>
 <p>Many items in DigtalNZ include location information. This can include a country, but as far as I can see there's no direct way to search for results relating to a particular country using the API. You can, however, search for geocoded locations using bounding boxes. This notebook shows how you can use this to search for countries.</p>
 <ul>
