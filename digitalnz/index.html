@@ -834,6 +834,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#harvest-facet-data-from-digitalnz" class="md-nav__link">
+    Harvest facet data from DigitalNZ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#select-a-randomish-record-from-digitalnz" class="md-nav__link">
     Select a random(ish) record from DigitalNZ
   </a>
@@ -843,6 +850,13 @@
         <li class="md-nav__item">
   <a href="#find-results-by-country-in-digitalnz" class="md-nav__link">
     Find results by country in DigitalNZ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualising-open-collections-in-digitalnz" class="md-nav__link">
+    Visualising open collections in DigitalNZ
   </a>
   
 </li>
@@ -1440,6 +1454,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#harvest-facet-data-from-digitalnz" class="md-nav__link">
+    Harvest facet data from DigitalNZ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#select-a-randomish-record-from-digitalnz" class="md-nav__link">
     Select a random(ish) record from DigitalNZ
   </a>
@@ -1449,6 +1470,13 @@
         <li class="md-nav__item">
   <a href="#find-results-by-country-in-digitalnz" class="md-nav__link">
     Find results by country in DigitalNZ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualising-open-collections-in-digitalnz" class="md-nav__link">
+    Visualising open collections in DigitalNZ
   </a>
   
 </li>
@@ -1495,6 +1523,13 @@
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/digitalnz/blob/master/Top-level-data-in-DigitalNZ.ipynb">View using NBViewer</a></li>
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/digitalnz/master?filepath=Top-level-data-in-DigitalNZ.ipynb">Run live on Binder</a></li>
 </ul>
+<h3 id="harvest-facet-data-from-digitalnz">Harvest facet data from DigitalNZ<a class="headerlink" href="#harvest-facet-data-from-digitalnz" title="Permanent link">&para;</a></h3>
+<p>This notebook explores what facets are available from the DigitalNZ API and demonstrates how to harvest data from them. It generates a summary of all available facets, as well as saving the full set of values from each facet as a CSV file.</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/digitalnz/blob/master/harvest_facet_data.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/digitalnz/blob/master/harvest_facet_data.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/digitalnz/master?urlpath=lab/tree/harvest_facet_data.ipynb">Run live on Binder</a></li>
+</ul>
 <h3 id="select-a-randomish-record-from-digitalnz">Select a random(ish) record from DigitalNZ<a class="headerlink" href="#select-a-randomish-record-from-digitalnz" title="Permanent link">&para;</a></h3>
 <p>The DigitalNZ API doesn't provide a random sort option. You can jump to a randomly selected page of results, but you can't do any deeper than 100,000 pages into a results set (that's 1,000,000 records if you set the per_page value to 100). So we need to find some way of filtering the results until there's less than 1,000,000, then we can grab a random page and record. This notebook examines the available facets, then uses them to reduce the size of the results set until it's possible to select a random record. It provides a series of examples of retrieving random records using different filters and facets.</p>
 <ul>
@@ -1511,6 +1546,14 @@
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/digitalnz/master?filepath=Results-by-country-in-DigitalNZ.ipynb">Run live on Binder</a></li>
 </ul>
 <p><img alt="Map showing frequency of DigitalNZ locations" src="../images/digitalnz_map.png" /></p>
+<h3 id="visualising-open-collections-in-digitalnz">Visualising open collections in DigitalNZ<a class="headerlink" href="#visualising-open-collections-in-digitalnz" title="Permanent link">&para;</a></h3>
+<p>DigitalNZ's <code>usage</code> facet tells you what you can do with a record. A <code>usage</code> value of 'Use commercially' indicates that the record is 'open', according to the <a href="https://opendefinition.org/licenses/">open licence definitions</a>. So by harvesting data from the <code>usage</code> facet, we can explore how much of DigitalNZ is open. This notebook assembles data relating to the <code>usage</code> status of each <code>primary_collection</code> associated with a <code>content_partner</code>. It then attempts to visualise the data in a suitably colourful burst of fireworks!</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/digitalnz/blob/master/visualise_open_collections.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/digitalnz/blob/master/visualise_open_collections.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/digitalnz/master?urlpath=lab/tree/visualise_open_collections.ipynb">Run live on Binder</a></li>
+</ul>
+<p><img alt="Visualisation of collections with open content in DigitalNZ" src="../images/dnz-fireworks.png" /></p>
 <h3 id="visualise-a-search-in-papers-past">Visualise a search in Papers Past<a class="headerlink" href="#visualise-a-search-in-papers-past" title="Permanent link">&para;</a></h3>
 <p>Start with some keywords you want to search for in <a href="https://paperspast.natlib.govt.nz/">Papers Past</a>, then create a simple visualisation showing the distribution over time and by newspaper.  </p>
 <ul>
