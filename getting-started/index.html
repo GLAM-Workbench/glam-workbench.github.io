@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introducing-jupyter-notebooks" class="md-skip">
+        <a href="#first-steps" class="md-skip">
           Skip to content
         </a>
       
@@ -441,6 +441,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#first-steps" class="md-nav__link">
+    First steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#introducing-jupyter-notebooks" class="md-nav__link">
     Introducing Jupyter notebooks
   </a>
@@ -448,11 +455,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#static-or-live-different-ways-of-viewing-and-using-jupyter-notebooks" class="md-nav__link">
-    Static or live – different ways of viewing and using Jupyter notebooks
+  <a href="#using-the-glam-workbench" class="md-nav__link">
+    Using the GLAM Workbench
   </a>
   
-    <nav class="md-nav" aria-label="Static or live – different ways of viewing and using Jupyter notebooks">
+    <nav class="md-nav" aria-label="Using the GLAM Workbench">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1469,6 +1476,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#first-steps" class="md-nav__link">
+    First steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#introducing-jupyter-notebooks" class="md-nav__link">
     Introducing Jupyter notebooks
   </a>
@@ -1476,11 +1490,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#static-or-live-different-ways-of-viewing-and-using-jupyter-notebooks" class="md-nav__link">
-    Static or live – different ways of viewing and using Jupyter notebooks
+  <a href="#using-the-glam-workbench" class="md-nav__link">
+    Using the GLAM Workbench
   </a>
   
-    <nav class="md-nav" aria-label="Static or live – different ways of viewing and using Jupyter notebooks">
+    <nav class="md-nav" aria-label="Using the GLAM Workbench">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1562,18 +1576,34 @@
                 
                   <h1>Getting started</h1>
                 
-                <h2 id="introducing-jupyter-notebooks">Introducing Jupyter notebooks<a class="headerlink" href="#introducing-jupyter-notebooks" title="Permanent link">&para;</a></h2>
-<p>This GLAM Workbench includes many <a href="https://jupyter.org/">Jupyter</a> notebooks. Jupyter lets you combine text, images, and live code within a single web page. So not only can you read about GLAM collections data, you can download it, analyse it, and visualise it – all within your browser!</p>
-<p>If you'd like to dive straight in and see what Jupyter notebooks can do, I've created an introductory notebook that walks you through the basic conventions and lets you play with some data from the National Museum of Australia. <strong>Don't let the code make you nervous!</strong> No programming knowledge is needed to use this notebook, or many of the other notebooks in the GLAM Workbench.</p>
-<p><img alt="Screenshot of intro notebook" src="../images/intro-notebook.gif" /></p>
+                <h2 id="first-steps">First steps<a class="headerlink" href="#first-steps" title="Permanent link">&para;</a></h2>
+<p>Digital technologies can be intimidating. Just finding a way to get started sometimes seems too hard. If that's how you're feeling right now, here's something to try.</p>
+<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/csv-explorer/master?urlpath=%2Fapps%2Fcsv-explorer.ipynb">Click on this link to open the GLAM CSV Explorer</a>.</p>
+<p>You'll be taken to a site called Binder, and you'll have to wait for a bit while Binder sets things up. Just be patient, everything's ok. Once Binder's finished its work you'll see a screen like this.</p>
+<p><img alt="Screenshot of GLAM CSV Explorer" src="../images/glam-csv-explorer.png" /></p>
+<p>Try selecting something in the 'Select a CSV file' dropdown list. These are <a href="https://glam-workbench.github.io/glam-datasets-from-gov-portals/">data files shared by GLAM organisations</a> around Australia. The app will try to load the file and do some analysis of its contents. For each column in the data file, the app will look at the range of values to try and determine whether they're dates, categories, text, or numbers. Based on this assessment it'll build some visualisations of the content. It's a quick way to gain some understanding of what's <em>inside</em> the file, and why it might be interesting.</p>
+<p>It's possible that the app won't be able to download or open the data file. Don't worry, it's not your fault! When you're working with live data, you can sometimes strike problems – the file might have been moved, or formatted in a strange way. Just select a different file.</p>
+<p>Hopefully you'll come across something of interest. You might also be wondering this all works. The GLAM CSV Explorer is actually a Jupyter notebook. Jupyter notebooks are really just convenient ways of sharing bits of code. This code can be run, used, and edited on a variety of different platforms, and presented in a variety of different forms. In this case, the GLAM CSV Explorer notebook is being presented as an app, with all the code hidden from view.</p>
+<p>The GLAM Workbench is basically a big collection of Jupyter notebooks that help you explore data from libraries, archives, museums, and a range of other data sources. Here are some other notebooks that you can run as apps (click on the links to open them using Binder):</p>
 <ul>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/getting-started/master?filepath=Using_Jupyter_notebooks.ipynb">Click here to launch this notebook</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=%2Fapps%2FQueryPic_deconstructed.ipynb">QueryPic Deconstructed</a> – visualise searches in Trove's digitised newspapers</li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=%2Fapps%2Fnewspaper_harvester_app.ipynb">Trove Newspaper Harvester</a> – download newspaper articles in bulk</li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=apps/display-text-changes-from-timemap.ipynb">Display changes in the text of an archived web page over time</a></li>
 </ul>
-<p>When you click on the link above you'll be transferred to <a href="https://mybinder.org/">Binder</a>, a service that loads Jupyter notebooks in the cloud. Binder will set up a customised computing environment that includes all the software you'll need to run the notebook in your browser. It can take 30 seconds or more to load everything, so be patient. Once the notebook has loaded, just follow the instructions!</p>
-<p>For a more detailed introduction to Jupyter notebooks and why they're of use to researchers in the humanities, see <a href="https://programminghistorian.org/en/lessons/jupyter-notebooks">this tutorial by Quinn Dombrowski, Tassie Gniady, and David Kloster</a> in <em>The Programming Historian</em>.</p>
+<p>But that's just the beginning. To make full use of the GLAM Workbench you need to understand a bit about how Jupyter notebooks work. Once you've mastered the basics you can use any notebook on this site.</p>
+<h2 id="introducing-jupyter-notebooks">Introducing Jupyter notebooks<a class="headerlink" href="#introducing-jupyter-notebooks" title="Permanent link">&para;</a></h2>
+<p><a href="https://jupyter.org/">Jupyter</a> notebooks combine text, images, and live code within a single web page. So not only can you read about GLAM collections data, you can download it, analyse it, and visualise it – all within your browser!</p>
+<p>If you'd like to see what Jupyter notebooks can do, I've created an introductory notebook that walks you through the basic conventions and lets you play with some live data from the National Museum of Australia. This notebook is presented in the 'classic' notebook view, with all the code exposed. <strong>Don't let the code make you nervous!</strong> No programming knowledge is needed to use this notebook, or many of the other notebooks in the GLAM Workbench.</p>
+<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/getting-started/master?filepath=Using_Jupyter_notebooks.ipynb">Click here to launch the Getting Started notebook</a>.</p>
+<p>Once again, clicking this link will transfer you to <a href="https://mybinder.org/">Binder</a>, a service that loads Jupyter notebooks in the cloud. Binder will set up a customised computing environment that includes all the software you'll need to run the notebook in your browser. It can take 30 seconds or more to load everything, so be patient. Once the notebook has loaded, just follow the instructions!</p>
+<p>Notebooks are made up up cells, that can contain text or code. You can run the code cells to do things – get some data, or create a visualisation. You can also edit the code cells to enter your own information, or change the results. This slideshow provides a quick primer.</p>
+<iframe src="https://slides.com/wragge/using-jupyter-notebooks/embed?byline=hidden&share=hidden" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<p>There's really only a few things you need to know to use any of the Jupyter notebooks in the GLAM Workbench. Here's all the basics!</p>
 <div class="admonition tip">
 <p class="admonition-title">Jupyter notebook quick tips</p>
 <ul>
+<li>Notebooks include both text cells and code cells.</li>
 <li>Code cells have boxes around them.</li>
 <li>To run a code cell click on the cell and then hit <strong>Shift+Enter</strong>. The <strong>Shift+Enter</strong> combo will also move you to the next cell, so it’s a quick way to work through the notebook.</li>
 <li>While a cell is running a <strong>*</strong> appears in the square brackets next to the cell. Once the cell has finished running the asterix will be replaced with a number.</li>
@@ -1581,7 +1611,11 @@
 <li>To edit a code cell, just click on it and type stuff. Remember to run the cell once you’ve finished editing.</li>
 </ul>
 </div>
-<h2 id="static-or-live-different-ways-of-viewing-and-using-jupyter-notebooks">Static or live – different ways of viewing and using Jupyter notebooks<a class="headerlink" href="#static-or-live-different-ways-of-viewing-and-using-jupyter-notebooks" title="Permanent link">&para;</a></h2>
+<p>For a more detailed introduction to Jupyter notebooks and why they're of use to researchers in the humanities, see <a href="https://programminghistorian.org/en/lessons/jupyter-notebooks">this tutorial by Quinn Dombrowski, Tassie Gniady, and David Kloster</a> in <em>The Programming Historian</em>.</p>
+<h2 id="using-the-glam-workbench">Using the GLAM Workbench<a class="headerlink" href="#using-the-glam-workbench" title="Permanent link">&para;</a></h2>
+<p>Here's how to find your way around the GLAM Workbench and open open up a notebook.</p>
+<iframe src="https://slides.com/wragge/using-the-glam-workbench/embed?byline=hidden&share=hidden" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 <p>Underneath the descriptions of most notebooks included in the GLAM Workbench you'll find a series of links. All the links take you to a copy of the notebook, but what you can do with the notebook varies according to the environment in which it's loaded. A typical set of links might include:</p>
 <ul>
 <li>Download from GitHub</li>
