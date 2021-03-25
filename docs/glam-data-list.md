@@ -18,7 +18,7 @@ repo_url: https://github.com/GLAM-Workbench/glam-data-list
 
 ### Full text
 
-* [Commonwealth Parliamentary Debates (Hansard), 1901-1980](https://github.com/GLAM-Workbench/glam-data-list.git) (harvested from Parliamentary Library)
+* [Commonwealth Parliamentary Debates (Hansard), 1901-1980](https://github.com/wragge/hansard-xml) (harvested from Parliamentary Library)
 * [Hansard interjections](https://github.com/wragge/hansard-interjections)
 * [Australian Government Gazettes (1832-1968)](https://help.nla.gov.au/trove/the-australian-government-gazettes-1832-1968) (Trove)
 * [Federal Election speeches](https://electionspeeches.moadoph.gov.au/explore) (Museum of Australian Democracy)
@@ -55,10 +55,13 @@ repo_url: https://github.com/GLAM-Workbench/glam-data-list
 
 ## Collection APIs
 
-* [Trove](https://help.nla.gov.au/trove/building-with-trove/api)
+* [Trove](https://trove.nla.gov.au/about/create-something/using-api) – explore using the [Trove API Console](https://troveconsole.herokuapp.com/)
+* [Trove People and Organisations](https://trove.nla.gov.au/about/create-something/using-api/people-and-organisations-data)
+* [Australian Web Archive](https://glam-workbench.github.io/web-archives/) (via Memento and CDX API)
 * [National Museum of Australia](https://www.nma.gov.au/about/our-collection/our-apis)
 * [Museums Victoria](https://collections.museumvictoria.com.au/developers)
 * [Museum of Applied Arts and Sciences](https://api.maas.museum/docs)
+* [Public Record Office Victoria MapWarper API](https://mapwarper.prov.vic.gov.au/api/v1/)
 * [State Library of Victoria](http://api.slv.vic.gov.au/)
 * [Australian War Memorial](https://api.awm.gov.au/#introduction)
 * [Federal Election Speeches](https://electionspeeches.moadoph.gov.au/explore) (Museum of Australian Democracy)

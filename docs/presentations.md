@@ -1,11 +1,20 @@
 ---
-title: Presentations and workshops about the GLAM Workbench
+title: Presentations about the GLAM Workbench
 ---
 
 As with everything else in the GLAM Workbench, these presentations are all openly licensed – so re-use or redistribute them however you like.
 
-* [Setting Up A GLAM Workbench In Your Library](https://youtu.be/LXk60YDdaMA), LIBER Webinar presentation, 7 April 2020  
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LXk60YDdaMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+<iframe src="https://player.vimeo.com/video/528145007" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+* [From collections as data to collections as infrastructure: Building the GLAM Workbench](https://vimeo.com/528145007), seminar presented in the Centre for Creative and Cultural Research, University of Canberra, 22 February 2021.
+
+* [Exploring digital collections with the GLAM Workbench](https://doi.org/10.5281/zenodo.4632727), presentation for the Digital Humanities and Digital Collections symposium at the National Library of Estonia, 4 November 2020  
+    [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4632727.svg)](https://doi.org/10.5281/zenodo.4632727)
+
+* [Jupyter notebooks for web archives](https://youtu.be/rVidh_wexoo), presentation for the IIPC research seminar series, 5 & 6 August 2020  
+    [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4293189.svg)](https://doi.org/10.5281/zenodo.4293189)
+
+* [Setting Up A GLAM Workbench In Your Library](https://youtu.be/LXk60YDdaMA), LIBER Webinar presentation, 7 April 2020   
     [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3743193.svg)](https://doi.org/10.5281/zenodo.3743193)
 
 * [A GLAM Lab in every home](https://doi.org/10.5281/zenodo.3593494), presentation for Towards an Australian GLAM Labs network, 11 December 2019.

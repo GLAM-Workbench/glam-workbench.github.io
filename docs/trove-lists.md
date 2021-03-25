@@ -6,25 +6,25 @@ repo_name: trove-lists
 
 Trove lists are user created collections of items. The details of public lists are available through the Trove API.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/trove-lists/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/trove-lists/master?urlpath=lab)
 
 ## Tips, tools, and examples
 
-### [Harvest summary data from Trove lists](https://github.com/GLAM-Workbench/trove-lists/blob/master/Harvest-summary-data-from-lists.ipynb)  
+### Convert a Trove list into a CSV file  
+This notebook converts Trove lists into CSV files (spreadsheets). Separate CSV files are created for newspaper articles and works from Trove's other zones. You can also save the OCRd text, a PDF, and an image of each newspaper article.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-lists/blob/master/Convert-a-Trove-list-into-a-CSV-file.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-lists/blob/master/Convert-a-Trove-list-into-a-CSV-file.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-lists/master?urlpath=lab/tree/Convert-a-Trove-list-into-a-CSV-file.ipynb)
+
+### Harvest summary data from Trove lists
 Use the Trove API to harvest data about all public lists, then extract some summary data and explore a few different techniques to analyse the complete dataset.
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/trove-lists/blob/master/Harvest-summary-data-from-lists.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-lists/blob/master/Harvest-summary-data-from-lists.ipynb)
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-lists/master?filepath=Harvest-summary-data-from-lists.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-lists/master?urlpath=lab/tree/Harvest-summary-data-from-lists.ipynb)
 
 ![Screen shot of word cloud](images/trove-lists.png)
-
-### [Convert a Trove list into a CSV file](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-lists/blob/master/Convert-a-Trove-list-into-a-CSV-file.ipynb)  
-Use the Trove API to save the contents of a public list to a CSV file.
-
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-lists/blob/master/Convert-a-Trove-list-into-a-CSV-file.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-lists/blob/master/Convert-a-Trove-list-into-a-CSV-file.ipynb)
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-lists/master?filepath=Convert-a-Trove-list-into-a-CSV-file.ipynb)
 
 ## Data
 

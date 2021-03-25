@@ -4,7 +4,7 @@ repo_url: https://github.com/glam-workbench/pm-transcripts
 title: PMs Transcripts
 ---
 
-The Department of Prime Minister and Cabinet provides transcripts of more than [20,000 speeches, media releases, and interviews](https://pmtranscripts.dpmc.gov.au/about-collection) by Australian Prime Ministers. These transcripts can be [searched online](https://pmtranscripts.dpmc.gov.au/), and the underlying XML files [can be downloaded](https://pmtranscripts.dpmc.gov.au/developers) using a simple API. This repository includes Jupyter notebooks for harvesting, indexing, analysing, and aggregating the transcripts.
+The Department of Prime Minister and Cabinet provides transcripts of more than [20,000 speeches, media releases, and interviews](https://pmtranscripts.pmc.gov.au/about-collection) by Australian Prime Ministers. These transcripts can be [searched online](https://pmtranscripts.pmc.gov.au/), and the underlying XML files [can be downloaded](https://pmtranscripts.pmc.gov.au/developers) using a simple API. This repository includes Jupyter notebooks for harvesting, indexing, analysing, and aggregating the transcripts.
 
 [![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/australian-commonwealth-hansard/master)
 

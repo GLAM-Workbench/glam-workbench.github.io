@@ -17,6 +17,6 @@ The State Library of South Australia makes a fabulous collection of out of copyr
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/state-library-south-australia/blob/master/Getting-higher-res-images.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/state-library-south-australia/blob/master/Getting-higher-res-images.ipynb)
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/state-library-south-australia/blob/master/Getting-higher-res-images.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/state-library-south-australia/master?filepath=Getting-higher-res-images.ipynb)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3549569.svg)](https://doi.org/10.5281/zenodo.3549569)

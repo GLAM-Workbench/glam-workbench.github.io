@@ -6,7 +6,9 @@ site_url: 'https://glam-workbench.github.io'
 
 # Repository
 #repo_name: 'squidfunk/mkdocs-material'
-repo_url: 'https://github.com/glam-workbench/glam-workbench.github.io'
+repo_name: GLAM-Workbench
+repo_url: 'https://github.com/GLAM-Workbench/'
+edit_uri: "docs/edit/master/docs/"
 
 # Copyright
 copyright: 'Copyright &copy; 2019 <a href="https://timsherratt.org">Tim Sherratt</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.'
@@ -22,33 +24,37 @@ theme:
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
+  icon:
+    logo: material/hammer-wrench
+    repo: octicons/octoface-16
 
 # Customization
 extra:
   manifest: 'manifest.webmanifest'
   social:
-    - type: 'github'
+    - icon: 'fontawesome/brands/github'
       link: 'https://github.com/glam-workbench'
-    - type: 'twitter'
+      name: 'GLAM Workbench on GitHub'
+    - name: '@wragge on Twitter'
+      icon: 'fontawesome/brands/twitter'
       link: 'https://twitter.com/wragge'
-    - type: 'facebook'
+    - icon: 'fontawesome/brands/facebook'
       link: 'https://www.facebook.com/101dhhacks/'
-    - type: 'patreon'
+      name: '101 DH Hacks on Facebook'
+    - icon: 'fontawesome/brands/patreon'
       link: 'https://www.patreon.com/timsherratt'
+      name: Tim Sherratt on Patreon
 
 extra_css:
   - 'stylesheets/extra.css'
 
-extra_javascript:
-    - 'scripts/juniper.min.js'
-    - 'scripts/script.js'
-
 # Extensions
 markdown_extensions:
   - admonition
-  - codehilite:
-      guess_lang: false
-      linenums: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.keys
   - toc:
       permalink: true
   - meta
@@ -56,6 +62,7 @@ markdown_extensions:
 plugins:
     - search
     - redirects
+    - git-latest-tag
 
 redirects:
     'trove_newspapers/index': 'trove-newspapers/index'
@@ -65,10 +72,10 @@ nav:
     - About:
         - about.md
         - presentations.md
+        - awards.md
     - Help:
         - getting-started.md
-        - Workshops/Tutorials:
-            - umdigitalstudio2019.md
+        - more-glam-notebooks.md
     - Data sources:
         - Australia:
             - glam-data-list.md
@@ -76,7 +83,6 @@ nav:
                 - glam-data-portals.md
                 - glam-datasets-from-gov-portals.md
             - csv-explorer.md
-    - glam-labs.md
     - Trove:
         - trove.md
         - trove-newspapers.md
@@ -85,12 +91,14 @@ nav:
         - trove-journals.md
         - trove-lists.md
         - trove-maps.md
+        - trove-music.md
         - trove-images.md
         - trove-unpublished.md
         - trove-random.md
     - digitalnz.md
     - Archives:
-        - National Archives of Australia:
+        - anu-archives.md
+        - NAA:
             - recordsearch.md
             - naa-wap.md
             - naa-asio.md
@@ -111,8 +119,10 @@ nav:
     - Museums:
         - nma.md
         - tepapa.md
+        - museumsvictoria.md
     - Government:
         - Australia:
             - hansard.md
             - pm-transcripts.md
     - suggest-a-topic.md
+    - ask-a-question.md

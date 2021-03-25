@@ -6,9 +6,6 @@ repo_name: web-archives
 
 # Web Archives
 
-!!! warning "Work in progress"
-    The notebooks in this repository are still being developed and tested. You're very welcome to give them a spin, but some things might not be quite finished. Let me know if you strike any problems!
-
 We tend to think of a web archive as a site we go to when links are broken – a useful fallback, rather than a source of new research data. But web archives don't just store old web pages, they capture multiple versions of web resources over time. Using web archives we can observe change – we can ask historical questions. This collection of notebooks is intended to help historians, and other researchers, frame those questions by revealing what sort of data is available, how to get it, and what you can do with it.
 
 Web Archives share systems and standards, making it much easier for researchers wanting to get their hands on useful data. These notebooks focus on four particular web archives: the [UK Web Archive](https://www.webarchive.org.uk/), the [Australian Web Archive](https://trove.nla.gov.au/website) (National Library of Australia ), the [New Zealand Web Archive](https://natlib.govt.nz/collections/a-z/new-zealand-web-archive) (National Library of New Zealand), and the [Internet Archive](https://archive.org/web/). However, the tools and approaches here could be easily extended to other web archives.
@@ -214,3 +211,10 @@ If you select 'All occurrences' the notebook will generate a simple chart showin
 * [Download from GitHub](https://github.com/GLAM-Workbench/web-archives/blob/master/find-text-in-page-from-timemap.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/web-archives/blob/master/find-text-in-page-from-timemap.ipynb)
 * [Run live in Appmode on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=apps/find-text-in-page-from-timemap.ipynb)
+
+
+## Cite as
+
+Sherratt, Tim, & Jackson, Andrew. (2020, June 15). GLAM-Workbench/web-archives (Version 0.1.1). Zenodo. <http://doi.org/10.5281/zenodo.3894079>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3894079.svg)](https://doi.org/10.5281/zenodo.3894079)

@@ -17,6 +17,22 @@ This notebook harvests metadata and OCRd text from digitised works in Trove's bo
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-books/blob/master/Harvesting-digitised-books.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-books/master?urlpath=lab%2Ftree%2FHarvesting-digitised-books.ipynb)
 
+### Counting words and phrases
+This notebook provides a simple example of extracting word and ngram frequencies from the OCRd text of a digitised book using TextBlob and Wordcloud. The text is downloaded from the Cloudstor repository created by the full harvest of Trove digitised books.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-books/blob/master/counting-words-in-text.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-books/blob/master/counting-words-in-text.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-books/master?urlpath=lab%2Ftree%2Fcounting-words-in-text.ipynb)
+
+### Recipe generator
+In this notebook we use TextBlob to extract nouns, verbs, and sentences from the OCRd text of a 19th century cookery book. We try to clean things up a bit, using regular expressions to discard likely OCR errors. Then we recombine the various parts in random combinations to create delicious recipes for all occasions. Enjoy!
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-books/blob/master/recipe-generator.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-books/blob/master/recipe-generator.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-books/master?urlpath=lab%2Ftree%2Frecipe-generator.ipynb)
+
+![Screenshot of recipe generator results](images/recipe-generator.png)
+
 ### Metadata for Trove digitised works
 In poking around to try and find a way of automating the download of OCR text from Trove's digitised books, I discovered that there's lots of useful metadata embedded in the page of a digitised work. Most of this metadata isn't available through the Trove API.
 
@@ -40,20 +56,21 @@ This notebook explores the [9,738 text files](https://glam-workbench.github.io/t
 
 ## Data and text
 
-### OCRd text from Trove books, ephemera, and parliamentary papers
-Harvested: 11 March 2020
+### OCRd text from Trove books and ephemera
+Harvested: 20 July 2020
 
-I've harvested 19,795 text files from digitised books, ephemera, and parliamentary papers using the notebook above. You can browse the collection in CloudStor:
+I've harvested 24,620 files of OCRd text from digitised books and ephemera using the notebook above. You can [browse the full collection in CloudStor](https://cloudstor.aarnet.edu.au/plus/s/ugiw3gdijSKaoTL). There's about 3.3gb in total. You can also download them all as a [1.1 gb zip file](https://cloudstor.aarnet.edu.au/plus/s/k7Mv5FRR7rR3c61).
 
-* [13,122 text files](https://cloudstor.aarnet.edu.au/plus/s/ugiw3gdijSKaoTL) downloaded from books (and ephemera) ([565mb zip file](https://cloudstor.aarnet.edu.au/plus/s/0eYAJMSgf0YVLPU))
-* [6,673 text files](https://cloudstor.aarnet.edu.au/plus/s/9E6sUQGO6mbFIcM) downloaded from parliamentary papers ([471mb zip file](https://cloudstor.aarnet.edu.au/plus/s/Gg6orB4UkWg6Rij))
+Previous harvests:
 
-The previous harvest (April 2019) is also available for download ([400mb zip file](https://cloudstor.aarnet.edu.au/plus/s/XdAqbGoPpefhmj2)).
+* April 2019 - everything ([400mb zip file](https://cloudstor.aarnet.edu.au/plus/s/XdAqbGoPpefhmj2))
+* 11 March 2020 – books (and ephemera) ([565mb zip file](https://cloudstor.aarnet.edu.au/plus/s/0eYAJMSgf0YVLPU))
+* 11 March 2020 – parliamentary papers ([471mb zip file](https://cloudstor.aarnet.edu.au/plus/s/Gg6orB4UkWg6Rij))
 
 ### CSV formatted list of books with OCRd text
-Harvested: 11 March 2020
+Harvested: 20 July 2020
 
-This file provides metadata of 22,758 works in the Trove book zone that have OCRd text for download. You can [download the CSV file](https://github.com/GLAM-Workbench/trove-books/blob/master/trove_digitised_books_with_ocr.csv), or [browse the metadata using Google Sheets](https://docs.google.com/spreadsheets/d/1oAF5NcvDcZGlQ7u6Qw2g5ylLVPE4xwoktjo3YGDS-vo/edit?usp=sharing).
+This file provides metadata of 27,367 works in the Trove book zone that have OCRd text for download. You can [download the CSV file](https://github.com/GLAM-Workbench/trove-books/blob/master/trove_digitised_books_with_ocr.csv).
 
 This file includes the following columns:
 
