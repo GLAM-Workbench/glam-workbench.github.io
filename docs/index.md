@@ -1,5 +1,5 @@
 ---
-title: Welcome to the GLAM Workbench
+title: Welcome
 ---
 
 # Welcome to the GLAM Workbench
