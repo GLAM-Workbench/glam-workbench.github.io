@@ -30,6 +30,13 @@ The National Archives of Australia's RecordSearch database includes some informa
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/recordsearch/blob/master/harvest_closed_files.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/master?filepath=harvest_closed_files.ipynb)
 
+### Harvest recently digitised files from RecordSearch  
+This notebook scrapes data from the 'Newly scanned records' section of RecordSearch, creating a list of recently digitised files. See below for datasets created with this notebook.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/recordsearch/blob/master/harvest_recently_digitised_files.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/recordsearch/blob/master/harvest_recently_digitised_files.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/master?filepath=harvest_recently_digitised_files.ipynb)
+
 ### Harvesting functions from the RecordSearch interface  
 This notebook attempts to extract information from the RecordSearch interface about the hierarchy of functions it uses to describe the work of government agencies. [Previous explorations](https://timsherratt.org/research-notebook/aggregated-archives/notes/naa-functions/) have shown that the NAA's use of functions is rather inconsistent. All I'm doing here is finding out what functions RecordSearch itself says it is using. This may not be complete, but it seems like a useful starting point.
 
@@ -82,6 +89,26 @@ If you ever need to find a file in the National Archives of Australia that conta
 * [Run live on Binder in Appmode](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/master?urlpath=apps%2FFind_cables.ipynb)
 
 ![Screen capture demonstrating use of app](images/cable-finder.gif)
+
+## Data
+
+### Recently digitised files  
+Harvested on 27 March 2020.
+
+[CSV file](https://github.com/GLAM-Workbench/recordsearch/blob/master/data/recently-digitised-20210327) containing details of files digitised between 25 February and 26 March 2020, harvested using the notebook above.
+
+### Recently digitised files – repository of weekly snapshots
+
+[This repository](https://github.com/wragge/naa-recently-digitised) contains weekly harvests of newly digitised files in RecordSearch. The automated scraper is currently scheduled to run each Sunday, saving a list of files that have been digitised in the previous week. The weekly datasets are saved as CSV files in the `data` directory. The date of the harvest is recorded in the file name, so `digitised-week-ending-20210328.csv` was harvested on 28 March 2021.
+
+The CSV files contain the following fields:
+
+* `title`
+* `item_id`
+* `series`
+* `control_symbol`
+* `date_range`
+* `date_digitised`
 
 ## Cite as
 
