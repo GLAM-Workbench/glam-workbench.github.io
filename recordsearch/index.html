@@ -917,6 +917,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#harvest-recently-digitised-files-from-recordsearch" class="md-nav__link">
+    Harvest recently digitised files from RecordSearch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#harvesting-functions-from-the-recordsearch-interface" class="md-nav__link">
     Harvesting functions from the RecordSearch interface
   </a>
@@ -961,6 +968,33 @@
           <li class="md-nav__item">
   <a href="#dfat-cable-finder" class="md-nav__link">
     DFAT Cable Finder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recently-digitised-files" class="md-nav__link">
+    Recently digitised files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recently-digitised-files-repository-of-weekly-snapshots" class="md-nav__link">
+    Recently digitised files – repository of weekly snapshots
   </a>
   
 </li>
@@ -1503,6 +1537,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#harvest-recently-digitised-files-from-recordsearch" class="md-nav__link">
+    Harvest recently digitised files from RecordSearch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#harvesting-functions-from-the-recordsearch-interface" class="md-nav__link">
     Harvesting functions from the RecordSearch interface
   </a>
@@ -1557,6 +1598,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recently-digitised-files" class="md-nav__link">
+    Recently digitised files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recently-digitised-files-repository-of-weekly-snapshots" class="md-nav__link">
+    Recently digitised files – repository of weekly snapshots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cite-as" class="md-nav__link">
     Cite as
   </a>
@@ -1599,6 +1667,13 @@
 <li><a href="https://github.com/GLAM-Workbench/recordsearch/blob/master/harvest_closed_files.ipynb">Download from GitHub</a></li>
 <li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/recordsearch/blob/master/harvest_closed_files.ipynb">View using NBViewer</a></li>
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/master?filepath=harvest_closed_files.ipynb">Run live on Binder</a></li>
+</ul>
+<h3 id="harvest-recently-digitised-files-from-recordsearch">Harvest recently digitised files from RecordSearch<a class="headerlink" href="#harvest-recently-digitised-files-from-recordsearch" title="Permanent link">&para;</a></h3>
+<p>This notebook scrapes data from the 'Newly scanned records' section of RecordSearch, creating a list of recently digitised files. See below for datasets created with this notebook.</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/recordsearch/blob/master/harvest_recently_digitised_files.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/recordsearch/blob/master/harvest_recently_digitised_files.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/master?filepath=harvest_recently_digitised_files.ipynb">Run live on Binder</a></li>
 </ul>
 <h3 id="harvesting-functions-from-the-recordsearch-interface">Harvesting functions from the RecordSearch interface<a class="headerlink" href="#harvesting-functions-from-the-recordsearch-interface" title="Permanent link">&para;</a></h3>
 <p>This notebook attempts to extract information from the RecordSearch interface about the hierarchy of functions it uses to describe the work of government agencies. <a href="https://timsherratt.org/research-notebook/aggregated-archives/notes/naa-functions/">Previous explorations</a> have shown that the NAA's use of functions is rather inconsistent. All I'm doing here is finding out what functions RecordSearch itself says it is using. This may not be complete, but it seems like a useful starting point.</p>
@@ -1651,6 +1726,21 @@
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/master?urlpath=apps%2FFind_cables.ipynb">Run live on Binder in Appmode</a></li>
 </ul>
 <p><img alt="Screen capture demonstrating use of app" src="../images/cable-finder.gif" /></p>
+<h2 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h2>
+<h3 id="recently-digitised-files">Recently digitised files<a class="headerlink" href="#recently-digitised-files" title="Permanent link">&para;</a></h3>
+<p>Harvested on 27 March 2020.</p>
+<p><a href="https://github.com/GLAM-Workbench/recordsearch/blob/master/data/recently-digitised-20210327">CSV file</a> containing details of files digitised between 25 February and 26 March 2020, harvested using the notebook above.</p>
+<h3 id="recently-digitised-files-repository-of-weekly-snapshots">Recently digitised files – repository of weekly snapshots<a class="headerlink" href="#recently-digitised-files-repository-of-weekly-snapshots" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/wragge/naa-recently-digitised">This repository</a> contains weekly harvests of newly digitised files in RecordSearch. The automated scraper is currently scheduled to run each Sunday, saving a list of files that have been digitised in the previous week. The weekly datasets are saved as CSV files in the <code>data</code> directory. The date of the harvest is recorded in the file name, so <code>digitised-week-ending-20210328.csv</code> was harvested on 28 March 2021.</p>
+<p>The CSV files contain the following fields:</p>
+<ul>
+<li><code>title</code></li>
+<li><code>item_id</code></li>
+<li><code>series</code></li>
+<li><code>control_symbol</code></li>
+<li><code>date_range</code></li>
+<li><code>date_digitised</code></li>
+</ul>
 <h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
 <p>Sherratt, Tim. (2019, November 17). GLAM-Workbench/recordsearch (Version v0.1.0). Zenodo. <a href="http://doi.org/10.5281/zenodo.3544754">http://doi.org/10.5281/zenodo.3544754</a></p>
 <p><a href="https://doi.org/10.5281/zenodo.3544754"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3544754.svg" /></a></p>
