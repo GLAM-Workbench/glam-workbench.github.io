@@ -528,23 +528,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-notebooks-on-your-own-computer" class="md-nav__link">
-    Running notebooks on your own computer
+  <a href="#more-ways-to-run-notebooks" class="md-nav__link">
+    More ways to run notebooks
   </a>
   
-    <nav class="md-nav" aria-label="Running notebooks on your own computer">
+    <nav class="md-nav" aria-label="More ways to run notebooks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-python-3" class="md-nav__link">
-    Using Python 3
+  <a href="#using-reclaim-cloud" class="md-nav__link">
+    Using Reclaim Cloud
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-anaconda" class="md-nav__link">
-    Using Anaconda
+  <a href="#using-docker" class="md-nav__link">
+    Using Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-swan" class="md-nav__link">
+    Using SWAN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-python-on-your-own-computer" class="md-nav__link">
+    Using Python on your own computer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-anaconda-on-your-own-computer" class="md-nav__link">
+    Using Anaconda on your own computer
   </a>
   
 </li>
@@ -558,6 +579,19 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../running-notebooks/" class="md-nav__link">
+      Running Jupyter_notebooks
+    </a>
   </li>
 
         
@@ -1527,23 +1561,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-notebooks-on-your-own-computer" class="md-nav__link">
-    Running notebooks on your own computer
+  <a href="#more-ways-to-run-notebooks" class="md-nav__link">
+    More ways to run notebooks
   </a>
   
-    <nav class="md-nav" aria-label="Running notebooks on your own computer">
+    <nav class="md-nav" aria-label="More ways to run notebooks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-python-3" class="md-nav__link">
-    Using Python 3
+  <a href="#using-reclaim-cloud" class="md-nav__link">
+    Using Reclaim Cloud
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-anaconda" class="md-nav__link">
-    Using Anaconda
+  <a href="#using-docker" class="md-nav__link">
+    Using Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-swan" class="md-nav__link">
+    Using SWAN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-python-on-your-own-computer" class="md-nav__link">
+    Using Python on your own computer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-anaconda-on-your-own-computer" class="md-nav__link">
+    Using Anaconda on your own computer
   </a>
   
 </li>
@@ -1579,7 +1634,7 @@
 <p><img alt="Screenshot of GLAM CSV Explorer" src="../images/glam-csv-explorer.png" /></p>
 <p>Try selecting something in the 'Select a CSV file' dropdown list. These are <a href="https://glam-workbench.github.io/glam-datasets-from-gov-portals/">data files shared by GLAM organisations</a> around Australia. The app will try to load the file and do some analysis of its contents. For each column in the data file, the app will look at the range of values to try and determine whether they're dates, categories, text, or numbers. Based on this assessment it'll build some visualisations of the content. It's a quick way to gain some understanding of what's <em>inside</em> the file, and why it might be interesting.</p>
 <p>It's possible that the app won't be able to download or open the data file. Don't worry, it's not your fault! When you're working with live data, you can sometimes strike problems – the file might have been moved, or formatted in a strange way. Just select a different file.</p>
-<p>Hopefully you'll come across something of interest. You might also be wondering this all works. The GLAM CSV Explorer is actually a Jupyter notebook. Jupyter notebooks are really just convenient ways of sharing bits of code. This code can be run, used, and edited on a variety of different platforms, and presented in a variety of different forms. In this case, the GLAM CSV Explorer notebook is being presented as an app, with all the code hidden from view.</p>
+<p>Hopefully you'll come across something of interest. You might also be wondering how this all works. The GLAM CSV Explorer is actually a Jupyter notebook. Jupyter notebooks are really just convenient ways of sharing bits of code. This code can be run, used, and edited on a variety of different platforms, and presented in a variety of different forms. In this case, the GLAM CSV Explorer notebook is being presented as an app, with all the code hidden from view.</p>
 <p>The GLAM Workbench is basically a big collection of Jupyter notebooks that help you explore data from libraries, archives, museums, and a range of other data sources. Here are some other notebooks that you can run as apps (click on the links to open them using Binder):</p>
 <ul>
 <li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=%2Fapps%2FQueryPic_deconstructed.ipynb">QueryPic Deconstructed</a> – visualise searches in Trove's digitised newspapers</li>
@@ -1593,7 +1648,7 @@
 <p>If you'd like to see what Jupyter notebooks can do, I've created an introductory notebook that walks you through the basic conventions and lets you play with some live data from the National Museum of Australia. This notebook is presented in the 'classic' notebook view, with all the code exposed. <strong>Don't let the code make you nervous!</strong> No programming knowledge is needed to use this notebook, or many of the other notebooks in the GLAM Workbench.</p>
 <p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/getting-started/master?filepath=Using_Jupyter_notebooks.ipynb">Click here to launch the Getting Started notebook</a>.</p>
 <p>Once again, clicking this link will transfer you to <a href="https://mybinder.org/">Binder</a>, a service that loads Jupyter notebooks in the cloud. Binder will set up a customised computing environment that includes all the software you'll need to run the notebook in your browser. It can take 30 seconds or more to load everything, so be patient. Once the notebook has loaded, just follow the instructions!</p>
-<p>Notebooks are made up up cells, that can contain text or code. You can run the code cells to do things – get some data, or create a visualisation. You can also edit the code cells to enter your own information, or change the results. This slideshow provides a quick primer.</p>
+<p>Notebooks are made up up cells that can contain text or code. You can run the code cells to do things – get some data, or create a visualisation. You can also edit the code cells to enter your own information, or change the results. This slideshow provides a quick primer.</p>
 <iframe src="https://slides.com/wragge/using-jupyter-notebooks/embed?byline=hidden&share=hidden" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 <p>There's really only a few things you need to know to use any of the Jupyter notebooks in the GLAM Workbench. Here's all the basics!</p>
@@ -1610,28 +1665,44 @@
 </div>
 <p>For a more detailed introduction to Jupyter notebooks and why they're of use to researchers in the humanities, see <a href="https://programminghistorian.org/en/lessons/jupyter-notebooks">this tutorial by Quinn Dombrowski, Tassie Gniady, and David Kloster</a> in <em>The Programming Historian</em>.</p>
 <h2 id="using-the-glam-workbench">Using the GLAM Workbench<a class="headerlink" href="#using-the-glam-workbench" title="Permanent link">&para;</a></h2>
-<p>Here's how to find your way around the GLAM Workbench and open open up a notebook.</p>
+<p>The GLAM Workbench is organised around collections, rather than tools or methods. The aim is to get you working with real data related to your research as soon as possible. This is reflected in the site navigation, which is divided up into sectors and institutions, with a few extra headings for aggregated collections like Trove and DigitalNZ. Just look for something that interests you and dive in.</p>
+<p>Here's a quick guide to help you find your way around.</p>
 <iframe src="https://slides.com/wragge/using-the-glam-workbench/embed?byline=hidden&share=hidden" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-<p>Underneath the descriptions of most notebooks included in the GLAM Workbench you'll find a series of links. All the links take you to a copy of the notebook, but what you can do with the notebook varies according to the environment in which it's loaded. A typical set of links might include:</p>
+<p>Each section within the GLAM Workbench includes a list of Jupyter notebooks that work with data from that collection. There may also be links to some pre-harvested datasets. The notebooks take a variety of different approaches and forms. Some help you create your own datasets for further analysis. Some are focused on ways of visualising collections. Some are quick hacks to help you workaround the limitations of collection interfaces. And some are detailed tutorials that walk you though the possibilities of the available data. As noted above, some notebooks run as standalone apps, while others expose all their workings.</p>
+<p>There's no one pathway through the GLAM Workbench. You can pick and choose based on your interests, needs, and skills.</p>
+<p>Underneath the descriptions of most notebooks you'll find a series of links. All the links take you to a copy of the notebook, but what you can do with the notebook varies according to the environment in which it's loaded. A typical set of links might include:</p>
 <ul>
-<li>Download from GitHub</li>
-<li>View on NBViewer</li>
-<li>Run live on Binder</li>
+<li><strong>Download from GitHub</strong></li>
+<li><strong>View on NBViewer</strong></li>
+<li><strong>Run live on Binder</strong></li>
 </ul>
-<p>The links to GitHub and NBViewer take you to <em>static</em> versions that you can read and download, but you can't run any of the code. The link to Binder loads a <em>live</em> version in a customised computing environment. More details of each of these are included below.</p>
-<p><img alt="Screenshot of Trove newspapers section of GLAM Workbench" src="../images/trove-newspapers-over-time.png" /></p>
-<p>Let's say you're exploring the <a href="https://glam-workbench.github.io/trove-newspapers/">Trove newspapers</a> section of the GLAM Workbench and notice the <a href="https://glam-workbench.github.io/trove-newspapers/#visualise-trove-newspaper-searches-over-time">visualise Trove newspaper searches over time</a> notebook. You might first click on the <a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/visualise-searches-over-time.ipynb">NBViewer link</a> to browse the contents of the notebook. If you decide it looks interesting and want to try running some of the examples live you could click on the <a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?filepath=visualise-searches-over-time.ipynb">Binder link</a>. After a while you might decide you want to create your own customised version of this notebook. You could then use the <a href="https://github.com/GLAM-Workbench/trove-newspapers/blob/master/visualise-searches-over-time.ipynb">GitHub link</a> to download the source code.</p>
+<p>The links to GitHub and NBViewer take you to <em>static</em> versions of the notebook that you can read and download, but you can't run any of the code. The link to Binder loads a <em>live</em> version in a customised computing environment. More details of each of these are included below.</p>
 <h3 id="download-from-github">Download from GitHub<a class="headerlink" href="#download-from-github" title="Permanent link">&para;</a></h3>
 <p>Each section of the GLAM Workbench has its own <a href="https://github.com">GitHub</a> repository where the notebooks and any related data files are stored. If you have Jupyter set up on your own computer and you want to play around with one of the notebooks, then you probably want to download it from GitHub and run it locally. GitHub also shows you the history of a notebook – so you can check if anything has changed. When you open a Jupyter notebook in GitHub, it tries to display a nicely formatted <em>static</em> version. But it doesn't always work, and the formatting can be a bit off. If all you want to do is view the contents of a notebook, then you're probably better off using NBViewer.</p>
 <h3 id="view-on-nbviewer">View on NBViewer<a class="headerlink" href="#view-on-nbviewer" title="Permanent link">&para;</a></h3>
 <p><a href="https://nbviewer.jupyter.org/">NBViewer</a> displays a nicely formatted copy of a Jupyter notebook. It's the quickest and most reliable way of examining the content of a notebook. However, this is a <em>static</em> view. The interactive Jupyter notebook has been turned into an HTML file. You can't run code cells or edit the contents of the notebook. You can look, but you can't do. If you want to try running the code in a Jupyter notebook (and that's what they're for), then you might want to give Binder a try.</p>
 <h3 id="run-live-on-binder">Run live on Binder<a class="headerlink" href="#run-live-on-binder" title="Permanent link">&para;</a></h3>
-<p><a href="https://mybinder.org/">Binder</a> is a cloud-based service for running Jupyter notebooks. When you click on the link, Binder opens the notebook within a customised computing environment with all the software you'll need ready to go. This can take a little while — just be patient. Once Binder is ready, you'll be able to use the notebook live within your web browser. However, if you make any changes or harvest any data, Binder won't save them for you. You'll have to make sure you download any files you want to keep. In many cases the notebooks themselves will generate download links to make it easy for you to save your results. Binder sessions will also stop responding after after a period of inactivity — just start a new session.</p>
+<p><a href="https://mybinder.org/">Binder</a>, as mentioned above, is a cloud-based service for running Jupyter notebooks. When you click on the link, Binder opens the notebook within a customised computing environment with all the software you'll need ready to go. This can take a little while — just be patient. Once Binder is ready, you'll be able to use the notebook live within your web browser. However, if you make any changes or harvest any data, Binder won't save them for you. You'll have to make sure you download any files you want to keep. In many cases the notebooks themselves will generate download links to make it easy for you to save your results. Binder sessions will also stop responding after after a period of inactivity — just start a new session.</p>
 <h3 id="running-notebooks-as-apps">Running notebooks as apps<a class="headerlink" href="#running-notebooks-as-apps" title="Permanent link">&para;</a></h3>
 <p>You might also come across links that open notebooks using <a href="https://github.com/oschuett/appmode">Appmode</a> or <a href="https://voila.readthedocs.io/en/stable/">Voilà</a>. These are live versions that hide the notebook's code and run all the cells automatically. This means you can make a notebook available with a nice clean interface for those who might be a little intimidated by a page full of code.</p>
-<h2 id="running-notebooks-on-your-own-computer">Running notebooks on your own computer<a class="headerlink" href="#running-notebooks-on-your-own-computer" title="Permanent link">&para;</a></h2>
-<h3 id="using-python-3">Using Python 3<a class="headerlink" href="#using-python-3" title="Permanent link">&para;</a></h3>
+<p>These different links provide another set of pathways for you to follow based on your needs and skills. Let's say you're exploring the <a href="https://glam-workbench.github.io/trove-newspapers/">Trove newspapers</a> section of the GLAM Workbench and notice the <a href="https://glam-workbench.github.io/trove-newspapers/#visualise-trove-newspaper-searches-over-time">visualise Trove newspaper searches over time</a> notebook.</p>
+<p><img alt="Screenshot of Trove newspapers section of GLAM Workbench" src="../images/trove-newspapers-over-time.png" /></p>
+<p>You might first click on the <a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/visualise-searches-over-time.ipynb">NBViewer link</a> to browse the contents of the notebook. If you decide it looks interesting and want to try running some of the examples live you could click on the <a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?filepath=visualise-searches-over-time.ipynb">Binder link</a>. After a while you might decide you want to create your own customised version of this notebook. You could then use the <a href="https://github.com/GLAM-Workbench/trove-newspapers/blob/master/visualise-searches-over-time.ipynb">GitHub link</a> to download the source code.</p>
+<h2 id="more-ways-to-run-notebooks">More ways to run notebooks<a class="headerlink" href="#more-ways-to-run-notebooks" title="Permanent link">&para;</a></h2>
+<p>The links to Binder help you get up and running quickly. One click and you're working live with a Jupyter notebook. I often use the Binder links to run notebooks, even though I have all the code on my own machine – it's just so easy. But Binder has limits. If you're doing sustained work using one of the repositories in the GLAM Workbench, you might want to create a persistent environment that saves what you do, as you do it. There are a number of ways of setting that up. They're listed here from easiest to most complicated (ie requiring more technical knowledge).</p>
+<h3 id="using-reclaim-cloud">Using Reclaim Cloud<a class="headerlink" href="#using-reclaim-cloud" title="Permanent link">&para;</a></h3>
+<p>Reclaim Cloud is a paid hosting service, aimed particularly at supporting digital scholarship in hte humanities. Unlike Binder, the environments you create on Reclaim Cloud will save your data – even if you switch them off! To run this repository on Reclaim Cloud for the first time:</p>
+<ul>
+<li>Create a Reclaim Cloud account and log in.</li>
+<li>Click on the button above to start the installation process.</li>
+<li>A dialogue box will ask you to set a password, this is used to limit access to your Jupyter installation.</li>
+<li>Sit back and wait for the installation to complete!</li>
+<li>Once the installation is finished click on the 'Open in Browser' button of your newly created environment (note that you might need to wait a few minutes before everything is ready).</li>
+</ul>
+<h3 id="using-docker">Using Docker<a class="headerlink" href="#using-docker" title="Permanent link">&para;</a></h3>
+<h3 id="using-swan">Using SWAN<a class="headerlink" href="#using-swan" title="Permanent link">&para;</a></h3>
+<h3 id="using-python-on-your-own-computer">Using Python on your own computer<a class="headerlink" href="#using-python-on-your-own-computer" title="Permanent link">&para;</a></h3>
 <p>It's best to keep your GLAM Workbench repositories in separate virtual environments. This means you can install the software versions that you need without upsetting anything else. For example, if you wanted to set up your own version of the <a href="https://glam-workbench.github.io/trove-newspapers/">Trove newspapers</a> repository, you'd start by creating a new virtual environment.</p>
 <div class="highlight"><pre><span></span><code>python3 -m venv trove-newspapers
 <span class="nb">cd</span> trove-newspapers
@@ -1653,7 +1724,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> trove-newspapers
 pip install -r requirements.txt
 </code></pre></div>
-<h3 id="using-anaconda">Using Anaconda<a class="headerlink" href="#using-anaconda" title="Permanent link">&para;</a></h3>
+<h3 id="using-anaconda-on-your-own-computer">Using Anaconda on your own computer<a class="headerlink" href="#using-anaconda-on-your-own-computer" title="Permanent link">&para;</a></h3>
 <p>~~~ Coming soon ~~~</p>
                 
                   
@@ -1725,8 +1796,8 @@ pip install -r requirements.txt
 
         <!-- Link to next page -->
         
-          <a href="../more-glam-notebooks/"
-              title="More GLAM notebooks"
+          <a href="../running-notebooks/"
+              title="Running Jupyter_notebooks"
               class="md-flex md-footer-nav__link md-footer-nav__link--next"
               rel="next">
             <div class="md-flex__cell md-flex__cell--stretch
@@ -1735,7 +1806,7 @@ pip install -r requirements.txt
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                More GLAM notebooks
+                Running Jupyter_notebooks
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
