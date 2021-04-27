@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#your-harvested-data" class="md-skip">
+        <a href="#harvesting-search-results" class="md-skip">
           Skip to content
         </a>
       
@@ -706,19 +706,19 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#your-harvested-data" class="md-nav__link">
-    Your harvested data
+  <a href="#harvesting-search-results" class="md-nav__link">
+    Harvesting search results
+  </a>
+  
+    <nav class="md-nav" aria-label="Harvesting search results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trove-harvester-web-app" class="md-nav__link">
+    Trove Harvester web app
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-tips-and-examples" class="md-nav__link">
-    Tools, tips, and examples
-  </a>
-  
-    <nav class="md-nav" aria-label="Tools, tips, and examples">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk" class="md-nav__link">
@@ -727,12 +727,18 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#trove-harvester-web-app" class="md-nav__link">
-    Trove Harvester web app
-  </a>
+      </ul>
+    </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#exploring-your-harvested-data" class="md-nav__link">
+    Exploring your harvested data
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploring your harvested data">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#display-the-results-of-a-harvest-as-a-searchable-database-using-datasette" class="md-nav__link">
@@ -757,6 +763,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-harvested-data" class="md-nav__link">
+    Your harvested data
+  </a>
   
 </li>
       
@@ -1465,19 +1478,19 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#your-harvested-data" class="md-nav__link">
-    Your harvested data
+  <a href="#harvesting-search-results" class="md-nav__link">
+    Harvesting search results
+  </a>
+  
+    <nav class="md-nav" aria-label="Harvesting search results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trove-harvester-web-app" class="md-nav__link">
+    Trove Harvester web app
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-tips-and-examples" class="md-nav__link">
-    Tools, tips, and examples
-  </a>
-  
-    <nav class="md-nav" aria-label="Tools, tips, and examples">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk" class="md-nav__link">
@@ -1486,12 +1499,18 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#trove-harvester-web-app" class="md-nav__link">
-    Trove Harvester web app
-  </a>
+      </ul>
+    </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#exploring-your-harvested-data" class="md-nav__link">
+    Exploring your harvested data
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploring your harvested data">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#display-the-results-of-a-harvest-as-a-searchable-database-using-datasette" class="md-nav__link">
@@ -1516,6 +1535,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-harvested-data" class="md-nav__link">
+    Your harvested data
+  </a>
   
 </li>
       
@@ -1546,17 +1572,47 @@
                   <h1>Trove newspaper & gazette harvester</h1>
                 
                 <p>The Trove Newspaper &amp; Gazette Harvester makes it easy to download large quantities of digitised articles from Trove's newspapers and gazettes. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis. You can also save the full text of every article, as well as copies of the articles as JPG images, and even PDFs. While the web interface will only show you the first 2,000 results matching your search, the Newspaper &amp; Gazette Harvester will get <strong>everything</strong>.</p>
-<p>You can install the Harvester as a <a href="https://pypi.org/project/troveharvester/">Python command line tool</a>, or use it in one of these notebooks below:</p>
-<ul>
-<li><a href="#using-troveharvester-to-get-newspaper-articles-in-bulk">Using TroveHarvester to get newspaper and gazette articles in bulk</a> – shows you how to use the command line tool in a Jupyter notebook</li>
-<li><a href="#trove-harvester-web-app">Trove Harvester web app</a> – provides a simple web interface to the newspaper &amp; gazette harvester</li>
-</ul>
-<p>Both notebooks can be run live, online using the Binder service, so you can start harvesting articles straight away without installing any software. All you need to get started is:</p>
-<ul>
-<li>A search url – just construct your search using the <a href="http://trove.nla.gov.au/newspaper/">Trove web interface</a>), and when you're happy with the results, copy the url.</li>
-<li>A <a href="http://help.nla.gov.au/trove/building-with-trove/apihttp://help.nla.gov.au/trove/building-with-trove/api">Trove API key</a>.</li>
-</ul>
+<p>You can install the Harvester as a <a href="https://pypi.org/project/troveharvester/">Python command line tool</a>, or use it in one of these notebooks below.</p>
 <p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
+<h2 id="harvesting-search-results">Harvesting search results<a class="headerlink" href="#harvesting-search-results" title="Permanent link">&para;</a></h2>
+<h3 id="trove-harvester-web-app">Trove Harvester web app<a class="headerlink" href="#trove-harvester-web-app" title="Permanent link">&para;</a></h3>
+<p>A simple web interface to the Trove Newspaper and Gazette Harvester – the easiest and quickest way to download all the results from a Trove newspaper or gazette search.</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/newspaper_harvester_app.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/newspaper_harvester_app.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=voila/render/newspaper_harvester_app.ipynb">Run live on Binder using Voila</a></li>
+</ul>
+<p><img alt="Screen capture of Trove Harvester" src="../images/trove-harvester.gif" /></p>
+<h3 id="using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk">Using TroveHarvester to get newspaper and gazette articles in bulk<a class="headerlink" href="#using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk" title="Permanent link">&para;</a></h3>
+<p>This notebook provides an introduction to the Trove Newspaper and Gazette Harvester command line tool. Edit a few cells and you'll be harvesting metadata and full text of thousands of articles in minutes. This gives you you more control over your harvest than the simple web app, including the ability to restart a failed harvest.</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb">Run live on Binder</a></li>
+</ul>
+<h2 id="exploring-your-harvested-data">Exploring your harvested data<a class="headerlink" href="#exploring-your-harvested-data" title="Permanent link">&para;</a></h2>
+<h3 id="display-the-results-of-a-harvest-as-a-searchable-database-using-datasette">Display the results of a harvest as a searchable database using Datasette<a class="headerlink" href="#display-the-results-of-a-harvest-as-a-searchable-database-using-datasette" title="Permanent link">&para;</a></h3>
+<p><img alt="Screen capture of Datasette" src="../images/datasette-row.png" /></p>
+<p><a href="https://github.com/simonw/datasette">Datasette</a> is 'a tool for exploring and publishing data'. Give it a CSV file and it turns it into a fully-searchable database, running in your browser. It supports facets, full-text search, and, with a bit of tweaking, can even present images. Although Datasette is a command-line tool, we can run from within a Jupyter notebook, and open a new window to display the results. This notebook shows you how to load the newspaper data you've harvested into Datasette, and start it up. If you've also harvested full-text and images from the newspaper articles, you can add these to your database as well!</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/display_harvest_results_using_datasette.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/display_harvest_results_using_datasette.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/display_harvest_results_using_datasette.ipynb">Run live on Binder</a></li>
+</ul>
+<h3 id="exploring-your-troveharvester-data">Exploring your TroveHarvester data<a class="headerlink" href="#exploring-your-troveharvester-data" title="Permanent link">&para;</a></h3>
+<p>This notebook shows some ways in which you can analyse and visualise the article metadata you've harvested — show the distribution of articles over time and space; find which newspapers published the most articles. (Under construction)</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Exploring-your-TroveHarvester-data.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Exploring-your-TroveHarvester-data.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Exploring-your-TroveHarvester-data.ipynb">Run live on Binder</a></li>
+</ul>
+<h3 id="exploring-harvested-text-files">Exploring harvested text files<a class="headerlink" href="#exploring-harvested-text-files" title="Permanent link">&para;</a></h3>
+<p>This notebook suggests some ways in which you can aggregate and analyse the individual OCRd text files for each article — look at word frequencies ; calculate TF-IDF values. (Under construction)</p>
+<ul>
+<li><a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Explore-harvested-text-files.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Explore-harvested-text-files.ipynb">View using NBViewer</a></li>
+<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Explore-harvested-text-files.ipynb">Run live on Binder</a></li>
+</ul>
 <h2 id="your-harvested-data">Your harvested data<a class="headerlink" href="#your-harvested-data" title="Permanent link">&para;</a></h2>
 <p>When you start a new harvest, the harvester looks for a directory called <a href="data">data</a>. Within this directory it creates another directory for your harvest. The name of this directory will be in the form of a unix timestamp – a very large number that represents the number of seconds since 1 January 1970. So this means the directory with the largest number will contain the most recent harvest.</p>
 <p>The harvester saves your results inside this directory. There will be at least two files created for each harvest:</p>
@@ -1598,46 +1654,7 @@
 <li><code>140772994</code> – the <a href="http://nla.gov.au/nla.news-article140772994">article's unique identifier</a></li>
 <li><code>11900413</code> – the <a href="https://trove.nla.gov.au/newspaper/page/11900413">page's unique identifier</a> (some articles can be split over multiple pages)</li>
 </ul>
-<p>Once you have your data you can start exploring! You'll find some Jupyter notebooks below that provide examples of analysing and visualising both the metadata and the full text.</p>
-<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
-<h2 id="tools-tips-and-examples">Tools, tips, and examples<a class="headerlink" href="#tools-tips-and-examples" title="Permanent link">&para;</a></h2>
-<h3 id="using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk">Using TroveHarvester to get newspaper and gazette articles in bulk<a class="headerlink" href="#using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk" title="Permanent link">&para;</a></h3>
-<p>An introduction to the Trove Harvester command line tool. Edit a few cells and you'll be harvesting metadata and full text of thousands of articles in minutes.</p>
-<ul>
-<li><a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb">Download from GitHub</a></li>
-<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb">Run live on Binder</a></li>
-</ul>
-<h3 id="trove-harvester-web-app">Trove Harvester web app<a class="headerlink" href="#trove-harvester-web-app" title="Permanent link">&para;</a></h3>
-<p>A simple web interface to the TroveHarvester, the easiest way to harvest data from Trove.</p>
-<ul>
-<li><a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/newspaper_harvester_app.ipynb">Download from GitHub</a></li>
-<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/newspaper_harvester_app.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=%2Fapps%2Fnewspaper_harvester_app.ipynb">Run live on Binder in Appmode</a></li>
-</ul>
-<p><img alt="Screen capture of Trove Harvester" src="../images/trove-harvester.gif" /></p>
-<h3 id="display-the-results-of-a-harvest-as-a-searchable-database-using-datasette">Display the results of a harvest as a searchable database using Datasette<a class="headerlink" href="#display-the-results-of-a-harvest-as-a-searchable-database-using-datasette" title="Permanent link">&para;</a></h3>
-<p><img alt="Screen capture of Datasette" src="../images/datasette-row.png" /></p>
-<p><a href="https://github.com/simonw/datasette">Datasette</a> is 'a tool for exploring and publishing data'. Give it a CSV file and it turns it into a fully-searchable database, running in your browser. It supports facets, full-text search, and, with a bit of tweaking, can even present images. Although Datasette is a command-line tool, we can run from within a Jupyter notebook, and open a new window to display the results. This notebook shows you how to load the newspaper data you've harvested into Datasette, and start it up. If you've also harvested full-text and images from the newspaper articles, you can add these to your database as well!</p>
-<ul>
-<li><a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/display_harvest_results_using_datasette.ipynb">Download from GitHub</a></li>
-<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/display_harvest_results_using_datasette.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/display_harvest_results_using_datasette.ipynb">Run live on Binder</a></li>
-</ul>
-<h3 id="exploring-your-troveharvester-data">Exploring your TroveHarvester data<a class="headerlink" href="#exploring-your-troveharvester-data" title="Permanent link">&para;</a></h3>
-<p>This notebook shows some ways in which you can analyse and visualise the article metadata you've harvested — show the distribution of articles over time and space; find which newspapers published the most articles. (Under construction)</p>
-<ul>
-<li><a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Exploring-your-TroveHarvester-data.ipynb">Download from GitHub</a></li>
-<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Exploring-your-TroveHarvester-data.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Exploring-your-TroveHarvester-data.ipynb">Run live on Binder</a></li>
-</ul>
-<h3 id="exploring-harvested-text-files">Exploring harvested text files<a class="headerlink" href="#exploring-harvested-text-files" title="Permanent link">&para;</a></h3>
-<p>This notebook suggests some ways in which you can aggregate and analyse the individual OCRd text files for each article — look at word frequencies ; calculate TF-IDF values. (Under construction)</p>
-<ul>
-<li><a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Explore-harvested-text-files.ipynb">Download from GitHub</a></li>
-<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Explore-harvested-text-files.ipynb">View using NBViewer</a></li>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Explore-harvested-text-files.ipynb">Run live on Binder</a></li>
-</ul>
+<p>Once you have your data you can start exploring! You'll find some Jupyter notebooks above that provide examples of analysing and visualising both the metadata and the full text.</p>
 <h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
 <p>Sherratt, Tim, (18 November 2019), GLAM-Workbench/trove-newspaper-harvester (version v0.1.0), Zenodo, <a href="https://doi.org/10.5281/zenodo.3545045">https://doi.org/10.5281/zenodo.3545045</a>  </p>
 <p><a href="https://doi.org/10.5281/zenodo.3545045"><img alt="" src="https://zenodo.org/badge/doi/10.5281/zenodo.3545045.svg" /></a></p>
