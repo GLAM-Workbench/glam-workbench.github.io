@@ -2243,7 +2243,7 @@
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker Desktop</a>.</li>
 <li>Create a new directory for this repository and open it from the command line.</li>
 <li>From the command line, run the following command:<br />
-  <div class="highlight"><pre><span></span><code>docker run -p 8888:8888 --name trove-newspapers -v &quot;$PWD&quot;:/home/jovyan/work wragge/trove-newspapers repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token=&#39;&#39; --LabApp.default_url=&#39;/lab/tree/index.md&#39;
+  <div class="highlight"><pre><span></span><code>docker run -p 8888:8888 --name trove-newspapers -v &quot;$PWD&quot;:/home/jovyan/work glamworkbench/trove-newspapers repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token=&#39;&#39; --LabApp.default_url=&#39;/lab/tree/index.md&#39;
 </code></pre></div></li>
 <li>It will take a while to download and configure the Docker image. Once it's ready you'll see a message saying that Jupyter Notebook is running.</li>
 <li>Point your web browser to <code>http://127.0.0.1:8888</code></li>
