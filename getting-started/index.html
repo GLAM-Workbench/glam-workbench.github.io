@@ -601,10 +601,52 @@
 
 
 
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Running notebooks
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Running notebooks" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        Running notebooks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
   <li class="md-nav__item">
-    <a href="../running-notebooks/" class="md-nav__link">
-      Running Jupyter_notebooks
+    <a href="../reclaim-cloud/" class="md-nav__link">
+      Using Reclaim Cloud
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../using-docker/" class="md-nav__link">
+      Using Docker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1692,7 +1734,8 @@
 </ul>
 <p>The links to GitHub and NBViewer take you to <em>static</em> versions of the notebook that you can read and download, but you can't run any of the code. The link to Binder loads a <em>live</em> version in a customised computing environment. More details of each of these are included below.</p>
 <h3 id="download-from-github">Download from GitHub<a class="headerlink" href="#download-from-github" title="Permanent link">&para;</a></h3>
-<p>Each section of the GLAM Workbench has its own <a href="https://github.com">GitHub</a> repository where the notebooks and any related data files are stored. If you have Jupyter set up on your own computer and you want to play around with one of the notebooks, then you probably want to download it from GitHub and run it locally. GitHub also shows you the history of a notebook – so you can check if anything has changed. When you open a Jupyter notebook in GitHub, it tries to display a nicely formatted <em>static</em> version. But it doesn't always work, and the formatting can be a bit off. If all you want to do is view the contents of a notebook, then you're probably better off using NBViewer.</p>
+<p>Each section of the GLAM Workbench has its own <a href="https://github.com">GitHub</a> repository where the notebooks and any related data files are stored. If you have Jupyter set up on your own computer and you want to play around with one of the notebooks, then you probably want to download it from GitHub and run it locally. GitHub also shows you the history of a notebook – so you can check if anything has changed.</p>
+<p>When you open a Jupyter notebook in GitHub, it tries to display a nicely formatted <em>static</em> version. But it doesn't always work, and the formatting can be a bit off. If all you want to do is view the contents of a notebook, then you're probably better off using NBViewer.</p>
 <h3 id="view-on-nbviewer">View on NBViewer<a class="headerlink" href="#view-on-nbviewer" title="Permanent link">&para;</a></h3>
 <p><a href="https://nbviewer.jupyter.org/">NBViewer</a> displays a nicely formatted copy of a Jupyter notebook. It's the quickest and most reliable way of examining the content of a notebook. However, this is a <em>static</em> view. The interactive Jupyter notebook has been turned into an HTML file. You can't run code cells or edit the contents of the notebook. You can look, but you can't do. If you want to try running the code in a Jupyter notebook (and that's what they're for), then you might want to give Binder a try.</p>
 <h3 id="run-live-on-binder">Run live on Binder<a class="headerlink" href="#run-live-on-binder" title="Permanent link">&para;</a></h3>
@@ -1713,7 +1756,20 @@
 <li>Sit back and wait for the installation to complete!</li>
 <li>Once the installation is finished click on the 'Open in Browser' button of your newly created environment (note that you might need to wait a few minutes before everything is ready).</li>
 </ul>
+<p>There's more information on the <a href="/reclaim-cloud/">Using Reclaim Cloud</a> page.</p>
 <h3 id="using-docker">Using Docker<a class="headerlink" href="#using-docker" title="Permanent link">&para;</a></h3>
+<p>The GLAM Workbench repositories are stored as pre-built 'Images' on <a href="https://hub.docker.com/u/glamworkbench">Docker Hub</a>. To download and run one of these images for the first time, you need to:</p>
+<ul>
+<li>Install <a href="https://docs.docker.com/get-docker/">Docker Desktop</a>.</li>
+<li>Create a new directory to contain your local files, and open it from the command line. This directory will be named <code>work</code> in the Jupyter interface.</li>
+<li>From the command line, run the following command, replacing <code>[REPOSITORY NAME]</code> with the name of a GLAM Workbench repository, for example, 'trove-newspapers':<br />
+  <div class="highlight"><pre><span></span><code>docker run -p 8888:8888 --name [REPOSITORY NAME] -v &quot;$PWD&quot;:/home/jovyan/work glamworkbench/[REPOSITORY NAME] repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token=&#39;&#39; --LabApp.default_url=&#39;/lab/tree/index.md&#39;
+</code></pre></div></li>
+<li>It will take a while to download and configure the Docker image. Once it's ready you'll see a message saying that Jupyter Notebook is running.</li>
+<li>Point your web browser to <code>http://127.0.0.1:8888</code></li>
+<li>To stop the container hit <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span></li>
+</ul>
+<p>There's more information on the <a href="/using-docker/">Using Docker</a> page.</p>
 <h3 id="using-swan">Using SWAN<a class="headerlink" href="#using-swan" title="Permanent link">&para;</a></h3>
 <h3 id="using-python-on-your-own-computer">Using Python on your own computer<a class="headerlink" href="#using-python-on-your-own-computer" title="Permanent link">&para;</a></h3>
 <p>It's best to keep your GLAM Workbench repositories in separate virtual environments. This means you can install the software versions that you need without upsetting anything else. For example, if you wanted to set up your own version of the <a href="https://glam-workbench.github.io/trove-newspapers/">Trove newspapers</a> repository, you'd start by creating a new virtual environment.</p>
@@ -1809,8 +1865,8 @@ pip install -r requirements.txt
 
         <!-- Link to next page -->
         
-          <a href="../running-notebooks/"
-              title="Running Jupyter_notebooks"
+          <a href="../reclaim-cloud/"
+              title="Using Reclaim Cloud"
               class="md-flex md-footer-nav__link md-footer-nav__link--next"
               rel="next">
             <div class="md-flex__cell md-flex__cell--stretch
@@ -1819,7 +1875,7 @@ pip install -r requirements.txt
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Running Jupyter_notebooks
+                Using Reclaim Cloud
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
