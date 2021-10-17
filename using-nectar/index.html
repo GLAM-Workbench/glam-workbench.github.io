@@ -1825,8 +1825,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-ssh-and-rsync-to-save-files-advanced" class="md-nav__link">
-    Using SSH and Rsync to save files (advanced)
+  <a href="#using-ssh-and-rsync-to-move-files-advanced" class="md-nav__link">
+    Using SSH and Rsync to move files (advanced)
   </a>
   
 </li>
@@ -1919,7 +1919,7 @@
 <li>Select <strong>Download</strong>.</li>
 </ul>
 <p><img alt="Screencap of downloading a file from Jupyter" src="../images/jupyter_download.png" /></p>
-<h2 id="using-ssh-and-rsync-to-save-files-advanced">Using SSH and Rsync to save files (advanced)<a class="headerlink" href="#using-ssh-and-rsync-to-save-files-advanced" title="Permanent link">&para;</a></h2>
+<h2 id="using-ssh-and-rsync-to-move-files-advanced">Using SSH and Rsync to move files (advanced)<a class="headerlink" href="#using-ssh-and-rsync-to-move-files-advanced" title="Permanent link">&para;</a></h2>
 <p>When you start up Jupyter Lab you'll see a folder called <code>work</code> in the file explorer. This is a special folder, because it's a link between your Jupyter environment and the Nectar instance that's wrapped around it. Anything you copy into <code>work</code> will be visible from the Nectar instance. So you can use <code>work</code> to move or save your data.</p>
 <p>If you've set up an SSH Key Pair as described above, you can use a number of tools to move data between your computer and your Nectar instance. The Nectar documentation describes how you can <a href="https://tutorials.rc.nectar.org.au/moving-data/01-overview">use <code>scp</code> and FileZilla to move data</a>.</p>
 <p>If you want to maintain a complete backup of the files in your <code>work</code> folder on your local computer you can use <code>rsync</code>. All you need is the full domain name of your GLAM Workbench instance.</p>
