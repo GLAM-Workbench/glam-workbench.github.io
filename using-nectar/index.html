@@ -478,12 +478,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
       
       
       
@@ -530,15 +532,19 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3_2" type="checkbox" id="nav-3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3_2" type="checkbox" id="nav-3_2" checked>
       
       
       
+        
+          
         
           
         
@@ -583,6 +589,111 @@
       <a href="../using-reclaim-cloud/" class="md-nav__link">
         Using Reclaim Cloud
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Using the Nectar Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Using the Nectar Cloud
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-own-glam-workbench-repository" class="md-nav__link">
+    Setting up your own GLAM Workbench repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-options" class="md-nav__link">
+    Advanced options
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance-flavours" class="md-nav__link">
+    Instance flavours
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-key-pairs" class="md-nav__link">
+    SSH Key Pairs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistent-volume-storage" class="md-nav__link">
+    Persistent volume storage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-your-files" class="md-nav__link">
+    Managing your files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ssh-and-rsync-to-move-files-advanced" class="md-nav__link">
+    Using SSH and Rsync to move files (advanced)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    Need help?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1879,10 +1990,10 @@
 <li>Leave the other fields with their default values and click on <strong>Next</strong> to proceed.</li>
 </ul>
 </li>
-<li>The second configuration screen sets the web address of your GLAM Workbench repository.
+<li>The second screen changes how your GLAM Workbench repository is accessed via the web. This option is only available if have a dedicated project allocation, so if you're using your 6 month free trial just click <strong>Next</strong> to skip it.
     <img alt="Screenshot of second installation dialogue" class="image-in-list" src="../images/nectar-config-2.png" width="600" /><ul>
-<li><strong>Host name</strong> – this is the subdomain that will be used to access your GLAM Workbench instance on the web, it can be anything you want, but only use letters, numbers, and hyphens. For example, if you're installing the Trove Newspaper &amp; Gazette Harvester you might set this to 'trove-harvester'.</li>
-<li><strong>DNS zone</strong> – if you click on the dropdown list you should see a value based on your current project name, just select this value and click <strong>Next</strong> to proceed.</li>
+<li><strong>Host name</strong> – this is the this is the subdomain that will be used to access your GLAM Workbench instance on the web, it can be anything you want, but only use letters, numbers, and hyphens. For example, if you're installing the Trove Newspaper &amp; Gazette Harvester you might set this to 'trove-harvester'.</li>
+<li><strong>DNS zone</strong> – if you select a DNS zone will enable you to access your GLAM Workbench instance on the web using it's domain name and HTTPS. If you have a project allocation, you should see a DNS zone based on your project's name in the dropdown list. Just select this value and click <strong>Next</strong> to proceed.</li>
 </ul>
 </li>
 <li>The third configuration screen lets you attach volume storage to your GLAM Workbench instance. This is optional. If you're using your 6 month trial you won't have any volume storage to select. <a href="#persistent-volume-storage">See below</a> for more details. Click <strong>Next</strong> to proceed.
@@ -1911,7 +2022,7 @@
 <h3 id="ssh-key-pairs">SSH Key Pairs<a class="headerlink" href="#ssh-key-pairs" title="Permanent link">&para;</a></h3>
 <p>An SSH Key Pair is a way of authenticating yourself. Setting up a SSH Key Pair will enable you to access your instance from the command line, and make it easier to move your data around. You need to create your key pair before you set up your instance. There's <a href="https://tutorials.rc.nectar.org.au/keypairs/01-overview">detailed instructions</a> in the Nectar help documentation.</p>
 <h3 id="persistent-volume-storage">Persistent volume storage<a class="headerlink" href="#persistent-volume-storage" title="Permanent link">&para;</a></h3>
-<p>When you apply to Nectar for a project allocation you can request volume storage. This is basically disk space that lives outside of any instance. Any data you save to your volume storage will be preserved, even if you delete or change your instances. You can attach your volume storage to a GLAM Workbench instance by selecting it at step 7 above. See the Nectar documentation for <a href="https://tutorials.rc.nectar.org.au/volume-storage/01-overview">information</a> on managing your volume storage.</p>
+<p>When you apply to Nectar for a project allocation you can request volume storage. This is basically disk space that lives outside of any application. Any data you save to your volume storage will be preserved, even if you delete or change your instances. You can attach your volume storage to a GLAM Workbench instance by selecting it at step 7 above. Within the Jupyter interface, your volume storage will be accessible through the <code>work</code> directory. See the Nectar documentation for <a href="https://tutorials.rc.nectar.org.au/volume-storage/01-overview">information</a> on managing your volume storage.</p>
 <h2 id="managing-your-files">Managing your files<a class="headerlink" href="#managing-your-files" title="Permanent link">&para;</a></h2>
 <p>Any data you download or changes you make to notebooks will be saved within your GLAM Workbench instance. However, you'll probably want to download files to your own computer. The easiest way to do this is from within the Jupyter interface. Most of the notebooks in the GLAM Workbench will display download links when you create a new dataset. But you can also just use the file explorer built into Jupyter Lab.</p>
 <ul>
@@ -1949,6 +2060,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../using-reclaim-cloud/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Using Reclaim Cloud" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Using Reclaim Cloud
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../using-docker/" class="md-footer__link md-footer__link--next" aria-label="Next: Using Docker" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Using Docker
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
