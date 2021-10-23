@@ -232,7 +232,25 @@
 <div class="md-source__repository">
   museums-victoria
 </div>
+<div id="repo-stats"></div>
 </a>
+
+<script>
+  let url = 'https://api.github.com/repos/glam-workbench/' + 'museums-victoria'
+  function fetchData(url) {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        let output = 'Stars: ' + data['stargazers_count']
+        document.getElementById('repo-stats').innerHTML = output
+      })
+      .catch((error) => {
+        console.log(`Error Fetching data : ${error}`)
+      })
+  }
+  fetchData(url);
+</script>
       </div>
     
   </nav>
@@ -350,7 +368,25 @@
 <div class="md-source__repository">
   museums-victoria
 </div>
+<div id="repo-stats"></div>
 </a>
+
+<script>
+  let url = 'https://api.github.com/repos/glam-workbench/' + 'museums-victoria'
+  function fetchData(url) {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        let output = 'Stars: ' + data['stargazers_count']
+        document.getElementById('repo-stats').innerHTML = output
+      })
+      .catch((error) => {
+        console.log(`Error Fetching data : ${error}`)
+      })
+  }
+  fetchData(url);
+</script>
     </div>
   
 

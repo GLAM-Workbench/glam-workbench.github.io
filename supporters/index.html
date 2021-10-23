@@ -227,7 +227,25 @@
 <div class="md-source__repository">
   GLAM-Workbench
 </div>
+<div id="repo-stats"></div>
 </a>
+
+<script>
+  let url = 'https://api.github.com/repos/glam-workbench/' + 'GLAM-Workbench'
+  function fetchData(url) {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        let output = 'Stars: ' + data['stargazers_count']
+        document.getElementById('repo-stats').innerHTML = output
+      })
+      .catch((error) => {
+        console.log(`Error Fetching data : ${error}`)
+      })
+  }
+  fetchData(url);
+</script>
       </div>
     
   </nav>
@@ -345,7 +363,25 @@
 <div class="md-source__repository">
   GLAM-Workbench
 </div>
+<div id="repo-stats"></div>
 </a>
+
+<script>
+  let url = 'https://api.github.com/repos/glam-workbench/' + 'GLAM-Workbench'
+  function fetchData(url) {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        let output = 'Stars: ' + data['stargazers_count']
+        document.getElementById('repo-stats').innerHTML = output
+      })
+      .catch((error) => {
+        console.log(`Error Fetching data : ${error}`)
+      })
+  }
+  fetchData(url);
+</script>
     </div>
   
 
@@ -1794,7 +1830,7 @@
 
   <h1>Supporters</h1>
 
-<p>Work on the GLAM Workbench is generously supported by <b>22 GitHub sponsors</b>:</p>
+<p>Work on the GLAM Workbench is generously supported by <b>25 GitHub sponsors</b>:</p>
 <ul style="list-style-type: None;">
 
     <li>
@@ -1878,7 +1914,15 @@
     </li>
 
     <li>
-        and 2 anonymous sponsors
+        <img style="vertical-align:middle; margin-right: 1rem;" src="https://avatars.githubusercontent.com/u/6279407?s=40&v=4" width=40 height=40 /><a href="https://github.com/simplebutgood">simplebutgood</a>
+    </li>
+
+    <li>
+        <img style="vertical-align:middle; margin-right: 1rem;" src="https://avatars.githubusercontent.com/u/93020677?s=40&v=4" width=40 height=40 /><a href="https://github.com/BetweenRiverAndStream">BetweenRiverAndStream</a>
+    </li>
+
+    <li>
+        and 3 anonymous sponsors
     </li>
 </ul>
 
