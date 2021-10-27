@@ -12,3 +12,4 @@ identifiers:
     description: "The website generated from this repository."
 doi: 10.5281/zenodo.5603060
 date-released: 2021-10-27
+license: CC-BY
