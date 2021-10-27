@@ -1,0 +1,14 @@
+cff-version: 1.1.0
+message: "If you want to refer to the GLAM Workbench as a whole, please cite it as below."
+authors:
+  - family-names: Sherratt
+    given-names: Tim
+    orcid: https://orcid.org/0000-0001-7956-4498
+title: GLAM Workbench
+version: v1.0.0
+identifiers:
+  - type: url
+    value: https://glam-workbench.net/
+    description: "The website generated from this repository."
+doi: 10.5281/zenodo.5603060
+date-released: 2021-10-27
