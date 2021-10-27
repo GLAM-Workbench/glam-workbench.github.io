@@ -2,6 +2,7 @@
 title: ANU Archives
 repo_url: https://github.com/GLAM-Workbench/anu-archives
 repo_name: anu-archives
+zenodo_concept_id: 4660982
 ---
 
 # ANU Archives
@@ -44,7 +45,7 @@ Select a date and this notebook will display information about any sheets that a
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/anu-archives/blob/master/view-pages-by-date.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/anu-archives/blob/master/view-pages-by-date.ipynb)
-* [Run live on Binder in Appmode](https://mybinder.org/v2/gh/GLAM-Workbench/anu-archives/master?urlpath=%2Fapps%2Fview-pages-by-date.ipynb)
+* [Run live on Binder in Voila](https://mybinder.org/v2/gh/GLAM-Workbench/anu-archives/HEAD?urlpath=voila%2Frender%2Fview-pages-by-date.ipynb)
 
 ### Display details of pages within a date range
 
@@ -52,7 +53,7 @@ Select a date range and this notebook will display information about available s
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/anu-archives/blob/master/view-pages-by-date-range.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/anu-archives/blob/master/view-pages-by-date-range.ipynb)
-* [Run live on Binder in Appmode](https://mybinder.org/v2/gh/GLAM-Workbench/anu-archives/master?urlpath=%2Fapps%2Fview-pages-by-date-range.ipynb)
+* [Run live on Binder in Voila](https://mybinder.org/v2/gh/GLAM-Workbench/anu-archives/HEAD?urlpath=voila%2Frender%2Fview-pages-by-date-range.ipynb)
 
 ### Visualise page data
 

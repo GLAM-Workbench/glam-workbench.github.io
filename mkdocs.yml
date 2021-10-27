@@ -2,7 +2,7 @@ site_name: GLAM Workbench
 
 site_description: 'A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums'
 site_author: 'Tim Sherratt'
-site_url: 'https://glam-workbench.github.io'
+site_url: 'https://glam-workbench.net/'
 
 # Repository
 #repo_name: 'squidfunk/mkdocs-material'
@@ -18,6 +18,22 @@ theme:
   name: 'material'
   custom_dir: 'overrides'
   language: 'en'
+  features:
+    - content.code.annotate
+    # - content.tabs.link
+    # - header.autohide
+    # - navigation.expand
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.sections
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    # - toc.integrate
   palette:
     primary: 'indigo'
     accent: 'indigo'
@@ -26,7 +42,9 @@ theme:
     code: 'Roboto Mono'
   icon:
     logo: material/hammer-wrench
-    repo: octicons/octoface-16
+#    repo: material/source-repository
+  include_search_page: false
+  search_index_only: true
 
 # Customization
 extra:
@@ -41,9 +59,9 @@ extra:
     - icon: 'fontawesome/brands/facebook'
       link: 'https://www.facebook.com/101dhhacks/'
       name: '101 DH Hacks on Facebook'
-    - icon: 'fontawesome/brands/patreon'
-      link: 'https://www.patreon.com/timsherratt'
-      name: Tim Sherratt on Patreon
+    - icon: 'fontawesome/solid/rss-square'
+      link: 'https://updates.timsherratt.org/categories/glamworkbench/'
+      name: 'Latest GLAMWorkbench news!'
 
 extra_css:
   - 'stylesheets/extra.css'
@@ -55,15 +73,22 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.keys
+  - attr_list
+  - md_in_html
   - toc:
       permalink: true
   - meta
 
 plugins:
-    - search
+    - search:
+        separator: "[\\s\\-,:!=\\[\\]()\"/]+|\\.(?!\\d)|&[lg]t;|(?!\\b)(?=[A-Z][a-z])"
+        indexing: 'titles'
     - redirects:
         redirect_maps:
             'trove_newspapers.md': 'trove-newspapers.md'
+            'name-search.md': 'https://glam-name-indexes-yajhxrvxsa-ts.a.run.app/'
+    - snippet:
+        base_path: docs
     - git-latest-tag
 
 nav:
@@ -72,9 +97,17 @@ nav:
         - about.md
         - presentations.md
         - awards.md
+        - supporters.md
     - Help:
         - getting-started.md
+        - Running notebooks:
+            - using-binder.md
+            - using-reclaim-cloud.md
+            - using-nectar.md
+            - using-docker.md
+        - 'Help videos': https://www.youtube.com/playlist?list=PLAclcciEeCD2z2BWQ2r3xD_Q8c05HppfP
         - more-glam-notebooks.md
+        - glam-tools-interfaces.md
     - Data sources:
         - Australia:
             - glam-data-list.md
@@ -123,5 +156,6 @@ nav:
         - Australia:
             - hansard.md
             - pm-transcripts.md
+    - GLAM Name Index Search: name-search.md
     - suggest-a-topic.md
     - ask-a-question.md

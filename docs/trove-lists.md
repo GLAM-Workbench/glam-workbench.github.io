@@ -1,14 +1,14 @@
 ---
-title: Trove lists
+title: Trove lists and tags
 repo_url: https://github.com/GLAM-Workbench/trove-lists
 repo_name: trove-lists
 ---
 
-Trove lists are user created collections of items. The details of public lists are available through the Trove API.
+Trove lists and tags are created by Trove users to organise and describe resources. The details of public lists and tags are available through the Trove API.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/trove-lists/master?urlpath=lab)
 
-## Tips, tools, and examples
+## Lists
 
 ### Convert a Trove list into a CSV file  
 This notebook converts Trove lists into CSV files (spreadsheets). Separate CSV files are created for newspaper articles and works from Trove's other zones. You can also save the OCRd text, a PDF, and an image of each newspaper article.
@@ -26,13 +26,29 @@ Use the Trove API to harvest data about all public lists, then extract some summ
 
 ![Screen shot of word cloud](images/trove-lists.png)
 
+## Tags
+
+### Harvest public tags from Trove zones  
+This notebook uses the Trove API to assemble a dataset containing all public tags added to Trove.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-lists/blob/master/harvest-tags.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-lists/blob/master/harvest-tags.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-lists/master?urlpath=lab/tree/harvest-tags.ipynb)
+
+### Analyse public tags added to Trove  
+This notebook loads the complete dataset of Trove tags and explores some ways of analysing and visualising the tag data.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-lists/blob/master/analyse_tags.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-lists/blob/master/analyse_tags.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-lists/master?urlpath=lab/tree/analyse_tags.ipynb)
+
 ## Data
 
 ### Trove lists metadata
 
-Harvested: 20 September 2018
+Harvested: 22 September 2020
 
-[CSV formatted file](https://github.com/GLAM-Workbench/trove-lists/blob/master/data/trove-lists-2018-09-20.csv) containing the following fields:  
+[CSV formatted file](https://github.com/GLAM-Workbench/trove-lists/blob/master/data/trove-lists-2020-09-22.csv) containing the following fields:  
 
 + `created` – date list created
 + `id` – list identifier
@@ -40,8 +56,20 @@ Harvested: 20 September 2018
 + `title` – title of list
 + `updated` – date last updated
 
+### Trove public tags
+
+Harvested: 10 July 2021
+
+Zipped CSV file (123mb) [available from Zenodo](https://doi.org/10.5281/zenodo.5094314).
+
+### Trove tag counts
+
+Harvested: 10 July 2021
+
+[CSV file](https://github.com/GLAM-Workbench/trove-lists/blob/master/trove_tag_counts_20210710.csv) containing the total number of times each tag in Trove has been applied to resources.
+
 ## Cite as
 
-Sherratt, Tim. (2019, November 21). GLAM-Workbench/trove-lists (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549454>
+Sherratt, Tim. (2019, November 21). GLAM-Workbench/trove-lists (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549453>
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3549454.svg)](https://doi.org/10.5281/zenodo.3549454)

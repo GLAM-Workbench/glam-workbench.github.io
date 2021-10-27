@@ -5,19 +5,59 @@ repo_url: https://github.com/glam-workbench/trove-newspaper-harvester
 zenodo_concept_id: 3545044
 ---
 
+{{ git_latest_tag }}
+
 The Trove Newspaper & Gazette Harvester makes it easy to download large quantities of digitised articles from Trove's newspapers and gazettes. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis. You can also save the full text of every article, as well as copies of the articles as JPG images, and even PDFs. While the web interface will only show you the first 2,000 results matching your search, the Newspaper & Gazette Harvester will get **everything**.
 
-You can install the Harvester as a [Python command line tool](https://pypi.org/project/troveharvester/), or use it in one of these notebooks below:
+You can install the Harvester as a [Python command line tool](https://pypi.org/project/troveharvester/), or use it in one of these notebooks below.
 
-* [Using TroveHarvester to get newspaper and gazette articles in bulk](#using-troveharvester-to-get-newspaper-articles-in-bulk) – shows you how to use the command line tool in a Jupyter notebook
-* [Trove Harvester web app](#trove-harvester-web-app) – provides a simple web interface to the newspaper & gazette harvester
+See below for information on [running these notebooks](#run-these-notebooks) in a live computing environment. Or just take them for a spin using Binder.
 
-Both notebooks can be run live, online using the Binder service, so you can start harvesting articles straight away without installing any software. All you need to get started is:
+[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/index.ipynb)
 
-* A search url – just construct your search using the [Trove web interface](http://trove.nla.gov.au/newspaper/)), and when you're happy with the results, copy the url.
-* A [Trove API key](http://help.nla.gov.au/trove/building-with-trove/apihttp://help.nla.gov.au/trove/building-with-trove/api).
+## Harvesting search results
 
-[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab)
+### Trove Harvester web app
+A simple web interface to the Trove Newspaper and Gazette Harvester – the easiest and quickest way to download all the results from a Trove newspaper or gazette search.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/newspaper_harvester_app.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/newspaper_harvester_app.ipynb)
+* [Run live on Binder using Voila](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=voila/render/newspaper_harvester_app.ipynb)
+
+![Screen capture of Trove Harvester](images/trove-harvester.gif)
+
+### Using TroveHarvester to get newspaper and gazette articles in bulk  
+This notebook provides an introduction to the Trove Newspaper and Gazette Harvester command line tool. Edit a few cells and you'll be harvesting metadata and full text of thousands of articles in minutes. This gives you you more control over your harvest than the simple web app, including the ability to restart a failed harvest.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb)
+
+## Exploring your harvested data
+
+### Display the results of a harvest as a searchable database using Datasette
+
+![Screen capture of Datasette](images/datasette-row.png)
+
+[Datasette](https://github.com/simonw/datasette) is 'a tool for exploring and publishing data'. Give it a CSV file and it turns it into a fully-searchable database, running in your browser. It supports facets, full-text search, and, with a bit of tweaking, can even present images. Although Datasette is a command-line tool, we can run from within a Jupyter notebook, and open a new window to display the results. This notebook shows you how to load the newspaper data you've harvested into Datasette, and start it up. If you've also harvested full-text and images from the newspaper articles, you can add these to your database as well!
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/display_harvest_results_using_datasette.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/display_harvest_results_using_datasette.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/display_harvest_results_using_datasette.ipynb)
+
+### Exploring your TroveHarvester data
+This notebook shows some ways in which you can analyse and visualise the article metadata you've harvested — show the distribution of articles over time and space; find which newspapers published the most articles. (Under construction)
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Exploring-your-TroveHarvester-data.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Exploring-your-TroveHarvester-data.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Exploring-your-TroveHarvester-data.ipynb)
+
+### Exploring harvested text files  
+This notebook suggests some ways in which you can aggregate and analyse the individual OCRd text files for each article — look at word frequencies ; calculate TF-IDF values. (Under construction)
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Explore-harvested-text-files.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Explore-harvested-text-files.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Explore-harvested-text-files.ipynb)
 
 ## Your harvested data
 
@@ -62,52 +102,68 @@ Similarly, if you've asked for copies of the articles as images, they'll be in a
 * `140772994` – the [article's unique identifier](http://nla.gov.au/nla.news-article140772994)
 * `11900413` – the [page's unique identifier](https://trove.nla.gov.au/newspaper/page/11900413) (some articles can be split over multiple pages)
 
-Once you have your data you can start exploring! You'll find some Jupyter notebooks below that provide examples of analysing and visualising both the metadata and the full text.
+Once you have your data you can start exploring! You'll find some Jupyter notebooks above that provide examples of analysing and visualising both the metadata and the full text.
 
-[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master)
+## Run these notebooks
 
-## Tools, tips, and examples
+There are a number of different ways to use these notebooks. Binder is quickest and easiest, but it doesn't save your data. I've listed the options below from easiest to most complicated (requiring more technical knowledge).
 
-### Using TroveHarvester to get newspaper and gazette articles in bulk  
-An introduction to the Trove Harvester command line tool. Edit a few cells and you'll be harvesting metadata and full text of thousands of articles in minutes.
+### Using Binder
 
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb)
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb)
+[![Launch on Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/index.md)
 
-### Trove Harvester web app
-A simple web interface to the TroveHarvester, the easiest way to harvest data from Trove.
+Click on the button above to launch the notebooks in this repository using the [Binder](https://mybinder.org/) service (it might take a little while to load). This is a free service, but note that sessions will close if you stop using the notebooks, and no data will be saved. Make sure you download any changed notebooks or harvested data that you want to save.
 
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/newspaper_harvester_app.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/newspaper_harvester_app.ipynb)
-* [Run live on Binder in Appmode](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=%2Fapps%2Fnewspaper_harvester_app.ipynb)
+See [Using Binder](https://glam-workbench.net/using-binder/) for more details.
 
-![Screen capture of Trove Harvester](images/trove-harvester.gif)
+### Using Reclaim Cloud
 
-### Display the results of a harvest as a searchable database using Datasette
+[![Launch on Reclaim Cloud](https://glam-workbench.github.io/images/launch-on-reclaim-cloud.svg)](https://app.my.reclaim.cloud/?manifest=https://raw.githubusercontent.com/GLAM-Workbench/trove-newspaper-harvester/master/reclaim-manifest.jps)
 
-![Screen capture of Datasette](images/datasette-row.png)
+[Reclaim Cloud](https://reclaim.cloud/) is a paid hosting service, aimed particularly at supported digital scholarship in hte humanities. Unlike Binder, the environments you create on Reclaim Cloud will save your data – even if you switch them off! To run this repository on Reclaim Cloud for the first time:
 
-[Datasette](https://github.com/simonw/datasette) is 'a tool for exploring and publishing data'. Give it a CSV file and it turns it into a fully-searchable database, running in your browser. It supports facets, full-text search, and, with a bit of tweaking, can even present images. Although Datasette is a command-line tool, we can run from within a Jupyter notebook, and open a new window to display the results. This notebook shows you how to load the newspaper data you've harvested into Datasette, and start it up. If you've also harvested full-text and images from the newspaper articles, you can add these to your database as well!
+* Create a [Reclaim Cloud](https://reclaim.cloud/) account and log in.
+* Click on the button above to start the installation process.
+* A dialogue box will ask you to set a password, this is used to limit access to your Jupyter installation.
+* Sit back and wait for the installation to complete!
+* Once the installation is finished click on the 'Open in Browser' button of your newly created environment (note that you might need to wait a few minutes before everything is ready).
 
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/display_harvest_results_using_datasette.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/display_harvest_results_using_datasette.ipynb)
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/display_harvest_results_using_datasette.ipynb)
+See [Using Reclaim Cloud](https://glam-workbench.net/using-reclaim-cloud/) for more details.
 
-### Exploring your TroveHarvester data
-This notebook shows some ways in which you can analyse and visualise the article metadata you've harvested — show the distribution of articles over time and space; find which newspapers published the most articles. (Under construction)
+### Using the Nectar Cloud
 
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Exploring-your-TroveHarvester-data.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Exploring-your-TroveHarvester-data.ipynb)
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Exploring-your-TroveHarvester-data.ipynb)
+![Screenshot of GLAM Workbench applicatsion](images/nectar-gw-app.png){width="600"}
 
-### Exploring harvested text files  
-This notebook suggests some ways in which you can aggregate and analyse the individual OCRd text files for each article — look at word frequencies ; calculate TF-IDF values. (Under construction)
+The [Nectar Research Cloud](https://ardc.edu.au/services/nectar-research-cloud/) (part of the Australian Research Data Commons) provides cloud computing services to researchers in Australian and New Zealand universities. Any university-affiliated researcher can log on to Nectar and receive [up to 6 months of free cloud computing time](https://tutorials.rc.nectar.org.au/allocation-management/03-account-and-trial). And if you need more, you can [apply for a specific project allocation](https://tutorials.rc.nectar.org.au/allocation-management/04-allocation-and-projects).
 
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Explore-harvested-text-files.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Explore-harvested-text-files.ipynb)
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/Explore-harvested-text-files.ipynb)
+The GLAM Workbench is available in the Nectar Cloud as a pre-configured application. This means you can get it up and going without worrying about the technical infrastructure – just fill in a few details and you're away! To create an instance of this repository in the Nectar Cloud:
+
+* Log in to the [Nectar Dashboard](https://dashboard.rc.nectar.org.au/) using your university credentials.
+* From the Dashboard choose **Applications -> Browse Local**.
+* Enter 'GLAM' in the filter box and hit Enter, you should see the GLAM Workbench application.
+* Click on the GLAM Workbench application's  **Quick Deploy** button.
+* Step through the various [configuration options](https://glam-workbench.net/using-nectar/#setting-up-your-own-glam-workbench-repository). Some options are only available if you have a dedicated project allocation.
+* When asked to select a GLAM Workbench repository, choose 'Trove newspaper & gazette harvester' from the dropdown list.
+* Complete the configuration and deploy your GLAM Workbench instance.
+* The url to access your instance will be displayed once it's ready. Click on the url!
+
+See [Using Nectar](https://glam-workbench.net/using-nectar/) for more information.
+
+### Using Docker
+
+You can use Docker to run a pre-built computing environment on your own computer. It will set up everything you need to run the notebooks in this repository. This is free, but requires more technical knowledge – you'll have to install Docker on your computer, and be able to use the command line.
+
+* Install [Docker Desktop](https://docs.docker.com/get-docker/).
+* Create a new directory for this repository and open it from the command line.
+* From the command line, run the following command:  
+  ```
+  docker run -p 8888:8888 --name trove-newspaper-harvester -v "$PWD":/home/jovyan/work quay.io/glamworkbench/trove-newspaper-harvester repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token='' --LabApp.default_url='/lab/tree/index.ipynb'
+  ```
+* It will take a while to download and configure the Docker image. Once it's ready you'll see a message saying that Jupyter Notebook is running.
+* Point your web browser to `http://127.0.0.1:8888`
+
+See [Using Docker](https://glam-workbench.net/using-docker/) for more details.
 
 ## Cite as
 
-{{ git_latest_version }}
+{{ zenodo_citation }}

@@ -6,9 +6,28 @@ As with everything else in the GLAM Workbench, these presentations are all openl
 
 <iframe src="https://player.vimeo.com/video/528145007" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
+* [Introducing the GLAM Workbench](https://slides.com/wragge/gcscr-2021), presentation for the Griffith University Centre for Social and Cultural Research, Digital Humanities Seminar Series, 6 August 2021
+
+* [Exploring the GLAM Workbench](https://youtu.be/pkC-seP00Kc) ([slides](https://slides.com/wragge/uts-dh-2021)), presentation for the UTS Digital Histories Seminar Series, 8 July 2021
+
+* [The GLAM Workbench: A Labs approach?](https://doi.org/10.5281/zenodo.5121188), presentation for the panel 'Research use of web archives: A labs approach', at the IIPC Web Archiving Conference, 15 June 2021  
+
+    [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5121188.svg)](https://doi.org/10.5281/zenodo.5121188)
+
+* [Hands-on introduction to the GLAM Workbench](https://slides.com/wragge/pha-workshop-may-2021), workshop for the Professional Historians Association of Victoria and Tasmania, 27 May 2021
+
+* [Exploring collections through the GLAM Workbench](https://doi.org/10.5281/zenodo.5121224), keynote presentation for the XVIII Congrés d'Arxvística i Gestió de Documents de Catalunya, 11 May 2021  
+
+    [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5121224.svg)](https://doi.org/10.5281/zenodo.5121224)
+
+* [Quick hacks and DIY data: Innovations for the discerning historian](https://slides.com/wragge/aha-ecr-workshop), presentation for AHA ECR digital skills seminar, 5 March 2021.
+
+* [Building the GLAM Workbench](https://vimeo.com/525872948), lecture for Data Sculpting course, EPFL, Switzerland, 18 March 2021
+
 * [From collections as data to collections as infrastructure: Building the GLAM Workbench](https://vimeo.com/528145007), seminar presented in the Centre for Creative and Cultural Research, University of Canberra, 22 February 2021.
 
 * [Exploring digital collections with the GLAM Workbench](https://doi.org/10.5281/zenodo.4632727), presentation for the Digital Humanities and Digital Collections symposium at the National Library of Estonia, 4 November 2020  
+
     [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4632727.svg)](https://doi.org/10.5281/zenodo.4632727)
 
 * [Jupyter notebooks for web archives](https://youtu.be/rVidh_wexoo), presentation for the IIPC research seminar series, 5 & 6 August 2020  

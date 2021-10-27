@@ -6,11 +6,11 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 # GLAM datasets from Australian government data portals
 
-*Harvested on 30 March 2020.*  
+*Harvested on 16 October 2021.*  
 [View details](/glam-data-portals/) of how this list was created.
+# GLAM datasets from Australian government data portals
 
 * [Australian Institute of Aboriginal and Torres Strait Islander Studies (AIATSIS)](#australian-institute-of-aboriginal-and-torres-strait-islander-studies-aiatsis)
-* [Australian Museum](#australian-museum)
 * [History Trust of South Australia](#history-trust-of-south-australia)
 * [Libraries Tasmania](#libraries-tasmania)
 * [Mount Gambier Library](#mount-gambier-library)
@@ -35,20 +35,12 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 ## Australian Institute of Aboriginal and Torres Strait Islander Studies (AIATSIS)
 
-### [AUSTLANG dataset 001](https://data.gov.au/dataset/70132e6f-259c-4e0f-9f95-4aed1101c053)
-* [AUSTLANG dataset 001](https://data.gov.au/data/dataset/70132e6f-259c-4e0f-9f95-4aed1101c053/resource/e9a9ea06-d821-4b53-a05f-877409a1a19c/download/aiatsis_austlang_endpoint_001.csv) (CSV, 2019-05-15T02:55:39.267160)
+### [Austlang dataset 001](https://data.gov.au/dataset/70132e6f-259c-4e0f-9f95-4aed1101c053)
+* [AUSTLANG dataset 001](https://collection.aiatsis.gov.au/datasets/austlang/001.csv) (CSV, 2019-05-15T02:55:39.267160)
 * [AUSTLANG dataset 001](https://collection.aiatsis.gov.au/datasets/austlang/001) (page, 2019-05-15T03:47:35.504224)
 
 ### [The NSW Aborigines Protection/Welfare Board 1883-1969 Map](https://data.gov.au/dataset/11cbf24a-a31a-488c-bc65-2811da2a8582)
 * [AWB NSW map](https://data.gov.au/dataset/11cbf24a-a31a-488c-bc65-2811da2a8582/resource/30096cbe-e2a7-48ec-9761-c5564ece85bd/download/nsw-missions.csv) (CSV, 2018-05-31T10:40:44.005775)
-
-## Australian Museum
-
-### [Streamwatch](https://data.nsw.gov.au/dataset/8117fc5a-deb2-4aca-abe8-9eccbae30606)
-* [PDF Metadata - Streamwatch](https://datasets.seed.nsw.gov.au/dataset/6069288a-bca7-464e-901d-199042108414/resource/b3265024-fc40-412e-804f-6784e94b90eb/download/cdatagisstreamwatch-metadata.pdf) (PDF, 2019-06-04T00:02:42.238739)
-* [PDF Data Quality Statement - Streamwatch](https://datasets.seed.nsw.gov.au/dataset/6069288a-bca7-464e-901d-199042108414/resource/825a23c5-b38b-4e0f-a64e-0e0dd3113aee/download/cdatastreamwatchdqs_190417.pdf) (PDF, 2019-06-04T00:02:42.238750)
-* [PDF Manual - Streamwatch](https://datasets.seed.nsw.gov.au/dataset/6069288a-bca7-464e-901d-199042108414/resource/38433794-79eb-4c53-a815-7a4ae7e3e577/download/cdatagisstreamwatch-manual.pdf) (PDF, 2019-06-04T00:02:42.238754)
-* [Streamwatch data file](https://datasets.seed.nsw.gov.au/dataset/6069288a-bca7-464e-901d-199042108414/resource/05bf97fd-ff4c-4a31-a50a-ec60779dc1e2/download/cdatagisstreamwatch-data-file.xlsx) (XLSX, 2019-06-04T00:02:42.238758)
 
 ## History Trust of South Australia
 
@@ -59,16 +51,16 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Community History Live Stream](http://data.history.sa.gov.au/communityhistory/) (API, 2015-05-15T11:33:00.199640)
 
 ### [Consultants engaged by the History Trust of South Australia](https://data.sa.gov.au/data/dataset/e1d89da7-8ec7-4041-ab0a-818d8925d122)
-* [Consultants engaged by the History Trust of South Australia](https://data.sa.gov.au/data/dataset/e1d89da7-8ec7-4041-ab0a-818d8925d122/resource/b0f9c2d3-3f45-4207-bda6-724bc3ad56ed/download/consultantsengagedhtsaperiod2011-12to2018-19.csv) (CSV, 2019-11-08T00:52:08.054619)
+* [Consultants engaged by the History Trust of South Australia](https://data.sa.gov.au/data/dataset/e1d89da7-8ec7-4041-ab0a-818d8925d122/resource/b0f9c2d3-3f45-4207-bda6-724bc3ad56ed/download/consultantsengagedhtsaperiod2011-12to2019-20.csv) (CSV, 2019-11-08T00:52:08.054619)
 
 ### [Contractors engaged by the History Trust of South Australia](https://data.sa.gov.au/data/dataset/acf3e43e-823b-4238-a620-3e4efaf61a28)
-* [Contractors engaged by the History Trust of South Australia](https://data.sa.gov.au/data/dataset/acf3e43e-823b-4238-a620-3e4efaf61a28/resource/6041e625-5d33-4bf0-9ec0-10c2f87f3c0e/download/contractors-htsa-period-2018-19.csv) (CSV, 2019-11-08T01:40:32.149049)
+* [Contractors engaged by the History Trust of South Australia](https://data.sa.gov.au/data/dataset/acf3e43e-823b-4238-a620-3e4efaf61a28/resource/6041e625-5d33-4bf0-9ec0-10c2f87f3c0e/download/contractors-htsa-period-2019-20.csv) (CSV, 2019-11-08T01:40:32.149049)
 
 ### [Executive Employment at the History Trust of South Australia](https://data.sa.gov.au/data/dataset/f751c9b2-ceb4-4c25-8dfa-06116a76e3df)
-* [Executive Employment at the History Trust of South Australia 2011-2019](https://data.sa.gov.au/data/dataset/f751c9b2-ceb4-4c25-8dfa-06116a76e3df/resource/85bf7d2d-71d0-4a0b-b6a6-c0637ae579b4/download/executive-employment-htsa-for-period-2011-2012-to-2018-2019.csv) (CSV, 2018-09-03T04:51:56.073524)
+* [Executive Employment at the History Trust of South Australia 2011-2019](https://data.sa.gov.au/data/dataset/f751c9b2-ceb4-4c25-8dfa-06116a76e3df/resource/85bf7d2d-71d0-4a0b-b6a6-c0637ae579b4/download/executive-employment-htsa-for-period-2011-2012-to-2019-20.csv) (CSV, 2018-09-03T04:51:56.073524)
 
 ### [Fraud detection at History Trust of South Australia](https://data.sa.gov.au/data/dataset/7b7f379c-d4a9-4b60-8c3e-92a42a2fc346)
-* [Fraud detection at History Trust of South Australia 2011-2019](https://data.sa.gov.au/data/dataset/7b7f379c-d4a9-4b60-8c3e-92a42a2fc346/resource/375deca9-b443-40c7-ac27-0f13f3cbabdb/download/fraud-detection-htsa-for-period-2011-12-to-2018-2019.csv) (CSV, 2018-09-03T05:02:56.430669)
+* [Fraud detection at History Trust of South Australia 2011-2020](https://data.sa.gov.au/data/dataset/7b7f379c-d4a9-4b60-8c3e-92a42a2fc346/resource/375deca9-b443-40c7-ac27-0f13f3cbabdb/download/fraud-detection-htsa-for-period-2011-12-to-2019-20.csv) (CSV, 2018-09-03T05:02:56.430669)
 
 ### [History Festival Archive](https://data.sa.gov.au/data/dataset/8606923a-8c21-4a2a-b31b-925f6fee4616)
 * [History Festival Events](http://data.history.sa.gov.au/abouttime/) (API, 2015-05-14T17:18:33.373635)
@@ -80,7 +72,7 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Passengers in History Search Index](http://data.history.sa.gov.au:8983/solr/passengers/select) (API, 2016-06-28T10:54:22.341773)
 
 ### [Public Complaints History Trust of South Australia](https://data.sa.gov.au/data/dataset/e0286abe-d1ba-4cbd-a48b-628b854f3cf9)
-* [Public complaints received by History Trust of South Australia](https://data.sa.gov.au/data/dataset/e0286abe-d1ba-4cbd-a48b-628b854f3cf9/resource/eee983fd-960d-419a-97a8-4ab8379ec0a1/download/reporting-of-public-complaints-htsa-for-period-2011-12-to-2018-19.csv) (CSV, 2018-09-03T04:47:28.935571)
+* [Public complaints received by History Trust of South Australia](https://data.sa.gov.au/data/dataset/e0286abe-d1ba-4cbd-a48b-628b854f3cf9/resource/eee983fd-960d-419a-97a8-4ab8379ec0a1/download/reporting-of-public-complaints-htsa-for-period-2011-12-to-2019-20.csv) (CSV, 2018-09-03T04:47:28.935571)
 
 ### [SA History Hub](https://data.sa.gov.au/data/dataset/53b4d7c2-a1b0-4b59-b7e0-28ee57db546e)
 * [Historical Places](http://data.history.sa.gov.au/sahistoryhub/place) (GeoJSON, 2015-07-02T16:03:37.435850)
@@ -96,13 +88,13 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [State History Collection](http://data.history.sa.gov.au/collection) (API, 2017-06-27T12:06:29.400254)
 
 ### [Whistleblowers Disclosure for History Trust of South Australia](https://data.sa.gov.au/data/dataset/9a9aea08-dc9a-4ad0-9ce6-0127349cecb3)
-* [Whistleblowers Disclosure for History Trust of South Australia 2011-2019](https://data.sa.gov.au/data/dataset/9a9aea08-dc9a-4ad0-9ce6-0127349cecb3/resource/7265374f-41d3-4330-b1f9-c028ae348360/download/whistle-blowers-disclosure-htsa-period-2011-12-to-2018-19.csv) (CSV, 2018-09-03T04:55:39.086918)
+* [Whistleblowers Disclosure for History Trust of South Australia 2011-2020](https://data.sa.gov.au/data/dataset/9a9aea08-dc9a-4ad0-9ce6-0127349cecb3/resource/7265374f-41d3-4330-b1f9-c028ae348360/download/whistle-blowers-disclosure-htsa-period-2011-12-to-2019-20.csv) (CSV, 2018-09-03T04:55:39.086918)
 
 ### [Women’s Suffrage Petition 1894 (South Australia)](https://data.sa.gov.au/data/dataset/3f6fab54-8cc8-4732-9c1e-fb3f73df53b0)
 * [Suffrage125 Petition](https://data.sa.gov.au/data/dataset/3f6fab54-8cc8-4732-9c1e-fb3f73df53b0/resource/68036d75-1ea2-4bb7-9efe-71ea7115227c/download/suffrage125_petition.json) (JSON, 2019-04-04T02:17:13.619366)
 
 ### [Workplace Injury Claims History Trust of South Australia](https://data.sa.gov.au/data/dataset/acb979d9-d04d-4a83-a8e8-f0c3d5149dcb)
-* [Workplace Injury Claims received by History Trust of South Australia 2018-19](https://data.sa.gov.au/data/dataset/acb979d9-d04d-4a83-a8e8-f0c3d5149dcb/resource/526183df-592f-487f-9f3a-1277fb24d272/download/workplaceinjuryhtsaperiod2018-19.csv) (CSV, 2018-09-03T05:14:12.730644)
+* [Workplace Injury Claims received by History Trust of South Australia 2019-20](https://data.sa.gov.au/data/dataset/acb979d9-d04d-4a83-a8e8-f0c3d5149dcb/resource/526183df-592f-487f-9f3a-1277fb24d272/download/workplaceinjuryhtsaperiod2019-20.csv) (CSV, 2018-09-03T05:14:12.730644)
 
 ## Libraries Tasmania
 
@@ -112,13 +104,12 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Colonial Secretary correspondence - JSON](https://data.gov.au/data/dataset/069a423b-abd8-4454-89ad-4b04aed6cec7/resource/59a8d34b-a183-468f-b615-2c95fad1c054/download/colonial-secretary-correspondence.json) (JSON, 2019-09-05T06:31:38.563475)
 
 ### [Libraries Tasmania Digitised Archives](https://data.gov.au/dataset/d7ec2d93-b9dd-482b-b6d9-432b2a2455a3)
-* [Digitised Archives - CSV](https://data.gov.au/data/dataset/d7ec2d93-b9dd-482b-b6d9-432b2a2455a3/resource/ee8ec788-77ed-4faf-8ceb-17f046ab2a4f/download/archivesoneitems.csv) (CSV, 2016-04-05T15:03:32.004162)
-* [Digitised Archives - XML](https://data.gov.au/data/dataset/d7ec2d93-b9dd-482b-b6d9-432b2a2455a3/resource/b3bbc43c-d8ed-4515-8d13-a925a2e3bb0b/download/archivesoneitems.xml) (XML, 2016-04-05T15:12:24.058994)
-* [Digitised Archives - JSON](https://data.gov.au/data/dataset/d7ec2d93-b9dd-482b-b6d9-432b2a2455a3/resource/2eb9e1bd-6e6c-4541-be0d-e3166b5bd84a/download/archivesoneitems.json) (JSON, 2016-04-05T15:37:34.674182)
+* [Digitised Archives - CSV](https://data.gov.au/data/dataset/d7ec2d93-b9dd-482b-b6d9-432b2a2455a3/resource/ee8ec788-77ed-4faf-8ceb-17f046ab2a4f/download/archives_ite_dix.csv) (CSV, 2016-04-05T15:03:32.004162)
+* [Digitised Archives - XML](https://data.gov.au/data/dataset/d7ec2d93-b9dd-482b-b6d9-432b2a2455a3/resource/b3bbc43c-d8ed-4515-8d13-a925a2e3bb0b/download/archives_ite_dix.xml) (XML, 2016-04-05T15:12:24.058994)
+* [Digitised Archives - JSON](https://data.gov.au/data/dataset/d7ec2d93-b9dd-482b-b6d9-432b2a2455a3/resource/2eb9e1bd-6e6c-4541-be0d-e3166b5bd84a/download/archives_ite_dix.json) (JSON, 2016-04-05T15:37:34.674182)
 
 ### [Libraries Tasmania locations](https://data.gov.au/dataset/409f7f64-35ef-4a70-8db1-dd737a6fabec)
-* [Libraries Tasmania GeoJSON Locations - 25/07/2018](https://data.gov.au/dataset/409f7f64-35ef-4a70-8db1-dd737a6fabec/resource/599333a0-00c5-4682-9192-b78b253240bc/download/libraries-tasmania.geojson) (GEOJSON, 2018-07-25T02:18:55.169014)
-* [OAC (Onine Access Centre) GeoJSON Locations - 25/07/2018](https://data.gov.au/dataset/409f7f64-35ef-4a70-8db1-dd737a6fabec/resource/797aa0d7-af24-478f-bb2f-93197d6960b2/download/oac.geojson) (GEOJSON, 2018-07-25T02:20:13.334990)
+* [Libraries Tasmania GeoJSON Locations](https://data.gov.au/data/dataset/409f7f64-35ef-4a70-8db1-dd737a6fabec/resource/599333a0-00c5-4682-9192-b78b253240bc/download/libraries-tasmania.geojson) (GEOJSON, 2018-07-25T02:18:55.169014)
 
 ### [Miscellaneous Records (1838-1873)](https://data.gov.au/dataset/31cf23a9-ecff-4803-ab01-15d580e40eaa)
 * [Miscellaneous - CSV](https://data.gov.au/data/dataset/31cf23a9-ecff-4803-ab01-15d580e40eaa/resource/77a40a8f-17a8-461f-b49f-8a79c45bb495/download/miscellaneous.csv) (CSV, 2019-09-05T06:37:25.594413)
@@ -126,9 +117,9 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Miscellaneous - JSON](https://data.gov.au/data/dataset/31cf23a9-ecff-4803-ab01-15d580e40eaa/resource/06dff415-bf40-4980-983a-594c4dbb2c96/download/miscellaneous.json) (JSON, 2019-09-05T06:38:00.938644)
 
 ### [Tasmanian Archives Records Series](https://data.gov.au/dataset/575f1bb4-87ed-4f08-990d-3cfcd06ccd9c)
-* [Archives Series - CSV](https://data.gov.au/data/dataset/575f1bb4-87ed-4f08-990d-3cfcd06ccd9c/resource/4ca7e432-e3f6-411d-adf3-1eab2efe2147/download/archivesoneseries.csv) (CSV, 2016-04-06T16:15:28.494420)
-* [Archives Series - XML](https://data.gov.au/data/dataset/575f1bb4-87ed-4f08-990d-3cfcd06ccd9c/resource/1b03a062-d376-4304-be64-125efc180539/download/archivesoneseries.xml) (XML, 2016-04-06T16:15:59.152897)
-* [Archives Series - JSON](https://data.gov.au/data/dataset/575f1bb4-87ed-4f08-990d-3cfcd06ccd9c/resource/ec6d7702-ea1b-44ba-a85a-3b61d6082e68/download/archivesoneseries.json) (JSON, 2016-04-06T16:16:21.403908)
+* [Archives Series - CSV](https://data.gov.au/data/dataset/575f1bb4-87ed-4f08-990d-3cfcd06ccd9c/resource/4ca7e432-e3f6-411d-adf3-1eab2efe2147/download/archives_ser_dix.csv) (CSV, 2016-04-06T16:15:28.494420)
+* [Archives Series - XML](https://data.gov.au/data/dataset/575f1bb4-87ed-4f08-990d-3cfcd06ccd9c/resource/1b03a062-d376-4304-be64-125efc180539/download/archives_ser_dix.xml) (XML, 2016-04-06T16:15:59.152897)
+* [Archives Series - JSON](https://data.gov.au/data/dataset/575f1bb4-87ed-4f08-990d-3cfcd06ccd9c/resource/ec6d7702-ea1b-44ba-a85a-3b61d6082e68/download/archives_ser_dix.json) (JSON, 2016-04-06T16:16:21.403908)
 
 ### [Tasmanian Arrivals (19th Century)](https://data.gov.au/dataset/351092b1-65f1-4b34-8406-0c30ae146c88)
 * [Tasmanian Arrivals - CSV](https://data.gov.au/data/dataset/351092b1-65f1-4b34-8406-0c30ae146c88/resource/7d2c5531-94ec-474e-b60c-744b9d0cbbb8/download/arrivals.csv) (CSV, 2016-03-22T09:36:57.200305)
@@ -210,6 +201,11 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Tasmanian Inquests - XML](https://data.gov.au/data/dataset/5b5ced0f-0032-4178-a874-57b92d7b09d9/resource/42e0e4a6-3539-48ea-bdb7-40165ab8dcc5/download/inquests.xml) (XML, 2016-03-22T10:14:37.360026)
 * [Tasmanian Inquests - JSON](https://data.gov.au/data/dataset/5b5ced0f-0032-4178-a874-57b92d7b09d9/resource/980aa7af-45ce-49a8-a813-013d20c52011/download/inquests.json) (JSON, 2016-03-22T10:15:10.712116)
 
+### [Tasmanian Land Records (1832-1935)](https://data.gov.au/dataset/4940b8e0-a2b4-49e6-b658-b124d98e2082)
+* [Land Records - CSV](https://data.gov.au/data/dataset/4940b8e0-a2b4-49e6-b658-b124d98e2082/resource/d55b564e-8cee-4642-beec-3d14a46b1536/download/land.csv) (CSV, 2021-03-23T22:10:49.483391)
+* [Land Records - XML](https://data.gov.au/data/dataset/4940b8e0-a2b4-49e6-b658-b124d98e2082/resource/299a3e98-00aa-4c26-b055-a7875b8f2568/download/land.xml) (XML, 2021-03-23T22:11:08.830163)
+* [Land Records - JSON](https://data.gov.au/data/dataset/4940b8e0-a2b4-49e6-b658-b124d98e2082/resource/1aa0d1c0-7298-45bc-99ea-b5be9fa1e705/download/land.json) (JSON, 2021-03-23T22:11:40.714921)
+
 ### [Tasmanian Marriages (1803-1944)](https://data.gov.au/dataset/948c2c93-5d32-43c0-b970-d834cbadf448)
 * [Tasmanian Marriages - CSV](https://data.gov.au/data/dataset/948c2c93-5d32-43c0-b970-d834cbadf448/resource/fabcdd72-4410-4d56-8abc-799fd33280c8/download/marriages.csv) (CSV, 2016-03-22T10:28:13.711141)
 * [Tasmanian Marriages - XML](https://data.gov.au/data/dataset/948c2c93-5d32-43c0-b970-d834cbadf448/resource/37ce8ddb-858e-468e-a407-fcf9f54a873a/download/marriages.xml) (XML, 2016-03-22T10:29:15.108731)
@@ -255,23 +251,23 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 ## Museum of Applied Arts and Sciences
 
-### [Powerhouse Museum Collection API](https://data.nsw.gov.au/dataset/bf9df234-7890-4907-94f6-e7872c8f4258)
+### [Powerhouse Museum Collection API](https://data.nsw.gov.au/data/dataset/bf9df234-7890-4907-94f6-e7872c8f4258)
 * [Museum of Applied Arts and Science MAAS’s Public API](https://api.maas.museum/docs) (api, 2013-05-23T21:43:56.565263)
 
-### [Powerhouse Museum Collection simplified dataset](https://data.nsw.gov.au/dataset/91829aff-594e-4cdf-bc76-bf639335fa26)
+### [Powerhouse Museum Collection simplified dataset](https://data.nsw.gov.au/data/dataset/91829aff-594e-4cdf-bc76-bf639335fa26)
 * [Powerhouse Museum Collection simplified dataset](http://www.powerhousemuseum.com/collection/database/download.php) (PHP, 2013-05-23T21:45:06.647694)
 
-### [Search the Powerhouse Museum Collection](https://data.nsw.gov.au/dataset/bf5a60c5-3340-4cd7-9282-d4db9819e071)
+### [Search the Powerhouse Museum Collection](https://data.nsw.gov.au/data/dataset/bf5a60c5-3340-4cd7-9282-d4db9819e071)
 * [Search the Powerhouse Museum Collection](https://collection.maas.museum) (MUSEUM, 2013-05-23T22:09:50.225808)
 
 ## Museums Victoria
 
 ### [Museum Victoria Collections - API](https://www.data.vic.gov.au/data/dataset/a97190fe-e96f-4915-b263-8a6147495097)
-* [Museum Victoria Collections API](http://collections.museumvictoria.com.au/developers) (api, 2015-09-14T07:19:52.123239)
+* [Museum Victoria Collections API](https://developer.vic.gov.au/index.php?option=com_apiportal&view=definition&format=raw&stateReturn=L2luZGV4LnBocD9vcHRpb249Y29tX2FwaXBvcnRhbCZ2aWV3PWFwaXRlc3RlciZ1c2FnZT1hcGkmdGFiPXRlc3RzJmFwaU5hbWU9TXVzZXVtcytWaWN0b3JpYStDb2xsZWN0aW9ucytBUEkmYXBpSWQ9OGY4NWIwOGUtZmZkNy00NWJhLWIzZjUtYzMzMzcyNmFjMzM5Jm1lbnVJZD0xODc=&path=%2Fdiscovery%2Fswagger%2Fapi%2Fid%2F8f85b08e-ffd7-45ba-b3f5-c333726ac339%3FswaggerVersion%3D2.0%26filename%3DMuseums%2BVictoria%2BCollections%2BAPI.json) (JSON, 2015-09-14T07:19:52.123239)
 
 ## NSW State Archives
 
-### [Convict Indexes](https://data.nsw.gov.au/dataset/acdd01d0-d700-465c-a183-735c4f139ca0)
+### [Convict Indexes](https://data.nsw.gov.au/data/dataset/acdd01d0-d700-465c-a183-735c4f139ca0)
 * [Index to convict bank accounts 1837-70](https://data.nsw.gov.au/data/dataset/acdd01d0-d700-465c-a183-735c4f139ca0/resource/4cbdcbe0-e51f-41a1-ae44-25a16c2e06bc/download/bank-accounts-1837-70.csv) (CSV, 2015-10-01T11:57:07.654001)
 * [Index to Certificates of Freedom, 1823-69](https://data.nsw.gov.au/data/dataset/acdd01d0-d700-465c-a183-735c4f139ca0/resource/07fb0a86-e7d6-4023-9033-c6ec50b077d5/download/certificates-of-freedom-1823-69.csv) (CSV, 2015-10-01T11:59:46.136381)
 * [Index to convict pardons, 1791-1825 and 1837-47](https://data.nsw.gov.au/data/dataset/acdd01d0-d700-465c-a183-735c4f139ca0/resource/c3d46577-7ede-4ed0-96cb-9877af4727a2/download/pardons-1791-1825-and-1837-47.csv) (CSV, 2015-10-01T12:02:20.325069)
@@ -280,25 +276,25 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Index to Tickets of Leave, Certificates of Emancipation, and Pardons, 1810-19](https://data.nsw.gov.au/data/dataset/acdd01d0-d700-465c-a183-735c4f139ca0/resource/82b8128f-b0cf-44ef-b6c5-f4762688b000/download/tickets-of-leave-certificates-of-emancipation-pardons-1810-19.csv) (CSV, 2015-10-01T12:13:36.362074)
 * [Index to Tickets of Leave Passports, 1835-69](https://data.nsw.gov.au/data/dataset/acdd01d0-d700-465c-a183-735c4f139ca0/resource/128a859e-120f-43e2-8f9f-9aadc05b8745/download/tickets-of-leave-passports-1835-69.csv) (CSV, 2015-10-01T12:14:59.685832)
 
-### [Deceased Estate Files, 1880-1923](https://data.nsw.gov.au/dataset/5d45437c-d07a-4977-95ab-e53fb86f02c1)
+### [Deceased Estate Files, 1880-1923](https://data.nsw.gov.au/data/dataset/5d45437c-d07a-4977-95ab-e53fb86f02c1)
 * [Deceased Estates](https://data.nsw.gov.au/data/dataset/5d45437c-d07a-4977-95ab-e53fb86f02c1/resource/7ea09383-b884-4458-885a-6fab1fc4c209/download/deceased-estates.csv) (CSV, 2014-09-30T00:55:53.313012)
 
-### [Flickr Photostream](https://data.nsw.gov.au/dataset/32f00807-077b-45f9-978b-df4f688b1b17)
+### [Flickr Photostream](https://data.nsw.gov.au/data/dataset/32f00807-077b-45f9-978b-df4f688b1b17)
 * [Flickr Photostream](https://www.flickr.com/photos/state-records-nsw/) (website link, 2014-08-11T23:23:44.269666)
 
-### [NSW Government Railways and Tramways Roll of Honour, 1914-1919](https://data.nsw.gov.au/dataset/33809e06-5e9e-49e6-a922-b345afc0b4ca)
+### [NSW Government Railways and Tramways Roll of Honour, 1914-1919](https://data.nsw.gov.au/data/dataset/33809e06-5e9e-49e6-a922-b345afc0b4ca)
 * [NSW Govt Railways and Tramways - Roll of Honour - 1914-1919.csv](http://data.nsw.gov.au/data/storage/f/2014-09-30T04%3A45%3A19.871Z/nsw-govt-railways-and-tramways-roll-of-honour-1914-1919.csv) (CSV, 2014-09-30T00:46:33.977932)
 
-### [Nominal Roll of the First Railway Section (AIF), 1917-20](https://data.nsw.gov.au/dataset/7e8b1833-4edc-483f-b38c-816e87a60149)
+### [Nominal Roll of the First Railway Section (AIF), 1917-20](https://data.nsw.gov.au/data/dataset/7e8b1833-4edc-483f-b38c-816e87a60149)
 * [Nominal Roll of the First Railway Section (AIF).csv](http://data.nsw.gov.au/data/storage/f/2014-09-30T04%3A50%3A17.994Z/nominal-roll-of-the-first-railway-section-aif.csv) (CSV, 2014-09-30T00:51:03.642506)
 
-### [OpenGov NSW API](https://data.nsw.gov.au/dataset/e2c36616-36db-4bb3-a907-87db836481f0)
+### [OpenGov NSW API](https://data.nsw.gov.au/data/dataset/e2c36616-36db-4bb3-a907-87db836481f0)
 * [OpenGov NSW API](https://www.opengov.nsw.gov.au/api) (API, 2013-05-28T01:05:30.921458)
 
-### [Railway Employment Records](https://data.nsw.gov.au/dataset/1f776129-6d97-4225-afc0-b9fc1833f815)
+### [Railway Employment Records](https://data.nsw.gov.au/data/dataset/1f776129-6d97-4225-afc0-b9fc1833f815)
 * [Railway Employment Records](http://data.nsw.gov.au/data/storage/f/2014-09-30T04%3A35%3A07.812Z/railway-employment-records.csv) (CSV, 2014-09-30T00:36:18.152909)
 
-### [Soldier Settlement Indexes](https://data.nsw.gov.au/dataset/78fe0108-2ae2-4918-b359-48a3bb1c31dd)
+### [Soldier Settlement Indexes](https://data.nsw.gov.au/data/dataset/78fe0108-2ae2-4918-b359-48a3bb1c31dd)
 * [Closer Settlement Promotion files, 1913-](https://www.records.nsw.gov.au/archives/collections-and-research/guides-and-indexes/node/1551/browse) (website link, 2013-05-28T01:08:57.757219)
 * [Closer Settlement Transfer Registers, Jul 1919 - Apr 1925](https://www.records.nsw.gov.au/archives/collections-and-research/guides-and-indexes/node/1541/browse) (website link, 2013-05-28T01:09:42.446601)
 * [Closer Settlement and Returned Soldier’s Transfer files, 1907-36, 1951](https://www.records.nsw.gov.au/archives/collections-and-research/guides-and-indexes/node/1546/browse) (website link, 2013-05-28T01:10:39.394959)
@@ -339,19 +335,28 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ## Public Records Office Victoria
 
 ### [British Assisted Passengers to Victoria 1839-1871](https://www.data.vic.gov.au/data/dataset/1bcc6d77-d223-4a26-83c2-2f8b6325af50)
-* [British Assisted Passengers to Victoria 1839-1871](https://ckan-datavic-ckan-odp-master.au.amazee.io/dataset/1bcc6d77-d223-4a26-83c2-2f8b6325af50/resource/83ee19af-0655-45b9-bc5d-68144a8b58de/download/assistedbritishpassengers18391871.zip) (ZIP, 2014-08-01T15:02:54.869800)
-
-### [Inwards Unassisted Passengers to Victoria 1852-1923](https://www.data.vic.gov.au/data/dataset/01557802-56f1-4bfd-9f44-b949ce218f34)
-* [Inwards Unassisted Passengers to Victoria 1852-1923](https://ckan-datavic-ckan-odp-master.au.amazee.io/dataset/01557802-56f1-4bfd-9f44-b949ce218f34/resource/3cc7a798-1241-4a32-9a19-b54906840542/download/unassisted20inward20passengers201852-1923.csv) (CSV, 2014-08-01T15:02:38.173339)
+* [British Assisted Passengers to Victoria 1839-1871](https://discover.data.vic.gov.au/dataset/1bcc6d77-d223-4a26-83c2-2f8b6325af50/resource/83ee19af-0655-45b9-bc5d-68144a8b58de/download/assistedbritishpassengers18391871.zip) (ZIP, 2014-08-01T15:02:54.869800)
 
 ### [Local History Grant Recipients 2014-2015](https://www.data.vic.gov.au/data/dataset/34587443-6bc7-4533-92ea-bf8bc8bc2708)
 * [Local History Grant Recipients 2014-2015](http://metadata.prov.vic.gov.au/datasets/PROV%20Annual%20Report%202015%20Local%20History%20Grant%20Recipients%202014_2015.csv) (CSV, 2015-11-25T15:06:19.840937)
 
 ### [Outwards Passengers from Victoria 1852-1915](https://www.data.vic.gov.au/data/dataset/9ae281eb-d3f5-4738-98ef-44976e980eb5)
-* [Outwards Passengers from Victoria 1852-1915](https://ckan-datavic-ckan-odp-master.au.amazee.io/dataset/9ae281eb-d3f5-4738-98ef-44976e980eb5/resource/a7e4f8e2-5cfe-4548-8dfa-755591b9eade/download/outwardspassengers18521915.zip) (ZIP, 2014-08-01T15:13:21.157009)
+* [Outwards Passengers from Victoria 1852-1915](https://discover.data.vic.gov.au/dataset/9ae281eb-d3f5-4738-98ef-44976e980eb5/resource/a7e4f8e2-5cfe-4548-8dfa-755591b9eade/download/outwardspassengers18521915.zip) (ZIP, 2014-08-01T15:13:21.157009)
 
 ### [PROV - Financial statement 2015-2018](https://www.data.vic.gov.au/data/dataset/cbdb4f34-3c0a-4556-ad1a-44e4e729e3db)
 * [Financial statement 2015-2018](http://metadata.prov.vic.gov.au/datasets/2019/PROV%20Financial%20Statement%202015-2018.csv) (CSV, 2016-12-12T10:53:00.320806)
+
+### [PROV 19-20 Financial Statement](https://www.data.vic.gov.au/data/dataset/f6177e3a-8ee9-4b2d-8ce8-4afa44fcec72)
+* [PROV 19_20 Financial Statement](http://metadata.prov.vic.gov.au/datasets/2020/PROV%2019_20%20Financial%20Statement.csv) (CSV, 2020-11-04T23:56:21.013225)
+
+### [PROV 2019–20 Annual Report Measures](https://www.data.vic.gov.au/data/dataset/cbeb3c62-3d19-4d2d-b4b7-f89288287373)
+* [PROV 2019–20 Annual Report Measures](http://metadata.prov.vic.gov.au/datasets/2020/PROV%202019%e2%80%9320%20Annual%20Report%20Measures.csv) (CSV, 2020-11-05T00:15:14.422954)
+
+### [PROV 2019–20 BP3 Measures](https://www.data.vic.gov.au/data/dataset/e770b249-d4b5-49ff-ab91-b424c889b31c)
+* [PROV 2019–20 BP3 Measures](http://metadata.prov.vic.gov.au/datasets/2020/PROV%202019%e2%80%9320%20BP3%20Measures.csv) (CSV, 2020-11-05T00:36:56.260803)
+
+### [PROV Alphabetical Places of Deposit listing](https://www.data.vic.gov.au/data/dataset/2585e7bd-45d0-4162-bcf3-227e0f924d83)
+* [](http://metadata.prov.vic.gov.au/datasets/2019/PROV%20Alphabetical%20Places%20of%20Deposit.csv) (CSV, 2019-08-29T04:03:40.133533)
 
 ### [PROV Annual Report - Environmental Sustainability 2015-2016](https://www.data.vic.gov.au/data/dataset/ccc32e00-04b5-49f6-8640-0a8dc81c712c)
 * [Environmental Sustainability 2015-2016](http://metadata.prov.vic.gov.au/datasets/2016/Environmental%20Sustainability%202015-2016.csv) (CSV, 2016-12-12T10:48:20.119041)
@@ -374,6 +379,9 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [PROV Annual Report - Workforce data 2015-2016](https://www.data.vic.gov.au/data/dataset/b434a8b1-8955-4326-8176-7eee62b4cb18)
 * [Workforce data 2015-2016](http://metadata.prov.vic.gov.au/datasets/2016/Workforce%20data%202015-2016.csv) (CSV, 2016-12-12T13:18:58.684716)
 
+### [PROV Approved Public Record Office Victoria Storage Suppliers (APROSS) 19_20](https://www.data.vic.gov.au/data/dataset/db78017a-24ec-4c93-a7bc-79075214af45)
+* [PROV Approved Public Record Office Victoria Storage Suppliers (APROSS) 19_20](http://metadata.prov.vic.gov.au/datasets/2020/PROV%20Approved%20Public%20Record%20Office%20Victoria%20Storage%20Suppliers%20(APROSS)%2019_20.csv) (CSV, 2020-11-05T00:50:41.117226)
+
 ### [PROV Authorities issued in 2014 - 2015](https://www.data.vic.gov.au/data/dataset/09131e57-b611-4d7c-a964-c9a04db91180)
 * [PROV Authorities issued in 2014 - 2015](http://metadata.prov.vic.gov.au/datasets/PROV%202015%20Annual%20Report%20Authorities%20issued%20in%202014_2015.csv) (CSV, 2015-11-25T14:50:40.385898)
 
@@ -392,6 +400,9 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [PROV Index to Wills, Probate and Administration Records 1841-2009](https://www.data.vic.gov.au/data/dataset/d2396144-d5fa-4c0c-9ff3-64fee31b82c0)
 * [Index to Wills, Probate and Administration Records 1841-2009](http://metadata.prov.vic.gov.au/datasets/2019/ProbateIndex1841-2009.csv) (CSV, 2014-12-22T13:50:24.796748)
 
+### [PROV Local History Grant recipients 19_20](https://www.data.vic.gov.au/data/dataset/7730ed73-bd09-4c99-b698-b88e70728b1b)
+* [PROV Local History Grant recipients 19_20](http://metadata.prov.vic.gov.au/datasets/2020/PROV%20Local%20History%20Grant%20recipients%2019_20.csv) (CSV, 2020-11-05T04:49:06.606398)
+
 ### [PROV Local History Grants Program 2017-2018](https://www.data.vic.gov.au/data/dataset/4186db0d-3882-453f-bcda-2a177a8b727c)
 * [Local History Grants Program 2017-2018](http://metadata.prov.vic.gov.au/datasets/2019/PROV%20Local%20History%20Grants%20Program%202017-2018.csv) (CSV, 2019-05-15T04:38:49.652023)
 
@@ -404,21 +415,26 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [PROV Output Measures 2017–18](https://www.data.vic.gov.au/data/dataset/4e43ddb9-13dd-4889-8753-7b08684a0c4f)
 * [Output Measures 2017–18](http://metadata.prov.vic.gov.au/datasets/2019/PROV%20Output%20Measures%202017%e2%80%9318%20s.csv) (CSV, 2019-05-15T04:48:17.030957)
 
-### [PROV Places of Deposit (PODS)](https://www.data.vic.gov.au/data/dataset/7b14ff9b-b12d-480b-8101-ad63a2750413)
-* [Places of Deposit (PODS)](http://www.google.com/maps/d/kml?mid=zHT15-KshHX0.kjXFbGm_kyQE) (KML, 2014-12-22T14:16:14.949598)
-* [Alphabetical Places of Deposit listing](http://metadata.prov.vic.gov.au/datasets/2019/PROV%20Alphabetical%20Places%20of%20Deposit.csv) (CSV, 2019-05-21T00:26:21.534041)
-
 ### [PROV Policies issued in 2014 - 2015](https://www.data.vic.gov.au/data/dataset/c10aa5e0-5e57-470c-9621-d184a1860346)
 * [PROV Policies issued in 2014 - 2015](http://metadata.prov.vic.gov.au/datasets/PROV%202015%20Annual%20Report%20Policies%20issued%20in%202014_2015.csv) (CSV, 2015-11-25T14:48:02.298526)
 
+### [PROV RDAs varied 19_20](https://www.data.vic.gov.au/data/dataset/ba3dd189-7b0c-4ad5-9380-2f3d312614d5)
+* [PROV RDAs varied 19_20](http://metadata.prov.vic.gov.au/datasets/2020/PROV%20RDAs%20varied%2019_20.csv) (CSV, 2020-11-05T05:33:00.632392)
+
 ### [PROV Reading Room Visitors](https://www.data.vic.gov.au/data/dataset/0e607ac4-2a01-4b26-8bb6-fe78b2119e42)
 * [Reading Room Visitors](http://metadata.prov.vic.gov.au/datasets/PROV_Reading_Room_Statistics_2013-2014.csv) (CSV, 2014-12-23T10:43:44.300968)
+
+### [PROV Recordkeeping Standards Framework Documents Issued 19_20](https://www.data.vic.gov.au/data/dataset/d7332ac1-cd8b-427e-b28f-3f48e7318413)
+* [PROV Recordkeeping Standards Framework Documents Issued 19_20](http://metadata.prov.vic.gov.au/datasets/2020/PROV%20Recordkeeping%20Standards%20Framework%20Documents%20Issued%20%2019_20.csv) (CSV, 2020-11-05T06:01:40.478787)
 
 ### [PROV Records Issued & Visitor Statistics 2014 - 2015](https://www.data.vic.gov.au/data/dataset/bfda89f6-a8ee-4cbe-828a-aebc0ec6aeb7)
 * [PROV Records Issued & Visitor Statistics 2014 - 2015](http://metadata.prov.vic.gov.au/datasets/PROV%202015%20Annual%20Report%20Records%20Issued%20&%20Visitor%20Statistics%202006_2015.csv) (CSV, 2015-11-25T14:35:30.346717)
 
 ### [PROV Records Issued & Visitor Statistics 2017-2018](https://www.data.vic.gov.au/data/dataset/4db19337-50c1-458b-addf-56b109166271)
 * [Records Issued & Visitor Statistics 2017-2018](http://metadata.prov.vic.gov.au/datasets/2019/PROV%20Records%20Issued%20&%20Visitor%20Statistics%202017-2018.csv) (CSV, 2019-05-15T04:53:08.094525)
+
+### [PROV Retention and Disposal Authority (RDA) Documents Issued or Varied 19-20](https://www.data.vic.gov.au/data/dataset/7b813600-b9bb-474b-8922-196f6ec234e5)
+* [PROV Retention and Disposal Authority (RDA) Documents Issued or Varied 19_20](http://metadata.prov.vic.gov.au/datasets/2020/PROV%20Retention%20and%20Disposal%20Authority%20(RDA)%20Documents%20Issued%20or%20Varied%2019_20.csv) (CSV, 2020-11-05T06:50:06.389741)
 
 ### [PROV Retention and Disposal Authority (RDA) Documents Issued or Varied 2017-18 RDAs varied](https://www.data.vic.gov.au/data/dataset/90cf1c02-0385-4217-8fde-478147418dc3)
 * [ocuments Issued or Varied 2017-18 RDAs varied](http://metadata.prov.vic.gov.au/datasets/2019/PROV%20Retention%20and%20Disposal%20Authority%20(RDA)%20Documents%20Issued%20or%20Varied%202017-18%20RDAs%20varied.csv) (CSV, 2019-05-15T22:07:29.532601)
@@ -448,11 +464,20 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [PROV VPRS 515/P1 Central Register of Male Prisoners](https://www.data.vic.gov.au/data/dataset/5402b968-e732-4c18-b0d2-fec9d8a81217)
 * [VPRS 515/P1 Central Register of Male Prisoners](http://metadata.prov.vic.gov.au/datasets/2019/PROV-CentralRegisterMalePrisoners.csv) (CSV, 2014-12-22T13:59:26.428692)
 
+### [PROV VPRS 8168 Historic Plan Collection geospatial metadata](https://www.data.vic.gov.au/data/dataset/2a2cf103-b6b3-48b9-9c7c-eaa6ce8b371d)
+* [](http://metadata.prov.vic.gov.au/datasets/2020/VPRS%208168%20FINAL%2020200820.csv) (CSV, 2020-10-22T03:25:04.570438)
+
 ### [PROV Variations to existing authorities issued in 2014 - 2015](https://www.data.vic.gov.au/data/dataset/fccbf1fb-73eb-4d3f-a3fd-b53927d450f2)
 * [PROV Variations to existing authorities issued in 2014 - 2015](http://metadata.prov.vic.gov.au/datasets/PROV%202015%20Annual%20Report%20Variations%20to%20existing%20authorities%20issued%20in%202014_2015.csv) (CSV, 2015-11-25T14:54:52.515976)
 
+### [PROV Victorian Community History Award winners](https://www.data.vic.gov.au/data/dataset/eeafb570-3eb8-42cf-a719-000da84fc5f4)
+* [PROV Victorian Community History Award winners](http://metadata.prov.vic.gov.au/datasets/2020/PROV%20Victorian%20Community%20History%20Award%20winners.csv) (CSV, 2020-11-05T06:22:10.531792)
+
 ### [PROV Victorian Government Agencies and Collections metadata](https://www.data.vic.gov.au/data/dataset/78c5dfbc-3f92-45a7-86f7-2c44b3d760cf)
 * [Victorian Government Agencies and Collections metadata](http://metadata.prov.vic.gov.au/oai/query?verb=ListRecords&metadataPrefix=rif) (XML, 2014-12-22T13:37:54.589631)
+
+### [PROV Workforce Data 19-20](https://www.data.vic.gov.au/data/dataset/40e73d4e-1ffa-44ba-a034-1b1c2941f610)
+* [PROV Workforce Data 19-20](ttp://metadata.prov.vic.gov.au/datasets/2020/PROV%20Workforce%20Data%2019_20.csv) (CSV, 2020-11-05T06:39:12.382044)
 
 ### [PROV Workforce Data 2017-18](https://www.data.vic.gov.au/data/dataset/8c7e1660-f7e9-4d7e-a391-abb667079e7b)
 * [PROV Workforce Data 2017-18](http://metadata.prov.vic.gov.au/datasets/2019/PROV%20Workforce%20Data%202017-18.csv) (CSV, 2019-05-15T22:11:24.268947)
@@ -468,6 +493,9 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 ### [Records transferred to PROV custody 2017-18](https://www.data.vic.gov.au/data/dataset/44746f14-7e8f-4be3-9735-f0a4e97fd872)
 * [Records transferred to PROV custody 2017-18](http://metadata.prov.vic.gov.au/datasets/2019/Records%20transferred%20to%20PROV%20custody%202017-18.csv) (CSV, 2019-05-21T00:13:11.811495)
+
+### [Unassisted Inward Passengers 1852-1923](https://www.data.vic.gov.au/data/dataset/f71a0ad2-27a2-40ee-9595-742245f1752d)
+* [Unassisted Inward Passengers 1852-1923](http://metadata.prov.vic.gov.au/datasets/2020/Unassisted%20Inward%20Passengers%201852-1923.7z) (ZIP, 2020-10-27T00:59:44.316551)
 
 ### [Victorian World War One Soldier Settlers](https://www.data.vic.gov.au/data/dataset/c5121199-e3bf-444c-be16-ee6c0ce02291)
 * [Victorian World War One Soldier Settlers](http://metadata.prov.vic.gov.au/datasets/2019/BtF%20site%20data%20v01%20PROV%2020150519.csv) (CSV, 2015-05-29T13:41:15.023573)
@@ -505,13 +533,19 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Board of the Queensland Museum Annual Report - Consultancies 2016-17](https://www.data.qld.gov.au/dataset/58cef66f-2e4b-4283-8511-ded8d28fd9aa/resource/f0530465-c8b8-4af8-bdc1-3d9c18ae424d/download/board-of-the-queensland-museum-annual-report-consultancies-2016-17.xlsx) (XLSX, 2018-10-23T02:49:01.282675)
 
 ### [Board of the Queensland Museum Annual Report - Consultancies 2017-2018](https://data.qld.gov.au/dataset/58a58e7c-51ed-4477-9549-e29153ba0b96)
-* [Queensland Museum Network Consultancies 2017-18.xlsx](https://www.data.qld.gov.au/dataset/58a58e7c-51ed-4477-9549-e29153ba0b96/resource/f743bb28-978b-4ee2-96be-dbe7600f00f5/download/queensland-museum-network-consultancies-2017-18.xlsx) (XLSX, 2018-10-12T06:25:53.579773)
+* [Board of the Queensland Museum Annual Report - Consultancies 2017-2018](https://www.data.qld.gov.au/dataset/58a58e7c-51ed-4477-9549-e29153ba0b96/resource/f743bb28-978b-4ee2-96be-dbe7600f00f5/download/queensland-museum-network-consultancies-2017-18.xlsx) (XLSX, 2018-10-12T06:25:53.579773)
+
+### [Board of the Queensland Museum Annual Report - Consultancies 2019-2020](https://data.qld.gov.au/dataset/135a8ed3-ea45-4906-b7b4-889d1a1a657c)
+* [Board of the Queensland Museum Annual Report - Consultancies 2019-2020](https://www.data.qld.gov.au/dataset/135a8ed3-ea45-4906-b7b4-889d1a1a657c/resource/66bfba9b-e22c-49da-9398-26fef34742dc/download/2019-20-annual-report-consultancies-reporting-template.csv) (CSV, 2020-09-30T04:45:14.957510)
 
 ### [Board of the Queensland Museum Annual Report - Overseas Travel 2016-2017](https://data.qld.gov.au/dataset/b3248d33-5118-464b-9e06-dc291934bfc2)
 * [Board of the Queensland Museum Annual Report - Overseas Travel 2016-17](https://www.data.qld.gov.au/dataset/b3248d33-5118-464b-9e06-dc291934bfc2/resource/9f44f6cd-3e93-4656-a881-12c4d9b3e4a7/download/board-of-the-queensland-museum-annual-report-overseas-travel-2016-17.xlsx) (XLSX, 2018-10-23T02:52:55.261661)
 
 ### [Board of the Queensland Museum Annual Report - Overseas Travel 2017-2018](https://data.qld.gov.au/dataset/947d2ae4-5497-453d-b528-b57e742d3242)
 * [Queensland Museum Network Travel 2017-18.xlsx](https://www.data.qld.gov.au/dataset/947d2ae4-5497-453d-b528-b57e742d3242/resource/99a9739c-a0d2-4a6b-b243-733b18a1e5fe/download/queensland-museum-network-travel-2017-18.xlsx) (XLSX, 2018-10-12T06:29:46.084412)
+
+### [Board of the Queensland Museum Annual Report - Overseas Travel 2019-2020](https://data.qld.gov.au/dataset/d94f760b-b1c9-4fd6-b7de-ab3c68be5485)
+* [Queensland Museum Network Travel 2019-20](https://www.data.qld.gov.au/dataset/d94f760b-b1c9-4fd6-b7de-ab3c68be5485/resource/03fede96-d938-43a0-b734-013d03d08869/download/2019-20-annual-report-overseas-travel-reporting-template_1_corrected.csv) (CSV, 2020-09-30T04:55:13.087218)
 
 ### [Printable 3D model of a Muttaburrasaurus skull](https://data.qld.gov.au/dataset/a0c42251-ce88-48a2-b8f9-a940c88521fe)
 * [Printable 3D model of a Muttaburrasaurus skull - OBJ file](http://www.qm.qld.gov.au/microsites/data/3d-models/Muttaburrasaurus-skull-half/Muttaburrasaurus_skull1_1.obj) (OBJ, 2016-07-28T05:04:24.991030)
@@ -572,20 +606,22 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [Queensland Museum collection of specimens of other invertebrates](https://data.qld.gov.au/dataset/3efc094b-a1e3-4ca9-8f02-f5ce8ee0bd07)
 * [Queensland Museum collection records of other invertebrates](http://www.qm.qld.gov.au/microsites/data/other-invertebrates-data/other-invertebrates-data.csv) (CSV, 2014-02-18T23:15:01.283733)
 
+### [Queensland Museum customer complaints—financial year](https://data.qld.gov.au/dataset/8f16e4fc-d863-491b-81e3-23701b73fa2d)
+* [Queensland Museum customer complaints—financial year](https://www.data.qld.gov.au/dataset/8f16e4fc-d863-491b-81e3-23701b73fa2d/resource/d09ff107-b431-4636-ba75-e19efca6629e/download/qm-customer-complaints-dataset.csv) (CSV, 2020-08-03T23:12:17.257467)
+
 ## Queensland State Archives
 
-### [1986 Cabinet Minutes](https://data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5)
-* [1986 Cabinet Minutes](https://www.data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5/resource/16a76e3c-f72b-445b-9fba-c0314de90724/download/cabinet-minutes-1986.csv) (CSV, 2017-06-29T13:48:02.179220)
-* [1986 Cabinet Minutes JSON](https://www.data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5/resource/a0d1dc16-1dc1-4911-9ddc-8fd0e4493929/download/cabinet-minutes-1986.json) (JSON, 2018-08-30T02:21:44.297720)
-
 ### [Aboriginal War Census 1915 to 1916](https://data.qld.gov.au/dataset/74824ca8-2ba5-40d2-a7a0-f4d2f69e3dff)
-* [Aboriginal War Census 1915 to 1916](https://www.data.qld.gov.au/dataset/74824ca8-2ba5-40d2-a7a0-f4d2f69e3dff/resource/306fcd00-26ea-44fa-914f-1476732f6b98/download/aboriginal-war-census-returns-1915-1916-index.csv) (CSV, 2015-07-08T05:51:31.632805)
+* [Aboriginal War Census 1915 to 1916](https://www.data.qld.gov.au/dataset/74824ca8-2ba5-40d2-a7a0-f4d2f69e3dff/resource/306fcd00-26ea-44fa-914f-1476732f6b98/download/aboriginal-war-census-returns-1915-1916.csv) (CSV, 2015-07-08T05:51:31.632805)
+
+### [Applications by Selectors 1868-1885](https://data.qld.gov.au/dataset/c56272b9-9159-4f84-8a4a-2eaabd5c7923)
+* [Registers of Applications by Selectors 1868-1885](https://www.data.qld.gov.au/dataset/c56272b9-9159-4f84-8a4a-2eaabd5c7923/resource/95e39f44-f522-4f94-97a2-f21b2589446d/download/registers-of-applications-by-selectors-1868-1885.csv) (CSV, 2020-06-23T23:44:15.361246)
 
 ### [Army Reservist payments 1909 to 1920](https://data.qld.gov.au/dataset/696f4c13-a846-4cf7-8765-a1fdc471f77c)
-* [Army Reservist payments 1909 to 1920](https://www.data.qld.gov.au/dataset/696f4c13-a846-4cf7-8765-a1fdc471f77c/resource/5e8042ce-bfe1-4430-801d-dddeaa61bbd5/download/index-to-army-reservists-1909-1920.csv) (CSV, 2016-08-16T23:29:26.628723)
+* [Army Reservist payments 1909 to 1920](https://www.data.qld.gov.au/dataset/696f4c13-a846-4cf7-8765-a1fdc471f77c/resource/5e8042ce-bfe1-4430-801d-dddeaa61bbd5/download/index-to-army-reservists-1909-1920-.csv) (CSV, 2016-08-16T23:29:26.628723)
 
 ### [Assistant Immigration Agent Maryborough 1875 to 1884](https://data.qld.gov.au/dataset/7ccf8996-505a-43e3-aca8-437d9a7461f0)
-* [Rations issued to immigrants, Maryborough 1875-1884](https://www.data.qld.gov.au/dataset/7ccf8996-505a-43e3-aca8-437d9a7461f0/resource/d1e8107a-2cdf-4bf7-ad31-5054ee5a0fd0/download/rations-issued-to-immigrants-maryborough-1875-1884.csv) (CSV, 2013-06-25T20:34:24.588785)
+* [Rations issued to immigrants, Maryborough 1875-1884](https://www.data.qld.gov.au/dataset/7ccf8996-505a-43e3-aca8-437d9a7461f0/resource/d1e8107a-2cdf-4bf7-ad31-5054ee5a0fd0/download/rations-issued-to-immigrants-maryborough-1875-1884-.csv) (CSV, 2013-06-25T20:34:24.588785)
 * [Rations issued to immigrants, Maryborough 1875-1884 JSON](https://www.data.qld.gov.au/dataset/7ccf8996-505a-43e3-aca8-437d9a7461f0/resource/4399ca8b-8f24-46aa-89d9-3bf06155f8d1/download/rations-issued-to-immigrants-maryborough-1875-1884.json) (JSON, 2018-09-04T04:54:01.376390)
 
 ### [Assistant Immigration Agent Maryborough 1884 to 1907](https://data.qld.gov.au/dataset/8a0928d0-60c2-4ce3-be0a-c07c6a89be0f)
@@ -597,19 +633,19 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Assisted immigration 1848 to 1912 - A](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/4d7a110c-f531-4688-9dda-b1c04ee16ebd/download/assisted-immigration-1848-1912-a.csv) (CSV, 2013-03-05T23:30:57.308546)
 * [Assisted immigration 1848 to 1912 - B](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/d62c9618-18df-4a2a-8cf0-d14da3d6db0f/download/assisted-immigration-1848-1912-b.csv) (CSV, 2016-03-16T03:18:06.449746)
 * [Assisted immigration 1848 to 1912 - C](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/1ce97754-691e-4261-b69b-97f8f2efeefe/download/assisted-immigration-1848-1912-c.csv) (CSV, 2016-03-16T03:26:28.383687)
-* [Assisted immigration 1848 to 1912 - D](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/aa710ad1-42ce-413e-aa6a-6c87ac63ced6/download/assisted-immigration-1848-1912-d.csv) (CSV, 2013-03-05T23:30:57.308581)
-* [Assisted immigration 1848 to 1912 - E](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/e897a3ff-41d7-4983-bdda-9d5941dcf291/download/assisted-immigration-1848-1912-e.csv) (CSV, 2016-03-16T03:29:25.157986)
+* [Assisted immigration 1848 to 1912 - D](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/aa710ad1-42ce-413e-aa6a-6c87ac63ced6/download/assisted-immigration-1848-1912-d-.csv) (CSV, 2013-03-05T23:30:57.308581)
+* [Assisted immigration 1848 to 1912 - E](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/e897a3ff-41d7-4983-bdda-9d5941dcf291/download/assisted-immigration-1848-1912-e-.csv) (CSV, 2016-03-16T03:29:25.157986)
 * [Assisted immigration 1848 to 1912 - F](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/665cf029-b814-4d95-9aaf-06c760cfe73e/download/assisted-immigration-1848-1912-f.csv) (CSV, 2013-03-05T23:30:57.308594)
 * [Assisted immigration 1848 to 1912 - G](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/ae9da27c-9fe7-499f-aba8-173b4c88db11/download/assisted-immigration-1848-1912-g.csv) (CSV, 2016-03-16T03:32:00.068553)
 * [Assisted immigration 1848 to 1912 - H](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/3bdb84f0-52f9-4fbd-81fc-cc3a6faf6ae5/download/assisted-immigration-1848-1912-h.csv) (CSV, 2016-03-16T03:33:13.711306)
 * [Assisted immigration 1848 to 1912 - I](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/ed03dbac-8349-47bd-ac4b-773018e1c3e5/download/assisted-immigration-1848-1912-i.csv) (CSV, 2016-03-16T03:46:42.429582)
 * [Assisted immigration 1848 to 1912 - J](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/37d1b5d7-5b0a-40eb-bcab-70fd96525f8b/download/assisted-immigration-1848-1912-j.csv) (CSV, 2016-03-16T03:47:57.334617)
-* [Assisted immigration 1848 to 1912 - K](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/ee2826ce-9f3e-4130-b213-6ca170a349aa/download/assisted-immigration-1848-1912-k.csv) (CSV, 2016-03-16T03:49:16.833831)
+* [Assisted immigration 1848 to 1912 - K](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/ee2826ce-9f3e-4130-b213-6ca170a349aa/download/assisted-immigration-1848-1912-9-k.csv) (CSV, 2016-03-16T03:49:16.833831)
 * [Assisted immigration 1848 to 1912 - L](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/3e9a7bbb-562a-4799-9863-f5868d64db61/download/assisted-immigration-1848-1912-l.csv) (CSV, 2013-03-05T23:30:57.308606)
 * [Assisted immigration 1848 to 1912 - M](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/6aef8706-404c-4948-aff9-03a4eb41f276/download/assisted-immigration-1848-1912-m.csv) (CSV, 2016-03-16T04:02:23.091405)
 * [Assisted immigration 1848 to 1912 - N](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/3da289b8-e3ca-4fb2-9a10-b1b1738ac75b/download/assisted-immigration-1848-1912-n.csv) (CSV, 2016-03-16T04:03:37.695035)
 * [Assisted immigration 1848 to 1912 - O](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/f5b370e4-7cb7-4cd6-a148-c8084e3bae5e/download/assisted-immigration-1848-1912-o.csv) (CSV, 2016-03-16T04:04:43.108235)
-* [Assisted immigration 1848 to 1912 - P](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/b165131c-7eea-4e38-9486-85508ebe7cf5/download/assisted-immigration-1848-1912-p.csv) (CSV, 2016-03-16T04:05:56.390836)
+* [Assisted immigration 1848 to 1912 - P](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/b165131c-7eea-4e38-9486-85508ebe7cf5/download/assited-immigration-1848-1912-p.csv) (CSV, 2016-03-16T04:05:56.390836)
 * [Assisted immigration 1848 to 1912 - Q](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/1cc5df5d-7f2d-4f23-9840-da70b5d69dd9/download/assisted-immigration-1848-1912-q.csv) (CSV, 2016-03-16T04:07:03.816670)
 * [Assisted immigration 1848 to 1912 - R](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/46df45c1-f98c-41ab-b5b6-42a0699bfee7/download/assisted-immigration-1848-1912-r.csv) (CSV, 2016-03-16T04:08:26.612341)
 * [Assisted immigration 1848 to 1912 - S](https://www.data.qld.gov.au/dataset/ba182873-e8a7-45e1-b0e7-e0b6671fa1a9/resource/5a65c00f-d00f-4d6d-81b7-da41c477f6ac/download/assisted-immigration-1848-1912-s.csv) (CSV, 2016-03-16T04:09:29.081634)
@@ -626,8 +662,14 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [South Sea Islanders 1867 to 1908 combined](https://www.data.qld.gov.au/dataset/eae0afa9-681c-4bda-b335-fa0c53ddec96/resource/84afe2e2-0d1a-48f0-8d3c-2d66e8b63f14/download/south-sea-islanders-1867-1908.csv) (CSV, 2017-07-31T16:27:50.490387)
 * [South Sea Islanders 1867 to 1908 combined JSON](https://www.data.qld.gov.au/dataset/eae0afa9-681c-4bda-b335-fa0c53ddec96/resource/97a637a1-2d63-462f-ae8b-d95cf6f5bd04/download/south-sea-islanders-1867-1908.json) (JSON, 2018-09-03T00:56:54.266593)
 
+### [Beaudesert Shire Burials - Logan Village 1878-2000](https://data.qld.gov.au/dataset/ef941e0c-5914-4ba1-865f-bb8596e2b20c)
+* [Beaudesert Shire and Logan Village Burials 1878-2000](https://www.data.qld.gov.au/dataset/ef941e0c-5914-4ba1-865f-bb8596e2b20c/resource/805ae3e2-b2a4-47a7-9d48-ca8152bd646c/download/beaudesert-shire-and-logan-village-burials-1878-2000.csv) (CSV, 2020-06-24T03:38:44.227145)
+
 ### [Boer War 1899 to 1902](https://data.qld.gov.au/dataset/6ccfc1d7-c9cf-4df9-a1bd-8e7d2f9f9f50)
 * [Index to Boer War Records 1899-1902](https://www.data.qld.gov.au/dataset/6ccfc1d7-c9cf-4df9-a1bd-8e7d2f9f9f50/resource/5955c95c-c2d0-47c5-b0e3-5ea08495b00e/download/index-to-boer-war-records-1899-1901.csv) (CSV, 2018-12-14T03:09:26.311259)
+
+### [Brisbane Gaol Hospital Admission registers 1889-1911](https://data.qld.gov.au/dataset/b6533ad0-f099-4363-ab3e-69b10e4fe62f)
+* [Index to Brisbane Gaol Hospital Admission Registers 1889-1911](https://www.data.qld.gov.au/dataset/b6533ad0-f099-4363-ab3e-69b10e4fe62f/resource/2d97e9cd-d8bf-4733-b44f-d4b084786cb0/download/index-to-brisbane-gaol-hospital-admission-registers-1889-1911.csv) (CSV, 2020-06-24T02:27:16.052406)
 
 ### [Brisbane Hospital admissions 1872 to 1887](https://data.qld.gov.au/dataset/9ce049c6-e8b7-46f9-b859-7cfd427ac7fd)
 * [Brisbane Hospital admissions 1872 to 1887](https://www.data.qld.gov.au/dataset/9ce049c6-e8b7-46f9-b859-7cfd427ac7fd/resource/93a375da-8ab0-4a01-b97d-a58e120021b2/download/brisbane-hospital-admissions-1872-1887.csv) (CSV, 2014-09-29T03:59:04.891255)
@@ -640,9 +682,22 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Brisbane Hospital registers of deaths 1933 to 1963](https://www.data.qld.gov.au/dataset/4f55671b-af6d-48e6-9510-4c73524dd3a7/resource/aa0c1fd9-297a-44e1-b032-adc563d3b646/download/brisbane-hospital-registers-deaths-1933-1963.csv) (CSV, 2014-09-29T04:19:50.102167)
 * [Brisbane Hospital registers of deaths 1933 to 1963](https://www.data.qld.gov.au/dataset/4f55671b-af6d-48e6-9510-4c73524dd3a7/resource/0de142af-6d9b-4b9e-988b-1d14e8714c15/download/brisbane-hospital-registers-deaths-1933-1963.json) (JSON, 2018-09-05T02:54:12.078504)
 
+### [Cabinet Minutes](https://data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5)
+* [1974 - 1985 Cabinet Minutes](https://www.data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5/resource/4ed9d668-01db-42e8-b2f4-a891ea06db00/download/cabinet-minutes-1974-1985.csv) (CSV, 2021-01-18T05:09:42.439682)
+* [1986 Cabinet Minutes](https://www.data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5/resource/16a76e3c-f72b-445b-9fba-c0314de90724/download/cabinet-minutes-1986.csv) (CSV, 2017-06-29T13:48:02.179220)
+* [1987 Cabinet minutes](https://www.data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5/resource/db3b0bcf-8ca0-4c07-80da-0e6397761280/download/cabinet-minutes-1987.csv) (CSV, 2021-01-15T06:03:08.530162)
+* [1988 Cabinet Minutes](https://www.data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5/resource/adb7e8b6-8ff6-4825-92d6-74f016d52d29/download/cabinet-minutes-1988.csv) (CSV, 2021-01-18T05:05:24.946276)
+* [1989 Cabinet Minutes](https://www.data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5/resource/31571acf-de21-48e3-8682-30c68dc1bf6b/download/cabinet-minutes-1989.csv) (CSV, 2021-01-18T05:04:24.734169)
+* [1990 Cabinet Minutes](https://www.data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5/resource/b88625fa-29ec-44a4-ab51-9131156edebc/download/cabinet-minutes-1990.csv) (CSV, 2021-01-18T05:00:47.631213)
+* [1986 - 1990 Cabinet Minutes](https://www.data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5/resource/a50259ff-a2b2-4316-95e9-7e57de4b6e33/download/cabinet-minutes-1986-1990.csv) (CSV, 2021-01-18T05:08:21.125915)
+* [1986 Cabinet Minutes JSON](https://www.data.qld.gov.au/dataset/8cfc4428-9c77-400c-9a9e-0225254411a5/resource/a0d1dc16-1dc1-4911-9ddc-8fd0e4493929/download/cabinet-minutes-1986.json) (JSON, 2018-08-30T02:21:44.297720)
+
 ### [Card index to nominated immigrants 1908 to 1922](https://data.qld.gov.au/dataset/74de1b90-7a77-48ec-b8ef-05cd0eff1e23)
 * [Nominated immigrants 1908 to 1922](https://www.data.qld.gov.au/dataset/74de1b90-7a77-48ec-b8ef-05cd0eff1e23/resource/117c0985-e3e8-45f0-8c04-9cf52d9f9691/download/nominated-immigrants-1908-1922.csv) (CSV, 2013-06-25T20:11:46.853462)
 * [Nominated immigrants 1908 to 1922 JSON](https://www.data.qld.gov.au/dataset/74de1b90-7a77-48ec-b8ef-05cd0eff1e23/resource/2243a54a-2cd4-4afd-8532-68acecbd683a/download/nominated-immigrants-1908-1922.json) (JSON, 2018-09-04T05:44:43.139850)
+
+### [Cases & treatment Moreton Bay Hospital 1830-1862](https://data.qld.gov.au/dataset/163c7561-e6ca-4f81-8cab-9635d722909e)
+* [Index to Register of  Cases and treatment at Moreton Bay Hospital 1830-1862](https://www.data.qld.gov.au/dataset/163c7561-e6ca-4f81-8cab-9635d722909e/resource/57b87b52-18f6-49c5-94fb-8b82fdd8c44d/download/register-cases-treatment-moreton-bay-hospital-1830-1862.csv) (CSV, 2020-06-28T23:45:29.482779)
 
 ### [Civil servants 1866 to 1867](https://data.qld.gov.au/dataset/c2201299-0277-46c5-9589-374bf6bcc38f)
 * [Civil servants 1866 - 1867](https://www.data.qld.gov.au/dataset/c2201299-0277-46c5-9589-374bf6bcc38f/resource/4614bd84-c2d9-475d-9610-7ca26c78b72b/download/civil-servants-1866-1867.csv) (CSV, 2014-06-24T01:13:37.732201)
@@ -657,7 +712,7 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Consumptive patients 1897 to 1903](https://www.data.qld.gov.au/dataset/f7cacf38-4f72-4f97-a393-81c3bfa1f1e8/resource/2a311e6a-17b9-47ad-ae02-0141935c8193/download/consumptive-patients-index-1897-1903.csv) (CSV, 2014-09-29T04:43:57.774397)
 
 ### [Convict register (chronological) 1824 to 1839](https://data.qld.gov.au/dataset/75d36b23-4510-463e-aa85-0fac1d7b3899)
-* [Chronological Register of Convicts 1824-1839](https://www.data.qld.gov.au/dataset/75d36b23-4510-463e-aa85-0fac1d7b3899/resource/f79328f8-faa0-4465-8e9d-b9a65f3ab386/download/index-to-the-chronological-register-of-convicts-1824-1839-.csv) (CSV, 2018-03-02T01:33:46.947119)
+* [Chronological Register of Convicts 1824-1839](https://www.data.qld.gov.au/dataset/75d36b23-4510-463e-aa85-0fac1d7b3899/resource/f79328f8-faa0-4465-8e9d-b9a65f3ab386/download/index-to-the-chronological-register-of-convicts-1824-1839.csv) (CSV, 2018-03-02T01:33:46.947119)
 
 ### [Corporate School Files - Works/Facilities (Works Establishment Files) 1871-1998](https://data.qld.gov.au/dataset/c1d5bf09-e06d-49ab-9d84-290840574971)
 * [Corporate School Files - Works/Facilities (Works Establishment Files) 1871-1998](https://www.data.qld.gov.au/dataset/c1d5bf09-e06d-49ab-9d84-290840574971/resource/fa2d0bed-9253-4948-8ef9-abe4a3d92153/download/corporate-school-files-works-estblishment-1871-1998.csv) (CSV, 2018-02-23T04:53:49.407686)
@@ -676,8 +731,18 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Discharged Soldier Settler Loans 1917-1919 JSON](https://www.data.qld.gov.au/dataset/14ce20b8-cc04-4cdc-9f72-e7c9f47682ce/resource/cd13d11b-3026-465a-bd61-72ea81ec8cb6/download/discharged-soldier-settler-loans-1917-1919.json) (JSON, 2018-09-04T04:39:27.891490)
 
 ### [Divorces 1861 to 1894](https://data.qld.gov.au/dataset/311d7008-5f29-4419-a50c-c490607e2373)
-* [Divorces 1861-1894](https://www.data.qld.gov.au/dataset/311d7008-5f29-4419-a50c-c490607e2373/resource/9db95d63-c79c-4224-8811-6d414765089a/download/divorces-1861-1894.json) (JSON, 2013-03-04T00:20:34.044969)
+* [Divorces 1861-1894](https://www.data.qld.gov.au/dataset/311d7008-5f29-4419-a50c-c490607e2373/resource/9db95d63-c79c-4224-8811-6d414765089a/download/divorces-1861-1899.csv) (CSV, 2013-03-04T00:20:34.044969)
 * [Divorces 1861-1894 JSON](https://www.data.qld.gov.au/dataset/311d7008-5f29-4419-a50c-c490607e2373/resource/f3ed2147-2a0c-42e2-9165-1466a16f6433/download/divorces-1861-1894.json) (JSON, 2018-09-04T05:41:11.129993)
+
+### [Dunwich Benevolent Asylum records](https://data.qld.gov.au/dataset/10a4b7e2-dc85-4c5a-98a4-705f61685392)
+* [Index to Dunwich Benevolent Asylum 1885-1907](https://www.data.qld.gov.au/dataset/10a4b7e2-dc85-4c5a-98a4-705f61685392/resource/d0a577d7-d0b6-4ad7-9645-83998b5d89b0/download/dunwich-benevolent-asylum-1885-1907.csv) (CSV, 2021-01-19T02:12:26.448370)
+* [Index to Dunwich Benevolent Asylum 1859-1948](https://www.data.qld.gov.au/dataset/10a4b7e2-dc85-4c5a-98a4-705f61685392/resource/8af229f9-8695-492b-9425-8e9576f644f5/download/indexes-to-dunwich-benevolent-asylum-1859-1948.csv) (CSV, 2020-08-06T01:52:47.171887)
+
+### [Education Office Gazette Scholarships 1900 - 1940](https://data.qld.gov.au/dataset/eba4f2f5-f4b5-4a6c-90f7-098ef6625c6b)
+* [Scholarships in the Education Office Gazette 1900 - 1940](https://www.data.qld.gov.au/dataset/eba4f2f5-f4b5-4a6c-90f7-098ef6625c6b/resource/da64a88a-4e4a-46fa-bb7c-63372fae313d/download/scholarships-in-the-education-office-gazettes-1900-1940.csv) (CSV, 2020-06-24T01:58:01.547471)
+
+### [Engagement of Immigrants at the Immigration Depot - Bowen 1873-1912](https://data.qld.gov.au/dataset/fa8cb500-4fc9-482c-ae64-3c05c81fb023)
+* [Register of the Engagement of Immigrants at the Immigration Depot - Bowen 1873-1912](https://www.data.qld.gov.au/dataset/fa8cb500-4fc9-482c-ae64-3c05c81fb023/resource/291e8205-c965-4793-b3ae-b5e998d94f40/download/index-to-register-of-immigrants-bowen-1873-1912.csv) (CSV, 2020-06-29T02:54:05.183257)
 
 ### [Equity files 1857 to 1899](https://data.qld.gov.au/dataset/1364e928-ed55-49d8-92ef-856fa52395c8)
 * [Equity files 1857 to 1899](https://www.data.qld.gov.au/dataset/1364e928-ed55-49d8-92ef-856fa52395c8/resource/80c49c0a-36f8-47ab-a3ae-a63682385637/download/equity-files-1857-1899.csv) (CSV, 2013-03-03T23:48:22.785307)
@@ -691,6 +756,18 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Hydrographic Charts 1802-2013](https://www.data.qld.gov.au/dataset/5b5e80a7-371b-4365-9280-37dca0f6ed0d/resource/f15c312b-a290-406a-9676-5cdaa11fafa2/download/hydrographic-charts-1802-2013.csv) (CSV, 2018-04-13T05:38:49.973132)
 * [Hydrographic Charts 1802-2013 JSON](https://www.data.qld.gov.au/dataset/5b5e80a7-371b-4365-9280-37dca0f6ed0d/resource/5ce67190-7ac8-44bd-a430-65882ad91cb4/download/hydrographic-charts-1802-2013.json) (JSON, 2018-09-03T23:42:15.873875)
 
+### [Immigrants Promissory Notes (Maryborough)](https://data.qld.gov.au/dataset/198f15d3-e781-4893-9310-b3691a48f3d2)
+* [Registers of Immigrants Promissory Notes (Maryborough)](https://www.data.qld.gov.au/dataset/198f15d3-e781-4893-9310-b3691a48f3d2/resource/8e1baf64-562c-426d-adec-a0b6d6d21bcb/download/register-immigrants-maryborough-1874-1903.csv) (CSV, 2021-07-23T01:11:48.858438)
+
+### [Immigrants and Crew 1860-1865 (COL/A)](https://data.qld.gov.au/dataset/8f59a9eb-af92-4cfc-9444-ce7e0c317acf)
+* [Index to Immigrants and Crew 1860 - 1964](https://www.data.qld.gov.au/dataset/8f59a9eb-af92-4cfc-9444-ce7e0c317acf/resource/97055820-4ec2-429d-92ab-4de0e90ecb81/download/index-to-immigrants-and-crew-1860-1864-colonial-secretary-letters-sid-5253.csv) (CSV, 2020-06-24T03:20:10.756080)
+
+### [Immigrants, Bowen Immigration Depot 1885-1892](https://data.qld.gov.au/dataset/b8de8a10-2974-4bad-a9ec-4b2bbe619523)
+* [Immigrants, Bowen Immigration Depot 1885-1892](https://www.data.qld.gov.au/dataset/b8de8a10-2974-4bad-a9ec-4b2bbe619523/resource/ab195820-65b1-4654-859a-8b790195cccd/download/immigrants-bowen-immigration-depot-1885-1892.csv) (CSV, 2021-07-22T23:07:02.822837)
+
+### [Immigration 1909-1932](https://data.qld.gov.au/dataset/54f314df-f2a0-4813-ae28-cf73e39cf552)
+* [Index to Immigration 1909-1932](https://www.data.qld.gov.au/dataset/54f314df-f2a0-4813-ae28-cf73e39cf552/resource/c4f3efcb-5912-4436-a84a-d5734925a533/download/index-to-immigration-1909-1932.csv) (CSV, 2020-06-30T00:57:01.496848)
+
 ### [Immigration 1922 to 1940](https://data.qld.gov.au/dataset/34e0e222-b4da-4d8d-9512-a1d7ed80ffcd)
 * [Immigration 1922 to 1940](https://www.data.qld.gov.au/dataset/34e0e222-b4da-4d8d-9512-a1d7ed80ffcd/resource/4ec2d8c1-da1d-496e-b244-ff34973f4834/download/immigration-1922-1940.csv) (CSV, 2013-06-25T20:46:30.336915)
 * [Immigration 1922 to 1940 JSON](https://www.data.qld.gov.au/dataset/34e0e222-b4da-4d8d-9512-a1d7ed80ffcd/resource/4d29094c-ae65-464b-ae6b-3e40cc458106/download/immigration-1922-1940.json) (JSON, 2018-09-04T04:33:18.189526)
@@ -702,6 +779,9 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [Imperial pensions 1872 to 1915](https://data.qld.gov.au/dataset/2d77d70c-ff4d-407c-a65c-4b1937a11842)
 * [Imperial pensions 1898 to 1912](https://www.data.qld.gov.au/dataset/2d77d70c-ff4d-407c-a65c-4b1937a11842/resource/fa62cc28-ecb8-44cd-a2d5-d8f9cbe34df1/download/imperial-pensions-1898-1912.csv) (CSV, 2014-06-23T23:20:32.585765)
 * [Imperial pensions 1872 to 1915](https://www.data.qld.gov.au/dataset/2d77d70c-ff4d-407c-a65c-4b1937a11842/resource/3416b4c1-b2ab-40cd-a7af-4b24c5f5c906/download/imperial-pensions-1872-1915.csv) (CSV, 2014-06-23T23:22:43.734193)
+
+### [Index to Correspondence of Queensland Colonial Secretary 1859-1861](https://data.qld.gov.au/dataset/982569e3-2be7-4ea4-aa58-3093e854b541)
+* [Index to Colonial Secretary s Correspondence Bundles 1859 - 1861.csv](https://www.data.qld.gov.au/dataset/982569e3-2be7-4ea4-aa58-3093e854b541/resource/b6e99bc9-c745-4d52-bef0-5d6da14ae538/download/index-to-colonial-secretary-s-correspondence-bundles-1859-1861.csv) (CSV, 2018-12-17T05:11:58.767974)
 
 ### [Indigence Cases 1899 to 1948](https://data.qld.gov.au/dataset/e890753e-18c8-4867-85c4-85a5d8baf457)
 * [Indigence cases 1899 to 1948](https://www.data.qld.gov.au/dataset/e890753e-18c8-4867-85c4-85a5d8baf457/resource/cd341174-5105-4c74-9e83-09944dca58c7/download/indigence-cases-1899-1948.csv) (CSV, 2016-08-16T23:42:46.981054)
@@ -725,6 +805,15 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 ### [Land orders 1865 to 1866](https://data.qld.gov.au/dataset/ffad056d-2bd0-4cb4-bf47-483cab235072)
 * [Land orders 1865 to 1866](https://www.data.qld.gov.au/dataset/ffad056d-2bd0-4cb4-bf47-483cab235072/resource/52385733-f98a-4ef4-8c1f-0085c7cb0bd5/download/lands-orders-1865-1866.csv) (CSV, 2016-02-22T23:30:40.706081)
+
+### [Land selections 1885-1981](https://data.qld.gov.au/dataset/03e462ee-9ad3-4974-a770-e536cf827bd0)
+* [Land selections 1885-1981](https://www.data.qld.gov.au/dataset/03e462ee-9ad3-4974-a770-e536cf827bd0/resource/54cbd1ea-03a8-4b59-b478-526001663226/download/land-selections-1885-1891.csv) (CSV, 2021-07-23T02:34:44.387239)
+
+### [Lazaret patient registers](https://data.qld.gov.au/dataset/0e9439a4-1d31-49bc-a915-070723363899)
+* [Lazaret Patient Registers](https://www.data.qld.gov.au/dataset/0e9439a4-1d31-49bc-a915-070723363899/resource/352b8cb7-d9b4-4441-8140-d32623508347/download/lazaret-patient-registers-1892-1940.csv) (CSV, 2021-08-02T04:02:56.057025)
+
+### [Leases, Selections and Pastoral Runs and other related records 1850-2014](https://data.qld.gov.au/dataset/72bf362f-3e2c-489b-8da5-2f644d576175)
+* [Leases, Selections and Pastoral Runs and other related records 1850-2014](https://www.data.qld.gov.au/dataset/72bf362f-3e2c-489b-8da5-2f644d576175/resource/02e8db0e-bab4-4ea1-9afa-386294a7feff/download/leases-selections-and-pastoral-runs-and-other-related-records-1850-2014.csv) (CSV, 2020-06-29T03:17:18.733534)
 
 ### [List of Queensland State Archives First World War records](https://data.qld.gov.au/dataset/63430b99-b12c-4285-9674-042baa155423)
 * [First World War records](https://www.data.qld.gov.au/dataset/63430b99-b12c-4285-9674-042baa155423/resource/b98870f4-324e-49e8-bfff-a64292956131/download/first-world-war-records.csv) (CSV, 2015-04-20T03:56:14.425823)
@@ -757,7 +846,8 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [Monthly and half yearly returns for Moreton Bay 1829 to 1837](https://data.qld.gov.au/dataset/e8e5868c-f721-443c-a8b5-d9d1daa84745)
 * [Monthly and half yearly returns for Moreton Bay 1829 to 1837](https://www.data.qld.gov.au/dataset/e8e5868c-f721-443c-a8b5-d9d1daa84745/resource/941c4af1-efd4-40a0-920f-16c9f1d42b21/download/monthly-and-half-yearly-returns-for-moreton-bay-1829-1837.csv) (CSV, 2016-09-08T02:00:11.742228)
 
-### [Naturalisations 1851 to 1904](https://data.qld.gov.au/dataset/91970fa7-d3c3-4171-a89d-410481cb90e9)
+### [Naturalisations](https://data.qld.gov.au/dataset/91970fa7-d3c3-4171-a89d-410481cb90e9)
+* [Naturalisations 1880-1885](https://www.data.qld.gov.au/dataset/91970fa7-d3c3-4171-a89d-410481cb90e9/resource/dd7cd070-c807-49a2-9962-76f603ad3587/download/naturalisations-1880-1885-.csv) (CSV, 2021-01-19T04:38:21.632406)
 * [Naturalisations 1851 to 1904](https://www.data.qld.gov.au/dataset/91970fa7-d3c3-4171-a89d-410481cb90e9/resource/7b5ddae5-78ef-4d8e-b800-56e6f30d26d5/download/naturalisations-1851-1908.csv) (CSV, 2013-03-03T23:42:56.433493)
 * [Naturalisations 1851 to 1904 JSON](https://www.data.qld.gov.au/dataset/91970fa7-d3c3-4171-a89d-410481cb90e9/resource/ccd0ad42-278e-46fe-b7f0-62342cbc0766/download/naturalisations-1851-1908.json) (JSON, 2018-08-30T02:13:35.821391)
 
@@ -769,6 +859,9 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Oronsay immigration 1925 to 1972](https://www.data.qld.gov.au/dataset/eea439b1-f2c9-4ee3-858f-e4583b52f344/resource/fbdbc235-45c3-4f55-96c4-29acfdd04c86/download/oronsay-immigration-1925-1972.csv) (CSV, 2015-05-28T05:32:02.763698)
 * [Oronsay immigration 1925 to 1972 JSON](https://www.data.qld.gov.au/dataset/eea439b1-f2c9-4ee3-858f-e4583b52f344/resource/e590bab9-6417-4843-b4c1-a9b4f29a91ce/download/oronsay-immigration-1925-1972.json) (JSON, 2018-08-30T02:11:58.505089)
 
+### [Outdoor Relief 1900-1904](https://data.qld.gov.au/dataset/2137a9c3-3931-4637-aca7-3ce1b5e2b00a)
+* [Index to Outdoor Relief 1892-1920](https://www.data.qld.gov.au/dataset/2137a9c3-3931-4637-aca7-3ce1b5e2b00a/resource/5b13b407-589c-4ecb-9fe8-cb457c3e4332/download/index-to-outdoor-relief-1892-1920.csv) (CSV, 2020-06-29T23:55:21.137578)
+
 ### [Passage certificates 1887 to 1906](https://data.qld.gov.au/dataset/8a682383-88a8-4799-8c18-3845040daef3)
 * [Passage certificates 1887 to 1906](https://www.data.qld.gov.au/dataset/8a682383-88a8-4799-8c18-3845040daef3/resource/c0127f32-3ebe-4aea-b360-b3e5cfcda6f3/download/passage-certificates-1887-1906.csv) (CSV, 2013-06-25T20:41:04.137259)
 * [Passage certificates 1887 to 1906 JSON](https://www.data.qld.gov.au/dataset/8a682383-88a8-4799-8c18-3845040daef3/resource/b8889ae7-fa1d-456d-8127-29b0f6470a99/download/passage-certificates-1887-1906.json) (JSON, 2018-09-04T04:08:57.735706)
@@ -776,12 +869,30 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [Passport registers 1926 to 1939](https://data.qld.gov.au/dataset/fc87f25a-dc02-4802-910f-bc72eb5ed70e)
 * [Passport clearances 1923 to 1940](https://www.data.qld.gov.au/dataset/fc87f25a-dc02-4802-910f-bc72eb5ed70e/resource/5beccc15-89ec-4331-94dd-30d864cc5d12/download/passport-clearances-1923-1940.csv) (CSV, 2017-01-11T23:47:35.449465)
 
+### [Pensions 1908-1919](https://data.qld.gov.au/dataset/85d0b672-ef16-4bee-9928-bd07074bb55a)
+* [Index to  Pensions 1908-1909](https://www.data.qld.gov.au/dataset/85d0b672-ef16-4bee-9928-bd07074bb55a/resource/d11e06e9-6fb3-40e4-9a56-d3dcc6c11b68/download/index-to-pensions-1908-1909-sid-6578.csv) (CSV, 2020-06-28T23:04:20.871846)
+
+### [Perpetual Lease Selections of soldier settlements 1917 - 1929](https://data.qld.gov.au/dataset/67801dc9-2d9d-466b-a14a-9e95438ffcb9)
+* [Perpetual Lease Selections of soldier settlements 1917-1929](https://www.data.qld.gov.au/dataset/67801dc9-2d9d-466b-a14a-9e95438ffcb9/resource/b788fee7-2a82-40e0-b3b8-4ceb386985e0/download/perpetual-lease-selections-of-soldier-settlement-1917-1929-.csv) (CSV, 2018-11-13T06:45:32.921659)
+
+### [Photographic records of prisoners 1875-1913](https://data.qld.gov.au/dataset/e3de3131-575b-46d4-946b-82ed0949b7da)
+* [Photographic Records of Prisoners 1875-1913](https://www.data.qld.gov.au/dataset/e3de3131-575b-46d4-946b-82ed0949b7da/resource/41012857-f937-4a6b-9618-0d3fecff64b3/download/photographic-records-of-prisoners-1875-1913.csv) (CSV, 2021-01-19T01:19:15.449545)
+
+### [Pneumonic influenza patients, Wallangarra Quarantine Compound](https://data.qld.gov.au/dataset/d380e5ef-f245-448c-ba63-7149b5df9968)
+* [Index to Wallangarra Flu Camp 1918-1919](https://www.data.qld.gov.au/dataset/d380e5ef-f245-448c-ba63-7149b5df9968/resource/b9d592a5-e6e4-408c-a1f9-8971687d29fe/download/index-to-wallangarra-flu-camp-1918-1919-.csv) (CSV, 2021-07-26T02:08:47.067177)
+
+### [Queensland State Archives' digitised collection](https://data.qld.gov.au/dataset/2793ae3a-48cc-4b00-9191-c48fcf825175)
+* [Queensland State Archives' digital collection](https://www.data.qld.gov.au/dataset/2793ae3a-48cc-4b00-9191-c48fcf825175/resource/2bd374bc-ca0d-4903-ba54-11109f91cb88/download/version-0.1-qsa-archie-index-opendata-csv-c.csv) (CSV, 2021-02-15T04:14:53.067450)
+
 ### [Recordkeeping Survey of Queensland Public Authorities, 2014-15](https://data.qld.gov.au/dataset/0d8e0095-4183-4e77-a75b-217cfdc2b224)
 * [Recordkeeping Survey of Queensland Public Authorities, 2014-15](https://www.data.qld.gov.au/dataset/0d8e0095-4183-4e77-a75b-217cfdc2b224/resource/e3489267-7a15-4944-939c-138d6a59d35e/download/recordkeeping-survey-of-queensland-public-authorities-2014-15.csv) (CSV, 2016-04-06T04:28:03.514548)
 * [Recordkeeping Survey of Queensland Public Authorities, 2014-15, Data Dictionary](https://www.data.qld.gov.au/dataset/0d8e0095-4183-4e77-a75b-217cfdc2b224/resource/8861b6b6-5b08-4a13-bad0-6217ed07aa2f/download/recordkeeping-survey-of-queensland-public-authorities-2014-15-open-data-dictionary.csv) (CSV, 2016-04-06T04:39:00.509761)
 
+### [Redeemed land orders 1860-1906](https://data.qld.gov.au/dataset/9af53e64-10ef-4c34-8329-9ace7df871d2)
+* [Redeemed land orders 1860-1907](https://www.data.qld.gov.au/dataset/9af53e64-10ef-4c34-8329-9ace7df871d2/resource/f6eb0873-8793-434d-a73c-97d1d4404a3a/download/redeemed-land-orders-1860-1906.csv) (CSV, 2021-07-21T22:18:42.328293)
+
 ### [Reformatory School for Boys admissions 1871 to 1906](https://data.qld.gov.au/dataset/42636bbc-0d97-4385-8cca-80f56025db08)
-* [Reformatory School for Boys admissions 1871 to 1906](https://www.data.qld.gov.au/dataset/42636bbc-0d97-4385-8cca-80f56025db08/resource/efe812eb-c3ea-4713-8536-b5f436690dce/download/westbrook-reformatory-admission-registers-1871-1906.csv) (CSV, 2014-11-03T05:02:07.517622)
+* [Reformatory School for Boys admissions 1871 to 1906](https://www.data.qld.gov.au/dataset/42636bbc-0d97-4385-8cca-80f56025db08/resource/efe812eb-c3ea-4713-8536-b5f436690dce/download/westbrook-reformatory-admission-registerss-1871-1906.csv) (CSV, 2014-11-03T05:02:07.517622)
 
 ### [Register of Court Fees Marburg 1885 to 1908](https://data.qld.gov.au/dataset/72290732-3960-486d-9ef0-05c3634f58f8)
 * [Register of Court Fees Marburg 1885 to 1908](https://www.data.qld.gov.au/dataset/72290732-3960-486d-9ef0-05c3634f58f8/resource/7e5f93ca-e956-4a27-a8ae-51fbb0e15f42/download/register-of-fees-marburg-court-petty-sessions-1885-1908.csv) (CSV, 2016-09-08T02:07:13.234508)
@@ -807,6 +918,12 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Index to Alphabetical register of Pastoral Holdings 1863-1880](https://www.data.qld.gov.au/dataset/40b98318-11ab-4c1b-8e41-9b11a2db6071/resource/460e3f22-df6f-4a84-9b67-7fc4b412c9c1/download/index-to-alphabetical-register-of-pastoral-holdings-1863-1880.csv) (CSV, 2016-04-06T06:57:08.631592)
 * [Alphabetical register of Pastoral Holdings 1863-1880 JSON](https://www.data.qld.gov.au/dataset/40b98318-11ab-4c1b-8e41-9b11a2db6071/resource/0239b554-dcb1-447b-b828-69536ae2fb45/download/alphabetical-register-of-pastoral-holdings-1863-1880.json) (JSON, 2018-09-05T02:09:59.222331)
 
+### [Registers of Agricultural Lessees 1885-1908](https://data.qld.gov.au/dataset/dac1c5bb-0aa6-49fe-9d7b-b971b7fb25ed)
+* [Index to Registers of Agricultural Lessees 1885-1908](https://www.data.qld.gov.au/dataset/dac1c5bb-0aa6-49fe-9d7b-b971b7fb25ed/resource/21643f9d-14ec-42dd-8629-8ecdf766cc4f/download/index-to-registers-of-agricultural-lessees-1885-1908.csv) (CSV, 2020-06-29T05:13:35.644327)
+
+### [Registers of Immigrants, Rockhampton 1882-1915](https://data.qld.gov.au/dataset/51584b7e-7e76-43aa-bdbf-ae1b308301ca)
+* [Index to Registers of Immigrants, Rockhampton 1882-1915](https://www.data.qld.gov.au/dataset/51584b7e-7e76-43aa-bdbf-ae1b308301ca/resource/3d063806-75c3-4a78-98dd-c142645da26c/download/index-to-registers-of-immigrants-rockhampton-1882-1915.csv) (CSV, 2020-06-29T06:04:14.253870)
+
 ### [Registers of immigrants 1882 to 1938](https://data.qld.gov.au/dataset/3b20c3ba-a9a9-4f39-b35a-9edb642fe6be)
 * [Registers of immigrants 1882 to 1938 A-K](https://www.data.qld.gov.au/dataset/3b20c3ba-a9a9-4f39-b35a-9edb642fe6be/resource/2fd8cf6e-014c-4b6a-9b5d-14b778f58980/download/register-of-assisted-immigrants-1882-1938-a-k.csv) (CSV, 2015-01-27T04:18:07.600163)
 * [Registers of immigrants 1882 to 1938 L-Z](https://www.data.qld.gov.au/dataset/3b20c3ba-a9a9-4f39-b35a-9edb642fe6be/resource/6803f218-a168-4b35-8495-45a10a9dabe2/download/register-of-assisted-immigrants-1882-1938-l-z.csv) (CSV, 2017-01-12T00:39:49.914478)
@@ -826,6 +943,9 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [School Inspectors' Reports 1974-1991](https://data.qld.gov.au/dataset/d1ade7c0-1265-45d8-a2df-f26016aaa27c)
 * [School Inspectors' Reports 1974-1991](https://www.data.qld.gov.au/dataset/d1ade7c0-1265-45d8-a2df-f26016aaa27c/resource/0ceb4ab3-c5fe-49a6-8826-2dc94b44a40c/download/school-inspectors-reports-1874-1991.csv) (CSV, 2018-04-11T03:40:33.483460)
 * [School Inspectors' Reports 1974-1991 JSON](https://www.data.qld.gov.au/dataset/d1ade7c0-1265-45d8-a2df-f26016aaa27c/resource/2194f9a8-784b-4308-a19d-4f551aa32acd/download/school-inspectors-reports-1874-1991.json) (JSON, 2018-09-04T04:41:36.967068)
+
+### [School inspectors reports 1872-1875](https://data.qld.gov.au/dataset/28836b75-3c78-4854-ba00-f8b0aaa05fe2)
+* [Index to School Inspectors Reports 1872-1875](https://www.data.qld.gov.au/dataset/28836b75-3c78-4854-ba00-f8b0aaa05fe2/resource/96b6dd8a-6e26-4c42-987e-b4183de0d80c/download/index-to-school-inspectors-reports-1872-1875.csv) (CSV, 2020-06-30T05:48:14.644194)
 
 ### [Seamen 1882 to 1919](https://data.qld.gov.au/dataset/f2a5a173-f234-4234-9851-427adf3efc11)
 * [Seamen 1882 to 1919](https://www.data.qld.gov.au/dataset/f2a5a173-f234-4234-9851-427adf3efc11/resource/9d20d789-8d9a-4371-8dd0-e79a6961f7e4/download/register-of-seamen-1882-1919.csv) (CSV, 2014-06-23T23:31:51.999156)
@@ -858,6 +978,9 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [Teachers 1860 to 1905](https://data.qld.gov.au/dataset/ca2bf49a-6f27-47b9-8be8-7f09649b97a7)
 * [Teachers 1860 to 1905](https://www.data.qld.gov.au/dataset/ca2bf49a-6f27-47b9-8be8-7f09649b97a7/resource/89c60504-76f5-4a71-98e6-9179c87b1a91/download/combined-teachers-1860-1905.csv) (CSV, 2015-07-01T04:21:24.083543)
 
+### [Teachers in the Education Office Gazettes 1899-1925](https://data.qld.gov.au/dataset/994c6866-4118-4661-a11b-b924f906acda)
+* [Teachers in the Education Office Gazettes 1899-1925](https://www.data.qld.gov.au/dataset/994c6866-4118-4661-a11b-b924f906acda/resource/51363722-c062-4a3f-ac7c-d86a847a715b/download/teachers-in-the-education-office-gazettes-1899-1925.csv) (CSV, 2020-06-29T05:18:27.088510)
+
 ### [Toowoomba Girls Industrial School admissions  and discharges 1881 to 1903](https://data.qld.gov.au/dataset/a7f789f9-0297-42b5-bbfc-171d9e620562)
 * [Toowoomba Girls Industrial School admissions and discharges 1881 to 1903](https://www.data.qld.gov.au/dataset/a7f789f9-0297-42b5-bbfc-171d9e620562/resource/be8a7998-1915-4561-9460-1ef346a68004/download/index-to-admissions-and-discharges-1881-1903-toowoomba-industrial-school-for-girls.csv) (CSV, 2014-11-03T04:23:36.878067)
 
@@ -885,13 +1008,10 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Trustees files 1889 to 1929 JSON](https://www.data.qld.gov.au/dataset/92b77bd9-d694-4a4c-949b-8b21513756be/resource/b45c8686-21c7-4589-ae7f-0b96f77d6bad/download/trustee-files-1889-1929.json) (JSON, 2018-09-04T05:49:16.466314)
 
 ### [Wills 1857 to 1940](https://data.qld.gov.au/dataset/3242a20a-b0aa-4b6e-94e7-04279506d7ce)
-* [Wills 1857 to 1900](https://www.data.qld.gov.au/dataset/3242a20a-b0aa-4b6e-94e7-04279506d7ce/resource/cab17839-5294-4fd0-aecd-c3b4c6cf7cdc/download/wills-1857-to-1940.csv) (CSV, 2014-06-24T03:17:48.450047)
-* [Wills 1901 to 1940](https://www.data.qld.gov.au/dataset/3242a20a-b0aa-4b6e-94e7-04279506d7ce/resource/58e9f27a-03ab-4e28-8583-c09662be18d1/download/wills-1901-to-1940.csv) (CSV, 2014-06-24T03:19:11.124306)
 * [Wills 1857 to 1940](https://www.data.qld.gov.au/dataset/3242a20a-b0aa-4b6e-94e7-04279506d7ce/resource/d595bb3e-7c7c-435e-b08d-448ed5f5fa23/download/wills-1857-1940.csv) (CSV, 2017-01-11T03:34:18.112435)
-* [Wills 1857 to 1900 JSON](https://www.data.qld.gov.au/dataset/3242a20a-b0aa-4b6e-94e7-04279506d7ce/resource/0ab868e6-34e8-46b5-ba03-bc3ce1e2d1ba/download/wills-1857-1940.json) (JSON, 2018-09-04T05:21:59.268426)
 
 ### [Windsor Town Council Honour Roll 1914 to 1925](https://data.qld.gov.au/dataset/a47fa641-6d03-426b-998d-c18534c46c67)
-* [Windsor Town Council Honour Roll 1914 to 1925](https://www.data.qld.gov.au/dataset/a47fa641-6d03-426b-998d-c18534c46c67/resource/f0c7c4fa-b5b6-434f-b098-3275cb3fb361/download/windsor-honour-roll-1914-1925.csv) (CSV, 2015-11-24T05:33:19.638918)
+* [Windsor Town Council Honour Roll 1914 to 1925](https://www.data.qld.gov.au/dataset/a47fa641-6d03-426b-998d-c18534c46c67/resource/f0c7c4fa-b5b6-434f-b098-3275cb3fb361/download/windson-honour-roll-1914-1925.csv) (CSV, 2015-11-24T05:33:19.638918)
 * [Windsor Town Council Honour Roll 1914 to 1925 JSON](https://www.data.qld.gov.au/dataset/a47fa641-6d03-426b-998d-c18534c46c67/resource/d1004366-2267-43c1-a584-3a842e937175/download/windsor-honour-roll-1914-1925.json) (JSON, 2018-09-04T04:44:47.891321)
 
 ### [Writs 1857-2008](https://data.qld.gov.au/dataset/f93dfe6f-d377-410f-86ea-adfa24fc7c0c)
@@ -1010,25 +1130,26 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 ## State Library of NSW
 
-### [Albums recently added to SLNSW's Manuscripts, Oral History and Pictures catalogue](https://data.nsw.gov.au/dataset/986cbe9b-1e7a-492d-9f1a-c90cb6b20a0f)
+### [Albums recently added to SLNSW's Manuscripts, Oral History and Pictures catalogue](https://data.nsw.gov.au/data/dataset/986cbe9b-1e7a-492d-9f1a-c90cb6b20a0f)
 * [Albums recently added to SLNSW's Manuscripts, Oral History and Pictures catalogue](http://feeds.feedburner.com/recentalbumsmohp) (RSS, 2013-05-24T01:31:30.334408)
 
-### [New titles added to the collection of the State Library of NSW](https://data.nsw.gov.au/dataset/dd806ef6-e316-410e-bf5c-540311947d5a)
+### [New titles added to the collection of the State Library of NSW](https://data.nsw.gov.au/data/dataset/dd806ef6-e316-410e-bf5c-540311947d5a)
 * [New titles added to the collection of the State Library of New South Wales](http://feeds.feedburner.com/cataloguenewtitlesslnsw) (RSS, 2013-05-24T01:33:05.246041)
 
-### [State Library of NSW Collection Photostream](https://data.nsw.gov.au/dataset/b6922426-8725-4f2e-bcf3-d419a49f61ef)
+### [State Library of NSW Collection Photostream](https://data.nsw.gov.au/data/dataset/b6922426-8725-4f2e-bcf3-d419a49f61ef)
 * [State Library of NSW Collection Photostream](http://www.flickr.com/photos/statelibraryofnsw/) (HTML, 2013-05-23T22:10:39.871133)
 
-### [State Library of NSW GitHub](https://data.nsw.gov.au/dataset/d6bf9721-5489-4b74-982d-6864988fe99c)
+### [State Library of NSW GitHub](https://data.nsw.gov.au/data/dataset/d6bf9721-5489-4b74-982d-6864988fe99c)
 * [State Library of NSW's GitHub account](https://raw.githubusercontent.com/slnsw-webdev) (CSS, Java, PHP, JavaScript, 2016-08-15T16:24:59.271171)
 
-### [WW1 Diary and Letter Transcripts](https://data.nsw.gov.au/dataset/4095e38b-785f-4f3c-917f-d041fce0e408)
+### [WW1 Diary and Letter Transcripts](https://data.nsw.gov.au/data/dataset/4095e38b-785f-4f3c-917f-d041fce0e408)
 * [WW1 Diary and Letter Transcripts API](http://www.sl.nsw.gov.au/api) (API, 2016-07-26T08:26:59.285520)
 
 ## State Library of Queensland
 
 ### [State Library of Queensland -  Consultancies](https://data.qld.gov.au/dataset/7038af67-fa75-4f36-a554-aba83003beb1)
 * [Explanatory information - Consultancies](https://www.data.qld.gov.au/dataset/7038af67-fa75-4f36-a554-aba83003beb1/resource/0f0cd08e-d31d-4b55-9cd5-f9c6d5fac6eb/download/consultancies-explanatory-information.rtf) (RTF, 2019-09-19T04:26:11.981680)
+* [Consultancies 2019-20](https://www.data.qld.gov.au/dataset/7038af67-fa75-4f36-a554-aba83003beb1/resource/81b2ba70-9ece-4e91-9c94-667e0b09b892/download/slq_consultancies_2019-20.csv) (CSV, 2020-09-29T05:09:37.426971)
 * [Consultancies 2018-19](https://www.data.qld.gov.au/dataset/7038af67-fa75-4f36-a554-aba83003beb1/resource/8fba11db-9aa4-4f09-a1a3-f7d6db2aaaac/download/slq_consultancies_2018-19.csv) (CSV, 2019-09-19T04:23:40.707097)
 * [Consultancies 2017-18](https://www.data.qld.gov.au/dataset/7038af67-fa75-4f36-a554-aba83003beb1/resource/bd6ae73c-04ac-473e-b035-0a6b8c6ede75/download/slq_consultancies_2017-18.csv) (CSV, 2014-10-20T02:54:03.919636)
 * [Consultancies 2016-17](https://www.data.qld.gov.au/dataset/7038af67-fa75-4f36-a554-aba83003beb1/resource/7405ff0d-23dc-4b3f-9fd1-50d1ee3433fc/download/lbqannual-report-2016-17-consultancies.csv) (CSV, 2019-03-20T02:14:44.607864)
@@ -1073,6 +1194,15 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 ### [State Library of Queensland - Catalogue searches](https://data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b)
 * [Explanatory information - Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/b7aa1b2c-6a49-4be6-b6b1-aedc86b1dc4f/download/explanatory-information-catalogue-searches.rtf) (RTF, 2018-03-20T06:07:26.991043)
+* [November 2020 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/0fb82801-2fb6-4971-aa12-d2ff386e859b/download/catalogue-searches-2020-11-november.csv) (CSV, 2020-12-08T01:18:10.130045)
+* [September 2020 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/dba54258-e6ab-4c7e-b9da-611a793919e8/download/catalogue-searches-2020-09-september.csv) (CSV, 2020-12-08T01:14:56.732821)
+* [August 2020 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/9d3abc51-d772-4a48-9582-a9dc4ab873c6/download/catalogue-searches-2020-08-august.csv) (CSV, 2020-12-08T01:13:12.580695)
+* [July 2020 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/6ab6fce5-9856-4dd4-acb6-1873a77d3a16/download/catalogue-searches-2020-07-july.csv) (CSV, 2020-12-08T01:10:48.466014)
+* [June 2020 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/de8bf3a4-8883-4f80-8556-ad98d16d6ca2/download/catalogue-searches-2020-06-june.csv) (CSV, 2020-07-20T03:49:59.652490)
+* [May 2020 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/37f77215-ef0e-4762-9a37-fe2195e0d190/download/catalogue-searches-2020-05-may.csv) (CSV, 2020-06-12T03:44:58.401165)
+* [April 2020 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/7cbe7bae-5e06-49d4-a349-37ed491ec450/download/catalogue-searches-2020-04-april.csv) (CSV, 2020-05-19T02:22:59.788813)
+* [March 2020 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/33133662-08cc-4719-a294-591aafbd5d4c/download/catalogue-searches-2020-03-march.csv) (CSV, 2020-04-09T04:10:06.619740)
+* [February 2020 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/2baadc62-acd2-49c5-982a-a8d69a06eac3/download/catalogue-searches-2020-02-february.csv) (CSV, 2020-04-09T04:04:27.213188)
 * [January 2020 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/7c8660f7-8284-49df-872b-68ddb77c9b7a/download/catalogue-searches-2020-01-january.csv) (CSV, 2020-02-06T07:16:16.225468)
 * [December 2019 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/7ebb739e-9607-4209-948e-76bc57347eff/download/catalogue-searches-2019-12-december.csv) (CSV, 2020-01-15T05:05:33.774981)
 * [November 2019 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/9de428a1-d8f6-4a95-814f-f8229a6f20d0/download/catalogue-searches-2019-11-november.csv) (CSV, 2020-01-15T05:02:40.788179)
@@ -1117,8 +1247,8 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [November 2015 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/27fde23d-ebf3-454c-8919-46cd4aa658f5/download/catalogue-searches-2015-11-november.csv) (CSV, 2019-06-18T06:50:18.692569)
 * [October 2015 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/33de07a9-d37c-4755-8b12-ad8801ed45bb/download/catalogue-searches-2015-10-october.csv) (CSV, 2019-06-18T06:50:57.661028)
 * [September 2015 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/86df062c-98cd-416e-8927-927376272bc4/download/catalogue-searches-2015-09-september.csv) (CSV, 2019-06-18T06:51:36.742055)
-* [August 2015 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/0f95a1fa-b828-44b6-9180-dbaf8003d986/download/catalogue-searches-2015-08-august.csv) (CSV, 2019-06-18T06:52:17.923591)
 * [July 2015 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/e9f435df-8d1d-4132-9140-24d16837ab68/download/catalogue-searches-2015-07-july.csv) (CSV, 2019-06-18T06:53:02.242185)
+* [August 2015 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/0f95a1fa-b828-44b6-9180-dbaf8003d986/download/catalogue-searches-2015-08-august.csv) (CSV, 2019-06-18T06:52:17.923591)
 * [December 2014 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/91611e24-b2c6-43b8-ae5e-eb5fdf3a981e/download/catalogue-searches-2014-12-december.csv) (CSV, 2019-06-18T06:53:44.864912)
 * [November 2014 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/7540cc80-f8bb-4dea-91a3-1b48843f0372/download/catalogue-searches-2014-11-november.csv) (CSV, 2019-06-18T06:54:33.359484)
 * [October 2014 Catalogue searches](https://www.data.qld.gov.au/dataset/cebb997c-1c42-4eb2-9039-8fa1b645db0b/resource/d9e15053-c4a8-4d38-84c9-27283d2c1387/download/catalogue-searches-2014-10-october.csv) (CSV, 2019-06-18T06:55:50.362275)
@@ -1174,9 +1304,20 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Explanatory information](https://www.data.qld.gov.au/dataset/d3e6f278-8385-4a40-b5d7-83e964d8d5b0/resource/c0991f03-4f51-4731-b76e-67a95a98dc63/download/explanatory-information-slq-atsi-language-materials-20190823.rtf) (RTF, 2019-08-23T03:40:01.070751)
 * [Collection items in Aboriginal and Torres Strait Islander languages](https://www.data.qld.gov.au/dataset/d3e6f278-8385-4a40-b5d7-83e964d8d5b0/resource/c06a87dd-452a-4d5b-ba9c-d63d5bb04879/download/slq-atsi-language-materials-20190823.csv) (CSV, 2019-08-23T03:36:50.267518)
 
+### [State Library of Queensland - Contract disclosure](https://data.qld.gov.au/dataset/e4a9d01b-45c0-4ac6-b6dc-6986af6e8688)
+* [Explanatory information - Contract disclosure](https://www.data.qld.gov.au/dataset/e4a9d01b-45c0-4ac6-b6dc-6986af6e8688/resource/4f691845-9c73-4279-8f7c-fb6b1a60b340/download/explanatory-information-contract-disclosure.rtf) (RTF, 2020-07-13T23:34:30.475269)
+* [2020/21 Quarter 1 - Contract disclosure report](https://www.data.qld.gov.au/dataset/e4a9d01b-45c0-4ac6-b6dc-6986af6e8688/resource/d085ee76-0160-4a00-879a-9cdd3dd69cfc/download/state-library-quarter-1st-2020-21.csv) (CSV, 2021-01-22T04:17:30.539843)
+* [2019/20 Quarter 4 - Contract disclosure report](https://www.data.qld.gov.au/dataset/e4a9d01b-45c0-4ac6-b6dc-6986af6e8688/resource/b4bcb208-fbfa-4154-8cd7-71140e5b2f25/download/state-library-quarter-4th-2019-20.csv) (CSV, 2021-01-22T04:20:59.399031)
+* [2019/20 Quarter 2 & 3 - Contract disclosure report](https://www.data.qld.gov.au/dataset/e4a9d01b-45c0-4ac6-b6dc-6986af6e8688/resource/37c525e4-d1c9-4876-8980-ef57e5bfe991/download/slq-contract-disclosure-2019-20-q2-q3.csv) (CSV, 2020-07-14T21:45:27.289021)
+* [2019/20 Quarter 1 - Contract disclosure report](https://www.data.qld.gov.au/dataset/e4a9d01b-45c0-4ac6-b6dc-6986af6e8688/resource/52e5a2d5-546c-4e5e-881f-8281f6f535cc/download/slq-contract-disclosure-2019-20-q1.csv) (CSV, 2019-12-18T03:15:52.777966)
+
 ### [State Library of Queensland - Digitised maps](https://data.qld.gov.au/dataset/befaf9ae-6100-441f-9f77-2f9ed377e105)
 * [NASLA_maps_other_PA.xml](https://www.data.qld.gov.au/dataset/befaf9ae-6100-441f-9f77-2f9ed377e105/resource/3698d8e1-51cd-4cf7-84a4-68e67a3426f8/download/nasla_maps_other_pa.xml) (XML, 2013-05-29T00:21:04.693875)
 * [NASLA_maps_other.csv](https://www.data.qld.gov.au/dataset/befaf9ae-6100-441f-9f77-2f9ed377e105/resource/22bd64b9-1c7b-4a30-9dff-cc86227632a8/download/nasla_maps_other.csv) (CSV, 2019-03-20T02:20:13.123433)
+
+### [State Library of Queensland - Indigenous languages map data](https://data.qld.gov.au/dataset/b6f6cc4f-15e8-422b-9cdf-dc57c1bab7b2)
+* [Explanatory Information - Indigenous languages map of Queensland data](https://www.data.qld.gov.au/dataset/b6f6cc4f-15e8-422b-9cdf-dc57c1bab7b2/resource/55d8e3fb-cb30-45b0-a853-1ccf4456e935/download/explanatory-information-indigenous-languages-map-data.rtf) (RTF, 2020-05-14T07:32:31.282449)
+* [Indigenous languages map of Queensland data](https://www.data.qld.gov.au/dataset/b6f6cc4f-15e8-422b-9cdf-dc57c1bab7b2/resource/0fc7c06c-e03d-4c08-9cb0-f6cbfd2b69b7/download/slq-indigenous-languages-map-data.csv) (CSV, 2020-05-14T07:31:26.553718)
 
 ### [State Library of Queensland - Library Board of Queensland Committees and Advisory Groups remuneration](https://data.qld.gov.au/dataset/ad3c833f-368a-421c-9ad5-6650eb37de13)
 * [2014-15 Library Board of Queensland Committees and Advisory Groups remuneration](https://www.data.qld.gov.au/dataset/ad3c833f-368a-421c-9ad5-6650eb37de13/resource/9a779f87-ef67-43b2-8620-ff34ae05ad25/download/remuneration-library-board-of-queensland-comittees-and-advisory-groups-2014-15.csv) (CSV, 2015-10-02T02:37:25.631783)
@@ -1185,8 +1326,10 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Remuneration - Library Board of Queensland 2014-15](https://www.data.qld.gov.au/dataset/894b0593-d1ca-4fd7-8ba4-a9913b5805ea/resource/cadddb90-52dc-4262-81fc-1b2c89a1af1d/download/remuneration-library-board-of-queensland-2014-15.csv) (CSV, 2015-10-02T02:25:40.189778)
 
 ### [State Library of Queensland - Library membership](https://data.qld.gov.au/dataset/1f3f1d06-2dfa-4c4a-8737-235afdf3d1e0)
-* [2013-14 Library membership](https://www.data.qld.gov.au/dataset/1f3f1d06-2dfa-4c4a-8737-235afdf3d1e0/resource/40ef61fe-2cf9-4317-ae99-2947e176c77b/download/slqpatrons0614.csv) (CSV, 2014-09-25T02:16:50.267435)
+* [Explanatory information - Library membership](https://www.data.qld.gov.au/dataset/1f3f1d06-2dfa-4c4a-8737-235afdf3d1e0/resource/d948838d-cf45-4cf8-ba8c-63c167281412/download/explanatory-information-library-membership.rtf) (RTF, 2020-06-12T01:07:29.865065)
+* [2019 Library membership](https://www.data.qld.gov.au/dataset/1f3f1d06-2dfa-4c4a-8737-235afdf3d1e0/resource/162ac9af-c720-49ef-9cfc-7962cae03a80/download/slqmembership201909.csv) (CSV, 2020-06-12T01:02:51.957559)
 * [2014-15 Library membership](https://www.data.qld.gov.au/dataset/1f3f1d06-2dfa-4c4a-8737-235afdf3d1e0/resource/0acb7ce5-b57b-49ea-aa53-3a4508a11344/download/user-list-for-open-data-010715.csv) (CSV, 2019-03-20T05:30:44.165540)
+* [2013-14 Library membership](https://www.data.qld.gov.au/dataset/1f3f1d06-2dfa-4c4a-8737-235afdf3d1e0/resource/40ef61fe-2cf9-4317-ae99-2947e176c77b/download/slqpatrons0614.csv) (CSV, 2014-09-25T02:16:50.267435)
 
 ### [State Library of Queensland - Licensed victuallers Index](https://data.qld.gov.au/dataset/96c624e5-c6fd-4e26-8c07-90a236185437)
 * [Explanatory Information](https://www.data.qld.gov.au/dataset/96c624e5-c6fd-4e26-8c07-90a236185437/resource/debf908a-207f-4532-a091-180a714882d4/download/licensedvictuallersinformation17may2018slq.docx) (DOCX, 2018-03-29T05:01:04.829038)
@@ -1201,6 +1344,8 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 ### [State Library of Queensland - Open Data Maturity Assessments](https://data.qld.gov.au/dataset/3f48e308-5572-491d-9a00-2208d70b4562)
 * [Explanatory information - Open Data Maturity Assessments](https://www.data.qld.gov.au/dataset/3f48e308-5572-491d-9a00-2208d70b4562/resource/aab6df1a-0210-4425-9cc6-75e0bfe1b2d5/download/explanatory-information-open-data-maturity-assessments.rtf) (RTF, 2019-10-30T05:12:22.927284)
+* [2020 Answers - Open Data Maturity Assessment](https://www.data.qld.gov.au/dataset/3f48e308-5572-491d-9a00-2208d70b4562/resource/0bfd0628-b831-42fe-ae71-94299c092b01/download/2020-answers-open-data-maturity-assessment.csv) (CSV, 2020-08-20T02:34:35.475424)
+* [2020 Scores - Open Data Maturity Assessment](https://www.data.qld.gov.au/dataset/3f48e308-5572-491d-9a00-2208d70b4562/resource/4b4c1944-b3da-48db-8dae-4b801a695e61/download/2020-scores-open-data-maturity-assessment.csv) (CSV, 2020-08-20T02:33:29.873728)
 * [2019 Scores - Open Data Maturity Assessment](https://www.data.qld.gov.au/dataset/3f48e308-5572-491d-9a00-2208d70b4562/resource/e4de3be9-2a32-4449-8bbc-b0372469ef10/download/2019-scores-open-data-maturity-assessment.csv) (CSV, 2019-10-30T05:05:11.718797)
 * [2019 Answers - Open Data Maturity Assessment](https://www.data.qld.gov.au/dataset/3f48e308-5572-491d-9a00-2208d70b4562/resource/8f3b29bb-3e3b-4939-a923-7e02fb757d42/download/2019-answers-open-data-maturity-assessment.csv) (CSV, 2019-10-30T05:09:45.343910)
 * [2018 Scores - Open Data Maturity Assessment](https://www.data.qld.gov.au/dataset/3f48e308-5572-491d-9a00-2208d70b4562/resource/96dd08a3-3a8d-45aa-9b03-ea248416cc4e/download/2018-scores-open-data-maturity-assessment.csv) (CSV, 2019-10-30T05:04:30.695036)
@@ -1212,6 +1357,7 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 ### [State Library of Queensland - Overseas travel](https://data.qld.gov.au/dataset/a53ff296-9c2e-4621-a824-11498959b75c)
 * [Explanatory information - Overseas travel](https://www.data.qld.gov.au/dataset/a53ff296-9c2e-4621-a824-11498959b75c/resource/5349a591-4d94-4bfe-b5f3-a91d57443d68/download/overseas-travel_explanatory-information.rtf) (RTF, 2019-09-19T06:02:10.195634)
+* [Overseas travel 2019-20](https://www.data.qld.gov.au/dataset/a53ff296-9c2e-4621-a824-11498959b75c/resource/6b88e4e4-c820-4404-9bdc-dc632a0de63f/download/slq_overseas_travel_2019-20.csv) (CSV, 2020-09-29T05:11:10.397974)
 * [Overseas travel 2018-19](https://www.data.qld.gov.au/dataset/a53ff296-9c2e-4621-a824-11498959b75c/resource/d044459b-c418-4df9-8cc5-bbba0a9bc2c3/download/slq_overseas_travel_2018-19.csv) (CSV, 2019-09-19T06:01:12.989011)
 * [Overseas travel 2017-18](https://www.data.qld.gov.au/dataset/a53ff296-9c2e-4621-a824-11498959b75c/resource/69c25df0-19d5-41a7-ba84-ba0d9f32f451/download/slq_overseas_travel_2017-18.csv) (CSV, 2014-10-20T02:45:39.760956)
 * [Overseas travel 2016-17](https://www.data.qld.gov.au/dataset/a53ff296-9c2e-4621-a824-11498959b75c/resource/ccd38791-7ea3-4354-ac7d-9e6d0c878fc7/download/lbqannual-report-2016-17-overseastravel.csv) (CSV, 2019-03-20T02:45:33.544532)
@@ -1232,6 +1378,10 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [NASLA_non_ATSI_copyright_expired.csv](https://www.data.qld.gov.au/dataset/4295bf38-708a-4832-9665-443b6c08e4e1/resource/8a327cf9-cff9-4b34-a461-6f883bdc3a48/download/nasla_non_atsi_copyright_expired.csv) (CSV, 2019-03-20T03:54:56.481992)
 * [NASLA_non_ATSI_copyright_expired_PA.xml](https://www.data.qld.gov.au/dataset/4295bf38-708a-4832-9665-443b6c08e4e1/resource/a2277ffd-87ce-4dca-9d42-1275a9580e73/download/nasla_non_atsi_copyright_expired_pa.xml) (XML, 2019-03-20T03:59:55.775700)
 
+### [State Library of Queensland - Police Gazette Inquests 1875-1885](https://data.qld.gov.au/dataset/f1a5089b-01f9-40a8-8aee-ce62a4721bde)
+* [Explanatory information - Police Gazette Inquests 1875-1885](https://www.data.qld.gov.au/dataset/f1a5089b-01f9-40a8-8aee-ce62a4721bde/resource/b6f49f3c-a4e8-45cc-946b-945b98bb80aa/download/explanatory-information_police-gazettes-inquests-1875-1885.rtf) (RTF, 2020-04-03T05:12:34.710716)
+* [Police Gazette Inquests 1875-1885](https://www.data.qld.gov.au/dataset/f1a5089b-01f9-40a8-8aee-ce62a4721bde/resource/15d01937-097c-45ed-a365-feb493b05c2c/download/police-gazette-inquests-1875-1885_state-library-of-queensland.csv) (CSV, 2020-04-03T05:11:26.416598)
+
 ### [State Library of Queensland - Portraits of WW1 soldiers from the Australasian Traveller](https://data.qld.gov.au/dataset/71375e54-eab8-4344-9a04-72515ef53edd)
 * [Portraits of WW1 soldiers - Australasian Traveller](https://www.data.qld.gov.au/dataset/71375e54-eab8-4344-9a04-72515ef53edd/resource/6684dfdc-34f7-43bf-bb71-b3bb043bdb61/download/soldier_portraits_australasian_traveller.csv) (CSV, 2018-08-20T01:46:31.117934)
 
@@ -1246,16 +1396,6 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [State Library of Queensland - Queensland Library Foundation remuneration](https://data.qld.gov.au/dataset/5f90f8a0-85c4-4a1e-9108-cef98537711f)
 * [Queensland Library Foundation remuneration 2014-15](https://www.data.qld.gov.au/dataset/5f90f8a0-85c4-4a1e-9108-cef98537711f/resource/e551f605-2ab4-4781-8b57-a503770b4131/download/remuneration-queensland-library-foundation.csv) (CSV, 2015-10-02T02:48:32.388818)
 
-### [State Library of Queensland - Queensland public libraries](https://data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af)
-* [Explanatory Information March 2019](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/0be72b92-5fa2-483d-8a10-7781b3f9637d/download/qld-public-libraries-explantory-info-20190322.rtf) (RTF, 2018-03-20T05:59:50.814100)
-* [Queensland Public Libraries March 2019](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/7f0c7499-b213-45a4-a7b9-ee6f88d9d2f6/download/public-libraries-2019march22.csv) (CSV, 2019-03-22T06:05:22.992010)
-* [Queensland Public Libraries March 2018](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/6c39fd55-f038-43ec-930f-b3c019e74199/download/publiclibrarybranchesdetails6march18slq.csv) (CSV, 2018-03-20T06:04:40.227414)
-* [Queensland Public Libraries February 2016](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/7c68ac60-cbb4-4450-89fb-89d917ae3b34/download/qld-public-library-branches-2016-feb.csv) (CSV, 2013-05-29T00:56:30.626251)
-* [Queensland Public Libraries September 2015](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/8b78ae6b-6b71-4f38-b868-5b2f118eada6/download/qld-public-library-branches-15-sept.csv) (CSV, 2019-03-14T01:40:07.866536)
-* [Queensland Public Libraries September 2014](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/f2024854-aa48-4262-a074-1fc097253a7f/download/qld-public-library-branches-14-sept.csv) (CSV, 2019-03-14T01:41:00.181327)
-* [Queensland Public Libraries March 2013](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/12721341-014e-448a-a570-06e6a5893c04/download/qld-public-library-branches-13-mar.csv) (CSV, 2019-03-14T01:42:00.907666)
-* [Queensland Public Libraries 2011](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/0ca17952-bfa7-4d74-aa60-2b28b4962b91/download/qld-public-library-branches-11.csv) (CSV, 2019-03-14T01:43:11.546367)
-
 ### [State Library of Queensland - Queensland public libraries annual statistics](https://data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb)
 * [Explanatory information 2019](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/95952a86-747e-4bd5-8494-92087863a9bd/download/explanatory-information-2019-qld-public-libraries-annual-statistics.rtf) (RTF, 2019-03-06T05:52:11.877825)
 * [Branch data 2010/2011 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/30a86bed-8e1c-46ac-a7e4-98e3b6d91b97/download/branch-data-2010-2011-qld-public-libraries.csv) (CSV, 2019-08-27T00:21:44.452472)
@@ -1266,6 +1406,7 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Branch data 2015/2016 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/4b0ec034-933f-4996-9d2b-00ab59e05219/download/branch-data-2015-2016-qld-public-libraries.csv) (CSV, 2019-03-06T06:01:45.511128)
 * [Branch data 2016/2017 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/8fb732c9-19a7-4f5d-a1b0-f53382251759/download/branch-data-2016-2017-qld-public-libraries.csv) (CSV, 2019-03-06T06:02:54.236954)
 * [Branch data 2017/2018 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/3344b984-7a50-4518-8d0d-06022a6e8e7d/download/branch-data-2017-2018-qld-public-libraries.csv) (CSV, 2019-03-06T06:03:58.577385)
+* [Branch data 2018/2019 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/2b0c2d09-ed23-4a5a-a7b4-2f7ddfbaae3d/download/branch-data-2018-2019-qld-public-libraries.csv) (CSV, 2020-05-22T02:07:54.087924)
 * [Council data 2010/2011 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/8e754884-1546-4cfb-b9d5-74c59f78ee8b/download/council-data-2010-2011-qld-public-libraries.csv) (CSV, 2019-03-06T06:05:26.414270)
 * [Council data 2011/2012 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/b0f4b4eb-6615-4ea6-8aaf-b25d34965063/download/council-data-2011-2012-qld-public-libraries.csv) (CSV, 2019-03-06T06:06:21.846240)
 * [Council data 2012/2013 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/36205294-7934-4eac-9f42-e9b7ec3cb857/download/council-data-2012-2013-qld-public-libraries.csv) (CSV, 2019-03-06T06:07:20.790895)
@@ -1274,6 +1415,19 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Council data 2015/2016 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/acf5fe9e-1744-439a-881e-b0b76477e8dc/download/council-data-2015-2016-qld-public-libraries.csv) (CSV, 2019-03-06T06:10:23.566830)
 * [Council data 2016/2017 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/70fa159d-06f5-4dc2-bc0f-a19f557e8cf9/download/council-data-2016-2017-qld-public-libraries.csv) (CSV, 2019-08-27T00:24:28.110466)
 * [Council data 2017/2018 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/3111aeb3-8d1c-4575-aa87-4fe7675a94fb/download/council-data-2017-2018-qld-public-libraries.csv) (CSV, 2019-03-06T06:12:35.658767)
+* [Council data 2018/2019 — Queensland public libraries annual statistics](https://www.data.qld.gov.au/dataset/f78aa2f5-5fa8-4655-bd38-1b5f051e1adb/resource/f10df735-4a8a-45d6-8db9-b2a1a4a4289d/download/council-data-2018-2019-qld-public-libraries.csv) (CSV, 2020-05-22T02:11:25.892866)
+
+### [State Library of Queensland - Queensland public libraries directory](https://data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af)
+* [Explanatory information](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/e4faf0bf-4eb9-49c7-b5ec-28a7956dc155/download/qld-public-libraries-explantory-info-20200525.rtf) (RTF, 2020-05-25T04:47:36.505354)
+* [Queensland Public Libraries January 2021](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/b6cddba1-5084-4b40-a222-de885d59d617/download/plconnect-directory-branches-20210113.csv) (CSV, 2021-01-15T06:17:12.098117)
+* [Queensland Public Libraries May 2020](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/4dde7282-6adc-4ab3-86bb-68f0ab517ff7/download/plconnect-directory-branches-20200525.csv) (CSV, 2020-05-25T04:46:46.143805)
+* [Queensland Public Libraries March 2019](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/7f0c7499-b213-45a4-a7b9-ee6f88d9d2f6/download/public-libraries-2019march22.csv) (CSV, 2019-03-22T06:05:22.992010)
+* [Queensland Public Libraries March 2018](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/6c39fd55-f038-43ec-930f-b3c019e74199/download/publiclibrarybranchesdetails6march18slq.csv) (CSV, 2018-03-20T06:04:40.227414)
+* [Queensland Public Libraries February 2016](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/7c68ac60-cbb4-4450-89fb-89d917ae3b34/download/qld-public-library-branches-2016-feb.csv) (CSV, 2013-05-29T00:56:30.626251)
+* [Queensland Public Libraries September 2015](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/8b78ae6b-6b71-4f38-b868-5b2f118eada6/download/qld-public-library-branches-15-sept.csv) (CSV, 2019-03-14T01:40:07.866536)
+* [Queensland Public Libraries September 2014](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/f2024854-aa48-4262-a074-1fc097253a7f/download/qld-public-library-branches-14-sept.csv) (CSV, 2019-03-14T01:41:00.181327)
+* [Queensland Public Libraries March 2013](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/12721341-014e-448a-a570-06e6a5893c04/download/qld-public-library-branches-13-mar.csv) (CSV, 2019-03-14T01:42:00.907666)
+* [Queensland Public Libraries 2011](https://www.data.qld.gov.au/dataset/537ff4c4-b49a-41f6-8c56-489b8bc731af/resource/0ca17952-bfa7-4d74-aa60-2b28b4962b91/download/qld-public-library-branches-11.csv) (CSV, 2019-03-14T01:43:11.546367)
 
 ### [State Library of Queensland - Queensland railway employees 1890-1915](https://data.qld.gov.au/dataset/a6149d43-9f72-40e3-8ed6-905b3131ef55)
 * [Explanatory information](https://www.data.qld.gov.au/dataset/a6149d43-9f72-40e3-8ed6-905b3131ef55/resource/98907f7e-774d-4a37-891a-fb57525eb2dd/download/qld-railway-employees-information17may2018slq.docx) (DOCX, 2018-05-18T02:01:29.806093)
@@ -1296,6 +1450,16 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 ### [State Library of Queensland - Unstacked logs - Catalogue usage](https://data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b)
 * [Explanatory information — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/dac7865a-6d02-428a-8737-48eb08851146/download/slq-unstacked-logs-explanatory-information.rtf) (RTF, 2019-05-17T04:53:40.755174)
+* [December 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/2de0a702-3c5b-499c-8027-1ed0abfc2f32/download/slq-unstacked-logs-202012-december.csv) (CSV, 2021-01-13T04:50:46.070361)
+* [November 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/541beac8-29a0-4d32-a1ed-d815972e0a44/download/slq-unstacked-logs-202011-november.csv) (CSV, 2020-12-16T05:59:22.564403)
+* [October 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/5446f86e-1c2c-4f91-b7fc-2c853814d072/download/slq-unstacked-logs-202010-october.csv) (CSV, 2020-12-16T05:56:33.423658)
+* [September 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/48e1dffb-26e2-45a5-a195-d6fe680e196d/download/slq-unstacked-logs-202009-september.csv) (CSV, 2020-12-16T05:53:25.613765)
+* [August 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/27afe503-6d09-4090-8023-024fdc687aef/download/slq-unstacked-logs-202008-august.csv) (CSV, 2020-09-08T06:43:14.077307)
+* [July 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/61469185-d294-40b6-aff2-1b15a91b7be9/download/slq-unstacked-logs-202007-july.csv) (CSV, 2020-09-08T03:43:02.044783)
+* [June 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/bdb2ea0f-cdcb-4021-b9eb-8b55bddc492e/download/slq-unstacked-logs-202006-june.csv) (CSV, 2020-07-20T06:13:55.596107)
+* [May 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/1a786de2-b62d-4576-a608-fa1d610792db/download/slq-unstacked-logs-202005-may.csv) (CSV, 2020-07-20T04:22:21.659774)
+* [April 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/40158529-9547-4d2f-8524-89c8068a27c0/download/slq-unstacked-logs-202004-april.csv) (CSV, 2020-05-22T02:25:51.553448)
+* [March 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/bbe9ca99-d3ae-4dda-9ecc-8c5a9652fe3d/download/slq-unstacked-logs-202003-march.csv) (CSV, 2020-05-22T02:20:56.360746)
 * [February 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/96a3aa25-e297-4bef-8754-5f5590b86fde/download/slq-unstacked-logs-202002-february.csv) (CSV, 2020-03-18T07:26:22.474229)
 * [January 2020 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/d7678dfc-a8ad-42d5-b32d-d6924aa4f300/download/slq-unstacked-logs-202001-january.csv) (CSV, 2020-02-06T07:06:05.992074)
 * [December 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/186106a9-769e-4c83-9653-508b60f47f1b/download/slq-unstacked-logs-201912-december.csv) (CSV, 2020-01-03T01:09:11.968625)
@@ -1304,22 +1468,22 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [September 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/15c39002-5e7f-41ef-9c2f-5cd8e4ef76aa/download/slq-unstacked-logs-201909-september.csv) (CSV, 2019-10-03T00:37:21.874791)
 * [August 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/862330bb-8055-4139-943c-99008b0bf4fd/download/slq-unstacked-logs-201908-august.csv) (CSV, 2019-09-02T05:50:52.810261)
 * [July 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/cc3c8734-56d6-4dd6-a68c-8d7e378e885d/download/slq-unstacked-logs-201907-july.csv) (CSV, 2019-08-05T01:29:50.589454)
-* [May 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/2888944b-ecca-427a-8db8-8038d1c791b9/download/slq-unstacked-logs-201905-may.csv) (CSV, 2019-06-05T06:36:09.345650)
 * [June 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/a3034d85-ec12-4ffa-b848-0c695f3ab761/download/slq-unstacked-logs-201906-june.csv) (CSV, 2019-07-03T02:57:38.855120)
+* [May 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/2888944b-ecca-427a-8db8-8038d1c791b9/download/slq-unstacked-logs-201905-may.csv) (CSV, 2019-06-05T06:36:09.345650)
 * [April 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/acb1f677-1615-4c56-8e71-c6eb443c7b1b/download/slq-unstacked-logs-201904-april.csv) (CSV, 2019-05-17T04:54:54.666753)
 * [March 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/3173e32e-5e66-430d-ab14-9ff16d57b557/download/slq-unstacked-logs-201903-march.csv) (CSV, 2019-05-17T04:55:50.800342)
 * [February 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/b5f91057-9556-49bd-8335-0c26a84fbbc0/download/slq-unstacked-logs-201902-february.csv) (CSV, 2019-05-17T04:56:41.151565)
-* [January 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/398471b4-2913-4bb9-9f98-8afbfc223ebf/download/slq-unstacked-logs-201901-january.csv) (CSV, 2019-05-17T04:57:24.308037)
 * [December 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/5111cac8-d4b5-4293-a554-9c039c51b870/download/slq-unstacked-logs-201812-december.csv) (CSV, 2019-05-17T05:42:38.459578)
+* [January 2019 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/398471b4-2913-4bb9-9f98-8afbfc223ebf/download/slq-unstacked-logs-201901-january.csv) (CSV, 2019-05-17T04:57:24.308037)
 * [November 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/688c3075-36dc-414c-bfc2-96b972505ee4/download/slq-unstacked-logs-201811-november.csv) (CSV, 2019-05-17T05:46:00.082432)
 * [September 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/bc795ad6-d2e4-4108-9708-53de64ddb19e/download/slq-unstacked-logs-201809-september.csv) (CSV, 2019-05-17T05:47:43.325706)
 * [October 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/d55aeb4b-bfca-4a48-9e22-b9f4d406f90b/download/slq-unstacked-logs-201810-october.csv) (CSV, 2019-05-17T05:46:50.945944)
 * [August 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/52a9d751-73e0-4d7d-95fb-3b541efe2dab/download/slq-unstacked-logs-201808-august.csv) (CSV, 2019-05-17T05:48:30.211834)
-* [July 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/2d7c8ce1-d71e-4c7c-b916-c5b400b9f327/download/slq-unstacked-logs-201807-july.csv) (CSV, 2019-05-17T05:49:19.114246)
 * [June 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/ef3ffcab-dc00-4aa6-8f36-66c45f6a5435/download/slq-unstacked-logs-201806-june.csv) (CSV, 2019-05-17T05:50:09.217041)
 * [May 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/afbd55d9-3842-4eee-880e-f01121d65acc/download/slq-unstacked-logs-201805-may.csv) (CSV, 2019-05-17T05:51:04.485962)
-* [April 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/973f0b88-d340-4e66-8c95-021c26eb0a1a/download/slq-unstacked-logs-201804-april.csv) (CSV, 2019-05-17T05:51:56.341297)
+* [July 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/2d7c8ce1-d71e-4c7c-b916-c5b400b9f327/download/slq-unstacked-logs-201807-july.csv) (CSV, 2019-05-17T05:49:19.114246)
 * [March 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/4fe198ff-b3b2-49af-9d0d-cd5c37b25380/download/slq-unstacked-logs-201803-march.csv) (CSV, 2019-05-17T05:52:42.729846)
+* [April 2018 — Unstacked logs - Catalogue usage](https://www.data.qld.gov.au/dataset/eca99ce9-dbf6-4e54-904e-d6a3cd0e3c2b/resource/973f0b88-d340-4e66-8c95-021c26eb0a1a/download/slq-unstacked-logs-201804-april.csv) (CSV, 2019-05-17T05:51:56.341297)
 
 ### [State Library of Queensland - Visits to the State Library building](https://data.qld.gov.au/dataset/45a7b914-2191-4d4d-aed4-4c28178045b3)
 * [Explanatory Information](https://www.data.qld.gov.au/dataset/45a7b914-2191-4d4d-aed4-4c28178045b3/resource/c761e7f3-62ac-4ad8-a960-41f2814d50e5/download/entries-to-state-library-of-queensland-2017.docx) (DOCX, 2014-06-18T04:12:02.359262)
@@ -1329,9 +1493,6 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ### [State Library of Queensland - World War 1 soldier portraits](https://data.qld.gov.au/dataset/4a99c4e7-393b-40cb-afb7-1754cd23a551)
 * [Explanatory Information](https://www.data.qld.gov.au/dataset/4a99c4e7-393b-40cb-afb7-1754cd23a551/resource/b07264d9-6ea4-4dc5-af81-79b367b3ada0/download/slqworldwar1soldierportraitsexplanatoryinformation201703.docx) (DOCX, 2019-03-20T05:10:22.769229)
 * [World War 1 soldier portraits](https://www.data.qld.gov.au/dataset/4a99c4e7-393b-40cb-afb7-1754cd23a551/resource/a46b4d2b-243f-41f9-9a61-a231f1d1b6d0/download/slqworldwar1soldierportraits201703.csv) (CSV, 2015-07-02T23:00:06.707675)
-
-### [State Library of Queensland Contract Disclosure](https://data.qld.gov.au/dataset/e4a9d01b-45c0-4ac6-b6dc-6986af6e8688)
-* [Contract Disclosure Report Qtr 1 2019/20](https://www.data.qld.gov.au/dataset/e4a9d01b-45c0-4ac6-b6dc-6986af6e8688/resource/52e5a2d5-546c-4e5e-881f-8281f6f535cc/download/state-library-quarter-1-2019.csv) (CSV, 2019-12-18T03:15:52.777966)
 
 ## State Library of South Australia
 
@@ -1410,6 +1571,7 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [Libraries Board of South Australia 2018-2019](https://data.sa.gov.au/data/dataset/3070a7b7-f76d-432d-8c9a-f9daf6077efa/resource/21b51db3-6a83-47cb-8dc6-a56798ecf3d7/download/libraries-board-of-south-australia-2018-2019-annual-report-data.xlsx) (XLSX, 2019-11-19T04:06:49.234218)
 * [Libraries Board of South Australia 2017-2018 Annual Report Data](https://data.sa.gov.au/data/dataset/3070a7b7-f76d-432d-8c9a-f9daf6077efa/resource/6455d01b-05ba-424d-b71b-91a057621c62/download/libraries-board-of-south-australia-2017-2018-annual-report-data.xlsx) (XLSX, 2018-09-03T01:17:49.848794)
 * [Libraries Board of South Australia 2016-2017 Annual Report Data](https://data.sa.gov.au/data/dataset/3070a7b7-f76d-432d-8c9a-f9daf6077efa/resource/3de27077-f0f9-4bdb-b51d-16c9d002c175/download/libraries-board-of-south-australia-2016-2017-annual-report-data.xlsx) (XLSX, 2017-11-09T10:25:54.575915)
+* [Libraries Board of South Australia 2019-2020](https://data.sa.gov.au/data/dataset/3070a7b7-f76d-432d-8c9a-f9daf6077efa/resource/8a585e71-ae7c-427b-9b44-1bbcd0887c24/download/libraries-board-of-south-austr2019-annual-report-data_datasa.csv) (CSV, 2020-10-21T22:32:15.975530)
 
 ### [Lost Adelaide Architecture Photographs](https://data.sa.gov.au/data/dataset/2b0e3d83-159f-4118-a7e2-9612367372ed)
 * [Lost Adelaide Photographs](http://www.flickr.com/photos/state_library_south_australia/sets/72157626397640297/) (JPEG, 2013-05-21T02:07:25.828298)
@@ -1544,81 +1706,81 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 ## State Library of Victoria
 
 ### [Argus Historical Newspaper Front Pages](https://www.data.vic.gov.au/data/dataset/fdf4917b-a71a-4d1c-a792-8cb1e49cfdd8)
-* [Argus historical newspaper front pages](https://raw.githubusercontent.com/statelibraryvic/opendata/argus_newspaper_frontpages.csv) (CSV, 2017-09-28T07:29:13.631362)
+* [Argus historical newspaper front pages](https://raw.githubusercontent.com/statelibraryvic/opendata/master/argus_newspaper_frontpages.csv) (CSV, 2017-09-28T07:29:13.631362)
 
 ### [Melbourne City Landmarks - Historical Images](https://www.data.vic.gov.au/data/dataset/e651b9e7-e47e-4959-a9d9-825ec42e5c1c)
-* [Melbourne City Landmarks](https://raw.githubusercontent.com/statelibraryvic/opendata/blob/melbourne_city_landmarks.csv) (CSV, 2017-03-29T13:57:38.520962)
+* [Melbourne City Landmarks](https://raw.githubusercontent.com/statelibraryvic/opendata/master/melbourne_city_landmarks.csv) (CSV, 2017-03-29T13:57:38.520962)
 
 ### [Melbourne and Metropolitan Board of Works (MMBW) - Historical plans](https://www.data.vic.gov.au/data/dataset/52d9a583-8edf-4f9a-93a3-278a3a28c1d1)
-* [Melbourne and Metropolitan Board of Works (MMBW) - Historical plans](https://raw.githubusercontent.com/statelibraryvic/opendata/blob/melbourne_and_metropolitan_board_of_works_plans.csv) (CSV, 2017-03-29T14:22:44.095653)
+* [Melbourne and Metropolitan Board of Works (MMBW) - Historical plans](https://raw.githubusercontent.com/statelibraryvic/opendata/master/melbourne_and_metropolitan_board_of_works_plans.csv) (CSV, 2017-03-29T14:22:44.095653)
 
 ### [Melbourne and metropolitan hotels, pubs and publicans - Historical Lists](https://www.data.vic.gov.au/data/dataset/b227d8e7-88f0-4c9e-8ab9-dcc89da0b619)
-* [Melbourne and metropolitan hotels, pubs and publicans](https://raw.githubusercontent.com/statelibraryvic/opendata/blob/melbourne_and_metropolitan_hotels_pubs_and_publicans.csv) (CSV, 2017-03-29T14:05:06.884608)
+* [Melbourne and metropolitan hotels, pubs and publicans](https://raw.githubusercontent.com/statelibraryvic/opendata/master/melbourne_and_metropolitan_hotels_pubs_and_publicans.csv) (CSV, 2017-03-29T14:05:06.884608)
 
 ### [Victorian Hotels - Historical Images](https://www.data.vic.gov.au/data/dataset/e213c601-315e-430e-b308-1faca7964f99)
-* [Victorian hotels](https://raw.githubusercontent.com/statelibraryvic/opendata/blob/victorian_hotels.csv) (CSV, 2017-03-29T14:12:01.935326)
+* [Victorian hotels](https://raw.githubusercontent.com/statelibraryvic/opendata/master/victorian_hotels.csv) (CSV, 2017-03-29T14:12:01.935326)
 
 ## State Library of Western Australia
 
-### [Adopt a Soldier](https://data.wa.gov.au/dataset/706ed446-6f0a-42fd-aba5-8e4295675107)
+### [Adopt a Soldier](https://catalogue.data.wa.gov.au/dataset/706ed446-6f0a-42fd-aba5-8e4295675107)
 * [Adopt a Soldier photographs (csv)](https://catalogue.data.wa.gov.au/dataset/706ed446-6f0a-42fd-aba5-8e4295675107/resource/8601e3a3-b983-4a9d-a084-6a86df0939c1/download/adopt-a-soldier-2.csv) (CSV, 2016-07-25T05:38:11.949865)
 * [Adopt a soldier photographs (Marcxml)](https://catalogue.data.wa.gov.au/dataset/706ed446-6f0a-42fd-aba5-8e4295675107/resource/b095414e-acca-4db8-b28e-6675262ced6e/download/adopt-a-soldier2.xml) (XML, 2016-07-25T05:38:56.194713)
 * [Adopt a soldier photographs (Modsxml)](https://catalogue.data.wa.gov.au/dataset/706ed446-6f0a-42fd-aba5-8e4295675107/resource/e418d8f4-7c7b-4bdd-b01f-d1782c383e6e/download/adopt-a-soldier.xml) (XML, 2016-07-25T05:39:33.845838)
 
-### [Bird songs online](https://data.wa.gov.au/dataset/9fc37834-e4ee-4e5a-a798-27da5c5af7da)
+### [Bird songs online](https://catalogue.data.wa.gov.au/dataset/9fc37834-e4ee-4e5a-a798-27da5c5af7da)
 * [Birdsongs Online](https://catalogue.data.wa.gov.au/dataset/9fc37834-e4ee-4e5a-a798-27da5c5af7da/resource/19e93efa-7c78-4b60-aff0-027e54d11320/download/birdsongonlinefinal.csv) (CSV, 2016-07-25T04:43:03.122573)
 * [Bird song Online (Marcxml)](https://catalogue.data.wa.gov.au/dataset/9fc37834-e4ee-4e5a-a798-27da5c5af7da/resource/244c4273-ca1f-42e1-b790-5d74b0e6d741/download/birdsong-onlinemarc.xml) (XML, 2016-07-25T04:43:41.230262)
 * [Bird song Online (Modsxml)](https://catalogue.data.wa.gov.au/dataset/9fc37834-e4ee-4e5a-a798-27da5c5af7da/resource/5aa1da49-c712-4156-9caa-b2034cb857ea/download/birdsong-onlinemods.xml) (XML, 2016-07-25T04:44:30.207899)
 
-### [Digital Photographic Collection](https://data.wa.gov.au/dataset/7faa2336-7601-447c-91b0-4b771ee26b6f)
+### [Digital Photographic Collection](https://catalogue.data.wa.gov.au/dataset/7faa2336-7601-447c-91b0-4b771ee26b6f)
 * [Pictorial collection_csv](https://catalogue.data.wa.gov.au/dataset/7faa2336-7601-447c-91b0-4b771ee26b6f/resource/9117bf08-bd54-4b19-89f8-ca86ae799875/download/slwapictorial.csv) (CSV, 2016-07-25T03:56:04.933099)
 * [SLWA Pictorial (Marcxml)](https://catalogue.data.wa.gov.au/dataset/7faa2336-7601-447c-91b0-4b771ee26b6f/resource/945e7aba-dbf5-46ee-837e-add0625a1a34/download/slwapictorialmarc.xml) (XML, 2016-07-25T03:57:53.580191)
 * [SLWA Pictorial (Modsxml)](https://catalogue.data.wa.gov.au/dataset/7faa2336-7601-447c-91b0-4b771ee26b6f/resource/f2ae0a9a-02a4-4f40-ba00-914bececc521/download/slwapictorialmods.xml) (XML, 2016-07-25T03:59:29.635904)
 * [SLWA pictorial (zipped dublin core)](https://catalogue.data.wa.gov.au/dataset/7faa2336-7601-447c-91b0-4b771ee26b6f/resource/7e59adde-931b-4992-a9b9-756dc925ff7c/download/slwapictorial.zip) (ZIP, 2016-07-25T04:00:44.760849)
 * [Pictorial collection urls and captions](https://catalogue.data.wa.gov.au/dataset/7faa2336-7601-447c-91b0-4b771ee26b6f/resource/270e6f40-8d78-497f-a67f-6ea5d3678590/download/pictorial-collection-brn-caption-image-url.xlsx) (XLSX, 2016-07-25T07:13:06.648045)
 
-### [In Memoriam Cards](https://data.wa.gov.au/dataset/bc4c50bf-3de1-44d1-8484-a07a30bfe974)
+### [In Memoriam Cards](https://catalogue.data.wa.gov.au/dataset/bc4c50bf-3de1-44d1-8484-a07a30bfe974)
 * [In Memoriam Cards (csv)](https://catalogue.data.wa.gov.au/dataset/bc4c50bf-3de1-44d1-8484-a07a30bfe974/resource/16a5e7e1-6f38-4db0-ba23-0fa70a8b6f85/download/in-memoriam.csv) (CSV, 2016-07-25T05:42:57.750044)
 * [In Memoriam Cards (Marcxml)](https://catalogue.data.wa.gov.au/dataset/bc4c50bf-3de1-44d1-8484-a07a30bfe974/resource/7bb0d95e-a6d6-49fa-8de8-c1f3af9e3df7/download/in-memoriam.xml) (XML, 2016-07-25T05:43:37.269242)
 * [In Memoriam Cards (Modsxml)](https://catalogue.data.wa.gov.au/dataset/bc4c50bf-3de1-44d1-8484-a07a30bfe974/resource/2ba88685-0239-4f7e-863d-b585a068ca9d/download/in-memoriam.xml) (XML, 2016-07-25T05:44:10.239163)
 
-### [Krantz & Sheldon Architectural images](https://data.wa.gov.au/dataset/1cf612f0-3245-427a-aa92-e78ef79b1ea6)
+### [Krantz & Sheldon Architectural images](https://catalogue.data.wa.gov.au/dataset/1cf612f0-3245-427a-aa92-e78ef79b1ea6)
 * [Krantz Sheldon (CSV)](https://catalogue.data.wa.gov.au/dataset/1cf612f0-3245-427a-aa92-e78ef79b1ea6/resource/dcdb13de-231d-4018-bac5-043ccf334ba3/download/krantzsheldon.csv) (CSV, 2016-07-25T04:08:49.484677)
 * [Krantz and Sheldon (Zipped)](https://catalogue.data.wa.gov.au/dataset/1cf612f0-3245-427a-aa92-e78ef79b1ea6/resource/d301a1de-59fb-41c6-9520-5127e0b1380c/download/krantzsheldon.zip) (ZIP, 2016-07-25T04:09:27.386314)
 * [Krantz and Sheldon (Marcxml)](https://catalogue.data.wa.gov.au/dataset/1cf612f0-3245-427a-aa92-e78ef79b1ea6/resource/e54db226-f9f3-43f1-8c54-fbf632ea6af0/download/krantzsheldonmarc.xml) (XML, 2016-07-25T04:10:23.669075)
 * [Krantz and Sheldon (Modsxml)](https://catalogue.data.wa.gov.au/dataset/1cf612f0-3245-427a-aa92-e78ef79b1ea6/resource/a6a628de-eb73-4fff-ba1f-82e9e7e3b59f/download/krantzsheldonmods.xml) (XML, 2016-07-25T04:11:08.089351)
 
-### [Lands and Surveys Historic Map Series](https://data.wa.gov.au/dataset/72c0f3f4-64c6-43da-afb8-0aa64dd71c90)
+### [Lands and Surveys Historic Map Series](https://catalogue.data.wa.gov.au/dataset/72c0f3f4-64c6-43da-afb8-0aa64dd71c90)
 * [Historic maps 1880-90 (CSV)](https://catalogue.data.wa.gov.au/dataset/72c0f3f4-64c6-43da-afb8-0aa64dd71c90/resource/c89e6e83-fb0d-457d-bcb7-dbea96156ebf/download/historicmaps18801890.csv) (CSV, 2016-07-25T05:30:13.529027)
 * [Historic maps 1880-90 (Zipped)](https://catalogue.data.wa.gov.au/dataset/72c0f3f4-64c6-43da-afb8-0aa64dd71c90/resource/77546446-4b76-4aea-b04f-922d913614e3/download/historicalmaps.zip) (ZIP, 2016-07-25T05:30:53.584039)
 * [Historic maps 1880-90 (Marcxml)](https://catalogue.data.wa.gov.au/dataset/72c0f3f4-64c6-43da-afb8-0aa64dd71c90/resource/f710d691-bfd5-4ef6-8318-80a56a6e18b8/download/historicmaps18801890marc.xml) (XML, 2016-07-25T05:32:20.344592)
 * [Historic maps 1880-90 (Modsxml)](https://catalogue.data.wa.gov.au/dataset/72c0f3f4-64c6-43da-afb8-0aa64dd71c90/resource/b44a108a-7bf4-48cf-86b0-8268cf28ba73/download/historicmaps18801890mods.xml) (XML, 2016-07-25T05:33:11.010773)
 
-### [Newspaper Titles at State Library of WA](https://data.wa.gov.au/dataset/c8d68516-0eb8-445d-913a-c2f692366150)
+### [Newspaper Titles at State Library of WA](https://catalogue.data.wa.gov.au/dataset/c8d68516-0eb8-445d-913a-c2f692366150)
 * [WA_newspapers_2016](https://catalogue.data.wa.gov.au/dataset/c8d68516-0eb8-445d-913a-c2f692366150/resource/09f32d84-6c5c-46c3-bba7-a05a33f3d48f/download/newspapers-wa.csv) (CSV, 2016-07-25T01:05:00.703381)
 
-### [Obituaries indexed by State Library of WA](https://data.wa.gov.au/dataset/2f8c1a74-8b10-4b58-b3bf-be339fb0fd09)
+### [Obituaries indexed by State Library of WA](https://catalogue.data.wa.gov.au/dataset/2f8c1a74-8b10-4b58-b3bf-be339fb0fd09)
 * [Indexed Obituaries.csv](https://catalogue.data.wa.gov.au/dataset/2f8c1a74-8b10-4b58-b3bf-be339fb0fd09/resource/10a5c9ff-0a35-4c97-8251-153efb70d66b/download/indexed-obituaries.csv) (CSV, 2018-09-04T02:24:23.539112)
 * [Indexed Obituaries.xlsx](https://catalogue.data.wa.gov.au/dataset/2f8c1a74-8b10-4b58-b3bf-be339fb0fd09/resource/9d2da0c6-e3f6-4f34-94b7-81fe7ac34acd/download/indexed-obituaries.xlsx) (XLSX, 2018-09-04T02:25:15.636040)
 * [Indexed Obituaries.docx](https://catalogue.data.wa.gov.au/dataset/2f8c1a74-8b10-4b58-b3bf-be339fb0fd09/resource/cf76884e-1022-464d-8929-b18662d61cfd/download/indexed-obituaries.docx) (DOCX, 2018-09-04T02:25:40.839749)
 
-### [Richard Woldendorp Collection of Photographs](https://data.wa.gov.au/dataset/b447acfc-51e5-42f5-8d38-6057fc8aafc5)
+### [Richard Woldendorp Collection of Photographs](https://catalogue.data.wa.gov.au/dataset/b447acfc-51e5-42f5-8d38-6057fc8aafc5)
 * [Richard Woldendorp Photographs.csv](https://catalogue.data.wa.gov.au/dataset/b447acfc-51e5-42f5-8d38-6057fc8aafc5/resource/a6f426a8-4512-42e8-9add-79abe440e742/download/richard-woldendorp-photographs.csv) (CSV, 2018-08-03T03:02:19.126685)
 * [Richard Woldendorp Collection_mods.xml](https://catalogue.data.wa.gov.au/dataset/b447acfc-51e5-42f5-8d38-6057fc8aafc5/resource/405f1568-91b7-4800-8432-76ac0253e677/download/richard-woldendorp-collectionmods.xml) (XML, 2018-08-03T03:03:09.410893)
 * [Richard Woldendorp Photographs.xlsx](https://catalogue.data.wa.gov.au/dataset/b447acfc-51e5-42f5-8d38-6057fc8aafc5/resource/d5d042da-eed4-4d9a-8622-b6def49963e4/download/richard-woldendorp-photographs.xlsx) (XLSX, 2018-08-03T03:03:44.772780)
 * [Richard Woldendorp Collection.xml](https://catalogue.data.wa.gov.au/dataset/b447acfc-51e5-42f5-8d38-6057fc8aafc5/resource/5310d90a-e88f-4fb0-877a-2c0925afb890/download/richard-woldendorp-collection.xml) (XML, 2018-08-03T03:04:39.444824)
 
-### [SLWA Commonwealth Games photographs](https://data.wa.gov.au/dataset/45357ec0-dd39-4d08-b051-6b7d820cb954)
+### [SLWA Commonwealth Games photographs](https://catalogue.data.wa.gov.au/dataset/45357ec0-dd39-4d08-b051-6b7d820cb954)
 * [SLWA Commonwealth Games minimal metadata](https://catalogue.data.wa.gov.au/dataset/45357ec0-dd39-4d08-b051-6b7d820cb954/resource/2475c22c-b5d9-4b5c-994a-f4a0fac381ef/download/slwa-commonwealth-games-photographs-minimal-metadata.csv) (CSV, 2018-04-04T03:34:33.707594)
 * [SLWA Commonwealth Games metadata](https://catalogue.data.wa.gov.au/dataset/45357ec0-dd39-4d08-b051-6b7d820cb954/resource/8143068d-3786-4a25-ad41-99ae2bdc5e43/download/slwa-commonwealth-games-photographs.csv) (CSV, 2018-04-04T03:35:28.210817)
 * [SLWA commonwealth games Library metadata](https://catalogue.data.wa.gov.au/dataset/45357ec0-dd39-4d08-b051-6b7d820cb954/resource/04befc56-7962-41f6-b00a-08235148b3b2/download/commonwealth-games-marcxml.xml) (XML, 2018-04-04T03:35:50.728114)
 
-### [State Library of Western Australia Digitised Maps 1840-1985](https://data.wa.gov.au/dataset/36bd6d24-69e0-4a0a-a7af-5adb08879be3)
+### [State Library of Western Australia Digitised Maps 1840-1985](https://catalogue.data.wa.gov.au/dataset/36bd6d24-69e0-4a0a-a7af-5adb08879be3)
 * [SLWA Digitised Maps 1840-1985 CSV](https://catalogue.data.wa.gov.au/dataset/36bd6d24-69e0-4a0a-a7af-5adb08879be3/resource/0d8a68b0-f13c-4ee8-8c76-c7d9006587de/download/slwa-digitised-maps-1840-1985.csv) (CSV, 2018-05-22T01:55:04.619387)
 * [SLWA Digitised Maps 1840-1985 MODS](https://catalogue.data.wa.gov.au/dataset/36bd6d24-69e0-4a0a-a7af-5adb08879be3/resource/9fb7313c-f634-4a71-91fe-4f982249dc3e/download/slwa-digitised-maps-1840-1985mods.xml) (XML, 2018-05-22T01:57:13.337426)
 * [SLWA Digitised Maps 1840-1985 MARC](https://catalogue.data.wa.gov.au/dataset/36bd6d24-69e0-4a0a-a7af-5adb08879be3/resource/ee2ed2b9-c14c-46bd-8b99-456c7d1840ee/download/slwa-digitised-maps-1840-1985marc21.xml) (XML, 2018-05-22T01:58:02.896108)
 
-### [State Library of Western Australia: WA Theatre Ephemera](https://data.wa.gov.au/dataset/f0134fc1-147a-4620-8c5b-0d5ee56bc3e0)
+### [State Library of Western Australia: WA Theatre Ephemera](https://catalogue.data.wa.gov.au/dataset/f0134fc1-147a-4620-8c5b-0d5ee56bc3e0)
 * [WA Theatre Posters, Programs, Ephemera (CSV)](https://catalogue.data.wa.gov.au/dataset/f0134fc1-147a-4620-8c5b-0d5ee56bc3e0/resource/59080edf-4f59-4446-a2f2-2ca5d4524765/download/wa-theatre-posters-programs-ephemera.csv) (CSV, 2018-06-06T05:42:47.614005)
 * [WA Theatre Posters, Programs, Ephemera (MARC 21)](https://catalogue.data.wa.gov.au/dataset/f0134fc1-147a-4620-8c5b-0d5ee56bc3e0/resource/27a95510-9396-4b32-bf2c-febe9b800fcf/download/wa-theatre-posters-programs-ephemeramarc21.xml) (XML, 2018-06-06T05:43:47.855002)
 * [WA Theatre Posters, Programs, Ephemera (MARC 21)](https://catalogue.data.wa.gov.au/dataset/f0134fc1-147a-4620-8c5b-0d5ee56bc3e0/resource/2e3cb338-ad6a-4fe0-860d-10ed3b8ab059/download/wa-theatre-posters-programs-ephemeramarc21.xml) (XML, 2018-06-06T05:46:08.201133)
@@ -1627,26 +1789,27 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [WA Theatre venues events people places 1896-1955 (MARC21)](https://catalogue.data.wa.gov.au/dataset/f0134fc1-147a-4620-8c5b-0d5ee56bc3e0/resource/a718a237-4973-4830-94c1-2c464f981728/download/wa-theatre-venues-events-people-places-1896-1955marc21.xml) (XML, 2018-06-06T05:49:04.335586)
 * [WA Theatre venues events people places 1896-1955 (MODS)](https://catalogue.data.wa.gov.au/dataset/f0134fc1-147a-4620-8c5b-0d5ee56bc3e0/resource/f10b6841-a7ab-4c98-93d5-e17e5a794837/download/wa-theatre-venues-events-people-places-1896-1955mods.xml) (XML, 2018-06-06T05:49:36.471559)
 
-### [WA Public Libraries](https://data.wa.gov.au/dataset/f451a2a7-00a1-44fa-8c6f-f7f98651c234)
-* [WA_Public_Libraries_2016](https://catalogue.data.wa.gov.au/dataset/f451a2a7-00a1-44fa-8c6f-f7f98651c234/resource/06992def-ffed-4a9c-977d-90fd41a363f7/download/libraries20160206.csv) (CSV, 2016-07-25T01:13:35.150038)
+### [WA Public Libraries](https://catalogue.data.wa.gov.au/dataset/f451a2a7-00a1-44fa-8c6f-f7f98651c234)
+* [WA_Public_Libraries_2021](https://catalogue.data.wa.gov.au/dataset/f451a2a7-00a1-44fa-8c6f-f7f98651c234/resource/31eabe52-d241-4f21-b9c7-3e3fef6c0bcb/download/libraries20210203.csv) (CSV, 2021-02-04T06:38:54.098297)
 * [Public library addresses in GeoJSON format](https://catalogue.data.wa.gov.au/dataset/f451a2a7-00a1-44fa-8c6f-f7f98651c234/resource/65cffc73-4a14-4c7a-96c1-8d7145e09155/download/walibraryaddresses.geojson) (GEOJSON, 2016-10-12T06:53:04.677005)
 * [WA Public Library Addresses in KML format](https://catalogue.data.wa.gov.au/dataset/f451a2a7-00a1-44fa-8c6f-f7f98651c234/resource/1823296c-16b5-4c16-8c4b-9a910fbb6432/download/walibraryaddresses.kml) (KML, 2016-10-12T06:53:48.899195)
+* [WA_Public_Libraries_2016](https://catalogue.data.wa.gov.au/dataset/f451a2a7-00a1-44fa-8c6f-f7f98651c234/resource/06992def-ffed-4a9c-977d-90fd41a363f7/download/libraries20160206.csv) (CSV, 2016-07-25T01:13:35.150038)
 
-### [WABI Subset: Eastern Goldfields](https://data.wa.gov.au/dataset/ce97329a-e406-4785-9e86-898e8e6ac1ef)
+### [WABI Subset: Eastern Goldfields](https://catalogue.data.wa.gov.au/dataset/ce97329a-e406-4785-9e86-898e8e6ac1ef)
 * [Eastern Goldfields](https://catalogue.data.wa.gov.au/dataset/ce97329a-e406-4785-9e86-898e8e6ac1ef/resource/a45ffdb7-e668-472c-825f-3589d3d4a6d1/download/eastern-goldfields-final.csv) (CSV, 2016-07-28T07:35:57.521334)
 
-### [WABI subset: Police](https://data.wa.gov.au/dataset/dd4ee469-0a8b-4da1-bdc3-962f9f515f5c)
+### [WABI subset: Police](https://catalogue.data.wa.gov.au/dataset/dd4ee469-0a8b-4da1-bdc3-962f9f515f5c)
 * [WABI police subset](https://catalogue.data.wa.gov.au/dataset/dd4ee469-0a8b-4da1-bdc3-962f9f515f5c/resource/bdf8c00f-a77b-4f17-a0f4-106cac836010/download/police-final.csv) (CSV, 2016-07-28T07:51:50.036671)
 
-### [WABI subset: York](https://data.wa.gov.au/dataset/ff75fbbd-7b4d-4c1c-a946-2c5fe3073b8c)
+### [WABI subset: York](https://catalogue.data.wa.gov.au/dataset/ff75fbbd-7b4d-4c1c-a946-2c5fe3073b8c)
 * [York and districts subset](https://catalogue.data.wa.gov.au/dataset/ff75fbbd-7b4d-4c1c-a946-2c5fe3073b8c/resource/908c0417-e1a4-4cb7-84ae-ad06466508bd/download/york-final.csv) (CSV, 2016-07-28T07:58:03.144712)
 
-### [WWI Centenary Project](https://data.wa.gov.au/dataset/8ab80491-45b9-46b7-89ef-e2f29e9b68e4)
+### [WWI Centenary Project](https://catalogue.data.wa.gov.au/dataset/8ab80491-45b9-46b7-89ef-e2f29e9b68e4)
 * [SLWA Centenary WWI](https://catalogue.data.wa.gov.au/dataset/8ab80491-45b9-46b7-89ef-e2f29e9b68e4/resource/e9c4901b-1736-426f-8a1b-0cad6b6a6d47/download/slwacentenarywwi2016.csv) (CSV, 2016-07-25T04:33:36.743768)
 * [SLWA Centenary WWI (Marcxml)](https://catalogue.data.wa.gov.au/dataset/8ab80491-45b9-46b7-89ef-e2f29e9b68e4/resource/b7afc9dc-6b92-4926-afbf-88165e6ebdee/download/slwa-centenarywwi2016marc.xml) (XML, 2016-07-25T04:34:42.292685)
 * [SLWA Centenary WWI (Modsxml)](https://catalogue.data.wa.gov.au/dataset/8ab80491-45b9-46b7-89ef-e2f29e9b68e4/resource/52ea632d-b571-483a-9e3c-90e12614d8dc/download/slwa-centenarywwi2016mods.xml) (XML, 2016-07-25T04:35:30.012607)
 
-### [Western Australian Biographical Index (WABI)](https://data.wa.gov.au/dataset/6c026ce8-8a18-4920-a7e2-f1719e0d8c47)
+### [Western Australian Biographical Index (WABI)](https://catalogue.data.wa.gov.au/dataset/6c026ce8-8a18-4920-a7e2-f1719e0d8c47)
 * [Introducing WABI](https://catalogue.data.wa.gov.au/dataset/6c026ce8-8a18-4920-a7e2-f1719e0d8c47/resource/d8355c12-94ea-4728-9b2f-ddb4fd60d86e/download/introducing-wabi.docx) (DOCX, 2016-07-28T06:02:33.537857)
 * [WABI A-Z Zipped](https://catalogue.data.wa.gov.au/dataset/6c026ce8-8a18-4920-a7e2-f1719e0d8c47/resource/03fca146-01e3-472b-a6f9-30ff5c0cdb45/download/wabi-a-z-zipped.zip) (ZIP, 2016-07-28T06:01:31.009604)
 * [Index entries beginning with A](https://catalogue.data.wa.gov.au/dataset/6c026ce8-8a18-4920-a7e2-f1719e0d8c47/resource/2ef7484c-0268-420f-abab-bbfc33036bf1/download/a-final.csv) (CSV, 2016-07-28T06:03:00.211332)
@@ -1670,29 +1833,37 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 ## State Records Office of Western Australia
 
-### [Geolocation index for WA townsite plans - AU WA S2168](https://data.wa.gov.au/dataset/7a4f046f-9b1d-4faa-9d42-7f229ca3b5a4)
+### [Geolocation index for WA townsite plans - AU WA S2168](https://catalogue.data.wa.gov.au/dataset/7a4f046f-9b1d-4faa-9d42-7f229ca3b5a4)
 * [Townsite index](https://catalogue.data.wa.gov.au/dataset/7a4f046f-9b1d-4faa-9d42-7f229ca3b5a4/resource/19d31ed3-cbd5-496b-bd4e-7862690e82bf/download/maps-of-wa-townsites-parts-1-2.csv) (CSV, 2017-06-01T16:19:51.089202)
 
-### [Historical index to government entities](https://data.wa.gov.au/dataset/6a3df6d1-f889-4059-892f-a335af6e1cc3)
+### [Historical Plans - Metropolitan Sewerage Scheme (SRO-001)](https://catalogue.data.wa.gov.au/dataset/e773bb79-85f8-4c4d-b932-34599fddc8e0)
+* [List of Metropolitan Sewerage Scheme Plans](https://catalogue.data.wa.gov.au/dataset/e773bb79-85f8-4c4d-b932-34599fddc8e0/resource/05c6e8c3-3f66-4980-9ba8-3bdadb1f990f/download/srowa_series634_cons4156.csv) (CSV, 2019-12-10T05:45:51.735541)
+* [Index Sheets to Metropolitan Sewerage Scheme Plans](https://catalogue.data.wa.gov.au/dataset/e773bb79-85f8-4c4d-b932-34599fddc8e0/resource/f72b3ba3-e2b3-4171-a1f1-1de98a0edee1/download/index-sheets-to-metropolitan-sewerage-scheme-plans.pdf) (PDF, 2020-01-16T08:23:45.974272)
+* [Date Range Information for Metropolitan Sewerage Scheme Plans](https://catalogue.data.wa.gov.au/dataset/e773bb79-85f8-4c4d-b932-34599fddc8e0/resource/552e82eb-060a-4f63-8cca-c5a4264256eb/download/date-range-information-for-metropolitan-sewerage-scheme-plans.pdf) (PDF, 2020-02-03T03:25:26.367856)
+* [ArcGIS Server Map Service](https://services.slip.wa.gov.au/public/rest/services/SLIP_Public_Services/Imagery_and_Maps/MapServer/182) (API ArcGIS Server Map Service, 2020-03-31T23:14:33.039146)
+* [Web Mapping Service](https://services.slip.wa.gov.au/public/services/SLIP_Public_Services/Imagery_and_Maps/MapServer/WMSServer) (WMS, 2020-12-08T00:09:03.016220)
+* [Historical Plans - Metropolitan Sewerage Scheme (19GB)](https://catalogue.data.wa.gov.au/dataset/e773bb79-85f8-4c4d-b932-34599fddc8e0/resource/4dfcbd8d-fae7-4010-a377-30814d944217/download/srowa_series634_cons4156.tif) (TIF, 2021-01-18T03:16:32.230550)
+
+### [Historical index to government entities](https://catalogue.data.wa.gov.au/dataset/6a3df6d1-f889-4059-892f-a335af6e1cc3)
 * [Agency index](https://catalogue.data.wa.gov.au/dataset/6a3df6d1-f889-4059-892f-a335af6e1cc3/resource/89911fd3-075c-4b5b-82ce-dae1b53ad3b1/download/government-entities-identified-by-srowa.csv) (CSV, 2017-06-01T18:30:47.628843)
 
-### [Index to Western Australian group settlement information](https://data.wa.gov.au/dataset/69bcdc4e-0025-4600-b5d4-a71a46a87b51)
+### [Index to Western Australian group settlement information](https://catalogue.data.wa.gov.au/dataset/69bcdc4e-0025-4600-b5d4-a71a46a87b51)
 * [Index to group settlements in WA](https://catalogue.data.wa.gov.au/dataset/69bcdc4e-0025-4600-b5d4-a71a46a87b51/resource/12ea1737-0e52-4aba-9274-fd892e5c46b0/download/gp-settlements.csv) (CSV, 2017-06-01T16:39:17.820034)
 
-### [Indexes](https://data.wa.gov.au/dataset/69b465f2-602a-4cd9-8bcf-e6fa09a63f50)
+### [Indexes](https://catalogue.data.wa.gov.au/dataset/69b465f2-602a-4cd9-8bcf-e6fa09a63f50)
 * [Index plan 1900](https://catalogue.data.wa.gov.au/dataset/69b465f2-602a-4cd9-8bcf-e6fa09a63f50/resource/622e3deb-526c-490f-8f75-15bc85530f91/download/index-map-1900.jpg) (JPG, 2017-06-29T13:22:49.667226)
 * [Index plan 1949](https://catalogue.data.wa.gov.au/dataset/69b465f2-602a-4cd9-8bcf-e6fa09a63f50/resource/2e73b886-74da-4359-b385-4c07427e391b/download/index-map-1949.jpg) (JPG, 2017-06-29T13:23:18.602192)
 
-### [State Archives online catalogue](https://data.wa.gov.au/dataset/be28f52b-52e9-4d2e-a5ff-27aa1716a903)
+### [State Archives online catalogue](https://catalogue.data.wa.gov.au/dataset/be28f52b-52e9-4d2e-a5ff-27aa1716a903)
 * [State Archive Collection](https://archive.sro.wa.gov.au/) (Website, 2017-03-09T03:45:16.841621)
 
-### [Zotero for archive.sro.wa.gov.au](https://data.wa.gov.au/dataset/55112b78-d248-4974-af49-1c56ba6d4933)
+### [Zotero for archive.sro.wa.gov.au](https://catalogue.data.wa.gov.au/dataset/55112b78-d248-4974-af49-1c56ba6d4933)
 * [zotero-for-archive-sro-wa-gov-au](https://gist.github.com/anonymous/6e588852dc0a22577934fed23e37e795) (app, 2017-07-27T17:13:51.125156)
 
 ## State Records South Australia
 
 ### [SA FOI - number of applications received by agency - State Government](https://data.sa.gov.au/data/dataset/304ed6e5-e573-4200-81a7-ceddce9ee5d0)
-* [SA FOI - number of applications received by agency - state government](https://data.sa.gov.au/data/dataset/304ed6e5-e573-4200-81a7-ceddce9ee5d0/resource/5ea15bd6-7672-42a3-895a-dbd56a755377/download/01-sa-foi-number-of-applications-received-by-agency-state-government.csv) (CSV, 2018-02-02T15:00:23.854297)
+* [SA FOI - number of applications received by agency - state government](https://data.sa.gov.au/data/dataset/304ed6e5-e573-4200-81a7-ceddce9ee5d0/resource/5ea15bd6-7672-42a3-895a-dbd56a755377/download/sa-foi-number-of-applications-received-by-agency-state-government.csv) (CSV, 2018-02-02T15:00:23.854297)
 
 ### [SA FOI – access applications overdue at year end by category, by sector, by year](https://data.sa.gov.au/data/dataset/a90a7b0d-4884-4704-97b2-9ec4d88a5d41)
 * [SA FOI – access applications overdue at year end by category, by sector, by year](https://data.sa.gov.au/data/dataset/a90a7b0d-4884-4704-97b2-9ec4d88a5d41/resource/8efbd3b6-a597-435f-86ff-42ab38a6ff24/download/sa-foi-access-applications-overdue-at-year-end-by-category-by-sector-by-year.csv) (CSV, 2018-02-15T00:28:35.138451)
@@ -1743,7 +1914,7 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 * [SA FOI – refusal reason for amendment application outcomes by year](https://data.sa.gov.au/data/dataset/4581271f-7f22-4a15-9f4b-0aec6cb70686/resource/2ee5691d-c806-45bc-b115-d926addfdfb5/download/sa-foi-refusal-reason-for-amendment-application-outcomes-by-year.csv) (CSV, 2018-02-02T15:41:37.053195)
 
 ### [SA FOI – use of other refusal reasons by reason by sector by year](https://data.sa.gov.au/data/dataset/504c67d9-f142-41a0-8f1b-8fbc9b8bf3df)
-* [SA FOI – use of other refusal reasons by reason by sector by year](https://data.sa.gov.au/data/dataset/504c67d9-f142-41a0-8f1b-8fbc9b8bf3df/resource/35fa72b8-483e-4441-918e-5192bf87c0b7/download/sa-foi-use-of-other-refusal-reasons-by-reason-by-sector-by-year.csv) (CSV, 2018-02-02T15:36:49.531878)
+* [SA FOI – use of other refusal reasons by reason by sector by year](https://data.sa.gov.au/data/dataset/504c67d9-f142-41a0-8f1b-8fbc9b8bf3df/resource/35fa72b8-483e-4441-918e-5192bf87c0b7/download/sa-foi-refusal-reason-for-amendment-application-outcomes-by-year.csv) (CSV, 2018-02-02T15:36:49.531878)
 
 ### [SA FOI – use of refusal reasons by clause by sector by year](https://data.sa.gov.au/data/dataset/eb831185-89bf-4ed9-b03c-4e4b780896bf)
 * [SA FOI – use of refusal reasons by clause by sector by year](https://data.sa.gov.au/data/dataset/eb831185-89bf-4ed9-b03c-4e4b780896bf/resource/72a55771-0a5f-4cf7-8406-4d6db509b432/download/sa-foi-use-of-refusal-reasons-by-clause-by-sector-by-year.csv) (CSV, 2018-02-02T15:35:12.631725)
@@ -1783,19 +1954,27 @@ repo_url: https://github.com/GLAM-Workbench/ozglam-data
 
 ## Western Australian Museum
 
-### [Maritime Archaeological Sites (WAM-001)](https://data.wa.gov.au/dataset/c4d24f2a-6740-4c05-a8ce-0b749d5bae6c)
-* [Web Feature Service](https://services.slip.wa.gov.au/public/services/SLIP_Public_Services/People_and_Society_WFS/MapServer/WFSServer) (WFS, 2019-06-27T01:53:32.407460)
+### [Maritime Archaeological Sites (WAM-001)](https://catalogue.data.wa.gov.au/dataset/c4d24f2a-6740-4c05-a8ce-0b749d5bae6c)
 * [ArcGIS Server Map Service](https://services.slip.wa.gov.au/public/rest/services/SLIP_Public_Services/People_and_Society/MapServer/1) (API ArcGIS Server Map Service, 2019-06-27T01:53:53.124426)
-* [Service Map Package](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/People_and_Society.mpk) (MPK, 2019-06-27T02:08:34.508020)
-* [Shapefile](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/MaritimeArchaeologicalSitesWAM_001/MaritimeArchaeologicalSitesWAM_001.zip) (ZIP, 2019-08-18T22:45:22.907036)
-* [GeoJSON](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/MaritimeArchaeologicalSitesWAM_001/MaritimeArchaeologicalSitesWAM_001.geojson.zip) (ZIP, 2019-08-18T22:45:24.409598)
-* [GeoPackage](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/MaritimeArchaeologicalSitesWAM_001/MaritimeArchaeologicalSitesWAM_001.gpkg.zip) (ZIP, 2019-08-20T00:28:30.320420)
-* [GeoCSV](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/MaritimeArchaeologicalSitesWAM_001/MaritimeArchaeologicalSitesWAM_001.csv.zip) (ZIP, 2019-08-20T00:28:32.572599)
-* [Web Mapping Service](https://services.slip.wa.gov.au/public/services/SLIP_Public_Services/People_and_Society/MapServer/WMSServer) (WMS, 2020-02-20T23:16:21.434729)
+* [Web Mapping Service](https://services.slip.wa.gov.au/public/services/SLIP_Public_Services/People_and_Society/MapServer/WMSServer) (WMS, 2020-08-13T03:19:47.669074)
+* [Web Feature Service](https://services.slip.wa.gov.au/public/services/SLIP_Public_Services/People_and_Society_WFS/MapServer/WFSServer) (WFS, 2020-09-07T11:54:18.856756)
+* [GeoCSV](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/MaritimeArchaeologicalSitesWAM_001/MaritimeArchaeologicalSitesWAM_001.csv.zip) (ZIP, 2020-11-16T02:39:32)
+* [GeoJSON](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/MaritimeArchaeologicalSitesWAM_001/MaritimeArchaeologicalSitesWAM_001.geojson.zip) (ZIP, 2020-11-16T02:39:31)
+* [GeoPackage](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/MaritimeArchaeologicalSitesWAM_001/MaritimeArchaeologicalSitesWAM_001.gpkg.zip) (ZIP, 2020-11-16T02:38:51)
+* [Shapefile](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/MaritimeArchaeologicalSitesWAM_001/MaritimeArchaeologicalSitesWAM_001.zip) (ZIP, 2020-11-16T02:39:30)
+* [Service Map Package](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/People_and_Society.mpk) (MPK, 2021-01-06T03:17:50.619019)
 
-### [Shipwrecks (WAM-002)](https://data.wa.gov.au/dataset/bf006416-589e-4d9f-bc46-566ac564c405)
-* [GeoPackage](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/ShipwrecksWAM_002/ShipwrecksWAM_002.gpkg.zip) (ZIP, 2019-06-27T01:26:16.774971)
+### [Shipwrecks (WAM-002)](https://catalogue.data.wa.gov.au/dataset/bf006416-589e-4d9f-bc46-566ac564c405)
 * [ArcGIS Server Map Service](https://services.slip.wa.gov.au/public/rest/services/SLIP_Public_Services/People_and_Society/MapServer/0) (API ArcGIS Server Map Service, 2019-06-27T01:53:49.811878)
-* [Shapefile](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/ShipwrecksWAM_002/ShipwrecksWAM_002.zip) (ZIP, 2019-08-20T00:28:23.687713)
-* [GeoJSON](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/ShipwrecksWAM_002/ShipwrecksWAM_002.geojson.zip) (ZIP, 2019-12-11T00:47:37.502028)
-* [GeoCSV](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/ShipwrecksWAM_002/ShipwrecksWAM_002.csv.zip) (ZIP, 2019-12-11T00:47:39.062594)
+* [GeoCSV](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/ShipwrecksWAM_002/ShipwrecksWAM_002.csv.zip) (ZIP, 2020-11-16T02:39:28)
+* [GeoJSON](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/ShipwrecksWAM_002/ShipwrecksWAM_002.geojson.zip) (ZIP, 2020-11-16T02:39:27)
+* [GeoPackage](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/ShipwrecksWAM_002/ShipwrecksWAM_002.gpkg.zip) (ZIP, 2020-11-16T02:37:39)
+* [Shapefile](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/ShipwrecksWAM_002/ShipwrecksWAM_002.zip) (ZIP, 2020-11-16T02:39:26)
+
+### [Shipwrecks - Live Sync Beta (WAM-022)](https://catalogue.data.wa.gov.au/dataset/97584e2e-d973-4009-9332-7dc0504cb383)
+* [](https://services.slip.wa.gov.au/public/rest/services/SLIP_Public_Services/People_and_Society/MapServer) (, 2020-11-26T07:17:44.054898)
+* [GeoCSV](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/Shipwrecks_LiveSyncBetaWAM_022/Shipwrecks_LiveSyncBetaWAM_022.csv.zip) (ZIP, 2020-11-27T02:44:12)
+* [GeoJSON](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/Shipwrecks_LiveSyncBetaWAM_022/Shipwrecks_LiveSyncBetaWAM_022.geojson.zip) (ZIP, 2020-11-27T02:44:08)
+* [GeoPackage](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/Shipwrecks_LiveSyncBetaWAM_022/Shipwrecks_LiveSyncBetaWAM_022.gpkg.zip) (ZIP, 2020-11-27T02:44:13)
+* [Shapefile](https://maps.slip.wa.gov.au/datadownloads/SLIP_Public_Services/People_and_Society/Shipwrecks_LiveSyncBetaWAM_022/Shipwrecks_LiveSyncBetaWAM_022.zip) (ZIP, 2020-11-27T02:44:00)
+* [ArcGIS Server Map Service](https://services.slip.wa.gov.au/public/rest/services/SLIP_Public_Services/People_and_Society/MapServer/11) (API ArcGIS Server Map Service, 2020-11-27T03:37:23.161078)

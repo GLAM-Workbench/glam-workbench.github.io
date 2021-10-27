@@ -6,7 +6,7 @@ repo_url: https://github.com/GLAM-Workbench/csv-explorer
 
 # GLAM CSV Explorer
 
-[![Binder](images/Use live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/csv-explorer/master?urlpath=%2Fapps%2Fcsv-explorer.ipynb)
+[![Binder](images/Use live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/csv-explorer/master?urlpath=voila/render/csv-explorer.ipynb)
 
 Cultural institutions are making collection data available as machine readable downloads. But how can researchers explore the shape and meaning of this data? How do they know what types of questions they can ask? This notebook provides a quick overview of CSV-formatted data files, particularly those created by GLAM institutions (galleries, libraries, archives, and museums).
 
@@ -14,7 +14,7 @@ You can select one of more than 600 GLAM datasets [shared on government data por
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/csv-explorer/blob/master/csv-explorer.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/csv-explorer/blob/master/csv-explorer.ipynb)
-* [Run live on Binder in Appmode](https://mybinder.org/v2/gh/GLAM-Workbench/csv-explorer/master?urlpath=%2Fapps%2Fcsv-explorer.ipynb)
+* [Run live on Binder in Voila](https://mybinder.org/v2/gh/GLAM-Workbench/csv-explorer/master?urlpath=voila/render/csv-explorer.ipynb)
 
 ![Screen capture](images/csv-explorer.gif)
 

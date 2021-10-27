@@ -39,7 +39,7 @@
 <!-- Repository containing source -->
 
 <a href="{{ repo_url }}" title="{{ lang.t('source.link.title') }}"
-  class="md-source">
+  class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       {% set icon = config.theme.icon.repo or "fontawesome/brands/github" %}
@@ -48,5 +48,8 @@
 
 <div class="md-source__repository">
   {{ repo_name }}
+<ul class="md-source__facts">
+  {{ repo_stats }}
+</ul>
 </div>
 </a>

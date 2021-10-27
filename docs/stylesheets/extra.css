@@ -10,3 +10,6 @@ img {border: 1px solid #D3D3D3}
     background-color: #222222;
     color: #ffffff;
 }
+.image-in-list {
+    margin-top: 1rem;
+}

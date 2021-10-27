@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+{% if page.edit_url %}
+  <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
+    {% include ".icons/material/pencil.svg" %}
+  </a>
+{% endif %}
+{% if not "\x3ch1" in page.content %}
+  <h1>{{ page.title | d(config.site_name, true)}}</h1>
+{% endif %}
+<p>Work on the GLAM Workbench is generously supported by <b>{{ page.meta.total_sponsors }} GitHub sponsors</b>:</p>
+<ul style="list-style-type: None;">
+{% for sponsor in page.meta.sponsors %}
+    <li>
+        <img style="vertical-align:middle; margin-right: 1rem;" src="{{sponsor.avatar}}" width=40 height=40 /><a href="{{sponsor.url}}">{{ sponsor.name }}</a>
+    </li>
+{% endfor %}
+    <li>
+        and {{ page.meta.private }} anonymous sponsors
+    </li>
+</ul>
+
+<p>If you'd like to become a supporter, head to the <a href="https://github.com/sponsors/wragge">GitHub sponsors page</a>. Sponsorship tiers start at $1.00 a month.</p>
+
+<h2>Help needed</h2>
+
+<p>If you can't assist financially, there's lots of other things you can do to help:</p>
+
+<ul>
+    <li>
+        <b>Spread the word!</b> There's no point doing all this if no-one knows about it.
+        I regularly post updates using the <a href="https://twitter.com/search?q=%23GLAMWorkbench">#GLAMWorkbench</a> tag on Twitter, and in my <a href="https://updates.timsherratt.org/">microblog feed</a>. Please share!
+    </li>
+    <li>
+        <b>Report problems!</b> There's a lot of notebooks in the GLAM Workbench, and it can be difficult to keep on top of everything.
+        If you notice something's not working as expected, please let me know by creating a <a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">issue in GitHub</a>.
+    </li>
+    <li>
+        <b>Share ideas!</b> You can also use the <a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">issues board</a> to jot down ideas for new notebooks or data sources.
+    </li>
+    <li>
+        <b>Cite the workbench!</b> If you use the GLAM Workbench in your research, please cite it. There are suggested citations at the bottom of most sections, and DOIs pointing to preserved versions of each repository in Zenodo.
+    </li>
+</ul>
+
+{% if page and page.meta %}
+  {% if page.meta.git_revision_date_localized or
+        page.meta.revision_date
+  %}
+    {% include "partials/source-date.html" %}
+  {% endif %}
+{% endif %}
+{% endblock %}
+{% block disqus %}
+{% include "partials/integrations/disqus.html" %}
+
+{% endblock %}

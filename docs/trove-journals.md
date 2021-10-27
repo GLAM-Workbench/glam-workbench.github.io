@@ -39,7 +39,7 @@ Using the code and data from the previous two notebooks, you can download the OC
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Download-text-for-all-digitised-journals.ipynb)
 
 ### Harvest parliament press releases from Trove  
-Trove includes more than 370,000 press releases, speeches, and interview transcripts issued by Australian federal politicians and saved by the Parliamentary Library. You can view them all in Trove by searching for nuc:"APAR:PR" in the books & libraries category. This notebook shows you how to harvest both metadata and full text from a search of the parliamentary press releases. The metadata is available from Trove, but to get the full text we have to go back to the Parliamentary Library's database, ParlInfo.
+Trove includes more than 380,000 press releases, speeches, and interview transcripts issued by Australian federal politicians and saved by the Parliamentary Library. You can view them all in Trove by searching for nuc:"APAR:PR" in the books & libraries category. This notebook shows you how to harvest both metadata and full text from a search of the parliamentary press releases. The metadata is available from Trove, but to get the full text we have to go back to the Parliamentary Library's database, ParlInfo.
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/trove-journals/blob/master/Harvest-parliament-press-releases.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Harvest-parliament-press-releases.ipynb)
@@ -74,48 +74,57 @@ This notebook explores the [Politicians talking about 'immigrants' and 'refugees
 ## Data and text
 
 ### CSV formatted list of journals available from Trove in digital form
-Harvested: 12 July 2020
+Harvested: 5 August 2021
 
-This file provides metadata of 2,698 journals that are available from Trove in a digital form. Note that this list contains 2,730 records as there are some duplicates where multiple Trove work records point to the same digitised journal. The duplicates have been left in as they include different metadata, and can be easily removed with Pandas. You can [download the CSV file](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals.csv).
-
-Note also that, unlike previous harvests, this one excluded periodicals with the format 'government publication' – so the total amount harvested has decreased. Government publications are actually spread across both the books and journals zone, so I'm planning to do a separate harvest just for them.
+This file provides metadata of 7,269 periodicals that are available from Trove's journal zone in digital form. This includes both 'digitised' periodicals, and born-digital periodicals submitted through Electronic Legal Deposit. Note that this list contains 7,318 records as there are some duplicates where multiple Trove work records point to the same digitised periodicals. The duplicates have been left in as they include different metadata, and can be easily removed with Pandas. You can [download the CSV file](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals.csv), or explore using a [**searchable database running on Glitch**](https://trove-digital-periodicals.glitch.me/data/trove-digital-journals).
 
 This file includes the following columns:
 
-+ `fulltext_url` – the url of the landing page of the digital version of the journal
-+ `title` – the title of the journal
-+ `trove_id` – the 'nla.obj' part of the fulltext_url, a unique identifier for the digital journal
-+ `trove_url` – url of the journal's metadata record in Trove
-+ `nla_digitised` – True/False indicates whether the journal is identified as being digitised by the NLA
++ `title` – the title of the periodical
++ `contributor` – information about creator or publisher
++ `issued` – publication date, or date range
++ `format` – the type of publication, all entries should include 'Periodical', but may include other types such as 'Government publication'
++ `trove_id` – the 'nla.obj' part of the fulltext_url, a unique identifier for the digital periodical
++ `trove_url` – url of the periodical's metadata record in Trove
++ `fulltext_url` – the url of the landing page of the digital version of the periodical
++ `fulltext_url_type` – the type of digital periodical, one of 'digitised', 'edeposit', or 'other'
+
 
 ### CSV formatted list of journals with OCRd text
-Harvested: 12 July 2020  
+Harvested: 5 August 2021
 
-This file provides metadata of 397 digitised journals in Trove that have OCRd text for download. You can [download the CSV file](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.csv). You can also [browse a human-readable list](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.md).
-
-Note that, unlike previous harvests, this one excluded periodicals with the format 'government publication' – so the total amount harvested has decreased. Government publications are actually spread across both the books and journals zone, so I'm planning to do a separate harvest just for them.
+This file provides metadata of 1,163 digitised periodicals in Trove that have OCRd text for download. You can [download the CSV file](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.csv). You can also [browse a human-readable list](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.md).
 
 This file includes the following columns:
 
-+ `fulltext_url` – the url of the landing page of the digital version of the journal
-+ `title` – the title of the journal
-+ `trove_id` – the 'nla.obj' part of the fulltext_url, a unique identifier for the digital journal
-+ `trove_url` – url of the journal's metadata record in Trove
-+ `nla_digitised` – True/False indicates whether the journal is identified as being digitised by the NLA
++ `title` – the title of the periodical
++ `contributor` – information about creator or publisher
++ `issued` – publication date, or date range
++ `format` – the type of publication, all entries should include 'Periodical', but may include other types such as 'Government publication'
++ `trove_id` – the 'nla.obj' part of the fulltext_url, a unique identifier for the digital periodical
++ `trove_url` – url of the periodical's metadata record in Trove
++ `fulltext_url` – the url of the landing page of the digital version of the periodical
++ `fulltext_url_type` – the type of digital periodical, one of 'digitised', 'edeposit', or 'other'
 + `issues` – the number of available issues
 + `issues_with_text` – the number of issues that OCRd text could be downloaded from
 + `directory` – the directory in which the files from this journal have been saved (relative to the output directory)
 
 ### OCRd text from Trove digitised journals
-Harvested: 12 July 2020
+Harvested: 5 August 2021
 
-Using the notebook above I harvested metadata and OCRd text from Trove's digitised journals.
+Using the notebooks above I harvested metadata and OCRd text from Trove's digitised periodicals.
 
-* 397 journals had OCRd text available for download
-* OCRd text was downloaded from 26,234 journal issues
-* About 6gb of text was downloaded
++ 1,163 periodicals had OCRd text available for download
++ OCRd text was downloaded from 51,928 periodical issues
++ About 10gb of text was downloaded
 
-The complete collection of text files for all the journals can be [browsed here](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.md) and downloaded [using this repository on CloudStor](https://cloudstor.aarnet.edu.au/plus/s/QOmnqpGQCNCSC2h).
+The complete collection of text files for all the periodicals can be [browsed here](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.md) and downloaded [using this repository on CloudStor](https://cloudstor.aarnet.edu.au/plus/s/QOmnqpGQCNCSC2h).
+
+### Government publications in digital form
+Harvested: 5 August 2021
+
+This dataset combines records from the separate harvests of books and periodicals available in digital form that have the type 'Government publication'. You can explore it using a [**searchable database running on Glitch**](https://trove-government-publications.glitch.me/data/trove-government-publications).
+
 
 ### Editorial cartoons from The Bulletin, 1886 to 1952
 
@@ -141,6 +150,9 @@ To make it easier to browse the images, I've compiled them into a series of PDFs
 
 ### Politicians talking about 'immigrants' and 'refugees'  
 Using the notebook above I harvested parliamentary press releases that included any of the terms 'immigrant', 'asylum seeker', 'boat people', 'illegal arrivals', or 'boat arrivals'. A total of 12,619 text files were harvested. You can [browse the files on CloudStor](https://cloudstor.aarnet.edu.au/plus/s/Msoj978Zlrud40g), or download the [complete dataset as a zip file (43mb)](https://cloudstor.aarnet.edu.au/plus/s/diwB0tnpv1X1ORN).
+
+### Politicians talking about COVID
+Using the notebook above I harvested parliamentary press releases that included any of the terms 'COVID' or 'coronavirus'. A total of 3,995 text files were harvested. You can download the [complete dataset as a zip file (12mb)](https://github.com/GLAM-Workbench/trove-journals/raw/6f4d805186716853b81c7d93cac6754685b384bf/press-releases/press-releases-coronavirus-or-covid.zip).
 
 ## Cite as
 
