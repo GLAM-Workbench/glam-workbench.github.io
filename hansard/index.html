@@ -9,7 +9,6 @@
         <meta name="description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums">
       
       
-      
         <meta name="author" content="Tim Sherratt">
       
       
@@ -19,7 +18,7 @@
         
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3+insiders-3.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7+insiders-4.6.1">
     
     
       
@@ -27,17 +26,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d5d04331.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.005db8a3.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.1d832a92.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
           <meta name="theme-color" content="#4051b5">
         
       
-      <link rel="preload" as="style" href="../assets/stylesheets/vendor/mermaid.733f213f.min.css">
+      <link rel="preload" as="style" href="../assets/stylesheets/vendor/mermaid.9c0dc1da.min.css">
       
     
     
@@ -46,19 +45,15 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
-    
-      <link rel="manifest" href="../manifest.webmanifest" crossorigin="use-credentials">
     
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"..":".."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
 
     
     
@@ -92,6 +87,120 @@
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
     
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -145,8 +254,7 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -367,12 +475,18 @@
       
       
 
+
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
       </a>
     </li>
   
@@ -381,6 +495,7 @@
       
       
       
+
 
   
   
@@ -405,7 +520,12 @@
       
       
         <label class="md-nav__link" for="nav-2">
-          About
+          
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -423,7 +543,12 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        About the GLAM Workbench
+        
+  
+  <span class="md-ellipsis">
+    About the GLAM Workbench
+  </span>
+
       </a>
     </li>
   
@@ -437,7 +562,12 @@
   
     <li class="md-nav__item">
       <a href="../presentations/" class="md-nav__link">
-        Presentations about the GLAM Workbench
+        
+  
+  <span class="md-ellipsis">
+    Presentations about the GLAM Workbench
+  </span>
+
       </a>
     </li>
   
@@ -451,7 +581,12 @@
   
     <li class="md-nav__item">
       <a href="../awards/" class="md-nav__link">
-        Grants and Awards
+        
+  
+  <span class="md-ellipsis">
+    Grants and Awards
+  </span>
+
       </a>
     </li>
   
@@ -465,7 +600,12 @@
   
     <li class="md-nav__item">
       <a href="../supporters/" class="md-nav__link">
-        Supporters
+        
+  
+  <span class="md-ellipsis">
+    Supporters
+  </span>
+
       </a>
     </li>
   
@@ -481,6 +621,7 @@
       
       
       
+
 
   
   
@@ -507,7 +648,12 @@
       
       
         <label class="md-nav__link" for="nav-3">
-          Help
+          
+  
+  <span class="md-ellipsis">
+    Help
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -525,7 +671,12 @@
   
     <li class="md-nav__item">
       <a href="../getting-started/" class="md-nav__link">
-        Getting started
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+
       </a>
     </li>
   
@@ -557,7 +708,12 @@
       
       
         <label class="md-nav__link" for="nav-3_2">
-          Running notebooks
+          
+  
+  <span class="md-ellipsis">
+    Running notebooks
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -575,7 +731,12 @@
   
     <li class="md-nav__item">
       <a href="../using-binder/" class="md-nav__link">
-        Using Binder
+        
+  
+  <span class="md-ellipsis">
+    Using Binder
+  </span>
+
       </a>
     </li>
   
@@ -589,7 +750,12 @@
   
     <li class="md-nav__item">
       <a href="../using-reclaim-cloud/" class="md-nav__link">
-        Using Reclaim Cloud
+        
+  
+  <span class="md-ellipsis">
+    Using Reclaim Cloud
+  </span>
+
       </a>
     </li>
   
@@ -603,7 +769,12 @@
   
     <li class="md-nav__item">
       <a href="../using-nectar/" class="md-nav__link">
-        Using the Nectar Cloud
+        
+  
+  <span class="md-ellipsis">
+    Using the Nectar Cloud
+  </span>
+
       </a>
     </li>
   
@@ -617,7 +788,12 @@
   
     <li class="md-nav__item">
       <a href="../using-docker/" class="md-nav__link">
-        Using Docker
+        
+  
+  <span class="md-ellipsis">
+    Using Docker
+  </span>
+
       </a>
     </li>
   
@@ -638,7 +814,12 @@
   
     <li class="md-nav__item">
       <a href="https://www.youtube.com/playlist?list=PLAclcciEeCD2z2BWQ2r3xD_Q8c05HppfP" class="md-nav__link">
-        Help videos
+        
+  
+  <span class="md-ellipsis">
+    Help videos
+  </span>
+
       </a>
     </li>
   
@@ -652,7 +833,12 @@
   
     <li class="md-nav__item">
       <a href="../more-glam-notebooks/" class="md-nav__link">
-        GLAM Jupyter resources
+        
+  
+  <span class="md-ellipsis">
+    GLAM Jupyter resources
+  </span>
+
       </a>
     </li>
   
@@ -666,7 +852,12 @@
   
     <li class="md-nav__item">
       <a href="../glam-tools-interfaces/" class="md-nav__link">
-        More GLAM tools and interfaces
+        
+  
+  <span class="md-ellipsis">
+    More GLAM tools and interfaces
+  </span>
+
       </a>
     </li>
   
@@ -682,6 +873,7 @@
       
       
       
+
 
   
   
@@ -700,7 +892,12 @@
       
       
         <label class="md-nav__link" for="nav-4">
-          Data sources
+          
+  
+  <span class="md-ellipsis">
+    Data sources
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -734,7 +931,12 @@
       
       
         <label class="md-nav__link" for="nav-4_1">
-          Australia
+          
+  
+  <span class="md-ellipsis">
+    Australia
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -752,7 +954,12 @@
   
     <li class="md-nav__item">
       <a href="../glam-data-list/" class="md-nav__link">
-        Sources of Australian GLAM data
+        
+  
+  <span class="md-ellipsis">
+    Sources of Australian GLAM data
+  </span>
+
       </a>
     </li>
   
@@ -780,7 +987,12 @@
       
       
         <label class="md-nav__link" for="nav-4_1_2">
-          Data portals
+          
+  
+  <span class="md-ellipsis">
+    Data portals
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -798,7 +1010,12 @@
   
     <li class="md-nav__item">
       <a href="../glam-data-portals/" class="md-nav__link">
-        Gov data portals
+        
+  
+  <span class="md-ellipsis">
+    Gov data portals
+  </span>
+
       </a>
     </li>
   
@@ -812,7 +1029,12 @@
   
     <li class="md-nav__item">
       <a href="../glam-datasets-from-gov-portals/" class="md-nav__link">
-        GLAM datasets from government data portals
+        
+  
+  <span class="md-ellipsis">
+    GLAM datasets from government data portals
+  </span>
+
       </a>
     </li>
   
@@ -833,7 +1055,12 @@
   
     <li class="md-nav__item">
       <a href="../csv-explorer/" class="md-nav__link">
-        GLAM CSV Explorer
+        
+  
+  <span class="md-ellipsis">
+    GLAM CSV Explorer
+  </span>
+
       </a>
     </li>
   
@@ -856,6 +1083,7 @@
       
       
       
+
 
   
   
@@ -894,7 +1122,12 @@
       
       
         <label class="md-nav__link" for="nav-5">
-          Trove
+          
+  
+  <span class="md-ellipsis">
+    Trove
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -912,7 +1145,12 @@
   
     <li class="md-nav__item">
       <a href="../trove/" class="md-nav__link">
-        Trove API introduction
+        
+  
+  <span class="md-ellipsis">
+    Trove API introduction
+  </span>
+
       </a>
     </li>
   
@@ -926,7 +1164,12 @@
   
     <li class="md-nav__item">
       <a href="../trove-newspapers/" class="md-nav__link">
-        Trove newspapers
+        
+  
+  <span class="md-ellipsis">
+    Trove newspapers
+  </span>
+
       </a>
     </li>
   
@@ -940,7 +1183,12 @@
   
     <li class="md-nav__item">
       <a href="../trove-harvester/" class="md-nav__link">
-        Trove newspaper & gazette harvester
+        
+  
+  <span class="md-ellipsis">
+    Trove newspaper & gazette harvester
+  </span>
+
       </a>
     </li>
   
@@ -954,7 +1202,12 @@
   
     <li class="md-nav__item">
       <a href="../trove-books/" class="md-nav__link">
-        Trove books
+        
+  
+  <span class="md-ellipsis">
+    Trove books
+  </span>
+
       </a>
     </li>
   
@@ -968,7 +1221,12 @@
   
     <li class="md-nav__item">
       <a href="../trove-journals/" class="md-nav__link">
-        Trove journals
+        
+  
+  <span class="md-ellipsis">
+    Trove journals
+  </span>
+
       </a>
     </li>
   
@@ -982,7 +1240,12 @@
   
     <li class="md-nav__item">
       <a href="../trove-lists/" class="md-nav__link">
-        Trove lists and tags
+        
+  
+  <span class="md-ellipsis">
+    Trove lists and tags
+  </span>
+
       </a>
     </li>
   
@@ -996,7 +1259,12 @@
   
     <li class="md-nav__item">
       <a href="../trove-maps/" class="md-nav__link">
-        Trove maps
+        
+  
+  <span class="md-ellipsis">
+    Trove maps
+  </span>
+
       </a>
     </li>
   
@@ -1010,7 +1278,12 @@
   
     <li class="md-nav__item">
       <a href="../trove-music/" class="md-nav__link">
-        Trove music and sound
+        
+  
+  <span class="md-ellipsis">
+    Trove music and sound
+  </span>
+
       </a>
     </li>
   
@@ -1024,7 +1297,12 @@
   
     <li class="md-nav__item">
       <a href="../trove-images/" class="md-nav__link">
-        Trove images
+        
+  
+  <span class="md-ellipsis">
+    Trove images
+  </span>
+
       </a>
     </li>
   
@@ -1038,7 +1316,12 @@
   
     <li class="md-nav__item">
       <a href="../trove-unpublished/" class="md-nav__link">
-        Trove unpublished
+        
+  
+  <span class="md-ellipsis">
+    Trove unpublished
+  </span>
+
       </a>
     </li>
   
@@ -1052,7 +1335,12 @@
   
     <li class="md-nav__item">
       <a href="../trove-random/" class="md-nav__link">
-        Random items from Trove
+        
+  
+  <span class="md-ellipsis">
+    Random items from Trove
+  </span>
+
       </a>
     </li>
   
@@ -1069,12 +1357,18 @@
       
       
 
+
   
   
   
     <li class="md-nav__item">
       <a href="../digitalnz/" class="md-nav__link">
-        DigitalNZ
+        
+  
+  <span class="md-ellipsis">
+    DigitalNZ
+  </span>
+
       </a>
     </li>
   
@@ -1083,6 +1377,7 @@
       
       
       
+
 
   
   
@@ -1109,7 +1404,12 @@
       
       
         <label class="md-nav__link" for="nav-7">
-          Archives
+          
+  
+  <span class="md-ellipsis">
+    Archives
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -1127,7 +1427,12 @@
   
     <li class="md-nav__item">
       <a href="../anu-archives/" class="md-nav__link">
-        ANU Archives
+        
+  
+  <span class="md-ellipsis">
+    ANU Archives
+  </span>
+
       </a>
     </li>
   
@@ -1157,7 +1462,12 @@
       
       
         <label class="md-nav__link" for="nav-7_2">
-          NAA
+          
+  
+  <span class="md-ellipsis">
+    NAA
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -1175,7 +1485,12 @@
   
     <li class="md-nav__item">
       <a href="../recordsearch/" class="md-nav__link">
-        RecordSearch
+        
+  
+  <span class="md-ellipsis">
+    RecordSearch
+  </span>
+
       </a>
     </li>
   
@@ -1189,7 +1504,12 @@
   
     <li class="md-nav__item">
       <a href="../naa-wap/" class="md-nav__link">
-        White Australia Policy archives
+        
+  
+  <span class="md-ellipsis">
+    White Australia Policy archives
+  </span>
+
       </a>
     </li>
   
@@ -1203,7 +1523,12 @@
   
     <li class="md-nav__item">
       <a href="../naa-asio/" class="md-nav__link">
-        ASIO archives
+        
+  
+  <span class="md-ellipsis">
+    ASIO archives
+  </span>
+
       </a>
     </li>
   
@@ -1224,7 +1549,12 @@
   
     <li class="md-nav__item">
       <a href="../nsw-state-archives/" class="md-nav__link">
-        NSW State Archives
+        
+  
+  <span class="md-ellipsis">
+    NSW State Archives
+  </span>
+
       </a>
     </li>
   
@@ -1250,7 +1580,12 @@
       
       
         <label class="md-nav__link" for="nav-7_4">
-          National Archives of NZ
+          
+  
+  <span class="md-ellipsis">
+    National Archives of NZ
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -1268,7 +1603,12 @@
   
     <li class="md-nav__item">
       <a href="../archway/" class="md-nav__link">
-        Archway
+        
+  
+  <span class="md-ellipsis">
+    Archway
+  </span>
+
       </a>
     </li>
   
@@ -1289,7 +1629,12 @@
   
     <li class="md-nav__item">
       <a href="../qsa/" class="md-nav__link">
-        Queensland State Archives
+        
+  
+  <span class="md-ellipsis">
+    Queensland State Archives
+  </span>
+
       </a>
     </li>
   
@@ -1305,6 +1650,7 @@
       
       
       
+
 
   
   
@@ -1329,7 +1675,12 @@
       
       
         <label class="md-nav__link" for="nav-8">
-          Libraries
+          
+  
+  <span class="md-ellipsis">
+    Libraries
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -1359,7 +1710,12 @@
       
       
         <label class="md-nav__link" for="nav-8_1">
-          State Library of NSW
+          
+  
+  <span class="md-ellipsis">
+    State Library of NSW
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -1393,7 +1749,12 @@
       
       
         <label class="md-nav__link" for="nav-8_1_1">
-          Tribune negatives
+          
+  
+  <span class="md-ellipsis">
+    Tribune negatives
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -1411,7 +1772,12 @@
   
     <li class="md-nav__item">
       <a href="../records-of-resistance/" class="md-nav__link">
-        Tribune metadata
+        
+  
+  <span class="md-ellipsis">
+    Tribune metadata
+  </span>
+
       </a>
     </li>
   
@@ -1425,7 +1791,12 @@
   
     <li class="md-nav__item">
       <a href="../facial-detection/" class="md-nav__link">
-        Facial detection
+        
+  
+  <span class="md-ellipsis">
+    Facial detection
+  </span>
+
       </a>
     </li>
   
@@ -1439,7 +1810,12 @@
   
     <li class="md-nav__item">
       <a href="../image-tagging/" class="md-nav__link">
-        Image tagging
+        
+  
+  <span class="md-ellipsis">
+    Image tagging
+  </span>
+
       </a>
     </li>
   
@@ -1467,7 +1843,12 @@
   
     <li class="md-nav__item">
       <a href="../slsa/" class="md-nav__link">
-        State Library of South Australia
+        
+  
+  <span class="md-ellipsis">
+    State Library of South Australia
+  </span>
+
       </a>
     </li>
   
@@ -1481,7 +1862,12 @@
   
     <li class="md-nav__item">
       <a href="../slv/" class="md-nav__link">
-        State Library of Victoria
+        
+  
+  <span class="md-ellipsis">
+    State Library of Victoria
+  </span>
+
       </a>
     </li>
   
@@ -1495,7 +1881,12 @@
   
     <li class="md-nav__item">
       <a href="../lac/" class="md-nav__link">
-        Library Archives Canada
+        
+  
+  <span class="md-ellipsis">
+    Library Archives Canada
+  </span>
+
       </a>
     </li>
   
@@ -1512,12 +1903,18 @@
       
       
 
+
   
   
   
     <li class="md-nav__item">
       <a href="../web-archives/" class="md-nav__link">
-        Web Archives
+        
+  
+  <span class="md-ellipsis">
+    Web Archives
+  </span>
+
       </a>
     </li>
   
@@ -1526,6 +1923,7 @@
       
       
       
+
 
   
   
@@ -1548,7 +1946,12 @@
       
       
         <label class="md-nav__link" for="nav-10">
-          Museums
+          
+  
+  <span class="md-ellipsis">
+    Museums
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -1566,7 +1969,12 @@
   
     <li class="md-nav__item">
       <a href="../nma/" class="md-nav__link">
-        National Museum of Australia
+        
+  
+  <span class="md-ellipsis">
+    National Museum of Australia
+  </span>
+
       </a>
     </li>
   
@@ -1580,7 +1988,12 @@
   
     <li class="md-nav__item">
       <a href="../tepapa/" class="md-nav__link">
-        Te Papa
+        
+  
+  <span class="md-ellipsis">
+    Te Papa
+  </span>
+
       </a>
     </li>
   
@@ -1594,7 +2007,12 @@
   
     <li class="md-nav__item">
       <a href="../museumsvictoria/" class="md-nav__link">
-        Museums Victoria
+        
+  
+  <span class="md-ellipsis">
+    Museums Victoria
+  </span>
+
       </a>
     </li>
   
@@ -1610,6 +2028,7 @@
       
       
       
+
 
   
   
@@ -1630,7 +2049,12 @@
       
       
         <label class="md-nav__link" for="nav-11">
-          Government
+          
+  
+  <span class="md-ellipsis">
+    Government
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -1664,7 +2088,12 @@
       
       
         <label class="md-nav__link" for="nav-11_1">
-          Australia
+          
+  
+  <span class="md-ellipsis">
+    Australia
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
@@ -1689,15 +2118,26 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Commonwealth Hansard
+          
+  
+  <span class="md-ellipsis">
+    Commonwealth Hansard
+  </span>
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Commonwealth Hansard
+        
+  
+  <span class="md-ellipsis">
+    Commonwealth Hansard
+  </span>
+
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -1779,7 +2219,12 @@
   
     <li class="md-nav__item">
       <a href="../pm-transcripts/" class="md-nav__link">
-        PMs Transcripts
+        
+  
+  <span class="md-ellipsis">
+    PMs Transcripts
+  </span>
+
       </a>
     </li>
   
@@ -1802,13 +2247,19 @@
       
       
       
+
 
   
   
   
     <li class="md-nav__item">
       <a href="../name-search/" class="md-nav__link">
-        GLAM Name Index Search
+        
+  
+  <span class="md-ellipsis">
+    GLAM Name Index Search
+  </span>
+
       </a>
     </li>
   
@@ -1817,13 +2268,19 @@
       
       
       
+
 
   
   
   
     <li class="md-nav__item">
       <a href="../suggest-a-topic/" class="md-nav__link">
-        Suggest a topic
+        
+  
+  <span class="md-ellipsis">
+    Suggest a topic
+  </span>
+
       </a>
     </li>
   
@@ -1833,12 +2290,18 @@
       
       
 
+
   
   
   
     <li class="md-nav__item">
       <a href="../ask-a-question/" class="md-nav__link">
-        Ask a question
+        
+  
+  <span class="md-ellipsis">
+    Ask a question
+  </span>
+
       </a>
     </li>
   
@@ -1874,6 +2337,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -1951,15 +2415,15 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/docs/edit/master/docs/hansard.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                
-                  <h1>Commonwealth Hansard</h1>
-                
-                <p>The proceedings of Australia's Commonwealth Parliament are recorded in Hansard, which is available online through the Parliamentary Library's <a href="https://parlinfo.aph.gov.au/parlInfo/search/summary/summary.w3p;adv=yes;orderBy=_fragment_number,doc_date-rev;query=Dataset:hansardr,hansardr80;resCount=Default">ParlInfo</a> database. This repository includes Jupyter notebooks to harvest and explore XML formatted versions of Hansard.</p>
+<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/docs/edit/master/docs/hansard.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+  <h1>Commonwealth Hansard</h1>
+
+<p>The proceedings of Australia's Commonwealth Parliament are recorded in Hansard, which is available online through the Parliamentary Library's <a href="https://parlinfo.aph.gov.au/parlInfo/search/summary/summary.w3p;adv=yes;orderBy=_fragment_number,doc_date-rev;query=Dataset:hansardr,hansardr80;resCount=Default">ParlInfo</a> database. This repository includes Jupyter notebooks to harvest and explore XML formatted versions of Hansard.</p>
 <p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/australian-commonwealth-hansard/master?urlpath=lab"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
 <p>You can access a <a href="https://github.com/wragge/hansard-xml">harvest of the XML files for both houses from 1901 to 1980 and 1998 to 2005</a> from this repository. No XML files are currently available for 1981 to 1997. Open Australia provides access to <a href="http://data.openaustralia.org.au/">Hansard XML files from 2006 onwards</a>.</p>
 <p>The XML files are made available on the Australian Parliament website under a CC-BY-NC-ND licence.</p>
@@ -1990,12 +2454,8 @@
 <h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
 <p>Sherratt, Tim. (2019, November 17). GLAM-Workbench/australian-commonwealth-hansard (Version v0.1.0). Zenodo. <a href="http://doi.org/10.5281/zenodo.3544706">http://doi.org/10.5281/zenodo.3544706</a></p>
 <p><a href="https://doi.org/10.5281/zenodo.3544706"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3544706.svg" /></a></p>
-                
-                  
-                
-              
-              
-                
+
+
 
 
               
@@ -2006,8 +2466,7 @@
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
@@ -2046,49 +2505,48 @@
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2021 <a href="https://timsherratt.org">Tim Sherratt</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-          </div>
-        
-        
-          Made with
-          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-            Material for MkDocs Insiders
-          </a>
-        
-        
-      </div>
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 <a href="https://timsherratt.org">Tim Sherratt</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs Insiders
+    </a>
+  
+</div>
       
-  <div class="md-footer-social">
+        <div class="md-social">
+  
     
-      
-      
-      <a href="https://github.com/glam-workbench" target="_blank" rel="noopener" title="GLAM Workbench on GitHub" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
     
-      
-      
-      <a href="https://twitter.com/wragge" target="_blank" rel="noopener" title="@wragge on Twitter" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-      </a>
+    <a href="https://github.com/glam-workbench" target="_blank" rel="noopener" title="GLAM Workbench on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
     
-      
-      
-      <a href="https://www.facebook.com/101dhhacks/" target="_blank" rel="noopener" title="101 DH Hacks on Facebook" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
-      </a>
     
-      
-      
-      <a href="https://updates.timsherratt.org/categories/glamworkbench/" target="_blank" rel="noopener" title="Latest GLAMWorkbench news!" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM112 416c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm157.533 0h-34.335c-6.011 0-11.051-4.636-11.442-10.634-5.214-80.05-69.243-143.92-149.123-149.123-5.997-.39-10.633-5.431-10.633-11.441v-34.335c0-6.535 5.468-11.777 11.994-11.425 110.546 5.974 198.997 94.536 204.964 204.964.352 6.526-4.89 11.994-11.425 11.994zm103.027 0h-34.334c-6.161 0-11.175-4.882-11.427-11.038-5.598-136.535-115.204-246.161-251.76-251.76C68.882 152.949 64 147.935 64 141.774V107.44c0-6.454 5.338-11.664 11.787-11.432 167.83 6.025 302.21 141.191 308.205 308.205.232 6.449-4.978 11.787-11.432 11.787z"/></svg>
-      </a>
+    <a href="https://twitter.com/wragge" target="_blank" rel="noopener" title="@wragge on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
     
-  </div>
-
+    
+    <a href="https://www.facebook.com/101dhhacks/" target="_blank" rel="noopener" title="101 DH Hacks on Facebook" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://updates.timsherratt.org/categories/glamworkbench/" target="_blank" rel="noopener" title="Latest GLAMWorkbench news!" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM112 416c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm157.533 0h-34.335c-6.011 0-11.051-4.636-11.442-10.634-5.214-80.05-69.243-143.92-149.123-149.123-5.997-.39-10.633-5.431-10.633-11.441v-34.335c0-6.535 5.468-11.777 11.994-11.425 110.546 5.974 198.997 94.536 204.964 204.964.352 6.526-4.89 11.994-11.425 11.994zm103.027 0h-34.334c-6.161 0-11.175-4.882-11.427-11.038-5.598-136.535-115.204-246.161-251.76-251.76C68.882 152.949 64 147.935 64 141.774V107.44c0-6.454 5.338-11.664 11.787-11.432 167.83 6.025 302.21 141.191 308.205 308.205.232 6.449-4.978 11.787-11.432 11.787z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2098,10 +2556,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b07a6a97.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.f7fe2898.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.4b1ed6f7.min.js"></script>
+      <script src="../assets/javascripts/bundle.03f8e4a4.min.js"></script>
       
     
   </body>
