@@ -281,6 +281,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://glam-workbench.net/_snippets/help/</loc>
+         <lastmod>2022-02-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://glam-workbench.net/trove-harvester/</loc>
          <lastmod>2022-02-11</lastmod>
          <changefreq>daily</changefreq>
