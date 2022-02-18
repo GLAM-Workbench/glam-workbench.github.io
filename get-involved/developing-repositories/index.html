@@ -3799,7 +3799,7 @@
 <li>In Jupyter Lab, open your notebook's 'Property Inspector' by clicking on the cog icon in the right -hand menu bar.</li>
 <li>Add a new tag labelled <code>skip-nbval</code>.</li>
 </ol>
-<p>If your notebook needs private information, such as API keys, to run, I'd suggest install <a href="https://github.com/theskumar/python-dotenv">python-dotenv</a> and store your secrets in a <code>.env</code> file. Then, in your notebook, include a cell to load the contents of <code>.env</code> as environment variables:</p>
+<p>If your notebook needs private information, such as API keys, to run, I'd suggest you install <a href="https://github.com/theskumar/python-dotenv">python-dotenv</a> and store your secrets in a <code>.env</code> file. Then, in your notebook, include a cell to load the contents of <code>.env</code> as environment variables:</p>
 <div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">capture</span>
 <span class="c1"># Load variables from the .env file if it exists</span>
 <span class="c1"># Use %%capture to suppress messages</span>
@@ -3833,7 +3833,7 @@ nbqa flake8 mynotebook.ipynb
 <div class="highlight"><pre><span></span><code>pytest --nbval-lax mynotebook.ipynb
 </code></pre></div>
 <p>To test all notebooks in the current folder:</p>
-<p><div class="highlight"><pre><span></span><code>pytest --nbval-lax mynotebook.ipynb
+<p><div class="highlight"><pre><span></span><code>pytest --nbval-lax
 </code></pre></div>
 To exclude notebooks from testing, add them under <code>[tool.pytest.ini_options]</code> in <code>pyproject.toml</code>. Currently, any notebook with a name starting with 'Untitled' or 'draft' will be ignored.</p>
 <p>For more fine-grained testing, you can use <code>nbval</code> to look for specific values in the cell's output. See the nbval documentation for examples.</p>
