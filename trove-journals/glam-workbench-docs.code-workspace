@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "../.."
+		},
+		{
+			"path": "../../../mkdocs_latest_release_plugin"
 		}
 	],
 	"settings": {}
