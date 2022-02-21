@@ -105,6 +105,7 @@ plugins:
     - tags:
         tags_file: tags.md
     - social
+    - privacy 
 
 nav:
     - Home: index.md
