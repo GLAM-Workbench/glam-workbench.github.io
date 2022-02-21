@@ -4,7 +4,7 @@ repo_name: glam-data-list
 repo_url: https://github.com/GLAM-Workbench/glam-data-list
 ---
 
-{{ snippet('https://github.com/GLAM-Workbench/glam-data-list.git', 'readme.md', '# Sources of Australian GLAM data') }}
+{{ gitsnippet('GLAM-Workbench/glam-data-list', 'readme.md', '# Sources of Australian GLAM data') }}
 
 ## Cite as
 

@@ -5,7 +5,7 @@ repo_url: https://github.com/glam-workbench/trove-newspapers
 zenodo_concept_id: 3521724
 ---
 
-{{ git_latest_tag }}
+{{ git_latest_tag() }}
 
 Assorted experiments and examples working with Trove’s digitised newspapers.
 
@@ -112,6 +112,34 @@ Adds a time dimension to the examples in the previous notebook to create an anim
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/Map-newspaper-results-by-place-of-publication-over-time.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=lab/tree/Map-newspaper-results-by-place-of-publication-over-time.ipynb)
 
+
+## Harvesting data
+
+!!! note ""
+    Notebooks in this section help you harvest data relating to Trove's newspapers. To harvest all the newspaper articles from a search, see the [Trove Newspaper and Gazette Harvester](/trove-harvester/).
+
+### Harvest information about newspaper issues
+When you search Trove's newspapers, you find articles – these articles are grouped by page, and all the pages from a particular date make up an issue. But how do you find out what issues are available? On what dates were newspapers published? This notebook shows how you can get information about issues from the Trove API.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspapers/blob/master/harvest_newspaper_issues.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/harvest_newspaper_issues.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=lab/tree/harvest_newspaper_issues.ipynb)
+
+### Harvest the issues of a newspaper as PDFs
+This notebook harvests issues of a newspaper as PDFs – one PDF per issue. If the newspaper has an long print run, this will consume large amounts of time and disk space, so you might want to limit your harvest by date range.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspapers/blob/master/harvest_newspaper_issues_as_pdfs.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/harvest_newspaper_issues_as_pdfs.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=lab/tree/harvest_newspaper_issues_as_pdfs.ipynb)
+
+### Harvest Australian Women's Weekly covers (or the front pages of any newspaper)
+Somewhat confusingly, the *Australian Women's Weekly* is in with Trove's digitised newspapers and not the rest of the magazines. There are notebooks in the GLAM Workbench's journals section to help harvest all of a journal's covers as images, so I thought I should do the same for the Weekly. This notebook can be easily adjusted to download the front pages of any digitised newspaper.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspapers/blob/master/harvest-aww-covers-and-newspaper-front-pages.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/harvest-aww-covers-and-newspaper-front-pages.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=lab/tree/harvest-aww-covers-and-newspaper-front-pages.ipynb)
+
+
 ## Useful tools
 
 !!! note ""
@@ -150,19 +178,6 @@ This notebook steps through the process of uploading Trove newspaper articles to
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/Upload-Trove-newspapers-to-Omeka.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=lab/tree/Upload-Trove-newspapers-to-Omeka.ipynb)
 
-### Harvest Australian Women's Weekly covers (or the front pages of any newspaper)
-Somewhat confusingly, the *Australian Women's Weekly* is in with Trove's digitised newspapers and not the rest of the magazines. There are notebooks in the GLAM Workbench's journals section to help harvest all of a journal's covers as images, so I thought I should do the same for the Weekly. This notebook can be easily adjusted to download the front pages of any digitised newspaper.
-
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspapers/blob/master/harvest-aww-covers-and-newspaper-front-pages.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/harvest-aww-covers-and-newspaper-front-pages.ipynb)
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=lab/tree/harvest-aww-covers-and-newspaper-front-pages.ipynb)
-
-### Harvest information about newspaper issues
-When you search Trove's newspapers, you find articles – these articles are grouped by page, and all the pages from a particular date make up an issue. But how do you find out what issues are available? On what dates were newspapers published? This notebook shows how you can get information about issues from the Trove API.
-
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspapers/blob/master/harvest_newspaper_issues.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/harvest_newspaper_issues.ipynb)
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=lab/tree/harvest_newspaper_issues.ipynb)
 
 ## Tips and tricks
 
@@ -372,4 +387,4 @@ See [Using Docker](https://glam-workbench.net/using-docker/) for more informatio
 
 ## Cite as
 
-{{ zenodo_citation }}
+{{ zenodo_citation() }}

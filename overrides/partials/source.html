@@ -31,9 +31,11 @@
 {% if page and page.meta and page.meta.repo_url and page.meta.repo_name %}
 {% set repo_url = page.meta.repo_url %}
 {% set repo_name = page.meta.repo_name %}
+{% set repo_stats = page.meta.repo_stats %}
 {% else %}
 {% set repo_url = config.repo_url %}
 {% set repo_name = config.repo_name %}
+{% set repo_stats = '' %}
 {% endif %}
 
 <!-- Repository containing source -->

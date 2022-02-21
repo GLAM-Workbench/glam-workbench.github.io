@@ -7,7 +7,7 @@ zenodo_concept_id: 3894078
 
 # Web Archives
 
-{{ git_latest_tag }}
+{{ git_latest_tag() }}
 
 See below for information on [running these notebooks](#run-these-notebooks) in a live computing environment. Or just take them for a spin using Binder.
 
@@ -282,4 +282,4 @@ See [Using Docker](https://glam-workbench.net/using-docker/) for more informatio
 
 ## Cite as
 
-{{ zenodo_citation }}
+{{ zenodo_citation() }}

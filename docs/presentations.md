@@ -4,7 +4,17 @@ title: Presentations about the GLAM Workbench
 
 As with everything else in the GLAM Workbench, these presentations are all openly licensed – so re-use or redistribute them however you like.
 
-<iframe src="https://player.vimeo.com/video/528145007" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/631475562?h=6b2e2b5636" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+* Exploring GLAM data with the GLAM Workbench ([slides](https://slides.com/wragge/resbaz-anz-2021), video to come), presentation for ResBaz Aotearoa, 25 November 2021
+
+* [Exploring Australian GLAM data](https://doi.org/10.5281/zenodo.5760042) ([slides](https://slides.com/wragge/resbaz-2021), [video](https://vimeo.com/652696272)), key story presentation for ResBaz Queensland and ResBaz Sydney, 24 November 2021
+
+    [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5760042.svg)](https://doi.org/10.5281/zenodo.5760042)
+
+* [A GLAM Workbench for Humanities Researchers](https://doi.org/10.5281/zenodo.5579845) ([slides](https://slides.com/wragge/eresearch2021), [video](https://vimeo.com/631475562)), presentation for eResearch Australasia 2021, 14 October 2021
+
+    [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5579845.svg)](https://doi.org/10.5281/zenodo.5579845)
 
 * [Introducing the GLAM Workbench](https://slides.com/wragge/gcscr-2021), presentation for the Griffith University Centre for Social and Cultural Research, Digital Humanities Seminar Series, 6 August 2021
 

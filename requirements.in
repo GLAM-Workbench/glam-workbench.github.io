@@ -1,0 +1,9 @@
+mkdocs
+mkdocs-material @ git+https://github.com/squidfunk/mkdocs-material-insiders.git
+mkdocs-macros-plugin
+pygithub
+mkdocs-redirects
+requests
+requests_cache
+pymdown-toc-ext
+python-dotenv

@@ -6,12 +6,12 @@ site_url: 'https://glam-workbench.net/'
 
 # Repository
 #repo_name: 'squidfunk/mkdocs-material'
-repo_name: GLAM-Workbench
-repo_url: 'https://github.com/GLAM-Workbench/'
+repo_name: glam-workbench.github.io
+repo_url: 'https://github.com/GLAM-Workbench/glam-workbench.github.io'
 edit_uri: "docs/edit/master/docs/"
 
 # Copyright
-copyright: 'Copyright &copy; 2021 <a href="https://timsherratt.org">Tim Sherratt</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.'
+copyright: 'Original content copyright &copy; 2022 <a href="https://timsherratt.org">Tim Sherratt</a>.<br/> Unless otherwise noted this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.'
 
 # Configuration
 theme:
@@ -28,11 +28,12 @@ theme:
     # - navigation.sections
     # - navigation.tabs
     # - navigation.tabs.sticky
-    # - navigation.top
+    - navigation.top
     - navigation.tracking
     - search.highlight
     - search.share
     - search.suggest
+    - announce.dismiss
     # - toc.integrate
   palette:
     primary: 'indigo'
@@ -59,12 +60,15 @@ extra:
     - icon: 'fontawesome/brands/facebook'
       link: 'https://www.facebook.com/101dhhacks/'
       name: '101 DH Hacks on Facebook'
-    - icon: 'fontawesome/solid/rss-square'
+    - icon: 'fontawesome/solid/rss'
       link: 'https://updates.timsherratt.org/categories/glamworkbench/'
       name: 'Latest GLAMWorkbench news!'
 
 extra_css:
   - 'stylesheets/extra.css'
+
+extra_javascript:
+#  - 'https://hypothes.is/embed.js'
 
 # Extensions
 markdown_extensions:
@@ -73,31 +77,45 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.keys
+  - pymdownx.snippets:
+      base_path: ['includes', '../site/includes']
+      check_paths: True
   - attr_list
   - md_in_html
-  - toc:
+  - toc_ext:
       permalink: true
   - meta
+  - def_list
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
     - search:
         separator: "[\\s\\-,:!=\\[\\]()\"/]+|\\.(?!\\d)|&[lg]t;|(?!\\b)(?=[A-Z][a-z])"
-        indexing: 'titles'
+        indexing: 'titles'  
+    - macros:
+        on_undefined: keep
     - redirects:
         redirect_maps:
             'trove_newspapers.md': 'trove-newspapers.md'
             'name-search.md': 'https://glam-name-indexes-yajhxrvxsa-ts.a.run.app/'
-    - snippet:
-        base_path: docs
-    - git-latest-tag
+            supporters.md: get-involved/supporters.md
+    - tags:
+        tags_file: tags.md
+    - social
 
 nav:
     - Home: index.md
     - About:
         - about.md
-        - presentations.md
+        - Presentations: presentations.md
         - awards.md
-        - supporters.md
+        - Get involved!:
+            - get-involved/index.md
+            - get-involved/supporters.md
+            - Develop a new repository: get-involved/developing-repositories.md
     - Help:
         - getting-started.md
         - Running notebooks:
@@ -105,22 +123,56 @@ nav:
             - using-reclaim-cloud.md
             - using-nectar.md
             - using-docker.md
-        - 'Help videos': https://www.youtube.com/playlist?list=PLAclcciEeCD2z2BWQ2r3xD_Q8c05HppfP
-        - more-glam-notebooks.md
-        - glam-tools-interfaces.md
-    - Data sources:
+        - Help videos: https://www.youtube.com/playlist?list=PLAclcciEeCD2z2BWQ2r3xD_Q8c05HppfP
+        - Suggest a topic: https://github.com/GLAM-Workbench/glam-workbench.github.io/issues
+        - Ask a question: https://ozglam.chat/c/glam-workbench/8
+        - Book a chat: https://calendly.com/timsherratt/30minchat
+    - GLAM data:
         - Australia:
             - glam-data-list.md
-            - Data portals:
+            - Open data portals:
                 - glam-data-portals.md
                 - glam-datasets-from-gov-portals.md
             - csv-explorer.md
+            - GLAM Name Index Search: name-search.md
     - Trove:
         - trove.md
         - trove-newspapers.md
-        - trove-harvester.md
-        - trove-books.md
-        - trove-journals.md
+        - Trove newspaper & gazette harvester:
+            - trove-harvester/index.md
+            - trove-harvester/harvester-web-app.md
+            - Using the Trove Harvester: trove-harvester/using-troveharvester.md
+            - Displaying results in Datasette: trove-harvester/display-harvest-results-in-datasette.md
+            - Exploring harvested data: trove-harvester/exploring-troveharvester-data.md
+            - Exploring harvested texts: trove-harvester/exploring-troveharvester-text.md
+        - Trove books:
+            - trove-books/index.md
+            - Harvesting text from digitised books: trove-books/harvesting-text-of-digitised-books.md
+            - Metadata for digital works: trove-books/metadata-for-digital-works.md
+            - Harvesting text from Internet Archive: trove-books/harvesting-text-from-books-in-ia.md
+            - trove-books/counting-words-and-phrases.md
+            - trove-books/recipe-generator.md
+            - Exploring Trove's digitised books: trove-books/exploring-digitised-books-adel-rahmani.md
+            - OCRd text from Trove books: trove-books/ocrd-text-from-trove-books.md
+            - CSV of digital books in Trove: trove-books/csv-books-in-digital-form.md
+            - Government publications in digital form: trove-books/government-publications-in-digital-form.md
+            - OCRd text from Australian books in IA: trove-books/ocrd-text-from-ia.md
+            - CSV of Australian books in IA: trove-books/csv-australian-books-in-ia.md
+        - Trove journals:
+            - trove-journals/index.md
+            - Create a list of digitised journals: trove-journals/create-list-digitised-journals.md
+            - Get OCRd text from a journal: trove-journals/get-ocrd-text-from-digitised-journal.md
+            - Get OCRd text from all journals: trove-journals/get-ocrd-text-from-all-journals.md
+            - Get cover images from a journal: trove-journals/get-covers-from-digitised-journal.md
+            - Finding cartoons in the Bulletin: trove-journals/finding-editorial-cartoons-in-bulletin.md
+            - Harvest Parliament press releases: trove-journals/harvest-parliament-press-releases.md
+            - Topic modelling Parliament press releases: trove-journals/topic-modelling-parliament-press-releases.md
+            - CSV list of digital journals: trove-journals/csv-digital-journals.md
+            - CSV list of journals with OCR: trove-journals/csv-journals-with-ocr.md
+            - OCRd text from all journals: trove-journals/ocrd-text-all-journals.md
+            - trove-journals/bulletin-cartoons-collection.md
+            - Politicians talking about 'refugees': trove-journals/politicans-press-releases-refugees.md
+            - Politicians talking about COVID: trove-journals/politicans-press-releases-covid.md
         - trove-lists.md
         - trove-maps.md
         - trove-music.md
@@ -156,6 +208,13 @@ nav:
         - Australia:
             - hansard.md
             - pm-transcripts.md
-    - GLAM Name Index Search: name-search.md
-    - suggest-a-topic.md
-    - ask-a-question.md
+    - Useful tools:
+        - Useful tools: glam-tools/index.md
+        - CloudStor nested links: glam-tools/cloudstor-share-nested-links.md
+        - CloudStor using WebDAV: glam-tools/cloudstor-access-via-webdav.md
+    - More resources:
+        - more-glam-notebooks.md
+        - glam-tools-interfaces.md
+    - Browse by tag: tags.md
+    - Latest news!: https://updates.timsherratt.org/categories/glamworkbench/
+

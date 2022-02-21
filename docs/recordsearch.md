@@ -6,7 +6,7 @@ zenodo_concept_id: 3544753
 
 # RecordSearch
 
-{{ git_latest_tag }}
+{{ git_latest_tag() }}
 
 [RecordSearch](https://recordsearch.naa.gov.au/) is the online collection database of the National Archives of Australia. Based on the [series system](https://www.naa.gov.au/help-your-research/getting-started/commonwealth-record-series-crs-system), RecordSearch provides rich, contextual information about series, items, agencies, and functions.
 
@@ -208,4 +208,4 @@ See [Using Docker](https://glam-workbench.net/using-docker/) for more informatio
 
 ## Cite as
 
-{{ zenodo_citation }}
+{{ zenodo_citation() }}

@@ -1,5 +1,6 @@
 ---
-title: Welcome
+title: Welcome to the GLAM Workbench
+zenodo_concept_id: 5603059
 ---
 
 # Welcome to the GLAM Workbench
@@ -101,3 +102,11 @@ The way Jupyter notebooks combine text and code into a 'computational narrative'
 No, you can use the Jupyter notebooks within the workbench without any coding experience &ndash; just edit and click where indicated. But every time you do edit one of the notebooks, you *are* coding. The notebooks provide an opportunity to gain confidence and experiment. They might not turn you into a coder, but they will show you how to do useful things with code.
 
 Go to the [getting started](/getting-started/) page for more information about using Jupyter notebooks.
+
+## Cite as
+
+To refer to the GLAM Workbench as a whole, use the following:
+
+{{ zenodo_citation() }}
+
+See individual sections for suggested citations.

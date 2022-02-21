@@ -1,2 +1,9 @@
 .DS_Store
 site
+*.pyc
+.cache
+*-old.html
+*-test.html
+*.code-workspace
+*.sqlite
+.env
