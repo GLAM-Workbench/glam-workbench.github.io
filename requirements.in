@@ -1,5 +1,5 @@
 mkdocs
-mkdocs-material @ git+https://github.com/squidfunk/mkdocs-material-insiders.git
+mkdocs-material
 mkdocs-macros-plugin
 pygithub
 mkdocs-redirects

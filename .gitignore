@@ -7,3 +7,5 @@ site
 *.code-workspace
 *.sqlite
 .env
+requirements-dev.*
+mkdocs.insiders.yml

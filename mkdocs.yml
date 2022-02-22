@@ -92,9 +92,6 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
-    - search:
-        separator: "[\\s\\-,:!=\\[\\]()\"/]+|\\.(?!\\d)|&[lg]t;|(?!\\b)(?=[A-Z][a-z])"
-        indexing: 'titles'  
     - macros:
         on_undefined: keep
     - redirects:
@@ -102,10 +99,6 @@ plugins:
             'trove_newspapers.md': 'trove-newspapers.md'
             'name-search.md': 'https://glam-name-indexes-yajhxrvxsa-ts.a.run.app/'
             supporters.md: get-involved/supporters.md
-    - tags:
-        tags_file: tags.md
-    - social
-    - privacy 
 
 nav:
     - Home: index.md
