@@ -5,7 +5,8 @@ zenodo_concept_id: 5603059
 
 # Welcome to the GLAM Workbench
 
-[**Winner of the British Library Labs Research Award 2020!**](/awards/#british-library-lab-awards-2020)
+!!! note ""
+    **:material-bullhorn-outline: The GLAM Workbench needs you! Find out how you can [get involved](get-involved/index.md).**
 
 Here you’ll find a collection of tools, tutorials, examples, and hacks to help you work with data from galleries, libraries, archives, and museums (the GLAM sector). The primary focus is Australia and New Zealand, but new collections are being added all the time. Let me know if there’s some GLAM data you’d like me to explore – [suggestions](/suggest-a-topic/) are always welcome!
 
