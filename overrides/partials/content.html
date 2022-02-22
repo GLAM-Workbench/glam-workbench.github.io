@@ -21,9 +21,14 @@
 -->
 
 <!-- Edit button -->
-{% if page.edit_url %}
+{% if page.meta and page.meta.edit_url %}
+{% set edit_url = page.meta.edit_url %}
+{% elif page.edit_url %}
+{% set edit_url = page.edit_url %}
+{% endif %}
+{% if edit_url %}
 <a
-  href="{{ page.edit_url }}"
+  href="{{ edit_url }}"
   title="{{ lang.t('edit.link.title') }}"
   class="md-content__button md-icon"
 >

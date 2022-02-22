@@ -8,7 +8,7 @@ site_url: 'https://glam-workbench.net/'
 #repo_name: 'squidfunk/mkdocs-material'
 repo_name: glam-workbench.github.io
 repo_url: 'https://github.com/GLAM-Workbench/glam-workbench.github.io'
-edit_uri: "docs/edit/master/docs/"
+edit_uri: "edit/master/docs/"
 
 # Copyright
 copyright: 'Original content copyright &copy; 2022 <a href="https://timsherratt.org">Tim Sherratt</a>.<br/> Unless otherwise noted this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.'
@@ -109,6 +109,8 @@ nav:
         - Get involved!:
             - get-involved/index.md
             - get-involved/supporters.md
+            - Add a link: get-involved/add-links.md
+            - Improve the documentation: get-involved/editing-documentation.md
             - Develop a new repository: get-involved/developing-repositories.md
     - Help:
         - getting-started.md
