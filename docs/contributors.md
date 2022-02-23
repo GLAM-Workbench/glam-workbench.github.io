@@ -8,6 +8,6 @@ If you'd like to join the club, see how you can [get involved](get-involved/inde
 
 {{ documentation_contributors() }}
 
-## Code
+## Code and content
 
 {{ code_contributors() }}
