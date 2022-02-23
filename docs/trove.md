@@ -39,6 +39,10 @@ Facets aggregate collection data in interesting and useful ways, allowing us to 
 *   [Trove API console](http://troveconsole.herokuapp.com/)
 *   [Introduction to using APIs](https://github.com/staplegun/using-apis)
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019, November 21). GLAM-Workbench/trove-api-intro (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549551>

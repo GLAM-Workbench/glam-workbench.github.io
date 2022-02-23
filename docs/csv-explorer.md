@@ -24,6 +24,10 @@ You can select one of more than 600 GLAM datasets [shared on government data por
 
 --8<-- "help.md"
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019, November 17). GLAM-Workbench/csv-explorer (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3544712>

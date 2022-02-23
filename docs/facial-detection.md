@@ -34,3 +34,7 @@ A little app that fades from faces to photos...
 ![Screen capture](images/focus_on_faces.gif)
 
 [![Binder](images/Use live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/facial-detection/master?urlpath=apps%2Ffocus-on-faces.ipynb)
+
+## Contributors
+
+{{ repo_contributors() }}

@@ -112,6 +112,10 @@ Assuming you have recent versions of Python and Git installed, the steps might b
 
 See the [Getting started](https://glam-workbench.net/getting-started/#using-python-on-your-own-computer) for more details.
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 {{ zenodo_citation() }}

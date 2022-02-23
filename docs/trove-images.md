@@ -16,3 +16,7 @@ Version 2.1 of the Trove API introduced a new rights index that you can use to l
 * [Download from GitHub](https://github.com/GLAM-Workbench/trove-images/blob/master/rights-statements-on-images.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-images/blob/master/rights-statements-on-images.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-images/master?filepath=rights-statements-on-images.ipynb)
+
+## Contributors
+
+{{ repo_contributors() }}

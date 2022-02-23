@@ -50,6 +50,10 @@ In this notebook we'll explore the spatial dimensions of the object data. Where 
 
 ![Map showing places where objects were created and collected](images/nma-places-objects.png)
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019, November 17). GLAM-Workbench/national-museum-australia (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3544747>

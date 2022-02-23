@@ -23,6 +23,10 @@ Some more examples of analysing text descriptions and topic tags.
 ### [Playing with places](https://github.com/GLAM-Workbench/ozglam-data-records-of-resistance/blob/master/Playing-with-places.ipynb)
 Cleaning and analysing place data created by students.
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019, November 21). GLAM-Workbench/ozglam-data-records-of-resistance (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549139>

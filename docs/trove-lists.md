@@ -68,6 +68,10 @@ Harvested: 10 July 2021
 
 [CSV file](https://github.com/GLAM-Workbench/trove-lists/blob/master/trove_tag_counts_20210710.csv) containing the total number of times each tag in Trove has been applied to resources.
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019, November 21). GLAM-Workbench/trove-lists (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549453>

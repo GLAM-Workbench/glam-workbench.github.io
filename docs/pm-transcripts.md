@@ -50,6 +50,10 @@ All of the harvested XML files are available from [this repository](https://gith
 * a single zip file for each prime minister containing all their XML transcripts;
 * a single text file for each prime minister containing the text extracted from all of their XML transcripts.
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019, November 21). GLAM-Workbench/pm-transcripts (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549588>

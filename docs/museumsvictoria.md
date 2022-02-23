@@ -47,3 +47,7 @@ In another notebook we discovered there are 2,883 Antechinus specimens in the Mu
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/museums-victoria/master?urlpath=lab%2Ftree%2Fmuseumvic-download-the-antechinuses.ipynb)
 
 ![Thumbnails of Antechinus photos](images/antechinus-images.png)
+
+## Contributors
+
+{{ repo_contributors() }}

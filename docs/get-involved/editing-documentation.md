@@ -40,3 +40,7 @@ If you're making major changes, such as adding a new section, you'll want to set
 Any changes to markdown files in the `docs` directory should trigger a rebuild and reload of the site. If you make changes to templates, or to the `mkdocs.yml` config file, you'll probably need to stop and restart the server. Once you've finished you can `git push` the changes back to your fork, and [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
 Note that the main site is built using [Material for MkDocs Insiders](https://squidfunk.github.io/mkdocs-material/insiders/) which is a private repository that can only be accessed through sponsorship. The instructions above will install the public version of [Material for MkDocs](https://github.com/squidfunk/mkdocs-material). The site will look and act much the same, but some extended features, such as search and tagging won't be available.
+
+## Contributors
+
+Contributors will be listed on the site's [contributors](../contributors.md) page.

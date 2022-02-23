@@ -127,6 +127,10 @@ You can use Docker to run a pre-built computing environment on your own computer
 
 See [Using Docker](https://glam-workbench.net/using-docker/) for more information.
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 {{ zenodo_citation() }}

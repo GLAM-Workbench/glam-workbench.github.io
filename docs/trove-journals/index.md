@@ -94,6 +94,10 @@ Using the notebook above I harvested parliamentary press releases that included 
 
 Using the notebook above I harvested parliamentary press releases that included any of the terms 'COVID' or 'coronavirus'. A total of 3,995 text files were harvested.
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 {{ zenodo_citation() }}

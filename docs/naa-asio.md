@@ -31,3 +31,7 @@ Summarise the data from a single series.
 To browse information about the harvested series start with the [summary of all harvested series notebook](https://nbviewer.jupyter.org/github/GLAM-Workbench/ozglam-workbench-naa-asio/blob/master/RecordSearch/Summary%20of%20all%20harvested%20series.ipynb). There you'll find a live version of the table below with links to individual series summaries and visualisations.
 
 [![Table of harvested series](images/naa-asio-series.png)](https://nbviewer.jupyter.org/github/GLAM-Workbench/ozglam-workbench-naa-asio/blob/master/RecordSearch/Summary%20of%20all%20harvested%20series.ipynb).
+
+## Contributors
+
+{{ repo_contributors() }}

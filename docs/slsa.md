@@ -20,3 +20,7 @@ The State Library of South Australia makes a fabulous collection of out of copyr
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/state-library-south-australia/master?filepath=Getting-higher-res-images.ipynb)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3549569.svg)](https://doi.org/10.5281/zenodo.3549569)
+
+## Contributors
+
+{{ repo_contributors() }}

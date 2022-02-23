@@ -17,3 +17,5 @@ If you haven't already, you'll need to [set up a free account](https://docs.gith
 
 When you click on the pencil icon, GitHub automatically creates a copy of the repository in your own account. Once you've finished making your changes it'll prompt you to create a pull request, to feed the changes back to the main GLAM Workbench repository. Each pull request is reviewed before the changes go live.
 
+Contributors will be listed at the bottom of each list and on the site's [contributors](../contributors.md) page.
+

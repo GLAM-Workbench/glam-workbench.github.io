@@ -34,6 +34,10 @@ Here's another way you can get a random work from Trove's book, article, picture
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-random/blob/master/random_work_by_facets.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-random/master?urlpath=lab/tree/random_work_by_facets.ipynb)
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019, November 21). GLAM-Workbench/trove-random (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549404>

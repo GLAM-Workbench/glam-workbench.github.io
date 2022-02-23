@@ -142,6 +142,39 @@ def define_env(env):
                     html += f'<li class="md-source__fact md-source__fact--forks">{forks}</li>'
         return html
 
+    @env.macro
+    def repo_contributors():
+        md = ''
+        g = Github(os.getenv("GITHUB_TOKEN"))
+        repo = g.get_repo(f'GLAM-Workbench/{env.page.meta.get("repo_name")}')
+        for user in repo.get_contributors():
+            if user.name:
+                md += f'* [{user.name}]({user.html_url})\n'
+        return md
+
+    @env.macro
+    def documentation_contributors():
+        md = ''
+        g = Github(os.getenv("GITHUB_TOKEN"))
+        repo = g.get_repo(f'GLAM-Workbench/{env.conf["repo_name"]}')
+        for user in repo.get_contributors():
+            if user.name:
+                md += f'* [{user.name}]({user.html_url})\n'
+        return md
+
+    @env.macro
+    def code_contributors():
+        users = []
+        g = Github(os.getenv("GITHUB_TOKEN"))
+        org = g.get_organization(f'GLAM-Workbench')
+        for repo in org.get_repos(type='public'):
+            if not repo.fork:
+                for user in repo.get_contributors():
+                    if user.name:
+                        users.append(f'* [{user.name}]({user.html_url})')
+        return ('\n').join(list(set(users)))
+
+
     # Code below modified from https://github.com/mercari/mkdocs-git-snippet
 
     def get_markdown_section(content: str, section: str) -> str:

@@ -39,6 +39,10 @@ This file includes the following columns:
 + `trove_url` – link to the metadata record in Trove
 + `width` – width in pixels
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019, November 21). GLAM-Workbench/trove-maps (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549427>

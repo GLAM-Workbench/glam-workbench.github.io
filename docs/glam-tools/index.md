@@ -69,3 +69,7 @@ See [Using Docker](https://glam-workbench.net/using-docker/) for more details.
 
 <!-- END RUN INFO -->
 
+## Contributors
+
+{{ repo_contributors() }}
+

@@ -32,6 +32,10 @@ To browse information about the harvested series start with the [summary of all 
 
 [![Table of harvested series](images/naa-wap-series.png)](https://nbviewer.jupyter.org/github/GLAM-Workbench/ozglam-workbench-naa-wap/blob/master/RecordSearch/Summary%20of%20all%20harvested%20series.ipynb).
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019). GLAM-Workbench/ozglam-workbench-naa-wap (Version v0.1.0) [Data set]. Zenodo. <http://doi.org/10.5281/zenodo.3549592>

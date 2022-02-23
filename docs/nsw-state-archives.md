@@ -122,6 +122,10 @@ This is a repository of data harvested from NSW State Archives online indexes. D
 | Teachers Rolls                                               | Not digitised   |            14867 | <a href="https://raw.githubusercontent.com/wragge/srnsw-indexes/master/data/teachers-rolls.csv">CSV file</a>                                               | <a href="https://www.records.nsw.gov.au/searchhits_nocopy?id=73&surname=%25&firstname=&remarks=">Browse index</a>                                                                                                                                       | <a href="https://www.records.nsw.gov.au/archives/collections-and-research/guides-and-indexes/school-teachers-rolls">More info</a>                                  |
 | Unemployed in Sydney 1866                                    | Fully digitised |             3222 | <a href="https://raw.githubusercontent.com/wragge/srnsw-indexes/master/data/unemployed-in-sydney-1866.csv">CSV file</a>                                    | <a href="https://www.records.nsw.gov.au/searchhits_nocopy?id=81&Surname=%25&Firstname=&Residence=&Occupation=">Browse index</a>                                                                                                                         | <a href="https://www.records.nsw.gov.au/archives/collections-and-research/guides-and-indexes/unemployed-sydney">More info</a>                                      |
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019, November 21). GLAM-Workbench/nsw-state-archives (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549129>

@@ -6,3 +6,7 @@ edit_url: https://github.com/GLAM-Workbench/glam-tools-interfaces/edit/main/READ
 ---
 
 {{ gitsnippet('GLAM-Workbench/glam-tools-interfaces', 'README.md', '# GLAM tools and interfaces') }}
+
+## Contributors
+
+{{ repo_contributors() }}

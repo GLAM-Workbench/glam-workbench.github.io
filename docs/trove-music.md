@@ -67,3 +67,7 @@ Any of the fields other than `work_id` and `version_id` might be empty, though i
 * `fulltext_url` – link to the page on the ABC website where you can find more information
 * `thumbnail_url` – link to a related thumbnail image on the ABC website
 * `notonline_url` – not sure...
+
+## Contributors
+
+{{ repo_contributors() }}

@@ -234,3 +234,7 @@ The `update_versions.sh` script helps you update various files so that you're re
 * Run the `update_versions.sh` script, supplying the tag of the new version. This will update `README.md` and `zenodo.json` with the new version details.
 * Push changes to GitHub as above.
 * Go to GitHub and create a new release, using the version name as the release name and the tag.
+
+## Contributors
+
+Contributors will be listed at the bottom of each section and on the site's [contributors](../contributors.md) page.

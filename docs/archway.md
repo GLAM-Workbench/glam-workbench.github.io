@@ -40,6 +40,10 @@ Archives New Zealand divides government activities up into 303 functions. Over t
 
 ![Screen capture](images/nz-agencies-function.gif)
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019, November 17). GLAM-Workbench/archway-harvesting (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3544700>

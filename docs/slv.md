@@ -29,3 +29,7 @@ IIIF (the International Image Interoperability Framework) has defined a set of s
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/state-library-victoria/master?urlpath=lab%2Ftree%2Fmore_fun_with_iiif.ipynb)
 
 ![Screenshot showing rotated image](images/slv-iiif-rotate.png)
+
+## Contributors
+
+{{ repo_contributors() }}

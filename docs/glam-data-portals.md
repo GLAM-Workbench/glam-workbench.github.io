@@ -139,6 +139,9 @@ Creative Commons Attribution No Derivative Works 4.0 International      1
 Custom (Other)                                                          1
 ```
 
+## Contributors
+
+{{ repo_contributors() }}
 
 ## Cite as
 

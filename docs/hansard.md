@@ -39,6 +39,9 @@ The harvesting process documented in the notebook above, extracts a list of sitt
 * `year`
 * `house` – 'hofreps' or 'senate'
 
+## Contributors
+
+{{ repo_contributors() }}
 
 ## Cite as
 

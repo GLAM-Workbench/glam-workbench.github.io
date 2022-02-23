@@ -6,3 +6,7 @@ edit_url: https://github.com/GLAM-Workbench/GLAM-jupyter-resources/edit/main/REA
 ---
 
 {{ gitsnippet('GLAM-Workbench/GLAM-jupyter-resources', 'README.md', '# GLAM Jupyter resources') }}
+
+## Contributors
+
+{{ repo_contributors() }}

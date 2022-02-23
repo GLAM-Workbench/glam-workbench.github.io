@@ -26,6 +26,10 @@ Using the 'Tensorflow for poets' example to create our own model.
 ### [Classifying all the Tribune images](https://nbviewer.jupyter.org/github/GLAM-Workbench/image-recognition/blob/master/Classifying-all-Tribune-images.ipynb)
 Using the simple model we created in the previous notebook, let's attempt to classify all the images in the Tribune collection.
 
+## Contributors
+
+{{ repo_contributors() }}
+
 ## Cite as
 
 Sherratt, Tim. (2019, November 21). GLAM-Workbench/image-recognition (Version v0.1.0). Zenodo. <http://doi.org/10.5281/zenodo.3549628>
