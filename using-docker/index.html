@@ -286,6 +286,10 @@
     
       
     
+      
+    
+      
+    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -708,6 +712,8 @@
         
           
         
+          
+        
       
       
         
@@ -786,6 +792,25 @@
   
   <span class="md-ellipsis">
     Improve the documentation
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get-involved/contribute-code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contribute code
   </span>
 
       </a>
@@ -929,6 +954,8 @@
       
       
       
+        
+          
         
           
         
@@ -1112,6 +1139,25 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using-python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Python on your own computer
+  </span>
+
+      </a>
     </li>
   
 
@@ -3596,12 +3642,12 @@
 <p>I'm still adding the necessary configuration files to all the GLAM Workbench repositories. If you don't see an option to use Docker, it means I haven't set that section up yet.</p>
 </div>
 <h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<p>The GLAM Workbench repositories are stored as pre-built 'Images' on <a href="https://hub.docker.com/u/glamworkbench">Docker Hub</a>. To download and run one of these images for the first time, you need to:</p>
+<p>The GLAM Workbench repositories are stored as pre-built 'Images' on <a href="https://quay.io/organization/glamworkbench">Quay.io</a>. To download and run one of these images for the first time, you need to:</p>
 <ul>
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker Desktop</a>.</li>
 <li>Create a new directory to contain your local files, and open it from the command line. This directory will be named <code>work</code> in the Jupyter interface.</li>
 <li>From the command line, run the following command, replacing <code>[REPOSITORY NAME]</code> with the name of a GLAM Workbench repository, for example, 'trove-newspapers':<br />
-  <div class="highlight"><pre><span></span><code>docker run -p 8888:8888 --name [REPOSITORY NAME] -v &quot;$PWD&quot;:/home/jovyan/work glamworkbench/[REPOSITORY NAME] repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token=&#39;&#39; --LabApp.default_url=&#39;/lab/tree/index.md&#39;
+  <div class="highlight"><pre><span></span><code>docker run -p 8888:8888 --name [REPOSITORY NAME] -v &quot;$PWD&quot;:/home/jovyan/work glamworkbench/[REPOSITORY NAME] repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token=&#39;&#39; --LabApp.default_url=&#39;/lab/tree/index.ipynb&#39;
 </code></pre></div></li>
 <li>It will take a while to download and configure the Docker image. Once it's ready you'll see a message saying that Jupyter Notebook is running.</li>
 <li>Point your web browser to <code>http://127.0.0.1:8888</code></li>
@@ -3616,7 +3662,7 @@
 <li><code>glamworkbench/[REPOSITORY NAME]</code> – This is the name of the image you want to install from Docker Hub.</li>
 <li><code>repo2docker-entrypoint jupyter lab --ip 0.0.0.0</code> – This is the command to start up Jupyter Lab. Setting the IP address to '0.0.0.0' ensures that the Jupyter server will be accessible from outside the container.</li>
 <li><code>--NotebookApp.token=''</code> – Because you're running Jupyter locally, there's no reason to secure it with a token or password. This just says that no token is needed.</li>
-<li><code>--LabApp.default_url='/lab/tree/index.md'</code> – This sets a default landing page for Jupyter Lab. You could change this to point to a specific notebook, or just leave it out.</li>
+<li><code>--LabApp.default_url='/lab/tree/index.ipynb'</code> – This sets a default landing page for Jupyter Lab. You could change this to point to a specific notebook, or just leave it out.</li>
 </ul>
 <h2 id="restarting-an-existing-container">Restarting an existing container<a class="headerlink" href="#restarting-an-existing-container" title="Permanent link">&para;</a></h2>
 <p>The first time you download and run a Docker image you use <code>docker run</code> as above. But if you try to restart the image with this command, you'll just end up creating another container! To restart an existing container:</p>
@@ -3669,7 +3715,7 @@
 <li>If there's an existing image, <code>docker run</code> won't download an update. So you first have to enter <code>docker pull [REPOSITORY NAME]</code> at the command line. This will download the latest image of the repository.</li>
 <li>Make sure you're in the the <code>work</code> directory you created for this repository, and then  use the <code>docker run</code> command as you did when you first downloaded the repository:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>docker run -p 8888:8888 --name [REPOSITORY NAME] -v &quot;$PWD&quot;:/home/jovyan/work glamworkbench/[REPOSITORY NAME] repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token=&#39;&#39; --LabApp.default_url=&#39;/lab/tree/index.md&#39;
+<div class="highlight"><pre><span></span><code>docker run -p 8888:8888 --name [REPOSITORY NAME] -v &quot;$PWD&quot;:/home/jovyan/work glamworkbench/[REPOSITORY NAME] repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token=&#39;&#39; --LabApp.default_url=&#39;/lab/tree/index.ipynb&#39;
 </code></pre></div>
 <h2 id="need-help">Need help?<a class="headerlink" href="#need-help" title="Permanent link">&para;</a></h2>
 <p>There's more details than you would ever want in the official <a href="https://docs.docker.com/">Docker docs</a>.</p>
@@ -3715,13 +3761,13 @@
       
       
         
-        <a href="../glam-data-list/" class="md-footer__link md-footer__link--next" aria-label="Next: Sources of Australian GLAM data" rel="next">
+        <a href="../using-python/" class="md-footer__link md-footer__link--next" aria-label="Next: Using Python on your own computer" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Sources of Australian GLAM data
+              Using Python on your own computer
             </div>
           </div>
           <div class="md-footer__button md-icon">
