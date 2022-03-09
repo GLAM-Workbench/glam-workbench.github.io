@@ -931,6 +931,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#set-up-authentication" class="md-nav__link">
+    Set up authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#complete-setup" class="md-nav__link">
     Complete setup
   </a>
@@ -3790,6 +3797,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#set-up-authentication" class="md-nav__link">
+    Set up authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#complete-setup" class="md-nav__link">
     Complete setup
   </a>
@@ -3994,6 +4008,23 @@
 <li>Enter a name for your new repository (see above) and click <strong>Create repository from template</strong>. If you've been made a member of the GLAM Workbench organisation, you should be able to create the repository within the GLAM Workbench by choosing it from the dropdown list. </li>
 <li>Head over to your newly-created repository to complete the setup.</li>
 </ol>
+<h3 id="set-up-authentication">Set up authentication<a class="headerlink" href="#set-up-authentication" title="Permanent link">&para;</a></h3>
+<p>In order to complete the process you'll need to create a personal access token and attach it to the new repository.</p>
+<ol>
+<li>From your GitHub account's dropdown menu (top right of screen) go to <strong>Settings</strong> &gt; <strong>Developer settings</strong> &gt; <strong>Personal access tokens</strong>.</li>
+<li>Click on the <strong>Generate new token</strong> button.</li>
+<li>In the 'Note' field, give your key a meaningful label like 'GW repo setup'.</li>
+<li>Check the box next to 'Workflow'.</li>
+<li>Click on the green <strong>Generate token</strong> buttom at the bottom of the screen.</li>
+<li>Your new token will be displayed – copy it!</li>
+<li>Go to the new repository you created above.</li>
+<li>From the repository's <strong>Settings</strong> menu, select <strong>Secrets</strong> &gt; <strong>Actions</strong>.</li>
+<li>Click on the <strong>New repository secret</strong> button.</li>
+<li>In the 'Name' field enter <code>REPO_SETUP_TOKEN</code>.</li>
+<li>In the 'Value' field paste your token from above.</li>
+<li>Click on the green <strong>Add secret</strong> button.</li>
+</ol>
+<p>That's it. The set up process will use the token, then delete the secret when it's finished.</p>
 <h3 id="complete-setup">Complete setup<a class="headerlink" href="#complete-setup" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In the new repository, click on the <code>cookiecutter.json</code> file to open it, then click on the pencil icon to start editing.</li>
