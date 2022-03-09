@@ -36,6 +36,10 @@ If something's missing from one of these lists, [please add it!](add-links.md)
 
 If you notice something that could be improved on this site, you can submit changes or additions. [See the documentation](editing-documentation.md) for more information.
 
+## Contribute code
+
+If you want to improve the GLAM Workbench's Jupyter notebooks, or add new notebooks to an existing repository, you can [contribute your own code](contribute-code.md).
+
 ## Develop a new repository
 
 If you're part of a GLAM organisation that wants to encourage people to explore their collection data, why not develop your very own section of the GLAM Workbench? There's a [repository template](https://github.com/GLAM-Workbench/glam-workbench-template) and some [detailed documentation](developing-repositories.md) to get you started.

@@ -9,13 +9,13 @@ You can use Docker to run a pre-built computing environment on your own computer
 
 ## Quick start
 
-The GLAM Workbench repositories are stored as pre-built 'Images' on [Docker Hub](https://hub.docker.com/u/glamworkbench). To download and run one of these images for the first time, you need to:
+The GLAM Workbench repositories are stored as pre-built 'Images' on [Quay.io](https://quay.io/organization/glamworkbench). To download and run one of these images for the first time, you need to:
 
 * Install [Docker Desktop](https://docs.docker.com/get-docker/).
 * Create a new directory to contain your local files, and open it from the command line. This directory will be named `work` in the Jupyter interface.
 * From the command line, run the following command, replacing `[REPOSITORY NAME]` with the name of a GLAM Workbench repository, for example, 'trove-newspapers':  
   ```
-  docker run -p 8888:8888 --name [REPOSITORY NAME] -v "$PWD":/home/jovyan/work glamworkbench/[REPOSITORY NAME] repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token='' --LabApp.default_url='/lab/tree/index.md'
+  docker run -p 8888:8888 --name [REPOSITORY NAME] -v "$PWD":/home/jovyan/work glamworkbench/[REPOSITORY NAME] repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token='' --LabApp.default_url='/lab/tree/index.ipynb'
   ```
 * It will take a while to download and configure the Docker image. Once it's ready you'll see a message saying that Jupyter Notebook is running.
 * Point your web browser to `http://127.0.0.1:8888`
@@ -31,7 +31,7 @@ In case you're wondering what all the options after the `docker run` command act
 * `glamworkbench/[REPOSITORY NAME]` – This is the name of the image you want to install from Docker Hub.
 * `repo2docker-entrypoint jupyter lab --ip 0.0.0.0` – This is the command to start up Jupyter Lab. Setting the IP address to '0.0.0.0' ensures that the Jupyter server will be accessible from outside the container.
 * `--NotebookApp.token=''` – Because you're running Jupyter locally, there's no reason to secure it with a token or password. This just says that no token is needed.
-* `--LabApp.default_url='/lab/tree/index.md'` – This sets a default landing page for Jupyter Lab. You could change this to point to a specific notebook, or just leave it out.
+* `--LabApp.default_url='/lab/tree/index.ipynb'` – This sets a default landing page for Jupyter Lab. You could change this to point to a specific notebook, or just leave it out.
 
 ## Restarting an existing container
 
@@ -90,7 +90,7 @@ When GLAM Workbench repositories are updated, a new Docker image is saved in Doc
 * Make sure you're in the the `work` directory you created for this repository, and then  use the `docker run` command as you did when you first downloaded the repository:
 
 ```
-docker run -p 8888:8888 --name [REPOSITORY NAME] -v "$PWD":/home/jovyan/work glamworkbench/[REPOSITORY NAME] repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token='' --LabApp.default_url='/lab/tree/index.md'
+docker run -p 8888:8888 --name [REPOSITORY NAME] -v "$PWD":/home/jovyan/work glamworkbench/[REPOSITORY NAME] repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token='' --LabApp.default_url='/lab/tree/index.ipynb'
 ```
 
 ## Need help?

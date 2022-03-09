@@ -31,10 +31,10 @@ If you're making major changes, such as adding a new section, you'll want to set
 * [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the repository.
 * [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the forked repository to your own computer.
 * Create and activate a Python virtual environment. I use [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) to create and manage Python versions and environments.
-* Move to the `site` directory: `cd glam-workbench.github.io/site`
-* Install `pip-tools`: `pip install pip tools`
-* Install requirements: `pip-sync`
-* Run the documentation site: `mkdocs serve`. The site will be available at http://127.0.0.1:8000/.
+* Move to the `site` directory: on the command line run `cd glam-workbench.github.io/site`
+* Install `pip-tools`: on the command line run `pip install pip tools`
+* Install requirements: on the command line run  `pip-sync`
+* Start the documentation site: on the command line run `mkdocs serve`. The site will be available at http://127.0.0.1:8000/.
 * Create or edit pages in the `docs` directory. See [MkDocs](https://www.mkdocs.org/) and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) documentation for more information.
 
 Any changes to markdown files in the `docs` directory should trigger a rebuild and reload of the site. If you make changes to templates, or to the `mkdocs.yml` config file, you'll probably need to stop and restart the server. Once you've finished you can `git push` the changes back to your fork, and [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).

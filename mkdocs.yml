@@ -106,11 +106,13 @@ nav:
         - about.md
         - Presentations: presentations.md
         - awards.md
+        - Citations: citations.md
         - Get involved!:
             - get-involved/index.md
             - get-involved/supporters.md
             - Add a link: get-involved/add-links.md
             - Improve the documentation: get-involved/editing-documentation.md
+            - Contribute code: get-involved/contribute-code.md
             - Develop a new repository: get-involved/developing-repositories.md
             - contributors.md
     - Help:
@@ -120,6 +122,7 @@ nav:
             - using-reclaim-cloud.md
             - using-nectar.md
             - using-docker.md
+            - using-python.md
         - Help videos: https://www.youtube.com/playlist?list=PLAclcciEeCD2z2BWQ2r3xD_Q8c05HppfP
         - Suggest a topic: https://github.com/GLAM-Workbench/glam-workbench.github.io/issues
         - Ask a question: https://ozglam.chat/c/glam-workbench/8
@@ -173,7 +176,11 @@ nav:
         - trove-lists.md
         - trove-maps.md
         - trove-music.md
-        - trove-images.md
+        - Trove images:
+            - trove-images/index.md
+            - Rights statements applied to images: trove-images/use-of-rights-statements.md
+            - CSV of rights applied to images: trove-images/csv-image-rights-by-institution.md
+            - CSV of rights applied to out-of-copyright photos: trove-images/csv-out-of-copyright-photos-rights-by-institution.md
         - trove-unpublished.md
         - trove-random.md
     - digitalnz.md

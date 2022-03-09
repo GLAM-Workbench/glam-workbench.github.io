@@ -88,6 +88,8 @@ When you open a Jupyter notebook in GitHub, it tries to display a nicely formatt
 
 [Binder](https://mybinder.org/), as mentioned above, is a cloud-based service for running Jupyter notebooks. When you click on the link, Binder opens the notebook within a customised computing environment with all the software you'll need ready to go. This can take a little while — just be patient. Once Binder is ready, you'll be able to use the notebook live within your web browser. However, if you make any changes or harvest any data, Binder won't save them for you. You'll have to make sure you download any files you want to keep. In many cases the notebooks themselves will generate download links to make it easy for you to save your results. Binder sessions will also stop responding after after a period of inactivity — just start a new session.
 
+There's more information on the [Using Binder](/using-binder.md) page.
+
 ### Running notebooks as apps
 
 You might also come across links that open notebooks using [Appmode](https://github.com/oschuett/appmode) or [Voilà](https://voila.readthedocs.io/en/stable/). These are live versions that hide the notebook's code and run all the cells automatically. This means you can make a notebook available with a nice clean interface for those who might be a little intimidated by a page full of code.
@@ -100,64 +102,9 @@ You might first click on the [NBViewer link](https://nbviewer.jupyter.org/github
 
 ## More ways to run notebooks
 
-The links to Binder help you get up and running quickly. One click and you're working live with a Jupyter notebook. I often use the Binder links to run notebooks, even though I have all the code on my own machine – it's just so easy. But Binder has limits. If you're doing sustained work using one of the repositories in the GLAM Workbench, you might want to create a persistent environment that saves what you do, as you do it. There are a number of ways of setting that up. They're listed here from easiest to most complicated (ie requiring more technical knowledge).
+The links to Binder help you get up and running quickly. One click and you're working live with a Jupyter notebook. I often use the Binder links to run notebooks, even though I have all the code on my own machine – it's just so easy. But Binder has limits. If you're doing sustained work using one of the repositories in the GLAM Workbench, you might want to create a persistent environment that saves what you do, as you do it. There are a number of ways of setting that up.
 
-### Using Reclaim Cloud
-
-Reclaim Cloud is a paid hosting service, aimed particularly at supporting digital scholarship in hte humanities. Unlike Binder, the environments you create on Reclaim Cloud will save your data – even if you switch them off! To run this repository on Reclaim Cloud for the first time:
-
-* Create a Reclaim Cloud account and log in.
-* Click on the button above to start the installation process.
-* A dialogue box will ask you to set a password, this is used to limit access to your Jupyter installation.
-* Sit back and wait for the installation to complete!
-* Once the installation is finished click on the 'Open in Browser' button of your newly created environment (note that you might need to wait a few minutes before everything is ready).
-
-There's more information on the [Using Reclaim Cloud](/reclaim-cloud/) page.
-
-
-### Using Docker
-
-The GLAM Workbench repositories are stored as pre-built 'Images' on [Docker Hub](https://hub.docker.com/u/glamworkbench). To download and run one of these images for the first time, you need to:
-
-* Install [Docker Desktop](https://docs.docker.com/get-docker/).
-* Create a new directory to contain your local files, and open it from the command line. This directory will be named `work` in the Jupyter interface.
-* From the command line, run the following command, replacing `[REPOSITORY NAME]` with the name of a GLAM Workbench repository, for example, 'trove-newspapers':  
-  ```
-  docker run -p 8888:8888 --name [REPOSITORY NAME] -v "$PWD":/home/jovyan/work glamworkbench/[REPOSITORY NAME] repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token='' --LabApp.default_url='/lab/tree/index.md'
-  ```
-* It will take a while to download and configure the Docker image. Once it's ready you'll see a message saying that Jupyter Notebook is running.
-* Point your web browser to `http://127.0.0.1:8888`
-* To stop the container hit ++ctrl+c++
-
-There's more information on the [Using Docker](/using-docker/) page.
-
-### Using Python on your own computer
-
-It's best to keep your GLAM Workbench repositories in separate virtual environments. This means you can install the software versions that you need without upsetting anything else. For example, if you wanted to set up your own version of the [Trove newspapers](https://glam-workbench.github.io/trove-newspapers/) repository, you'd start by creating a new virtual environment.
-
-``` shell
-python3 -m venv trove-newspapers
-cd trove-newspapers
-source bin/activate
-```
-
-You can then clone the GitHub repository into your virtual environment.
-
-``` shell
-git clone https://github.com/GLAM-Workbench/trove-newspapers.git
-```
-
-!!! tip "Finding the clone url"
-
-    To get the url you need to `clone` one of the GLAM Workbench's GitHub repositories, just do the following:
-
-    * Go to the section of the GLAM Workbench you want to clone.
-    * Click on the repository link in the top menu bar (look for the Octocat! <svg viewBox="0 0 24 24" width="20" height="20"><use xlink:href="#__github" width="24" height="24"></use></svg>)
-    * Click on the green **Clone or download** button and copy the link.
-
-Each repository in the GLAM Workbench contains a `requirements.txt` file that lists all of the Python packages needed to run the notebooks. Use `cd` to move into the cloned folder and then use `pip` to install everything you need.
-
-``` shell
-cd trove-newspapers
-pip install -r requirements.txt
-```
+* [Using Reclaim Cloud](using-reclaim-cloud.md)
+* [Using Nectar Cloud](using-nectar.md)
+* [Using Docker](using-docker.md)
+* [Using Python on your own computer](using-python.md)
