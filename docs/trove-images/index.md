@@ -2,9 +2,11 @@
 title: Trove images
 repo_url: https://github.com/GLAM-Workbench/trove-images
 repo_name: trove-images
+zenodo_concept_id: 6339873
 ---
 
 {{ git_latest_tag() }}
+
 
 Trove's 'picture' zone includes photographs, posters, artworks, and artefacts. You can access metadata from the 'picture' zone through the Trove API.
 

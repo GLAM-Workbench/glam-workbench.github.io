@@ -29,7 +29,26 @@ Before you go any further, it's a good idea to think about what your new reposit
 2. Enter a name for your new repository (see above) and click **Create repository from template**. If you've been made a member of the GLAM Workbench organisation, you should be able to create the repository within the GLAM Workbench by choosing it from the dropdown list. 
 3. Head over to your newly-created repository to complete the setup.
 
-### Complete setup
+### Configure authentication
+
+In order to complete the setup process you'll need to create a personal access token and attach it to the new repository.
+
+1. From your GitHub account's dropdown menu (top right of screen) go to **Settings** > **Developer settings** > **Personal access tokens**.
+2. Click on the **Generate new token** button.
+3. In the 'Note' field, give your key a meaningful label like 'GW repo setup'.
+4. Check the box next to 'Workflow'.
+5. Click on the green **Generate token** buttom at the bottom of the screen.
+6. Your new token will be displayed – copy it!
+7. Go to the new repository you created above.
+8. From the repository's **Settings** menu, select **Secrets** > **Actions**.
+9. Click on the **New repository secret** button.
+10. In the 'Name' field enter `REPO_SETUP_TOKEN`.
+11. In the 'Value' field paste your token from above.
+12. Click on the green **Add secret** button.
+
+That's it. The set up process will use the token, then delete the secret when it's finished.
+
+### Complete repository setup
 
 1. In the new repository, click on the `cookiecutter.json` file to open it, then click on the pencil icon to start editing.
 2. Add the necessary configuration settings (see below) to `cookiecutter.json`.
