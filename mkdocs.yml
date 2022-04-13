@@ -204,27 +204,27 @@ nav:
         - slv.md
         - lac.md
     - Web archives:
-        - webarchives/index.md
-        - webarchives/timegates-timemaps-mementos.md
-        - webarchives/exploring-ia-cdx-api.md
-        - webarchives/comparing-cdx-apis.md
-        - webarchives/timemaps-vs-cdx.md
-        - Get a Memento: webarchives/get-memento.md
-        - Find all versions of a web page: webarchives/get-all-versions.md
-        - Harvest text from web pages: webarchives/harvesting-text.md
-        - Harvest data about a domain: webarchives/harvesting-domain-data.md
-        - Explore Powerpoints from a domain: webarchives/exploring-powerpoints.md
-        - Explore all subdomains from gov.au: webarchives/exploring-govau-subdomains.md
-        - Compare versions of a page: webarchives/compare-page-versions.md
-        - Observe change in a page over time: webarchives/observing-change-over-time.md
-        - Create full-page screenshots: webarchives/create-screenshots.md
-        - Create a series of screenshots: webarchives/create-screenshots-over-time.md
-        - Display changes in page text: webarchives/display-changes-in-text.md
-        - Find when text appears: webarchives/find-when-text-appears.md
-        - Harvest of subdomains under gov.au: webarchives/harvest-of-govau-subdomains.md
-        - Unique gov.au subdomains split into parts: webarchives/govau-subdomains-split.md
-        - List of unique gov.au subdomains: webarchives/govau-subdomains-surt.md
-        - Visualisations of gov.au subdomains: webarchives/govau-subdomains-visualisations.md
+        - web-archives/index.md
+        - web-archives/timegates-timemaps-mementos.md
+        - web-archives/exploring-ia-cdx-api.md
+        - web-archives/comparing-cdx-apis.md
+        - web-archives/timemaps-vs-cdx.md
+        - Get a Memento: web-archives/get-memento.md
+        - Find all versions of a web page: web-archives/get-all-versions.md
+        - Harvest text from web pages: web-archives/harvesting-text.md
+        - Harvest data about a domain: web-archives/harvesting-domain-data.md
+        - Explore Powerpoints from a domain: web-archives/exploring-powerpoints.md
+        - Explore all subdomains from gov.au: web-archives/exploring-govau-subdomains.md
+        - Compare versions of a page: web-archives/compare-page-versions.md
+        - Observe change in a page over time: web-archives/observing-change-over-time.md
+        - Create full-page screenshots: web-archives/create-screenshots.md
+        - Create a series of screenshots: web-archives/create-screenshots-over-time.md
+        - Display changes in page text: web-archives/display-changes-in-text.md
+        - Find when text appears: web-archives/find-when-text-appears.md
+        - Harvest of subdomains under gov.au: web-archives/harvest-of-govau-subdomains.md
+        - Unique gov.au subdomains split into parts: web-archives/govau-subdomains-split.md
+        - List of unique gov.au subdomains: web-archives/govau-subdomains-surt.md
+        - Visualisations of gov.au subdomains: web-archives/govau-subdomains-visualisations.md
     - Museums:
         - nma.md
         - tepapa.md
