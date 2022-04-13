@@ -18,7 +18,7 @@ To make it easy to create a repository with all the necessary bibs and bobs, I'v
 
 Before you go any further, it's a good idea to think about what your new repository will be called. In general, I've named repositories after GLAM collections. In the instructions below you'll be asked for:
 
-* a GitHub repository name – all lower case, with hyphens instead of spaces, eg: 'trove-newspapers'
+* a GitHub repository name – all lowercase or numeric, with hyphens or underscores instead of spaces (a requirement for [Docker](https://docs.docker.com/docker-hub/repos/#creating-repositories)), eg: 'trove-newspapers'
 * a project name – the human-friendly version, used in headings, eg: 'Trove newspapers'
 
 ### Create the repository
