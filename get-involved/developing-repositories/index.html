@@ -4548,6 +4548,10 @@
 <li>The 'Setup Repository Action' will be triggered to complete the configuration of your repository. Click on the 'Actions' tab to see what's happening.</li>
 <li>Once the action completes, you're ready to go!</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Completing the repository setup will also fire the 'Docker push' action. This runs any time you merge new changes into the repository. However, until you <a href="#configuring-the-github-repository-for-integration-with-quayio">add your Quay.io configuration</a>, this action will fail. Don't worry about it! It doesn't do any damage, and there's no point building a Docker image until you've added your own notebooks anyway. The 'Docker push' action will also create an <code>index.ipynb</code> notebook in the repository. This is automatically generated from the <code>README.md</code> file, so you can just ignore it.</p>
+</div>
 <p>This template is based on @stefanbuck's <a href="https://github.com/stefanbuck/cookiecutter-template">cookiecutter-template</a>.</p>
 <h3 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">&para;</a></h3>
 <p>There's a few values that you need to set in <code>cookiecutter.json</code>.</p>
@@ -4577,6 +4581,7 @@
 <li><code>.pre-commit-config.yaml</code> – configuration for development environment</li>
 <li><code>list_imports.py</code> – development utility script (see below for usage)</li>
 <li><code>test_and_lint.sh</code> – development utility script (see below for usage)</li>
+<li><code>index.ipynb</code> – if the 'Docker push' action has run (see the note above) this file will have been automatically generated from the <code>README.md</code> file. You don't need to edit this file. It will be automatically updated when you push changes to the repository. Edit the <code>README.md</code> file instead.</li>
 </ul>
 <h2 id="setting-up-your-local-environment">Setting up your local environment<a class="headerlink" href="#setting-up-your-local-environment" title="Permanent link">&para;</a></h2>
 <p>You've created a brand new GLAM Workbench repository on GitHub, but to start adding notebooks you need to set up a local development environment on your computer.</p>
