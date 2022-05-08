@@ -56,6 +56,10 @@ That's it. The set up process will use the token, then delete the secret when it
 4. The 'Setup Repository Action' will be triggered to complete the configuration of your repository. Click on the 'Actions' tab to see what's happening.
 5. Once the action completes, you're ready to go!
 
+!!! note
+
+    Completing the repository setup will also fire the 'Docker push' action. This runs any time you merge new changes into the repository. However, until you [add Quay.io configuration details](#configuring-the-github-repository-for-integration-with-quayio), this action will fail. Don't worry about it! It doesn't do any damage, and there's no point building a Docker image until you've added your own notebooks anyway. The 'Docker push' action will also create an `index.ipynb` notebook in the repository. This is automatically generated from the `README.md` file, so you can just ignore it.
+
 This template is based on @stefanbuck's [cookiecutter-template](https://github.com/stefanbuck/cookiecutter-template).
 
 ### Configuration settings
@@ -89,6 +93,7 @@ Your new repository will contain the following files, updated by `cookiecutter` 
 * `.pre-commit-config.yaml` – configuration for development environment
 * `list_imports.py` – development utility script (see below for usage)
 * `test_and_lint.sh` – development utility script (see below for usage)
+* `index.ipynb` – if the 'Docker push' action has run (see the note above) this file will have been automatically generated from the `README.md` file. You don't need to edit this file. It will be automatically updated when you push changes to the repository. Edit the `README.md` file instead.
 
 ## Setting up your local environment
 
