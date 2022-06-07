@@ -6,30 +6,30 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums">
+        <meta name="description" content="This notebook provides an introduction to the Victorian Heritage Database API.">
       
       
         <meta name="author" content="Tim Sherratt">
       
       
-        <link rel="canonical" href="https://glam-workbench.net/trove-unpublished/">
+        <link rel="canonical" href="https://glam-workbench.net/heritage-council-victoria/introduction-victorian-heritage-api/">
       
       
         
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1+insiders-4.9.1">
     
     
       
-        <title>Trove unpublished - GLAM Workbench</title>
+        <title>Introduction to the Victorian Heritage Database API - GLAM Workbench</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.a3608ae2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a3608ae2.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -43,14 +43,14 @@
       
         
         
-        <link rel="stylesheet" href="../assets/externals/fonts.googleapis.com/css.css">
+        <link rel="stylesheet" href="../../assets/externals/fonts.googleapis.com/css.css">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,11 +59,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Trove unpublished - GLAM Workbench" >
+        <meta  property="og:title"  content="Introduction to the Victorian Heritage Database API - GLAM Workbench" >
       
-        <meta  property="og:description"  content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" >
+        <meta  property="og:description"  content="This notebook provides an introduction to the Victorian Heritage Database API." >
       
-        <meta  property="og:image"  content="https://glam-workbench.net/assets/images/social/trove-unpublished.png" >
+        <meta  property="og:image"  content="https://glam-workbench.net/assets/images/social/heritage-council-victoria/introduction-victorian-heritage-api.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +71,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://glam-workbench.net/trove-unpublished/" >
+        <meta  property="og:url"  content="https://glam-workbench.net/heritage-council-victoria/introduction-victorian-heritage-api/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Trove unpublished - GLAM Workbench" >
+        <meta  name="twitter:title"  content="Introduction to the Victorian Heritage Database API - GLAM Workbench" >
       
-        <meta  name="twitter:description"  content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" >
+        <meta  name="twitter:description"  content="This notebook provides an introduction to the Victorian Heritage Database API." >
       
-        <meta  name="twitter:image"  content="https://glam-workbench.net/assets/images/social/trove-unpublished.png" >
+        <meta  name="twitter:image"  content="https://glam-workbench.net/assets/images/social/heritage-council-victoria/introduction-victorian-heritage-api.png" >
       
     
     
@@ -349,7 +349,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#trove-unpublished-works" class="md-skip">
+        <a href="#other-options" class="md-skip">
           Skip to content
         </a>
       
@@ -363,7 +363,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="GLAM Workbench" class="md-header__button md-logo" aria-label="GLAM Workbench" data-md-component="logo">
+    <a href="../.." title="GLAM Workbench" class="md-header__button md-logo" aria-label="GLAM Workbench" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.78 15.3 6 6 2.11-2.16-6-6-2.11 2.16m3.72-5.2c-.39 0-.81-.05-1.14-.19L4.97 21.25l-2.11-2.11 7.41-7.4L8.5 9.96l-.72.7-1.45-1.41v2.86l-.7.7-3.52-3.56.7-.7h2.81l-1.4-1.41 3.56-3.56a2.976 2.976 0 0 1 4.22 0L9.89 5.74l1.41 1.4-.71.71 1.79 1.78 1.82-1.88c-.14-.33-.2-.75-.2-1.12a3.49 3.49 0 0 1 3.5-3.52c.59 0 1.11.14 1.58.42L16.41 6.2l1.5 1.5 2.67-2.67c.28.47.42.97.42 1.6 0 1.92-1.55 3.47-3.5 3.47z"/></svg>
@@ -382,7 +382,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Trove unpublished
+              Introduction to the Victorian Heritage Database API
             
           </span>
         </div>
@@ -470,7 +470,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/trove-unpublished" title="Go to repository"
+<a href="https://github.com/GLAM-Workbench/heritage-council-victoria" title="Go to repository"
   class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
@@ -479,9 +479,9 @@
   </div>
 
 <div class="md-source__repository">
-  trove-unpublished
+  heritage-council-victoria
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v0.1.0</li>
+  
 </ul>
 </div>
 </a>
@@ -502,6 +502,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -593,7 +595,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/trove-unpublished" title="Go to repository"
+<a href="https://github.com/GLAM-Workbench/heritage-council-victoria" title="Go to repository"
   class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
@@ -602,9 +604,9 @@
   </div>
 
 <div class="md-source__repository">
-  trove-unpublished
+  heritage-council-victoria
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v0.1.0</li>
+  
 </ul>
 </div>
 </a>
@@ -623,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -687,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -706,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../presentations/" class="md-nav__link">
+      <a href="../../presentations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -725,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../awards/" class="md-nav__link">
+      <a href="../../awards/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -744,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../citations/" class="md-nav__link">
+      <a href="../../citations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -792,7 +794,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../get-involved/" class="md-nav__link ">
+          <a href="../../get-involved/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -822,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get-involved/supporters/" class="md-nav__link">
+      <a href="../../get-involved/supporters/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -841,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get-involved/add-links/" class="md-nav__link">
+      <a href="../../get-involved/add-links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -860,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get-involved/editing-documentation/" class="md-nav__link">
+      <a href="../../get-involved/editing-documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -879,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get-involved/contribute-code/" class="md-nav__link">
+      <a href="../../get-involved/contribute-code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -898,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get-involved/developing-repositories/" class="md-nav__link">
+      <a href="../../get-involved/developing-repositories/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -917,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contributors/" class="md-nav__link">
+      <a href="../../contributors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -997,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1059,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-binder/" class="md-nav__link">
+      <a href="../../using-binder/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1078,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-reclaim-cloud/" class="md-nav__link">
+      <a href="../../using-reclaim-cloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1097,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-nectar/" class="md-nav__link">
+      <a href="../../using-nectar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1116,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-docker/" class="md-nav__link">
+      <a href="../../using-docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1135,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-python/" class="md-nav__link">
+      <a href="../../using-python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1322,7 +1324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-data-list/" class="md-nav__link">
+      <a href="../../glam-data-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1378,7 +1380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-data-portals/" class="md-nav__link">
+      <a href="../../glam-data-portals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1397,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-datasets-from-gov-portals/" class="md-nav__link">
+      <a href="../../glam-datasets-from-gov-portals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1423,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../csv-explorer/" class="md-nav__link">
+      <a href="../../csv-explorer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1442,7 +1444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../name-search/" class="md-nav__link">
+      <a href="../../name-search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1475,14 +1477,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
       
       
       
@@ -1534,7 +1534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove/" class="md-nav__link">
+      <a href="../../trove/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1553,7 +1553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-newspapers/" class="md-nav__link">
+      <a href="../../trove-newspapers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1599,7 +1599,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../trove-harvester/" class="md-nav__link ">
+          <a href="../../trove-harvester/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -1629,7 +1629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-harvester/harvester-web-app/" class="md-nav__link">
+      <a href="../../trove-harvester/harvester-web-app/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1648,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-harvester/using-troveharvester/" class="md-nav__link">
+      <a href="../../trove-harvester/using-troveharvester/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1667,7 +1667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-harvester/display-harvest-results-in-datasette/" class="md-nav__link">
+      <a href="../../trove-harvester/display-harvest-results-in-datasette/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1686,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-harvester/exploring-troveharvester-data/" class="md-nav__link">
+      <a href="../../trove-harvester/exploring-troveharvester-data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1705,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-harvester/exploring-troveharvester-text/" class="md-nav__link">
+      <a href="../../trove-harvester/exploring-troveharvester-text/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1770,7 +1770,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../trove-books/" class="md-nav__link ">
+          <a href="../../trove-books/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -1800,7 +1800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/harvesting-text-of-digitised-books/" class="md-nav__link">
+      <a href="../../trove-books/harvesting-text-of-digitised-books/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1819,7 +1819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/metadata-for-digital-works/" class="md-nav__link">
+      <a href="../../trove-books/metadata-for-digital-works/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1838,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/harvesting-text-from-books-in-ia/" class="md-nav__link">
+      <a href="../../trove-books/harvesting-text-from-books-in-ia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1857,7 +1857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/counting-words-and-phrases/" class="md-nav__link">
+      <a href="../../trove-books/counting-words-and-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1876,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/recipe-generator/" class="md-nav__link">
+      <a href="../../trove-books/recipe-generator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1895,7 +1895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/exploring-digitised-books-adel-rahmani/" class="md-nav__link">
+      <a href="../../trove-books/exploring-digitised-books-adel-rahmani/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1914,7 +1914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/ocrd-text-from-trove-books/" class="md-nav__link">
+      <a href="../../trove-books/ocrd-text-from-trove-books/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1933,7 +1933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/csv-books-in-digital-form/" class="md-nav__link">
+      <a href="../../trove-books/csv-books-in-digital-form/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1952,7 +1952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/government-publications-in-digital-form/" class="md-nav__link">
+      <a href="../../trove-books/government-publications-in-digital-form/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1971,7 +1971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/ocrd-text-from-ia/" class="md-nav__link">
+      <a href="../../trove-books/ocrd-text-from-ia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1990,7 +1990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/csv-australian-books-in-ia/" class="md-nav__link">
+      <a href="../../trove-books/csv-australian-books-in-ia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2059,7 +2059,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../trove-journals/" class="md-nav__link ">
+          <a href="../../trove-journals/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -2089,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/create-list-digitised-journals/" class="md-nav__link">
+      <a href="../../trove-journals/create-list-digitised-journals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2108,7 +2108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/get-ocrd-text-from-digitised-journal/" class="md-nav__link">
+      <a href="../../trove-journals/get-ocrd-text-from-digitised-journal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2127,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/get-ocrd-text-from-all-journals/" class="md-nav__link">
+      <a href="../../trove-journals/get-ocrd-text-from-all-journals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2146,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/get-covers-from-digitised-journal/" class="md-nav__link">
+      <a href="../../trove-journals/get-covers-from-digitised-journal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2165,7 +2165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/finding-editorial-cartoons-in-bulletin/" class="md-nav__link">
+      <a href="../../trove-journals/finding-editorial-cartoons-in-bulletin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2184,7 +2184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/harvest-parliament-press-releases/" class="md-nav__link">
+      <a href="../../trove-journals/harvest-parliament-press-releases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2203,7 +2203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/topic-modelling-parliament-press-releases/" class="md-nav__link">
+      <a href="../../trove-journals/topic-modelling-parliament-press-releases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2222,7 +2222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/csv-digital-journals/" class="md-nav__link">
+      <a href="../../trove-journals/csv-digital-journals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2241,7 +2241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/csv-journals-with-ocr/" class="md-nav__link">
+      <a href="../../trove-journals/csv-journals-with-ocr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2260,7 +2260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/ocrd-text-all-journals/" class="md-nav__link">
+      <a href="../../trove-journals/ocrd-text-all-journals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2279,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/bulletin-cartoons-collection/" class="md-nav__link">
+      <a href="../../trove-journals/bulletin-cartoons-collection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2298,7 +2298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/politicans-press-releases-refugees/" class="md-nav__link">
+      <a href="../../trove-journals/politicans-press-releases-refugees/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2317,7 +2317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/politicans-press-releases-covid/" class="md-nav__link">
+      <a href="../../trove-journals/politicans-press-releases-covid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2343,7 +2343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-lists/" class="md-nav__link">
+      <a href="../../trove-lists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2362,7 +2362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-maps/" class="md-nav__link">
+      <a href="../../trove-maps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2381,7 +2381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-music/" class="md-nav__link">
+      <a href="../../trove-music/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2423,7 +2423,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../trove-images/" class="md-nav__link ">
+          <a href="../../trove-images/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -2453,7 +2453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-images/use-of-rights-statements/" class="md-nav__link">
+      <a href="../../trove-images/use-of-rights-statements/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2472,7 +2472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-images/csv-image-rights-by-institution/" class="md-nav__link">
+      <a href="../../trove-images/csv-image-rights-by-institution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2491,7 +2491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-images/csv-out-of-copyright-photos-rights-by-institution/" class="md-nav__link">
+      <a href="../../trove-images/csv-out-of-copyright-photos-rights-by-institution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2515,28 +2515,9 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Trove unpublished
-  </span>
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../trove-unpublished/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2544,87 +2525,6 @@
   </span>
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tips-tools-and-examples" class="md-nav__link">
-    Tips, tools, and examples
-  </a>
-  
-    <nav class="md-nav" aria-label="Tips, tools, and examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#finding-unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019" class="md-nav__link">
-    Finding unpublished works that might be entering the public domain on 1 January 2019
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exploring-unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019" class="md-nav__link">
-    Exploring unpublished works that might be entering the public domain on 1 January 2019
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data" class="md-nav__link">
-    Data
-  </a>
-  
-    <nav class="md-nav" aria-label="Data">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019" class="md-nav__link">
-    Unpublished works that might be entering the public domain on 1 January 2019
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contributors" class="md-nav__link">
-    Contributors
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cite-as" class="md-nav__link">
-    Cite as
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2636,7 +2536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-random/" class="md-nav__link">
+      <a href="../../trove-random/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2664,7 +2564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../digitalnz/" class="md-nav__link">
+      <a href="../../digitalnz/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2728,7 +2628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../anu-archives/" class="md-nav__link">
+      <a href="../../anu-archives/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2786,7 +2686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recordsearch/" class="md-nav__link">
+      <a href="../../recordsearch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2805,7 +2705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../naa-wap/" class="md-nav__link">
+      <a href="../../naa-wap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2824,7 +2724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../naa-asio/" class="md-nav__link">
+      <a href="../../naa-asio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2850,7 +2750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nsw-state-archives/" class="md-nav__link">
+      <a href="../../nsw-state-archives/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2904,7 +2804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archway/" class="md-nav__link">
+      <a href="../../archway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2930,7 +2830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qsa/" class="md-nav__link">
+      <a href="../../qsa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2956,12 +2856,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
       
       
       
@@ -2991,12 +2893,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8_1" type="checkbox" id="nav-8_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8_1" type="checkbox" id="nav-8_1" checked>
       
       
       
@@ -3012,7 +2916,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../heritage-council-victoria/" class="md-nav__link ">
+          <a href="../" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -3040,9 +2944,26 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../heritage-council-victoria/introduction-victorian-heritage-api/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction to the Victorian Heritage Database API
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -3050,6 +2971,45 @@
   </span>
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#other-options" class="md-nav__link">
+    Other options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-documentation" class="md-nav__link">
+    Additional documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    Getting help
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3192,7 +3152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../records-of-resistance/" class="md-nav__link">
+      <a href="../../records-of-resistance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3211,7 +3171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../facial-detection/" class="md-nav__link">
+      <a href="../../facial-detection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3230,7 +3190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../image-tagging/" class="md-nav__link">
+      <a href="../../image-tagging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3263,7 +3223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slsa/" class="md-nav__link">
+      <a href="../../slsa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3282,7 +3242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slv/" class="md-nav__link">
+      <a href="../../slv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3301,7 +3261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lac/" class="md-nav__link">
+      <a href="../../lac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3386,7 +3346,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../web-archives/" class="md-nav__link ">
+          <a href="../../web-archives/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -3416,7 +3376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/timegates-timemaps-mementos/" class="md-nav__link">
+      <a href="../../web-archives/timegates-timemaps-mementos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3435,7 +3395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/exploring-ia-cdx-api/" class="md-nav__link">
+      <a href="../../web-archives/exploring-ia-cdx-api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3454,7 +3414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/comparing-cdx-apis/" class="md-nav__link">
+      <a href="../../web-archives/comparing-cdx-apis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3473,7 +3433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/timemaps-vs-cdx/" class="md-nav__link">
+      <a href="../../web-archives/timemaps-vs-cdx/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3492,7 +3452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/get-memento/" class="md-nav__link">
+      <a href="../../web-archives/get-memento/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3511,7 +3471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/get-all-versions/" class="md-nav__link">
+      <a href="../../web-archives/get-all-versions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3530,7 +3490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/harvesting-text/" class="md-nav__link">
+      <a href="../../web-archives/harvesting-text/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3549,7 +3509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/harvesting-domain-data/" class="md-nav__link">
+      <a href="../../web-archives/harvesting-domain-data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3568,7 +3528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/exploring-powerpoints/" class="md-nav__link">
+      <a href="../../web-archives/exploring-powerpoints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3587,7 +3547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/exploring-govau-subdomains/" class="md-nav__link">
+      <a href="../../web-archives/exploring-govau-subdomains/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3606,7 +3566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/compare-page-versions/" class="md-nav__link">
+      <a href="../../web-archives/compare-page-versions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3625,7 +3585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/observing-change-over-time/" class="md-nav__link">
+      <a href="../../web-archives/observing-change-over-time/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3644,7 +3604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/create-screenshots/" class="md-nav__link">
+      <a href="../../web-archives/create-screenshots/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3663,7 +3623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/create-screenshots-over-time/" class="md-nav__link">
+      <a href="../../web-archives/create-screenshots-over-time/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3682,7 +3642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/display-changes-in-text/" class="md-nav__link">
+      <a href="../../web-archives/display-changes-in-text/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3701,7 +3661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/find-when-text-appears/" class="md-nav__link">
+      <a href="../../web-archives/find-when-text-appears/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3720,7 +3680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/harvest-of-govau-subdomains/" class="md-nav__link">
+      <a href="../../web-archives/harvest-of-govau-subdomains/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3739,7 +3699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/govau-subdomains-split/" class="md-nav__link">
+      <a href="../../web-archives/govau-subdomains-split/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3758,7 +3718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/govau-subdomains-surt/" class="md-nav__link">
+      <a href="../../web-archives/govau-subdomains-surt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3777,7 +3737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/govau-subdomains-visualisations/" class="md-nav__link">
+      <a href="../../web-archives/govau-subdomains-visualisations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3844,7 +3804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nma/" class="md-nav__link">
+      <a href="../../nma/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3863,7 +3823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tepapa/" class="md-nav__link">
+      <a href="../../tepapa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3882,7 +3842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../museumsvictoria/" class="md-nav__link">
+      <a href="../../museumsvictoria/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3982,7 +3942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hansard/" class="md-nav__link">
+      <a href="../../hansard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4001,7 +3961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pm-transcripts/" class="md-nav__link">
+      <a href="../../pm-transcripts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4057,7 +4017,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../glam-tools/" class="md-nav__link ">
+          <a href="../../glam-tools/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -4087,7 +4047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-tools/cloudstor-share-nested-links/" class="md-nav__link">
+      <a href="../../glam-tools/cloudstor-share-nested-links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4106,7 +4066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-tools/cloudstor-access-via-webdav/" class="md-nav__link">
+      <a href="../../glam-tools/cloudstor-access-via-webdav/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4171,7 +4131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../more-glam-notebooks/" class="md-nav__link">
+      <a href="../../more-glam-notebooks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4190,7 +4150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-tools-interfaces/" class="md-nav__link">
+      <a href="../../glam-tools-interfaces/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4218,7 +4178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tags/" class="md-nav__link">
+      <a href="../../tags/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4287,7 +4247,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -4295,8 +4257,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -4306,62 +4266,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tips-tools-and-examples" class="md-nav__link">
-    Tips, tools, and examples
-  </a>
-  
-    <nav class="md-nav" aria-label="Tips, tools, and examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#finding-unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019" class="md-nav__link">
-    Finding unpublished works that might be entering the public domain on 1 January 2019
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exploring-unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019" class="md-nav__link">
-    Exploring unpublished works that might be entering the public domain on 1 January 2019
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data" class="md-nav__link">
-    Data
-  </a>
-  
-    <nav class="md-nav" aria-label="Data">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019" class="md-nav__link">
-    Unpublished works that might be entering the public domain on 1 January 2019
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contributors" class="md-nav__link">
-    Contributors
+  <a href="#other-options" class="md-nav__link">
+    Other options
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cite-as" class="md-nav__link">
-    Cite as
+  <a href="#additional-documentation" class="md-nav__link">
+    Additional documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    Getting help
   </a>
   
 </li>
@@ -4405,7 +4325,7 @@
 
 
 <a
-  href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/trove-unpublished.md"
+  href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/heritage-council-victoria/introduction-victorian-heritage-api.md"
   title="Edit this page"
   class="md-content__button md-icon"
 >
@@ -4419,38 +4339,50 @@
   as the main headline.
 -->
 
+  <h1>Introduction to the Victorian Heritage Database API</h1>
+
 
 <!-- Tags -->
 
   
+  
+
+
+  <nav class="md-tags" >
+    
+      
+        <a href="../../tags/#api" class="md-tag">
+          api
+        </a>
+      
+    
+  </nav>
 
 
 
 <!-- Markdown content -->
-<h1 id="trove-unpublished-works">Trove unpublished works<a class="headerlink" href="#trove-unpublished-works" title="Permanent link">&para;</a></h1>
-<p>Experiments and examples relating to Trove's 'Diaries, letters, and archives' zone.</p>
-<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-unpublished/master"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
-<h2 id="tips-tools-and-examples">Tips, tools, and examples<a class="headerlink" href="#tips-tools-and-examples" title="Permanent link">&para;</a></h2>
-<h3 id="finding-unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019"><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-unpublished/blob/master/Finding-unpublished-works-entering-public-domain.ipynb">Finding unpublished works that might be entering the public domain on 1 January 2019</a><a class="headerlink" href="#finding-unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019" title="Permanent link">&para;</a></h3>
-<p>Changes to Australian copyright legislation mean that many unpublished resources will be entering the public domain on 1 January 2019. This notebook attempts to harvest the details of some of these resources from Trove.</p>
-<h3 id="exploring-unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019"><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-unpublished/blob/master/Exploring-unpublished-works-entering-public-domain.ipynb">Exploring unpublished works that might be entering the public domain on 1 January 2019</a><a class="headerlink" href="#exploring-unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019" title="Permanent link">&para;</a></h3>
-<p>Some ways of exploring the data harvested above.</p>
-<h2 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h2>
-<h3 id="unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019">Unpublished works that might be entering the public domain on 1 January 2019<a class="headerlink" href="#unpublished-works-that-might-be-entering-the-public-domain-on-1-january-2019" title="Permanent link">&para;</a></h3>
+<p>This notebook provides an introduction to the Victorian Heritage Database API, showing how to construct basic queries and the sorts of results that are returned.</p>
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/heritage-council-victoria/master?urlpath=lab/tree/introduction_victorian_heritage_api.ipynb">Run live on Binder</a></p>
+<h3 id="other-options">Other options<a class="headerlink" href="#other-options" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="https://github.com/GLAM-Workbench/trove-unpublished/blob/master/unpublished_works_entering_pd_20181006.csv">Download CSV file  (1.8mb)</a></li>
-<li><a href="https://docs.google.com/spreadsheets/d/1pcVgDHXMW-PKiQh3qXk2y5L_M8IFTyz05CQ2u-CbGsI/edit?usp=sharing">View on Google Sheets</a></li>
+<li><a href="https://github.com/GLAM-Workbench/heritage-council-victoria/blob/master/introduction_victorian_heritage_api.ipynb">Download from GitHub</a></li>
+<li><a href="https://github.com/GLAM-Workbench/heritage-council-victoria/blob/master/introduction_victorian_heritage_api.ipynb">View using NBViewer</a></li>
 </ul>
-<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
+<h3 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="https://github.com/wragge">Tim Sherratt</a></li>
+<li><a href="../#run-these-notebooks">Run these notebooks</a></li>
 </ul>
-<h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
-<p>Sherratt, Tim. (2019, November 21). GLAM-Workbench/trove-unpublished (Version v0.1.0). Zenodo. <a href="http://doi.org/10.5281/zenodo.3549344">http://doi.org/10.5281/zenodo.3549344</a></p>
-<p><a href="https://doi.org/10.5281/zenodo.3549344"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3549344.svg" /></a></p>
+<h3 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
+<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
+<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
+</ul>
 
 <!-- Was this page helpful? -->
 
+
+  
 
 
 
@@ -4474,7 +4406,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../trove-images/csv-out-of-copyright-photos-rights-by-institution/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CSV of rights applied to out-of-copyright photos" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Heritage Council of Victoria" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -4483,20 +4415,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              CSV of rights applied to out-of-copyright photos
+              Heritage Council of Victoria
             </div>
           </div>
         </a>
       
       
         
-        <a href="../trove-random/" class="md-footer__link md-footer__link--next" aria-label="Next: Random items from Trove" rel="next">
+        <a href="../../records-of-resistance/" class="md-footer__link md-footer__link--next" aria-label="Next: Tribune metadata" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Random items from Trove
+              Tribune metadata
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -4559,10 +4491,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.5c9dbbf3.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.5c9dbbf3.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.e533ffb0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e533ffb0.min.js"></script>
       
     
   </body>
