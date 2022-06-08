@@ -6,30 +6,30 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This repository provides a collection of examples using the Victorian Heritage Database API.">
+        <meta name="description" content="This notebook provides an introduction to the Victorian Heritage Database API.">
       
       
         <meta name="author" content="Tim Sherratt">
       
       
-        <link rel="canonical" href="https://glam-workbench.net/heritage-council-victoria/">
+        <link rel="canonical" href="https://glam-workbench.net/heritage-council-of-victoria/introduction-victorian-heritage-api/">
       
       
         
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1+insiders-4.9.1">
     
     
       
-        <title>Heritage Council of Victoria - GLAM Workbench</title>
+        <title>Introduction to the Victorian Heritage Database API - GLAM Workbench</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.a3608ae2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a3608ae2.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -43,14 +43,14 @@
       
         
         
-        <link rel="stylesheet" href="../assets/externals/fonts.googleapis.com/css.css">
+        <link rel="stylesheet" href="../../assets/externals/fonts.googleapis.com/css.css">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,11 +59,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Heritage Council of Victoria - GLAM Workbench" >
+        <meta  property="og:title"  content="Introduction to the Victorian Heritage Database API - GLAM Workbench" >
       
-        <meta  property="og:description"  content="This repository provides a collection of examples using the Victorian Heritage Database API." >
+        <meta  property="og:description"  content="This notebook provides an introduction to the Victorian Heritage Database API." >
       
-        <meta  property="og:image"  content="https://glam-workbench.net/assets/images/social/heritage-council-victoria/index.png" >
+        <meta  property="og:image"  content="https://glam-workbench.net/assets/images/social/heritage-council-of-victoria/introduction-victorian-heritage-api.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +71,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://glam-workbench.net/heritage-council-victoria/" >
+        <meta  property="og:url"  content="https://glam-workbench.net/heritage-council-of-victoria/introduction-victorian-heritage-api/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Heritage Council of Victoria - GLAM Workbench" >
+        <meta  name="twitter:title"  content="Introduction to the Victorian Heritage Database API - GLAM Workbench" >
       
-        <meta  name="twitter:description"  content="This repository provides a collection of examples using the Victorian Heritage Database API." >
+        <meta  name="twitter:description"  content="This notebook provides an introduction to the Victorian Heritage Database API." >
       
-        <meta  name="twitter:image"  content="https://glam-workbench.net/assets/images/social/heritage-council-victoria/index.png" >
+        <meta  name="twitter:image"  content="https://glam-workbench.net/assets/images/social/heritage-council-of-victoria/introduction-victorian-heritage-api.png" >
       
     
     
@@ -349,7 +349,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tips-tools-and-examples" class="md-skip">
+        <a href="#other-options" class="md-skip">
           Skip to content
         </a>
       
@@ -363,7 +363,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="GLAM Workbench" class="md-header__button md-logo" aria-label="GLAM Workbench" data-md-component="logo">
+    <a href="../.." title="GLAM Workbench" class="md-header__button md-logo" aria-label="GLAM Workbench" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.78 15.3 6 6 2.11-2.16-6-6-2.11 2.16m3.72-5.2c-.39 0-.81-.05-1.14-.19L4.97 21.25l-2.11-2.11 7.41-7.4L8.5 9.96l-.72.7-1.45-1.41v2.86l-.7.7-3.52-3.56.7-.7h2.81l-1.4-1.41 3.56-3.56a2.976 2.976 0 0 1 4.22 0L9.89 5.74l1.41 1.4-.71.71 1.79 1.78 1.82-1.88c-.14-.33-.2-.75-.2-1.12a3.49 3.49 0 0 1 3.5-3.52c.59 0 1.11.14 1.58.42L16.41 6.2l1.5 1.5 2.67-2.67c.28.47.42.97.42 1.6 0 1.92-1.55 3.47-3.5 3.47z"/></svg>
@@ -382,7 +382,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Heritage Council of Victoria
+              Introduction to the Victorian Heritage Database API
             
           </span>
         </div>
@@ -502,6 +502,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -623,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -687,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -706,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../presentations/" class="md-nav__link">
+      <a href="../../presentations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -725,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../awards/" class="md-nav__link">
+      <a href="../../awards/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -744,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../citations/" class="md-nav__link">
+      <a href="../../citations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -792,7 +794,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../get-involved/" class="md-nav__link ">
+          <a href="../../get-involved/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -822,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get-involved/supporters/" class="md-nav__link">
+      <a href="../../get-involved/supporters/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -841,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get-involved/add-links/" class="md-nav__link">
+      <a href="../../get-involved/add-links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -860,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get-involved/editing-documentation/" class="md-nav__link">
+      <a href="../../get-involved/editing-documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -879,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get-involved/contribute-code/" class="md-nav__link">
+      <a href="../../get-involved/contribute-code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -898,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../get-involved/developing-repositories/" class="md-nav__link">
+      <a href="../../get-involved/developing-repositories/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -917,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contributors/" class="md-nav__link">
+      <a href="../../contributors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -997,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1059,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-binder/" class="md-nav__link">
+      <a href="../../using-binder/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1078,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-reclaim-cloud/" class="md-nav__link">
+      <a href="../../using-reclaim-cloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1097,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-nectar/" class="md-nav__link">
+      <a href="../../using-nectar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1116,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-docker/" class="md-nav__link">
+      <a href="../../using-docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1135,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-python/" class="md-nav__link">
+      <a href="../../using-python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1322,7 +1324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-data-list/" class="md-nav__link">
+      <a href="../../glam-data-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1378,7 +1380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-data-portals/" class="md-nav__link">
+      <a href="../../glam-data-portals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1397,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-datasets-from-gov-portals/" class="md-nav__link">
+      <a href="../../glam-datasets-from-gov-portals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1423,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../csv-explorer/" class="md-nav__link">
+      <a href="../../csv-explorer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1442,7 +1444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../name-search/" class="md-nav__link">
+      <a href="../../name-search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1532,7 +1534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove/" class="md-nav__link">
+      <a href="../../trove/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1551,7 +1553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-newspapers/" class="md-nav__link">
+      <a href="../../trove-newspapers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1597,7 +1599,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../trove-harvester/" class="md-nav__link ">
+          <a href="../../trove-harvester/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -1627,7 +1629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-harvester/harvester-web-app/" class="md-nav__link">
+      <a href="../../trove-harvester/harvester-web-app/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1646,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-harvester/using-troveharvester/" class="md-nav__link">
+      <a href="../../trove-harvester/using-troveharvester/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1665,7 +1667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-harvester/display-harvest-results-in-datasette/" class="md-nav__link">
+      <a href="../../trove-harvester/display-harvest-results-in-datasette/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1684,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-harvester/exploring-troveharvester-data/" class="md-nav__link">
+      <a href="../../trove-harvester/exploring-troveharvester-data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1703,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-harvester/exploring-troveharvester-text/" class="md-nav__link">
+      <a href="../../trove-harvester/exploring-troveharvester-text/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1768,7 +1770,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../trove-books/" class="md-nav__link ">
+          <a href="../../trove-books/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -1798,7 +1800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/harvesting-text-of-digitised-books/" class="md-nav__link">
+      <a href="../../trove-books/harvesting-text-of-digitised-books/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1817,7 +1819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/metadata-for-digital-works/" class="md-nav__link">
+      <a href="../../trove-books/metadata-for-digital-works/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1836,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/harvesting-text-from-books-in-ia/" class="md-nav__link">
+      <a href="../../trove-books/harvesting-text-from-books-in-ia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1855,7 +1857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/counting-words-and-phrases/" class="md-nav__link">
+      <a href="../../trove-books/counting-words-and-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1874,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/recipe-generator/" class="md-nav__link">
+      <a href="../../trove-books/recipe-generator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1893,7 +1895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/exploring-digitised-books-adel-rahmani/" class="md-nav__link">
+      <a href="../../trove-books/exploring-digitised-books-adel-rahmani/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1912,7 +1914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/ocrd-text-from-trove-books/" class="md-nav__link">
+      <a href="../../trove-books/ocrd-text-from-trove-books/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1931,7 +1933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/csv-books-in-digital-form/" class="md-nav__link">
+      <a href="../../trove-books/csv-books-in-digital-form/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1950,7 +1952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/government-publications-in-digital-form/" class="md-nav__link">
+      <a href="../../trove-books/government-publications-in-digital-form/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1969,7 +1971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/ocrd-text-from-ia/" class="md-nav__link">
+      <a href="../../trove-books/ocrd-text-from-ia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1988,7 +1990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-books/csv-australian-books-in-ia/" class="md-nav__link">
+      <a href="../../trove-books/csv-australian-books-in-ia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2057,7 +2059,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../trove-journals/" class="md-nav__link ">
+          <a href="../../trove-journals/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -2087,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/create-list-digitised-journals/" class="md-nav__link">
+      <a href="../../trove-journals/create-list-digitised-journals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2106,7 +2108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/get-ocrd-text-from-digitised-journal/" class="md-nav__link">
+      <a href="../../trove-journals/get-ocrd-text-from-digitised-journal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2125,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/get-ocrd-text-from-all-journals/" class="md-nav__link">
+      <a href="../../trove-journals/get-ocrd-text-from-all-journals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2144,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/get-covers-from-digitised-journal/" class="md-nav__link">
+      <a href="../../trove-journals/get-covers-from-digitised-journal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2163,7 +2165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/finding-editorial-cartoons-in-bulletin/" class="md-nav__link">
+      <a href="../../trove-journals/finding-editorial-cartoons-in-bulletin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2182,7 +2184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/harvest-parliament-press-releases/" class="md-nav__link">
+      <a href="../../trove-journals/harvest-parliament-press-releases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2201,7 +2203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/topic-modelling-parliament-press-releases/" class="md-nav__link">
+      <a href="../../trove-journals/topic-modelling-parliament-press-releases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2220,7 +2222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/csv-digital-journals/" class="md-nav__link">
+      <a href="../../trove-journals/csv-digital-journals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2239,7 +2241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/csv-journals-with-ocr/" class="md-nav__link">
+      <a href="../../trove-journals/csv-journals-with-ocr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2258,7 +2260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/ocrd-text-all-journals/" class="md-nav__link">
+      <a href="../../trove-journals/ocrd-text-all-journals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2277,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/bulletin-cartoons-collection/" class="md-nav__link">
+      <a href="../../trove-journals/bulletin-cartoons-collection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2296,7 +2298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/politicans-press-releases-refugees/" class="md-nav__link">
+      <a href="../../trove-journals/politicans-press-releases-refugees/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2315,7 +2317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-journals/politicans-press-releases-covid/" class="md-nav__link">
+      <a href="../../trove-journals/politicans-press-releases-covid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2341,7 +2343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-lists/" class="md-nav__link">
+      <a href="../../trove-lists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2360,7 +2362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-maps/" class="md-nav__link">
+      <a href="../../trove-maps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2379,7 +2381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-music/" class="md-nav__link">
+      <a href="../../trove-music/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2421,7 +2423,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../trove-images/" class="md-nav__link ">
+          <a href="../../trove-images/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -2451,7 +2453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-images/use-of-rights-statements/" class="md-nav__link">
+      <a href="../../trove-images/use-of-rights-statements/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2470,7 +2472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-images/csv-image-rights-by-institution/" class="md-nav__link">
+      <a href="../../trove-images/csv-image-rights-by-institution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2489,7 +2491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-images/csv-out-of-copyright-photos-rights-by-institution/" class="md-nav__link">
+      <a href="../../trove-images/csv-out-of-copyright-photos-rights-by-institution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2515,7 +2517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-unpublished/" class="md-nav__link">
+      <a href="../../trove-unpublished/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2534,7 +2536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-random/" class="md-nav__link">
+      <a href="../../trove-random/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2562,7 +2564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../digitalnz/" class="md-nav__link">
+      <a href="../../digitalnz/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2626,7 +2628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../anu-archives/" class="md-nav__link">
+      <a href="../../anu-archives/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2684,7 +2686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recordsearch/" class="md-nav__link">
+      <a href="../../recordsearch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2703,7 +2705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../naa-wap/" class="md-nav__link">
+      <a href="../../naa-wap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2722,7 +2724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../naa-asio/" class="md-nav__link">
+      <a href="../../naa-asio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2748,7 +2750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nsw-state-archives/" class="md-nav__link">
+      <a href="../../nsw-state-archives/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2802,7 +2804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archway/" class="md-nav__link">
+      <a href="../../archway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2828,7 +2830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qsa/" class="md-nav__link">
+      <a href="../../qsa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2914,7 +2916,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="./" class="md-nav__link md-nav__link--active">
+          <a href="../" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -2923,7 +2925,7 @@
 
           </a>
           
-            <label class="md-nav__link md-nav__link--active" for="nav-8_1">
+            <label class="md-nav__link " for="nav-8_1">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
@@ -2942,9 +2944,26 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="introduction-victorian-heritage-api/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction to the Victorian Heritage Database API
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2952,6 +2971,52 @@
   </span>
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#other-options" class="md-nav__link">
+    Other options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-documentation" class="md-nav__link">
+    Additional documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    Getting help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cite-as" class="md-nav__link">
+    Cite as
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3094,7 +3159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../records-of-resistance/" class="md-nav__link">
+      <a href="../../records-of-resistance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3113,7 +3178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../facial-detection/" class="md-nav__link">
+      <a href="../../facial-detection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3132,7 +3197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../image-tagging/" class="md-nav__link">
+      <a href="../../image-tagging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3165,7 +3230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slsa/" class="md-nav__link">
+      <a href="../../slsa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3184,7 +3249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slv/" class="md-nav__link">
+      <a href="../../slv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3203,7 +3268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lac/" class="md-nav__link">
+      <a href="../../lac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3288,7 +3353,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../web-archives/" class="md-nav__link ">
+          <a href="../../web-archives/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -3318,7 +3383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/timegates-timemaps-mementos/" class="md-nav__link">
+      <a href="../../web-archives/timegates-timemaps-mementos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3337,7 +3402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/exploring-ia-cdx-api/" class="md-nav__link">
+      <a href="../../web-archives/exploring-ia-cdx-api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3356,7 +3421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/comparing-cdx-apis/" class="md-nav__link">
+      <a href="../../web-archives/comparing-cdx-apis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3375,7 +3440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/timemaps-vs-cdx/" class="md-nav__link">
+      <a href="../../web-archives/timemaps-vs-cdx/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3394,7 +3459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/get-memento/" class="md-nav__link">
+      <a href="../../web-archives/get-memento/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3413,7 +3478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/get-all-versions/" class="md-nav__link">
+      <a href="../../web-archives/get-all-versions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3432,7 +3497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/harvesting-text/" class="md-nav__link">
+      <a href="../../web-archives/harvesting-text/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3451,7 +3516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/harvesting-domain-data/" class="md-nav__link">
+      <a href="../../web-archives/harvesting-domain-data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3470,7 +3535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/exploring-powerpoints/" class="md-nav__link">
+      <a href="../../web-archives/exploring-powerpoints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3489,7 +3554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/exploring-govau-subdomains/" class="md-nav__link">
+      <a href="../../web-archives/exploring-govau-subdomains/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3508,7 +3573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/compare-page-versions/" class="md-nav__link">
+      <a href="../../web-archives/compare-page-versions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3527,7 +3592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/observing-change-over-time/" class="md-nav__link">
+      <a href="../../web-archives/observing-change-over-time/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3546,7 +3611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/create-screenshots/" class="md-nav__link">
+      <a href="../../web-archives/create-screenshots/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3565,7 +3630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/create-screenshots-over-time/" class="md-nav__link">
+      <a href="../../web-archives/create-screenshots-over-time/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3584,7 +3649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/display-changes-in-text/" class="md-nav__link">
+      <a href="../../web-archives/display-changes-in-text/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3603,7 +3668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/find-when-text-appears/" class="md-nav__link">
+      <a href="../../web-archives/find-when-text-appears/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3622,7 +3687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/harvest-of-govau-subdomains/" class="md-nav__link">
+      <a href="../../web-archives/harvest-of-govau-subdomains/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3641,7 +3706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/govau-subdomains-split/" class="md-nav__link">
+      <a href="../../web-archives/govau-subdomains-split/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3660,7 +3725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/govau-subdomains-surt/" class="md-nav__link">
+      <a href="../../web-archives/govau-subdomains-surt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3679,7 +3744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-archives/govau-subdomains-visualisations/" class="md-nav__link">
+      <a href="../../web-archives/govau-subdomains-visualisations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3746,7 +3811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nma/" class="md-nav__link">
+      <a href="../../nma/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3765,7 +3830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tepapa/" class="md-nav__link">
+      <a href="../../tepapa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3784,7 +3849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../museumsvictoria/" class="md-nav__link">
+      <a href="../../museumsvictoria/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3884,7 +3949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hansard/" class="md-nav__link">
+      <a href="../../hansard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3903,7 +3968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pm-transcripts/" class="md-nav__link">
+      <a href="../../pm-transcripts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3959,7 +4024,7 @@
         
         
         <div class="md-nav__link md-nav__container">
-          <a href="../glam-tools/" class="md-nav__link ">
+          <a href="../../glam-tools/" class="md-nav__link ">
             
   
   <span class="md-ellipsis">
@@ -3989,7 +4054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-tools/cloudstor-share-nested-links/" class="md-nav__link">
+      <a href="../../glam-tools/cloudstor-share-nested-links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4008,7 +4073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-tools/cloudstor-access-via-webdav/" class="md-nav__link">
+      <a href="../../glam-tools/cloudstor-access-via-webdav/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4073,7 +4138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../more-glam-notebooks/" class="md-nav__link">
+      <a href="../../more-glam-notebooks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4092,7 +4157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glam-tools-interfaces/" class="md-nav__link">
+      <a href="../../glam-tools-interfaces/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4120,7 +4185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tags/" class="md-nav__link">
+      <a href="../../tags/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4189,7 +4254,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -4206,56 +4273,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tips-tools-and-examples" class="md-nav__link">
-    Tips, tools, and examples
+  <a href="#other-options" class="md-nav__link">
+    Other options
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-these-notebooks" class="md-nav__link">
-    Run these notebooks
+  <a href="#additional-documentation" class="md-nav__link">
+    Additional documentation
   </a>
-  
-    <nav class="md-nav" aria-label="Run these notebooks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-binder" class="md-nav__link">
-    Using Binder
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-reclaim-cloud" class="md-nav__link">
-    Using Reclaim Cloud
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-docker" class="md-nav__link">
-    Using Docker
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setting-up-on-your-own-computer" class="md-nav__link">
-    Setting up on your own computer
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributors" class="md-nav__link">
-    Contributors
+  <a href="#getting-help" class="md-nav__link">
+    Getting help
   </a>
   
 </li>
@@ -4306,7 +4339,7 @@
 
 
 <a
-  href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/heritage-council-victoria/index.md"
+  href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/heritage-council-of-victoria/introduction-victorian-heritage-api.md"
   title="Edit this page"
   class="md-content__button md-icon"
 >
@@ -4320,77 +4353,51 @@
   as the main headline.
 -->
 
-  <h1>Heritage Council of Victoria</h1>
+  <h1>Introduction to the Victorian Heritage Database API</h1>
 
 
 <!-- Tags -->
 
   
+  
+
+
+  <nav class="md-tags" >
+    
+      
+        <a href="../../tags/#api" class="md-tag">
+          api
+        </a>
+      
+    
+  </nav>
 
 
 
 <!-- Markdown content -->
-<h5 id="current-version-v101">Current version: <a href="https://github.com/GLAM-Workbench/heritage-council-victoria/releases/tag/v1.0.1">v1.0.1</a><a class="headerlink" href="#current-version-v101" title="Permanent link">&para;</a></h5>
-<p>A collection of examples using the <a href="https://api.heritagecouncil.vic.gov.au/documentation">Victorian Heritage Database API</a>.</p>
-<h2 id="tips-tools-and-examples">Tips, tools, and examples<a class="headerlink" href="#tips-tools-and-examples" title="Permanent link">&para;</a></h2>
-<h3 id="introduction-to-the-victorian-heritage-database-api"><a href="introduction-victorian-heritage-api/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2z"/></svg></span> Introduction to the Victorian Heritage Database API</a><a class="headerlink" href="#introduction-to-the-victorian-heritage-database-api" title="Permanent link">&para;</a></h3>
-<p>An introduction to the Victorian Heritage Database API, showing how to construct basic queries and the sorts of results that are returned</p>
-<!-- START RUN INFO -->
-
-<h2 id="run-these-notebooks">Run these notebooks<a class="headerlink" href="#run-these-notebooks" title="Permanent link">&para;</a></h2>
-<p>There are a number of different ways to use these notebooks. Binder is quickest and easiest, but it doesn't save your data. I've listed the options below from easiest to most complicated (requiring more technical knowledge).</p>
-<h3 id="using-binder">Using Binder<a class="headerlink" href="#using-binder" title="Permanent link">&para;</a></h3>
-<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/heritage-council-victoria/master/?urlpath=lab/tree/index.ipynb"><img alt="Launch on Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
-<p>Click on the button above to launch the notebooks in this repository using the <a href="https://mybinder.org/">Binder</a> service (it might take a little while to load). This is a free service, but note that sessions will close if you stop using the notebooks, and no data will be saved. Make sure you download any changed notebooks or harvested data that you want to save.</p>
-<p>See <a href="https://glam-workbench.net/using-binder/">Using Binder</a> for more details.</p>
-<h3 id="using-reclaim-cloud">Using Reclaim Cloud<a class="headerlink" href="#using-reclaim-cloud" title="Permanent link">&para;</a></h3>
-<p><a href="https://app.my.reclaim.cloud/?manifest=https://raw.githubusercontent.com/GLAM-Workbench/heritage-council-victoria/master/reclaim-manifest.jps"><img alt="Launch on Reclaim Cloud" src="https://glam-workbench.github.io/images/launch-on-reclaim-cloud.svg" /></a></p>
-<p><a href="https://reclaim.cloud/">Reclaim Cloud</a> is a paid hosting service, aimed particularly at supported digital scholarship in hte humanities. Unlike Binder, the environments you create on Reclaim Cloud will save your data – even if you switch them off! To run this repository on Reclaim Cloud for the first time:</p>
+<p>This notebook provides an introduction to the Victorian Heritage Database API, showing how to construct basic queries and the sorts of results that are returned.</p>
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/heritage-council-victoria/master?urlpath=lab/tree/introduction_victorian_heritage_api.ipynb">Run live on Binder</a></p>
+<h3 id="other-options">Other options<a class="headerlink" href="#other-options" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Create a <a href="https://reclaim.cloud/">Reclaim Cloud</a> account and log in.</li>
-<li>Click on the button above to start the installation process.</li>
-<li>A dialogue box will ask you to set a password, this is used to limit access to your Jupyter installation.</li>
-<li>Sit back and wait for the installation to complete!</li>
-<li>Once the installation is finished click on the 'Open in Browser' button of your newly created environment (note that you might need to wait a few minutes before everything is ready).</li>
+<li><a href="https://github.com/GLAM-Workbench/heritage-council-victoria/blob/master/introduction_victorian_heritage_api.ipynb">Download from GitHub</a></li>
+<li><a href="https://github.com/GLAM-Workbench/heritage-council-victoria/blob/master/introduction_victorian_heritage_api.ipynb">View using NBViewer</a></li>
 </ul>
-<p>See <a href="https://glam-workbench.net/using-reclaim-cloud/">Using Reclaim Cloud</a> for more details.</p>
-<h3 id="using-docker">Using Docker<a class="headerlink" href="#using-docker" title="Permanent link">&para;</a></h3>
-<p>You can use Docker to run a pre-built computing environment on your own computer. It will set up everything you need to run the notebooks in this repository. This is free, but requires more technical knowledge – you'll have to install Docker on your computer, and be able to use the command line.</p>
+<h3 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Install <a href="https://docs.docker.com/get-docker/">Docker Desktop</a>.</li>
-<li>Create a new directory for this repository and open it from the command line.</li>
-<li>From the command line, run the following command:<br />
-  <div class="highlight"><pre><span></span><code>docker run -p 8888:8888 --name heritage-council-victoria -v &quot;$PWD&quot;:/home/jovyan/work quay.io/glamworkbench/heritage-council-victoria repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token=&#39;&#39; --LabApp.default_url=&#39;/lab/tree/index.ipynb&#39;
-</code></pre></div></li>
-<li>It will take a while to download and configure the Docker image. Once it's ready you'll see a message saying that Jupyter Notebook is running.</li>
-<li>Point your web browser to <code>http://127.0.0.1:8888</code></li>
+<li><a href="../#run-these-notebooks">Run these notebooks</a></li>
 </ul>
-<p>See <a href="https://glam-workbench.net/using-docker/">Using Docker</a> for more details.</p>
-<h3 id="setting-up-on-your-own-computer">Setting up on your own computer<a class="headerlink" href="#setting-up-on-your-own-computer" title="Permanent link">&para;</a></h3>
-<p>If you know your way around the command line and are comfortable installing software, you might want to set up your own computer to run these notebooks.</p>
-<p>Assuming you have recent versions of Python and Git installed, the steps might be something like:</p>
+<h3 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Create a virtual environment, eg: <code>python -m venv heritage-council-victoria</code></li>
-<li>Open the new directory" <code>cd heritage-council-victoria</code></li>
-<li>Activate the environment <code>source bin/activate</code></li>
-<li>Clone the repository: <code>git clone https://github.com/GLAM-Workbench/heritage-council-victoria.git notebooks</code></li>
-<li>Open the new <code>notebooks</code> directory: <code>cd notebooks</code></li>
-<li>Install the necessary Python packages: <code>pip install -r requirements.txt</code></li>
-<li>Run Jupyter: <code>jupyter lab</code></li>
-</ul>
-<p>See the <a href="https://glam-workbench.net/getting-started/#using-python-on-your-own-computer">Getting started</a> for more details.</p>
-<!-- END RUN INFO -->
-
-<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://people.eng.unimelb.edu.au/mharrop/">Mitchell Harrop</a></li>
+<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
+<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
+<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
 </ul>
 <h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
-<p>Harrop, Mitchell. (2022). GLAM-Workbench/heritage-council-victoria (version v1.0.1). Zenodo. <a href="https://doi.org/10.5281/zenodo.6622313">https://doi.org/10.5281/zenodo.6622313</a>  </p>
-<p><a href="https://doi.org/10.5281/zenodo.6622313"><img alt="" src="https://zenodo.org/badge/doi/10.5281/zenodo.6622313.svg" /></a></p>
 
 <!-- Was this page helpful? -->
 
+
+  
 
 
 
@@ -4414,7 +4421,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../qsa/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Queensland State Archives" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Heritage Council of Victoria" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -4423,20 +4430,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Queensland State Archives
+              Heritage Council of Victoria
             </div>
           </div>
         </a>
       
       
         
-        <a href="introduction-victorian-heritage-api/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction to the Victorian Heritage Database API" rel="next">
+        <a href="../../records-of-resistance/" class="md-footer__link md-footer__link--next" aria-label="Next: Tribune metadata" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Introduction to the Victorian Heritage Database API
+              Tribune metadata
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -4499,10 +4506,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.5c9dbbf3.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.5c9dbbf3.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.e533ffb0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e533ffb0.min.js"></script>
       
     
   </body>
