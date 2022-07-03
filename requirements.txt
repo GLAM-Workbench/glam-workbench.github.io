@@ -27,9 +27,7 @@ ghp-import==2.0.2
 idna==3.3
     # via requests
 importlib-metadata==4.11.1
-    # via
-    #   markdown
-    #   mkdocs
+    # via mkdocs
 jinja2==3.0.3
     # via
     #   mkdocs
@@ -85,7 +83,7 @@ python-dotenv==0.19.2
     # via -r requirements.in
 python-frontmatter==1.0.0
     # via -r requirements.in
-pyyaml==5.1
+pyyaml==5.4
     # via
     #   mkdocs
     #   mkdocs-macros-plugin
