@@ -10,4 +10,5 @@ If you'd like to join the club, see how you can [get involved](get-involved/inde
 
 ## Code and content
 
+* [Mitchell Harrop](https://people.eng.unimelb.edu.au/mharrop/)
 {{ code_contributors() }}

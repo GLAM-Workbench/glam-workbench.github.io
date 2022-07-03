@@ -194,6 +194,10 @@ nav:
         - National Archives of NZ:
             - archway.md
         - qsa.md
+    - Heritage:
+        - Heritage Council of Victoria:
+            - heritage-council-of-victoria/index.md
+            - heritage-council-of-victoria/introduction-victorian-heritage-api.md
     - Libraries:
         - State Library of NSW:
             - Tribune negatives:

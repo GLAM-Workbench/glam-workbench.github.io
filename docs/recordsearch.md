@@ -10,7 +10,7 @@ zenodo_concept_id: 3544753
 
 [RecordSearch](https://recordsearch.naa.gov.au/) is the online collection database of the National Archives of Australia. Based on the [series system](https://www.naa.gov.au/help-your-research/getting-started/commonwealth-record-series-crs-system), RecordSearch provides rich, contextual information about series, items, agencies, and functions.
 
-Unfortunately RecordSearch doesn't provide access to machine-readable data through an API, so we have to resort to screen scraping. The notebooks here make use of either the [RecordSearch Data Scraper](https://wragge.github.io/recordsearch_data_scraper/) or the older [RecordSearch Tools library](https://github.com/wragge/recordsearch_tools) to handle the scraping. I'm in the process of upgrading all the notebooks to use the newer scraper.
+Unfortunately RecordSearch doesn't provide access to machine-readable data through an API, so we have to resort to screen scraping. The notebooks here make use the [RecordSearch Data Scraper](https://wragge.github.io/recordsearch_data_scraper/) to extract data.
 
 See below for information on [running these notebooks](#run-these-notebooks) in a live computing environment. Or just take them for a spin using Binder.
 
@@ -68,6 +68,20 @@ Generates some basic statistics about the holdings of the National Archives from
 * [Download from GitHub](https://github.com/GLAM-Workbench/recordsearch/blob/master/series_harvest_basic_stats.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/recordsearch/blob/master/series_harvest_basic_stats.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/master?urlpath=lab/tree/series_harvest_basic_stats.ipynb)
+
+### Exploring harvested series data, 2022  
+Generates some basic statistics from the harvest of series data in 2022 and compares the results to the previous year.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/recordsearch/blob/master/series_harvest_basic_stats_2022.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/recordsearch/blob/master/series_harvest_basic_stats_2022.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/master?urlpath=lab/tree/series_harvest_basic_stats_2022.ipynb)
+
+### Summary of records digitised in the previous week  
+Run this notebook to analyse the most recent dataset of recently digitised files, summarising the results by series.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/recordsearch/blob/master/recently_digitised_update.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/recordsearch/blob/master/recently_digitised_update.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/master?urlpath=lab/tree/recently_digitised_update.ipynb)
 
 ### How many of the functions are actually used?
 In this notebook we'll import data about functions that we've harvested earlier and search for each of these functions in RecordSearch to see how many are actually used.

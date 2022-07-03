@@ -11,7 +11,7 @@ hide:
   - toc
 zenodo_concept_id: 6339873
 ---
-### The use of standard licences and rights statements in Trove image records
+
 Version 2.1 of the Trove API introduced a new rights index that you can use to limit your search results to records that include one of a list of standard licences and rights statements. We can also use this index to build a picture of which rights statements are currently being used, and by who. Let's give it a try...
 
 [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-images/master?urlpath=lab/tree/rights-statements-on-images.ipynb){ .md-button .md-button--primary }

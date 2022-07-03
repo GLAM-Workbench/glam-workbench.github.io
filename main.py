@@ -150,6 +150,8 @@ def define_env(env):
         for user in repo.get_contributors():
             if user.name:
                 md += f'* [{user.name}]({user.html_url})\n'
+            elif not user.login.startswith('github-'):
+                md += f'* [{user.login}]({user.html_url})\n'
         return md
 
     @env.macro
@@ -160,6 +162,8 @@ def define_env(env):
         for user in repo.get_contributors():
             if user.name:
                 md += f'* [{user.name}]({user.html_url})\n'
+            elif not user.login.startswith('github-'):
+                md += f'* [{user.login}]({user.html_url})\n'
         return md
 
     @env.macro
@@ -172,6 +176,8 @@ def define_env(env):
                 for user in repo.get_contributors():
                     if user.name:
                         users.append(f'* [{user.name}]({user.html_url})')
+                    elif not user.login.startswith('github-'):
+                        users.append(f'* [{user.login}]({user.html_url})')
         return ('\n').join(list(set(users)))
 
 

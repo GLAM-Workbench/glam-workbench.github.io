@@ -84,6 +84,7 @@ Your new repository will contain the following files, updated by `cookiecutter` 
 * `runtime.txt` – set Python version
 * `sample_notebook.ipynb` – a basic example notebook
 * `jupyter_config.json` – configuration for Voilá
+* `metadata.json` – a file containing your repository configuration values
 * `.zenodo.json` – metadata for integration with Zenodo
 * `reclaim-manifest.jps` – config file to allow one-click installation on Reclaim Cloud
 * `.github/cache_pull_request.yml` – GitHub action that runs when a pull request is created, and builds and caches an image for testing on Binder

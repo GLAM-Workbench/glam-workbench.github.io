@@ -37,9 +37,6 @@ sponsors:
 - avatar: https://avatars.githubusercontent.com/u/88081007?s=40&v=4
   name: juliekimber1
   url: https://github.com/juliekimber1
-- avatar: https://avatars.githubusercontent.com/u/88478861?s=40&v=4
-  name: Katabow
-  url: https://github.com/Katabow
 - avatar: https://avatars.githubusercontent.com/u/5704819?s=40&v=4
   name: LucGauvreau
   url: https://github.com/LucGauvreau
@@ -65,11 +62,20 @@ sponsors:
   name: simplebutgood
   url: https://github.com/simplebutgood
 - avatar: https://avatars.githubusercontent.com/u/93020677?s=40&v=4
-  name: BetweenRiverAndStream
+  name: 'Between River & Stream '
   url: https://github.com/BetweenRiverAndStream
+- avatar: https://avatars.githubusercontent.com/u/94366676?s=40&v=4
+  name: Windsoria
+  url: https://github.com/Windsoria
+- avatar: https://avatars.githubusercontent.com/u/15809897?s=40&v=4
+  name: Stephmcg
+  url: https://github.com/Stephmcg
+- avatar: https://avatars.githubusercontent.com/u/108448977?s=40&v=4
+  name: KapylaClub
+  url: https://github.com/KapylaClub
 template: sponsors.html
 title: Supporters
-total_sponsors: 25
+total_sponsors: 27
 ---
 
 ignoreme

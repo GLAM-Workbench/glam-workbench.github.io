@@ -7,3 +7,4 @@ requests
 requests_cache
 pymdown-toc-ext
 python-dotenv
+python-frontmatter
