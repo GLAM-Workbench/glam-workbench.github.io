@@ -515,7 +515,7 @@
 <div class="md-source__repository">
   trove-newspaper-harvester
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v1.1.1</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">5</li>
+  <li class="md-source__fact md-source__fact--version">v1.2.0</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">5</li>
 </ul>
 </div>
 </a>
@@ -638,7 +638,7 @@
 <div class="md-source__repository">
   trove-newspaper-harvester
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v1.1.1</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">5</li>
+  <li class="md-source__fact md-source__fact--version">v1.2.0</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">5</li>
 </ul>
 </div>
 </a>
@@ -4757,9 +4757,9 @@
 
 
 <!-- Markdown content -->
-<h5 id="current-version-v111">Current version: <a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/releases/tag/v1.1.1">v1.1.1</a><a class="headerlink" href="#current-version-v111" title="Permanent link">&para;</a></h5>
+<h5 id="current-version-v120">Current version: <a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/releases/tag/v1.2.0">v1.2.0</a><a class="headerlink" href="#current-version-v120" title="Permanent link">&para;</a></h5>
 <p>The Trove Newspaper &amp; Gazette Harvester makes it easy to download large quantities of digitised articles from Trove's newspapers and gazettes. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis. You can also save the full text of every article, as well as copies of the articles as JPG images, and even PDFs. While the web interface will only show you the first 2,000 results matching your search, the Newspaper &amp; Gazette Harvester will get <strong>everything</strong>.</p>
-<p>You can install the Harvester as a <a href="https://pypi.org/project/troveharvester/">Python command line tool</a>, or use it in one of these notebooks below.</p>
+<p>You can install the Harvester as a <a href="https://pypi.org/project/trove-newspaper-harvester/">Python command line tool</a>, or use it in one of these notebooks below.</p>
 <p>See below for information on <a href="#run-these-notebooks">running these notebooks</a> in a live computing environment. Or just take them for a spin using Binder.</p>
 <p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/index.ipynb"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
 <h2 id="harvesting-search-results">Harvesting search results<a class="headerlink" href="#harvesting-search-results" title="Permanent link">&para;</a></h2>
@@ -4785,17 +4785,28 @@
 <ul>
 <li><code>article_id</code> – a unique identifier for the article</li>
 <li><code>title</code> – the title of the article</li>
+<li><code>date</code> – in ISO format, YYYY-MM-DD</li>
+<li><code>page</code> – page number (of course), but might also indicate the page is part of a supplement or special section</li>
 <li><code>newspaper_id</code> – a unique identifier for the newspaper or gazette title (this can be used to retrieve more information or build a link to the web interface)</li>
 <li><code>newspaper_title</code> – the name of the newspaper (or gazette)</li>
-<li><code>page</code> – page number (of course), but might also indicate the page is part of a supplement or special section</li>
-<li><code>date</code> – in ISO format, YYYY-MM-DD</li>
 <li><code>category</code> – one of ‘Article’, ‘Advertising’, ‘Detailed lists, results, guides’, ‘Family Notices’, or ‘Literature’</li>
 <li><code>words</code> – number of words in the article</li>
 <li><code>illustrated</code> – is it illustrated (values are y or n)</li>
-<li><code>corrections</code> – number of text corrections</li>
-<li><code>snippet</code> – short text sample</li>
+<li><code>edition</code> – edition of newspaper (rarely used)</li>
+<li><code>supplement</code> – section of newspaper (rarely used)</li>
+<li><code>section</code> – section of newspaper (rarely used)</li>
 <li><code>url</code> – the persistent url for the article</li>
 <li><code>page_url</code> – the persistent url of the page on which the article is published</li>
+<li><code>snippet</code> – short text sample</li>
+<li><code>relevance</code> – search relevance score of this result</li>
+<li><code>corrections</code> – number of text corrections</li>
+<li><code>last_correction</code> – date of last correction</li>
+<li><code>tags</code> – number of attached tags</li>
+<li><code>comments</code> – number of attached comments</li>
+<li><code>lists</code> – number of lists this article is included in</li>
+<li><code>text</code> – path to text file</li>
+<li><code>pdf</code> – path to PDF file</li>
+<li><code>image</code> – path to image file</li>
 </ul>
 <p>If you’ve asked for PDFs or text files, there will be additional directories containing those files. Files containing the OCRd text of the articles will be saved in a directory named <code>text</code>. These are just plain text files, stripped on any HTML. These files include some basic metadata in their file titles – the date of the article, the id number of the newspaper, and the id number of the article. So, for example, the filename <code>19460104-1002-206680758.txt</code> tells you:</p>
 <ul>
@@ -4865,8 +4876,8 @@
 <li><a href="https://github.com/wragge">Tim Sherratt</a></li>
 </ul>
 <h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
-<p>Sherratt, Tim. (2022). GLAM-Workbench/trove-newspaper-harvester (version v1.1.1). Zenodo. <a href="https://doi.org/10.5281/zenodo.7030442">https://doi.org/10.5281/zenodo.7030442</a>  </p>
-<p><a href="https://doi.org/10.5281/zenodo.7030442"><img alt="" src="../assets/externals/zenodo.org/badge/doi/10.5281/zenodo.7030442.svg" /></a></p>
+<p>Sherratt, Tim. (2022). GLAM-Workbench/trove-newspaper-harvester (version v1.2.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.7101395">https://doi.org/10.5281/zenodo.7101395</a>  </p>
+<p><a href="https://doi.org/10.5281/zenodo.7101395"><img alt="" src="../assets/externals/zenodo.org/badge/doi/10.5281/zenodo.7101395.svg" /></a></p>
 
 <!-- Was this page helpful? -->
 
