@@ -1,5 +1,6 @@
 import requests
 from datetime import date, timedelta
+import requests_cache
 from requests_cache import CachedSession
 import re
 from github import Github
@@ -8,7 +9,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-s = CachedSession(expire_after=timedelta(days=1))
+requests_cache.install_cache('gh_cache', expire_after=timedelta(days=7))
+
+s = CachedSession(expire_after=timedelta(days=7))
 
 def on_post_page_macros(env):
     html = ''

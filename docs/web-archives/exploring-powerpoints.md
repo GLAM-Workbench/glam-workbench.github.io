@@ -34,3 +34,5 @@ This notebook helps you find, download, and explore all the presentation files c
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

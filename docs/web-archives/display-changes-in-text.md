@@ -34,3 +34,5 @@ This notebook displays changes in the text content of a web page over time. It r
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

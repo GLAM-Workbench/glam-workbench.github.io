@@ -42,3 +42,5 @@ Most of the notebooks in this repository work with small slices of web archive d
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

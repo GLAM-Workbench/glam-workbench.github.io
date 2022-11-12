@@ -32,3 +32,5 @@ You can find all the archived versions of a web page by requesting a Timemap fro
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

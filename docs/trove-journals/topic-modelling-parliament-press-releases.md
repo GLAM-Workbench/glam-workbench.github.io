@@ -15,4 +15,4 @@ hide:
 
 This notebook explores the [Politicians talking about 'immigrants' and 'refugees'](politicans-press-releases-refugees.md) collection of press releases (see below). Adel notes: 'I was curious about the contents of the press releases, however, at more than 12,000 documents the collection is too overwhelming to read through, so I thought I'd get the computer to do it for me, and use topic modelling to poke aroung the corpus.'
 
-* [View using NBViewer](https://nbviewer.jupyter.org/github/adelr/trove-refugee/blob/master/Analyses.ipynb)
+[View using NBViewer](https://nbviewer.jupyter.org/github/adelr/trove-refugee/blob/master/Analyses.ipynb){ .md-button .md-button--primary }

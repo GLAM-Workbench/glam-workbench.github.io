@@ -10,5 +10,6 @@ If you'd like to join the club, see how you can [get involved](get-involved/inde
 
 ## Code and content
 
+* [Kim Doyle](https://github.com/doylek1)
 * [Mitchell Harrop](https://people.eng.unimelb.edu.au/mharrop/)
 {{ code_contributors() }}

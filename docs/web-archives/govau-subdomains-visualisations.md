@@ -32,3 +32,5 @@ This is a collection of visualisations of subdomains under gov.au. It was genera
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

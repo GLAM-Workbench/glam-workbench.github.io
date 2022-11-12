@@ -1,6 +1,6 @@
 ---
 title: CSV formatted list of journals with OCRd text
-description: This file provides metadata of 1,163 digitised periodicals in Trove that have OCRd text for download.
+description: This file provides metadata of 1,430 digitised periodicals in Trove that have OCRd text for download.
 repo_url: https://github.com/GLAM-Workbench/trove-journals
 repo_name: trove-journals
 zenodo_concept_id: 3545215
@@ -11,11 +11,11 @@ hide:
   - toc
 ---
 
-**Harvested: 5 August 2021**
+**Harvested: 31 August 2022**
 
-This file provides metadata of 1,163 digitised periodicals in Trove that have OCRd text for download. 
+This file provides metadata of 1,430 digitised periodicals in Trove that have OCRd text for download. 
 
-[Download the CSV file](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.csv){ .md-button .md-button--primary }
+[Download the CSV file](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text-20220831.csv){ .md-button .md-button--primary }
 
 This file includes the following columns:
 
@@ -35,10 +35,11 @@ This file includes the following columns:
 
 ### Other options
 
-* [Browse a human-readable list of journals](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text.md)
+* [List of journals with OCRd text](journals-with-ocr.md)
 
 ### Related resources
 
+* [Download the OCRd text for ALL the digitised journals in Trove!](get-ocrd-text-from-all-journals.md)
 * [Create a list of Trove's digitised journals](create-list-digitised-journals.md)
 
 --8<-- "help.md"

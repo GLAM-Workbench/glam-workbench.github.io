@@ -47,3 +47,5 @@ This is a dataset of unique subdomains within the gov.au domain. It was generate
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

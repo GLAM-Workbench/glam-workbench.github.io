@@ -23,6 +23,8 @@ Using the code and data from other notebooks in this repository, you can downloa
 ### Related resources
 
 * [OCRd text from Trove digitised journals](ocrd-text-all-journals.md)
+* [List of journals with OCRd text](journals-with-ocr.md)
+* [CSV formatted list of journals with OCRd text](csv-journals-with-ocr.md)
 
 ### Additional documentation
 

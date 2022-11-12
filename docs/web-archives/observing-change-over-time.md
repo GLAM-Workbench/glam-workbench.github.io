@@ -35,3 +35,5 @@ This notebook explores what we can find when you look at all captures of a singl
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

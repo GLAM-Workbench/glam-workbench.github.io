@@ -16,7 +16,7 @@ Trove's 'journals' zone includes journals and journal articles, as well as other
 
 ### [:material-notebook-outline: Create a list of Trove's digitised journals](create-list-digitised-journals.md) {: data-toc-omit }
 
-Everyone know's about Trove's newspapers, but there is also a growing collection of digitised journals available in the journals zone. They're not easy to find, however, which is why I created the [Trove Titles](https://trove-titles.herokuapp.com/) web app. This notebook uses the Trove API to harvest metadata relating to digitised journals – or more accurately, journals that are freely available online in a digital form. This includes some born digital publications that are available to view in formats like PDF and MOBI, but excludes some digital journals that have access restrictions.
+Everyone know's about Trove's newspapers, but there is also a growing collection of digitised journals available in the journals zone. They're not easy to find, however, which is why I created the [Trove Titles](https://trove-titles.herokuapp.com/) web app. This notebook uses the Trove API to harvest metadata relating to periodicals available from Trove in digital form. As well as digitised publications, this includes born digital publications in formats like PDF and MOBI that have been made available through the edeposit program.
 
 ## Harvesting text
 
@@ -32,6 +32,10 @@ Using the code and data from the previous two notebooks, you can download the OC
 ### [:material-notebook-outline: Harvest parliament press releases from Trove](harvest-parliament-press-releases.md) {: data-toc-omit }
 
 Trove includes more than 380,000 press releases, speeches, and interview transcripts issued by Australian federal politicians and saved by the Parliamentary Library. You can view them all in Trove by searching for nuc:"APAR:PR" in the books & libraries category. This notebook shows you how to harvest both metadata and full text from a search of the parliamentary press releases. The metadata is available from Trove, but to get the full text we have to go back to the Parliamentary Library's database, ParlInfo.
+
+### [:material-notebook-outline: Create a database to search across each line of text in a series of volumes](create-text-db-indexed-by-line.md) {: data-toc-omit }
+
+The code in this notebook was used to create the [NSW Post Office Directories search interface](https://nsw-post-office-directories-yajhxrvxsa-ts.a.run.app/) which lets you search across 54 volumes from 1886 to 1950. The same code, with minor modifications, could be used to index any series of publication where it would be useful to search by line (rather than Trove's default 'article') – for example, lists, directories and gazetteers – turning them into searchable databases.
 
 ## Harvesting images
 
@@ -53,25 +57,31 @@ This notebook explores the [Politicians talking about 'immigrants' and 'refugees
 
 ### [:material-database-outline: CSV formatted list of journals available from Trove in digital form](csv-digital-journals.md) {: data-toc-omit }
 
-*Harvested: 5 August 2021*
+*Harvested: 31 August 2022*
 
-This file provides metadata of 7,269 periodicals that are available from Trove's journal zone in digital form. This includes both 'digitised' periodicals, and born-digital periodicals submitted through Electronic Legal Deposit. Note that this list contains 7,318 records as there are some duplicates where multiple Trove work records point to the same digitised periodicals. The duplicates have been left in as they include different metadata, and can be easily removed with Pandas.
+This file provides metadata of 8,662 periodicals that are available from Trove's journal zone in digital form. This includes both 'digitised' periodicals, and born-digital periodicals submitted through Electronic Legal Deposit. Note that this list contains 8,728 records as there are some duplicates where multiple Trove work records point to the same digitised periodicals. The duplicates have been left in as they include different metadata, and can be easily removed with Pandas. 
 
 ### [:material-database-outline: CSV formatted list of journals with OCRd text](csv-journals-with-ocr.md) {: data-toc-omit }
 
-*Harvested: 5 August 2021*
+*Harvested: 31 August 2022*
 
-This file provides metadata of 1,163 digitised periodicals in Trove that have OCRd text for download.
+This file provides metadata of 1,430 digitised periodicals in Trove that have OCRd text for download.
+
+### [:material-database-outline: List of journals with OCRd text](csv-journals-with-ocr.md) {: data-toc-omit }
+
+*Harvested: 31 August 2022*
+
+This page provides a human-readable list of 1,430 digitised periodicals in Trove that have OCRd text for download. Links are provided to download and explore each
 
 ### [:material-folder-text-outline: OCRd text from Trove digitised journals](ocrd-text-all-journals.md) {: data-toc-omit }
 
-*Harvested: 5 August 2021*
+*Harvested: 31 August 2022*
 
 Using the notebooks above I harvested metadata and OCRd text from Trove's digitised periodicals.
 
-+ 1,163 periodicals had OCRd text available for download
-+ OCRd text was downloaded from 51,928 periodical issues
-+ About 10gb of text was downloaded
++ 1,430 periodicals had OCRd text available for download
++ OCRd text was downloaded from 41,645 periodical issues
++ About 9gb of text was downloaded
 
 ### [:material-database-outline: Government publications in digital form](../trove-books/government-publications-in-digital-form.md) {: data-toc-omit }
 

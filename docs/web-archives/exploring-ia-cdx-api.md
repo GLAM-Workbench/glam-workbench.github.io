@@ -31,3 +31,5 @@ Some web archives provide indexes of the web pages they've archived through an A
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

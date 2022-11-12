@@ -10,6 +10,14 @@
 {% if not "\x3ch1" in page.content %}
   <h1>{{ page.title | d(config.site_name, true)}}</h1>
 {% endif %}
+
+<h2>Section sponsors</h2>
+<ul>
+  <li>The Web Archives section of the GLAM Workbench is sponsored by the <a href="https://www.bl.uk/">British Library</a>.</li>
+</ul>
+
+<h2>GitHub sponsors</h2>
+
 <p>Work on the GLAM Workbench is generously supported by <b>{{ page.meta.total_sponsors }} GitHub sponsors</b>:</p>
 <ul style="list-style-type: None;">
 {% for sponsor in page.meta.sponsors %}

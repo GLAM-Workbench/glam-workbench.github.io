@@ -13,8 +13,7 @@ hide:
 
 Many of the digitised journals available in Trove make OCRd text available for download – one text file for each journal issue. However, while there are records for journals and articles in Trove (and available through the API), there are no records for issues. So how do we find them? This notebook shows how to extract issue data from a digitised journal and download OCRd text for each issue.
 
-[Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Get-text-from-a-Trove-journal.ipynb)
-{ .md-button .md-button--primary }
+[Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Get-text-from-a-Trove-journal.ipynb){ .md-button .md-button--primary }
 
 ### Other options
 

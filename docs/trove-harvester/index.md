@@ -11,7 +11,7 @@ zenodo_concept_id: 3545044
 
 The Trove Newspaper & Gazette Harvester makes it easy to download large quantities of digitised articles from Trove's newspapers and gazettes. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis. You can also save the full text of every article, as well as copies of the articles as JPG images, and even PDFs. While the web interface will only show you the first 2,000 results matching your search, the Newspaper & Gazette Harvester will get **everything**.
 
-You can install the Harvester as a [Python command line tool](https://pypi.org/project/troveharvester/), or use it in one of these notebooks below.
+You can install the Harvester as a [Python command line tool](https://pypi.org/project/trove-newspaper-harvester/), or use it in one of these notebooks below.
 
 See below for information on [running these notebooks](#run-these-notebooks) in a live computing environment. Or just take them for a spin using Binder.
 
@@ -57,17 +57,28 @@ The `results.csv` file is a plain text CSV (Comma Separated Values) file. You ca
 
 * `article_id` – a unique identifier for the article
 * `title` – the title of the article
+* `date` – in ISO format, YYYY-MM-DD
+* `page` – page number (of course), but might also indicate the page is part of a supplement or special section
 * `newspaper_id` – a unique identifier for the newspaper or gazette title (this can be used to retrieve more information or build a link to the web interface)
 * `newspaper_title` – the name of the newspaper (or gazette)
-* `page` – page number (of course), but might also indicate the page is part of a supplement or special section
-* `date` – in ISO format, YYYY-MM-DD
 * `category` – one of ‘Article’, ‘Advertising’, ‘Detailed lists, results, guides’, ‘Family Notices’, or ‘Literature’
 * `words` – number of words in the article
 * `illustrated` – is it illustrated (values are y or n)
-* `corrections` – number of text corrections
-* `snippet` – short text sample
+* `edition` – edition of newspaper (rarely used)
+* `supplement` – section of newspaper (rarely used)
+* `section` – section of newspaper (rarely used)
 * `url` – the persistent url for the article
 * `page_url` – the persistent url of the page on which the article is published
+* `snippet` – short text sample
+* `relevance` – search relevance score of this result
+* `corrections` – number of text corrections
+* `last_correction` – date of last correction
+* `tags` – number of attached tags
+* `comments` – number of attached comments
+* `lists` – number of lists this article is included in
+* `text` – path to text file
+* `pdf` – path to PDF file
+* `image` – path to image file
 
 If you’ve asked for PDFs or text files, there will be additional directories containing those files. Files containing the OCRd text of the articles will be saved in a directory named `text`. These are just plain text files, stripped on any HTML. These files include some basic metadata in their file titles – the date of the article, the id number of the newspaper, and the id number of the article. So, for example, the filename `19460104-1002-206680758.txt` tells you:
 

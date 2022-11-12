@@ -43,6 +43,8 @@ theme:
     code: 'Roboto Mono'
   icon:
     logo: material/hammer-wrench
+    admonition:
+      abstract: material/handshake
 #    repo: material/source-repository
   include_search_page: false
   search_index_only: true
@@ -98,6 +100,7 @@ plugins:
         redirect_maps:
             'trove_newspapers.md': 'trove-newspapers.md'
             'name-search.md': 'https://glam-name-indexes-yajhxrvxsa-ts.a.run.app/'
+            'trove-journals/nsw-post-office-directories.md': 'https://nsw-post-office-directories-yajhxrvxsa-ts.a.run.app/'
             supporters.md: get-involved/supporters.md
 
 nav:
@@ -166,13 +169,18 @@ nav:
             - Get cover images from a journal: trove-journals/get-covers-from-digitised-journal.md
             - Finding cartoons in the Bulletin: trove-journals/finding-editorial-cartoons-in-bulletin.md
             - Harvest Parliament press releases: trove-journals/harvest-parliament-press-releases.md
+            - Create database of text indexed by line: trove-journals/create-text-db-indexed-by-line.md
             - Topic modelling Parliament press releases: trove-journals/topic-modelling-parliament-press-releases.md
             - CSV list of digital journals: trove-journals/csv-digital-journals.md
             - CSV list of journals with OCR: trove-journals/csv-journals-with-ocr.md
+            - List of journals with OCR: trove-journals/journals-with-ocr.md
             - OCRd text from all journals: trove-journals/ocrd-text-all-journals.md
             - trove-journals/bulletin-cartoons-collection.md
             - Politicians talking about 'refugees': trove-journals/politicans-press-releases-refugees.md
             - Politicians talking about COVID: trove-journals/politicans-press-releases-covid.md
+            - Search:
+                - NSW Post Office Directories: trove-journals/nsw-post-office-directories.md
+                - Sydney Telephone Directories: trove-journals/sydney-telephone-directories.md
         - trove-lists.md
         - trove-maps.md
         - trove-music.md
@@ -198,7 +206,14 @@ nav:
         - Heritage Council of Victoria:
             - heritage-council-of-victoria/index.md
             - heritage-council-of-victoria/introduction-victorian-heritage-api.md
+            - heritage-council-of-victoria/shipwrecks.md
     - Libraries:
+        - Libraries Tasmania:
+            - libraries-tasmania/index.md
+            - Download Post Office Directory PDFs: libraries-tasmania/tas-pod-save-text-images.md
+            - Upload images to s3 for delivery via IIIF: libraries-tasmania/tas-pod-upload-images.md
+            - Extract text from PDF images with Tesseract: libraries-tasmania/tas-pod-ocr-with-tesseract.md
+            - Load Post Office Directory contents into a database: libraries-tasmania/tas-pod-add-to-datasette.md
         - State Library of NSW:
             - Tribune negatives:
                 - records-of-resistance.md
@@ -237,6 +252,11 @@ nav:
         - Australia:
             - hansard.md
             - pm-transcripts.md
+    - Wikidata:
+        - wikidata/index.md
+        - Timeline of govt departments: wikidata/agencies-gannt-timeline.md
+        - Network graph of govt departments: wikidata/govt-agencies-network.md
+        - View connections of a single agency: wikidata/single-agency-network.md
     - Useful tools:
         - Useful tools: glam-tools/index.md
         - CloudStor nested links: glam-tools/cloudstor-share-nested-links.md

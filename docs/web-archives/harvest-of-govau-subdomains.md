@@ -36,3 +36,5 @@ This is a dataset of (mostly unique) urls in the gov.au domain harvested using t
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

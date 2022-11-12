@@ -15,6 +15,9 @@ A collection of examples using the [Victorian Heritage Database API](https://api
 ### [:material-notebook-outline: Introduction to the Victorian Heritage Database API](introduction-victorian-heritage-api.md) {: data-toc-omit }
 An introduction to the Victorian Heritage Database API, showing how to construct basic queries and the sorts of results that are returned
 
+### [:material-notebook-outline: Shipwrecks in the Victorian Heritage Database](shipwrecks.md) {: data-toc-omit }
+Explores what you can find out about shipwrecks using the Victorian Heritage Database API.
+
 <!-- START RUN INFO -->
 
 
@@ -80,6 +83,7 @@ See the [Getting started](https://glam-workbench.net/getting-started/#using-pyth
 ## Contributors
 
 * [Mitchell Harrop](https://people.eng.unimelb.edu.au/mharrop/)
+* [Kim Doyle](https://github.com/doylek1)
 
 ## Cite as
 

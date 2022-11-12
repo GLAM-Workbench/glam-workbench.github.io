@@ -32,3 +32,5 @@ To get the archived version of a page closest to a particular date we can use th
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

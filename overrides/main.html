@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block extrahead %}
+    {% if page and page.meta and page.meta.redirect %}
+        <link rel="canonical" href="{{ page.meta.redirect }}">
+        <meta name="robots" content="noindex">
+        <meta http-equiv="refresh" content="0; url={{ page.meta.redirect }}">
+    {% endif %}
+{% endblock %}

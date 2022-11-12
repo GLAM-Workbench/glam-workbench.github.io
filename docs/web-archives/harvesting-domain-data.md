@@ -32,3 +32,5 @@ In this notebook we'll look at how we can get domain level data from the IA CDX 
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

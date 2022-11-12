@@ -31,3 +31,5 @@ This notebook documents differences between the Internet Archive's Wayback CDX A
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

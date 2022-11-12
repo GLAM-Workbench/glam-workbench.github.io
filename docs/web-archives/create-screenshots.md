@@ -35,3 +35,5 @@ This notebook makes it easy to create a full page screenshot from an archived we
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

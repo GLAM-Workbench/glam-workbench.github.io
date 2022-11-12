@@ -31,3 +31,5 @@ Both Timemaps and CDX APIs can give us a list of captures from a particular web 
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

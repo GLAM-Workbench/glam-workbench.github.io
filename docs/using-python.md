@@ -6,7 +6,7 @@ To run one of the GLAM Workbench repositories within a dedicated Python environm
 
 1. Create and activate a Python virtual environment (Python >= 3.8 should be ok). I use [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) to create and manage Python versions and environments.
 2. On the command line, use `git clone` to create a local version of the GLAM Workbench repository, eg. `git clone https://github.com/GLAM-Workbench/trove-newspapers.git`
-3. On the command line, use `cd` to move into the `notebooks` folder of the newly-cloned repository, eg. `cd trove-newspapers/notebooks`
+3. On the command line, use `cd` to move into the folder of the newly-cloned repository, eg. `cd trove-newspapers`
 4. On the command line, run `pip install -r requirements.txt` to install the required Python packages.
 
 ## Running Jupyter Lab

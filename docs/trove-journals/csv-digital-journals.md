@@ -11,11 +11,11 @@ hide:
   - toc
 ---
 
-**Harvested: 5 August 2021**
+**Harvested: 31 August 2022**
 
-This file provides metadata of 7,269 periodicals that are available from Trove's journal zone in digital form. This includes both 'digitised' periodicals, and born-digital periodicals submitted through Electronic Legal Deposit. Note that this list contains 7,318 records as there are some duplicates where multiple Trove work records point to the same digitised periodicals. The duplicates have been left in as they include different metadata, and can be easily removed with Pandas. 
+This file provides metadata of 8,662 periodicals that are available from Trove's journal zone in digital form. This includes both 'digitised' periodicals, and born-digital periodicals submitted through Electronic Legal Deposit. Note that this list contains 8,728 records as there are some duplicates where multiple Trove work records point to the same digitised periodicals. The duplicates have been left in as they include different metadata, and can be easily removed with Pandas. 
 
-[Download the CSV file](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals.csv){ .md-button .md-button--primary }
+[Download the CSV file](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-20220831.csv){ .md-button .md-button--primary }
 
 This file includes the following columns:
 
@@ -32,8 +32,7 @@ This file includes the following columns:
 
 ### Other options
 
-* Explore using a [**searchable database running on Glitch**](https://trove-digital-periodicals.glitch.me/data/trove-digital-journals)
-
+* Explore using a [searchable database running on Glitch](https://trove-digital-periodicals.glitch.me/data/trove-digital-journals) (not yet updated to use the latest harvest)
 ### Related resources
 
 * [Create a list of Trove's digitised journals](create-list-digitised-journals.md)

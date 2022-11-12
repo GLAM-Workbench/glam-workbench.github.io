@@ -12,7 +12,7 @@ hide:
 
 Using the notebook below I harvested parliamentary press releases that included any of the terms 'COVID' or 'coronavirus'. A total of 3,995 text files were harvested.
 
-[Download zip file (12mb)](https://github.com/GLAM-Workbench/trove-journals/raw/6f4d805186716853b81c7d93cac6754685b384bf/press-releases/press-releases-coronavirus-or-covid.zip){ .md-button .md-button--primary }
+[Download from CloudStor](https://cloudstor.aarnet.edu.au/plus/s/MQ9F8Jg9wJ5gcAy){ .md-button .md-button--primary }
 
 ### Related resources
 

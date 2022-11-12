@@ -35,3 +35,5 @@ This notebook helps you visualise changes in a web page by generating full page 
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

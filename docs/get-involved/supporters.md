@@ -1,9 +1,6 @@
 ---
 private: 3
 sponsors:
-- avatar: https://avatars.githubusercontent.com/u/81400078?s=40&v=4
-  name: Carole Riley
-  url: https://github.com/CaroleRiley
 - avatar: https://avatars.githubusercontent.com/u/8736060?s=40&u=243f7f6575043a142c729b7545f78b1d8c22f666&v=4
   name: NoreenKirkman
   url: https://github.com/NoreenKirkman
@@ -19,9 +16,6 @@ sponsors:
 - avatar: https://avatars.githubusercontent.com/u/83409949?s=40&v=4
   name: PeterT63
   url: https://github.com/PeterT63
-- avatar: https://avatars.githubusercontent.com/u/83427950?s=40&v=4
-  name: JulieKimber
-  url: https://github.com/JulieKimber
 - avatar: https://avatars.githubusercontent.com/u/17172813?s=40&v=4
   name: bwildie
   url: https://github.com/bwildie
@@ -73,6 +67,12 @@ sponsors:
 - avatar: https://avatars.githubusercontent.com/u/108448977?s=40&v=4
   name: KapylaClub
   url: https://github.com/KapylaClub
+- avatar: https://avatars.githubusercontent.com/u/810983?s=40&u=6e02af8f9e5a7d614710d29710f0b04fa3f6f456&v=4
+  name: Michael Honey
+  url: https://github.com/michaelhoney
+- avatar: https://avatars.githubusercontent.com/u/42562387?s=40&v=4
+  name: michwatsonoz
+  url: https://github.com/michwatsonoz
 template: sponsors.html
 title: Supporters
 total_sponsors: 27

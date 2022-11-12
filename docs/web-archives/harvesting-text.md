@@ -33,3 +33,5 @@ This notebook helps you assemble datasets of text extracted from all available c
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

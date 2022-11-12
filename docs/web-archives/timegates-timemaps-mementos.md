@@ -32,3 +32,5 @@ Systems supporting the Memento protocol provide machine-readable information abo
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

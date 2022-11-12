@@ -40,3 +40,5 @@ If you select 'All occurrences' the notebook will generate a simple chart showin
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

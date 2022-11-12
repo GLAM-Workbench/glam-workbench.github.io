@@ -17,6 +17,14 @@ This notebook converts Trove lists into CSV files (spreadsheets). Separate CSV f
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-lists/blob/master/Convert-a-Trove-list-into-a-CSV-file.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-lists/master?urlpath=lab/tree/Convert-a-Trove-list-into-a-CSV-file.ipynb)
 
+### Convert a Trove list into a CollectionBuilder exhibition  
+This notebook converts Trove lists into a series of files that can be uploaded to a [CollectionBuilder-GH](https://github.com/CollectionBuilder/collectionbuilder-gh) repository to create an instant exhibition. See the [CollectionBuilder site](https://collectionbuilder.github.io/) for more information on how CollectionBuilder works and what it can do.
+
+* [Download from GitHub](https://github.com/GLAM-Workbench/trove-lists/blob/master/convert-list-to-cb-exhibition.ipynb)
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-lists/blob/master/convert-list-to-cb-exhibition.ipynb)
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-lists/master?urlpath=lab/tree/convert-list-to-cb-exhibition.ipynb)
+* [Demonstration exhibition](https://wragge.github.io/trove-wragge-list-demo/) generated from this [Trove list](https://trove.nla.gov.au/list/83777)
+
 ### Harvest summary data from Trove lists
 Use the Trove API to harvest data about all public lists, then extract some summary data and explore a few different techniques to analyse the complete dataset.
 

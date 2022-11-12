@@ -33,3 +33,5 @@ This notebook demonstrates a number of different ways of comparing versions of a
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"

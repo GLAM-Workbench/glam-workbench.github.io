@@ -14,6 +14,8 @@ See below for information on [running these notebooks](#run-these-notebooks) in 
 
 [![Binder](../images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=lab/tree/index.ipynb)
 
+--8<-- "web-archives-sponsor.md"
+
 ## Introduction
 
 We tend to think of a web archive as a site we go to when links are broken – a useful fallback, rather than a source of new research data. But web archives don't just store old web pages, they capture multiple versions of web resources over time. Using web archives we can observe change – we can ask historical questions. This collection of notebooks is intended to help historians, and other researchers, frame those questions by revealing what sort of data is available, how to get it, and what you can do with it.
@@ -191,3 +193,6 @@ See [Using Docker](https://glam-workbench.net/using-docker/) for more informatio
 ## Cite as
 
 {{ zenodo_citation() }}
+
+--8<-- "web-archives-sponsor.md"
+
