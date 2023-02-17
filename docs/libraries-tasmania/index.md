@@ -19,16 +19,16 @@ The [Tasmanian Post Office Directories from 1890 to 1948](https://stors.tas.gov.
 ![Screenshot of the Tasmanian Post Office Directories Search Interface](../images/tas-pod-interface.png)
 [**Search for people and places in Tasmania**](https://glam-workbench.net/tasmanian-post-office-directories/)
 
-### [:material-notebook-outline: Download and process Tasmanian Post Office Directory PDFs](tas-pod-save-text-images.md) {: data-toc-omit }
+### [:material-notebook-outline: Download and process Tasmanian Post Office Directory PDFs](tas-pod-save-text-images.md) 
 This notebook downloads all 48 Tasmanian Post Office Directory PDFs, then extracts images and text from the PDFs using PyMuPDF.
 
-### [:material-notebook-outline: Upload Tasmanian Post Office Directory images to Amazon s3 for IIIF](tas-pod-upload-images.md) {: data-toc-omit }
+### [:material-notebook-outline: Upload Tasmanian Post Office Directory images to Amazon s3 for IIIF](tas-pod-upload-images.md) 
 This notebook converts the images extracted from the Post Office Directory PDFs into pyramidal TIFFs using pyvips and then uploads them to an Amazon s3 bucket for delivery via IIIF.
 
-### [:material-notebook-outline: Extract text from PDF images using Tesseract](tas-pod-ocr-with-tesseract.md) {: data-toc-omit }
+### [:material-notebook-outline: Extract text from PDF images using Tesseract](tas-pod-ocr-with-tesseract.md) 
 This notebook uses Tesseract (OCR) to extract text directly from the images in the Tasmanian Post Office Directory PDFs.
 
-### [:material-notebook-outline: Add content from the Tasmanian Post Office Directories to an SQLite database](tas-pod-add-to-datasette.md)  {: data-toc-omit }
+### [:material-notebook-outline: Add content from the Tasmanian Post Office Directories to an SQLite database](tas-pod-add-to-datasette.md)  
 This notebook brings everything together text and images from the Tasmanian Post Office Directories in an SQLite database ready for delivery through Datasette.
 
 See the [GLAM Workbench for more details](https://glam-workbench.github.io/libraries-tasmania/).

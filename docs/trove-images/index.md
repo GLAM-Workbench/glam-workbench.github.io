@@ -16,17 +16,17 @@ See below for information on [running these notebooks](#run-these-notebooks) in 
 
 ## Tips, tools, and examples
 
-### [:material-notebook-outline: The use of standard licences and rights statements in Trove image records](use-of-rights-statements.md) {: data-toc-omit }
+### [:material-notebook-outline: The use of standard licences and rights statements in Trove image records](use-of-rights-statements.md) 
 
 Version 2.1 of the Trove API introduced a new rights index that you can use to limit your search results to records that include one of a list of standard licences and rights statements. We can also use this index to build a picture of which rights statements are currently being used, and by who. Let's give it a try...
 
 ## Datasets
 
-### [:material-database-outline: Rights applied to images by each Trove contributor](csv-image-rights-by-institution.md) {: data-toc-omit }
+### [:material-database-outline: Rights applied to images by each Trove contributor](csv-image-rights-by-institution.md) 
 
 This CSV-formatted dataset lists the number of images with each rights statement from organisations contributing to Trove.
 
-### [:material-database-outline: Rights applied to out-of-copyright photographs by each Trove contributor](csv-out-of-copyright-photos-rights-by-institution.md) {: data-toc-omit }
+### [:material-database-outline: Rights applied to out-of-copyright photographs by each Trove contributor](csv-out-of-copyright-photos-rights-by-institution.md) 
 
 This CSV-formatted dataset lists the number of out-of-copyright photographs (created before 1955) with each rights statement from organisations contributing to Trove.
 

@@ -1,6 +1,5 @@
 ---
 repo_url: https://github.com/GLAM-Workbench
-repo_name: GLAM-Workbench
 ---
 
 # Suggest a topic

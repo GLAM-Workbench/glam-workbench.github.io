@@ -13,11 +13,25 @@ requests_cache.install_cache('gh_cache', expire_after=timedelta(days=7))
 
 s = CachedSession(expire_after=timedelta(days=7))
 
-def on_post_page_macros(env):
+def on_pre_page_macros(env):
     html = ''
     repo_name = env.page.meta.get('repo_name')
+    contributors = env.page.meta.get('contributors', [])
+    contributors_exclude = env.page.meta.get('contributors_exclude', [])
+    # print(repo_name)
     headers = {'Authorization': f'token {os.getenv("GITHUB_TOKEN")}'}
     if repo_name:
+        g = Github(os.getenv("GITHUB_TOKEN"))
+        repo = g.get_repo(f'GLAM-Workbench/{repo_name}')
+        for user in repo.get_contributors():
+            user_name = None
+            if user.name:
+                user_name = user.name
+            elif not user.login.startswith('github-'):
+                user_name = user.login
+            if user_name and user_name not in contributors_exclude:
+                contributors.append({"name": user_name, "url": user.html_url})
+            env.page.meta['contributors'] = contributors
         try:
             r = s.get(f'https://api.github.com/repos/glam-workbench/{repo_name}', timeout=30, headers=headers)
         except requests.exceptions.RequestException:
@@ -35,9 +49,11 @@ def on_post_page_macros(env):
             releases = r.json()
             try:
                 tag = releases[0]['tag_name']
+                link = releases[0]['html_url']
             except (KeyError, IndexError):
                 # print(releases)
                 tag = ''
+                link = ''
         if tag:
             html += f'<li class="md-source__fact md-source__fact--version">{tag}</li>'
         if stars:
@@ -45,105 +61,59 @@ def on_post_page_macros(env):
         if forks:
             html += f'<li class="md-source__fact md-source__fact--forks">{forks}</li>'
         env.page.meta['repo_stats'] = html
+        env.page.meta['version'] = tag
+        env.page.meta['version_url'] = link
 
+    zenodo_id = env.page.meta.get('zenodo_concept_id')
+    if zenodo_id:
+        try:
+            r = s.get(f'https://zenodo.org/api/records/{zenodo_id}', timeout=30)
+        except requests.exceptions.RequestException:
+            print('Could not get data from Zenodo!')
+        else:
+            details = r.json()
+            doi = details['links']['doi']
+            badge = details['links']['badge']
+            # fdate = date.fromisoformat(details['metadata']['publication_date']).strftime('%-d %B %Y')
+            fdate = date.fromisoformat(details['metadata']['publication_date']).strftime('%Y')
+            title = details['metadata']['title']
+            version = details['metadata']['version']
+            authors = [c['name'] for c in details['metadata']['creators']]
+            if len(authors) == 2:
+                author_str = f'{authors[0]} & {authors[1]}'
+            elif len(authors) > 2:
+                author_str = f'{"; ".join(authors[:-1])} & {authors[-1]}'
+            else:
+                author_str = authors[0]
+            env.page.meta["doi"] = doi
+            env.page.meta["badge"] = badge
+            env.page.meta["pub_date"] = details['metadata']['publication_date']
+            env.page.meta["zenodo_title"] = title
+            env.page.meta["version"] = version
+            env.page.meta["authors"] = authors
+            env.page.meta["citation"] = f'{author_str}. ({fdate}). {title} (version {version}). Zenodo. [{doi}]({doi})' + '  \n\n' + f'[![]({badge})]({doi})'
 
 def define_env(env):
     "Hook function"
 
     @env.macro
     def zenodo_citation():
-        zenodo_id = env.page.meta.get('zenodo_concept_id')
-        if zenodo_id:
-            try:
-                r = s.get(f'https://zenodo.org/api/records/{zenodo_id}', timeout=30)
-            except requests.exceptions.RequestException:
-                print('Could not get data from Zenodo!')
-                return ''
-            else:
-                details = r.json()
-                doi = details['links']['doi']
-                badge = details['links']['badge']
-                # fdate = date.fromisoformat(details['metadata']['publication_date']).strftime('%-d %B %Y')
-                fdate = date.fromisoformat(details['metadata']['publication_date']).strftime('%Y')
-                title = details['metadata']['title']
-                version = details['metadata']['version']
-                authors = [c['name'] for c in details['metadata']['creators']]
-                if len(authors) == 2:
-                    author_str = f'{authors[0]} & {authors[1]}'
-                elif len(authors) > 2:
-                    author_str = f'{"; ".join(authors[:-1])} & {authors[-1]}'
-                else:
-                    author_str = authors[0]
-                citation = f'{author_str}. ({fdate}). {title} (version {version}). Zenodo. [{doi}]({doi})' + '  \n\n' + f'[![]({badge})]({doi})'
-                return citation
-        else:
-            return ''
+        return env.page.meta.get("citation", "")
 
     @env.macro
-    def git_latest_tag(tag_only=False):
-        """
-        Function to get the latest tag from the git repository which matches
-        the configured regex for the version tag format.
-        :param page_path:
-        :return: String with the highest semver tag, returns "unknown" if not found.
-        """
+    def git_latest_tag():
         version = ''
-        repo_name = env.page.meta.get('repo_name')
-        if repo_name:
-            try:
-                headers = {'Authorization': f'token {os.getenv("GITHUB_TOKEN")}'}
-                r = s.get(f'https://api.github.com/repos/glam-workbench/{repo_name}/releases', timeout=30, headers=headers)
-            except requests.exceptions.RequestException:
-                print('Could not get data from GitHub!')
-                return ''
-            else:
-                releases = r.json()
-                try:
-                    tag = releases[0]['tag_name']
-                    link = releases[0]['html_url']
-                except (KeyError, IndexError):
-                    # print(releases)
-                    pass
-                else:
-                    if tag_only:
-                        version = tag
-                    else:
-                        version = f'##### Current version: [{tag}]({link})  {{: data-toc-omit }}'
+        version_tag = env.page.meta.get('version')
+        version_link = env.page.meta.get('version_url')
+        if version_tag and version_link:
+            version = f'##### Current version: [{version_tag}]({version_link}) {{: data-toc-omit }}'
+        elif version_tag:
+            version = f'##### Current version: {version_tag} {{: data-toc-omit }}'
         return version
 
     @env.macro
     def set_repo_stats():
-        html = ''
-        repo_name = env.page.meta.get('repo_name')
-        headers = {'Authorization': f'token {os.getenv("GITHUB_TOKEN")}'}
-        if not repo_name:
-            repo_name = env.conf['repo_name']
-            try:
-                r = s.get(f'https://api.github.com/orgs/{repo_name}', timeout=30, headers=headers)
-            except requests.exceptions.RequestException:
-                print('Could not get data from GitHub!')
-            else:
-                data = r.json()
-                repos = data.get('public_repos')
-                if repos:
-                    html += f'<li class="md-source__fact md-source__fact--repositories">{repos}</li>'
-        elif repo_name:
-            try:
-                r = s.get(f'https://api.github.com/repos/glam-workbench/{repo_name}', timeout=30, headers=headers)
-            except requests.exceptions.RequestException:
-                print('Could not get data from GitHub!')
-            else:
-                data = r.json()
-                stars = data.get('stargazers_count')
-                forks = data.get('forks_count')
-                version = git_latest_tag(tag_only=True)
-                if version:
-                    html += f'<li class="md-source__fact md-source__fact--version">{version}</li>'
-                if stars:
-                    html += f'<li class="md-source__fact md-source__fact--stars">{stars}</li>'
-                if forks:
-                    html += f'<li class="md-source__fact md-source__fact--forks">{forks}</li>'
-        return html
+        return env.page.meta.get("repo_stats", "")
 
     @env.macro
     def repo_contributors():

@@ -14,13 +14,13 @@ A number of GLAM Workbench repositories use CloudStor to share harvested dataset
 
 You can easily share folders in CloudStor, but it's not always obvious how to access files within shared folders. These notebooks document some methods for accessing files in publicly-shared folders.
 
-### [:material-notebook-outline: Creating and sharing public links to nested resources in CloudStor](cloudstor-share-nested-links.md) {: data-toc-omit }
+### [:material-notebook-outline: Creating and sharing public links to nested resources in CloudStor](cloudstor-share-nested-links.md) 
 
 It's easy to create a public link to a file or folder in the CloudStor interface. But what if you have lots of files in nested folders that you want to make publicly accessible? Yes, you can share the parent folder, but how do you create direct public links to files and folders inside the parent folder without generating new share links for every resource.
 
 This notebook demonstrates how to create links to resources nested within a shared folder. The code cells run some simple tests to try and make sure that the example links go where they're supposed to.
 
-### [:material-notebook-outline: Cloudstor access to a public share via WebDAV](cloudstor-access-via-webdav.md) {: data-toc-omit }
+### [:material-notebook-outline: Cloudstor access to a public share via WebDAV](cloudstor-access-via-webdav.md) 
 
 An alternative to manually constructing links is to use a WebDAV client. It takes a bit of effort to configure, but once it's set up you can access information about, and download, publicly shared files and folders.
 

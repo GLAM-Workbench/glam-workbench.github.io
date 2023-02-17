@@ -12,10 +12,10 @@ A collection of examples using the [Victorian Heritage Database API](https://api
 
 ## Tips, tools, and examples
 
-### [:material-notebook-outline: Introduction to the Victorian Heritage Database API](introduction-victorian-heritage-api.md) {: data-toc-omit }
+### [:material-notebook-outline: Introduction to the Victorian Heritage Database API](introduction-victorian-heritage-api.md) 
 An introduction to the Victorian Heritage Database API, showing how to construct basic queries and the sorts of results that are returned
 
-### [:material-notebook-outline: Shipwrecks in the Victorian Heritage Database](shipwrecks.md) {: data-toc-omit }
+### [:material-notebook-outline: Shipwrecks in the Victorian Heritage Database](shipwrecks.md) 
 Explores what you can find out about shipwrecks using the Victorian Heritage Database API.
 
 <!-- START RUN INFO -->

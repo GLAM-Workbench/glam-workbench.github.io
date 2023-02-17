@@ -1,8 +1,30 @@
 {% extends "base.html" %}
 {% block extrahead %}
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+    <link rel="schema.bibo" href="http://purl.org/ontology/bibo/" />
+    <link rel="schema.z" href="http://www.zotero.org/namespaces/export#" />
     {% if page and page.meta and page.meta.redirect %}
         <link rel="canonical" href="{{ page.meta.redirect }}">
         <meta name="robots" content="noindex">
         <meta http-equiv="refresh" content="0; url={{ page.meta.redirect }}">
+    {% endif %}
+    {% if page and page.meta %}
+        <meta name="z.type" content="computerProgram" />
+        <meta name="z.libraryCatalog" content="Zenodo" />
+        {% if page.meta.title %}
+            <meta name="dcterms.title" content="{{page.meta.zenodo_title}}" />
+        {% endif %}
+        {% for author in page.meta.authors %}
+            <meta name="dcterms.creator" content="{{author}}" />
+        {% endfor %}
+        {% if page.meta.pub_date %}
+            <meta name="dcterms.issued" content="{{page.meta.pub_date}}" />
+        {% endif %}
+        {% if page.meta.doi %}
+            <meta name="dcterms.identifier" content="{{page.meta.doi}}" />
+        {% endif %}
+        {% if page.meta.version %}
+            <meta name="bibo.edition" content="{{page.meta.version}}" />
+        {% endif %}
     {% endif %}
 {% endblock %}

@@ -4,7 +4,6 @@ description: The Trove Newspaper & Gazette Harvester makes it easy to download l
 repo_name: trove-newspaper-harvester
 repo_url: https://github.com/glam-workbench/trove-newspaper-harvester
 zenodo_concept_id: 3545044
-
 ---
 
 {{ git_latest_tag() }}
@@ -21,26 +20,26 @@ See below for information on [running these notebooks](#run-these-notebooks) in 
 
 
 
-### [:material-notebook-outline: Trove Harvester web app](harvester-web-app.md) {: data-toc-omit }
+### [:material-notebook-outline: Trove Harvester web app](harvester-web-app.md) 
 
 A simple web interface to the Trove Newspaper and Gazette Harvester – the easiest and quickest way to download all the results from a Trove newspaper or gazette search.
 
 
-### [:material-notebook-outline: Using TroveHarvester to get newspaper and gazette articles in bulk](using-troveharvester.md) {: data-toc-omit }
+### [:material-notebook-outline: Using TroveHarvester to get newspaper and gazette articles in bulk](using-troveharvester.md) 
 
 This notebook provides an introduction to the Trove Newspaper and Gazette Harvester command line tool. Edit a few cells and you'll be harvesting metadata and full text of thousands of articles in minutes. This gives you you more control over your harvest than the simple web app, including the ability to restart a failed harvest.
 
 ## Exploring your harvested data
 
-### [:material-notebook-outline: Display the results of a harvest as a searchable database using Datasette](display-harvest-results-in-datasette.md) {: data-toc-omit }
+### [:material-notebook-outline: Display the results of a harvest as a searchable database using Datasette](display-harvest-results-in-datasette.md) 
 
 [Datasette](https://github.com/simonw/datasette) is 'a tool for exploring and publishing data'. Give it a CSV file and it turns it into a fully-searchable database, running in your browser. It supports facets, full-text search, and, with a bit of tweaking, can even present images. Although Datasette is a command-line tool, we can run from within a Jupyter notebook, and open a new window to display the results. This notebook shows you how to load the newspaper data you've harvested into Datasette, and start it up. If you've also harvested full-text and images from the newspaper articles, you can add these to your database as well!
 
-### [:material-notebook-outline: Exploring your TroveHarvester data](exploring-troveharvester-data.md) {: data-toc-omit }
+### [:material-notebook-outline: Exploring your TroveHarvester data](exploring-troveharvester-data.md) 
 
 This notebook shows some ways in which you can analyse and visualise the article metadata you've harvested — show the distribution of articles over time and space; find which newspapers published the most articles. (Under construction)
 
-### [:material-notebook-outline: Exploring harvested text files](exploring-troveharvester-text.md) {: data-toc-omit }
+### [:material-notebook-outline: Exploring harvested text files](exploring-troveharvester-text.md) 
 
 This notebook suggests some ways in which you can aggregate and analyse the individual OCRd text files for each article — look at word frequencies ; calculate TF-IDF values. (Under construction)
 

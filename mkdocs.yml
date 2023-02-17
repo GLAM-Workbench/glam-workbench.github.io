@@ -100,7 +100,7 @@ plugins:
         redirect_maps:
             'trove_newspapers.md': 'trove-newspapers.md'
             'name-search.md': 'https://glam-name-indexes-yajhxrvxsa-ts.a.run.app/'
-            'trove-journals/nsw-post-office-directories.md': 'https://nsw-post-office-directories-yajhxrvxsa-ts.a.run.app/'
+            'tasmanian-post-office-directories.md': 'libraries-tasmania/tasmanian-post-office-directories.md'
             supporters.md: get-involved/supporters.md
 
 nav:
@@ -139,56 +139,98 @@ nav:
             - csv-explorer.md
             - GLAM Name Index Search: name-search.md
     - Trove:
-        - trove.md
+        - Trove API Introduction:
+            - trove/index.md
+            - Notebooks:
+                - trove/your-first-api-request.md
+                - trove/working-with-zones.md
+                - trove/exploring-facets.md
         - trove-newspapers.md
         - Trove newspaper & gazette harvester:
             - trove-harvester/index.md
-            - trove-harvester/harvester-web-app.md
-            - Using the Trove Harvester: trove-harvester/using-troveharvester.md
-            - Displaying results in Datasette: trove-harvester/display-harvest-results-in-datasette.md
-            - Exploring harvested data: trove-harvester/exploring-troveharvester-data.md
-            - Exploring harvested texts: trove-harvester/exploring-troveharvester-text.md
+            - Notebooks:
+                - trove-harvester/harvester-web-app.md
+                - Using the Trove Harvester: trove-harvester/using-troveharvester.md
+                - Displaying results in Datasette: trove-harvester/display-harvest-results-in-datasette.md
+                - Exploring harvested data: trove-harvester/exploring-troveharvester-data.md
+                - Exploring harvested texts: trove-harvester/exploring-troveharvester-text.md
         - Trove books:
             - trove-books/index.md
-            - Harvesting text from digitised books: trove-books/harvesting-text-of-digitised-books.md
-            - Metadata for digital works: trove-books/metadata-for-digital-works.md
-            - Harvesting text from Internet Archive: trove-books/harvesting-text-from-books-in-ia.md
-            - trove-books/counting-words-and-phrases.md
-            - trove-books/recipe-generator.md
-            - Exploring Trove's digitised books: trove-books/exploring-digitised-books-adel-rahmani.md
-            - OCRd text from Trove books: trove-books/ocrd-text-from-trove-books.md
-            - CSV of digital books in Trove: trove-books/csv-books-in-digital-form.md
-            - Government publications in digital form: trove-books/government-publications-in-digital-form.md
-            - OCRd text from Australian books in IA: trove-books/ocrd-text-from-ia.md
-            - CSV of Australian books in IA: trove-books/csv-australian-books-in-ia.md
+            - Notebooks:
+                - Harvesting text from digitised books: trove-books/harvesting-text-of-digitised-books.md
+                - Metadata for digital works: trove-books/metadata-for-digital-works.md
+                - Harvesting text from Internet Archive: trove-books/harvesting-text-from-books-in-ia.md
+                - trove-books/counting-words-and-phrases.md
+                - trove-books/recipe-generator.md
+                - Exploring Trove's digitised books: trove-books/exploring-digitised-books-adel-rahmani.md
+                - OCRd text from Trove books: trove-books/ocrd-text-from-trove-books.md
+                - CSV of digital books in Trove: trove-books/csv-books-in-digital-form.md
+                - Government publications in digital form: trove-books/government-publications-in-digital-form.md
+            - Data:
+                - OCRd text from Australian books in IA: trove-books/ocrd-text-from-ia.md
+                - CSV of Australian books in IA: trove-books/csv-australian-books-in-ia.md
         - Trove journals:
             - trove-journals/index.md
-            - Create a list of digitised journals: trove-journals/create-list-digitised-journals.md
-            - Get OCRd text from a journal: trove-journals/get-ocrd-text-from-digitised-journal.md
-            - Get OCRd text from all journals: trove-journals/get-ocrd-text-from-all-journals.md
-            - Get cover images from a journal: trove-journals/get-covers-from-digitised-journal.md
-            - Finding cartoons in the Bulletin: trove-journals/finding-editorial-cartoons-in-bulletin.md
-            - Harvest Parliament press releases: trove-journals/harvest-parliament-press-releases.md
-            - Create database of text indexed by line: trove-journals/create-text-db-indexed-by-line.md
-            - Topic modelling Parliament press releases: trove-journals/topic-modelling-parliament-press-releases.md
-            - CSV list of digital journals: trove-journals/csv-digital-journals.md
-            - CSV list of journals with OCR: trove-journals/csv-journals-with-ocr.md
-            - List of journals with OCR: trove-journals/journals-with-ocr.md
-            - OCRd text from all journals: trove-journals/ocrd-text-all-journals.md
-            - trove-journals/bulletin-cartoons-collection.md
-            - Politicians talking about 'refugees': trove-journals/politicans-press-releases-refugees.md
-            - Politicians talking about COVID: trove-journals/politicans-press-releases-covid.md
-            - Search:
+            - Notebooks:
+                - Create a list of digitised journals: trove-journals/create-list-digitised-journals.md
+                - Get OCRd text from a journal: trove-journals/get-ocrd-text-from-digitised-journal.md
+                - Get OCRd text from all journals: trove-journals/get-ocrd-text-from-all-journals.md
+                - Get cover images from a journal: trove-journals/get-covers-from-digitised-journal.md
+                - Finding cartoons in the Bulletin: trove-journals/finding-editorial-cartoons-in-bulletin.md
+                - Harvest Parliament press releases: trove-journals/harvest-parliament-press-releases.md
+                - Create database of text indexed by line: trove-journals/create-text-db-indexed-by-line.md
+                - Topic modelling Parliament press releases: trove-journals/topic-modelling-parliament-press-releases.md
+            - Data:
+                - CSV list of digital journals: trove-journals/csv-digital-journals.md
+                - CSV list of journals with OCR: trove-journals/csv-journals-with-ocr.md
+                - List of journals with OCR: trove-journals/journals-with-ocr.md
+                - OCRd text from all journals: trove-journals/ocrd-text-all-journals.md
+                - trove-journals/bulletin-cartoons-collection.md
+                - Politicians talking about 'refugees': trove-journals/politicans-press-releases-refugees.md
+                - Politicians talking about COVID: trove-journals/politicans-press-releases-covid.md
+            - Links:
                 - NSW Post Office Directories: trove-journals/nsw-post-office-directories.md
                 - Sydney Telephone Directories: trove-journals/sydney-telephone-directories.md
-        - trove-lists.md
-        - trove-maps.md
+        - Trove lists & tags:
+            - trove-lists/index.md
+            - Notebooks:
+                - Convert list to CSV: trove-lists/convert-a-trove-list-into-a-csv-file.md
+                - Convert list to CollectionBuilder: trove-lists/convert-list-to-cb-exhibition.md
+                - Harvest lists data: trove-lists/harvest-summary-data-from-lists.md
+                - Harvest tags data: trove-lists/harvest-tags.md
+                - Analyse tags data: trove-lists/analyse_tags.md
+            - Data:
+                - trove-lists/trove-lists-metadata.md
+                - trove-lists/trove-public-tags.md
+                - trove-lists/trove-tag-counts.md
+        - Trove maps:
+            - trove-maps/index.md
+            - Notebooks:
+                - trove-maps/exploring-digitised-maps.md
+                - trove-maps/parse-coordinates.md
+            - Data:
+                - trove-maps/single-maps-data.md
+                - trove-maps/single-maps-coordinates-data.md
         - trove-music.md
+        - Trove people & organisations:
+            - trove-people/index.md
+            - Notebooks:
+                - Harvest complete dataset: trove-people/complete_harvest.md
+                - Harvest complete dataset using OAI-PMH: trove-people/complete_harvest_oai.md
+                - Extract data from harvest: trove-people/extract_aggregated_data_from_harvest.md
+                - Get SRU results as JSON: trove-people/get_sru_results_as_json.md
+                - Visualise data sources: trove-people/intersections.md
+                - Get VIAF links: trove-people/viaf.md
+            - Data:
+                - Complete dataset: trove-people/complete_harvest_dataset.md
+                - Aggregated data from complete dataset: trove-people/aggregated_datasets.md
         - Trove images:
             - trove-images/index.md
-            - Rights statements applied to images: trove-images/use-of-rights-statements.md
-            - CSV of rights applied to images: trove-images/csv-image-rights-by-institution.md
-            - CSV of rights applied to out-of-copyright photos: trove-images/csv-out-of-copyright-photos-rights-by-institution.md
+            - Notebooks:
+                - Rights statements applied to images: trove-images/use-of-rights-statements.md
+            - Data:
+                - CSV of rights applied to images: trove-images/csv-image-rights-by-institution.md
+                - CSV of rights applied to out-of-copyright photos: trove-images/csv-out-of-copyright-photos-rights-by-institution.md
         - trove-unpublished.md
         - trove-random.md
     - digitalnz.md
@@ -205,15 +247,19 @@ nav:
     - Heritage:
         - Heritage Council of Victoria:
             - heritage-council-of-victoria/index.md
-            - heritage-council-of-victoria/introduction-victorian-heritage-api.md
-            - heritage-council-of-victoria/shipwrecks.md
+            - Notebooks:
+                - heritage-council-of-victoria/introduction-victorian-heritage-api.md
+                - heritage-council-of-victoria/shipwrecks.md
     - Libraries:
         - Libraries Tasmania:
             - libraries-tasmania/index.md
-            - Download Post Office Directory PDFs: libraries-tasmania/tas-pod-save-text-images.md
-            - Upload images to s3 for delivery via IIIF: libraries-tasmania/tas-pod-upload-images.md
-            - Extract text from PDF images with Tesseract: libraries-tasmania/tas-pod-ocr-with-tesseract.md
-            - Load Post Office Directory contents into a database: libraries-tasmania/tas-pod-add-to-datasette.md
+            - Notebooks: 
+                - Download Post Office Directory PDFs: libraries-tasmania/tas-pod-save-text-images.md
+                - Upload images to s3 for delivery via IIIF: libraries-tasmania/tas-pod-upload-images.md
+                - Extract text from PDF images with Tesseract: libraries-tasmania/tas-pod-ocr-with-tesseract.md
+                - Load Post Office Directory contents into a database: libraries-tasmania/tas-pod-add-to-datasette.md
+            - Links:
+                - Tasmanian Post Office Directories: libraries-tasmania/tasmanian-post-office-directories.md
         - State Library of NSW:
             - Tribune negatives:
                 - records-of-resistance.md
@@ -224,26 +270,28 @@ nav:
         - lac.md
     - Web archives:
         - web-archives/index.md
-        - web-archives/timegates-timemaps-mementos.md
-        - web-archives/exploring-ia-cdx-api.md
-        - web-archives/comparing-cdx-apis.md
-        - web-archives/timemaps-vs-cdx.md
-        - Get a Memento: web-archives/get-memento.md
-        - Find all versions of a web page: web-archives/get-all-versions.md
-        - Harvest text from web pages: web-archives/harvesting-text.md
-        - Harvest data about a domain: web-archives/harvesting-domain-data.md
-        - Explore Powerpoints from a domain: web-archives/exploring-powerpoints.md
-        - Explore all subdomains from gov.au: web-archives/exploring-govau-subdomains.md
-        - Compare versions of a page: web-archives/compare-page-versions.md
-        - Observe change in a page over time: web-archives/observing-change-over-time.md
-        - Create full-page screenshots: web-archives/create-screenshots.md
-        - Create a series of screenshots: web-archives/create-screenshots-over-time.md
-        - Display changes in page text: web-archives/display-changes-in-text.md
-        - Find when text appears: web-archives/find-when-text-appears.md
-        - Harvest of subdomains under gov.au: web-archives/harvest-of-govau-subdomains.md
-        - Unique gov.au subdomains split into parts: web-archives/govau-subdomains-split.md
-        - List of unique gov.au subdomains: web-archives/govau-subdomains-surt.md
-        - Visualisations of gov.au subdomains: web-archives/govau-subdomains-visualisations.md
+        - Notebooks:
+            - web-archives/timegates-timemaps-mementos.md
+            - web-archives/exploring-ia-cdx-api.md
+            - web-archives/comparing-cdx-apis.md
+            - web-archives/timemaps-vs-cdx.md
+            - Get a Memento: web-archives/get-memento.md
+            - Find all versions of a web page: web-archives/get-all-versions.md
+            - Harvest text from web pages: web-archives/harvesting-text.md
+            - Harvest data about a domain: web-archives/harvesting-domain-data.md
+            - Explore Powerpoints from a domain: web-archives/exploring-powerpoints.md
+            - Explore all subdomains from gov.au: web-archives/exploring-govau-subdomains.md
+            - Compare versions of a page: web-archives/compare-page-versions.md
+            - Observe change in a page over time: web-archives/observing-change-over-time.md
+            - Create full-page screenshots: web-archives/create-screenshots.md
+            - Create a series of screenshots: web-archives/create-screenshots-over-time.md
+            - Display changes in page text: web-archives/display-changes-in-text.md
+            - Find when text appears: web-archives/find-when-text-appears.md
+        - Data:
+            - Harvest of subdomains under gov.au: web-archives/harvest-of-govau-subdomains.md
+            - Unique gov.au subdomains split into parts: web-archives/govau-subdomains-split.md
+            - List of unique gov.au subdomains: web-archives/govau-subdomains-surt.md
+            - Visualisations of gov.au subdomains: web-archives/govau-subdomains-visualisations.md
     - Museums:
         - nma.md
         - tepapa.md
@@ -254,13 +302,15 @@ nav:
             - pm-transcripts.md
     - Wikidata:
         - wikidata/index.md
-        - Timeline of govt departments: wikidata/agencies-gannt-timeline.md
-        - Network graph of govt departments: wikidata/govt-agencies-network.md
-        - View connections of a single agency: wikidata/single-agency-network.md
+        - Notebooks:
+            - Timeline of govt departments: wikidata/agencies-gannt-timeline.md
+            - Network graph of govt departments: wikidata/govt-agencies-network.md
+            - View connections of a single agency: wikidata/single-agency-network.md
     - Useful tools:
         - Useful tools: glam-tools/index.md
-        - CloudStor nested links: glam-tools/cloudstor-share-nested-links.md
-        - CloudStor using WebDAV: glam-tools/cloudstor-access-via-webdav.md
+        - Notebooks:
+            - CloudStor nested links: glam-tools/cloudstor-share-nested-links.md
+            - CloudStor using WebDAV: glam-tools/cloudstor-access-via-webdav.md
     - More resources:
         - more-glam-notebooks.md
         - glam-tools-interfaces.md
