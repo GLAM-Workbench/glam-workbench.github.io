@@ -107,13 +107,13 @@
             <meta name="dcterms.creator" content="Sherratt, Tim" />
         
         
-            <meta name="dcterms.issued" content="2022-10-11" />
+            <meta name="dcterms.issued" content="2023-03-16" />
         
         
-            <meta name="dcterms.identifier" content="https://doi.org/10.5281/zenodo.7185415" />
+            <meta name="dcterms.identifier" content="https://doi.org/10.5281/zenodo.7739296" />
         
         
-            <meta name="bibo.edition" content="v1.2.2" />
+            <meta name="bibo.edition" content="v1.3.0" />
         
     
 
@@ -129,6 +129,8 @@
   
     
     
+    
+      
     
       
     
@@ -635,7 +637,7 @@
 <div class="md-source__repository">
   trove-newspaper-harvester
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v1.2.2</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">5</li>
+  <li class="md-source__fact md-source__fact--version">v1.3.0</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">5</li>
 </ul>
 </div>
 </a>
@@ -758,7 +760,7 @@
 <div class="md-source__repository">
   trove-newspaper-harvester
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v1.2.2</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">5</li>
+  <li class="md-source__fact md-source__fact--version">v1.3.0</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">5</li>
 </ul>
 </div>
 </a>
@@ -1958,6 +1960,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -2014,6 +2018,25 @@
   
   <span class="md-ellipsis">
     Using the Trove Harvester
+  </span>
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="harvest-specific-days/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Harvesting articles that mention "Anzac Day" on Anzac Day
   </span>
 
       </a>
@@ -7341,6 +7364,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#harvesting-articles-that-mention-anzac-day-on-anzac-day" class="md-nav__link">
+    <span class="md-ellipsis">
+       Harvesting articles that mention "Anzac Day" on Anzac Day
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7529,9 +7561,9 @@
 
 
 <!-- Markdown content -->
-<h5 id="current-version-v122">Current version: <a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/releases/tag/v1.2.2">v1.2.2</a><a class="headerlink" href="#current-version-v122" title="Permanent link">&para;</a></h5>
+<h5 id="current-version-v130">Current version: <a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/releases/tag/v1.3.0">v1.3.0</a><a class="headerlink" href="#current-version-v130" title="Permanent link">&para;</a></h5>
 <p>The Trove Newspaper &amp; Gazette Harvester makes it easy to download large quantities of digitised articles from Trove's newspapers and gazettes. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis. You can also save the full text of every article, as well as copies of the articles as JPG images, and even PDFs. While the web interface will only show you the first 2,000 results matching your search, the Newspaper &amp; Gazette Harvester will get <strong>everything</strong>.</p>
-<p>You can install the Harvester as a <a href="https://pypi.org/project/trove-newspaper-harvester/">Python command line tool</a>, or use it in one of these notebooks below.</p>
+<p>You can <a href="https://wragge.github.io/trove-newspaper-harvester/">install the Harvester</a> as a Python command line tool, or import it for use as a Python library. The notebooks below provide examples of the different ways you can use the Harvester and the data it creates.</p>
 <p>See below for information on <a href="#run-these-notebooks">running these notebooks</a> in a live computing environment. Or just take them for a spin using Binder.</p>
 <p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/index.ipynb"><img alt="Binder" src="../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
 <h2 id="harvesting-search-results">Harvesting search results<a class="headerlink" href="#harvesting-search-results" title="Permanent link">&para;</a></h2>
@@ -7539,6 +7571,8 @@
 <p>A simple web interface to the Trove Newspaper and Gazette Harvester – the easiest and quickest way to download all the results from a Trove newspaper or gazette search.</p>
 <h3 id="using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk"><a href="using-troveharvester/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg></span> Using TroveHarvester to get newspaper and gazette articles in bulk</a><a class="headerlink" href="#using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk" title="Permanent link">&para;</a></h3>
 <p>This notebook provides an introduction to the Trove Newspaper and Gazette Harvester command line tool. Edit a few cells and you'll be harvesting metadata and full text of thousands of articles in minutes. This gives you you more control over your harvest than the simple web app, including the ability to restart a failed harvest.</p>
+<h3 id="harvesting-articles-that-mention-anzac-day-on-anzac-day"><a href="harvest-specific-days/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg></span> Harvesting articles that mention "Anzac Day" on Anzac Day</a><a class="headerlink" href="#harvesting-articles-that-mention-anzac-day-on-anzac-day" title="Permanent link">&para;</a></h3>
+<p>This notebook provides an example of harvesting a complex search by using the <code>trove_newspaper_harvester</code> library directly. It shows how you can loop through a span of years to harvest results from a particular day each year.</p>
 <h2 id="exploring-your-harvested-data">Exploring your harvested data<a class="headerlink" href="#exploring-your-harvested-data" title="Permanent link">&para;</a></h2>
 <h3 id="display-the-results-of-a-harvest-as-a-searchable-database-using-datasette"><a href="display-harvest-results-in-datasette/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg></span> Display the results of a harvest as a searchable database using Datasette</a><a class="headerlink" href="#display-the-results-of-a-harvest-as-a-searchable-database-using-datasette" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/simonw/datasette">Datasette</a> is 'a tool for exploring and publishing data'. Give it a CSV file and it turns it into a fully-searchable database, running in your browser. It supports facets, full-text search, and, with a bit of tweaking, can even present images. Although Datasette is a command-line tool, we can run from within a Jupyter notebook, and open a new window to display the results. This notebook shows you how to load the newspaper data you've harvested into Datasette, and start it up. If you've also harvested full-text and images from the newspaper articles, you can add these to your database as well!</p>
@@ -7648,8 +7682,8 @@
 <li><a href="https://github.com/wragge">Tim Sherratt</a></li>
 </ul>
 <h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
-<p>Sherratt, Tim. (2022). GLAM-Workbench/trove-newspaper-harvester (version v1.2.2). Zenodo. <a href="https://doi.org/10.5281/zenodo.7185415">https://doi.org/10.5281/zenodo.7185415</a>  </p>
-<p><a href="https://doi.org/10.5281/zenodo.7185415"><img alt="" src="../assets/externals/zenodo.org/badge/doi/10.5281/zenodo.7185415.svg" /></a></p>
+<p>Sherratt, Tim. (2023). GLAM-Workbench/trove-newspaper-harvester (version v1.3.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.7739296">https://doi.org/10.5281/zenodo.7739296</a>  </p>
+<p><a href="https://doi.org/10.5281/zenodo.7739296"><img alt="" src="../assets/externals/zenodo.org/badge/doi/10.5281/zenodo.7739296.svg" /></a></p>
 
 <!-- Was this page helpful? -->
 
