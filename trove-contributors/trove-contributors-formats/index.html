@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This is a flattened version of the contributors data available from the Trove API.">
+        <meta name="description" content="This dataset was created by searching for contributor's NUC codes in each Trove zone and requesting the format facet. This gives a count of records by contributor, zone, and format. It is harvested weekly.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -22,7 +22,7 @@
     
     
       
-        <title>List of organisations contributing metadata to Trove - GLAM Workbench</title>
+        <title>Count of records by contributor, zone, and format - GLAM Workbench</title>
       
     
     
@@ -69,9 +69,9 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="List of organisations contributing metadata to Trove - GLAM Workbench" >
+        <meta  property="og:title"  content="Count of records by contributor, zone, and format - GLAM Workbench" >
       
-        <meta  property="og:description"  content="This is a flattened version of the contributors data available from the Trove API." >
+        <meta  property="og:description"  content="This dataset was created by searching for contributor's NUC codes in each Trove zone and requesting the format facet. This gives a count of records by contributor, zone, and format. It is harvested weekly." >
       
         <meta  property="og:image"  content="https://glam-workbench.net/assets/images/social/trove-contributors/trove-contributors-formats.png" >
       
@@ -85,9 +85,9 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="List of organisations contributing metadata to Trove - GLAM Workbench" >
+        <meta  name="twitter:title"  content="Count of records by contributor, zone, and format - GLAM Workbench" >
       
-        <meta  name="twitter:description"  content="This is a flattened version of the contributors data available from the Trove API." >
+        <meta  name="twitter:description"  content="This dataset was created by searching for contributor's NUC codes in each Trove zone and requesting the format facet. This gives a count of records by contributor, zone, and format. It is harvested weekly." >
       
         <meta  name="twitter:image"  content="https://glam-workbench.net/assets/images/social/trove-contributors/trove-contributors-formats.png" >
       
@@ -500,6 +500,12 @@
     
       
     
+      
+    
+      
+    
+      
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -539,7 +545,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              List of organisations contributing metadata to Trove
+              Count of records by contributor, zone, and format
             
           </span>
         </div>
@@ -7558,7 +7564,7 @@
   as the main headline.
 -->
 
-  <h1>List of organisations contributing metadata to Trove</h1>
+  <h1>Count of records by contributor, zone, and format</h1>
 
 
 <!-- Tags -->
@@ -7580,7 +7586,7 @@
 
 <!-- Markdown content -->
 <p><em>Harvested weekly</em></p>
-<p>This is a flattened version of the contributors data available from the Trove API.</p>
+<p>This dataset was created by searching for contributor's NUC codes in each Trove zone and requesting the format facet. This gives a count of records by contributor, zone, and format. It is harvested weekly.</p>
 <p>The dataset is saved as a CSV file containing the following columns:</p>
 <table>
 <thead>
@@ -7591,10 +7597,6 @@
 </thead>
 <tbody>
 <tr>
-<td><code>id</code></td>
-<td>Trove identifier for organisation/project</td>
-</tr>
-<tr>
 <td><code>nuc</code></td>
 <td>NUC (National Union Catalogue) identifier for this organisation/project</td>
 </tr>
@@ -7603,8 +7605,12 @@
 <td>name of the organisation/project</td>
 </tr>
 <tr>
-<td><code>parent</code></td>
-<td>identifier of parent organisation</td>
+<td><code>zone</code></td>
+<td>name of the Trove zone</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>format type (see Trove's <a href="https://trove.nla.gov.au/about/create-something/using-api/api-technical-guide#formats">list of formats</a>)</td>
 </tr>
 <tr>
 <td><code>total</code></td>
@@ -7612,7 +7618,7 @@
 </tr>
 </tbody>
 </table>
-<p><a class="md-button md-button--primary" href="https://github.com/wragge/trove-contributor-totals/blob/main/data/trove-contributors.csv">Download from Github</a></p>
+<p><a class="md-button md-button--primary" href="https://github.com/wragge/trove-contributor-totals/blob/main/data/trove-contributors-formats.csv">Download from Github</a> <a class="md-button md-button--info" href="https://glam-workbench.net/datasette-lite/?csv=https://github.com/wragge/trove-contributor-totals/blob/main/data/trove-contributors-formats.csv">Explore in Datasette</a></p>
 <h3 id="related-resources">Related resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="../get_contributors/">Create a flat list of organisations contributing metadata to Trove</a></li>
