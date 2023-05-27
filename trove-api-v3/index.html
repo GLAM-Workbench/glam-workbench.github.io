@@ -128,7 +128,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#trove-api-console" class="md-skip">
+        <a href="#timeline" class="md-skip">
           Skip to content
         </a>
       
@@ -9208,6 +9208,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#trove-api-console" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9294,7 +9305,15 @@
 <p class="admonition-title">Info</p>
 <p>This is a temporary section of the the GLAM Workbench created to bring together information and examples relating to version 3 of the Trove API. It will probably disappear once the new version is officially released and I reorganise the Trove sections of the GLAM Workbench accordingly.</p>
 </div>
-<p><strong>Version 3 beta</strong> of the Trove API is now available. According to the <a href="https://trove.nla.gov.au/sites/default/files/2023-03/Introducing%20Trove%20API%20v3_0.pdf">introductory notes</a>, version 3 will be officially released around the middle of 2023, with version 2 decommissioned in early 2024.</p>
+<p><strong>Release 2 of the Trove API Version 3 beta</strong> is now available for testing. See the <a href="(https://trove.nla.gov.au/sites/default/files/attachments/2023-05/Introducing%20Trove%20API%20v3_0%20-%20Release%202.pdf)">introductory notes</a> for more details.</p>
+<h2 id="timeline">Timeline<a class="headerlink" href="#timeline" title="Permanent link">&para;</a></h2>
+<ul>
+<li>March 2023: Trove API v3 beta (release 1)</li>
+<li>May 2023: Trove API v3 beta (release 2)</li>
+<li>June 2023: Trove API v3 beta (release 3)</li>
+<li>Mid 2023: Trove API v3 officially released</li>
+<li>Early 2024: Trove API v2 decommissioned</li>
+</ul>
 <h2 id="trove-api-console">Trove API Console<a class="headerlink" href="#trove-api-console" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://troveconsole.herokuapp.com/v3/">Trove API Console</a> has been updated to add examples from v3 of the API. It provides many sample queries that you can run and modify without the need for an API key.</p>
 <h2 id="summary-of-breaking-changes">Summary of breaking changes<a class="headerlink" href="#summary-of-breaking-changes" title="Permanent link">&para;</a></h2>
@@ -9302,7 +9321,7 @@
 <p class="admonition-title">Info</p>
 <p>This is a work in progress as I work my way through the API changes. Additions are very welcome.</p>
 </div>
-<p>This summary only includes <strong>breaking changes</strong> – the things you'll need to change in your code before v2 of the API is switched off in early 2024.</p>
+<p>This summary only includes <strong>breaking changes</strong> – the things you'll need to change in your code before v2 of the API is switched off in early 2024. For a full list of changes see the <a href="https://trove.nla.gov.au/sites/default/files/attachments/2023-05/Introducing%20Trove%20API%20v3_0%20-%20Release%202.pdf">introduction to the v3 API</a>, and the <a href="https://trove.nla.gov.au/about/create-something/using-api/v3/api-technical-guide">v3 technical guide</a>.</p>
 <p>The release notes don't mention the changes to the JSON responses. In general, the changes flatten the JSON responses by removing top-level wrappers that served no function. This means the way you access data within responses has changed. For example, assuming that you've saved the JSON response as a variable called <code>data</code>, to access the title of a newspaper article retrieved via the <code>/newspaper/[article id]</code> endpoint in version 2 you would use:</p>
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="p">[</span><span class="s2">&quot;article&quot;</span><span class="p">][</span><span class="s2">&quot;heading&quot;</span><span class="p">]</span>
 </code></pre></div>
@@ -9312,57 +9331,76 @@
 <p>There are similar changes across all endpoints.</p>
 <h3 id="all-endpoints">All endpoints<a class="headerlink" href="#all-endpoints" title="Permanent link">&para;</a></h3>
 <ul>
+<li>API keys will now <strong>automatically expire</strong> 12 months after activation! (Hooray another pointless burden for overworked maintainers!)</li>
 <li>change <code>v2</code> to <code>v3</code> in the endpoint url!</li>
 <li><code>callback</code> parameter for JSONP removed, use CORS instead</li>
-<li>default encoding now JSON not XML</li>
+<li>default encoding now JSON not XML (I've been told this is a bug and release 3 will make XML the default again)</li>
 </ul>
 <h3 id="result-endpoint"><code>/result</code> endpoint<a class="headerlink" href="#result-endpoint" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>zone</code> parameter has been replaced with <code>category</code>, possible values are: all, newspaper, magazine, image, research, book,
 diary, music, people, list; note that in most cases there is no one-to-one correspondence between zones and categories as the boundaries of what's included have changed, for example, the 'newspaper' category includes the contents of both the 'newspaper' and 'gazette' zones</li>
-<li>the handling of 'blank' searches has changed – in version 2 you could use a " " space as a value for <code>q</code> allowing you to search for everything, this doesn't work in v3beta, however, using the unicode null value, <code>%00</code>, does seem to work.</li>
-<li>JSON response format changes:</li>
+<li>the handling of 'blank' searches has changed – ~~in version 2 you could use a " " space as a value for <code>q</code> allowing you to search for everything, this doesn't work in v3beta, however, using the unicode null value, <code>%00</code>, does seem to work~~ release 2 of the v3 beta made the <code>q</code> (query) parameter optional. This means blank searches are supported without any need for workarounds.</li>
+<li>JSON response format changes:<ul>
 <li>top-level <code>response</code> key removed</li>
 <li><code>zone</code> key changed to <code>category</code></li>
 <li>the meaning of the <code>name</code> parameter inside each <code>category</code> value has change – the old name value can be accessed via the <code>code</code> key, while <code>name</code> now returns the category's display name.</li>
 </ul>
+</li>
+</ul>
 <h3 id="workwork-id-endpoint"><code>/work/[work id]</code> endpoint<a class="headerlink" href="#workwork-id-endpoint" title="Permanent link">&para;</a></h3>
 <ul>
-<li>JSON response format changes:</li>
+<li>JSON response format changes:<ul>
 <li>top-level <code>work</code> key removed</li>
+</ul>
+</li>
 </ul>
 <h3 id="newspaperarticle-id-endpoint"><code>/newspaper/[article id]</code> endpoint<a class="headerlink" href="#newspaperarticle-id-endpoint" title="Permanent link">&para;</a></h3>
 <ul>
-<li>JSON response format changes:</li>
+<li>JSON response format changes:<ul>
 <li>top-level <code>article</code> key removed</li>
+</ul>
+</li>
 </ul>
 <h3 id="newspapertitles-endpoint"><code>/newspaper/titles</code> endpoint<a class="headerlink" href="#newspapertitles-endpoint" title="Permanent link">&para;</a></h3>
 <ul>
-<li>JSON response format changes:</li>
+<li>JSON response format changes:<ul>
 <li>top-level <code>response</code> and <code>records</code> keys removed</li>
+</ul>
+</li>
 </ul>
 <h3 id="newspapertitlestitle-id-endpoint"><code>/newspaper/titles/[title id]</code> endpoint<a class="headerlink" href="#newspapertitlestitle-id-endpoint" title="Permanent link">&para;</a></h3>
 <ul>
-<li>JSON response format changes:</li>
+<li>JSON response format changes:<ul>
 <li>top-level <code>newspaper</code> key removed</li>
+</ul>
+</li>
 </ul>
 <h3 id="listlist-id-endpoint"><code>/list/[list id]</code> endpoint<a class="headerlink" href="#listlist-id-endpoint" title="Permanent link">&para;</a></h3>
 <ul>
-<li>JSON response format changes:</li>
+<li>JSON response format changes:<ul>
 <li>top-level <code>list</code> key removed – note too that in v2 <code>list</code> returned an array (even though there was only one value), in v3 there is just a single value, not an array; so instead of using <code>data["list"][0]["title"]</code> to get the title of a list, you'll need to use <code>data["title"]</code>.</li>
 </ul>
+</li>
+</ul>
 <h3 id="contributor-endpoint"><code>contributor</code> endpoint<a class="headerlink" href="#contributor-endpoint" title="Permanent link">&para;</a></h3>
-<p>There are major changes here that aren't mentioned in the release notes. Previously a call to this endpoint without additional parameters just returned a long list of contributors. Now, you need to supply a <code>q</code> parameter to filter the results.</p>
+<p>~~There are major changes here that aren't mentioned in the release notes. Previously a call to this endpoint without additional parameters just returned a long list of contributors. Now, you need to supply a <code>q</code> parameter to filter the results.~~</p>
 <ul>
-<li><code>q</code> parameter added and required – to do a blank search and get all contributors (ie the v2 behaviour), include the <code>q</code> parameter with no value, eg: <code>contributor?q=&amp;encoding=json&amp;reclevel=full</code></li>
-<li>JSON response format changes:</li>
+<li>~~<code>q</code> parameter added and required – to do a blank search and get all contributors (ie the v2 behaviour), include the <code>q</code> parameter with no value, eg: <code>contributor?q=&amp;encoding=json&amp;reclevel=full</code>~~ Release 2 of the v3 API beta made the <code>q</code> parameter optional.</li>
+<li>JSON response format changes:<ul>
 <li>top-level <code>response</code> key removed</li>
+</ul>
+</li>
 </ul>
 <h3 id="contributornuc-endpoint"><code>contributor/[NUC]</code> endpoint<a class="headerlink" href="#contributornuc-endpoint" title="Permanent link">&para;</a></h3>
 <ul>
-<li>JSON response format changes:</li>
+<li>JSON response format changes:<ul>
 <li>top-level <code>contributor</code> key removed</li>
 </ul>
+</li>
+</ul>
+<h3 id="magazinetitles-endpoint"><code>magazine/titles/</code> endpoint<a class="headerlink" href="#magazinetitles-endpoint" title="Permanent link">&para;</a></h3>
+<p>This endpoint was introduced in release 2 of the Trove API v3 beta, however, it's currently returning no results. I've been told this will be fixed in release 3.</p>
 
 <!-- Was this page helpful? -->
 
