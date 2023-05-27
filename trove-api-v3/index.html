@@ -9305,7 +9305,7 @@
 <p class="admonition-title">Info</p>
 <p>This is a temporary section of the the GLAM Workbench created to bring together information and examples relating to version 3 of the Trove API. It will probably disappear once the new version is officially released and I reorganise the Trove sections of the GLAM Workbench accordingly.</p>
 </div>
-<p><strong>Release 2 of the Trove API Version 3 beta</strong> is now available for testing. See the <a href="(https://trove.nla.gov.au/sites/default/files/attachments/2023-05/Introducing%20Trove%20API%20v3_0%20-%20Release%202.pdf)">introductory notes</a> for more details.</p>
+<p><strong>Release 2 of the Trove API Version 3 beta</strong> is now available for testing. See the <a href="https://trove.nla.gov.au/sites/default/files/attachments/2023-05/Introducing%20Trove%20API%20v3_0%20-%20Release%202.pdf">introductory notes</a> for more details.</p>
 <h2 id="timeline">Timeline<a class="headerlink" href="#timeline" title="Permanent link">&para;</a></h2>
 <ul>
 <li>March 2023: Trove API v3 beta (release 1)</li>
@@ -9340,7 +9340,7 @@
 <ul>
 <li><code>zone</code> parameter has been replaced with <code>category</code>, possible values are: all, newspaper, magazine, image, research, book,
 diary, music, people, list; note that in most cases there is no one-to-one correspondence between zones and categories as the boundaries of what's included have changed, for example, the 'newspaper' category includes the contents of both the 'newspaper' and 'gazette' zones</li>
-<li>the handling of 'blank' searches has changed – ~~in version 2 you could use a " " space as a value for <code>q</code> allowing you to search for everything, this doesn't work in v3beta, however, using the unicode null value, <code>%00</code>, does seem to work~~ release 2 of the v3 beta made the <code>q</code> (query) parameter optional. This means blank searches are supported without any need for workarounds.</li>
+<li>the handling of 'blank' searches has changed – <del>in version 2 you could use a " " space as a value for <code>q</code> allowing you to search for everything, this doesn't work in v3beta, however, using the unicode null value, <code>%00</code>, does seem to work</del> release 2 of the v3 beta made the <code>q</code> (query) parameter optional. This means blank searches are supported without any need for workarounds.</li>
 <li>JSON response format changes:<ul>
 <li>top-level <code>response</code> key removed</li>
 <li><code>zone</code> key changed to <code>category</code></li>
@@ -9384,9 +9384,9 @@ diary, music, people, list; note that in most cases there is no one-to-one corre
 </li>
 </ul>
 <h3 id="contributor-endpoint"><code>contributor</code> endpoint<a class="headerlink" href="#contributor-endpoint" title="Permanent link">&para;</a></h3>
-<p>~~There are major changes here that aren't mentioned in the release notes. Previously a call to this endpoint without additional parameters just returned a long list of contributors. Now, you need to supply a <code>q</code> parameter to filter the results.~~</p>
+<p><del>There are major changes here that aren't mentioned in the release notes. Previously a call to this endpoint without additional parameters just returned a long list of contributors. Now, you need to supply a <code>q</code> parameter to filter the results.</del></p>
 <ul>
-<li>~~<code>q</code> parameter added and required – to do a blank search and get all contributors (ie the v2 behaviour), include the <code>q</code> parameter with no value, eg: <code>contributor?q=&amp;encoding=json&amp;reclevel=full</code>~~ Release 2 of the v3 API beta made the <code>q</code> parameter optional.</li>
+<li><del><code>q</code> parameter added and required – to do a blank search and get all contributors (ie the v2 behaviour), include the <code>q</code> parameter with no value, eg: <code>contributor?q=&amp;encoding=json&amp;reclevel=full</code></del> Release 2 of the v3 API beta made the <code>q</code> parameter optional.</li>
 <li>JSON response format changes:<ul>
 <li>top-level <code>response</code> key removed</li>
 </ul>
