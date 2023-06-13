@@ -9345,6 +9345,7 @@ diary, music, people, list; note that in most cases there is no one-to-one corre
 <li>top-level <code>response</code> key removed</li>
 <li><code>zone</code> key changed to <code>category</code></li>
 <li>the meaning of the <code>name</code> parameter inside each <code>category</code> value has change – the old name value can be accessed via the <code>code</code> key, while <code>name</code> now returns the category's display name.</li>
+<li>If you requested a single facet in version 2, it was returned as a JSON object. In version 3, facets are <strong>always</strong> returned as an array of objects no matter how many you request. So if you include the <code>facet=format</code> parameter in your request, the facet terms within each category will be in <code>category["facets"]["facet"][0]</code> rather than <code>category["facets"]["facet"]</code>. Compare the <a href="https://troveconsole.herokuapp.com/?url=https%3A%2F%2Fapi.trove.nla.gov.au%2Fv2%2Fresult%3Fq%3D+%26zone%3Dall%26encoding%3Djson%26facet%3Dformat%2Cdecade%26n%3D0">v2 result</a> with the <a href="https://troveconsole.herokuapp.com/v3/?url=https%3A%2F%2Fapi.trove.nla.gov.au%2Fv3%2Fresult%3Fcategory%3Dall%26encoding%3Djson%26facet%3Dformat%26n%3D0">v3 result</a>.</li>
 </ul>
 </li>
 </ul>
