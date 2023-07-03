@@ -9349,7 +9349,7 @@
 <p class="admonition-title">Info</p>
 <p>This is a work in progress as I work my way through the API changes. Additions are very welcome.</p>
 </div>
-<p>This summary only includes <strong>breaking changes</strong> – the things you'll need to change in your code before v2 of the API is switched off in early 2024. For a full list of changes see the <a href="https://trove.nla.gov.au/sites/default/files/attachments/2023-05/Introducing%20Trove%20API%20v3_0%20-%20Release%202.pdf">introduction to the v3 API</a>, and the <a href="https://trove.nla.gov.au/about/create-something/using-api/v3/api-technical-guide">v3 technical guide</a>.</p>
+<p>This summary only includes <strong>breaking changes</strong> – the things you'll need to change in your code before v2 of the API is switched off in early 2024. For a full list of changes see the <a href="https://trove.nla.gov.au/sites/default/files/attachments/2023-06/Introducing%20Trove%20API%20v3%20-%20Release%203_0.pdf">introduction to the v3 API</a>, and the <a href="https://trove.nla.gov.au/about/create-something/using-api/v3/api-technical-guide">v3 technical guide</a>.</p>
 <p>The release notes don't mention the changes to the JSON responses. In general, the changes flatten the JSON responses by removing top-level wrappers that served no function. This means the way you access data within responses has changed. For example, assuming that you've saved the JSON response as a variable called <code>data</code>, to access the title of a newspaper article retrieved via the <code>/newspaper/[article id]</code> endpoint in version 2 you would use:</p>
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="p">[</span><span class="s2">&quot;article&quot;</span><span class="p">][</span><span class="s2">&quot;heading&quot;</span><span class="p">]</span>
 </code></pre></div>
@@ -9362,13 +9362,14 @@
 <li>API keys will now <strong>automatically expire</strong> 12 months after activation! (There will be an option to renew.)</li>
 <li>change <code>v2</code> to <code>v3</code> in the endpoint url!</li>
 <li><code>callback</code> parameter for JSONP removed, use CORS instead</li>
-<li>default encoding now JSON not XML (I've been told this is a bug and release 3 will make XML the default again)</li>
+<li><del>default encoding now JSON not XML (I've been told this is a bug and release 3 will make XML the default again)</del> Default encoding is once again XML (same as API v2).</li>
 </ul>
 <h3 id="result-endpoint"><code>/result</code> endpoint<a class="headerlink" href="#result-endpoint" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>zone</code> parameter has been replaced with <code>category</code>, possible values are: all, newspaper, magazine, image, research, book,
 diary, music, people, list; note that in most cases there is no one-to-one correspondence between zones and categories as the boundaries of what's included have changed, for example, the 'newspaper' category includes the contents of both the 'newspaper' and 'gazette' zones</li>
 <li>the handling of 'blank' searches has changed – <del>in version 2 you could use a " " space as a value for <code>q</code> allowing you to search for everything, this doesn't work in v3beta, however, using the unicode null value, <code>%00</code>, does seem to work</del> release 2 of the v3 beta made the <code>q</code> (query) parameter optional. This means blank searches are supported without any need for workarounds.</li>
+<li>the behaviour of the <code>include</code> parameter has changed – previously you could supply multiple values to <code>include</code> as a comma-separated string, now to specify mutiple values you have to include <code>include</code> multiple times (eg. instead of <code>&amp;include=tags,comments</code> you need <code>&amp;include=tags&amp;include=comments</code>).</li>
 <li>JSON response format changes:<ul>
 <li>top-level <code>response</code> key removed</li>
 <li><code>zone</code> key changed to <code>category</code></li>
@@ -9429,7 +9430,7 @@ diary, music, people, list; note that in most cases there is no one-to-one corre
 </li>
 </ul>
 <h3 id="magazinetitles-endpoint"><code>magazine/titles/</code> endpoint<a class="headerlink" href="#magazinetitles-endpoint" title="Permanent link">&para;</a></h3>
-<p>This endpoint was introduced in release 2 of the Trove API v3 beta, however, it's currently returning no results. I've been told this will be fixed in release 3.</p>
+<p><del>This endpoint was introduced in release 2 of the Trove API v3 beta, however, it's currently returning no results. I've been told this will be fixed in release 3.</del> Fixed in release 3.</p>
 
 <!-- Was this page helpful? -->
 
