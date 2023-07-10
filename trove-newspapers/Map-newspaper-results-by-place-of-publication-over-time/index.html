@@ -6,15 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Trove currently includes more 200 million digitised newspaper articles published between 1803 and 2015. In this notebook we explore how those newspaper articles are distributed over time, and by state.">
+        <meta name="description" content="Uses the Trove `title` facet to find the number of results per newspaper, then merges the results with a dataset of geolocated newspapers to map where articles were published, and adds a time dimension to create an animated heatmap.">
       
       
         <meta name="author" content="Tim Sherratt">
       
       
-        <link rel="canonical" href="https://glam-workbench.net/trove-newspapers-new/visualise-total-newspaper-articles-by-state-year/">
+        <link rel="canonical" href="https://glam-workbench.net/trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time/">
       
       
+        <link rel="prev" href="../Map-newspaper-results-by-place-of-publication/">
+      
+      
+        <link rel="next" href="../harvest_newspaper_issues/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Visualise the total number of newspaper articles in Trove by year and state - GLAM Workbench</title>
+        <title>Map Trove newspaper results by place of publication over time - GLAM Workbench</title>
       
     
     
@@ -67,11 +71,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Visualise the total number of newspaper articles in Trove by year and state - GLAM Workbench" >
+        <meta  property="og:title"  content="Map Trove newspaper results by place of publication over time - GLAM Workbench" >
       
-        <meta  property="og:description"  content="Trove currently includes more 200 million digitised newspaper articles published between 1803 and 2015. In this notebook we explore how those newspaper articles are distributed over time, and by state." >
+        <meta  property="og:description"  content="Uses the Trove `title` facet to find the number of results per newspaper, then merges the results with a dataset of geolocated newspapers to map where articles were published, and adds a time dimension to create an animated heatmap." >
       
-        <meta  property="og:image"  content="https://glam-workbench.net/assets/images/social/trove-newspapers-new/visualise-total-newspaper-articles-by-state-year.png" >
+        <meta  property="og:image"  content="https://glam-workbench.net/assets/images/social/trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -79,15 +83,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://glam-workbench.net/trove-newspapers-new/visualise-total-newspaper-articles-by-state-year/" >
+        <meta  property="og:url"  content="https://glam-workbench.net/trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Visualise the total number of newspaper articles in Trove by year and state - GLAM Workbench" >
+        <meta  name="twitter:title"  content="Map Trove newspaper results by place of publication over time - GLAM Workbench" >
       
-        <meta  name="twitter:description"  content="Trove currently includes more 200 million digitised newspaper articles published between 1803 and 2015. In this notebook we explore how those newspaper articles are distributed over time, and by state." >
+        <meta  name="twitter:description"  content="Uses the Trove `title` facet to find the number of results per newspaper, then merges the results with a dataset of geolocated newspapers to map where articles were published, and adds a time dimension to create an animated heatmap." >
       
-        <meta  name="twitter:image"  content="https://glam-workbench.net/assets/images/social/trove-newspapers-new/visualise-total-newspaper-articles-by-state-year.png" >
+        <meta  name="twitter:image"  content="https://glam-workbench.net/assets/images/social/trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time.png" >
       
     
     
@@ -169,7 +173,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Visualise the total number of newspaper articles in Trove by year and state
+              Map Trove newspaper results by place of publication over time
             
           </span>
         </div>
@@ -1563,6 +1567,8 @@
       
   
   
+    
+  
   
     
     
@@ -1597,13 +1603,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
@@ -1622,7 +1628,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1845,10 +1851,35 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../trove-newspapers/" class="md-nav__link">
+  
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     
@@ -1861,7 +1892,1178 @@
   
   
 
+            </a>
+            
+              <label class="md-nav__link " for="__nav_5_2">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trove newspapers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" checked>
+        
+          <label class="md-nav__link" for="__nav_5_2_2" id="__nav_5_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Notebooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualise-total-newspaper-articles-by-state-year/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Visualise articles by state & year
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Analysing_OCR_corrections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyse rates of OCR correction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../find-non-english-newspapers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Finding non-English newspapers in Trove
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Beyond_the_copyright_cliff_of_death/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Beyond the copyright cliff of death
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../historical-data-newspaper-titles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    When newspapers were added to Trove
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../querypic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    QueryPic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QueryPic_deconstructed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    QueryPic Deconstructed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualise-searches-over-time/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Visualise Trove newspaper searches over time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map-newspaper-results-by-state/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Map Trove newspaper results by state
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map-newspaper-results-by-place-of-publication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Map results by place of publication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Map results by place over time
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Map results by place over time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#other-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cite-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cite as
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../harvest_newspaper_issues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Harvest information about newspaper issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../harvest_newspaper_issues_as_pdfs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Harvest issues as PDFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../harvest-aww-covers-and-newspaper-front-pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Harvest AWW covers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Save-Trove-newspaper-article-as-image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Save article as an image
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Save-Trove-newspaper-article-as-image-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Save article as an image web app
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Save-page-image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Download a page image
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Get-article-thumbnail/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Generate an article thumbnail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Upload-Trove-newspapers-to-Omeka/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload articles to Omeka
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Todays-news-yesterday/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Today’s news yesterday
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Create-a-Trove-corrections-ticker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Corrections ticker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Get_newspaper_titles_not_including_gazettes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Get newspaper titles excluding gazettes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trove-newspapers-get-coordinates-of-articles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Get article coordinates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Composite-thumbnails/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Make composite image from thumbnails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trove-newspapers-scissors-and-paste/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Create scissors & paste messages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trove-newspapers-create-composite-from-words/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Create composite image from snipped words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3" >
+        
+          <label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csv-issues-per-year/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Number of issues per year for each newspaper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csv-complete-list-issues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete list of issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csv-newspaper-titles-from-web-archives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Newspaper titles harvested from web archives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csv-newspaper-titles-from-web-archives-first-appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Newspaper titles harvested from web archives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csv-aww-issues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Australian Women's Weekly issues, 1933 to 1982
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataset-aww-covers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Australian Women's Weekly front covers, 1933 to 1982
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../list-non-english-newspapers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Newspapers with non-English content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csv-newspapers-post-54/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Newspapers with post-1954 articles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -9251,17 +10453,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#additional-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9334,7 +10525,7 @@
 
 
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/trove-newspapers-new/visualise-total-newspaper-articles-by-state-year.md" title="edit.link.title" class="md-content__button md-icon">
+<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time.md" title="edit.link.title" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
 </a>
 
@@ -9345,7 +10536,7 @@
   as the main headline.
 -->
 
-  <h1>Visualise the total number of newspaper articles in Trove by year and state</h1>
+  <h1>Map Trove newspaper results by place of publication over time</h1>
 
 
 <!-- Tags -->
@@ -9361,22 +10552,32 @@
         <a href="../../tags/#visualisation" class="md-tag">visualisation</a>
       
     
+      
+      
+        <a href="../../tags/#heatmap" class="md-tag">heatmap</a>
+      
+    
+      
+      
+        <a href="../../tags/#map" class="md-tag">map</a>
+      
+    
+      
+      
+        <a href="../../tags/#search-facets" class="md-tag">search facets</a>
+      
+    
   </nav>
 
 
 
 <!-- Markdown content -->
-<p>Trove currently includes more 200 million digitised newspaper articles published between 1803 and 2015. In this notebook we explore how those newspaper articles are distributed over time, and by state.</p>
-<p><img alt="Chart showing number of newspaper articles by state and year" src="../../images/trove-newspapers-states.png" /></p>
-<p><a class="md-button md-button--primary" href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=lab%2Ftree%2Fvisualise-total-newspaper-articles-by-state-year.ipynb">Run live on Binder</a></p>
+<p>Uses the Trove <code>title</code> facet to find the number of results per newspaper, then merges the results with a dataset of geolocated newspapers to map where articles were published, and adds a time dimension to create an animated heatmap.</p>
+<p><a class="md-button md-button--primary" href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=lab%2Ftree%2FMap-newspaper-results-by-place-of-publication-over-time.ipynb">Run live on Binder</a></p>
 <h3 id="other-options">Other options<a class="headerlink" href="#other-options" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="https://github.com/GLAM-Workbench/trove-newspapers/blob/master/visualise-total-newspaper-articles-by-state-year.ipynb">Download from GitHub</a></li>
-<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/visualise-total-newspaper-articles-by-state-year.ipynb">View using NBViewer</a></li>
-</ul>
-<h3 id="related-resources">Related resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://wragge.github.io/trove-newspaper-totals/">Trove newspaper data dashboard</a> – weekly updates on the newspaper corpus using code from this notebook</li>
+<li><a href="https://github.com/GLAM-Workbench/trove-newspapers/blob/master/Map-newspaper-results-by-place-of-publication-over-time.ipynb">Download from GitHub</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/Map-newspaper-results-by-place-of-publication-over-time.ipynb">View using NBViewer</a></li>
 </ul>
 <h3 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h3>
 <ul>
