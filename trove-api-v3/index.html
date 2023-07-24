@@ -10492,7 +10492,7 @@ diary, music, people, list; note that in most cases there is no one-to-one corre
 <h3 id="list-records-both-result-and-listlist-id">List records (both <code>/result</code> and  <code>/list/[list id]</code>)<a class="headerlink" href="#list-records-both-result-and-listlist-id" title="Permanent link">&para;</a></h3>
 <ul>
 <li>in v2 the dates a list was created and updated were available at <code>record["created"]</code> and <code>record["lastupdated"]</code>, but in v3 both dates are under <code>record["date"]</code> so <code>record["date"]["created"]</code> and <code>record["date"]["lastupdated"]</code>.</li>
-<li>the values of <code>tagCount</code> and <code>commentCount</code> have moved – in v2 they were available at record[<code>tagCount</code>] and record[<code>commentCount</code>], but in v3 they have moved down a level to <code>record["tagCount"]["value"]</code> and <code>record["commentCount"]["value"]</code></li>
+<li>the values of <code>tagCount</code> and <code>commentCount</code> have moved – in v2 they were available at <code>record["tagCount"]</code> and <code>record["commentCount"]</code>, but in v3 they have moved down a level to <code>record["tagCount"]["value"]</code> and <code>record["commentCount"]["value"]</code></li>
 </ul>
 <h3 id="workwork-id-endpoint"><code>/work/[work id]</code> endpoint<a class="headerlink" href="#workwork-id-endpoint" title="Permanent link">&para;</a></h3>
 <ul>
