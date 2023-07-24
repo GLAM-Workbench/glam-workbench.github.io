@@ -10449,13 +10449,13 @@
 <li>Early 2024: Trove API v2 decommissioned</li>
 </ul>
 <h2 id="trove-api-console">Trove API Console<a class="headerlink" href="#trove-api-console" title="Permanent link">&para;</a></h2>
-<p>The <a href="https://troveconsole.herokuapp.com/v3/">Trove API Console</a> has been updated to add examples from v3 of the API. It provides many sample queries that you can run and modify without the need for an API key.</p>
+<p>The <a href="https://troveconsole.herokuapp.com/">Trove API Console</a> has been updated to add examples from v3 of the API. It provides many sample queries that you can run and modify without the need for an API key.</p>
 <h2 id="summary-of-breaking-changes">Summary of breaking changes<a class="headerlink" href="#summary-of-breaking-changes" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>This is a work in progress as I work my way through the API changes. Additions are very welcome.</p>
 </div>
-<p>This summary only includes <strong>breaking changes</strong> – the things you'll need to change in your code before v2 of the API is switched off in early 2024. For a full list of changes see the <a href="https://trove.nla.gov.au/sites/default/files/attachments/2023-06/Introducing%20Trove%20API%20v3%20-%20Release%203_0.pdf">introduction to the v3 API</a>, and the <a href="https://trove.nla.gov.au/about/create-something/using-api/v3/api-technical-guide">v3 technical guide</a>.</p>
+<p>This summary only includes <strong>breaking changes</strong> – the things you'll need to change in your code before v2 of the API is switched off in early 2024. For a full list of changes see the <a href="hhttps://trove.nla.gov.au/sites/default/files/attachments/2023-07/Introducing%20Trove%20API%20v3%20-%20Release%203%20updated.pdf">introduction to the v3 API</a>, and the <a href="https://trove.nla.gov.au/about/create-something/using-api/v3/api-technical-guide">v3 technical guide</a>.</p>
 <p>The release notes don't mention the changes to the JSON responses. In general, the changes flatten the JSON responses by removing top-level wrappers that served no function. This means the way you access data within responses has changed. For example, assuming that you've saved the JSON response as a variable called <code>data</code>, to access the title of a newspaper article retrieved via the <code>/newspaper/[article id]</code> endpoint in version 2 you would use:</p>
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="p">[</span><span class="s2">&quot;article&quot;</span><span class="p">][</span><span class="s2">&quot;heading&quot;</span><span class="p">]</span>
 </code></pre></div>
@@ -10483,6 +10483,16 @@ diary, music, people, list; note that in most cases there is no one-to-one corre
 <li>If you requested a single facet in version 2, it was returned as a JSON object. In version 3, facets are <strong>always</strong> returned as an array of objects no matter how many you request. So if you include the <code>facet=format</code> parameter in your request, the facet terms within each category will be in <code>category["facets"]["facet"][0]</code> rather than <code>category["facets"]["facet"]</code>. Compare the <a href="https://troveconsole.herokuapp.com/?url=https%3A%2F%2Fapi.trove.nla.gov.au%2Fv2%2Fresult%3Fq%3D+%26zone%3Dall%26encoding%3Djson%26facet%3Dformat%2Cdecade%26n%3D0">v2 result</a> with the <a href="https://troveconsole.herokuapp.com/v3/?url=https%3A%2F%2Fapi.trove.nla.gov.au%2Fv3%2Fresult%3Fcategory%3Dall%26encoding%3Djson%26facet%3Dformat%26n%3D0">v3 result</a>.</li>
 </ul>
 </li>
+</ul>
+<h3 id="newspapers-and-gazettes-both-result-and-newspaperarticle-id">Newspapers and gazettes (both <code>/result</code> and  <code>/newspaper/[article id]</code>)<a class="headerlink" href="#newspapers-and-gazettes-both-result-and-newspaperarticle-id" title="Permanent link">&para;</a></h3>
+<ul>
+<li>urls of newspaper and gazette articles and pages returned by the API have changed to use NLA identifiers. In most cases this shouldn't break anything as they still go to the same place. However, if you've been extracting the numeric page identifier from the <code>trovePageUrl</code> then you might need to adjust your code. Previously the <code>trovePageUrl</code> value was of the form <code>https://trove.nla.gov.au/ndp/del/page/[PAGE ID]</code>, but in v3 it is <code>https://nla.gov.au/nla.news-page[PAGE ID]</code>.</li>
+<li>the structure of the <code>title</code> element has changed – in v2 the text version of a newspaper title was found in <code>record["title"]["value"]</code>, but in v3 this has changed to <code>record["title"]["title"]</code></li>
+</ul>
+<h3 id="trove-lists-both-result-and-listlist-id">Trove Lists (both <code>/result</code> and  <code>/list/[list id]</code>)<a class="headerlink" href="#trove-lists-both-result-and-listlist-id" title="Permanent link">&para;</a></h3>
+<ul>
+<li>in v2 the dates a list was created and updated were available at <code>record["created"]</code> and <code>record["lastupdated"]</code>, but in v3 both dates are under <code>record["date"]</code> so <code>record["date"]["created"]</code> and <code>record["date"]["lastupdated"]</code>.</li>
+<li>the values of <code>tagCount</code> and <code>commentCount</code> have moved – in v2 they were available at record[<code>tagCount</code>] and record[<code>commentCount</code>], but in v3 they have moved down a level to <code>record["tagCount"]["value"]</code> and <code>record["commentCount"]["value"]</code></li>
 </ul>
 <h3 id="workwork-id-endpoint"><code>/work/[work id]</code> endpoint<a class="headerlink" href="#workwork-id-endpoint" title="Permanent link">&para;</a></h3>
 <ul>
