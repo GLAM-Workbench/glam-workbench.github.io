@@ -10484,12 +10484,12 @@ diary, music, people, list; note that in most cases there is no one-to-one corre
 </ul>
 </li>
 </ul>
-<h3 id="newspapers-and-gazettes-both-result-and-newspaperarticle-id">Newspapers and gazettes (both <code>/result</code> and  <code>/newspaper/[article id]</code>)<a class="headerlink" href="#newspapers-and-gazettes-both-result-and-newspaperarticle-id" title="Permanent link">&para;</a></h3>
+<h3 id="newspapers-and-gazette-records-both-result-and-newspaperarticle-id">Newspapers and gazette records (both <code>/result</code> and  <code>/newspaper/[article id]</code>)<a class="headerlink" href="#newspapers-and-gazette-records-both-result-and-newspaperarticle-id" title="Permanent link">&para;</a></h3>
 <ul>
 <li>urls of newspaper and gazette articles and pages returned by the API have changed to use NLA identifiers. In most cases this shouldn't break anything as they still go to the same place. However, if you've been extracting the numeric page identifier from the <code>trovePageUrl</code> then you might need to adjust your code. Previously the <code>trovePageUrl</code> value was of the form <code>https://trove.nla.gov.au/ndp/del/page/[PAGE ID]</code>, but in v3 it is <code>https://nla.gov.au/nla.news-page[PAGE ID]</code>.</li>
 <li>the structure of the <code>title</code> element has changed – in v2 the text version of a newspaper title was found in <code>record["title"]["value"]</code>, but in v3 this has changed to <code>record["title"]["title"]</code></li>
 </ul>
-<h3 id="trove-lists-both-result-and-listlist-id">Trove Lists (both <code>/result</code> and  <code>/list/[list id]</code>)<a class="headerlink" href="#trove-lists-both-result-and-listlist-id" title="Permanent link">&para;</a></h3>
+<h3 id="list-records-both-result-and-listlist-id">List records (both <code>/result</code> and  <code>/list/[list id]</code>)<a class="headerlink" href="#list-records-both-result-and-listlist-id" title="Permanent link">&para;</a></h3>
 <ul>
 <li>in v2 the dates a list was created and updated were available at <code>record["created"]</code> and <code>record["lastupdated"]</code>, but in v3 both dates are under <code>record["date"]</code> so <code>record["date"]["created"]</code> and <code>record["date"]["lastupdated"]</code>.</li>
 <li>the values of <code>tagCount</code> and <code>commentCount</code> have moved – in v2 they were available at record[<code>tagCount</code>] and record[<code>commentCount</code>], but in v3 they have moved down a level to <code>record["tagCount"]["value"]</code> and <code>record["commentCount"]["value"]</code></li>
