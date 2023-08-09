@@ -34,13 +34,13 @@ See below for information on [running these notebooks](#run-these-notebooks) in 
 
 ## Tools, tips, examples
 
-### [:material-notebook-outline: Your first Trove API request](your-first-api-request.md)  
+### [:material-notebook-outline: Your first Trove API request](your-first-api-request.md) {: data-toc-omit }
 In this notebook we're going to learn how to send a request for information to the Trove API. API requests are just like normal urls. However, instead of sending us back a web page, they deliver data in a form that computers can understand. We can then use that data in our own programs.
 
-### [:material-notebook-outline: Working with Trove zones](working-with-zones.md)  
+### [:material-notebook-outline: Working with Trove zones](working-with-zones.md) {: data-toc-omit }
 Trove's zones are important in constructing API requests and interpreting the results. So let's explore them a bit.
 
-### [:material-notebook-outline: Exploring Trove facets](exploring-facets.md)  
+### [:material-notebook-outline: Exploring Trove facets](exploring-facets.md) {: data-toc-omit }
 Facets aggregate collection data in interesting and useful ways, allowing us to build pictures of the collection. This notebook shows you how to get facet data from Trove.
 
 ## Useful links

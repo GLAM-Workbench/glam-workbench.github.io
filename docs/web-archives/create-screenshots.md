@@ -13,7 +13,7 @@ hide:
   - toc
 ---
 
-*Works with AWA, NZWA, IA, & UKWA*
+*Works with AWA, IA, NLNZ, UKWA, & UKGWA*
 
 ![Screenshot of notebook](../images/web-archives-screenshots.png)
 

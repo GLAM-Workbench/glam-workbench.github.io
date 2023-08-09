@@ -4,7 +4,7 @@ description: The harvest of digitised maps metadata includes a coordinates colum
 repo_url: https://github.com/GLAM-Workbench/trove-maps
 repo_name: trove-maps
 zenodo_concept_id: 3549426
-notebook: parse-coordinates.ipynb
+notebook: parse_coordinates.ipynb
 tags:
   - maps
   - metadata
@@ -22,7 +22,7 @@ hide:
 ### Other options
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/{{repo_name}}/blob/master/{{notebook}})
-* [View using NBViewer](https://nbviewer.jupyter.org/github/{{repo_name}}/blob/master/{{notebook}})
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/{{repo_name}}/blob/master/{{notebook}})
 
 ### Related resources
 

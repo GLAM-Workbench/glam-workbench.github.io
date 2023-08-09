@@ -9,13 +9,14 @@ tags:
   - metadata
 hide:
   - toc
+file_url: https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text-20220831.csv
 ---
 
 **Harvested: 31 August 2022**
 
 This file provides metadata of 1,430 digitised periodicals in Trove that have OCRd text for download. 
 
-[Download the CSV file](https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-with-text-20220831.csv){ .md-button .md-button--primary }
+[Download the CSV file]({{ file_url }}){ .md-button .md-button--primary } [Explore in Datasette](https://glam-workbench.net/datasette-lite/?csv={{ file_url }}){ .md-button .md-button--info }
 
 This file includes the following columns:
 

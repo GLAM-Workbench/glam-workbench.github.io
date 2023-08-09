@@ -16,38 +16,38 @@ See below for information on [running these notebooks](#run-these-notebooks) in 
 
 ## Lists
 
-### [:material-notebook-outline: Convert a Trove list into a CSV file](convert-a-trove-list-into-a-csv-file.md)  
+### [:material-notebook-outline: Convert a Trove list into a CSV file](convert-a-trove-list-into-a-csv-file.md) {: data-toc-omit }
 
 This notebook converts Trove lists into CSV files (spreadsheets). Separate CSV files are created for newspaper articles and works from Trove's other zones. You can also save the OCRd text, a PDF, and an image of each newspaper article.
 
-### [:material-notebook-outline: Convert a Trove list into a CollectionBuilder exhibition](convert-list-to-cb-exhibition.md)
+### [:material-notebook-outline: Convert a Trove list into a CollectionBuilder exhibition](convert-list-to-cb-exhibition.md) {: data-toc-omit }
 
 This notebook converts a Trove list into a series of files that can be uploaded to a [CollectionBuilder-GH](https://github.com/CollectionBuilder/collectionbuilder-gh) repository to create an instant exhibition. 
 
-### [:material-notebook-outline: Harvest summary data from Trove lists](harvest-summary-data-from-lists.md)
+### [:material-notebook-outline: Harvest summary data from Trove lists](harvest-summary-data-from-lists.md) {: data-toc-omit }
 Use the Trove API to harvest data about all public lists, then extract some summary data and explore a few different techniques to analyse the complete dataset.
 
 ## Tags
 
-### [:material-notebook-outline: Harvest public tags from Trove zones](harvest-tags.md)
+### [:material-notebook-outline: Harvest public tags from Trove zones](harvest-tags.md) {: data-toc-omit }
 
 This notebook uses the Trove API to assemble a dataset containing all public tags added to Trove.
 
-### [:material-notebook-outline: Analyse public tags added to Trove](analyse_tags.md)
+### [:material-notebook-outline: Analyse public tags added to Trove](analyse_tags.md) {: data-toc-omit }
 
 This notebook loads the complete dataset of Trove tags and explores some ways of analysing and visualising the tag data.
 
 ## Data
 
-### [:material-folder-text-outline: Trove lists metadata](trove-lists-metadata.md)
+### [:material-folder-text-outline: Trove lists metadata](trove-lists-metadata.md) {: data-toc-omit }
 
 *Harvested: 5 July 2022*. CSV formatted file containing a complete harvest of metadata describing user-created Trove lists.
 
-### [:material-folder-text-outline: Trove public tags](trove-public-tags.md)
+### [:material-folder-text-outline: Trove public tags](trove-public-tags.md) {: data-toc-omit }
 
 *Harvested: 6 July 2022*. CSV formatted file containing a complete harvest of public tags added to Trove resources.
 
-### [:material-folder-text-outline: Trove tag counts](trove-tag-counts.md)
+### [:material-folder-text-outline: Trove tag counts](trove-tag-counts.md) {: data-toc-omit }
 
 *Harvested: 6 July 2022*. CSV formatted file containing the total number of times each tag in Trove has been applied to resources.
 

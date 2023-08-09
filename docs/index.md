@@ -6,7 +6,7 @@ zenodo_concept_id: 5603059
 # Welcome to the GLAM Workbench
 
 !!! note ""
-    **:material-bullhorn-outline: The GLAM Workbench needs you! Find out how you can [get involved](get-involved/index.md).**
+    **:material-bullhorn-outline: The Binder service is [experiencing some difficulties](https://blog.jupyter.org/mybinder-org-reducing-capacity-c93ccfc6413f) at the moment and notebooks might not launch as expected. Alternatives should be available soon, but in the meantime check out the [other options](https://glam-workbench.net/getting-started/#more-ways-to-run-notebooks) for running notebooks.**
 
 Here you’ll find a collection of tools, tutorials, examples, and hacks to help you work with data from galleries, libraries, archives, and museums (the GLAM sector). The primary focus is Australia and New Zealand, but new collections are being added all the time. Let me know if there’s some GLAM data you’d like me to explore – [suggestions](/suggest-a-topic/) are always welcome!
 

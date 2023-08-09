@@ -36,8 +36,19 @@ theme:
     - announce.dismiss
     # - toc.integrate
   palette:
-    primary: 'indigo'
-    accent: 'indigo'
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
@@ -45,9 +56,6 @@ theme:
     logo: material/hammer-wrench
     admonition:
       abstract: material/handshake
-#    repo: material/source-repository
-  include_search_page: false
-  search_index_only: true
 
 # Customization
 extra:
@@ -69,7 +77,7 @@ extra:
 extra_css:
   - 'stylesheets/extra.css'
 
-extra_javascript:
+# extra_javascript:
 #  - 'https://hypothes.is/embed.js'
 
 # Extensions
@@ -79,6 +87,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.keys
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
   - pymdownx.snippets:
       base_path: ['includes', '../site/includes']
       check_paths: True
@@ -86,6 +97,7 @@ markdown_extensions:
   - md_in_html
   - toc_ext:
       permalink: true
+      patch_mkdocs: false
   - meta
   - def_list
   - tables
@@ -98,7 +110,7 @@ plugins:
         on_undefined: keep
     - redirects:
         redirect_maps:
-            'trove_newspapers.md': 'trove-newspapers.md'
+            'trove_newspapers.md': 'trove-newspapers/index.md'
             'name-search.md': 'https://glam-name-indexes-yajhxrvxsa-ts.a.run.app/'
             'tasmanian-post-office-directories.md': 'libraries-tasmania/tasmanian-post-office-directories.md'
             supporters.md: get-involved/supporters.md
@@ -145,12 +157,50 @@ nav:
                 - trove/your-first-api-request.md
                 - trove/working-with-zones.md
                 - trove/exploring-facets.md
-        - trove-newspapers.md
+        - Trove newspapers:
+            - trove-newspapers/index.md
+            - Notebooks:
+                - Visualise articles by state & year: trove-newspapers/visualise-total-newspaper-articles-by-state-year.md
+                - trove-newspapers/Analysing_OCR_corrections.md
+                - trove-newspapers/find-non-english-newspapers.md
+                - trove-newspapers/Beyond_the_copyright_cliff_of_death.md
+                - When newspapers were added to Trove: trove-newspapers/historical-data-newspaper-titles.md
+                - trove-newspapers/querypic.md
+                - trove-newspapers/QueryPic_deconstructed.md
+                - trove-newspapers/visualise-searches-over-time.md
+                - trove-newspapers/Map-newspaper-results-by-state.md
+                - Map results by place of publication: trove-newspapers/Map-newspaper-results-by-place-of-publication.md
+                - Map results by place over time: trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time.md
+                - trove-newspapers/harvest_newspaper_issues.md
+                - Harvest issues as PDFs: trove-newspapers/harvest_newspaper_issues_as_pdfs.md
+                - Harvest AWW covers: trove-newspapers/harvest-aww-covers-and-newspaper-front-pages.md
+                - Save article as an image: trove-newspapers/Save-Trove-newspaper-article-as-image.md
+                - Save article as an image web app: trove-newspapers/Save-Trove-newspaper-article-as-image-app.md
+                - trove-newspapers/Save-page-image.md
+                - trove-newspapers/Get-article-thumbnail.md
+                - Upload articles to Omeka: trove-newspapers/Upload-Trove-newspapers-to-Omeka.md
+                - trove-newspapers/Todays-news-yesterday.md
+                - Corrections ticker: trove-newspapers/Create-a-Trove-corrections-ticker.md
+                - Get newspaper titles excluding gazettes: trove-newspapers/Get_newspaper_titles_not_including_gazettes.md
+                - Get article coordinates: trove-newspapers/trove-newspapers-get-coordinates-of-articles.md
+                - Make composite image from thumbnails: trove-newspapers/Composite-thumbnails.md
+                - Create scissors & paste messages: trove-newspapers/trove-newspapers-scissors-and-paste.md
+                - Create composite image from snipped words: trove-newspapers/trove-newspapers-create-composite-from-words.md
+            - Data:
+                - Number of issues per year for each newspaper: trove-newspapers/csv-issues-per-year.md
+                - Complete list of issues: trove-newspapers/csv-complete-list-issues.md
+                - trove-newspapers/csv-newspaper-titles-from-web-archives.md
+                - trove-newspapers/csv-newspaper-titles-from-web-archives-first-appearance.md
+                - trove-newspapers/csv-aww-issues.md
+                - trove-newspapers/dataset-aww-covers.md
+                - Newspapers with non-English content: trove-newspapers/list-non-english-newspapers.md
+                - Newspapers with post-1954 articles: trove-newspapers/csv-newspapers-post-54.md
         - Trove newspaper & gazette harvester:
             - trove-harvester/index.md
             - Notebooks:
                 - trove-harvester/harvester-web-app.md
                 - Using the Trove Harvester: trove-harvester/using-troveharvester.md
+                - trove-harvester/harvest-specific-days.md
                 - Displaying results in Datasette: trove-harvester/display-harvest-results-in-datasette.md
                 - Exploring harvested data: trove-harvester/exploring-troveharvester-data.md
                 - Exploring harvested texts: trove-harvester/exploring-troveharvester-text.md
@@ -163,12 +213,21 @@ nav:
                 - trove-books/counting-words-and-phrases.md
                 - trove-books/recipe-generator.md
                 - Exploring Trove's digitised books: trove-books/exploring-digitised-books-adel-rahmani.md
+            - Data:
                 - OCRd text from Trove books: trove-books/ocrd-text-from-trove-books.md
                 - CSV of digital books in Trove: trove-books/csv-books-in-digital-form.md
                 - Government publications in digital form: trove-books/government-publications-in-digital-form.md
-            - Data:
                 - OCRd text from Australian books in IA: trove-books/ocrd-text-from-ia.md
                 - CSV of Australian books in IA: trove-books/csv-australian-books-in-ia.md
+        - Trove contributors:
+            - trove-contributors/index.md
+            - Notebooks:
+                - Create a list of contributors: trove-contributors/get_contributors.md
+                - Get totals by contributor, zone & format: trove-contributors/get_contributors_totals_zone_format.md
+            - Data:
+                - Flat list of contributors: trove-contributors/trove-contributors-list.md
+                - Total records by contributor & zone: trove-contributors/trove-contributors-zones.md
+                - Total records by contributor, zone & format: trove-contributors/trove-contributors-formats.md
         - Trove journals:
             - trove-journals/index.md
             - Notebooks:
@@ -211,7 +270,13 @@ nav:
             - Data:
                 - trove-maps/single-maps-data.md
                 - trove-maps/single-maps-coordinates-data.md
-        - trove-music.md
+        - Trove music & sound: 
+            - trove-music/index.md
+            - Notebooks:
+                - Harvest ABC RN records: trove-music/harvest-abcrn.md
+                - Explore ABC RN metadata: trove-music/explore-abcrn-data.md
+            - Data:
+                - ABC RN metadata: trove-music/abcrn-data.md
         - Trove people & organisations:
             - trove-people/index.md
             - Notebooks:
@@ -231,8 +296,26 @@ nav:
             - Data:
                 - CSV of rights applied to images: trove-images/csv-image-rights-by-institution.md
                 - CSV of rights applied to out-of-copyright photos: trove-images/csv-out-of-copyright-photos-rights-by-institution.md
-        - trove-unpublished.md
-        - trove-random.md
+        - Trove unpublished:
+            - trove-unpublished/index.md
+            - Notebooks:
+                - Find works entering public domain: trove-unpublished/Finding-unpublished-works-entering-public-domain.md
+                - Explore works entering public domain: trove-unpublished/Exploring-unpublished-works-entering-public-domain.md
+                - Find digitised finding aids: trove-unpublished/find-finding-aids.md
+                - Collect information about finding aids: trove-unpublished/get-info-finding-aids.md
+                - Convert finding aid to JSON: trove-unpublished/convert-fa-to-json.md
+            - Data:
+                - Works entering public domain: trove-unpublished/unpublished-entering-pd.md
+                - Finding aid urls: trove-unpublished/finding-aids-urls.md
+                - Finding aid summaries: trove-unpublished/finding-aids-summary.md
+        - Random items from Trove:
+            - trove-random/index.md
+            - Notebooks:
+                - Random newspaper article: trove-random/random_newspaper_article.md
+                - Random work by id: trove-random/random_work_by_id.md
+                - Random work using facets: trove-random/random_work_by_facets.md
+        - Trove API v3:
+            - trove-api-v3/index.md
     - digitalnz.md
     - Archives:
         - anu-archives.md
@@ -240,7 +323,17 @@ nav:
             - recordsearch.md
             - naa-wap.md
             - naa-asio.md
-        - nsw-state-archives.md
+        - NSW State Archives:
+            - nsw-state-archives/index.md
+            - Notebooks:
+                - Get details of indexes: nsw-state-archives/index.md
+                - nsw-state-archives/get-list-of-indexes.md
+                - nsw-state-archives/harvest-indexes.md
+                - nsw-state-archives/summarise-index-details.md
+                - Index Explorer: nsw-state-archives/index-explorer.md
+            - Data:
+                - nsw-state-archives/index-list.md
+                - nsw-state-archives/index-repository.md
         - National Archives of NZ:
             - archway.md
         - qsa.md

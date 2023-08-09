@@ -13,23 +13,23 @@ The Trove 'map' zone includes single maps, as well as map series, atlases, and a
 
 ## Tips, tools, and examples
 
-### [:material-notebook-outline: Exploring digitised maps in Trove](exploring-digitised-maps.md)
+### [:material-notebook-outline: Exploring digitised maps in Trove](exploring-digitised-maps.md) {: data-toc-omit }
 
 I knew there were lots of great maps you could download from Trove, but how many? And how big were the files? I thought I'd try to quantify this a bit by harvesting and analysing the metadata.
 
-### [:material-notebook-outline: Parse map coordinates from metadata](parse-coordinates.md)
+### [:material-notebook-outline: Parse map coordinates from metadata](parse-coordinates.md) {: data-toc-omit }
 
 This notebook attempts to parse coordinate strings from the metadata and convert the values to decimals. It then uses the values to explore the geographical context of Trove's digitised map collection.
 
 ## Data
 
-### [:material-folder-text-outline: Trove digitised maps metadata](single-maps-data.md)
+### [:material-folder-text-outline: Trove digitised maps metadata](single-maps-data.md) {: data-toc-omit }
 
 *Harvested: 31 January 2023*
 
 This dataset contains metadata describing digitised maps in Trove, harvested from the Trove API and other sources.
 
-### [:material-folder-text-outline: Trove digitised maps – coordinates](single-maps-coordinates-data.md)
+### [:material-folder-text-outline: Trove digitised maps – coordinates](single-maps-coordinates-data.md) {: data-toc-omit }
 
 *Harvested: 31 January 2023*
 

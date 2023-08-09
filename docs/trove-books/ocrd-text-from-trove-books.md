@@ -12,13 +12,10 @@ hide:
 
 **Harvested: August 2021**
 
-A harvest of 26,762 files of OCRd text from digitised books and ephemera in Trove. There's about 3.6gb in total.
+A harvest of 26,762 files of OCRd text from digitised books and ephemera in Trove. There's about 3.6gb in total. You can either download the complete collection, or use Datasette to find titles of interest that you can download individually.
 
-[Browse the full collection in CloudStor](https://cloudstor.aarnet.edu.au/plus/s/ugiw3gdijSKaoTL){ .md-button .md-button--primary } 
+[Download (1.2gb zip)](https://trove-books.s3.ap-southeast-2.amazonaws.com/trove-books.zip){ .md-button .md-button--primary } [Browse in Datasette](https://glam-workbench.net/datasette-lite/?csv=https://github.com/GLAM-Workbench/trove-books/blob/master/trove-digital-books-datasette.csv){ .md-button .md-button--info }
 
-### Other options
-
-* Use this [searchable database running on Glitch](https://trove-digital-books.glitch.me/data/trove-digital-books) to identify and download texts of interest.
 
 ### Related resources
 

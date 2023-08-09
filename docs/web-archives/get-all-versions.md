@@ -12,7 +12,7 @@ hide:
   - toc
 ---
 
-*Works with AWA, NZWA, IA, & UKWA*
+*Works with AWA, IA, NLNZ, UKWA, & UKGWA*
 
 You can find all the archived versions of a web page by requesting a Timemap from a Memento-compliant repository. If the repository has a CDX API, you can get much the same data by doing an exact url search. This code and examples in this notebook help you to work with both.
 

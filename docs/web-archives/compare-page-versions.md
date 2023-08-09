@@ -13,7 +13,7 @@ hide:
   - toc
 ---
 
-*Works with AWA, NZWA, IA, & UKWA*
+*Works with AWA, NZWA, IA, UKWA, & UKGWA*
 
 This notebook demonstrates a number of different ways of comparing versions of archived web pages. Just choose a repository, enter a url, and select two dates to see comparisons based on: page metadata, basic statistics such as file size and number of words, numbers of internal and external links, cosine similarity of text, line by line differences in text or code, and screenshots.
 

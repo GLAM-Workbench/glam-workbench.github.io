@@ -151,7 +151,7 @@ Sometimes you want to be able to save a Trove newspaper article as an image. Unf
 * [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspapers/blob/master/Save-Trove-newspaper-article-as-image.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/Save-Trove-newspaper-article-as-image.ipynb)
 * [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/master?urlpath=lab/tree/Save-Trove-newspaper-article-as-image.ipynb)
-* [Run as an app using Voila](https://trove-newspaper-apps.herokuapp.com/voila/render/Save-Trove-newspaper-article-as-image.ipynb) (the easiest, no code option!)
+* [Run as an app using Voila](https://trove-newspaper-apps.uw.r.appspot.com/voila/render/Save-Trove-newspaper-article-as-image.ipynb) (the easiest, no code option!)
 
 ![Screen capture](images/run_save_images.gif)
 
@@ -160,7 +160,7 @@ The Trove web interface doesn’t provide a way of getting high-resolution page 
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspapers/blob/master/Save-page-image.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/Save-page-image.ipynb)
-* [Run as an app using Voila](https://trove-newspaper-apps.herokuapp.com/voila/render/Save-page-image.ipynb)
+* [Run as an app using Voila](https://trove-newspaper-apps.uw.r.appspot.com/voila/render/Save-page-image.ipynb)
 
 ![Screen capture](images/trove-page-images.gif)
 
@@ -169,7 +169,7 @@ Generate a nice square thumbnail image for a newspaper article.
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspapers/blob/master/Get-article-thumbnail.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/Get-article-thumbnail.ipynb)
-* [Run as an app using Voila](https://trove-newspaper-apps.herokuapp.com/voila/render/Get-article-thumbnail.ipynb)
+* [Run as an app using Voila](https://trove-newspaper-apps.uw.r.appspot.com/voila/render/Get-article-thumbnail.ipynb)
 
 ### Upload Trove newspaper articles to Omeka-S
 This notebook steps through the process of uploading Trove newspaper articles to your own Omeka-S instance via the API. As well as uploading the article metadata, it attaches image(s) and PDFs of the articles, and creates a linked record for the publishing newspaper. The source of the articles can be a Trove search, a Trove list, a Zotero collection, or just a list of article ids.

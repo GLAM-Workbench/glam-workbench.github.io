@@ -13,7 +13,7 @@ hide:
   - toc
 ---
 
-*Works with AWA, NZWA, IA, & UKWA*
+*Works with AWA, IA, NLNZ, UKWA, & UKGWA*
 
 This notebook helps you assemble datasets of text extracted from all available captures of archived web pages. You can then feed these datasets to the text analysis tool of your choice to analyse changes over time.
 

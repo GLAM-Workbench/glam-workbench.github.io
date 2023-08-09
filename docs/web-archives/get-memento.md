@@ -12,9 +12,9 @@ hide:
   - toc
 ---
 
-*Works with AWA, NZWA, IA, & UKWA*
+*Works with AWA, IA, NLNZ, UKWA, & UKGWA*
 
-To get the archived version of a page closest to a particular date we can use the Memento API. The functions in this notebook smooth out these variations to provide a (mostly) consistent interface to the UK Web Archive, Australian Web Archive, New Zealand Web Archive, and the Internet Archive. They could be easily modified to work with other Memento-compliant repositories.
+To get the archived version of a page closest to a particular date we can use the Memento API. The functions in this notebook smooth out these variations to provide a (mostly) consistent interface to the UK Web Archive, Australian Web Archive, New Zealand Web Archive, the UK Government Web Archive, and the Internet Archive. They could be easily modified to work with other Memento-compliant repositories.
 
 [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/web-archives/master?urlpath=/lab/tree/get_a_memento.ipynb){ .md-button .md-button--primary }
 

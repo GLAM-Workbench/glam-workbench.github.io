@@ -11,7 +11,7 @@ hide:
   - toc
 ---
 
-*Works with AWA, IA, NLNZ, & UKWA*
+*Works with AWA, IA, NLNZ, UKWA, & UKGWA*
 
 This notebook documents differences between the Internet Archive's Wayback CDX API and the PyWb CDX API, such as those available from the UK Web Archive, and the Australian Web Archive.
 

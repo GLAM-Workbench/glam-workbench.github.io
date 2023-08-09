@@ -18,7 +18,7 @@ Trove's zones are important in constructing API requests and interpreting the re
 ### Other options
 
 * [Download from GitHub](https://github.com/GLAM-Workbench/{{repo_name}}/blob/master/{{notebook}})
-* [View using NBViewer](https://nbviewer.jupyter.org/github/{{repo_name}}/blob/master/{{notebook}})
+* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/{{repo_name}}/blob/master/{{notebook}})
 
 ### Additional documentation
 

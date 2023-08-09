@@ -12,7 +12,7 @@ hide:
   - toc
 ---
 
-*Works with AWA, NZWA, IA, & UKWA*
+*Works with AWA, IA, NLNZ, UKWA, & UKGWA*
 
 ![Animated gif showing notebook in action](../images/web-archives-text-appearance.gif)
 

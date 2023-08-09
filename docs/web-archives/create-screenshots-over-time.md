@@ -13,7 +13,7 @@ hide:
   - toc
 ---
 
-*Works with AWA, NZWA, IA, & UKWA*
+*Works with AWA, IA, NLNZ, UKWA, & UKGWA*
 
 ![Composite screenshots](../images/abc-net-au.png)
 

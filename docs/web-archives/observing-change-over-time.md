@@ -13,7 +13,7 @@ hide:
   - toc
 ---
 
-*Works with AWA, NZWA, IA, & UKWA*
+*Works with AWA, IA, NLNZ, UKWA, & UKGWA*
 
 ![Chart of captures over time](../images/webarchives-changeovertime.png)
 
