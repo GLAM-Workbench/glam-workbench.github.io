@@ -9,6 +9,11 @@ zenodo_concept_id: 7264897
 
 Tools and examples for working with GLAM information in Wikidata.
 
+See below for information on [running these notebooks](#run-these-notebooks) in a live computing environment. Or just take them for a spin using Binder.
+
+[![ARDC Binder](../images/explore-live-on-ardc-binder.svg)](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+[![Binder](../images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+
 ## Australian government agencies
 
 ### [:material-notebook-outline: Create a Gannt chart of Australian government departments](agencies-gannt-timeline.md) {: data-toc-omit }

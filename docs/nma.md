@@ -10,7 +10,8 @@ The National Museum of Australia provides access to its [collection data through
 
 You'll need [an API key](https://www.nma.gov.au/about/our-collection/our-apis/register-for-an-api-key) for serious exploration.
 
-[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/national-museum-australia/master?urlpath=lab)
+[![ARDC Binder](images/explore-live-on-ardc-binder.svg)](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/HEAD?urlpath=lab/tree/index.ipynb)
 
 ## Tips, tools, and examples
 

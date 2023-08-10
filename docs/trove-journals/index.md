@@ -10,7 +10,8 @@ zenodo_concept_id: 3545215
 
 Trove's 'journals' zone includes journals and journal articles, as well as other research outputs and things like press releases. You can access metadata from the journal zone through the Trove API, but to get text and images you need to use some screen scraping.
 
-[![Binder](../images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab)
+[![ARDC Binder](../images/explore-live-on-ardc-binder.svg)](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+[![Binder](../images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
 
 ## Harvesting metadata
 

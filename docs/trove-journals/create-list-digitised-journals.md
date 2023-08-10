@@ -3,6 +3,7 @@ title: Create a list of Trove's digitised journals
 description: This notebook uses the Trove API to harvest metadata relating to digitised journals – or more accurately, journals that are freely available online in a digital form.
 repo_url: https://github.com/GLAM-Workbench/trove-journals
 repo_name: trove-journals
+notebook: Create-digitised-journals-list.ipynb
 zenodo_concept_id: 3545215
 tags:
   - data harvesting
@@ -13,10 +14,11 @@ hide:
 
 Everyone know's about Trove's newspapers, but there is also a growing collection of digitised journals available in the journals zone. They're not easy to find, however, which is why I created the [Trove Titles](https://trove-titles.herokuapp.com/) web app. This notebook uses the Trove API to harvest metadata relating to periodicals available from Trove in digital form. As well as digitised publications, this includes born digital publications in formats like PDF and MOBI that have been made available through the edeposit program.
 
-[Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/master?urlpath=lab/tree/Create-digitised-journals-list.ipynb){ .md-button .md-button--primary }
+[Run live on ARDC Binder](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}){ .md-button .md-button--primary }
 
 ### Other options
 
+* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}) (no authentication required)
 * [Download from GitHub](https://github.com/GLAM-Workbench/trove-journals/blob/master/Create-digitised-journals-list.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Create-digitised-journals-list.ipynb)
 

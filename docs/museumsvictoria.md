@@ -8,7 +8,8 @@ repo_name: museums-victoria
 
 Museums Victoria provides access to its [collection data through an API](https://collections.museumsvictoria.com.au/developers). No API key is required making it very easy to get started.
 
-[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/museums-victoria/master?urlpath=lab)
+[![ARDC Binder](images/explore-live-on-ardc-binder.svg)](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/HEAD?urlpath=lab/tree/index.ipynb)
 
 ## Tips, tools, and examples
 

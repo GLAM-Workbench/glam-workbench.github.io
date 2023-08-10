@@ -19,7 +19,8 @@ To start exploring the *contents* of the datasets, give the [GLAM CSV Explorer](
 
 To search across 253 datasets containing names, try the [GLAM Name Index Search](https://glam-workbench.net/name-search/).
 
-[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/ozglam-data/master)
+[![ARDC Binder](images/explore-live-on-ardc-binder.svg)](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/HEAD?urlpath=lab/tree/index.ipynb)
 
 ## Tools, tips, and examples
 

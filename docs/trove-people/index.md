@@ -10,6 +10,11 @@ zenodo_concept_id: 7645058
 
 Trove's People and Organisations zone aggregates information about individuals and organisations, bringing multiple sources together under a single identifier.
 
+See below for information on [running these notebooks](#run-these-notebooks) in a live computing environment. Or just take them for a spin using Binder.
+
+[![ARDC Binder](../images/explore-live-on-ardc-binder.svg)](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+[![Binder](../images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+
 ## Harvesting data
 
 There are two methods of harvesting the complete set of data from the People and Organisations zone – using the [OAI-PMH API](http://www.nla.gov.au/apps/peopleaustralia-oai/), or using the main Trove API in conjunction with the [SRU interface](http://www.nla.gov.au/apps/srw/search/peopleaustralia). The OAI-PMH method is *much* faster, but includes duplicate records that you'll need to filter out afterwards.

@@ -12,6 +12,9 @@ A collection of tools and examples for working with data from [Libraries Tasmani
 
 You might also find the [Zotero translator for the Libraries Tasmania catalogue](https://updates.timsherratt.org/2022/07/14/calling-all-tasmanian.html) useful.
 
+[![ARDC Binder](../images/explore-live-on-ardc-binder.svg)](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+[![Binder](../images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/HEAD?urlpath=lab/tree/index.ipynb)
+
 ## Tasmanian Post Office Directories
 
 The [Tasmanian Post Office Directories from 1890 to 1948](https://stors.tas.gov.au/ILS/SD_ILS-981598) have been digitised and made available by Libraries Tasmania for download as PDFs. These notebooks document a workflow that extracts text and images from the PDFs to build a [searchable database of their contents](https://glam-workbench.net/tasmanian-post-office-directories/).
@@ -40,11 +43,19 @@ See the [GLAM Workbench for more details](https://glam-workbench.github.io/libra
 
 There are a number of different ways to use these notebooks. Binder is quickest and easiest, but it doesn't save your data. I've listed the options below from easiest to most complicated (requiring more technical knowledge).
 
+### Using ARDC Binder
+
+[![Launch on ARDC Binder](../images/launch-ARDC-binder.svg)](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+
+Click on the button above to launch the notebooks in this repository using the [ARDC Binder](https://mybinder.org/) service. This is a free service available to researchers in Australian universities. You'll be asked to log in with your university credentials. Note that sessions will close if you stop using the notebooks, and no data will be preserved. Make sure you download any changed notebooks or harvested data that you want to save.
+
+See [Using ARDC Binder](https://glam-workbench.net/using-ardc-binder/) for more details.
+
 ### Using Binder
 
 [![Launch on Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/libraries-tasmania/master/?urlpath=lab/tree/index.ipynb)
 
-Click on the button above to launch the notebooks in this repository using the [Binder](https://mybinder.org/) service (it might take a little while to load). This is a free service, but note that sessions will close if you stop using the notebooks, and no data will be saved. Make sure you download any changed notebooks or harvested data that you want to save.
+Click on the button above to launch the notebooks in this repository using the [Binder](https://mybinder.org/) service (it might take a little while to load). This is a free service, but note that sessions will close if you stop using the notebooks, and no data will be preserved. Make sure you download any changed notebooks or harvested data that you want to save.
 
 See [Using Binder](https://glam-workbench.net/using-binder/) for more details.
 

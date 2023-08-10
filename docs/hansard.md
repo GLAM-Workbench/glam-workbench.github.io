@@ -6,7 +6,8 @@ title: Commonwealth Hansard
 
 The proceedings of Australia's Commonwealth Parliament are recorded in Hansard, which is available online through the Parliamentary Library's [ParlInfo](https://parlinfo.aph.gov.au/parlInfo/search/summary/summary.w3p;adv=yes;orderBy=_fragment_number,doc_date-rev;query=Dataset:hansardr,hansardr80;resCount=Default) database. This repository includes Jupyter notebooks to harvest and explore XML formatted versions of Hansard.
 
-[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/australian-commonwealth-hansard/master?urlpath=lab)
+[![ARDC Binder](images/explore-live-on-ardc-binder.svg)](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/HEAD?urlpath=lab/tree/index.ipynb)
 
 You can access a [harvest of the XML files for both houses from 1901 to 1980 and 1998 to 2005](https://github.com/wragge/hansard-xml) from this repository. No XML files are currently available for 1981 to 1997. Open Australia provides access to [Hansard XML files from 2006 onwards](http://data.openaustralia.org.au/).
 

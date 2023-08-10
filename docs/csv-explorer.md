@@ -2,6 +2,7 @@
 title: GLAM CSV Explorer
 repo_name: csv-explorer
 repo_url: https://github.com/GLAM-Workbench/csv-explorer
+notebook: csv-explorer.ipynb
 tags:
     - visualisation
     - web app
@@ -14,13 +15,14 @@ Cultural institutions are making collection data available as machine readable d
 
 You can select one of more than 600 GLAM datasets [shared on government data portals](/glam-data-portals) or upload your own.
 
-[Run live on Binder in Voilá](https://mybinder.org/v2/gh/GLAM-Workbench/csv-explorer/master?urlpath=voila/render/csv-explorer.ipynb){ .md-button .md-button--primary }
+[Run live on ARDC Binder using Voilá](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=voila/render/{{notebook}}){ .md-button .md-button--primary } [Run live on ARDC Binder](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}){ .md-button }
 
 ### Other options
 
+* [Run live on Binder in Voilá](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=voila/render/{{notebook}}) (no authentication required)
+* [Run live on Binder in Jupyter Lab](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}) (no authentication required)
 * [Download from GitHub](https://github.com/GLAM-Workbench/csv-explorer/blob/master/csv-explorer.ipynb)
 * [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/csv-explorer/blob/master/csv-explorer.ipynb)
-* [Run live on Binder in Jupyter Lab](https://mybinder.org/v2/gh/GLAM-Workbench/csv-explorer/master?urlpath=voila/render/csv-explorer.ipynb)
 
 --8<-- "help.md"
 

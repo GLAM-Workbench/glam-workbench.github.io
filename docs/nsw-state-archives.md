@@ -7,7 +7,8 @@ repo_url: https://github.com/GLAM-Workbench/nsw-state-archives
 
 A collection of notebooks for working with collection data from the [NSW State Archives](https://www.records.nsw.gov.au/).
 
-[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/nsw-state-archives/master)
+[![ARDC Binder](images/explore-live-on-ardc-binder.svg)](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=lab/tree/index.ipynb)
+[![Binder](images/Explore live on-Binder-579ACA.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/recordsearch/HEAD?urlpath=lab/tree/index.ipynb)
 
 State Archives content in copyright is licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](http://creativecommons.org/licenses/by/4.0/). See their [copyright page](https://www.records.nsw.gov.au/about-state-records/copyright-policy) for more information.
 
