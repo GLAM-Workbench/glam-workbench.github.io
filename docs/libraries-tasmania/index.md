@@ -55,7 +55,7 @@ See [Using ARDC Binder](https://glam-workbench.net/using-ardc-binder/) for more 
 
 [![Launch on Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/GLAM-Workbench/libraries-tasmania/master/?urlpath=lab/tree/index.ipynb)
 
-Click on the button above to launch the notebooks in this repository using the [Binder](https://mybinder.org/) service (it might take a little while to load). This is a free service, but note that sessions will close if you stop using the notebooks, and no data will be preserved. Make sure you download any changed notebooks or harvested data that you want to save.
+Click on the button above to launch the notebooks in this repository using the [mybinder.org](https://mybinder.org/) service (it might take a little while to load). This is a free service that doesn't require any authentication, but note that sessions will close if you stop using the notebooks, and no data will be preserved. Make sure you download any changed notebooks or harvested data that you want to save.
 
 See [Using Binder](https://glam-workbench.net/using-binder/) for more details.
 

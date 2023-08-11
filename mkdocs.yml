@@ -134,6 +134,7 @@ nav:
         - getting-started.md
         - Running notebooks:
             - using-binder.md
+            - using-ardc-binder.md
             - using-reclaim-cloud.md
             - using-nectar.md
             - using-docker.md
