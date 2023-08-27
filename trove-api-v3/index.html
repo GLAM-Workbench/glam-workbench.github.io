@@ -10364,6 +10364,89 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#migration-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration tips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migration tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-api-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update API version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving-from-zones-to-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moving from zones to categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#be-aware-of-changes-to-record-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Be aware of changes to record structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-odd-and-annoying-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other odd and annoying changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-url-values-have-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Some url values have changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont-lose-your-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Don't lose your keys!
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#summary-of-breaking-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -10450,6 +10533,73 @@
 </ul>
 <h2 id="trove-api-console">Trove API Console<a class="headerlink" href="#trove-api-console" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://troveconsole.herokuapp.com/">Trove API Console</a> has been updated to add examples from v3 of the API. It provides many sample queries that you can run and modify without the need for an API key.</p>
+<h2 id="migration-tips">Migration tips<a class="headerlink" href="#migration-tips" title="Permanent link">&para;</a></h2>
+<p>All the breaking changes I know about are listed below, but here's a short summary of things you should look out for when migrating your code from version 2 to version 3 of the Trove API.</p>
+<h3 id="update-api-version">Update API version<a class="headerlink" href="#update-api-version" title="Permanent link">&para;</a></h3>
+<p>This is an obvious one – change the <code>/v2/</code> in your API urls to <code>/v3/</code>!</p>
+<h3 id="moving-from-zones-to-categories">Moving from zones to categories<a class="headerlink" href="#moving-from-zones-to-categories" title="Permanent link">&para;</a></h3>
+<p>You can't just change all the the <code>zone</code> parameters to <code>category</code> as there's no one to one correspondence between the old zones and new categories. In some cases you can add the <code>l-artType</code> facet to try to match the old behaviour.</p>
+<table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>newspaper</code></td>
+<td><code>newspaper</code> – add <code>l-articleType=newspapers</code> (note the plural) to keep gazettes out</td>
+</tr>
+<tr>
+<td><code>gazette</code></td>
+<td><code>newspaper</code> – add <code>l-articleType=gazette</code></td>
+</tr>
+<tr>
+<td><code>book</code></td>
+<td><code>book</code> – mostly the same but seems to have gained some formats and lost theses</td>
+</tr>
+<tr>
+<td><code>article</code></td>
+<td>this zone has been split – NLA digitised articles are in the <code>magazine</code> category, other articles are in <code>research</code> and <code>book</code>, periodical records are in <code>book</code></td>
+</tr>
+<tr>
+<td><code>picture</code></td>
+<td><code>image</code> – this category now includes the contents of the former <code>map</code> zone, use <code>l-artType=Pictures and photos</code> to filter the maps out</td>
+</tr>
+<tr>
+<td><code>music</code></td>
+<td><code>music</code></td>
+</tr>
+<tr>
+<td><code>map</code></td>
+<td><code>picture</code> – add <code>l-artType=Maps</code></td>
+</tr>
+<tr>
+<td><code>collection</code></td>
+<td><code>diary</code></td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><code>people</code></td>
+<td><code>people</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="be-aware-of-changes-to-record-structure">Be aware of changes to record structure<a class="headerlink" href="#be-aware-of-changes-to-record-structure" title="Permanent link">&para;</a></h3>
+<p>This one is easy to overlook and likely to have you scratching your head at unexpected errors. <strong>The actual structure of most JSON and XML records has changed</strong>. In most cases the top level container has been removed, so any code that drills down through the record hierarchy to find a value will break. See below for the specific changes for each endpoint.</p>
+<p>There's also some changes in the way lists of resources are provided. For example, facets are now <strong>always</strong> returned as an array of objects no matter how many you request. Previously if you requested a single facet, you got a single object.</p>
+<p>If something's not working after you migrate – check these things first! They've already tripped me up a couple of times.</p>
+<h3 id="other-odd-and-annoying-changes">Other odd and annoying changes<a class="headerlink" href="#other-odd-and-annoying-changes" title="Permanent link">&para;</a></h3>
+<p>Some changes just seem to be designed to break your code. In v2 the text version of a newspaper title was found in <code>record["title"]["value"]</code>, but in v3 this has changed to <code>record["title"]["title"]</code>. Why?</p>
+<p>See below for various odd changes to List records.</p>
+<h3 id="some-url-values-have-changed">Some url values have changed<a class="headerlink" href="#some-url-values-have-changed" title="Permanent link">&para;</a></h3>
+<p>The value of <code>trovePageUrl</code> has changed. Previously it was of the form <code>https://trove.nla.gov.au/ndp/del/page/[PAGE ID]</code>, but in v3 it is <code>https://nla.gov.au/nla.news-page[PAGE ID]</code>. If, like me, you've been using regular expressions to extract the numeric identifier you'll have to update your code.</p>
+<h3 id="dont-lose-your-keys">Don't lose your keys!<a class="headerlink" href="#dont-lose-your-keys" title="Permanent link">&para;</a></h3>
+<p>API keys now expire after 12 months, even if they're in use! You'll get an email asking if you want to renew your key – don't ignore this email or your application will stop working!</p>
 <h2 id="summary-of-breaking-changes">Summary of breaking changes<a class="headerlink" href="#summary-of-breaking-changes" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
