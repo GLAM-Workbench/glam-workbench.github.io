@@ -10622,7 +10622,7 @@
 <p>There's also some changes in the way lists of resources are provided. For example, facets are now <strong>always</strong> returned as an array of objects no matter how many you request. Previously if you requested a single facet, you got a single object.</p>
 <p>If something's not working after you migrate – check these things first! They've already tripped me up a couple of times.</p>
 <h3 id="other-odd-and-annoying-changes">Other odd and annoying changes<a class="headerlink" href="#other-odd-and-annoying-changes" title="Permanent link">&para;</a></h3>
-<p>Some changes just seem to be designed to break your code. In v2 the text version of a newspaper title was found in <code>record["title"]["value"]</code>, but in v3 this has changed to <code>record["title"]["title"]</code>. Why?</p>
+<p>Some changes just seem to be designed to break your code. In v2 the text version of a newspaper title was found in <code>record["title"]["value"]</code>, but in v3 this has changed to <code>record["title"]["title"]</code>. The <code>word</code> and <code>illtype</code> facets have changed to <code>wordCount</code> and <code>illustrationType</code>. Why?</p>
 <p>See below for various odd changes to List records.</p>
 <h3 id="some-url-values-have-changed">Some url values have changed<a class="headerlink" href="#some-url-values-have-changed" title="Permanent link">&para;</a></h3>
 <p>The value of <code>trovePageUrl</code> has changed. Previously it was of the form <code>https://trove.nla.gov.au/ndp/del/page/[PAGE ID]</code>, but in v3 it is <code>https://nla.gov.au/nla.news-page[PAGE ID]</code>. If, like me, you've been using regular expressions to extract the numeric identifier you'll have to update your code.</p>
@@ -10654,6 +10654,7 @@
 diary, music, people, list; note that in most cases there is no one-to-one correspondence between zones and categories as the boundaries of what's included have changed, for example, the 'newspaper' category includes the contents of both the 'newspaper' and 'gazette' zones</li>
 <li>the handling of 'blank' searches has changed – <del>in version 2 you could use a " " space as a value for <code>q</code> allowing you to search for everything, this doesn't work in v3beta, however, using the unicode null value, <code>%00</code>, does seem to work</del> release 2 of the v3 beta made the <code>q</code> (query) parameter optional. This means blank searches are supported without any need for workarounds.</li>
 <li>the behaviour of the <code>include</code> parameter has changed – previously you could supply multiple values to <code>include</code> as a comma-separated string, now to specify mutiple values you have to include <code>include</code> multiple times (eg. instead of <code>&amp;include=tags,comments</code> you need <code>&amp;include=tags&amp;include=comments</code>).</li>
+<li>some facet names have changed: <code>word</code> is now <code>wordCount</code>, and <code>illtype</code> is now <code>illustrationType</code></li>
 <li>JSON response format changes:<ul>
 <li>top-level <code>response</code> key removed</li>
 <li><code>zone</code> key changed to <code>category</code></li>
