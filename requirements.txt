@@ -14,7 +14,7 @@ beautifulsoup4==4.12.2
     # via mkdocs-htmlproofer-plugin
 cattrs==1.10.0
     # via requests-cache
-certifi==2021.10.8
+certifi==2022.12.7
     # via requests
 cffi==1.15.0
     # via pynacl
@@ -29,9 +29,7 @@ ghp-import==2.0.2
 idna==3.3
     # via requests
 importlib-metadata==4.11.1
-    # via
-    #   markdown
-    #   mkdocs
+    # via mkdocs
 jinja2==3.0.3
     # via
     #   mkdocs
