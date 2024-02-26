@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums">
+        <meta name="description" content="This dataset contains metadata describing Commonwealth Parliamentary Papers that have been digitised and are made available through Trove.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -86,6 +86,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Digitised Parliamentary Papers in Trove - GLAM Workbench" />
+<meta property="og:description" content="This dataset contains metadata describing Commonwealth Parliamentary Papers that have been digitised and are made available through Trove." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-government/trove-parliamentary-papers-data.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -93,6 +94,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-government/trove-parliamentary-papers-data/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Digitised Parliamentary Papers in Trove - GLAM Workbench" />
+<meta property="twitter:description" content="This dataset contains metadata describing Commonwealth Parliamentary Papers that have been digitised and are made available through Trove." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-government/trove-parliamentary-papers-data.png" />
 </head>
   
@@ -10936,6 +10938,73 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trove-parliamentary-paperscsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trove-parliamentary-papers.csv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="trove-parliamentary-papers.csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-of-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context of creation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples of use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -11017,8 +11086,168 @@
 
 
 <!-- Markdown content -->
-<p>{{ no such element: dict object['rocrate_description'] }}</p>
+<p>This dataset contains metadata describing Commonwealth Parliamentary Papers that have been digitised and are made available through Trove.</p>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-parliamentary-papers-data/archive/refs/heads/main.zip">Download complete dataset as zip</a></p>
 <h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
+<h3 id="trove-parliamentary-paperscsv">trove-parliamentary-papers.csv<a class="headerlink" href="#trove-parliamentary-paperscsv" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-02-15</td></tr>
+<tr><td><b>format</b></td><td>text/csv</td></tr><tr><td><b>file size</b></td><td>30.1 MB</td></tr><tr><td><b>number of rows</b></td><td>24,997</td></tr>
+<tr><td><b>license</b></td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain Dedication</a></td></tr>
+</tbody>
+</table>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-parliamentary-papers-data/raw/main/trove-parliamentary-papers.csv">Download from GitHub</a>
+<a class="md-button md-button--info" href="https://glam-workbench.net/datasette-lite/?csv=https://raw.githubusercontent.com/GLAM-Workbench/trove-parliamentary-papers-data/main/trove-parliamentary-papers.csv&amp;fts=title,alternative_title,contributor&amp;drop=work_type,fulltext_url_text,parent,parent_url,children">Explore in Datasette</a></p>
+<h4 id="columns">Columns<a class="headerlink" href="#columns" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>title of the work; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>alternative_title</code></td>
+<td>string</td>
+<td>can include additional publication details such as year and number, eg: 'Vol. 2 (1991/1992), PP no. 384 of 1993'</td>
+</tr>
+<tr>
+<td><code>contributor</code></td>
+<td>string</td>
+<td>contributors such as government agencies or committees; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>publisher</code></td>
+<td>string</td>
+<td>multiple values separated by</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>string</td>
+<td>publication date; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>eg: 'text'; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>string</td>
+<td>eg: 'Book', 'volume'; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>extent</code></td>
+<td>string</td>
+<td>size or physical dimensions, can include number of pages or number of words; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>string</td>
+<td>publication language; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>subject</code></td>
+<td>string</td>
+<td>associated subject headings; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>is_part_of</code></td>
+<td>string</td>
+<td>collections or series this publication is part of; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>identifier</code></td>
+<td>string</td>
+<td>library identifiers; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>rights</code></td>
+<td>string</td>
+<td>copyright and licensing information; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>pages</code></td>
+<td>integer</td>
+<td>number of digitised pages (includes covers and endleaves)</td>
+</tr>
+<tr>
+<td><code>fulltext_url</code></td>
+<td>string</td>
+<td>link to digitised book viewer</td>
+</tr>
+<tr>
+<td><code>fulltext_url_text</code></td>
+<td>string</td>
+<td>text of link to digitised book viewer</td>
+</tr>
+<tr>
+<td><code>text_download_url</code></td>
+<td>string</td>
+<td>link to download OCRd text of book</td>
+</tr>
+<tr>
+<td><code>catalogue_url</code></td>
+<td>string</td>
+<td>link to NLA catalogue; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>work_url</code></td>
+<td>string</td>
+<td>link to work record in Trove; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>work_type</code></td>
+<td>string</td>
+<td>Trove work format, eg: 'Book'; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>parent</code></td>
+<td>string</td>
+<td>parent work identifiers; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>parent_url</code></td>
+<td>string</td>
+<td>parent work links; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>children</code></td>
+<td>any</td>
+<td>child work identifiers; multiple values separated by</td>
+</tr>
+</tbody>
+</table>
+<h2 id="context-of-creation">Context of creation<a class="headerlink" href="#context-of-creation" title="Permanent link">&para;</a></h2>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-02-15</td></tr>
+<tr><td><b>notebook</b></td><td><a href="https://glam-workbench.net/trove-government/harvest-parliamentary-papers/">Harvest details of Commonwealth Parliamentary Papers digitised in Trove</a></td></tr>
+
+
+</tbody>
+</table>
+
+<h2 id="examples-of-use">Examples of use<a class="headerlink" href="#examples-of-use" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://tdg.glam-workbench.net/other-digitised-resources/parliamentary-papers/overview.html">Visualised in the Trove Data Guide</a></li>
+</ul>
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
+<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
+<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
+</ul>
 
 <!-- Was this page helpful? -->
 

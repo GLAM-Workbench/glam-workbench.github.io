@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A GLAM Workbench dataset">
+        <meta name="description" content="The dataset was created in two stages. First, Trove was searched for relevant resources, and metadata from each search result was saved in a CSV file. Then links to ParlInfo contained within the metadata were used to download the full text.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -86,7 +86,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Press releases relating to COVID - GLAM Workbench" />
-<meta property="og:description" content="A GLAM Workbench dataset" />
+<meta property="og:description" content="The dataset was created in two stages. First, Trove was searched for relevant resources, and metadata from each search result was saved in a CSV file. Then links to ParlInfo contained within the metadata were used to download the full text." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-government/trove-parliament-press-releases-covid.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -94,7 +94,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-government/trove-parliament-press-releases-covid/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Press releases relating to COVID - GLAM Workbench" />
-<meta property="twitter:description" content="A GLAM Workbench dataset" />
+<meta property="twitter:description" content="The dataset was created in two stages. First, Trove was searched for relevant resources, and metadata from each search result was saved in a CSV file. Then links to ParlInfo contained within the metadata were used to download the full text." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-government/trove-parliament-press-releases-covid.png" />
 </head>
   
@@ -10996,6 +10996,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -11075,7 +11086,14 @@
 
 
 <!-- Markdown content -->
-<p>A GLAM Workbench dataset</p>
+<p>Trove includes more than 380,000 press releases, speeches, and interview transcripts issued by Australian federal politicians and saved by the Parliamentary Library. This dataset contains metadata and full text of items from the press releases collection that include the term 'covid' or 'coronavirus'.</p>
+<p>The dataset was created in two stages. First, Trove was searched for relevant resources, and metadata from each search result was saved in a CSV file. Then links to ParlInfo contained within the metadata were used to download the full text.</p>
+<p>Known issues:</p>
+<ul>
+<li>some items had no downloadable text available in Parlinfo, so the number of text files is less than the number of metadata records</li>
+<li>some items have different metadata but the same text, for example when a press release is issued by both a political party and an individual member</li>
+<li>because of the way Trove groups records, it's possible some of the records don't include any of the search terms.</li>
+</ul>
 
 <p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-parliament-press-releases-covid/archive/refs/heads/main.zip">Download complete dataset as zip</a></p>
 <h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
@@ -11084,9 +11102,11 @@
 <tbody>
 <tr><td><b>date harvested</b></td><td>2024-02-25</td></tr>
 <tr><td><b>format</b></td><td>directory</td></tr>
-<tr><td><b>number of files</b></td><td>5,520</td></tr>
+<tr><td><b>number of files</b></td><td>5,520</td></tr><tr><td><b>license</b></td><td><a href="http://rightsstatements.org/vocab/CNE/1.0/">Copyright Not Evaluated</a></td></tr>
 </tbody>
 </table>
+
+<p>Contains individual text files, each containing the contents of an item from the press releases collection. Files are named using the following metadata fields: <code>date</code>, <code>contributor</code>, and <code>version_id</code>. For example: <code>1960-01-22-casey-richard-213589278.txt</code>.</p>
 
 <p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-parliament-press-releases-covid/tree/main/text/">Download from GitHub</a></p>
 <h3 id="resultscsv">results.csv<a class="headerlink" href="#resultscsv" title="Permanent link">&para;</a></h3>
@@ -11094,11 +11114,12 @@
 <tbody>
 <tr><td><b>date harvested</b></td><td>2024-02-25</td></tr>
 <tr><td><b>format</b></td><td>text/csv</td></tr><tr><td><b>file size</b></td><td>5.2 MB</td></tr><tr><td><b>number of rows</b></td><td>5,523</td></tr>
-
+<tr><td><b>license</b></td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain Dedication</a></td></tr>
 </tbody>
 </table>
 
-<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-parliament-press-releases-covid/raw/main/results.csv">Download from GitHub</a></p>
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-parliament-press-releases-covid/raw/main/results.csv">Download from GitHub</a>
+<a class="md-button md-button--info" href="https://glam-workbench.net/datasette-lite/?csv=https://raw.githubusercontent.com/GLAM-Workbench/trove-parliament-press-releases-covid/main/results.csv&amp;fts=title,contributor,subject">Explore in Datasette</a></p>
 <h4 id="columns">Columns<a class="headerlink" href="#columns" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -11205,6 +11226,13 @@
 
 </tbody>
 </table>
+
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
+<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
+<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
+</ul>
 
 <!-- Was this page helpful? -->
 

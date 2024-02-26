@@ -7529,7 +7529,7 @@ a.anchor-link {
 <pre><code>nuc:"APAR:PR" AND ("illegal arrival" OR text:"immigrant" OR text:"immigrants" OR "asylum seeker" OR "boat people" OR refugee OR "boat arrivals")
 </code></pre>
 <p>You can view the <a href="https://trove.nla.gov.au/search/category/books?keyword=nuc%3A%22APAR%3APR%22%20AND%20%28%22illegal%20arrival%22%20OR%20text%3A%22immigrant%22%20OR%20text%3A%22immigrants%22%20OR%20%22asylum%20seeker%22%20OR%20%22boat%20people%22%20OR%20refugee%20OR%20%22boat%20arrivals%22%29">results of this query on Trove</a>.</p>
-<p>After unpacking the versions and harvesting available texts I ended up with 14,145 text files.</p>
+<p>See <a href="https://glam-workbench.net/trove-government/trove-parliament-press-releases-refugees/">Press releases relating to refugees</a> for the full dataset.</p>
 </div>
 </div>
 </div>
@@ -7549,7 +7549,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
@@ -7585,7 +7585,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>True</pre>
 </div>
@@ -7619,7 +7619,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Insert your Trove API key</span>
@@ -7650,14 +7650,14 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Insert your query between the single quotes.</span>
-<span class="n">query</span> <span class="o">=</span> <span class="s1">'ufo'</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">"ufo"</span>
 <span class="c1"># Examples:</span>
 <span class="c1"># query = '("illegal arrival" OR text:"immigrant" OR text:"immigrants" OR "asylum seeker" OR "boat people" OR refugee OR "boat arrivals")'</span>
-<span class="c1"># query = "(COVID OR coronavirus)"'</span>
+<span class="c1"># query = "(COVID OR coronavirus)"</span>
 
 <span class="c1"># You don't have to change this</span>
 <span class="n">output_dir</span> <span class="o">=</span> <span class="s2">"press-releases"</span>
@@ -7682,7 +7682,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_total_results</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
@@ -7912,28 +7912,16 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">records</span> <span class="o">=</span> <span class="n">harvest_prs</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>  0%|          | 0/12 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 </div>
@@ -7949,28 +7937,16 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">save_texts</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>  0%|          | 0/12 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 </div>
@@ -7991,7 +7967,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="sa">f</span><span class="s2">"press-releases-</span><span class="si">{</span><span class="n">slugify</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="si">}</span><span class="s2">.ndjson"</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -8006,7 +7982,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8050,7 +8026,7 @@ a.anchor-link {
 <td>193080997</td>
 <td>[Article/Other article, Article]</td>
 <td>[Transcript of joint press conference with New...</td>
-<td>[Mccully, Murray, Rudd, Kevin]</td>
+<td>[Rudd, Kevin, Mccully, Murray]</td>
 <td>[2011-03-26]</td>
 <td>[A press release issued by a member of the Aus...</td>
 <td>[Press Release]</td>
@@ -8058,7 +8034,7 @@ a.anchor-link {
 <td>[eng]</td>
 <td>[5p.]</td>
 <td>[Copyright remains with the copyright holder. ...</td>
-<td>[visit to New Zealand, Libya, Syria, New Zeala...</td>
+<td>[visit to New Zealand, Syria, New Zealand dome...</td>
 <td>[Press releases database, Australian Parliamen...</td>
 <td>http://parlinfo.aph.gov.au/parlInfo/search/dis...</td>
 </tr>
@@ -8086,7 +8062,7 @@ a.anchor-link {
 <td>193193664</td>
 <td>[Article/Other article, Article]</td>
 <td>[St. Clair 'the truth is out there']</td>
-<td>[National Party of Australia, St Clair, Stuart]</td>
+<td>[St Clair, Stuart, National Party of Australia]</td>
 <td>[1999-12-09]</td>
 <td>[A press release captured for archiving in the...</td>
 <td>[Press Release]</td>
@@ -8107,7 +8083,7 @@ a.anchor-link {
 <td>[Fraser, Malcolm]</td>
 <td>[1979-04-22]</td>
 <td>[A press release issued by a member of the Aus...</td>
-<td>[Speech, Press Release]</td>
+<td>[Press Release, Speech]</td>
 <td>[]</td>
 <td>[eng]</td>
 <td>[]</td>
@@ -8125,7 +8101,7 @@ a.anchor-link {
 <td>[Jones, Barry]</td>
 <td>[1981-08-22]</td>
 <td>[A press release issued by a member of the Aus...</td>
-<td>[Speech, Press Release]</td>
+<td>[Press Release, Speech]</td>
 <td>[]</td>
 <td>[eng]</td>
 <td>[]</td>
@@ -8157,7 +8133,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># How many records</span>
@@ -8172,7 +8148,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>12</pre>
 </div>
@@ -8195,7 +8171,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span>
@@ -8218,7 +8194,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>13
+<pre>14
 </pre>
 </div>
 </div>
@@ -8242,7 +8218,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Change this!</span>
@@ -8281,7 +8257,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -8295,49 +8271,9 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>8</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Find-press-releases-with-duplicate-content">Find press releases with duplicate content<a class="anchor-link" href="#Find-press-releases-with-duplicate-content">¶</a></h2><p>As noted above, there might be press releases that have the same content, but different metadata (eg title or creator). To make these duplicates easy to identify, this cell adds a <code>hash</code> column to the dataset. The <code>hash</code> value is a short string representation of each record's associated text file. If two records have the same <code>hash</code> value, then the contents of the press releases will be the same.</p>
-<p>If you want, you can use this column to drop duplicates from the dataset. On the other hand, if you're interested in seeing how press releases are disseminated, you might want to group records by their <code>hash</code> values and compare the metadata within each group.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_hash</span><span class="p">(</span><span class="n">version_id</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">text_file</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
-            <span class="n">Path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"press-releases-</span><span class="si">{</span><span class="n">slugify</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">"*-</span><span class="si">{</span><span class="n">version_id</span><span class="si">}</span><span class="s2">.txt"</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">hashed</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">(</span><span class="n">text_file</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
-    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">version_id</span><span class="p">)</span>
-        <span class="n">hashed</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="k">return</span> <span class="n">hashed</span>
-
-
-<span class="n">df</span><span class="p">[</span><span class="s2">"hash"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"version_id"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_hash</span><span class="p">)</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -8347,7 +8283,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span>
@@ -8370,8 +8306,48 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>8
+<pre>10
 </pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Find-press-releases-with-duplicate-content">Find press releases with duplicate content<a class="anchor-link" href="#Find-press-releases-with-duplicate-content">¶</a></h2><p>As noted above, there might be press releases that have the same content, but different metadata (eg title or creator). To make these duplicates easy to identify, this cell adds a <code>hash</code> column to the dataset. The <code>hash</code> value is a short string representation of each record's associated text file. If two records have the same <code>hash</code> value, then the contents of the press releases will be the same.</p>
+<p>If you want, you can use this column to drop duplicates from the dataset. On the other hand, if you're interested in seeing how press releases are disseminated, you might want to group records by their <code>hash</code> values and compare the metadata within each group.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_hash</span><span class="p">(</span><span class="n">version_id</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">text_file</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="n">Path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"press-releases-</span><span class="si">{</span><span class="n">slugify</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"*-</span><span class="si">{</span><span class="n">version_id</span><span class="si">}</span><span class="s2">.txt"</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">hashed</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">(</span><span class="n">text_file</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">version_id</span><span class="p">)</span>
+        <span class="n">hashed</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">hashed</span>
+
+
+<span class="n">df</span><span class="p">[</span><span class="s2">"hash"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"version_id"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_hash</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -8392,7 +8368,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"hash"</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -8406,7 +8382,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>8</pre>
 </div>
@@ -8430,7 +8406,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">merge_lists</span><span class="p">(</span><span class="n">column</span><span class="p">):</span>
@@ -8468,7 +8444,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Save the data as a CSV file</span>
