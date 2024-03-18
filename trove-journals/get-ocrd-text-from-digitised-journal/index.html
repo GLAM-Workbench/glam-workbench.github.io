@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This notebook shows how to extract issue data from a digitised journal and download OCRd text for each issue.">
+        <meta name="description" content="Many of the digitised periodicals available in Trove make OCRd text available for download. This notebook helps you download all the OCRd text from a single periodical – ­one text file for each issue.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -98,7 +98,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Get OCRd text from a digitised journal in Trove - GLAM Workbench" />
-<meta property="og:description" content="This notebook shows how to extract issue data from a digitised journal and download OCRd text for each issue." />
+<meta property="og:description" content="Many of the digitised periodicals available in Trove make OCRd text available for download. This notebook helps you download all the OCRd text from a single periodical – ­one text file for each issue." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-journals/get-ocrd-text-from-digitised-journal.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -106,7 +106,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-journals/get-ocrd-text-from-digitised-journal/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Get OCRd text from a digitised journal in Trove - GLAM Workbench" />
-<meta property="twitter:description" content="This notebook shows how to extract issue data from a digitised journal and download OCRd text for each issue." />
+<meta property="twitter:description" content="Many of the digitised periodicals available in Trove make OCRd text available for download. This notebook helps you download all the OCRd text from a single periodical – ­one text file for each issue." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-journals/get-ocrd-text-from-digitised-journal.png" />
 </head>
   
@@ -127,7 +127,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#other-options" class="md-skip">
+        <a href="#using-this-notebook" class="md-skip">
           Skip to content
         </a>
       
@@ -4680,6 +4680,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../periodicals-from-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Get details of periodicals from the `/magazine/titles` API endpoint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../periodicals-enrich-for-datasette/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Enrich the list of periodicals from the Trove API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../create-list-digitised-journals/" class="md-nav__link">
         
   
@@ -4761,10 +4815,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#other-options" class="md-nav__link">
+  <a href="#using-this-notebook" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Other options
+        Using this notebook
       
     </span>
   </a>
@@ -4847,6 +4901,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../create-text-db-indexed-by-line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Create database of text indexed by line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../get-covers-from-digitised-journal/" class="md-nav__link">
         
   
@@ -4894,87 +4975,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../harvest-parliament-press-releases/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Harvest Parliament press releases
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../create-text-db-indexed-by-line/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Create database of text indexed by line
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../topic-modelling-parliament-press-releases/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Topic modelling Parliament press releases
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4991,12 +4991,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
       
         
       
@@ -5051,6 +5045,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../periodicals-data-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Details of digitised periodicals from the `/magazine/titles` API endpoint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../csv-digital-journals/" class="md-nav__link">
         
   
@@ -5058,60 +5079,6 @@
     
   
     CSV list of digital journals
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../csv-journals-with-ocr/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    CSV list of journals with OCR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../journals-with-ocr/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    List of journals with OCR
   
 
     
@@ -5166,60 +5133,6 @@
     
   
     Editorial cartoons from The Bulletin, 1886 to 1952
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../politicans-press-releases-refugees/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Politicians talking about 'refugees'
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../politicans-press-releases-covid/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Politicians talking about COVID
   
 
     
@@ -11211,10 +11124,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#other-options" class="md-nav__link">
+  <a href="#using-this-notebook" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Other options
+        Using this notebook
       
     </span>
   </a>
@@ -11335,15 +11248,30 @@
 
 
 <!-- Markdown content -->
-<p>Many of the digitised journals available in Trove make OCRd text available for download – one text file for each journal issue. However, while there are records for journals and articles in Trove (and available through the API), there are no records for issues. So how do we find them? This notebook shows how to extract issue data from a digitised journal and download OCRd text for each issue.</p>
+<p>Many of the digitised periodicals available in Trove make OCRd text available for download. This notebook helps you download all the OCRd text from a single periodical – ­one text file for each issue.</p>
+
+<div class="admonition preview">
+<p class="admonition-title">Preview</p>
+<p><iframe class='nb-preview' src='/trove-journals/previews/Get-text-from-a-Trove-journal.html'></iframe>
+<a href="/trove-journals/previews/Get-text-from-a-Trove-journal.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 4 4 4V4m0 12-4 4h4M8 20l-4-4v4M4 8l4-4H4m12.95 3.05a7.007 7.007 0 0 0-9.9 0 7.007 7.007 0 0 0 0 9.9 7.007 7.007 0 0 0 9.9 0c2.73-2.73 2.73-7.16 0-9.9m-1.1 8.8a5.402 5.402 0 0 1-7.7 0 5.402 5.402 0 0 1 0-7.7 5.402 5.402 0 0 1 7.7 0 5.402 5.402 0 0 1 0 7.7Z"/></svg></span> Expand</a></p>
+</div>
+<h2 id="using-this-notebook">Using this notebook<a class="headerlink" href="#using-this-notebook" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">ARDC Binder</label><label for="__tabbed_1_2">MyBinder</label><label for="__tabbed_1_3">Other options</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To run this notebook using the ARDC Binder service you'll need to log in using an account from an Australian university or research organisation. If you don't have an account, try <a href="#__tabbed_1_2">MyBinder</a> instead.</p>
 <p><a class="md-button md-button--primary" href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-journals/HEAD?urlpath=/lab/tree/Get-text-from-a-Trove-journal.ipynb">Run live on ARDC Binder</a></p>
-<h3 id="other-options">Other options<a class="headerlink" href="#other-options" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-journals/HEAD?urlpath=/lab/tree/Get-text-from-a-Trove-journal.ipynb">Run live on Binder</a> (no authentication required)</li>
-<li><a href="https://github.com/GLAM-Workbench/trove-journals/blob/master/Get-text-from-a-Trove-journal.ipynb">Download from GitHub</a></li>
-<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Get-text-from-a-Trove-journal.ipynb">View using NBViewer</a></li>
-</ul>
-<h3 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h3>
+</div>
+<div class="tabbed-block">
+<p>The MyBinder service doesn't require any authentication, but it can be slow to start and will sometimes fail when busy. If you have a login at an Australian university, you'll probably get better results with <a href="#__tabbed_1_1">ARDC Binder</a>.</p>
+<p><a class="md-button md-button--primary" href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-journals/HEAD?urlpath=/lab/tree/Get-text-from-a-Trove-journal.ipynb">Run live on MyBinder</a></p>
+</div>
+<div class="tabbed-block">
+<p>Binder is great for experimentation and quick tasks, but for some projects you might need a dedicated, persistent environment in which to work. There's information on other options in the <a href="../#run-these-notebooks">run these notebooks</a> section.</p>
+</div>
+</div>
+</div>
+<h2 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../#run-these-notebooks">Run these notebooks</a></li>
 </ul>

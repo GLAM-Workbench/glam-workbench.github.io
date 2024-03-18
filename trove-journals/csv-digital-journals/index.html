@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This file provides metadata of 7,269 periodicals that are available from Trove's journal zone in digital form. This includes both 'digitised' periodicals, and born-digital periodicals submitted through Electronic Legal Deposit.">
+        <meta name="description" content="This dataset contains version records describing digitised periodicals found by searching for the digital identifier string `nla.obj` and limiting the results to periodicals. Duplicate records were merged.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://glam-workbench.net/trove-journals/csv-digital-journals/">
       
       
-        <link rel="prev" href="../topic-modelling-parliament-press-releases/">
+        <link rel="prev" href="../periodicals-data-api/">
       
       
-        <link rel="next" href="../csv-journals-with-ocr/">
+        <link rel="next" href="../ocrd-text-all-journals/">
       
       
         
@@ -98,7 +98,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="CSV formatted list of journals available from Trove in digital form - GLAM Workbench" />
-<meta property="og:description" content="This file provides metadata of 7,269 periodicals that are available from Trove's journal zone in digital form. This includes both 'digitised' periodicals, and born-digital periodicals submitted through Electronic Legal Deposit." />
+<meta property="og:description" content="This dataset contains version records describing digitised periodicals found by searching for the digital identifier string `nla.obj` and limiting the results to periodicals. Duplicate records were merged." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-journals/csv-digital-journals.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -106,7 +106,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-journals/csv-digital-journals/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="CSV formatted list of journals available from Trove in digital form - GLAM Workbench" />
-<meta property="twitter:description" content="This file provides metadata of 7,269 periodicals that are available from Trove's journal zone in digital form. This includes both 'digitised' periodicals, and born-digital periodicals submitted through Electronic Legal Deposit." />
+<meta property="twitter:description" content="This dataset contains version records describing digitised periodicals found by searching for the digital identifier string `nla.obj` and limiting the results to periodicals. Duplicate records were merged." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-journals/csv-digital-journals.png" />
 </head>
   
@@ -127,7 +127,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#related-resources" class="md-skip">
+        <a href="#files" class="md-skip">
           Skip to content
         </a>
       
@@ -4678,6 +4678,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../periodicals-from-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Get details of periodicals from the `/magazine/titles` API endpoint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../periodicals-enrich-for-datasette/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Enrich the list of periodicals from the Trove API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../create-list-digitised-journals/" class="md-nav__link">
         
   
@@ -4759,6 +4813,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../create-text-db-indexed-by-line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Create database of text indexed by line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../get-covers-from-digitised-journal/" class="md-nav__link">
         
   
@@ -4806,87 +4887,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../harvest-parliament-press-releases/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Harvest Parliament press releases
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../create-text-db-indexed-by-line/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Create database of text indexed by line
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../topic-modelling-parliament-press-releases/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Topic modelling Parliament press releases
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4905,12 +4905,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
       
         
       
@@ -4957,6 +4951,33 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../periodicals-data-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Details of digitised periodicals from the `/magazine/titles` API endpoint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -5019,10 +5040,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Related resources
+        Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#periodical-workscsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        periodical-works.csv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="periodical-works.csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-of-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context of creation
       
     </span>
   </a>
@@ -5055,60 +5121,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../csv-journals-with-ocr/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    CSV list of journals with OCR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../journals-with-ocr/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    List of journals with OCR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -5155,60 +5167,6 @@
     
   
     Editorial cartoons from The Bulletin, 1886 to 1952
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../politicans-press-releases-refugees/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Politicians talking about 'refugees'
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../politicans-press-releases-covid/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Politicians talking about COVID
   
 
     
@@ -11200,10 +11158,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Related resources
+        Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#periodical-workscsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        periodical-works.csv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="periodical-works.csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-of-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context of creation
       
     </span>
   </a>
@@ -11313,56 +11316,132 @@
 
 
 <!-- Markdown content -->
-<p><strong>Harvested: 31 August 2022</strong></p>
-<p>This file provides metadata of 8,662 periodicals that are available from Trove's journal zone in digital form. This includes both 'digitised' periodicals, and born-digital periodicals submitted through Electronic Legal Deposit. Note that this list contains 8,728 records as there are some duplicates where multiple Trove work records point to the same digitised periodicals. The duplicates have been left in as they include different metadata, and can be easily removed with Pandas. </p>
-<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-20220831.csv">Download the CSV file</a> <a class="md-button md-button--info" href="https://glam-workbench.net/datasette-lite/?csv=https://github.com/GLAM-Workbench/trove-journals/blob/master/digital-journals-20220831.csv">Explore in Datasette</a></p>
-<p>This file includes the following columns:</p>
+<p>This dataset contains version records describing digitised periodicals found by searching for the digital identifier string <code>nla.obj</code> and limiting the results to periodicals. Duplicate records were merged.</p>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-periodical-works-data/archive/refs/heads/main.zip">Download complete dataset as zip</a></p>
+<h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
+<h3 id="periodical-workscsv">periodical-works.csv<a class="headerlink" href="#periodical-workscsv" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-03-13</td></tr>
+<tr><td><b>format</b></td><td>text/csv</td></tr><tr><td><b>file size</b></td><td>612.6 kB</td></tr><tr><td><b>number of rows</b></td><td>930</td></tr>
+
+</tbody>
+</table>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-periodical-works-data/raw/main/periodical-works.csv">Download from GitHub</a></p>
+<h4 id="columns">Columns<a class="headerlink" href="#columns" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
-<th>Column</th>
-<th>Description</th>
+<th>name</th>
+<th>type</th>
+<th>description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td><code>fulltext_url</code></td>
+<td>string</td>
+<td>link to digitised viewer</td>
+</tr>
+<tr>
 <td><code>title</code></td>
-<td>the title of the periodical</td>
+<td>string</td>
+<td>title of the periodical; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>work_url</code></td>
+<td>string</td>
+<td>link to work record in Trove; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>work_type</code></td>
+<td>string</td>
+<td>Trove work format, eg: 'Book'; multiple values separated by</td>
 </tr>
 <tr>
 <td><code>contributor</code></td>
-<td>information about creator or publisher</td>
+<td>string</td>
+<td>multiple values separated by</td>
 </tr>
 <tr>
-<td><code>issued</code></td>
-<td>publication date, or date range</td>
+<td><code>publisher</code></td>
+<td>string</td>
+<td>multiple values separated by</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>string</td>
+<td>multiple values separated by</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>eg: 'text'; multiple values separated by</td>
 </tr>
 <tr>
 <td><code>format</code></td>
-<td>the type of publication, all entries should include 'Periodical', but may include other types such as 'Government publication'</td>
+<td>string</td>
+<td>eg: 'volume'; multiple values separated by</td>
 </tr>
 <tr>
-<td><code>trove_id</code></td>
-<td>the 'nla.obj' part of the fulltext_url, a unique identifier for the digital periodical</td>
+<td><code>extent</code></td>
+<td>string</td>
+<td>size or physical dimensions; multiple values separated by</td>
 </tr>
 <tr>
-<td><code>trove_url</code></td>
-<td>url of the periodical's metadata record in Trove</td>
+<td><code>language</code></td>
+<td>string</td>
+<td>publication language; multiple values separated by</td>
 </tr>
 <tr>
-<td><code>fulltext_url</code></td>
-<td>the url of the landing page of the digital version of the periodical</td>
+<td><code>subject</code></td>
+<td>string</td>
+<td>associated subject headings; multiple values separated by</td>
 </tr>
 <tr>
-<td><code>fulltext_url_type</code></td>
-<td>the type of digital periodical, one of 'digitised', 'edeposit', or 'other'</td>
+<td><code>spatial</code></td>
+<td>string</td>
+<td>related places; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>is_part_of</code></td>
+<td>string</td>
+<td>collections or series this publication is part of; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>identifier</code></td>
+<td>string</td>
+<td>library identifiers; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>rights</code></td>
+<td>string</td>
+<td>copyright and licensing information; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>fulltext_url_text</code></td>
+<td>string</td>
+<td>text of link to digitised book viewer</td>
+</tr>
+<tr>
+<td><code>catalogue_url</code></td>
+<td>string</td>
+<td>link to NLA catalogue; multiple values separated by</td>
 </tr>
 </tbody>
 </table>
-<h3 id="related-resources">Related resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="../create-list-digitised-journals/">Create a list of Trove's digitised journals</a></li>
-</ul>
+<h2 id="context-of-creation">Context of creation<a class="headerlink" href="#context-of-creation" title="Permanent link">&para;</a></h2>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-03-13</td></tr>
+<tr><td><b>notebook</b></td><td><a href="https://glam-workbench.net/trove-journals/create-list-digitised-journals/">Create a list of Trove's digital periodicals</a></td></tr>
+
+
+</tbody>
+</table>
+
 <h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="I harvested metadata and OCRd text from Trove's digitised periodicals. 1,430 periodicals had OCRd text available for download. OCRd text was downloaded from 41,645 periodical issues.">
+        <meta name="description" content="The zip file contains a directory for each periodical which is named using it's title and identifier, eg: `14th-company-magazine-nla.obj-15956697`. Each directory contains a CSV-formatted list of issues and a subdirectory named `texts` that contains a text file for each issue with OCRd text, The text files are named using the issue's date and identifier, eg: `1918-06-14-nla.obj-15967449.txt`. If text was successfully downloaded from an issue, the `issues.csv` file will inlcude the name of the text file in the `text_file` column.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://glam-workbench.net/trove-journals/ocrd-text-all-journals/">
       
       
-        <link rel="prev" href="../journals-with-ocr/">
+        <link rel="prev" href="../csv-digital-journals/">
       
       
         <link rel="next" href="../bulletin-cartoons-collection/">
@@ -98,7 +98,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="OCRd text from Trove digitised journals - GLAM Workbench" />
-<meta property="og:description" content="I harvested metadata and OCRd text from Trove's digitised periodicals. 1,430 periodicals had OCRd text available for download. OCRd text was downloaded from 41,645 periodical issues." />
+<meta property="og:description" content="The zip file contains a directory for each periodical which is named using it's title and identifier, eg: `14th-company-magazine-nla.obj-15956697`. Each directory contains a CSV-formatted list of issues and a subdirectory named `texts` that contains a text file for each issue with OCRd text, The text files are named using the issue's date and identifier, eg: `1918-06-14-nla.obj-15967449.txt`. If text was successfully downloaded from an issue, the `issues.csv` file will inlcude the name of the text file in the `text_file` column." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-journals/ocrd-text-all-journals.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -106,7 +106,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-journals/ocrd-text-all-journals/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="OCRd text from Trove digitised journals - GLAM Workbench" />
-<meta property="twitter:description" content="I harvested metadata and OCRd text from Trove's digitised periodicals. 1,430 periodicals had OCRd text available for download. OCRd text was downloaded from 41,645 periodical issues." />
+<meta property="twitter:description" content="The zip file contains a directory for each periodical which is named using it's title and identifier, eg: `14th-company-magazine-nla.obj-15956697`. Each directory contains a CSV-formatted list of issues and a subdirectory named `texts` that contains a text file for each issue with OCRd text, The text files are named using the issue's date and identifier, eg: `1918-06-14-nla.obj-15967449.txt`. If text was successfully downloaded from an issue, the `issues.csv` file will inlcude the name of the text file in the `text_file` column." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-journals/ocrd-text-all-journals.png" />
 </head>
   
@@ -127,7 +127,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#related-resources" class="md-skip">
+        <a href="#files" class="md-skip">
           Skip to content
         </a>
       
@@ -4678,6 +4678,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../periodicals-from-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Get details of periodicals from the `/magazine/titles` API endpoint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../periodicals-enrich-for-datasette/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Enrich the list of periodicals from the Trove API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../create-list-digitised-journals/" class="md-nav__link">
         
   
@@ -4759,6 +4813,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../create-text-db-indexed-by-line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Create database of text indexed by line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../get-covers-from-digitised-journal/" class="md-nav__link">
         
   
@@ -4806,87 +4887,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../harvest-parliament-press-releases/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Harvest Parliament press releases
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../create-text-db-indexed-by-line/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Create database of text indexed by line
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../topic-modelling-parliament-press-releases/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Topic modelling Parliament press releases
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4905,12 +4905,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
       
         
       
@@ -4965,6 +4959,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../periodicals-data-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Details of digitised periodicals from the `/magazine/titles` API endpoint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../csv-digital-journals/" class="md-nav__link">
         
   
@@ -4972,60 +4993,6 @@
     
   
     CSV list of digital journals
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../csv-journals-with-ocr/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    CSV list of journals with OCR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../journals-with-ocr/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    List of journals with OCR
   
 
     
@@ -5100,10 +5067,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Related resources
+        Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trove-periodicalszip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trove-periodicals.zip
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-of-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context of creation
       
     </span>
   </a>
@@ -5155,60 +5150,6 @@
     
   
     Editorial cartoons from The Bulletin, 1886 to 1952
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../politicans-press-releases-refugees/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Politicians talking about 'refugees'
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../politicans-press-releases-covid/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Politicians talking about COVID
   
 
     
@@ -11200,10 +11141,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Related resources
+        Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trove-periodicalszip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trove-periodicals.zip
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-of-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context of creation
       
     </span>
   </a>
@@ -11320,21 +11289,30 @@
 
 
 <!-- Markdown content -->
-<p><em>Harvested: 31 August 2022</em></p>
-<p>I harvested metadata and OCRd text from Trove's digitised periodicals:</p>
-<ul>
-<li>1,430 periodicals had OCRd text available for download</li>
-<li>OCRd text was downloaded from 41,645 periodical issues</li>
-<li>About 9gb of text was downloaded</li>
-</ul>
-<p>The complete collection of OCRd text is available on CloudStor. Alternatively, you can browse the <a href="../csv-journals-with-ocr/">full list of titles</a> and select individual periodicals to download or explore.</p>
-<p><a class="md-button md-button--primary" href="https://cloudstor.aarnet.edu.au/plus/s/QOmnqpGQCNCSC2h">Download all the text from CloudStor</a></p>
-<h3 id="related-resources">Related resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="../csv-journals-with-ocr/">CSV formatted list of journals with OCRd text</a></li>
-<li><a href="../journals-with-ocr/">List of journals with OCRd text</a></li>
-<li><a href="../get-ocrd-text-from-all-journals/">Download the OCRd text for ALL the digitised journals in Trove!</a></li>
-</ul>
+<p>This dataset contains OCRd text and metadata harvested from digitised periodicals in Trove.</p>
+<p>The zip file contains a directory for each periodical which is named using it's title and identifier, eg: <code>14th-company-magazine-nla.obj-15956697</code>. Each directory contains a CSV-formatted list of issues and a subdirectory named <code>texts</code> that contains a text file for each issue with OCRd text, The text files are named using the issue's date and identifier, eg: <code>1918-06-14-nla.obj-15967449.txt</code>. If text was successfully downloaded from an issue, the <code>issues.csv</code> file will inlcude the name of the text file in the <code>text_file</code> column.</p>
+
+<h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
+<h3 id="trove-periodicalszip">trove-periodicals.zip<a class="headerlink" href="#trove-periodicalszip" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-03-12</td></tr>
+<tr><td><b>format</b></td><td>application/zip</td></tr><tr><td><b>file size</b></td><td>3.7 GB</td></tr>
+
+</tbody>
+</table>
+
+<p><a class="md-button md-button--primary" href="https://trove-journals.s3.ap-southeast-2.amazonaws.com/trove-periodicals.zip">Download</a></p>
+<h2 id="context-of-creation">Context of creation<a class="headerlink" href="#context-of-creation" title="Permanent link">&para;</a></h2>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-03-12</td></tr>
+<tr><td><b>notebook</b></td><td><a href="https://glam-workbench.net/trove-journals/get-ocrd-text-from-all-journals/">Download the OCRd text for ALL the digitised periodicals in Trove!</a></td></tr>
+
+
+</tbody>
+</table>
+
 <h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>

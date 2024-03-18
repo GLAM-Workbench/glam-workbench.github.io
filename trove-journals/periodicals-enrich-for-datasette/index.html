@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums">
+        <meta name="description" content="This notebook tries to fix some problems with the periodicals data from the Trove API. It also enriches the harvested data by extracting additional information from the website. It creates two datasets – one for titles and one for issues – and loads these into an SQLite database for use with Datasette Lite.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://glam-workbench.net/trove-journals/periodicals-enrich-for-datasette/">
       
       
+        <link rel="prev" href="../periodicals-from-api/">
+      
+      
+        <link rel="next" href="../create-list-digitised-journals/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Periodicals enrich for datasette - GLAM Workbench</title>
+        <title>Enrich the list of periodicals from the Trove API - GLAM Workbench</title>
       
     
     
@@ -72,19 +76,31 @@
     <link rel="schema.z" href="http://www.zotero.org/namespaces/export#">
     
     
+        <meta name="z.type" content="computerProgram" />
+        <meta name="z.libraryCatalog" content="Zenodo" />
+        
+            <meta name="dcterms.title" content="" />
+        
+        
+        
+        
+        
+            <meta name="bibo.edition" content="v1.0.0" />
+        
+    
 
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Periodicals enrich for datasette - GLAM Workbench" />
-<meta property="og:description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" />
+<meta property="og:title" content="Enrich the list of periodicals from the Trove API - GLAM Workbench" />
+<meta property="og:description" content="This notebook tries to fix some problems with the periodicals data from the Trove API. It also enriches the harvested data by extracting additional information from the website. It creates two datasets – one for titles and one for issues – and loads these into an SQLite database for use with Datasette Lite." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-journals/periodicals-enrich-for-datasette.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://glam-workbench.net/trove-journals/periodicals-enrich-for-datasette/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Periodicals enrich for datasette - GLAM Workbench" />
-<meta property="twitter:description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" />
+<meta property="twitter:title" content="Enrich the list of periodicals from the Trove API - GLAM Workbench" />
+<meta property="twitter:description" content="This notebook tries to fix some problems with the periodicals data from the Trove API. It also enriches the harvested data by extracting additional information from the website. It creates two datasets – one for titles and one for issues – and loads these into an SQLite database for use with Datasette Lite." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-journals/periodicals-enrich-for-datasette.png" />
 </head>
   
@@ -103,6 +119,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#using-this-notebook" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -136,7 +157,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Periodicals enrich for datasette
+              Enrich the list of periodicals from the Trove API
             
           </span>
         </div>
@@ -258,7 +279,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/trove-journals" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -266,9 +287,9 @@
   </div>
 
 <div class="md-source__repository">
-  glam-workbench.github.io
+  trove-journals
 <ul class="md-source__facts">
-  
+  <li class="md-source__fact md-source__fact--version">v1.0.0</li><li class="md-source__fact md-source__fact--stars">2</li><li class="md-source__fact md-source__fact--forks">2</li>
 </ul>
 </div>
 </a>
@@ -289,6 +310,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -387,7 +410,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/trove-journals" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -395,9 +418,9 @@
   </div>
 
 <div class="md-source__repository">
-  glam-workbench.github.io
+  trove-journals
 <ul class="md-source__facts">
-  
+  <li class="md-source__fact md-source__fact--version">v1.0.0</li><li class="md-source__fact md-source__fact--stars">2</li><li class="md-source__fact md-source__fact--forks">2</li>
 </ul>
 </div>
 </a>
@@ -1595,8 +1618,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1633,11 +1658,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1657,7 +1682,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4512,6 +4537,8 @@
                 
   
   
+    
+  
   
   
     
@@ -4530,11 +4557,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" checked>
         
           
           
@@ -4562,7 +4589,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4579,8 +4606,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -4603,11 +4632,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7_2" checked>
         
           
           <label class="md-nav__link" for="__nav_5_7_2" id="__nav_5_7_2_label" tabindex="0">
@@ -4627,7 +4656,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_7_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_7_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_7_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4637,6 +4666,146 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../periodicals-from-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Get details of periodicals from the `/magazine/titles` API endpoint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Enrich the list of periodicals from the Trove API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Enrich the list of periodicals from the Trove API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-this-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using this notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related datasets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
             
               
                 
@@ -4726,6 +4895,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../create-text-db-indexed-by-line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Create database of text indexed by line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../get-covers-from-digitised-journal/" class="md-nav__link">
         
   
@@ -4773,87 +4969,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../harvest-parliament-press-releases/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Harvest Parliament press releases
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../create-text-db-indexed-by-line/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Create database of text indexed by line
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../topic-modelling-parliament-press-releases/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Topic modelling Parliament press releases
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4870,12 +4985,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
       
         
       
@@ -4930,6 +5039,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../periodicals-data-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Details of digitised periodicals from the `/magazine/titles` API endpoint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../csv-digital-journals/" class="md-nav__link">
         
   
@@ -4937,60 +5073,6 @@
     
   
     CSV list of digital journals
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../csv-journals-with-ocr/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    CSV list of journals with OCR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../journals-with-ocr/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    List of journals with OCR
   
 
     
@@ -5045,60 +5127,6 @@
     
   
     Editorial cartoons from The Bulletin, 1886 to 1952
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../politicans-press-releases-refugees/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Politicians talking about 'refugees'
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../politicans-press-releases-covid/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Politicians talking about COVID
   
 
     
@@ -11071,7 +11099,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -11080,6 +11110,58 @@
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-this-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using this notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related datasets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -11130,26 +11212,78 @@
   as the main headline.
 -->
 
-  <h1>GLAM Workbench</h1>
+  <h1>Enrich the list of periodicals from the Trove API</h1>
 
 
 <!-- Tags -->
 
   
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">data harvesting</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">metadata</span>
+      
+    
+  </nav>
 
 
 
 <!-- Markdown content -->
+<p>This notebook tries to fix some problems with the periodicals data from the Trove API. It also enriches the harvested data by extracting additional information from the website. It creates two datasets – one for titles and one for issues – and loads these into an SQLite database for use with Datasette Lite.</p>
+
+<div class="admonition preview">
+<p class="admonition-title">Preview</p>
+<p><iframe class='nb-preview' src='/trove-journals/previews/periodicals-enrich-for-datasette.html'></iframe>
+<a href="/trove-journals/previews/periodicals-enrich-for-datasette.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 4 4 4V4m0 12-4 4h4M8 20l-4-4v4M4 8l4-4H4m12.95 3.05a7.007 7.007 0 0 0-9.9 0 7.007 7.007 0 0 0 0 9.9 7.007 7.007 0 0 0 9.9 0c2.73-2.73 2.73-7.16 0-9.9m-1.1 8.8a5.402 5.402 0 0 1-7.7 0 5.402 5.402 0 0 1 0-7.7 5.402 5.402 0 0 1 7.7 0 5.402 5.402 0 0 1 0 7.7Z"/></svg></span> Expand</a></p>
+</div>
+<h2 id="using-this-notebook">Using this notebook<a class="headerlink" href="#using-this-notebook" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">ARDC Binder</label><label for="__tabbed_1_2">MyBinder</label><label for="__tabbed_1_3">Other options</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To run this notebook using the ARDC Binder service you'll need to log in using an account from an Australian university or research organisation. If you don't have an account, try <a href="#__tabbed_1_2">MyBinder</a> instead.</p>
+<p><a class="md-button md-button--primary" href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-journals/HEAD?urlpath=/lab/tree/periodicals-enrich-for-datasette.ipynb">Run live on ARDC Binder</a></p>
+</div>
+<div class="tabbed-block">
+<p>The MyBinder service doesn't require any authentication, but it can be slow to start and will sometimes fail when busy. If you have a login at an Australian university, you'll probably get better results with <a href="#__tabbed_1_1">ARDC Binder</a>.</p>
+<p><a class="md-button md-button--primary" href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-journals/HEAD?urlpath=/lab/tree/periodicals-enrich-for-datasette.ipynb">Run live on MyBinder</a></p>
+</div>
+<div class="tabbed-block">
+<p>Binder is great for experimentation and quick tasks, but for some projects you might need a dedicated, persistent environment in which to work. There's information on other options in the <a href="../#run-these-notebooks">run these notebooks</a> section.</p>
+</div>
+</div>
+</div>
+<h2 id="related-datasets">Related datasets<a class="headerlink" href="#related-datasets" title="Permanent link">&para;</a></h2>
 <ul>
-<li>data harvesting</li>
-<li>metadata
-hide:</li>
-<li>toc</li>
+<li><a href="../periodicals-data-api/">Details of digitised periodicals from the <code>/magazine/titles</code> API endpoint</a></li>
 </ul>
-<hr />
+<h2 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../#run-these-notebooks">Run these notebooks</a></li>
+</ul>
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
+<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
+<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
+</ul>
 
 <!-- Was this page helpful? -->
 
+
+  
 
 
 
