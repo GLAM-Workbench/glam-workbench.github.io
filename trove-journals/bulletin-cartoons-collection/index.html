@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The names of each image file provide useful contextual metadata. For example, the file name `19330412-2774-nla.obj-606969767-7.jpg` tells you:">
+        <meta name="description" content="This dataset includes a collection of 3,471 full-page editorial cartoons downloaded from issues of *The Bulletin* published between 1886 and 1952. In most cases there is one cartoon per issue. Metadata describing each image is available in a CSV-fromatted file, and in an SQLite database that can be explored using Datasette-Lite. The full collection of high-resolution images can be downloaded as a single 62gb zip file.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -98,7 +98,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Editorial cartoons from The Bulletin, 1886 to 1952 - GLAM Workbench" />
-<meta property="og:description" content="The names of each image file provide useful contextual metadata. For example, the file name `19330412-2774-nla.obj-606969767-7.jpg` tells you:" />
+<meta property="og:description" content="This dataset includes a collection of 3,471 full-page editorial cartoons downloaded from issues of *The Bulletin* published between 1886 and 1952. In most cases there is one cartoon per issue. Metadata describing each image is available in a CSV-fromatted file, and in an SQLite database that can be explored using Datasette-Lite. The full collection of high-resolution images can be downloaded as a single 62gb zip file." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-journals/bulletin-cartoons-collection.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -106,7 +106,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-journals/bulletin-cartoons-collection/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Editorial cartoons from The Bulletin, 1886 to 1952 - GLAM Workbench" />
-<meta property="twitter:description" content="The names of each image file provide useful contextual metadata. For example, the file name `19330412-2774-nla.obj-606969767-7.jpg` tells you:" />
+<meta property="twitter:description" content="This dataset includes a collection of 3,471 full-page editorial cartoons downloaded from issues of *The Bulletin* published between 1886 and 1952. In most cases there is one cartoon per issue. Metadata describing each image is available in a CSV-fromatted file, and in an SQLite database that can be explored using Datasette-Lite. The full collection of high-resolution images can be downloaded as a single 62gb zip file." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-journals/bulletin-cartoons-collection.png" />
 </head>
   
@@ -4578,7 +4578,7 @@
   <span class="md-ellipsis">
     
   
-    Trove journals
+    Trove periodicals
   
 
     
@@ -4600,7 +4600,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Trove journals
+    Trove periodicals
   
 
           </label>
@@ -4684,7 +4684,7 @@
   <span class="md-ellipsis">
     
   
-    Get details of periodicals from the `/magazine/titles` API endpoint
+    Get details of periodicals & issues using the API
   
 
     
@@ -4711,7 +4711,7 @@
   <span class="md-ellipsis">
     
   
-    Enrich the list of periodicals from the Trove API
+    Improve API data describing periodicals
   
 
     
@@ -4738,7 +4738,7 @@
   <span class="md-ellipsis">
     
   
-    Create a list of digitised journals
+    Create a list of digitised periodicals using search
   
 
     
@@ -4765,7 +4765,7 @@
   <span class="md-ellipsis">
     
   
-    Get OCRd text from a journal
+    Get OCRd text from a periodical
   
 
     
@@ -4792,7 +4792,7 @@
   <span class="md-ellipsis">
     
   
-    Get OCRd text from all journals
+    Get OCRd text from all periodicals
   
 
     
@@ -4846,7 +4846,7 @@
   <span class="md-ellipsis">
     
   
-    Get cover images from a journal
+    Get cover images from a periodical
   
 
     
@@ -4965,7 +4965,7 @@
   <span class="md-ellipsis">
     
   
-    Details of digitised periodicals from the `/magazine/titles` API endpoint
+    Details of periodicals from the API
   
 
     
@@ -4992,7 +4992,7 @@
   <span class="md-ellipsis">
     
   
-    CSV list of digital journals
+    List of digitised periodicals from search
   
 
     
@@ -5104,6 +5104,45 @@
   
     <nav class="md-nav" aria-label="Files">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bulletin-editorial-cartoonscsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bulletin-editorial-cartoons.csv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="bulletin-editorial-cartoons.csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulletin-editorial-cartoonsdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bulletin-editorial-cartoons.db
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#bulletin_cartoonszip" class="md-nav__link">
@@ -11164,6 +11203,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#bulletin-editorial-cartoonscsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bulletin-editorial-cartoons.csv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="bulletin-editorial-cartoons.csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulletin-editorial-cartoonsdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bulletin-editorial-cartoons.db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#bulletin_cartoonszip" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -11298,16 +11376,85 @@
 
 <!-- Markdown content -->
 <p><img align="right" alt="The Bulletin, 13 October 1888, p. 1" src="../../images/18881013-453-nla.obj-508118092-1.jpg" width="300" /></p>
-<p>This dataset contains high-resolution images of 3,471 full-page editorial cartoons harvested from <em>The Bulletin</em>, 1886 to 1952.</p>
-<p>The names of each image file provide useful contextual metadata. For example, the file name <code>19330412-2774-nla.obj-606969767-7.jpg</code> tells you:</p>
-<ul>
-<li><code>19330412</code> – the cartoon was published on 12 April 1933</li>
-<li><code>2774</code> – it was published in issue number 2774</li>
-<li><code>nla.obj-606969767</code> – the Trove identifier for the issue, can be used to make a url eg <code>https://nla.gov.au/nla.obj-606969767</code></li>
-<li><code>7</code> – on page 7</li>
-</ul>
+<p>This dataset includes a collection of 3,471 full-page editorial cartoons downloaded from issues of <em>The Bulletin</em> published between 1886 and 1952. In most cases there is one cartoon per issue. Metadata describing each image is available in a CSV-fromatted file, and in an SQLite database that can be explored using Datasette-Lite. The full collection of high-resolution images can be downloaded as a single 62gb zip file.</p>
 
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/bulletin-editorial-cartoons/archive/refs/heads/main.zip">Download complete dataset as zip</a>
+<a class="md-button md-button--info" href="https://glam-workbench.net/datasette-lite/?url=https://github.com/GLAM-Workbench/bulletin-editorial-cartoons/blob/main/bulletin-editorial-cartoons.db&amp;install=datasette-json-html&amp;metadata=https://raw.githubusercontent.com/GLAM-Workbench/bulletin-editorial-cartoons/main/metadata.json#/bulletin-editorial-cartoons/cartoons">Explore in Datasette</a></p>
 <h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
+<h3 id="bulletin-editorial-cartoonscsv">bulletin-editorial-cartoons.csv<a class="headerlink" href="#bulletin-editorial-cartoonscsv" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-03-19</td></tr>
+<tr><td><b>format</b></td><td>text/csv</td></tr><tr><td><b>file size</b></td><td>1.9 MB</td></tr><tr><td><b>number of rows</b></td><td>3,472</td></tr>
+
+</tbody>
+</table>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/bulletin-editorial-cartoons/raw/main/bulletin-editorial-cartoons.csv">Download from GitHub</a></p>
+<h4 id="columns">Columns<a class="headerlink" href="#columns" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>NLA identifier for the page image containing the cartoon</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>date</td>
+<td>date the issue was published</td>
+</tr>
+<tr>
+<td><code>issue_number</code></td>
+<td>string</td>
+<td>publication issue number</td>
+</tr>
+<tr>
+<td><code>issue_id</code></td>
+<td>string</td>
+<td>NLA identifier for the issue</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>integer</td>
+<td>number of the page containing the cartoon</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>url to open the page in Trove's digitised object viewer</td>
+</tr>
+<tr>
+<td><code>download_image</code></td>
+<td>string</td>
+<td>url to download a high-resolution page image</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>string</td>
+<td>OCRd text extracted from the page</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bulletin-editorial-cartoonsdb">bulletin-editorial-cartoons.db<a class="headerlink" href="#bulletin-editorial-cartoonsdb" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-03-19</td></tr>
+<tr><td><b>format</b></td><td>db</td></tr><tr><td><b>file size</b></td><td>3.5 MB</td></tr>
+
+</tbody>
+</table>
+
+<p>This is an SQLite database formatted for use with Datasette-Lite. As well as metadata from the <code>bulletin-editorial-cartoons.csv</code> file it includes a thumbnail column to display the cartoon.</p>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/bulletin-editorial-cartoons/raw/main/bulletin-editorial-cartoons.db">Download from GitHub</a></p>
 <h3 id="bulletin_cartoonszip">bulletin_cartoons.zip<a class="headerlink" href="#bulletin_cartoonszip" title="Permanent link">&para;</a></h3>
 <table>
 <tbody>
@@ -11317,11 +11464,20 @@
 </tbody>
 </table>
 
+<p>This dataset contains high-resolution images of 3,471 full-page editorial cartoons harvested from <em>The Bulletin</em>, 1886 to 1952.</p>
+<p>The names of each image file provide useful contextual metadata. For example, the file name <code>19330412-2774-nla.obj-606969767-7.jpg</code> tells you:</p>
+<ul>
+<li><code>19330412</code> – the cartoon was published on 12 April 1933</li>
+<li><code>2774</code> – it was published in issue number 2774</li>
+<li><code>nla.obj-606969767</code> – the Trove identifier for the issue, can be used to make a url eg <code>https://nla.gov.au/nla.obj-606969767</code></li>
+<li><code>7</code> – on page 7</li>
+</ul>
+
 <p><a class="md-button md-button--primary" href="https://trove-journals.s3.ap-southeast-2.amazonaws.com/bulletin_cartoons.zip">Download</a></p>
 <h2 id="context-of-creation">Context of creation<a class="headerlink" href="#context-of-creation" title="Permanent link">&para;</a></h2>
 <table>
 <tbody>
-<tr><td><b>date harvested</b></td><td>2024-03-14</td></tr>
+<tr><td><b>date harvested</b></td><td>2024-03-19</td></tr>
 <tr><td><b>notebook</b></td><td><a href="https://glam-workbench.net/trove-journals/finding-editorial-cartoons-in-bulletin/">Finding editorial cartoons in the Bulletin</a></td></tr>
 
 
