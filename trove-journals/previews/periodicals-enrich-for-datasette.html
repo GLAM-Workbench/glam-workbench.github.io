@@ -7491,7 +7491,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Let's import the libraries we need.</span>
@@ -7532,7 +7532,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>True</pre>
 </div>
@@ -7798,7 +7798,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">save_issues</span><span class="p">(</span>
@@ -7839,7 +7839,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_issues</span> <span class="o">=</span> <span class="n">save_issues</span><span class="p">()</span>
@@ -7864,7 +7864,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [71]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">merge_lists</span><span class="p">(</span><span class="n">column</span><span class="p">):</span>
@@ -7874,7 +7874,7 @@ a.anchor-link {
         <span class="k">return</span> <span class="n">column</span>
 
 
-<span class="k">def</span> <span class="nf">add_download_link</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">add_download_link</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s2">"issue_count"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">title</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"title"</span><span class="p">])[:</span><span class="mi">50</span><span class="p">]</span>
         <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://trove-journals.s3.ap-southeast-2.amazonaws.com/</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">'title_id'</span><span class="p">]</span><span class="si">}</span><span class="s2">.zip"</span>
@@ -7949,10 +7949,17 @@ a.anchor-link {
     <span class="n">df</span><span class="p">[</span><span class="s2">"start_year"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"start_year"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"Int64"</span><span class="p">)</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">"end_year"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"end_year"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"Int64"</span><span class="p">)</span>
 
+    <span class="c1"># Save data to CSV</span>
+    <span class="n">df_csv</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1"># Extract the url for text downloads</span>
+    <span class="n">df_csv</span><span class="p">[</span><span class="s2">"download_text"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"download_text"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="s2">"href"</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="p">)</span>
     <span class="c1"># Remove thumbnail and search_url and save as CSV</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"thumbnail"</span><span class="p">,</span> <span class="s2">"search_url"</span><span class="p">,</span> <span class="s2">"download_text"</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
-        <span class="s2">"title"</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">df_csv</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"thumbnail"</span><span class="p">,</span> <span class="s2">"search_url"</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"title"</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+        <span class="n">output_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+
     <span class="k">return</span> <span class="n">df</span>
 </pre></div>
 </div>
@@ -7964,7 +7971,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_titles</span> <span class="o">=</span> <span class="n">save_titles</span><span class="p">(</span><span class="n">df_issues</span><span class="p">)</span>
