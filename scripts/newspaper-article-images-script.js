@@ -1,4 +1,4 @@
-document$.subscribe(function() {
+
     console.log("Initialize third-party libraries here")
 
     const delay = ms => new Promise((resolve) => setTimeout(resolve, ms));
@@ -22,6 +22,12 @@ document$.subscribe(function() {
         await delay(5000);
       }
     }
+
+    let clear = document.getElementById('clear-image-results');
+    clear.addEventListener('click', async function() {
+        document.getElementById("images").innerHTML = "";
+        document.getElementById("article-id").value = "";
+    });
 
     let btn = document.getElementById('download-image');
     console.log(btn)
@@ -79,4 +85,4 @@ document$.subscribe(function() {
         output.appendChild(images);
     })
     document.getElementById("status").style.display = 'none';
-})
+

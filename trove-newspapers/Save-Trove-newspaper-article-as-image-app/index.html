@@ -11165,13 +11165,14 @@ Sherratt, Tim. (2022). GLAM-Workbench/trove-newspapers (version v1.3.4). Zenodo.
 -->
 
 <p><input id="article-id" type="text" class="md-input md-input--stretch" placeholder="article id or url"></p>
-<p><input id="mask-image" type="checkbox"> <label>mask image</label></p>
-<p><input id="retry" type="checkbox"> <label>retry</label></p>
-<p><button id="download-image" class="md-button md-button--primary">Get images</button></p>
+<p><input id="mask-image" type="checkbox"> <label>mask image</label> <input id="retry" type="checkbox"> <label>retry</label></p>
+<p><button id="download-image" class="md-button md-button--primary">Get images</button> <button id="clear-image-results" class="md-button">Clear</button></p>
 <div id="status">
 <p><span class="twemoji spinner"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4V2A10 10 0 0 0 2 12h2a8 8 0 0 1 8-8Z"/></svg></span></p>
 </div>
 <div id="images"></div>
+
+<script src="../../scripts/newspaper-article-images-script.js"></src>
 
 <!-- Was this page helpful? -->
 
@@ -11278,10 +11279,6 @@ Sherratt, Tim. (2022). GLAM-Workbench/trove-newspapers (version v1.3.4). Zenodo.
     
     
       <script src="../../assets/javascripts/bundle.82b033e4.min.js"></script>
-      
-        <script src="../../assets/external/code.jquery.com/jquery-3.7.1.min.js"></script>
-      
-        <script src="../../scripts/script.js"></script>
       
     
   </body>
