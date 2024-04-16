@@ -11145,11 +11145,13 @@
 <p><em>A simple web app that helps you save a Trove newspaper article as an image.</em></p>
 <p>There’s no reliable way of downloading an image of a Trove newspaper article from the web interface. The image download option produces an HTML page with embedded images, and the article is often sliced into pieces to fit the page.</p>
 <p>This app provides an easy-to-use workaround. Just enter an article url or identifier and you get back an image (or images if the article is split across multiple pages).</p>
-<p>Options:</p>
+<div class="admonition info">
+<p class="admonition-title">Options</p>
 <ul>
 <li><strong>mask image</strong> – check this to try and remove content from neighbouring articles</li>
 <li><strong>retry</strong> – check this if there's been an error and you want to force the app to try again</li>
 </ul>
+</div>
 <!--
 
 [Run live in Voila](https://trove-newspaper-apps.uw.r.appspot.com/voila/render/Save-Trove-newspaper-article-as-image.ipynb){ .md-button .md-button--primary }
@@ -11171,7 +11173,8 @@ Sherratt, Tim. (2022). GLAM-Workbench/trove-newspapers (version v1.3.4). Zenodo.
 [![](https://zenodo.org/badge/DOI/10.5281/zenodo.6746078.svg)](https://doi.org/10.5281/zenodo.6746078)
 -->
 
-<p><input id="article-id" type="text" class="md-input md-input--stretch" placeholder="article id or url"></p>
+<p>Just enter an article identifier or url in the box below and click on the button...</p>
+<p><input id="article-id" type="text" class="md-input md-input--stretch" placeholder="enter article id or url"></p>
 <p><input id="mask-image" type="checkbox"> <label>mask image</label> <input id="retry" type="checkbox"> <label>retry</label></p>
 <p><button id="download-image" class="md-button md-button--primary">Get images</button> <button id="clear-image-results" class="md-button">Clear</button></p>
 <div id="status">
