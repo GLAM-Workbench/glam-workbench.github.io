@@ -28,7 +28,7 @@ document$.subscribe(function() {
     btn.addEventListener('click', async function() {
         output = document.getElementById("images");
         output.innerHTML = "";
-
+        document.getElementById("status").style.display = 'block';
         let article_id = document.getElementById("article-id").value;
         if (article_id.startsWith("http")) {
             article_id = article_id.match(/article\/?(\d+)/)[1];
@@ -47,18 +47,36 @@ document$.subscribe(function() {
         console.log(article_id);
         const data = await getStatus(article_id, masked, retry);
         console.log(data);
+        document.getElementById("status").style.display = 'none';
+
         
-        for (url of data) {
-            let para = document.createElement("p");
+        let images = document.createElement("div");
+        let result = document.createElement("p");
+        let image_list = document.createElement("ul");
+        if (data.urls.length == 0) {
+            result.innerHTML = data.message;
+        } else {
+            result.innerHTML = data.urls.length + " images created"
+        }
+        output.appendChild(result);
+        for (url of data.urls) {
+            ts = Date.now();
             let link = document.createElement("a");
-            link.textContent = "Download image";
+            file = url.split("/").slice(-1);
+            let list_item = document.createElement("li");
+            link.textContent = file;
             link.href = url;
             link.download = "";
+            link.target = "_blank";
             let image = document.createElement("img");
-            image.src = url;
-            para.appendChild(link);
-            images.appendChild(para);
+            image.src = url + "?" + ts;
+            list_item.appendChild(link);
+            image_list.appendChild(list_item);
             images.appendChild(image);
+            
         }
+        output.appendChild(image_list);
+        output.appendChild(images);
     })
+    document.getElementById("status").style.display = 'none';
 })
