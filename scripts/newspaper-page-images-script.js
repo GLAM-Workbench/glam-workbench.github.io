@@ -1,10 +1,11 @@
 
 async function getPageID(article_id) {
     url = "https://api.trove.nla.gov.au/v3/newspaper/" + article_id + "?encoding=json&reclevel=full";
-    const response = await fetch(url);
+    const response = await fetch(url, { method: "GET", mode: 'cors', headers: { 'Content-Type': 'application/json',}});
     const data = await response.json();
     const trovePageUrl = data.trovePageUrl;
     const pageID = trovePageUrl.match(/page(\d+)/)[1];
+    console.log(pageID);
     return pageID;
 }
 
@@ -16,16 +17,17 @@ btn.addEventListener('click', async function() {
     let identifier = document.getElementById("page-id").value;
     let pageID;
     if (identifier.startsWith("http")) {
-        identifier = identifier.match(/(?:article|page)\/?(\d+)/)[1];
         if (identifier.indexOf("article") >= 0) {
-            pageID = await getPageID(identifier);
+            articleID = identifier.match(/article\/?(\d+)/)[1];
+            pageID = await getPageID(articleID);
         } else {
-            pageID = identifier;
+            pageID = identifier.match(/page\/?(\d+)/)[1];
         }
     } else {
         pageID = identifier;
     }
     url = "https://trove.nla.gov.au/ndp/imageservice/nla.news-page" + pageID + "/level4";
+    document.getElementById("status").style.display = 'none';
     console.log(url);
     let link = document.createElement("a");
     link.textContent = "nla.news-page" + pageID;
