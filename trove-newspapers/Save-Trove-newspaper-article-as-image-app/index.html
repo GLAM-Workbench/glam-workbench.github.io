@@ -126,11 +126,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#related-resources" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -2499,23 +2494,6 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    Save article as an image web app
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2531,56 +2509,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Getting help
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cite-as" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cite as
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -11135,47 +11063,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Getting help
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cite-as" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cite as
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -11256,20 +11143,32 @@
 
 <!-- Markdown content -->
 <p>A simple web app that helps you save a Trove newspaper article as an image.</p>
-<p><a class="md-button md-button--primary" href="https://trove-newspaper-apps.uw.r.appspot.com/voila/render/Save-Trove-newspaper-article-as-image.ipynb">Run live in Voila</a></p>
-<h3 id="related-resources">Related resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="../Save-Trove-newspaper-article-as-image/">Save a Trove newspaper article as an image</a> (the notebook version of this app)</li>
-</ul>
-<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
-<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
-<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
-</ul>
-<h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
-<p>Sherratt, Tim. (2022). GLAM-Workbench/trove-newspapers (version v1.3.4). Zenodo. <a href="https://doi.org/10.5281/zenodo.6746078">https://doi.org/10.5281/zenodo.6746078</a>  </p>
-<p><a href="https://doi.org/10.5281/zenodo.6746078"><img alt="" src="../../assets/external/zenodo.org/badge/DOI/10.5281/zenodo.6746078.svg"></a></p>
+<!--
+
+[Run live in Voila](https://trove-newspaper-apps.uw.r.appspot.com/voila/render/Save-Trove-newspaper-article-as-image.ipynb){ .md-button .md-button--primary }
+
+### Related resources
+
+* [Save a Trove newspaper article as an image](Save-Trove-newspaper-article-as-image.md) (the notebook version of this app)
+
+## Getting help
+
+* [Ask a question at OzGLAM Help](https://ozglam.chat/c/glam-workbench/8)
+* [Report a problem](https://github.com/GLAM-Workbench/glam-workbench.github.io/issues)
+* [Book an appointment](https://calendly.com/timsherratt/30minchat)
+
+## Cite as
+
+Sherratt, Tim. (2022). GLAM-Workbench/trove-newspapers (version v1.3.4). Zenodo. [https://doi.org/10.5281/zenodo.6746078](https://doi.org/10.5281/zenodo.6746078)  
+
+[![](https://zenodo.org/badge/DOI/10.5281/zenodo.6746078.svg)](https://doi.org/10.5281/zenodo.6746078)
+-->
+
+<p><input id="article-id" type="text" class="md-input" placeholder="article id or url"></p>
+<p><input id="mask-image" type="checkbox"> <label>mask image</label></p>
+<p><input id="retry" type="checkbox"> <label>retry</label></p>
+<p><button id="download-image" class="md-button md-button--primary">Get images</button></p>
+<div id="images"></div>
 
 <!-- Was this page helpful? -->
 
@@ -11376,6 +11275,10 @@
     
     
       <script src="../../assets/javascripts/bundle.82b033e4.min.js"></script>
+      
+        <script src="../../assets/external/code.jquery.com/jquery-3.7.1.min.js"></script>
+      
+        <script src="../../scripts/script.js"></script>
       
     
   </body>
