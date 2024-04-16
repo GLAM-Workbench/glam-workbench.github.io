@@ -40,7 +40,7 @@ document$.subscribe(function() {
         }
         console.log(masked);
         let retry = "False";
-        let retry_chkbox = document.getElementById("mask-image")
+        let retry_chkbox = document.getElementById("retry")
         if (retry_chkbox.checked) {
             retry = "True";
         }
