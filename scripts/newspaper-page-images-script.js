@@ -1,10 +1,11 @@
 
-async function getPageID(article_id) {
-    url = "https://api.trove.nla.gov.au/v3/newspaper/" + article_id + "?encoding=json&reclevel=full";
-    const response = await fetch(url, { method: "GET", mode: 'cors', headers: { 'Content-Type': 'application/json',}});
+async function getPageID(articleID) {
+    url = "https://i6jpz6edq4.execute-api.ap-southeast-2.amazonaws.com/default/get-newspaper-page-id?article_id=" + articleID;
+    const response = await fetch(url, { method: "GET"});
     const data = await response.json();
-    const trovePageUrl = data.trovePageUrl;
-    const pageID = trovePageUrl.match(/page(\d+)/)[1];
+    //const trovePageUrl = data.trovePageUrl;
+    //const pageID = trovePageUrl.match(/page(\d+)/)[1];
+    const pageID = data.page_id;
     console.log(pageID);
     return pageID;
 }
@@ -20,9 +21,9 @@ btn.addEventListener('click', async function() {
     if (identifier.startsWith("http")) {
         if (identifier.indexOf("article") >= 0) {
             document.getElementById("status").style.display = 'none';
-            output.innerHTML = "You need to supply a page url not an article url";
-            // articleID = identifier.match(/article\/?(\d+)/)[1];
-            // pageID = await getPageID(articleID);
+            //output.innerHTML = "You need to supply a page url not an article url";
+            articleID = identifier.match(/article\/?(\d+)/)[1];
+            pageID = await getPageID(articleID);
         } else {
             pageID = identifier.match(/page\/?(\d+)/)[1];
         }

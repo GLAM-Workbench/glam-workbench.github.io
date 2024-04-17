@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Trove web interface doesn’t provide a way of getting high-resolution page images from newspapers. This simple app lets you download page images as complete, high-resolution JPG files.">
+        <meta name="description" content="The Trove web interface doesn’t provide a way of getting high-resolution page images from newspapers. This simple app lets you download page images as complete, high-resolution jpeg files.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -98,7 +98,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Download a page image - GLAM Workbench" />
-<meta property="og:description" content="The Trove web interface doesn’t provide a way of getting high-resolution page images from newspapers. This simple app lets you download page images as complete, high-resolution JPG files." />
+<meta property="og:description" content="The Trove web interface doesn’t provide a way of getting high-resolution page images from newspapers. This simple app lets you download page images as complete, high-resolution jpeg files." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-newspapers/Save-page-image.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -106,7 +106,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-newspapers/Save-page-image/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Download a page image - GLAM Workbench" />
-<meta property="twitter:description" content="The Trove web interface doesn’t provide a way of getting high-resolution page images from newspapers. This simple app lets you download page images as complete, high-resolution JPG files." />
+<meta property="twitter:description" content="The Trove web interface doesn’t provide a way of getting high-resolution page images from newspapers. This simple app lets you download page images as complete, high-resolution jpeg files." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-newspapers/Save-page-image.png" />
 </head>
   
@@ -11142,11 +11142,11 @@
 
 
 <!-- Markdown content -->
-<p><em>The Trove web interface doesn’t provide a way of getting high-resolution page images from newspapers. This simple app lets you download page images as complete, high-resolution JPG files.</em></p>
+<p><em>The Trove web interface doesn’t provide a way of getting high-resolution page images from newspapers. This simple app lets you download page images as complete, high-resolution jpeg files.</em></p>
 <!--
 ![Screen capture](../images/trove-page-images.gif)
 
-The Trove web interface doesn’t provide a way of getting high-resolution page images from newspapers. This simple app lets you download page images as complete, high-resolution JPG files.
+The Trove web interface doesn’t provide a way of getting high-resolution page images from newspapers. This simple app lets you download page images as complete, high-resolution jpeg files.
 
 [Run live in Voila](https://trove-newspaper-apps.uw.r.appspot.com/voila/render/Save-page-image.ipynb){ .md-button .md-button--primary }
 
@@ -11170,7 +11170,17 @@ Sherratt, Tim. (2022). GLAM-Workbench/trove-newspapers (version v1.3.4). Zenodo.
 [![](https://zenodo.org/badge/DOI/10.5281/zenodo.6746078.svg)](https://doi.org/10.5281/zenodo.6746078)
 -->
 
-<p><input id="page-id" type="text" class="md-input md-input--stretch" placeholder="page url"></p>
+<div class="admonition info">
+<p class="admonition-title">Options</p>
+<p>Page images are available in seven resolutions that correspond to the zoom levels in the Trove web interface. As a rough guide:</p>
+<ul>
+<li>level 1 is around 900 x 1200 px (500kb)</li>
+<li>level 4 is around 2700 x 3500 px (3mb)</li>
+<li>level 7 is around 6100 x 7800 px (7mb)</li>
+</ul>
+</div>
+<p>Just enter a page or article url in the box below and click the button...</p>
+<p><input id="page-id" type="text" class="md-input md-input--stretch" placeholder="page or article url"></p>
 <p><label for="level"><small>Size: </small></label> 
 <select class="md-select" name="level" id="level">
 <br />
