@@ -11171,6 +11171,24 @@ Sherratt, Tim. (2022). GLAM-Workbench/trove-newspapers (version v1.3.4). Zenodo.
 -->
 
 <p><input id="page-id" type="text" class="md-input md-input--stretch" placeholder="page url"></p>
+<p><label for="level"><small>Size: </small></label> 
+<select class="md-select" name="level" id="level">
+<br />
+<option value="1">Level 1</option></p>
+<option value="2">Level 2</option>
+<option value="3">Level 3</option>
+<option value="4" selected>Level 4</option>
+<option value="5">Level 5</option>
+<option value="6">level 6</option>
+<option value="7">Level 7</option>
+<p></select></p>
+<div class="mdc-select mdc-select--filled demo-width-class">
+  <input type="hidden" name="demo-input">
+  <div class="mdc-select__anchor">
+    <!-- Rest of component omitted for brevity -->
+  </div>
+</div>
+
 <p><button id="download-image" class="md-button md-button--primary">Get image url</button> <button id="clear-image-results" class="md-button">Clear</button></p>
 <div id="status">
 <p><span class="twemoji spinner"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4V2A10 10 0 0 0 2 12h2a8 8 0 0 1 8-8Z"/></svg></span></p>

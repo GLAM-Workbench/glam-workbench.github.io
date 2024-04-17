@@ -15,6 +15,7 @@ btn.addEventListener('click', async function() {
     output.innerHTML = "";
     document.getElementById("status").style.display = 'block';
     let identifier = document.getElementById("page-id").value;
+    let level = document.getElementById("level").value;
     let pageID;
     if (identifier.startsWith("http")) {
         if (identifier.indexOf("article") >= 0) {
@@ -29,11 +30,12 @@ btn.addEventListener('click', async function() {
         pageID = identifier;
     }
     if (pageID) {
-        url = "https://trove.nla.gov.au/ndp/imageservice/nla.news-page" + pageID + "/level4";
+        url = "https://trove.nla.gov.au/ndp/imageservice/nla.news-page" + pageID + "/level" + level;
         document.getElementById("status").style.display = 'none';
         console.log(url);
         let link = document.createElement("a");
         link.textContent = "nla.news-page" + pageID;
+        link.download = "nla.news-page" + pageID + ".jpg";
         link.href = url;
         link.target = "_blank";
         let image_list = document.createElement("ul");
@@ -41,6 +43,9 @@ btn.addEventListener('click', async function() {
         list_item.appendChild(link);
         image_list.appendChild(list_item);
         output.appendChild(image_list);
+        let img = document.createElement("img");
+        img.src = url;
+        output.appendChild(img);
     }
 });
 
