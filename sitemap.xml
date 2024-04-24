@@ -576,6 +576,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://glam-workbench.net/trove-images/trove-images-rights-data/</loc>
+         <lastmod>2024-04-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://glam-workbench.net/trove-images/use-of-rights-statements/</loc>
          <lastmod>2024-04-24</lastmod>
          <changefreq>daily</changefreq>
