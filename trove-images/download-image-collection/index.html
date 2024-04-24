@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Version 2.1 of the Trove API introduced a new rights index that you can use to limit your search results to records that include one of a list of standard licences and rights statements. We can also use this index to build a picture of which rights statements are currently being used, and by who. Let's give it a try...">
+        <meta name="description" content="Digitised photographs and other images are often organised into collections. While the Trove web interface does include a download option for collections, it has a number of limitations. This notebook provides an alternative method that downloads all of the available images in a collection (and any sub-collections) at the highest available resolution.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://glam-workbench.net/trove-images/download-image-collection/">
       
       
+        <link rel="prev" href="../use-of-rights-statements/">
+      
+      
+        <link rel="next" href="../trove-images-rights-data/">
       
       
         
@@ -81,14 +85,14 @@
         
         
         
-            <meta name="bibo.edition" content="v1.0.1" />
+            <meta name="bibo.edition" content="v2.0.0" />
         
     
 
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Download a collection of digitised images - GLAM Workbench" />
-<meta property="og:description" content="Version 2.1 of the Trove API introduced a new rights index that you can use to limit your search results to records that include one of a list of standard licences and rights statements. We can also use this index to build a picture of which rights statements are currently being used, and by who. Let's give it a try..." />
+<meta property="og:description" content="Digitised photographs and other images are often organised into collections. While the Trove web interface does include a download option for collections, it has a number of limitations. This notebook provides an alternative method that downloads all of the available images in a collection (and any sub-collections) at the highest available resolution." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-images/download-image-collection.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -96,7 +100,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-images/download-image-collection/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Download a collection of digitised images - GLAM Workbench" />
-<meta property="twitter:description" content="Version 2.1 of the Trove API introduced a new rights index that you can use to limit your search results to records that include one of a list of standard licences and rights statements. We can also use this index to build a picture of which rights statements are currently being used, and by who. Let's give it a try..." />
+<meta property="twitter:description" content="Digitised photographs and other images are often organised into collections. While the Trove web interface does include a download option for collections, it has a number of limitations. This notebook provides an alternative method that downloads all of the available images in a collection (and any sub-collections) at the highest available resolution." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-images/download-image-collection.png" />
 </head>
   
@@ -115,6 +119,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#using-this-notebook" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -280,7 +289,7 @@
 <div class="md-source__repository">
   trove-images
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v1.0.1</li><li class="md-source__fact md-source__fact--forks">1</li>
+  <li class="md-source__fact md-source__fact--version">v2.0.0</li><li class="md-source__fact md-source__fact--forks">1</li>
 </ul>
 </div>
 </a>
@@ -411,7 +420,7 @@
 <div class="md-source__repository">
   trove-images
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v1.0.1</li><li class="md-source__fact md-source__fact--forks">1</li>
+  <li class="md-source__fact md-source__fact--version">v2.0.0</li><li class="md-source__fact md-source__fact--forks">1</li>
 </ul>
 </div>
 </a>
@@ -1609,8 +1618,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1647,11 +1658,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1671,7 +1682,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -6803,6 +6814,8 @@
                 
   
   
+    
+  
   
   
     
@@ -6819,11 +6832,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" checked>
         
           
           
@@ -6851,7 +6864,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_12">
             <span class="md-nav__icon md-icon"></span>
             
@@ -6868,21 +6881,25 @@
                 
   
   
+    
   
   
+  
     
     
+      
+        
       
         
       
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12_2" checked>
         
           
           <label class="md-nav__link" for="__nav_5_12_2" id="__nav_5_12_2_label" tabindex="0">
@@ -6902,7 +6919,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_12_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_12_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_12_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -6940,6 +6957,108 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Download a collection of digitised images
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Download a collection of digitised images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-this-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using this notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6956,8 +7075,6 @@
   
     
     
-      
-        
       
         
       
@@ -7006,40 +7123,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../csv-image-rights-by-institution/" class="md-nav__link">
+      <a href="../trove-images-rights-data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    CSV of rights applied to images
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../csv-out-of-copyright-photos-rights-by-institution/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    CSV of rights applied to out-of-copyright photos
+    Rights applied to images by Trove contributors
   
 
     
@@ -11097,6 +11187,47 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-this-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using this notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -11169,7 +11300,39 @@
 
 
 <!-- Markdown content -->
+<p>Digitised photographs and other images are often organised into collections. While the Trove web interface does include a download option for collections, it has a number of limitations. This notebook provides an alternative method that downloads all of the available images in a collection (and any sub-collections) at the highest available resolution.</p>
 
+<div class="admonition preview">
+<p class="admonition-title">Preview</p>
+<p><iframe class='nb-preview' src='/trove-images/previews/download-image-collection.html'></iframe>
+<a href="/trove-images/previews/download-image-collection.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 4 4 4V4m0 12-4 4h4M8 20l-4-4v4M4 8l4-4H4m12.95 3.05a7.007 7.007 0 0 0-9.9 0 7.007 7.007 0 0 0 0 9.9 7.007 7.007 0 0 0 9.9 0c2.73-2.73 2.73-7.16 0-9.9m-1.1 8.8a5.402 5.402 0 0 1-7.7 0 5.402 5.402 0 0 1 0-7.7 5.402 5.402 0 0 1 7.7 0 5.402 5.402 0 0 1 0 7.7Z"/></svg></span> Expand</a></p>
+</div>
+<h2 id="using-this-notebook">Using this notebook<a class="headerlink" href="#using-this-notebook" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">ARDC Binder</label><label for="__tabbed_1_2">MyBinder</label><label for="__tabbed_1_3">Other options</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To run this notebook using the ARDC Binder service you'll need to log in using an account from an Australian university or research organisation. If you don't have an account, try <a href="#__tabbed_1_2">MyBinder</a> instead.</p>
+<p><a class="md-button md-button--primary" href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-images/HEAD?urlpath=/lab/tree/download-image-collection.ipynb">Run live on ARDC Binder</a></p>
+</div>
+<div class="tabbed-block">
+<p>The MyBinder service doesn't require any authentication, but it can be slow to start and will sometimes fail when busy. If you have a login at an Australian university, you'll probably get better results with <a href="#__tabbed_1_1">ARDC Binder</a>.</p>
+<p><a class="md-button md-button--primary" href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-images/HEAD?urlpath=/lab/tree/download-image-collection.ipynb">Run live on MyBinder</a></p>
+</div>
+<div class="tabbed-block">
+<p>Binder is great for experimentation and quick tasks, but for some projects you might need a dedicated, persistent environment in which to work. There's information on other options in the <a href="../#run-these-notebooks">run these notebooks</a> section.</p>
+</div>
+</div>
+</div>
+<h2 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../#run-these-notebooks">Run these notebooks</a></li>
+</ul>
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
+<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
+<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
+</ul>
 
 <!-- Was this page helpful? -->
 

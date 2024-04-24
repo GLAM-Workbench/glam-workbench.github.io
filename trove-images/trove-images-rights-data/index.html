@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums">
+        <meta name="description" content="This dataset lists the number of images with each rights statement from organisations contributing to Trove.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://glam-workbench.net/trove-images/trove-images-rights-data/">
       
       
+        <link rel="prev" href="../download-image-collection/">
+      
+      
+        <link rel="next" href="../../trove-unpublished/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Trove images rights data - GLAM Workbench</title>
+        <title>Rights applied to images by each Trove contributor - GLAM Workbench</title>
       
     
     
@@ -72,19 +76,31 @@
     <link rel="schema.z" href="http://www.zotero.org/namespaces/export#">
     
     
+        <meta name="z.type" content="computerProgram" />
+        <meta name="z.libraryCatalog" content="Zenodo" />
+        
+            <meta name="dcterms.title" content="" />
+        
+        
+        
+        
+        
+            <meta name="bibo.edition" content="v2.0.0" />
+        
+    
 
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Trove images rights data - GLAM Workbench" />
-<meta property="og:description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" />
+<meta property="og:title" content="Rights applied to images by each Trove contributor - GLAM Workbench" />
+<meta property="og:description" content="This dataset lists the number of images with each rights statement from organisations contributing to Trove." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-images/trove-images-rights-data.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://glam-workbench.net/trove-images/trove-images-rights-data/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Trove images rights data - GLAM Workbench" />
-<meta property="twitter:description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" />
+<meta property="twitter:title" content="Rights applied to images by each Trove contributor - GLAM Workbench" />
+<meta property="twitter:description" content="This dataset lists the number of images with each rights statement from organisations contributing to Trove." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-images/trove-images-rights-data.png" />
 </head>
   
@@ -103,6 +119,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#files" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -136,7 +157,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Trove images rights data
+              Rights applied to images by each Trove contributor
             
           </span>
         </div>
@@ -258,7 +279,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/trove-images" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -266,9 +287,9 @@
   </div>
 
 <div class="md-source__repository">
-  glam-workbench.github.io
+  trove-images
 <ul class="md-source__facts">
-  
+  <li class="md-source__fact md-source__fact--version">v2.0.0</li><li class="md-source__fact md-source__fact--forks">1</li>
 </ul>
 </div>
 </a>
@@ -289,6 +310,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -387,7 +410,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/trove-images" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -395,9 +418,9 @@
   </div>
 
 <div class="md-source__repository">
-  glam-workbench.github.io
+  trove-images
 <ul class="md-source__facts">
-  
+  <li class="md-source__fact md-source__fact--version">v2.0.0</li><li class="md-source__fact md-source__fact--forks">1</li>
 </ul>
 </div>
 </a>
@@ -1595,8 +1618,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1633,11 +1658,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1657,7 +1682,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -6789,6 +6814,8 @@
                 
   
   
+    
+  
   
   
     
@@ -6805,11 +6832,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" checked>
         
           
           
@@ -6837,7 +6864,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_12">
             <span class="md-nav__icon md-icon"></span>
             
@@ -6858,6 +6885,8 @@
   
     
     
+      
+        
       
         
       
@@ -6926,6 +6955,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download-image-collection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Download a collection of digitised images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6938,23 +6994,23 @@
                 
   
   
+    
   
   
+  
     
     
       
         
       
-        
-      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12_3" checked>
         
           
           <label class="md-nav__link" for="__nav_5_12_3" id="__nav_5_12_3_label" tabindex="0">
@@ -6974,7 +7030,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_12_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_12_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_12_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -6989,16 +7045,40 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../csv-image-rights-by-institution/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Rights applied to images by Trove contributors
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
     
   
-    CSV of rights applied to images
+    Rights applied to images by Trove contributors
   
 
     
@@ -7007,33 +7087,119 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../csv-out-of-copyright-photos-rights-by-institution/" class="md-nav__link">
+      
         
-  
-  <span class="md-ellipsis">
-    
-  
-    CSV of rights applied to out-of-copyright photos
-  
 
-    
-  </span>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-
-      </a>
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rights-on-imagescsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rights-on-images.csv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="rights-on-images.csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rights-on-out-of-copyright-photoscsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rights-on-out-of-copyright-photos.csv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="rights-on-out-of-copyright-photos.csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-of-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context of creation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -11071,7 +11237,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -11080,6 +11248,109 @@
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rights-on-imagescsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rights-on-images.csv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="rights-on-images.csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rights-on-out-of-copyright-photoscsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rights-on-out-of-copyright-photos.csv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="rights-on-out-of-copyright-photos.csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-of-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context of creation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -11130,28 +11401,268 @@
   as the main headline.
 -->
 
-  <h1>GLAM Workbench</h1>
+  <h1>Rights applied to images by each Trove contributor</h1>
 
 
 <!-- Tags -->
 
   
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">CSV dataset</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">copyright</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">images</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">licensing</span>
+      
+    
+  </nav>
 
 
 
 <!-- Markdown content -->
+<p>This dataset includes information about the application of licences and rights statements to images by Trove contributors.</p>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-images-rights-data/archive/refs/heads/main.zip">Download complete dataset as zip</a></p>
+<h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
+<h3 id="rights-on-imagescsv">rights-on-images.csv<a class="headerlink" href="#rights-on-imagescsv" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-04-24</td></tr>
+<tr><td><b>format</b></td><td>text/csv</td></tr><tr><td><b>file size</b></td><td>19.6 kB</td></tr><tr><td><b>number of rows</b></td><td>217</td></tr>
+<tr><td><b>license</b></td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain Dedication</a></td></tr>
+</tbody>
+</table>
+
+<p>This dataset lists the number of images with each rights statement from organisations contributing to Trove.</p>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-images-rights-data/raw/main/rights-on-images.csv">Download from GitHub</a></p>
+<h4 id="columns">Columns<a class="headerlink" href="#columns" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>contributor identifier</td>
+</tr>
+<tr>
+<td><code>full_name</code></td>
+<td>string</td>
+<td>contributor name</td>
+</tr>
+<tr>
+<td><code>Free/CC Public Domain</code></td>
+<td>integer</td>
+<td>Number of images with CC Public Domain declaration</td>
+</tr>
+<tr>
+<td><code>Free/CC BY</code></td>
+<td>integer</td>
+<td>Number of images with CC BY licence</td>
+</tr>
+<tr>
+<td><code>Free/CC0</code></td>
+<td>integer</td>
+<td>Number of images with CC0 licence</td>
+</tr>
+<tr>
+<td><code>Free/RS NKC</code></td>
+<td>integer</td>
+<td>Number of images with RS NKC rights statement</td>
+</tr>
+<tr>
+<td><code>Free with conditions/CC BY-SA</code></td>
+<td>integer</td>
+<td>Number of images with CC BY-SA licence</td>
+</tr>
+<tr>
+<td><code>Free with conditions/CC BY-NC</code></td>
+<td>integer</td>
+<td>Number of images with CC BY-NC licence</td>
+</tr>
+<tr>
+<td><code>Free with conditions/CC BY-NC-ND</code></td>
+<td>integer</td>
+<td>Number of images with CC BY-NC-ND licence</td>
+</tr>
+<tr>
+<td><code>Free with conditions/CC BY-NC-SA</code></td>
+<td>integer</td>
+<td>Number of images with CC BY-NC-SA licence</td>
+</tr>
+<tr>
+<td><code>Free with conditions/InC-EDU</code></td>
+<td>integer</td>
+<td>Number of images with InC-EDU rights statement</td>
+</tr>
+<tr>
+<td><code>Restricted/RS InC</code></td>
+<td>integer</td>
+<td>Number of images with RS InC rights statement</td>
+</tr>
+<tr>
+<td><code>Restricted/RS InC-RUU</code></td>
+<td>integer</td>
+<td>Number of images with RS InC-RUU rights statement</td>
+</tr>
+<tr>
+<td><code>Restricted/RS CNE</code></td>
+<td>integer</td>
+<td>Number of images with RS CNE rights statement</td>
+</tr>
+<tr>
+<td><code>Restricted/RS UND</code></td>
+<td>integer</td>
+<td>Number of images with RS UND rights statement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rights-on-out-of-copyright-photoscsv">rights-on-out-of-copyright-photos.csv<a class="headerlink" href="#rights-on-out-of-copyright-photoscsv" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-04-24</td></tr>
+<tr><td><b>format</b></td><td>text/csv</td></tr><tr><td><b>file size</b></td><td>15.6 kB</td></tr><tr><td><b>number of rows</b></td><td>172</td></tr>
+<tr><td><b>license</b></td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain Dedication</a></td></tr>
+</tbody>
+</table>
+
+<p>This dataset lists the number of out-of-copyright photographs with each rights statement from organisations contributing to Trove.</p>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-images-rights-data/raw/main/rights-on-out-of-copyright-photos.csv">Download from GitHub</a></p>
+<h4 id="columns_1">Columns<a class="headerlink" href="#columns_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>contributor identifier</td>
+</tr>
+<tr>
+<td><code>full_name</code></td>
+<td>string</td>
+<td>contributor name</td>
+</tr>
+<tr>
+<td><code>Free/CC Public Domain</code></td>
+<td>integer</td>
+<td>Number of images with CC Public Domain declaration</td>
+</tr>
+<tr>
+<td><code>Free/CC BY</code></td>
+<td>integer</td>
+<td>Number of images with CC BY licence</td>
+</tr>
+<tr>
+<td><code>Free/CC0</code></td>
+<td>integer</td>
+<td>Number of images with CC0 licence</td>
+</tr>
+<tr>
+<td><code>Free/RS NKC</code></td>
+<td>integer</td>
+<td>Number of images with RS NKC rights statement</td>
+</tr>
+<tr>
+<td><code>Free with conditions/CC BY-SA</code></td>
+<td>integer</td>
+<td>Number of images with CC BY-SA licence</td>
+</tr>
+<tr>
+<td><code>Free with conditions/CC BY-NC</code></td>
+<td>integer</td>
+<td>Number of images with CC BY-NC licence</td>
+</tr>
+<tr>
+<td><code>Free with conditions/CC BY-NC-ND</code></td>
+<td>integer</td>
+<td>Number of images with CC BY-NC-ND licence</td>
+</tr>
+<tr>
+<td><code>Free with conditions/CC BY-NC-SA</code></td>
+<td>integer</td>
+<td>Number of images with CC BY-NC-SA licence</td>
+</tr>
+<tr>
+<td><code>Free with conditions/InC-EDU</code></td>
+<td>integer</td>
+<td>Number of images with InC-EDU rights statement</td>
+</tr>
+<tr>
+<td><code>Restricted/RS InC</code></td>
+<td>integer</td>
+<td>Number of images with RS InC rights statement</td>
+</tr>
+<tr>
+<td><code>Restricted/RS CNE</code></td>
+<td>integer</td>
+<td>Number of images with RS CNE rights statement</td>
+</tr>
+<tr>
+<td><code>Restricted/RS UND</code></td>
+<td>integer</td>
+<td>Number of images with RS UND rights statement</td>
+</tr>
+</tbody>
+</table>
+<h2 id="context-of-creation">Context of creation<a class="headerlink" href="#context-of-creation" title="Permanent link">&para;</a></h2>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-04-24</td></tr>
+<tr><td><b>notebook</b></td><td><a href="https://glam-workbench.net/trove-images/use-of-rights-statements/">The use of standard licences and rights statements in Trove image records</a></td></tr>
+
+
+</tbody>
+</table>
+
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
 <ul>
-<li>CSV dataset</li>
-<li>images</li>
-<li>licensing</li>
-<li>copyright
-hide:</li>
-<li>toc</li>
+<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
+<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
+<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
 </ul>
-<hr />
 
 <!-- Was this page helpful? -->
 
+
+  
 
 
 
