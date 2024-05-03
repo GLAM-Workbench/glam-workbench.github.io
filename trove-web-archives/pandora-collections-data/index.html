@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums">
+        <meta name="description" content="This dataset contains details of the subject and collection groupings used by Pandora to organise archived web resource titles.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -72,11 +72,21 @@
     <link rel="schema.z" href="http://www.zotero.org/namespaces/export#">
     
     
+        <meta name="z.type" content="computerProgram" />
+        <meta name="z.libraryCatalog" content="Zenodo" />
+        
+            <meta name="dcterms.title" content="" />
+        
+        
+        
+        
+        
+    
 
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Pandora collections data - GLAM Workbench" />
-<meta property="og:description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" />
+<meta property="og:description" content="This dataset contains details of the subject and collection groupings used by Pandora to organise archived web resource titles." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-web-archives/pandora-collections-data.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -84,7 +94,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-web-archives/pandora-collections-data/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Pandora collections data - GLAM Workbench" />
-<meta property="twitter:description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" />
+<meta property="twitter:description" content="This dataset contains details of the subject and collection groupings used by Pandora to organise archived web resource titles." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-web-archives/pandora-collections-data.png" />
 </head>
   
@@ -103,6 +113,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#files" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -258,7 +273,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/trove-web-archives-collections" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -266,7 +281,7 @@
   </div>
 
 <div class="md-source__repository">
-  glam-workbench.github.io
+  trove-web-archives-collections
 <ul class="md-source__facts">
   
 </ul>
@@ -289,6 +304,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -387,7 +404,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/trove-web-archives-collections" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -395,7 +412,7 @@
   </div>
 
 <div class="md-source__repository">
-  glam-workbench.github.io
+  trove-web-archives-collections
 <ul class="md-source__facts">
   
 </ul>
@@ -11071,7 +11088,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -11080,6 +11099,75 @@
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pandora-subjectsndjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pandora-subjects.ndjson
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pandora-collectionsndjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pandora-collections.ndjson
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-of-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context of creation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -11130,29 +11218,88 @@
   as the main headline.
 -->
 
-  <h1>GLAM Workbench</h1>
+  <h1>Pandora collections data</h1>
 
 
 <!-- Tags -->
 
   
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">data harvesting</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">metadata</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">web archives</span>
+      
+    
+  </nav>
 
 
 
 <!-- Markdown content -->
+<p>This dataset contains details of the subject and collection groupings used by Pandora to organise archived web resource titles.</p>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-web-archives-collections/archive/refs/heads/main.zip">Download complete dataset as zip</a></p>
+<h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
+<h3 id="pandora-subjectsndjson">pandora-subjects.ndjson<a class="headerlink" href="#pandora-subjectsndjson" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-05-02</td></tr>
+<tr><td><b>format</b></td><td>ndjson</td></tr><tr><td><b>file size</b></td><td>1.9 MB</td></tr>
+
+</tbody>
+</table>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-web-archives-collections/raw/main/pandora-subjects.ndjson">Download from GitHub</a></p>
+<h3 id="pandora-collectionsndjson">pandora-collections.ndjson<a class="headerlink" href="#pandora-collectionsndjson" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-05-02</td></tr>
+<tr><td><b>format</b></td><td>ndjson</td></tr><tr><td><b>file size</b></td><td>844.7 kB</td></tr>
+
+</tbody>
+</table>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-web-archives-collections/raw/main/pandora-collections.ndjson">Download from GitHub</a></p>
+<h2 id="context-of-creation">Context of creation<a class="headerlink" href="#context-of-creation" title="Permanent link">&para;</a></h2>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2024-05-02</td></tr>
+<tr><td><b>notebook</b></td><td><a href="https://glam-workbench.net/trove-web-archives/harvest-pandora-subject-collections/">Harvest Pandora subjects and collections</a></td></tr>
+
+
+</tbody>
+</table>
+
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
 <ul>
-<li>web archives</li>
-<li>data harvesting</li>
-<li>metadata
-hide:</li>
-<li>toc
-rocrate: ""
-page_type: dataset</li>
+<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
+<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
+<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
 </ul>
-<hr />
 
 <!-- Was this page helpful? -->
 
+
+  
 
 
 

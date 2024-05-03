@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums">
+        <meta name="description" content="This notebook harvests Pandora's navigation hierarchy, saving the connections between subjects, collections, and titles. The datasets created can be used to assemble subject-based collections of archived websites for research.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Harvest pandora subject collections - GLAM Workbench</title>
+        <title>Harvest Pandora subjects and collections - GLAM Workbench</title>
       
     
     
@@ -72,19 +72,29 @@
     <link rel="schema.z" href="http://www.zotero.org/namespaces/export#">
     
     
+        <meta name="z.type" content="computerProgram" />
+        <meta name="z.libraryCatalog" content="Zenodo" />
+        
+            <meta name="dcterms.title" content="" />
+        
+        
+        
+        
+        
+    
 
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Harvest pandora subject collections - GLAM Workbench" />
-<meta property="og:description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" />
+<meta property="og:title" content="Harvest Pandora subjects and collections - GLAM Workbench" />
+<meta property="og:description" content="This notebook harvests Pandora's navigation hierarchy, saving the connections between subjects, collections, and titles. The datasets created can be used to assemble subject-based collections of archived websites for research." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-web-archives/harvest-pandora-subject-collections.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://glam-workbench.net/trove-web-archives/harvest-pandora-subject-collections/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Harvest pandora subject collections - GLAM Workbench" />
-<meta property="twitter:description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" />
+<meta property="twitter:title" content="Harvest Pandora subjects and collections - GLAM Workbench" />
+<meta property="twitter:description" content="This notebook harvests Pandora's navigation hierarchy, saving the connections between subjects, collections, and titles. The datasets created can be used to assemble subject-based collections of archived websites for research." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-web-archives/harvest-pandora-subject-collections.png" />
 </head>
   
@@ -103,6 +113,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#using-this-notebook" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -136,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Harvest pandora subject collections
+              Harvest Pandora subjects and collections
             
           </span>
         </div>
@@ -258,7 +273,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/trove-web-archives" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -266,7 +281,7 @@
   </div>
 
 <div class="md-source__repository">
-  glam-workbench.github.io
+  trove-web-archives
 <ul class="md-source__facts">
   
 </ul>
@@ -289,6 +304,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -387,7 +404,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/trove-web-archives" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -395,7 +412,7 @@
   </div>
 
 <div class="md-source__repository">
-  glam-workbench.github.io
+  trove-web-archives
 <ul class="md-source__facts">
   
 </ul>
@@ -11071,7 +11088,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -11080,6 +11099,58 @@
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-this-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using this notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related datasets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -11130,29 +11201,85 @@
   as the main headline.
 -->
 
-  <h1>GLAM Workbench</h1>
+  <h1>Harvest Pandora subjects and collections</h1>
 
 
 <!-- Tags -->
 
   
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">data harvesting</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">metadata</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">web archives</span>
+      
+    
+  </nav>
 
 
 
 <!-- Markdown content -->
+<p>This notebook harvests Pandora's navigation hierarchy, saving the connections between subjects, collections, and titles. The datasets created can be used to assemble subject-based collections of archived websites for research.</p>
+
+<div class="admonition preview">
+<p class="admonition-title">Preview</p>
+<p><iframe class='nb-preview' src='/trove-web-archives/previews/harvest-pandora-subject-collections.html'></iframe>
+<a href="/trove-web-archives/previews/harvest-pandora-subject-collections.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 4 4 4V4m0 12-4 4h4M8 20l-4-4v4M4 8l4-4H4m12.95 3.05a7.007 7.007 0 0 0-9.9 0 7.007 7.007 0 0 0 0 9.9 7.007 7.007 0 0 0 9.9 0c2.73-2.73 2.73-7.16 0-9.9m-1.1 8.8a5.402 5.402 0 0 1-7.7 0 5.402 5.402 0 0 1 0-7.7 5.402 5.402 0 0 1 7.7 0 5.402 5.402 0 0 1 0 7.7Z"/></svg></span> Expand</a></p>
+</div>
+<h2 id="using-this-notebook">Using this notebook<a class="headerlink" href="#using-this-notebook" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">ARDC Binder</label><label for="__tabbed_1_2">MyBinder</label><label for="__tabbed_1_3">Other options</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To run this notebook using the ARDC Binder service you'll need to log in using an account from an Australian university or research organisation. If you don't have an account, try <a href="#__tabbed_1_2">MyBinder</a> instead.</p>
+<p><a class="md-button md-button--primary" href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-web-archives/HEAD?urlpath=/lab/tree/harvest-pandora-subject-collections.ipynb">Run live on ARDC Binder</a></p>
+</div>
+<div class="tabbed-block">
+<p>The MyBinder service doesn't require any authentication, but it can be slow to start and will sometimes fail when busy. If you have a login at an Australian university, you'll probably get better results with <a href="#__tabbed_1_1">ARDC Binder</a>.</p>
+<p><a class="md-button md-button--primary" href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-web-archives/HEAD?urlpath=/lab/tree/harvest-pandora-subject-collections.ipynb">Run live on MyBinder</a></p>
+</div>
+<div class="tabbed-block">
+<p>Binder is great for experimentation and quick tasks, but for some projects you might need a dedicated, persistent environment in which to work. There's information on other options in the <a href="../#run-these-notebooks">run these notebooks</a> section.</p>
+</div>
+</div>
+</div>
+<h2 id="related-datasets">Related datasets<a class="headerlink" href="#related-datasets" title="Permanent link">&para;</a></h2>
 <ul>
-<li>web archives</li>
-<li>data harvesting</li>
-<li>metadata
-hide:</li>
-<li>toc
-rocrate: ""
-page_type: notebook</li>
+<li><a href="../pandora-collections-data/">Pandora collections data</a></li>
 </ul>
-<hr />
+<h2 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../#run-these-notebooks">Run these notebooks</a></li>
+</ul>
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
+<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
+<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
+</ul>
 
 <!-- Was this page helpful? -->
 
+
+  
 
 
 
