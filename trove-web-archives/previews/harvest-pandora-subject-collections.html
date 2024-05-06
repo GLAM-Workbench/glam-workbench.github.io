@@ -7516,22 +7516,38 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Harvest-Pandora-subjects-and-collections">Harvest Pandora subjects and collections<a class="anchor-link" href="#Harvest-Pandora-subjects-and-collections">¶</a></h1><p>The <a href="http://pandora.nla.gov.au/">Pandora</a> selective web archive assigns archived titles to subject and collection groupings. These curated collections help researchers find archived websites relating to specific topics or events, such as <a href="http://pandora.nla.gov.au/subject/6">election campaigns</a>. This notebook harvests Pandora's navigation hierarchy, saving the connections between subjects, collections, and titles. The datasets created can be used to assemble subject-based collections of archived websites for research.</p>
+<h1 id="Harvest-Pandora-subjects-and-collections">Harvest Pandora subjects and collections<a class="anchor-link" href="#Harvest-Pandora-subjects-and-collections">¶</a></h1><p>This notebook harvests Pandora's navigation hierarchy, saving the connections between subjects, collections, and titles.</p>
+<p>The <a href="http://pandora.nla.gov.au/">Pandora</a> selective web archive assigns archived titles to subject and collection groupings. These curated collections help researchers find archived websites relating to specific topics or events, such as <a href="http://pandora.nla.gov.au/subject/6">election campaigns</a>. This notebook creates two datasets containing details of all Pandora's subjects and collections. The datasets can be used to <a href="https://glam-workbench.net/trove-web-archives/create-datasets/">assemble subject-based collections of archived websites for research</a>.</p>
 <h2 id="Pandora-vs-Trove">Pandora vs Trove<a class="anchor-link" href="#Pandora-vs-Trove">¶</a></h2><p>The relationship between Pandora and Trove is a bit confusing. While the websites archived in Pandora are now part of the Australian Web Archive, and are searchable through Trove, not all of Pandora's metadata can be accessed through the Trove web interface.</p>
 <p>Trove's <a href="https://trove.nla.gov.au/landing/categories">Categories</a> tab includes a link to <a href="https://webarchive.nla.gov.au/collection">Archived Webpage Collections</a>. This collection hierarchy is basically the same as Pandora's – combining Pandora's subjects, subcategories, and collections into a single structure. However, it only includes links to titles that are part of collections. This is important, as less than half of Pandora's selected titles seem to be assigned to collections.</p>
 <p>I originally started harvesting the collections from Trove, but eventually realised that I was missing out on titles that had been grouped by subject, but were not part of collections. As a result, I shifted approaches to scrape the data from Pandora directly.</p>
-<h2 id="Subjects,-Collections,-and-Titles">Subjects, Collections, and Titles<a class="anchor-link" href="#Subjects,-Collections,-and-Titles">¶</a></h2><p>There are two levels of subject headings in Pandora. The top-level headings are displayed on the Pandora home page, for example, <a href="http://pandora.nla.gov.au/subject/2">Arts</a> and <a href="http://pandora.nla.gov.au/subject/21">Politics</a>. The top-level headings can include sub-categories. For example, Arts includes sub-categories for Architecture and Dance. Both the top-level subjects and sub-categories can include collections and titles.</p>
-<p>Collections are more fine-grained groupings of titles, often related to specific events or activities. Collections can include sub-collections. In Pandora's web interface, the sub-collections are displayed as sub-headings on the collection page, but in the backend each sub-collection has its own identifier. For example, the Galleries collection, includes a list of gallery websites divided into sub-collections by the state in which they're located. Both collections and sub-collections can contain titles.</p>
+<h2 id="Subjects,-Collections,-and-Titles">Subjects, Collections, and Titles<a class="anchor-link" href="#Subjects,-Collections,-and-Titles">¶</a></h2><p>There are two levels of subject headings in Pandora. The top-level headings are displayed on the Pandora home page, for example, <a href="http://pandora.nla.gov.au/subject/2">Arts</a> and <a href="http://pandora.nla.gov.au/subject/21">Politics</a>. The top-level headings can include sub-categories. For example, 'Arts' includes sub-categories for 'Architecture' and 'Dance'. Both the top-level subjects and sub-categories can include collections and titles.</p>
+<p>Collections are more fine-grained groupings of titles, often related to specific events or activities. Collections can include sub-collections. In Pandora's web interface, the sub-collections are displayed as sub-headings on the collection page, but in the backend each sub-collection has its own identifier. For example, the 'Galleries' collection, includes a list of gallery websites divided into sub-collections by the state in which they're located. Both collections and sub-collections can contain titles.</p>
 <p>Collections can appear in multiple subjects and sub-categories. This means that the harvesting process saves duplicate copies of collections that need to be removed.</p>
 <p>Titles are also a type of group, bringing together webpage snapshots over time. They can also link urls where the addresses or domains of resources have changed. As a result, each title can be associated with multiple urls. This notebook doesn't harvest the full title details, it simply links title identifiers with subjects and collections. See <a href="harvest-pandora-titles.ipynb">Harvest the full collection of Pandora titles</a> for more.</p>
 <p>Titles can be linked to any level in this hierarchy. So to assemble a complete list of titles under a subject such as 'Arts', you need to get all the titles from 'Arts', all of the titles from all of the sub-categories under 'Arts', and all of the titles from all of the collections and sub-collections under both 'Arts' and its subcategories. See <a href="create-datasets.ipynb">Create archived url datasets from Pandora's collections and subjects</a> for an example of this.</p>
 <p>For more on Pandora's approach to describing collections see <a href="https://doi.org/10.48550/arXiv.2209.08649">Creating Structure in Web Archives With Collections: Different Concepts From Web Archivists</a>.</p>
-<h2 id="Datasets">Datasets<a class="anchor-link" href="#Datasets">¶</a></h2><p>This notebook creates two datasets:</p>
+<h2 id="Datasets">Datasets<a class="anchor-link" href="#Datasets">¶</a></h2><p>This notebook creates two datasets in <code>ndjson</code> format (one JSON object per line):</p>
 <ul>
 <li><code>pandora-subjects.ndjson</code></li>
 <li><code>pandora-collections.ndjson</code></li>
 </ul>
-<p>Pre-harvested versions of these datasets are available from the <a href="https://github.com/GLAM-Workbench/trove-web-archives-collections-data">trove-web-archives-collections-data</a> repository.</p>
+<p>The <code>pandora-subjects.ndjson</code> file includes the following fields:</p>
+<ul>
+<li><code>name</code> – subject heading</li>
+<li><code>id</code> – subject identifier in the form <code>/subject/[number]</code></li>
+<li><code>subcategories</code> – list of subcategory identifiers</li>
+<li><code>collections</code> – list of collection identifiers</li>
+<li><code>titles</code> – list of title identifiers</li>
+</ul>
+<p>The <code>pandora-collections.ndjson</code> file includes the following fields:</p>
+<ul>
+<li><code>name</code> – collection/subcollection name</li>
+<li><code>id</code> – collection identifier in the form <code>/col/[number]</code></li>
+<li><code>subcollections</code> – list of subcollection identifiers</li>
+<li><code>titles</code> – list of title identifiers</li>
+</ul>
+<p>Pre-harvested versions of these datasets are available from the <a href="https://glam-workbench.net/trove-web-archives/pandora-collections-data/">Pandora collections data</a> section of the GLAM Workbench.</p>
 </div>
 </div>
 </div>
@@ -7620,14 +7636,18 @@ a.anchor-link {
 <span class="sd">        Harvest details of sub-categories from a subject page.</span>
 <span class="sd">        """</span>
         <span class="n">subject_ids</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Get the subject page</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"http://pandora.nla.gov.au</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">"lxml"</span><span class="p">)</span>
+        <span class="c1"># Get all the links to subcategories</span>
         <span class="n">subject_links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"/subject/\d+$"</span><span class="p">))</span>
-
+        <span class="c1"># Process all the sub-categories</span>
         <span class="k">for</span> <span class="n">subject_link</span> <span class="ow">in</span> <span class="n">subject_links</span><span class="p">:</span>
             <span class="n">subject_name</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subject_link</span><span class="o">.</span><span class="n">stripped_strings</span><span class="p">)</span>
             <span class="n">subject_id</span> <span class="o">=</span> <span class="n">subject_link</span><span class="p">[</span><span class="s2">"href"</span><span class="p">]</span>
+            <span class="c1"># Get collections</span>
             <span class="n">collection_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">harvest_collections</span><span class="p">(</span><span class="n">subject_id</span><span class="p">)</span>
+            <span class="c1"># Get titles</span>
             <span class="n">title_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_title_ids</span><span class="p">(</span><span class="n">subject_id</span><span class="p">)</span>
             <span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subject_output</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">subjects_file</span><span class="p">:</span>
                 <span class="n">subjects_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
@@ -7649,14 +7669,22 @@ a.anchor-link {
 <span class="sd">        Harvest sub-collections from a collection page.</span>
 <span class="sd">        """</span>
         <span class="n">collection_ids</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Get the collection page</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"http://pandora.nla.gov.au</span><span class="si">{</span><span class="n">coll_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">"lxml"</span><span class="p">)</span>
+        <span class="c1"># Sub-collections are included in the collection pages and identified with h1 headings.</span>
+        <span class="c1"># The h1 headings include a name attribute that is set to the sub-collection id.</span>
+        <span class="c1"># You can use the id to request a page that just has the subcollection.</span>
+        <span class="c1"># First get all the h1 tags</span>
         <span class="k">for</span> <span class="n">subc</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">"h1"</span><span class="p">):</span>
+            <span class="c1"># Get the id value from the name attribute</span>
             <span class="n">sub_link</span> <span class="o">=</span> <span class="n">subc</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d+"</span><span class="p">)})</span>
             <span class="k">if</span> <span class="n">sub_link</span><span class="p">:</span>
                 <span class="n">sub_name</span> <span class="o">=</span> <span class="n">sub_link</span><span class="o">.</span><span class="n">string</span>
+                <span class="c1"># Add the collection name to the sub collection name (if it's not already there)</span>
                 <span class="k">if</span> <span class="n">coll_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sub_name</span><span class="p">:</span>
                     <span class="n">sub_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">coll_name</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">sub_name</span><span class="si">}</span><span class="s2">"</span>
+                <span class="c1"># Use the sub-collection id to get a list of titles in the sub-collection</span>
                 <span class="n">sub_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"/col/</span><span class="si">{</span><span class="n">sub_link</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
                 <span class="n">title_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_title_ids</span><span class="p">(</span><span class="n">sub_id</span><span class="p">)</span>
                 <span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">collection_output</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">collections_file</span><span class="p">:</span>
@@ -7679,13 +7707,18 @@ a.anchor-link {
 <span class="sd">        Harvest details of collections from a subject, or sub-category page.</span>
 <span class="sd">        """</span>
         <span class="n">collection_ids</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Get the subject page</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"http://pandora.nla.gov.au</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">"lxml"</span><span class="p">)</span>
+        <span class="c1"># Get all of the links to collection pages</span>
         <span class="n">collection_links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"/col/\d+$"</span><span class="p">))</span>
+        <span class="c1"># Process each collection page</span>
         <span class="k">for</span> <span class="n">coll_link</span> <span class="ow">in</span> <span class="n">collection_links</span><span class="p">:</span>
             <span class="n">coll_name</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">coll_link</span><span class="o">.</span><span class="n">stripped_strings</span><span class="p">)</span>
             <span class="n">coll_id</span> <span class="o">=</span> <span class="n">coll_link</span><span class="p">[</span><span class="s2">"href"</span><span class="p">]</span>
+            <span class="c1"># Get any sub-collections</span>
             <span class="n">subcollection_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">harvest_subcollections</span><span class="p">(</span><span class="n">coll_id</span><span class="p">,</span> <span class="n">coll_name</span><span class="p">)</span>
+            <span class="c1"># Get titles</span>
             <span class="n">title_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_title_ids</span><span class="p">(</span><span class="n">coll_id</span><span class="p">)</span>
             <span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">collection_output</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">collections_file</span><span class="p">:</span>
                 <span class="n">collections_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>

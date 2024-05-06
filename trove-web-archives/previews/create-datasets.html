@@ -7516,15 +7516,20 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-archived-url-datasets-from-Pandora's-collections-and-subjects">Create archived url datasets from Pandora's collections and subjects<a class="anchor-link" href="#Create-archived-url-datasets-from-Pandora's-collections-and-subjects">¶</a></h1><p>This notebook helps you create a dataset of archived urls using Pandora's subject and collection groupings.</p>
-<p>The Australian Web Archive makes billions of archived web pages searchable through Trove. But how would you go about constructing a search that would find websites relating to election campaigns? Fortunately you don't have to, as Pandora provides a collection of archived web resources organised by subject and collection. By using harvests of Pandora's subject hierarchy and a complete list of archived titles, this notebook makes it easy for you to create custom datasets relating to a specific topic or event.</p>
-<p>This notebook uses pre-harvested datasets containing information about Pandora's subjects, collections and titles. New titles are added to Pandora frequently, so you might want to create your own updated versions using these notebooks:</p>
+<h1 id="Create-archived-url-datasets-from-Pandora's-collections-and-subjects">Create archived url datasets from Pandora's collections and subjects<a class="anchor-link" href="#Create-archived-url-datasets-from-Pandora's-collections-and-subjects">¶</a></h1><p>The Australian Web Archive makes billions of archived web pages searchable through Trove. But how would you go about constructing a search to find websites relating to Australian election campaigns? Fortunately you don't have to, as <a href="http://pandora.nla.gov.au/">Pandora</a> provides a collection of archived web resources organised by subject and collection – including <a href="http://pandora.nla.gov.au/subject/6">thousands of sites about elections</a>. This notebook makes it easy to save details of all the archived websites under any heading in Pandora's subject hierarchy, creating custom datasets relating to specific topics or events.</p>
+<p>For convenience, this notebook uses pre-harvested datasets containing information about Pandora's subjects, collections and titles. New titles are added to Pandora frequently, so you might want to create your own updated versions using these notebooks:</p>
 <ul>
 <li><a href="harvest-pandora-subject-collections.ipynb">Harvest Pandora subjects and collections</a></li>
 <li><a href="harvest-pandora-titles.ipynb">Harvest the full collection of Pandora titles</a></li>
 </ul>
-<h2 id="Using-this-notebook">Using this notebook<a class="anchor-link" href="#Using-this-notebook">¶</a></h2><p>The simplest way to get started is to browse the subject and collection groupings in <a href="http://pandora.nla.gov.au/">Pandora</a>. Once you've found a subject or collection of interest, just copy its identifier, either <code>/subject/[subject number]</code> or <code>/col/[collection number]</code>. You also need to decide if you want <em>every</em> title under that subject or collection, including those associated with its children, or if you only want the titles directly linked to your selected grouping.</p>
-<p>Then you can run either <code>create_subject_dataset([your subject id])</code> or <code>create_collection_dataset([your collection id])</code>.</p>
+<h2 id="Using-this-notebook">Using this notebook<a class="anchor-link" href="#Using-this-notebook">¶</a></h2><p>The simplest way to get started is to browse the subject and collection groupings in <a href="http://pandora.nla.gov.au/">Pandora</a>. Once you've found a subject or collection of interest, just copy its identifier, either <code>/subject/[subject number]</code> or <code>/col/[collection number]</code>. I've also created a <a href="https://glam-workbench.net/trove-web-archives/pandora-subject-hierarchy/">single-page version of the complete subject hierarchy</a> which makes it a bit easier to see what's included under each level.</p>
+<p>Titles can be linked to any level in this hierarchy. To assemble a complete list of titles under a subject such as 'Arts', for example, you need to get all the titles from 'Arts', all of the titles from all of the sub-categories under 'Arts', and all of the titles from all of the collections and sub-collections under both 'Arts' and its subcategories. So when you create your dataset you need to decide if you want <em>every</em> title under that subject or collection, including those associated with its children, or if you only want the titles directly linked to your selected heading.</p>
+<p>You can then run either <code>create_subject_dataset([your subject id])</code> or <code>create_collection_dataset([your collection id])</code> in the cells below.</p>
+<p>If you want to include titles from any child categories or collections, set the <code>include_subcategories</code> and <code>include_collections</code> parameters to <code>True</code>.</p>
+<p>For example:</p>
+<ul>
+<li><code>create_subject_dataset("/subject/6", include_collections=True)</code> will generate a dataset that contains every archived url under the 'Elections' heading, including urls in child collections.</li>
+</ul>
 <h2 id="Datasets">Datasets<a class="anchor-link" href="#Datasets">¶</a></h2><p>This notebook creates a CSV formatted dataset containing the following fields:</p>
 <ul>
 <li><code>tep_id</code> – the Title Entry Page (TEP) identifier in the form <code>/tep/[TEP NUMBER]</code></li>
@@ -7554,21 +7559,19 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [329]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">mimetypes</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">import</span> <span class="nn">ipynbname</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
-<span class="kn">from</span> <span class="nn">rocrate.rocrate</span> <span class="kn">import</span> <span class="n">ContextEntity</span><span class="p">,</span> <span class="n">ROCrate</span>
 <span class="kn">from</span> <span class="nn">slugify</span> <span class="kn">import</span> <span class="n">slugify</span>
+
+<span class="kn">import</span> <span class="nn">crate_maker</span>
 
 <span class="n">load_dotenv</span><span class="p">()</span>
 </pre></div>
@@ -7581,7 +7584,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[329]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>True</pre>
 </div>
@@ -7593,10 +7596,12 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [300]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dfc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load the pre-harvested datasets</span>
+
+<span class="n">dfc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span>
     <span class="s2">"https://github.com/GLAM-Workbench/trove-web-archives-collections/raw/main/pandora-collections.ndjson"</span><span class="p">,</span>
     <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
@@ -7607,59 +7612,6 @@ a.anchor-link {
 <span class="n">dft</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
     <span class="s2">"https://github.com/GLAM-Workbench/trove-web-archives-titles/raw/main/pandora-titles.csv"</span>
 <span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">create_rocrate</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Create an RO-Crate metadata file describing the downloaded dataset.</span>
-<span class="sd">    """</span>
-    <span class="n">crate</span> <span class="o">=</span> <span class="n">ROCrate</span><span class="p">()</span>
-    <span class="n">crate</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-    <span class="n">nb_path</span> <span class="o">=</span> <span class="n">ipynbname</span><span class="o">.</span><span class="n">path</span><span class="p">()</span>
-    <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nb_path</span><span class="p">,</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
-    <span class="n">metadata</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">rocrate</span>
-    <span class="n">nb_url</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"url"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
-    <span class="n">nb_properties</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">"@type"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"File"</span><span class="p">,</span> <span class="s2">"SoftwareSourceCode"</span><span class="p">],</span>
-        <span class="s2">"name"</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
-        <span class="s2">"description"</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"description"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
-        <span class="s2">"encodingFormat"</span><span class="p">:</span> <span class="s2">"application/x-ipynb+json"</span><span class="p">,</span>
-        <span class="s2">"codeRepository"</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"codeRepository"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
-        <span class="s2">"url"</span><span class="p">:</span> <span class="n">nb_url</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="n">crate</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ContextEntity</span><span class="p">(</span><span class="n">crate</span><span class="p">,</span> <span class="n">nb_url</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="n">nb_properties</span><span class="p">))</span>
-    <span class="n">action_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">nb_path</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">_run"</span>
-    <span class="n">action_properties</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">"@type"</span><span class="p">:</span> <span class="s2">"CreateAction"</span><span class="p">,</span>
-        <span class="s2">"instrument"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"@id"</span><span class="p">:</span> <span class="n">nb_url</span><span class="p">},</span>
-        <span class="s2">"actionStatus"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"@id"</span><span class="p">:</span> <span class="s2">"http://schema.org/CompletedActionStatus"</span><span class="p">},</span>
-        <span class="s2">"name"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Run of notebook: </span><span class="si">{</span><span class="n">nb_path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
-        <span class="s2">"result"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"@id"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">file_path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">/"</span><span class="p">},</span>
-        <span class="s2">"object"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"@id"</span><span class="p">:</span> <span class="n">o</span><span class="p">[</span><span class="s2">"url"</span><span class="p">]}</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">metadata</span><span class="p">[</span><span class="s2">"action"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"object"</span><span class="p">]],</span>
-        <span class="s2">"query"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">subject</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">subject</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span>
-        <span class="s2">"startDate"</span><span class="p">:</span> <span class="n">start_date</span><span class="p">,</span>
-        <span class="s2">"endDate"</span><span class="p">:</span> <span class="n">end_date</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="n">encoding</span> <span class="o">=</span> <span class="n">mimetypes</span><span class="o">.</span><span class="n">guess_type</span><span class="p">(</span><span class="n">file_path</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">stats</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">st_size</span>
-    <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">st_mtime</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2">"</span><span class="p">)</span>
-    <span class="n">rows</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">with</span> <span class="n">file_path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">df</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
-            <span class="n">rows</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">crate</span><span class="o">.</span><span class="n">update_jsonld</span><span class="p">(</span>
-        <span class="p">{</span>
-            <span class="s2">"@id"</span><span class="p">:</span> <span class="n">file_path</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="s2">"dateModified"</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
-            <span class="s2">"contentSize"</span><span class="p">:</span> <span class="n">size</span><span class="p">,</span>
-            <span class="s2">"size"</span><span class="p">:</span> <span class="n">rows</span><span class="p">,</span>
-            <span class="s2">"encodingFormat"</span><span class="p">:</span> <span class="n">encoding</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="p">)</span>
-    <span class="n">crate</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ContextEntity</span><span class="p">(</span><span class="n">crate</span><span class="p">,</span> <span class="n">action_id</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="n">action_properties</span><span class="p">))</span>
-    <span class="n">crate</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file_path</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
-    <span class="n">crate</span><span class="o">.</span><span class="n">write_zip</span><span class="p">(</span><span class="n">file_path</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7681,10 +7633,13 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [323]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_title_ids_in_collection</span><span class="p">(</span><span class="n">coll_id</span><span class="p">,</span> <span class="n">include_subcollections</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Get all the title ids in a collection.</span>
+<span class="sd">    """</span>
     <span class="n">title_ids</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">coll</span> <span class="o">=</span> <span class="n">dfc</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dfc</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="o">==</span> <span class="n">coll_id</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">title_ids</span> <span class="o">+=</span> <span class="n">coll</span><span class="p">[</span><span class="s2">"titles"</span><span class="p">]</span>
@@ -7695,9 +7650,10 @@ a.anchor-link {
     <span class="k">return</span> <span class="n">title_ids</span>
 
 
-<span class="k">def</span> <span class="nf">get_urls_by_subject</span><span class="p">(</span>
+<span class="k">def</span> <span class="nf">get_titles_by_subject</span><span class="p">(</span>
     <span class="n">subject</span><span class="p">,</span> <span class="n">include_subcategories</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_collections</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">):</span>
+
     <span class="n">title_ids</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">title_ids</span> <span class="o">+=</span> <span class="n">subject</span><span class="p">[</span><span class="s2">"titles"</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">include_subcategories</span><span class="p">:</span>
@@ -7720,7 +7676,7 @@ a.anchor-link {
     <span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">)</span>
     <span class="n">subject</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dfs</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="o">==</span> <span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-    <span class="n">df</span> <span class="o">=</span> <span class="n">get_urls_by_subject</span><span class="p">(</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">get_titles_by_subject</span><span class="p">(</span>
         <span class="n">subject</span><span class="p">,</span>
         <span class="n">include_subcategories</span><span class="o">=</span><span class="n">include_subcategories</span><span class="p">,</span>
         <span class="n">include_collections</span><span class="o">=</span><span class="n">include_collections</span><span class="p">,</span>
@@ -7733,7 +7689,7 @@ a.anchor-link {
     <span class="n">output_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"pandora-</span><span class="si">{</span><span class="n">subject_slug</span><span class="si">}</span><span class="s2">.csv"</span><span class="p">)</span>
     <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">include_crate</span><span class="p">:</span>
-        <span class="n">create_rocrate</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
+        <span class="n">crate_maker</span><span class="o">.</span><span class="n">create_rocrate</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
     <span class="n">display</span><span class="p">(</span>
         <span class="n">HTML</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">"Download dataset: &lt;a href='datasets/</span><span class="si">{</span><span class="n">subject_slug</span><span class="si">}</span><span class="s2">.zip', download&gt;datasets/</span><span class="si">{</span><span class="n">subject_slug</span><span class="si">}</span><span class="s2">.zip&lt;/a&gt;"</span>
@@ -7749,7 +7705,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [324]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">create_subject_dataset</span><span class="p">(</span>
@@ -7767,7 +7723,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-Download dataset: <a ,="" download="" href="datasets/subject-3-business-economy.zip">datasets/subject-3-business-economy.zip</a>
+Download dataset: <a ,="" download="" href="datasets/pandora-subject-3-business-economy.zip">datasets/pandora-subject-3-business-economy.zip</a>
 </div>
 </div>
 </div>
@@ -7788,7 +7744,7 @@ Download dataset: <a ,="" download="" href="datasets/subject-3-business-economy.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [327]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_titles_by_collection</span><span class="p">(</span><span class="n">coll</span><span class="p">,</span> <span class="n">include_subcollections</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -7814,7 +7770,7 @@ Download dataset: <a ,="" download="" href="datasets/subject-3-business-economy.
     <span class="n">output_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"pandora-</span><span class="si">{</span><span class="n">coll_slug</span><span class="si">}</span><span class="s2">.csv"</span><span class="p">)</span>
     <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">include_crate</span><span class="p">:</span>
-        <span class="n">create_rocrate</span><span class="p">(</span><span class="n">coll</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
+        <span class="n">crate_maker</span><span class="o">.</span><span class="n">create_rocrate</span><span class="p">(</span><span class="n">coll</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
     <span class="n">display</span><span class="p">(</span>
         <span class="n">HTML</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">"Download dataset: &lt;a href='datasets/</span><span class="si">{</span><span class="n">coll_slug</span><span class="si">}</span><span class="s2">.zip', download&gt;datasets/</span><span class="si">{</span><span class="n">coll_slug</span><span class="si">}</span><span class="s2">.zip&lt;/a&gt;"</span>
@@ -7830,7 +7786,7 @@ Download dataset: <a ,="" download="" href="datasets/subject-3-business-economy.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [328]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">create_collection_dataset</span><span class="p">(</span><span class="s2">"/col/21326"</span><span class="p">,</span> <span class="n">include_subcollections</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -7851,12 +7807,12 @@ Download dataset: <a ,="" download="" href="datasets/pandora-col-21326-museums.z
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ea3b5a17-9b47-4c48-a471-7b42c5948371">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ea3b5a17-9b47-4c48-a471-7b42c5948371">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># IGNORE CELL -- TESTING ONLY</span>
@@ -7872,6 +7828,24 @@ Download dataset: <a ,="" download="" href="datasets/pandora-col-21326-museums.z
         <span class="s2">"/col/21326"</span><span class="p">,</span> <span class="n">include_subcollections</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_crate</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+Download dataset: <a ,="" download="" href="datasets/pandora-subject-3-business-economy.zip">datasets/pandora-subject-3-business-economy.zip</a>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+Download dataset: <a ,="" download="" href="datasets/pandora-col-21326-museums.zip">datasets/pandora-col-21326-museums.zip</a>
 </div>
 </div>
 </div>
