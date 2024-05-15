@@ -7516,22 +7516,48 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Download-a-collection-of-digitised-images">Download a collection of digitised images<a class="anchor-link" href="#Download-a-collection-of-digitised-images">¶</a></h1><p>Digitised photographs and other images are often organised into collections. While the Trove web interface does include a download option for collections, it has a number of limitations:</p>
-<ul>
-<li>the images are all combined into a single zip file</li>
-<li>you can generally download a maximum of 20 images at a time</li>
-<li>the resolution of the downloaded images is often quite low</li>
-</ul>
-<p>This notebook provides an alternative method that downloads all of the available images in a collection (and any sub-collections) at the highest available resolution. The method is as follows:</p>
-<ul>
-<li>the <code>nla.obj</code> identifiers for all the items in the collection are harvested from the browse interface</li>
-<li>a url to download a high-resolution version of the image is constructed using each <code>nla.obj</code> id</li>
-<li>each image is downloaded and saved</li>
-</ul>
-<p>The downloaded images will be saved in the <code>images/[COLLECTION ID]</code> folder. Once the harvest is complete, the dataset will be zipped up with an <a href="https://www.researchobject.org/ro-crate/">RO-Crate</a> metadata file and a link displayed for easy download. The RO-Crate metadata file captures the context and results of the harvest.</p>
-<p>The image file names use the <code>nla.obj</code> identifiers. For example, the image of <code>nla.obj-147116797</code> is saved as <code>nla.obj-147116797.jpg</code>. The identifiers also link the image back to the website: <code>nla.obj-147116797.jpg</code> comes from <code>https://nla.gov.au/nla.obj-147116797</code>.</p>
-<h2 id="Finding-collections-of-images">Finding collections of images<a class="anchor-link" href="#Finding-collections-of-images">¶</a></h2><p>There's no direct way of searching for <em>collections</em>, they tend to be mixed up in search results with individual images. Not all digitised images are in collections, but if they are you can use the breadcrumbs navigation to move up the hierarchy. Each level in the collection hierarchy will have it's own <code>nla.obj</code> identifier that you can use to download images from that level and below.</p>
-<p>For example, <a href="https://nla.gov.au/nla.obj-133781081">this excellent poster</a> is part of a very large collection of digitised posters and exists at the bottom of the breadcrumb hierarchy: <strong>Home &gt; Guide to Pre-1950 Advertising Posters in the National Library of Australia digitised by the 2019 Tax Time Appeal &gt; Poster drawers &gt; Posters</strong>. Clicking on 'Guide to Pre-1950 Advertising Posters', 'Poster drawers', or 'Posters' will take you to different levels in the collection hierarchy. You can then just copy the <code>nla.obj</code> identifier from the url and paste it below to download all child images.</p>
+<h1 id="Save-a-collection-of-digitised-images-as-an-IIIF-manifest">Save a collection of digitised images as an IIIF manifest<a class="anchor-link" href="#Save-a-collection-of-digitised-images-as-an-IIIF-manifest">¶</a></h1><p>This notebook harvests metadata describing the contents of a digitised collection in Trove and saves it as an <a href="https://iiif.io/">IIIF</a> manifest. This makes it possible to work with data from Trove in a variety of IIIF-compliant tools.</p>
+<p>The code below harvests data from Trove's digitised collection viewer and assembles it into an IIIF manifest. There are separate functions to generate manifests that comply with either version 2 or version 3 of the IIIF Presentation API. It works with any of Trove's digitised collections, including photographs, artworks, and manuscript finding aids.</p>
+<p>All you need is the <code>nla.obj</code> identifier of the collection you want to harvest. For example, to create a v3-compliant IIIF manifest from the finding aid of <a href="https://nla.gov.au/nla.obj-224441684">The Papers of Sir Edmund Barton</a> (which has the identifier <code>nla.obj-224441684</code>), you'd run:</p>
+<pre><code>create_manifest_v3("nla.obj-224441684")
+</code></pre>
+<p>Manifests are saved in the <code>manifests</code> directory, using the <code>nla.obj</code> identifier in the filename. So, the Barton papers manifest would be named: <code>nla.obj-224441684-v3-manifest.json</code>.</p>
+<h2 id="Examples">Examples<a class="anchor-link" href="#Examples">¶</a></h2><table>
+<thead>
+<tr>
+<th>collection</th>
+<th>manifest</th>
+<th>UV3</th>
+<th>Mirador</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://nla.gov.au/nla.obj-141170265">B.A.N.Z. Antarctic Research Expedition photographs</a></td>
+<td><a href="https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-141170265-v3-manifest.json">nla.obj-141170265-v3-manifest.json</a></td>
+<td><a href="https://uv-v3.netlify.app/#?c=&amp;m=&amp;s=&amp;cv=54&amp;manifest=https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-141170265-v3-manifest.json">view in UV3</a></td>
+<td><a href="https://projectmirador.org/embed/?iiif-content=https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-141170265-v3-manifest.json">view in Mirador</a></td>
+</tr>
+<tr>
+<td><a href="https://nla.gov.au/nla.obj-224441684">The Papers of Sir Edmund Barton</a></td>
+<td><a href="https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-224441684-v3-manifest.json">nla.obj-224441684-v3-manifest.json</a></td>
+<td><a href="https://uv-v3.netlify.app/#?c=&amp;m=&amp;s=&amp;cv=54&amp;manifest=https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-224441684-v3-manifest.json">view in UV3</a></td>
+<td><a href="https://projectmirador.org/embed/?iiif-content=https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-224441684-v3-manifest.json">view in Mirador</a></td>
+</tr>
+<tr>
+<td><a href="https://nla.gov.au/nla.obj-224441858">Papers relating to the Federation Campaign (a single series from the Barton papers)</a></td>
+<td><a href="https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-224441858-v3-manifest.json">nla.obj-224441858-v3-manifest.json</a></td>
+<td><a href="https://uv-v3.netlify.app/#?c=&amp;m=&amp;s=&amp;cv=54&amp;manifest=https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-224441858-v3-manifest.json">view in UV3</a></td>
+<td><a href="https://projectmirador.org/embed/?iiif-content=https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-224441858-v3-manifest.json">view in Mirador</a></td>
+</tr>
+<tr>
+<td><a href="https://nla.gov.au/nla.obj-140670968">Postcard portraits of actresses, and of Australian towns, 1900s</a></td>
+<td><a href="https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-140670968-v3-manifest.json">nla.obj-224441858-v3-manifest.json</a></td>
+<td><a href="https://uv-v3.netlify.app/#?c=&amp;m=&amp;s=&amp;cv=54&amp;manifest=https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-140670968-v3-manifest.json">view in UV3</a></td>
+<td><a href="https://projectmirador.org/embed/?iiif-content=https://raw.githubusercontent.com/wragge/iiif-tests/main/nla.obj-140670968-v3-manifest.json">view in Mirador</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -7544,23 +7570,19 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">mimetypes</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">import</span> <span class="nn">ipynbname</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
 <span class="kn">import</span> <span class="nn">requests_cache</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">iiif_prezi3</span> <span class="kn">import</span> <span class="n">Manifest</span><span class="p">,</span> <span class="n">Range</span><span class="p">,</span> <span class="n">config</span>
+<span class="kn">from</span> <span class="nn">iiif_prezi.factory</span> <span class="kn">import</span> <span class="n">ManifestFactory</span>
 <span class="kn">from</span> <span class="nn">requests.adapters</span> <span class="kn">import</span> <span class="n">HTTPAdapter</span>
 <span class="kn">from</span> <span class="nn">requests.packages.urllib3.util.retry</span> <span class="kn">import</span> <span class="n">Retry</span>
-<span class="kn">from</span> <span class="nn">rocrate.rocrate</span> <span class="kn">import</span> <span class="n">ContextEntity</span><span class="p">,</span> <span class="n">ROCrate</span>
-<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">requests_cache</span><span class="o">.</span><span class="n">CachedSession</span><span class="p">(</span><span class="n">expire_after</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
 <span class="n">retries</span> <span class="o">=</span> <span class="n">Retry</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">status_forcelist</span><span class="o">=</span><span class="p">[</span><span class="mi">502</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">504</span><span class="p">])</span>
@@ -7581,40 +7603,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">prepare_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Make sure nla.obj identifiers are properly formatted urls.</span>
-<span class="sd">    """</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"https?://nla/"</span><span class="p">,</span> <span class="s2">"https://nla.gov.au/"</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"//"</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"http"</span><span class="p">):</span>
-        <span class="c1"># print(url)</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">url</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">return</span> <span class="n">url</span>
-
-
-<span class="k">def</span> <span class="nf">get_work_data</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Extract work data in a JSON string from the work's HTML page.</span>
-<span class="sd">    """</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">prepare_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">work_data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
-                <span class="sa">r</span><span class="s2">"var work = JSON\.parse\(JSON\.stringify\((\{.*\})"</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
-            <span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-            <span class="n">work_data</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">"</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-        <span class="n">work_data</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">"</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">response</span><span class="o">.</span><span class="n">from_cache</span><span class="p">:</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">work_data</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># GETTING DATA FROM TROVE</span>
 
 
 <span class="k">def</span> <span class="nf">harvest_collection_items</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">include_subcollections</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -7657,15 +7646,25 @@ a.anchor-link {
             <span class="c1"># If it has children, harvest items from the subcollection</span>
             <span class="k">if</span> <span class="n">has_children</span> <span class="ow">and</span> <span class="n">include_subcollections</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
                 <span class="n">item_type</span> <span class="o">=</span> <span class="s2">"collection"</span>
-                <span class="n">items</span> <span class="o">+=</span> <span class="n">harvest_collection_items</span><span class="p">(</span><span class="n">item_id</span><span class="p">,</span> <span class="n">include_subcollections</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="c1"># items += harvest_collection_items(item_id, include_subcollections=True)</span>
+                <span class="n">children</span> <span class="o">=</span> <span class="n">harvest_collection_items</span><span class="p">(</span>
+                    <span class="n">item_id</span><span class="p">,</span> <span class="n">include_subcollections</span><span class="o">=</span><span class="kc">True</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">children</span> <span class="o">=</span> <span class="p">[]</span>
 
             <span class="c1"># Save the item</span>
             <span class="c1"># The parent_id will enable us to identify items that are in subcollections</span>
             <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="p">{</span><span class="s2">"item_id"</span><span class="p">:</span> <span class="n">item_id</span><span class="p">,</span> <span class="s2">"item_type"</span><span class="p">:</span> <span class="n">item_type</span><span class="p">,</span> <span class="s2">"parent_id"</span><span class="p">:</span> <span class="n">collection_id</span><span class="p">}</span>
+                <span class="p">{</span>
+                    <span class="s2">"item_id"</span><span class="p">:</span> <span class="n">item_id</span><span class="p">,</span>
+                    <span class="s2">"item_type"</span><span class="p">:</span> <span class="n">item_type</span><span class="p">,</span>
+                    <span class="s2">"parent_id"</span><span class="p">:</span> <span class="n">collection_id</span><span class="p">,</span>
+                    <span class="s2">"children"</span><span class="p">:</span> <span class="n">children</span><span class="p">,</span>
+                <span class="p">}</span>
             <span class="p">)</span>
-
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">response</span><span class="o">.</span><span class="n">from_cache</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
         <span class="c1"># Increment the startIdx</span>
         <span class="n">start</span> <span class="o">+=</span> <span class="n">n</span>
         <span class="c1"># Set n to the number of results on the current page</span>
@@ -7673,103 +7672,503 @@ a.anchor-link {
     <span class="k">return</span> <span class="n">items</span>
 
 
-<span class="k">def</span> <span class="nf">create_rocrate</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">,</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">prepare_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Create an RO-Crate metadata file describing the downloaded dataset.</span>
+<span class="sd">    Make sure nla.obj identifiers are properly formatted urls.</span>
 <span class="sd">    """</span>
-    <span class="n">crate</span> <span class="o">=</span> <span class="n">ROCrate</span><span class="p">()</span>
-    <span class="n">crate</span><span class="o">.</span><span class="n">add_tree</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span>
-    <span class="n">nb_path</span> <span class="o">=</span> <span class="n">ipynbname</span><span class="o">.</span><span class="n">path</span><span class="p">()</span>
-    <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nb_path</span><span class="p">,</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
-    <span class="n">metadata</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">rocrate</span>
-    <span class="n">nb_url</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"url"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
-    <span class="n">nb_properties</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">"@type"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"File"</span><span class="p">,</span> <span class="s2">"SoftwareSourceCode"</span><span class="p">],</span>
-        <span class="s2">"name"</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
-        <span class="s2">"description"</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"description"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
-        <span class="s2">"encodingFormat"</span><span class="p">:</span> <span class="s2">"application/x-ipynb+json"</span><span class="p">,</span>
-        <span class="s2">"codeRepository"</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"codeRepository"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
-        <span class="s2">"url"</span><span class="p">:</span> <span class="n">nb_url</span><span class="p">,</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"https?://nla/"</span><span class="p">,</span> <span class="s2">"https://nla.gov.au/"</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"//"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"http"</span><span class="p">):</span>
+        <span class="c1"># print(url)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">url</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="n">url</span>
+
+
+<span class="k">def</span> <span class="nf">get_work_data</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Extract work data in a JSON string from the work's HTML page.</span>
+<span class="sd">    """</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">prepare_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">work_data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+                <span class="sa">r</span><span class="s2">"var work = JSON\.parse\(JSON\.stringify\((\{.*\})"</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">work_data</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">"</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">work_data</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">response</span><span class="o">.</span><span class="n">from_cache</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">work_data</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_page_title</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Extract the value of the title tag from a HTML page.</span>
+<span class="sd">    """</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">prepare_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">string</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">return</span> <span class="s2">"No title"</span>
+
+
+<span class="c1"># METADATA PROCESSING FOR BOTH V2 and V3</span>
+
+
+<span class="k">def</span> <span class="nf">clean_date</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Extract the year from a date string.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d</span><span class="si">{4}</span><span class="s2">$"</span><span class="p">,</span> <span class="n">date</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">return</span> <span class="n">year</span>
+
+
+<span class="k">def</span> <span class="nf">get_date_range</span><span class="p">(</span><span class="n">metadata</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Get the year from start and end date fields (if they exist).</span>
+<span class="sd">    Save the values to a list.</span>
+<span class="sd">    """</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">clean_date</span><span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"startDate"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)),</span>
+        <span class="n">clean_date</span><span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"endDate"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)),</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dates</span> <span class="k">if</span> <span class="n">d</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">round_dimensions</span><span class="p">(</span><span class="n">dimensions</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">5000</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Round dimensions to a given maximum.</span>
+<span class="sd">    Images in Trove normally have a limit of 5000 pixels on longest dimension,</span>
+<span class="sd">    but the dimensions in the metadata are often larger. This reduces the dimensions</span>
+<span class="sd">    in the metadata to relect the likely size of the downloadable image.</span>
+<span class="sd">    """</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">dimensions</span><span class="p">[</span><span class="s2">"height"</span><span class="p">]</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">dimensions</span><span class="p">[</span><span class="s2">"width"</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">height</span> <span class="o">&lt;=</span> <span class="nb">max</span> <span class="ow">and</span> <span class="n">width</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">dimensions</span>
+    <span class="k">if</span> <span class="n">height</span> <span class="o">&gt;</span> <span class="n">width</span><span class="p">:</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="nb">max</span> <span class="o">/</span> <span class="n">height</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="nb">max</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="n">ratio</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="nb">max</span> <span class="o">/</span> <span class="n">width</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="nb">max</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">height</span> <span class="o">*</span> <span class="n">ratio</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"height"</span><span class="p">:</span> <span class="n">height</span><span class="p">,</span> <span class="s2">"width"</span><span class="p">:</span> <span class="n">width</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">get_dimensions</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Get the dimensions of the image access copy from item metadata.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="n">item_metadata</span><span class="p">[</span><span class="s2">"copies"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"technicalmetadata"</span><span class="p">]</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="n">round_dimensions</span><span class="p">(</span><span class="n">dimensions</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"height"</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span> <span class="s2">"width"</span><span class="p">:</span> <span class="mi">5000</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">dimensions</span>
+
+
+<span class="k">def</span> <span class="nf">prepare_item_title</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">using_parent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Combine item title and other metadata to create a suitable title for a canvas.</span>
+<span class="sd">    If available, the title will include:</span>
+<span class="sd">    - subUnit info (eg Item 1001)</span>
+<span class="sd">    - page number</span>
+<span class="sd">    """</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">item_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"title"</span><span class="p">,</span> <span class="s2">"No title"</span><span class="p">)</span>
+    <span class="n">sub_unit</span> <span class="o">=</span> <span class="p">[</span><span class="n">item_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"subUnitType"</span><span class="p">),</span> <span class="n">item_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"subUnitNo"</span><span class="p">)]</span>
+    <span class="n">sub_unit</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sub_unit</span> <span class="k">if</span> <span class="n">s</span><span class="p">]</span>
+    <span class="n">sub_unit_str</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sub_unit</span> <span class="k">if</span> <span class="n">s</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">sub_unit_str</span> <span class="ow">and</span> <span class="n">using_parent</span><span class="p">:</span>
+        <span class="n">sub_unit_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">sub_unit_str</span><span class="si">}</span><span class="s2">, page </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">elif</span> <span class="n">using_parent</span> <span class="ow">or</span> <span class="n">item_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"form"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"Book"</span><span class="p">:</span>
+        <span class="n">sub_unit_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"page </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="n">sub_unit_str</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">sub_unit_str</span><span class="si">}</span><span class="s2">)"</span>
+    <span class="k">return</span> <span class="n">title</span>
+
+
+<span class="k">def</span> <span class="nf">prepare_collection_title</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Combine item title and other metadata to create a suitable title for a range.</span>
+<span class="sd">    If available, the title will include:</span>
+<span class="sd">    - subUnit info (eg Series 1)</span>
+<span class="sd">    - number of child ranges</span>
+<span class="sd">    - number of child canvases</span>
+<span class="sd">    """</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">item_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"title"</span><span class="p">,</span> <span class="s2">"No title"</span><span class="p">)</span>
+    <span class="n">sub_unit</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">item_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"subUnitType"</span><span class="p">),</span>
+        <span class="n">item_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"subUnitNo"</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="n">sub_unit_str</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sub_unit</span> <span class="k">if</span> <span class="n">s</span><span class="p">])</span>
+    <span class="n">sc_num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="s2">"children"</span><span class="p">]</span> <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s2">"item_type"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"collection"</span><span class="p">])</span>
+    <span class="n">page_num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="s2">"children"</span><span class="p">]</span> <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s2">"item_type"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"item"</span><span class="p">])</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">sub_unit_str</span><span class="p">:</span>
+        <span class="n">contents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sub_unit_str</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">sc_num</span><span class="p">:</span>
+        <span class="n">contents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">sc_num</span><span class="si">}</span><span class="s2"> items"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">page_num</span><span class="p">:</span>
+        <span class="n">contents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">page_num</span><span class="si">}</span><span class="s2"> pages"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">contents</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
+    <span class="k">return</span> <span class="n">title</span>
+
+
+<span class="k">def</span> <span class="nf">prepare_metadata</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Extract useful metadata from the item metadata and save to</span>
+<span class="sd">    a dict for addition to manifest.</span>
+<span class="sd">    """</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"form"</span><span class="p">,</span>
+        <span class="s2">"creator"</span><span class="p">:</span> <span class="s2">"creator"</span><span class="p">,</span>
+        <span class="s2">"publisher"</span><span class="p">:</span> <span class="s2">"publisherName"</span><span class="p">,</span>
+        <span class="s2">"extent"</span><span class="p">:</span> <span class="s2">"extent"</span><span class="p">,</span>
+        <span class="s2">"rights"</span><span class="p">:</span> <span class="s2">"rights"</span><span class="p">,</span>
+        <span class="s2">"call number"</span><span class="p">:</span> <span class="s2">"holdingNumber"</span><span class="p">,</span>
     <span class="p">}</span>
-    <span class="n">crate</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ContextEntity</span><span class="p">(</span><span class="n">crate</span><span class="p">,</span> <span class="n">nb_url</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="n">nb_properties</span><span class="p">))</span>
-    <span class="n">action_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">nb_path</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">_run"</span>
-    <span class="n">action_properties</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">"@type"</span><span class="p">:</span> <span class="s2">"CreateAction"</span><span class="p">,</span>
-        <span class="s2">"instrument"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"@id"</span><span class="p">:</span> <span class="n">nb_url</span><span class="p">},</span>
-        <span class="s2">"actionStatus"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"@id"</span><span class="p">:</span> <span class="s2">"http://schema.org/CompletedActionStatus"</span><span class="p">},</span>
-        <span class="s2">"name"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Run of notebook: </span><span class="si">{</span><span class="n">nb_path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
-        <span class="s2">"result"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"@id"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">dir_path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">/"</span><span class="p">},</span>
-        <span class="s2">"query"</span><span class="p">:</span> <span class="n">collection_id</span><span class="p">,</span>
-        <span class="s2">"startDate"</span><span class="p">:</span> <span class="n">start_date</span><span class="p">,</span>
-        <span class="s2">"endDate"</span><span class="p">:</span> <span class="n">end_date</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="n">crate</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ContextEntity</span><span class="p">(</span><span class="n">crate</span><span class="p">,</span> <span class="n">action_id</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="n">action_properties</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">dir_path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"*.jpg"</span><span class="p">):</span>
-        <span class="n">encoding</span> <span class="o">=</span> <span class="n">mimetypes</span><span class="o">.</span><span class="n">guess_type</span><span class="p">(</span><span class="n">img</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">stats</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span>
-        <span class="n">size</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">st_size</span>
-        <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">st_mtime</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2">"</span><span class="p">)</span>
-        <span class="n">crate</span><span class="o">.</span><span class="n">update_jsonld</span><span class="p">(</span>
-            <span class="p">{</span>
-                <span class="s2">"@id"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"images/</span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
-                <span class="s2">"dateModified"</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
-                <span class="s2">"contentSize"</span><span class="p">:</span> <span class="n">size</span><span class="p">,</span>
-                <span class="s2">"encodingFormat"</span><span class="p">:</span> <span class="n">encoding</span><span class="p">,</span>
-            <span class="p">}</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">fields</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">val</span> <span class="o">:=</span> <span class="n">item_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="n">get_date_range</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dates</span><span class="p">:</span>
+        <span class="n">metadata</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"-"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">metadata</span>
+
+
+<span class="c1"># CODE FOR IIIF PRESENTATION API V3</span>
+
+
+<span class="k">def</span> <span class="nf">add_metadata_v3</span><span class="p">(</span><span class="n">iiif_obj</span><span class="p">,</span> <span class="n">item_metadata</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Add metadata from the item to the IIIF object.</span>
+<span class="sd">    """</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">prepare_metadata</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">metadata</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">iiif_obj</span><span class="o">.</span><span class="n">add_metadata</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">add_item_to_manifest</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Add an item as a canvas to the manifest.</span>
+<span class="sd">    """</span>
+    <span class="n">using_parent</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">item_id</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">"item_id"</span><span class="p">]</span>
+    <span class="n">item_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s2">"</span>
+
+    <span class="n">item_metadata</span> <span class="o">=</span> <span class="n">get_work_data</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+
+    <span class="c1"># Presence of 'copies' indicates there's an image attached.</span>
+    <span class="c1"># This will include both items and 'collections' that have images</span>
+    <span class="c1"># attached that are not included amonst its children.</span>
+    <span class="k">if</span> <span class="s2">"copies"</span> <span class="ow">in</span> <span class="n">item_metadata</span><span class="p">:</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="n">get_dimensions</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">)</span>
+
+        <span class="c1"># If there's no title in the item metadata, it's</span>
+        <span class="c1"># probably the child of a subcollection.</span>
+        <span class="c1"># Use the parent metadata instead.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">item_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"title"</span><span class="p">):</span>
+            <span class="n">using_parent</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">item_metadata</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">"parent"</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="n">item_metadata</span> <span class="o">=</span> <span class="n">get_work_data</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">"parent_id"</span><span class="p">])</span>
+
+        <span class="n">title</span> <span class="o">=</span> <span class="n">prepare_item_title</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">using_parent</span><span class="p">)</span>
+
+        <span class="c1"># Create the canvas and add metadata</span>
+        <span class="n">canvas</span> <span class="o">=</span> <span class="n">manifest</span><span class="o">.</span><span class="n">make_canvas</span><span class="p">(</span>
+            <span class="nb">id</span><span class="o">=</span><span class="n">item_url</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
         <span class="p">)</span>
-    <span class="n">crate</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dir_path</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
-    <span class="n">crate</span><span class="o">.</span><span class="n">write_zip</span><span class="p">(</span><span class="n">dir_path</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">set_hwd</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="n">dimensions</span><span class="p">[</span><span class="s2">"height"</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="n">dimensions</span><span class="p">[</span><span class="s2">"width"</span><span class="p">])</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">add_thumbnail</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">item_url</span><span class="si">}</span><span class="s2">-t"</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">"image/jpeg"</span><span class="p">)</span>
+        <span class="n">add_homepage</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">item_id</span><span class="p">)</span>
+        <span class="n">add_metadata_v3</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">item_metadata</span><span class="p">)</span>
+
+        <span class="c1"># Add the image to the canvas</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span>
+            <span class="n">image_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">item_url</span><span class="si">}</span><span class="s2">/image"</span><span class="p">,</span>
+            <span class="n">anno_page_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">item_url</span><span class="si">}</span><span class="s2">/page/"</span><span class="p">,</span>
+            <span class="n">anno_id</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">item_url</span><span class="si">}</span><span class="s2">/annotation/"</span><span class="p">,</span>
+            <span class="nb">format</span><span class="o">=</span><span class="s2">"image/jpeg"</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="n">dimensions</span><span class="p">[</span><span class="s2">"height"</span><span class="p">],</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">dimensions</span><span class="p">[</span><span class="s2">"width"</span><span class="p">],</span>
+        <span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">download_image</span><span class="p">(</span><span class="n">item_id</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">,</span> <span class="n">not_available</span><span class="p">):</span>
-    <span class="n">file_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s2">.jpg"</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">file_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s2">/image"</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-        <span class="c1"># Exclude 404 responses and 'not available' images</span>
-        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span> <span class="ow">and</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span> <span class="o">!=</span> <span class="n">not_available</span><span class="p">:</span>
-            <span class="n">file_path</span><span class="o">.</span><span class="n">write_bytes</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add_items</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Loop through collection items adding them as canvases to the manifest.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">add_item_to_manifest</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+        <span class="c1"># Items can be nested in subcollections, so recurse back through children.</span>
+        <span class="n">add_items</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s2">"children"</span><span class="p">])</span>
 
 
-<span class="k">def</span> <span class="nf">download_images</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">create_crate</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add_range</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Create a range from a subcollection.</span>
+<span class="sd">    """</span>
+    <span class="n">item_id</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">"item_id"</span><span class="p">]</span>
+    <span class="n">item_metadata</span> <span class="o">=</span> <span class="n">get_work_data</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+    <span class="c1"># Some 'collections' have images attached that aren't amongst their children</span>
+    <span class="c1"># If there's a 'copies' attribute in the metadata, we'll add the item as one of it's own children</span>
+    <span class="k">if</span> <span class="s2">"copies"</span> <span class="ow">in</span> <span class="n">item_metadata</span><span class="p">:</span>
+        <span class="n">item</span><span class="p">[</span><span class="s2">"children"</span><span class="p">]</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">{</span><span class="s2">"item_id"</span><span class="p">:</span> <span class="n">item_id</span><span class="p">,</span> <span class="s2">"item_type"</span><span class="p">:</span> <span class="s2">"item"</span><span class="p">})</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">prepare_collection_title</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">Range</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s2">/range"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="s2">"children"</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">child</span><span class="p">[</span><span class="s2">"item_type"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"collection"</span><span class="p">:</span>
+            <span class="n">rng</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="n">add_range</span><span class="p">(</span><span class="n">child</span><span class="p">))</span>
 
-    <span class="c1"># Set up a directory to save the images to</span>
-    <span class="n">dir_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"images"</span><span class="p">,</span> <span class="n">collection_id</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">)</span>
-    <span class="n">dir_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">child</span><span class="p">[</span><span class="s2">"item_type"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"item"</span><span class="p">:</span>
+            <span class="n">child_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">child</span><span class="p">[</span><span class="s1">'item_id'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+            <span class="n">rng</span><span class="o">.</span><span class="n">add_item</span><span class="p">({</span><span class="s2">"id"</span><span class="p">:</span> <span class="n">child_id</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">rng</span>
 
-    <span class="c1"># Load a 'not available' image to compare with what we download</span>
-    <span class="c1"># If the bytes match then we won't save it</span>
-    <span class="n">not_available</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"not_available.jpg"</span><span class="p">)</span><span class="o">.</span><span class="n">read_bytes</span><span class="p">()</span>
 
-    <span class="c1"># Get the image identifiers</span>
-    <span class="n">items</span> <span class="o">=</span> <span class="n">harvest_collection_items</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">include_subcollections</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
-        <span class="n">item_id</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">"item_id"</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s2">"item_type"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"item"</span><span class="p">:</span>
-            <span class="n">download_image</span><span class="p">(</span><span class="n">item_id</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">,</span> <span class="n">not_available</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add_ranges</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Work through a list of collection items, adding ranges</span>
+<span class="sd">    for any subcollections.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s2">"item_type"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"collection"</span><span class="p">:</span>
-            <span class="c1"># Sometimes items with children also have images that aren't included amongst the children!!</span>
-            <span class="c1"># We need to look at the embedded metadata to check for copies</span>
-            <span class="n">metadata</span> <span class="o">=</span> <span class="n">get_work_data</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
-            <span class="k">if</span> <span class="s2">"copies"</span> <span class="ow">in</span> <span class="n">metadata</span><span class="p">:</span>
-                <span class="n">download_image</span><span class="p">(</span><span class="n">item_id</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">,</span> <span class="n">not_available</span><span class="p">)</span>
-    <span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">create_crate</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">create_rocrate</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">,</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
-        <span class="n">display</span><span class="p">(</span>
-            <span class="n">HTML</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">"Download dataset: &lt;a href='images/</span><span class="si">{</span><span class="n">collection_id</span><span class="si">}</span><span class="s2">.zip', download&gt;images/</span><span class="si">{</span><span class="n">collection_id</span><span class="si">}</span><span class="s2">.zip&lt;/a&gt;"</span>
-            <span class="p">)</span>
+            <span class="n">mf</span><span class="o">.</span><span class="n">add_range</span><span class="p">(</span><span class="n">add_range</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">add_homepage</span><span class="p">(</span><span class="n">iiif_obj</span><span class="p">,</span> <span class="n">trove_id</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Add a Trove url in a homepage record attached to the supplied IIIF object.</span>
+<span class="sd">    """</span>
+    <span class="n">homepage</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"id"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">trove_id</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"Text"</span><span class="p">,</span>
+        <span class="s2">"label"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"en"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"View in Trove"</span><span class="p">]},</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="s2">"text/html"</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">iiif_obj</span><span class="o">.</span><span class="n">homepage</span> <span class="o">=</span> <span class="n">homepage</span>
+
+
+<span class="k">def</span> <span class="nf">create_manifest_v3</span><span class="p">(</span><span class="n">coll_id</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Build a manifest conforming to v3 of the IIIF Presentation API.</span>
+<span class="sd">    Harvests metadata from all the items within the specified collection,</span>
+<span class="sd">    and assembles them as a manifest, with each digitised image included as a canvas.</span>
+<span class="sd">    """</span>
+    <span class="n">coll_metadata</span> <span class="o">=</span> <span class="n">get_work_data</span><span class="p">(</span><span class="n">coll_id</span><span class="p">)</span>
+
+    <span class="c1"># If there's no metadata in the page (such as with a finding aid)</span>
+    <span class="c1"># get the page title.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">coll_metadata</span><span class="p">:</span>
+        <span class="n">coll_metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span> <span class="n">get_page_title</span><span class="p">(</span><span class="n">coll_id</span><span class="p">)}</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s2">"helpers.auto_fields.AutoLang"</span><span class="p">]</span><span class="o">.</span><span class="n">auto_lang</span> <span class="o">=</span> <span class="s2">"en"</span>
+
+    <span class="c1"># Construct the manifest and add metadata</span>
+    <span class="k">if</span> <span class="n">repo</span><span class="p">:</span>
+        <span class="n">manifest_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">repo</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">coll_id</span><span class="si">}</span><span class="s2">-v3-manifest.json"</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">manifest_id</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"https://glam-workbench.net/trove-images/</span><span class="si">{</span><span class="n">coll_id</span><span class="si">}</span><span class="s2">-v3-manifest.json"</span>
         <span class="p">)</span>
+    <span class="n">manifest</span> <span class="o">=</span> <span class="n">Manifest</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">manifest_id</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">coll_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"title"</span><span class="p">,</span> <span class="s2">"No title"</span><span class="p">))</span>
+    <span class="n">manifest</span><span class="o">.</span><span class="n">summary</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"This manifest was generated on </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'</span><span class="si">%d</span><span class="s1"> %b %Y'</span><span class="p">)</span><span class="si">}</span><span class="s2"> by harvesting collection metadata from the Trove website."</span>
+    <span class="n">add_homepage</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">coll_id</span><span class="p">)</span>
+    <span class="n">add_metadata_v3</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">coll_metadata</span><span class="p">)</span>
+
+    <span class="c1"># Get items in this collection and construct item list and range structures.</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">harvest_collection_items</span><span class="p">(</span><span class="n">coll_id</span><span class="p">,</span> <span class="n">include_subcollections</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">add_items</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+    <span class="n">add_ranges</span><span class="p">(</span><span class="n">manifest</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+
+    <span class="c1"># print(manifest.json(indent=2))</span>
+    <span class="n">Path</span><span class="p">(</span><span class="s2">"manifests"</span><span class="p">)</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">Path</span><span class="p">(</span><span class="s2">"manifests"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">coll_id</span><span class="si">}</span><span class="s2">-v3-manifest.json"</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">manifest</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+
+<span class="c1"># CODE FOR IIIF V2 PRESENTATION API</span>
+
+
+<span class="k">def</span> <span class="nf">add_metadata_v2</span><span class="p">(</span><span class="n">iiif_obj</span><span class="p">,</span> <span class="n">item_metadata</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Add metadata to an v2 IIIF object (manifest or canvas)</span>
+<span class="sd">    """</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">prepare_metadata</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+        <span class="n">iiif_obj</span><span class="o">.</span><span class="n">set_metadata</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">add_item_to_seq</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Add a canvas to the sequence of canvases.</span>
+<span class="sd">    Obtains metadata for the given item, then uses this</span>
+<span class="sd">    to create a canvas.</span>
+<span class="sd">    """</span>
+    <span class="n">item_id</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">"item_id"</span><span class="p">]</span>
+    <span class="n">item_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s2">"</span>
+    <span class="n">item_metadata</span> <span class="o">=</span> <span class="n">get_work_data</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+
+    <span class="c1"># Presence of 'copies' indicates there's an image attached.</span>
+    <span class="c1"># This will include both items and 'collections' that have images</span>
+    <span class="c1"># attached that are not included amonst its children.</span>
+    <span class="k">if</span> <span class="s2">"copies"</span> <span class="ow">in</span> <span class="n">item_metadata</span><span class="p">:</span>
+        <span class="n">using_parent</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="n">get_dimensions</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">)</span>
+
+        <span class="c1"># If there's no title in the item metadata, it's</span>
+        <span class="c1"># probably the child of a subcollection.</span>
+        <span class="c1"># Use the parent metadata instead.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">item_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"title"</span><span class="p">):</span>
+            <span class="n">using_parent</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">item_metadata</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">"parent"</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="n">item_metadata</span> <span class="o">=</span> <span class="n">get_work_data</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">"parent_id"</span><span class="p">])</span>
+
+        <span class="c1"># Build the Canvas and add metadata</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">prepare_item_title</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">using_parent</span><span class="p">)</span>
+        <span class="n">canvas</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">canvas</span><span class="p">(</span><span class="n">ident</span><span class="o">=</span><span class="n">item_url</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">set_hw</span><span class="p">(</span><span class="n">dimensions</span><span class="p">[</span><span class="s2">"height"</span><span class="p">],</span> <span class="n">dimensions</span><span class="p">[</span><span class="s2">"width"</span><span class="p">])</span>
+        <span class="n">add_metadata_v2</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">item_metadata</span><span class="p">)</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">thumbnail</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"@id"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">item_url</span><span class="si">}</span><span class="s2">-t"</span><span class="p">}</span>
+
+        <span class="c1"># Add image info to the canvas</span>
+        <span class="n">anno</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">annotation</span><span class="p">(</span><span class="n">ident</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">item_url</span><span class="si">}</span><span class="s2">/view"</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">anno</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">ident</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">item_url</span><span class="si">}</span><span class="s2">/image"</span><span class="p">,</span> <span class="n">iiif</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">img</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s2">"image/jpeg"</span>
+        <span class="n">img</span><span class="o">.</span><span class="n">set_hw</span><span class="p">(</span><span class="n">dimensions</span><span class="p">[</span><span class="s2">"height"</span><span class="p">],</span> <span class="n">dimensions</span><span class="p">[</span><span class="s2">"width"</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">seq</span>
+
+
+<span class="k">def</span> <span class="nf">build_sequence</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Build a list or sequence of canvases which will be added to the manifest.</span>
+<span class="sd">    A canvas is generated for each item in the collection.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">seq</span> <span class="o">=</span> <span class="n">add_item_to_seq</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+        <span class="c1"># Recurse back through children to add nested canvases</span>
+        <span class="n">build_sequence</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s2">"children"</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">build_structure</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">toc</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Build a Table of Contents structure listing subcollections (if any).</span>
+<span class="sd">    This consistents of a series of 'ranges'. Each range can contain more ranges, as</span>
+<span class="sd">    well as canvases. There's no a lot of documentation about this, so there might be easier</span>
+<span class="sd">    approaches, but it seems to work ok.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="n">item_id</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">"item_id"</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s2">"item_type"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"collection"</span><span class="p">:</span>
+            <span class="c1"># Get metadata from the sub-collection web page</span>
+            <span class="n">item_metadata</span> <span class="o">=</span> <span class="n">get_work_data</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+            <span class="c1"># Some 'collections' have images attached that aren't amongst their children</span>
+            <span class="c1"># If there's a 'copies' attribute in the metadata, we'll add the item as one of it's own children</span>
+            <span class="k">if</span> <span class="s2">"copies"</span> <span class="ow">in</span> <span class="n">item_metadata</span><span class="p">:</span>
+                <span class="n">item</span><span class="p">[</span><span class="s2">"children"</span><span class="p">]</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">{</span><span class="s2">"item_id"</span><span class="p">:</span> <span class="n">item_id</span><span class="p">,</span> <span class="s2">"item_type"</span><span class="p">:</span> <span class="s2">"item"</span><span class="p">})</span>
+            <span class="c1"># Prepare a title for the range</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">prepare_collection_title</span><span class="p">(</span><span class="n">item_metadata</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+            <span class="c1"># Create the range wihin the manifest</span>
+            <span class="n">rng</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="n">ident</span><span class="o">=</span><span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s2">/range"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+            <span class="c1"># The toc is a top-level range which will be displayed in navigation</span>
+            <span class="k">if</span> <span class="n">toc</span><span class="p">:</span>
+                <span class="n">toc</span><span class="o">.</span><span class="n">add_range</span><span class="p">(</span><span class="n">rng</span><span class="p">)</span>
+            <span class="c1"># Loop through the children of this subcollection</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="s2">"children"</span><span class="p">]:</span>
+                <span class="n">child_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">child</span><span class="p">[</span><span class="s1">'item_id'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+                <span class="c1"># Add child ranges to this range</span>
+                <span class="k">if</span> <span class="n">child</span><span class="p">[</span><span class="s2">"item_type"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"collection"</span><span class="p">:</span>
+                    <span class="n">rng</span><span class="o">.</span><span class="n">add_range</span><span class="p">(</span><span class="n">child_id</span><span class="p">)</span>
+                <span class="c1"># Add canvases to this range</span>
+                <span class="k">elif</span> <span class="n">child</span><span class="p">[</span><span class="s2">"item_type"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"item"</span><span class="p">:</span>
+                    <span class="n">rng</span><span class="o">.</span><span class="n">add_canvas</span><span class="p">(</span><span class="n">child_id</span><span class="p">)</span>
+            <span class="c1"># Recurse back through child subcollections adding them all the the manifest</span>
+            <span class="n">build_structure</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s2">"children"</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">create_manifest_v2</span><span class="p">(</span><span class="n">coll_id</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Build a manifest conforming to v2 of the IIIF Presentation API.</span>
+<span class="sd">    Harvests metadata from all the items within the specified collection,</span>
+<span class="sd">    and assembles them as a manifest, with each digitised image included as a canvas.</span>
+<span class="sd">    """</span>
+    <span class="n">coll_metadata</span> <span class="o">=</span> <span class="n">get_work_data</span><span class="p">(</span><span class="n">coll_id</span><span class="p">)</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">harvest_collection_items</span><span class="p">(</span><span class="n">coll_id</span><span class="p">,</span> <span class="n">include_subcollections</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">coll_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">coll_id</span><span class="si">}</span><span class="s2">"</span>
+
+    <span class="n">fac</span> <span class="o">=</span> <span class="n">ManifestFactory</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">coll_metadata</span><span class="p">:</span>
+        <span class="n">coll_metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span> <span class="n">get_page_title</span><span class="p">(</span><span class="n">coll_id</span><span class="p">)}</span>
+
+    <span class="k">if</span> <span class="n">repo</span><span class="p">:</span>
+        <span class="n">manifest_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">repo</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">coll_id</span><span class="si">}</span><span class="s2">-v2-manifest.json"</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">manifest_id</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"https://glam-workbench.net/trove-images/</span><span class="si">{</span><span class="n">coll_id</span><span class="si">}</span><span class="s2">-v2-manifest.json"</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Build the Manifest</span>
+    <span class="n">mf</span> <span class="o">=</span> <span class="n">fac</span><span class="o">.</span><span class="n">manifest</span><span class="p">(</span><span class="n">ident</span><span class="o">=</span><span class="n">manifest_id</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">coll_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"title"</span><span class="p">))</span>
+    <span class="n">add_metadata_v2</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">coll_metadata</span><span class="p">)</span>
+    <span class="n">mf</span><span class="o">.</span><span class="n">attribution</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"National Library of Australia (via Trove). See: https://nla.gov.au/</span><span class="si">{</span><span class="n">coll_id</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span>
+    <span class="n">mf</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"This manifest was generated on </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'</span><span class="si">%d</span><span class="s1"> %b %Y'</span><span class="p">)</span><span class="si">}</span><span class="s2"> by harvesting collection metadata from the Trove website."</span>
+    <span class="n">mf</span><span class="o">.</span><span class="n">related</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"@id"</span><span class="p">:</span> <span class="n">coll_url</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"View in Trove"</span><span class="p">}</span>
+
+    <span class="c1"># And walk through the pages</span>
+    <span class="n">build_sequence</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">sequence</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Normal Order"</span><span class="p">),</span> <span class="n">items</span><span class="p">)</span>
+
+    <span class="c1"># Create a top-level range to display the contents</span>
+    <span class="n">toc</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="n">ident</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">coll_url</span><span class="si">}</span><span class="s2">/toc"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"TOC"</span><span class="p">)</span>
+    <span class="n">toc</span><span class="o">.</span><span class="n">viewingHint</span> <span class="o">=</span> <span class="s2">"top"</span>
+    <span class="c1"># Create ranges for sub-collections</span>
+    <span class="n">build_structure</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">toc</span><span class="p">)</span>
+
+    <span class="n">js</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">toString</span><span class="p">(</span><span class="n">compact</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># print(js)</span>
+    <span class="n">Path</span><span class="p">(</span><span class="s2">"manifests"</span><span class="p">)</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">Path</span><span class="p">(</span><span class="s2">"manifests"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">coll_id</span><span class="si">}</span><span class="s2">-v2-manifest.json"</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">js</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_nbval-skip" id="cell-id=59d316e2-c331-4860-8698-c8c3eccaeb4e">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bf07243d-46ad-4feb-9b05-edca8b6237b2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The cell below converts the collection of <a href="https://nla.gov.au/nla.obj-140670968">Postcard portraits of actresses, and of Australian towns, 1900s</a> to a v3 IIIF manifest.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_nbval-skip" id="cell-id=669076f3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7777,7 +8176,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">download_images</span><span class="p">(</span><span class="s2">"nla.obj-2590820305"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">create_manifest_v3</span><span class="p">(</span><span class="s2">"nla.obj-140670968"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7794,8 +8193,7 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># IGNORE THIS CELL -- TESTING ONLY</span>
 
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"GW_STATUS"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"dev"</span><span class="p">:</span>
-    <span class="c1"># ipynbname won't work in testing env, so don't create the crate</span>
-    <span class="n">download_images</span><span class="p">(</span><span class="s2">"nla.obj-2590820305"</span><span class="p">,</span> <span class="n">create_crate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">create_manifest_v3</span><span class="p">(</span><span class="s2">"nla.obj-140670968"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
