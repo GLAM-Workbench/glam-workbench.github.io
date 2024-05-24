@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This notebook provides a slice and dice wonder tool for Trove newspaper harvests, enabling you to repackage OCRd text by decade, year, and newspaper title. It saves the results as zip files, concatenated text files, or CSV files with embedded text. These repackaged slices should suit a variety of text analysis tools and questions.">
+        <meta name="description" content="The Trove Newspaper Harvester downloads the OCRd text of newspaper articles as individual text files – one file for each article. That's great for exploring the content of individual articles in depth, but sometimes you might want to zoom out and aggregate the files into larger chunks. For example, if you're interested in how language changes over time, you might what to create a separate corpus for each year in the results set. Or perhaps you want to examine differences in the way particular newspapers talk about an event by grouping the articles by newspaper. This notebook provides a slice and dice wonder tool for Trove newspaper harvests, enabling you to repackage OCRd text by decade, year, and newspaper title. It saves the results as zip files, concatenated text files, or CSV files with embedded text. These repackaged slices should suit a variety of text analysis tools and questions.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -81,20 +81,20 @@
             <meta name="dcterms.creator" content="Sherratt, Tim" />
         
         
-            <meta name="dcterms.issued" content="2023-10-25" />
+            <meta name="dcterms.issued" content="2024-05-24" />
         
         
-            <meta name="dcterms.identifier" content="https://doi.org/10.5281/zenodo.10040467" />
+            <meta name="dcterms.identifier" content="https://doi.org/10.5281/zenodo.11273197" />
         
         
-            <meta name="bibo.edition" content="v2.0.1" />
+            <meta name="bibo.edition" content="v2.1.0" />
         
     
 
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Reshaping your newspaper harvest - GLAM Workbench" />
-<meta property="og:description" content="This notebook provides a slice and dice wonder tool for Trove newspaper harvests, enabling you to repackage OCRd text by decade, year, and newspaper title. It saves the results as zip files, concatenated text files, or CSV files with embedded text. These repackaged slices should suit a variety of text analysis tools and questions." />
+<meta property="og:description" content="The Trove Newspaper Harvester downloads the OCRd text of newspaper articles as individual text files – one file for each article. That's great for exploring the content of individual articles in depth, but sometimes you might want to zoom out and aggregate the files into larger chunks. For example, if you're interested in how language changes over time, you might what to create a separate corpus for each year in the results set. Or perhaps you want to examine differences in the way particular newspapers talk about an event by grouping the articles by newspaper. This notebook provides a slice and dice wonder tool for Trove newspaper harvests, enabling you to repackage OCRd text by decade, year, and newspaper title. It saves the results as zip files, concatenated text files, or CSV files with embedded text. These repackaged slices should suit a variety of text analysis tools and questions." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-harvester/reshaping-harvests.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -102,7 +102,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-harvester/reshaping-harvests/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Reshaping your newspaper harvest - GLAM Workbench" />
-<meta property="twitter:description" content="This notebook provides a slice and dice wonder tool for Trove newspaper harvests, enabling you to repackage OCRd text by decade, year, and newspaper title. It saves the results as zip files, concatenated text files, or CSV files with embedded text. These repackaged slices should suit a variety of text analysis tools and questions." />
+<meta property="twitter:description" content="The Trove Newspaper Harvester downloads the OCRd text of newspaper articles as individual text files – one file for each article. That's great for exploring the content of individual articles in depth, but sometimes you might want to zoom out and aggregate the files into larger chunks. For example, if you're interested in how language changes over time, you might what to create a separate corpus for each year in the results set. Or perhaps you want to examine differences in the way particular newspapers talk about an event by grouping the articles by newspaper. This notebook provides a slice and dice wonder tool for Trove newspaper harvests, enabling you to repackage OCRd text by decade, year, and newspaper title. It saves the results as zip files, concatenated text files, or CSV files with embedded text. These repackaged slices should suit a variety of text analysis tools and questions." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-harvester/reshaping-harvests.png" />
 </head>
   
@@ -121,6 +121,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#using-this-notebook" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -286,7 +291,7 @@
 <div class="md-source__repository">
   trove-newspaper-harvester
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v2.0.1</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">7</li>
+  <li class="md-source__fact md-source__fact--version">v2.1.0</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">7</li>
 </ul>
 </div>
 </a>
@@ -417,7 +422,7 @@
 <div class="md-source__repository">
   trove-newspaper-harvester
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v2.0.1</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">7</li>
+  <li class="md-source__fact md-source__fact--version">v2.1.0</li><li class="md-source__fact md-source__fact--stars">5</li><li class="md-source__fact md-source__fact--forks">7</li>
 </ul>
 </div>
 </a>
@@ -11491,6 +11496,58 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-this-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using this notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cite-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cite as
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -11563,7 +11620,42 @@
 
 
 <!-- Markdown content -->
+<p>The Trove Newspaper Harvester downloads the OCRd text of newspaper articles as individual text files – one file for each article. That's great for exploring the content of individual articles in depth, but sometimes you might want to zoom out and aggregate the files into larger chunks. For example, if you're interested in how language changes over time, you might what to create a separate corpus for each year in the results set. Or perhaps you want to examine differences in the way particular newspapers talk about an event by grouping the articles by newspaper. This notebook provides a slice and dice wonder tool for Trove newspaper harvests, enabling you to repackage OCRd text by decade, year, and newspaper title. It saves the results as zip files, concatenated text files, or CSV files with embedded text. These repackaged slices should suit a variety of text analysis tools and questions.</p>
 
+<div class="admonition preview">
+<p class="admonition-title">Preview</p>
+<p><iframe class='nb-preview' src='/trove-harvester/previews/reshaping-harvests.html'></iframe>
+<a href="/trove-harvester/previews/reshaping-harvests.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 4 4 4V4m0 12-4 4h4M8 20l-4-4v4M4 8l4-4H4m12.95 3.05a7.007 7.007 0 0 0-9.9 0 7.007 7.007 0 0 0 0 9.9 7.007 7.007 0 0 0 9.9 0c2.73-2.73 2.73-7.16 0-9.9m-1.1 8.8a5.402 5.402 0 0 1-7.7 0 5.402 5.402 0 0 1 0-7.7 5.402 5.402 0 0 1 7.7 0 5.402 5.402 0 0 1 0 7.7Z"/></svg></span> Expand</a></p>
+</div>
+<h2 id="using-this-notebook">Using this notebook<a class="headerlink" href="#using-this-notebook" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">ARDC Binder</label><label for="__tabbed_1_2">MyBinder</label><label for="__tabbed_1_3">Other options</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To run this notebook using the ARDC Binder service you'll need to log in using an account from an Australian university or research organisation. If you don't have an account, try <a href="#__tabbed_1_2">MyBinder</a> instead.</p>
+<p><a class="md-button md-button--primary" href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-newspaper-harvester/HEAD?urlpath=/lab/tree/reshaping-harvests.ipynb">Run live on ARDC Binder</a></p>
+</div>
+<div class="tabbed-block">
+<p>The MyBinder service doesn't require any authentication, but it can be slow to start and will sometimes fail when busy. If you have a login at an Australian university, you'll probably get better results with <a href="#__tabbed_1_1">ARDC Binder</a>.</p>
+<p><a class="md-button md-button--primary" href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/HEAD?urlpath=/lab/tree/reshaping-harvests.ipynb">Run live on MyBinder</a></p>
+</div>
+<div class="tabbed-block">
+<p>Binder is great for experimentation and quick tasks, but for some projects you might need a dedicated, persistent environment in which to work. There's information on other options in the <a href="../#run-these-notebooks">run these notebooks</a> section.</p>
+</div>
+</div>
+</div>
+<h2 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../#run-these-notebooks">Run these notebooks</a></li>
+</ul>
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
+<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
+<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
+</ul>
+<h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
+<p>Sherratt, Tim. (2024). GLAM-Workbench/trove-newspaper-harvester (version v2.1.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.11273197">https://doi.org/10.5281/zenodo.11273197</a>  </p>
+<p><a href="https://doi.org/10.5281/zenodo.11273197"><img alt="" src="../../assets/external/zenodo.org/badge/DOI/10.5281/zenodo.11273197.svg"></a></p>
 
 <!-- Was this page helpful? -->
 

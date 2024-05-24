@@ -556,6 +556,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://glam-workbench.net/trove-harvester/index-copy/</loc>
+         <lastmod>2024-05-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://glam-workbench.net/trove-harvester/reshaping-harvests/</loc>
          <lastmod>2024-05-24</lastmod>
          <changefreq>daily</changefreq>

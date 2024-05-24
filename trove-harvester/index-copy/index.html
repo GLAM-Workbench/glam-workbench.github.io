@@ -6,19 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This notebook shows some ways in which you can analyse and visualise the article metadata you've harvested — show the distribution of articles over time and space; find which newspapers published the most articles. (Under construction)">
+        <meta name="description" content="The Trove Newspaper & Gazette Harvester makes it easy to download large quantities of digitised articles from Trove's newspapers and gazettes. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis.">
       
       
         <meta name="author" content="Tim Sherratt">
       
       
-        <link rel="canonical" href="https://glam-workbench.net/trove-harvester/exploring-troveharvester-data/">
+        <link rel="canonical" href="https://glam-workbench.net/trove-harvester/index-copy/">
       
       
-        <link rel="prev" href="../display-harvest-results-in-datasette/">
-      
-      
-        <link rel="next" href="../exploring-troveharvester-text/">
       
       
         
@@ -29,7 +25,7 @@
     
     
       
-        <title>Exploring your TroveHarvester data - GLAM Workbench</title>
+        <title>Trove newspaper & gazette harvester - GLAM Workbench</title>
       
     
     
@@ -97,17 +93,17 @@
 
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Exploring your TroveHarvester data - GLAM Workbench" />
-<meta property="og:description" content="This notebook shows some ways in which you can analyse and visualise the article metadata you've harvested — show the distribution of articles over time and space; find which newspapers published the most articles. (Under construction)" />
-<meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-harvester/exploring-troveharvester-data.png" />
+<meta property="og:title" content="Trove newspaper & gazette harvester - GLAM Workbench" />
+<meta property="og:description" content="The Trove Newspaper & Gazette Harvester makes it easy to download large quantities of digitised articles from Trove's newspapers and gazettes. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis." />
+<meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-harvester/index-copy.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://glam-workbench.net/trove-harvester/exploring-troveharvester-data/" />
+<meta property="og:url" content="https://glam-workbench.net/trove-harvester/index-copy/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Exploring your TroveHarvester data - GLAM Workbench" />
-<meta property="twitter:description" content="This notebook shows some ways in which you can analyse and visualise the article metadata you've harvested — show the distribution of articles over time and space; find which newspapers published the most articles. (Under construction)" />
-<meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-harvester/exploring-troveharvester-data.png" />
+<meta property="twitter:title" content="Trove newspaper & gazette harvester - GLAM Workbench" />
+<meta property="twitter:description" content="The Trove Newspaper & Gazette Harvester makes it easy to download large quantities of digitised articles from Trove's newspapers and gazettes. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis." />
+<meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-harvester/index-copy.png" />
 </head>
   
   
@@ -127,7 +123,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-this-notebook" class="md-skip">
+        <a href="#harvesting-search-results" class="md-skip">
           Skip to content
         </a>
       
@@ -163,7 +159,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exploring your TroveHarvester data
+              Trove newspaper & gazette harvester
             
           </span>
         </div>
@@ -316,8 +312,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1624,10 +1618,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1666,11 +1658,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1690,7 +1682,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3087,8 +3079,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3103,11 +3093,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
           
@@ -3135,7 +3125,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3152,10 +3142,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -3174,11 +3162,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
         
           
           <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
@@ -3198,7 +3186,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3321,34 +3309,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    Exploring harvested data
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../exploring-troveharvester-data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3363,68 +3327,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-this-notebook" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using this notebook
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Additional documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Getting help
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cite-as" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cite as
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -11580,9 +11482,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -11599,10 +11499,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-this-notebook" class="md-nav__link">
+  <a href="#harvesting-search-results" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using this notebook
+        Harvesting search results
       
     </span>
   </a>
@@ -11610,10 +11510,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-documentation" class="md-nav__link">
+  <a href="#exploring-your-harvested-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Additional documentation
+        Exploring your harvested data
       
     </span>
   </a>
@@ -11621,10 +11521,93 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-help" class="md-nav__link">
+  <a href="#your-harvested-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Getting help
+        Your harvested data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-these-notebooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run these notebooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run these notebooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-ardc-binder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using ARDC Binder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-binder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Binder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-reclaim-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Reclaim Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-nectar-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Nectar Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-docker-or-podman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Docker or Podman
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributors
       
     </span>
   </a>
@@ -11682,7 +11665,7 @@
 
 
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/trove-harvester/exploring-troveharvester-data.md" title="edit.link.title" class="md-content__button md-icon">
+<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/trove-harvester/index-copy.md" title="edit.link.title" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
 </a>
 
@@ -11693,75 +11676,160 @@
   as the main headline.
 -->
 
-  <h1>Exploring your TroveHarvester data</h1>
+  <h1>Trove newspaper & gazette harvester</h1>
 
 
 <!-- Tags -->
 
   
-  
-
-
-  <nav class="md-tags" >
-    
-      
-      
-      
-      
-        <span class="md-tag">geospatial</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">text analysis</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">visualisation</span>
-      
-    
-  </nav>
 
 
 
 <!-- Markdown content -->
+<h5 id="current-version-v210">Current version: <a href="https://github.com/GLAM-Workbench/trove-newspaper-harvester/releases/tag/v2.1.0">v2.1.0</a><a class="headerlink" href="#current-version-v210" title="Permanent link">&para;</a></h5>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Now updated to work with version 3 of the Trove API!</p>
+</div>
+<p>The Trove Newspaper &amp; Gazette Harvester makes it easy to download large quantities of digitised articles from Trove's newspapers and gazettes. Just give it a search from the Trove web interface, and the harvester will save the metadata of all the articles in a CSV (spreadsheet) file for further analysis. You can also save the full text of every article, as well as copies of the articles as JPG images, and even PDFs. While the web interface will only show you the first 2,000 results matching your search, the Newspaper &amp; Gazette Harvester will get <strong>everything</strong>.</p>
+<p>You can <a href="https://wragge.github.io/trove-newspaper-harvester/">install the Harvester</a> as a Python command line tool, or import it for use as a Python library. The notebooks below provide examples of the different ways you can use the Harvester and the data it creates.</p>
+<p>See below for information on <a href="#run-these-notebooks">running these notebooks</a> in a live computing environment. Or just take them for a spin using Binder.</p>
+<p><a href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-newspaper-harvester/HEAD?urlpath=lab/tree/index.ipynb"><img alt="ARDC Binder" src="../../images/explore-live-on-ardc-binder.svg" /></a>
+<a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/HEAD?urlpath=lab/tree/index.ipynb"><img alt="Binder" src="../../images/Explore%20live%20on-Binder-579ACA.svg" /></a></p>
+<h2 id="harvesting-search-results">Harvesting search results<a class="headerlink" href="#harvesting-search-results" title="Permanent link">&para;</a></h2>
+<h3 id="trove-harvester-web-app"><a href="../harvester-web-app/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg></span> Trove Harvester web app</a><a class="headerlink" href="#trove-harvester-web-app" title="Permanent link">&para;</a></h3>
+<p>A simple web interface to the Trove Newspaper and Gazette Harvester – the easiest and quickest way to download all the results from a Trove newspaper or gazette search.</p>
+<h3 id="using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk"><a href="../using-troveharvester/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg></span> Using TroveHarvester to get newspaper and gazette articles in bulk</a><a class="headerlink" href="#using-troveharvester-to-get-newspaper-and-gazette-articles-in-bulk" title="Permanent link">&para;</a></h3>
+<p>This notebook provides an introduction to the Trove Newspaper and Gazette Harvester command line tool. Edit a few cells and you'll be harvesting metadata and full text of thousands of articles in minutes. This gives you you more control over your harvest than the simple web app, including the ability to restart a failed harvest.</p>
+<h3 id="harvesting-articles-that-mention-anzac-day-on-anzac-day"><a href="../harvest-specific-days/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg></span> Harvesting articles that mention "Anzac Day" on Anzac Day</a><a class="headerlink" href="#harvesting-articles-that-mention-anzac-day-on-anzac-day" title="Permanent link">&para;</a></h3>
+<p>This notebook provides an example of harvesting a complex search by using the <code>trove_newspaper_harvester</code> library directly. It shows how you can loop through a span of years to harvest results from a particular day each year.</p>
+<h2 id="exploring-your-harvested-data">Exploring your harvested data<a class="headerlink" href="#exploring-your-harvested-data" title="Permanent link">&para;</a></h2>
+<h3 id="display-the-results-of-a-harvest-as-a-searchable-database-using-datasette"><a href="../display-harvest-results-in-datasette/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg></span> Display the results of a harvest as a searchable database using Datasette</a><a class="headerlink" href="#display-the-results-of-a-harvest-as-a-searchable-database-using-datasette" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/simonw/datasette">Datasette</a> is 'a tool for exploring and publishing data'. Give it a CSV file and it turns it into a fully-searchable database, running in your browser. It supports facets, full-text search, and, with a bit of tweaking, can even present images. Although Datasette is a command-line tool, we can run from within a Jupyter notebook, and open a new window to display the results. This notebook shows you how to load the newspaper data you've harvested into Datasette, and start it up. If you've also harvested full-text and images from the newspaper articles, you can add these to your database as well!</p>
+<h3 id="exploring-your-troveharvester-data"><a href="../exploring-troveharvester-data/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg></span> Exploring your TroveHarvester data</a><a class="headerlink" href="#exploring-your-troveharvester-data" title="Permanent link">&para;</a></h3>
 <p>This notebook shows some ways in which you can analyse and visualise the article metadata you've harvested — show the distribution of articles over time and space; find which newspapers published the most articles. (Under construction)</p>
-
-<div class="admonition preview">
-<p class="admonition-title">Preview</p>
-<p><iframe class='nb-preview' src='/trove-harvester/previews/Exploring-your-TroveHarvester-data.html'></iframe>
-<a href="/trove-harvester/previews/Exploring-your-TroveHarvester-data.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 4 4 4V4m0 12-4 4h4M8 20l-4-4v4M4 8l4-4H4m12.95 3.05a7.007 7.007 0 0 0-9.9 0 7.007 7.007 0 0 0 0 9.9 7.007 7.007 0 0 0 9.9 0c2.73-2.73 2.73-7.16 0-9.9m-1.1 8.8a5.402 5.402 0 0 1-7.7 0 5.402 5.402 0 0 1 0-7.7 5.402 5.402 0 0 1 7.7 0 5.402 5.402 0 0 1 0 7.7Z"/></svg></span> Expand</a></p>
+<h3 id="exploring-harvested-text-files"><a href="../exploring-troveharvester-text/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg></span> Exploring harvested text files</a><a class="headerlink" href="#exploring-harvested-text-files" title="Permanent link">&para;</a></h3>
+<p>This notebook suggests some ways in which you can aggregate and analyse the individual OCRd text files for each article — look at word frequencies ; calculate TF-IDF values. (Under construction)</p>
+<h2 id="your-harvested-data">Your harvested data<a class="headerlink" href="#your-harvested-data" title="Permanent link">&para;</a></h2>
+<p>When you start a new harvest, the harvester by default looks for a directory called <code>data</code>. Within this directory it creates another directory for your harvest. The name of this directory will reflect the current date/time. The harvester saves your results inside this directory.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You can customise the name and location of the harvest directory using either the Harvester command-line tool, or using the Harvester as a Python library. See the <a href="https://wragge.github.io/trove-newspaper-harvester/">Trove Newspaper Harvester documentation</a> for full details. The <a href="../harvest-specific-days/">Harvesting articles that mention "Anzac Day" on Anzac Day</a> provides an example of this.</p>
 </div>
-<h2 id="using-this-notebook">Using this notebook<a class="headerlink" href="#using-this-notebook" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">ARDC Binder</label><label for="__tabbed_1_2">MyBinder</label><label for="__tabbed_1_3">Other options</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>To run this notebook using the ARDC Binder service you'll need to log in using an account from an Australian university or research organisation. If you don't have an account, try <a href="#__tabbed_1_2">MyBinder</a> instead.</p>
-<p><a class="md-button md-button--primary" href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-newspaper-harvester/HEAD?urlpath=/lab/tree/Exploring-your-TroveHarvester-data.ipynb">Run live on ARDC Binder</a></p>
-</div>
-<div class="tabbed-block">
-<p>The MyBinder service doesn't require any authentication, but it can be slow to start and will sometimes fail when busy. If you have a login at an Australian university, you'll probably get better results with <a href="#__tabbed_1_1">ARDC Binder</a>.</p>
-<p><a class="md-button md-button--primary" href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/HEAD?urlpath=/lab/tree/Exploring-your-TroveHarvester-data.ipynb">Run live on MyBinder</a></p>
-</div>
-<div class="tabbed-block">
-<p>Binder is great for experimentation and quick tasks, but for some projects you might need a dedicated, persistent environment in which to work. There's information on other options in the <a href="../#run-these-notebooks">run these notebooks</a> section.</p>
-</div>
-</div>
-</div>
-<h2 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h2>
+<p>There will be at least three files created for each harvest:</p>
 <ul>
-<li><a href="../#run-these-notebooks">Run these notebooks</a></li>
+<li><code>harvester_config.json</code> a file that captures the parameters used to launch the harvest</li>
+<li><code>ro-crate-metadata.json</code> a metadata file documenting the harvest in <a href="https://www.researchobject.org/ro-crate/">RO-Crate</a> format</li>
+<li><code>results.csv</code> contains details of all the harvested articles in a plain text CSV (Comma Separated Values) file. You can open it with any spreadsheet program.</li>
 </ul>
-<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<p>The details recorded for each article are:</p>
 <ul>
-<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
-<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
-<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
+<li><code>article_id</code> – a unique identifier for the article</li>
+<li><code>title</code> – the title of the article</li>
+<li><code>date</code> – in ISO format, YYYY-MM-DD</li>
+<li><code>page</code> – page number (of course), but might also indicate the page is part of a supplement or special section</li>
+<li><code>newspaper_id</code> – a unique identifier for the newspaper or gazette title (this can be used to retrieve more information or build a link to the web interface)</li>
+<li><code>newspaper_title</code> – the name of the newspaper (or gazette)</li>
+<li><code>category</code> – one of ‘Article’, ‘Advertising’, ‘Detailed lists, results, guides’, ‘Family Notices’, or ‘Literature’</li>
+<li><code>words</code> – number of words in the article</li>
+<li><code>illustrated</code> – is it illustrated (values are y or n)</li>
+<li><code>edition</code> – edition of newspaper (rarely used)</li>
+<li><code>supplement</code> – section of newspaper (rarely used)</li>
+<li><code>section</code> – section of newspaper (rarely used)</li>
+<li><code>url</code> – the persistent url for the article</li>
+<li><code>page_url</code> – the persistent url of the page on which the article is published</li>
+<li><code>snippet</code> – short text sample</li>
+<li><code>relevance</code> – search relevance score of this result</li>
+<li><code>status</code> – some articles that are still being processed will have the status "coming soon" and might be missing other fields</li>
+<li><code>corrections</code> – number of text corrections</li>
+<li><code>last_correction</code> – date of last correction</li>
+<li><code>tags</code> – number of attached tags</li>
+<li><code>comments</code> – number of attached comments</li>
+<li><code>lists</code> – number of lists this article is included in</li>
+<li><code>text</code> – path to text file</li>
+<li><code>pdf</code> – path to PDF file</li>
+<li><code>images</code> – path to image file(s)</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you use the harvester as a Python library, the metadata will be saved in a newline delimited JSON file (one JSON object per line) named <code>results.ndjson</code>, rather than <code>results.csv</code>. You can convert the <code>ndjson</code> file to CSV using the <code>Harvester.save_csv()</code> method. The <code>results.ndjson</code> stores the API results from Trove <em>as is</em>, with a couple of exceptions:</p>
+<ul>
+<li>if the <code>text</code> parameter has been set to <code>True</code>, the <code>articleText</code> field will contain the path to a <code>.txt</code> file containing the OCRd text contents of the article (rather than containing the text itself)</li>
+<li>similarly if PDFs and images are requests, the <code>pdf</code> and <code>image</code> fields int the <code>ndjson</code> file will point to the saved files.</li>
+</ul>
+</div>
+<p>If you’ve asked for text files PDFs or images, there will be additional directories containing those files. Files containing the OCRd text of the articles will be saved in a directory named <code>text</code>. These are just plain text files, stripped on any HTML. These files include some basic metadata in their file titles – the date of the article, the id number of the newspaper, and the id number of the article. So, for example, the filename <code>19460104-1002-206680758.txt</code> tells you:</p>
+<ul>
+<li><code>19460104</code> – the article was published on 4 January 1946 (YYYYMMDD)</li>
+<li><code>1002</code> – the article was published in <a href="https://trove.nla.gov.au/newspaper/title/1002"><em>The Tribune</em></a></li>
+<li><code>206680758</code> – the <a href="http://nla.gov.au/nla.news-article206680758">article's unique identifier</a></li>
+</ul>
+<p>As you can see, you can use the newspaper and article ids to create direct links into Trove:</p>
+<ul>
+<li>to a newspaper or gazette <code>https://trove.nla.gov.au/newspaper/title/[newspaper id]</code></li>
+<li>to an article <code>http://nla.gov.au/nla.news-article[article id]</code></li>
+</ul>
+<p>Similarly, if you've asked for copies of the articles as images, they'll be in a directory named <code>image</code>. The image file names are similar to the text files, but with an extra id number for the page from which the image was extracted. So, for example, the image filename <code>19250411-460-140772994-11900413.jpg</code> tells you:</p>
+<ul>
+<li><code>19250411</code> – the article was published on 11 April 1925 (YYYYMMDD)</li>
+<li><code>460</code> – the article was published in <a href="https://trove.nla.gov.au/newspaper/title/460"><em>The Australasian</em></a></li>
+<li><code>140772994</code> – the <a href="http://nla.gov.au/nla.news-article140772994">article's unique identifier</a></li>
+<li><code>11900413</code> – the <a href="https://trove.nla.gov.au/newspaper/page/11900413">page's unique identifier</a> (some articles can be split over multiple pages)</li>
+</ul>
+<p>Once you have your data you can start exploring! You'll find some Jupyter notebooks above that provide examples of analysing and visualising both the metadata and the full text.</p>
+<h2 id="run-these-notebooks">Run these notebooks<a class="headerlink" href="#run-these-notebooks" title="Permanent link">&para;</a></h2>
+<p>There are a number of different ways to use these notebooks. Binder is quickest and easiest, but it doesn't save your data. I've listed the options below from easiest to most complicated (requiring more technical knowledge).</p>
+<h3 id="using-ardc-binder">Using ARDC Binder<a class="headerlink" href="#using-ardc-binder" title="Permanent link">&para;</a></h3>
+<p><a href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-newspaper-harvester/HEAD?urlpath=lab/tree/index.ipynb"><img alt="Launch on ARDC Binder" src="../../images/launch-ARDC-binder.svg" /></a></p>
+<p>Click on the button above to launch the notebooks in this repository using the <a href="https://mybinder.org/">ARDC Binder</a> service. This is a free service available to researchers in Australian universities. You'll be asked to log in with your university credentials. Note that sessions will close if you stop using the notebooks, and no data will be preserved. Make sure you download any changed notebooks or harvested data that you want to save.</p>
+<p>See <a href="https://glam-workbench.net/using-ardc-binder/">Using ARDC Binder</a> for more details.</p>
+<h3 id="using-binder">Using Binder<a class="headerlink" href="#using-binder" title="Permanent link">&para;</a></h3>
+<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspaper-harvester/master?urlpath=lab/tree/index.md"><img alt="Launch on Binder" src="../../assets/external/mybinder.org/badge_logo.svg"></a></p>
+<p>Click on the button above to launch the notebooks in this repository using the <a href="https://mybinder.org/">Binder</a> service (it might take a little while to load). This is a free service, but note that sessions will close if you stop using the notebooks, and no data will be saved. Make sure you download any changed notebooks or harvested data that you want to save.</p>
+<p>See <a href="https://glam-workbench.net/using-binder/">Using Binder</a> for more details.</p>
+<h3 id="using-reclaim-cloud">Using Reclaim Cloud<a class="headerlink" href="#using-reclaim-cloud" title="Permanent link">&para;</a></h3>
+<p><a href="https://app.my.reclaim.cloud/?manifest=https://raw.githubusercontent.com/GLAM-Workbench/trove-newspaper-harvester/master/reclaim-manifest.jps"><img alt="Launch on Reclaim Cloud" src="../../assets/external/glam-workbench.github.io/images/launch-on-reclaim-cloud.svg"></a></p>
+<p><a href="https://reclaim.cloud/">Reclaim Cloud</a> is a paid hosting service, aimed particularly at supported digital scholarship in hte humanities. Unlike Binder, the environments you create on Reclaim Cloud will save your data – even if you switch them off! To run this repository on Reclaim Cloud for the first time:</p>
+<ul>
+<li>Create a <a href="https://reclaim.cloud/">Reclaim Cloud</a> account and log in.</li>
+<li>Click on the button above to start the installation process.</li>
+<li>A dialogue box will ask you to set a password, this is used to limit access to your Jupyter installation.</li>
+<li>Sit back and wait for the installation to complete!</li>
+<li>Once the installation is finished click on the 'Open in Browser' button of your newly created environment (note that you might need to wait a few minutes before everything is ready).</li>
+</ul>
+<p>See <a href="https://glam-workbench.net/using-reclaim-cloud/">Using Reclaim Cloud</a> for more details.</p>
+<h3 id="using-the-nectar-cloud">Using the Nectar Cloud<a class="headerlink" href="#using-the-nectar-cloud" title="Permanent link">&para;</a></h3>
+<p><img alt="Screenshot of GLAM Workbench application" src="../../images/nectar-gw-app.png" width="600" /></p>
+<p>The <a href="https://ardc.edu.au/services/nectar-research-cloud/">Nectar Research Cloud</a> (part of the Australian Research Data Commons) provides cloud computing services to researchers in Australian and New Zealand universities. Any university-affiliated researcher can log on to Nectar and receive <a href="https://tutorials.rc.nectar.org.au/allocation-management/03-account-and-trial">up to 6 months of free cloud computing time</a>. And if you need more, you can <a href="https://tutorials.rc.nectar.org.au/allocation-management/04-allocation-and-projects">apply for a specific project allocation</a>.</p>
+<p>The GLAM Workbench is available in the Nectar Cloud as a pre-configured application. This means you can get it up and going without worrying about the technical infrastructure – just fill in a few details and you're away! To create an instance of this repository in the Nectar Cloud:</p>
+<ul>
+<li>Log in to the <a href="https://dashboard.rc.nectar.org.au/">Nectar Dashboard</a> using your university credentials.</li>
+<li>From the Dashboard choose <strong>Applications -&gt; Browse Local</strong>.</li>
+<li>Enter 'GLAM' in the filter box and hit Enter, you should see the GLAM Workbench application.</li>
+<li>Click on the GLAM Workbench application's  <strong>Quick Deploy</strong> button.</li>
+<li>Step through the various <a href="https://glam-workbench.net/using-nectar/#setting-up-your-own-glam-workbench-repository">configuration options</a>. Some options are only available if you have a dedicated project allocation.</li>
+<li>When asked to select a GLAM Workbench repository, choose 'Trove newspaper &amp; gazette harvester' from the dropdown list.</li>
+<li>Complete the configuration and deploy your GLAM Workbench instance.</li>
+<li>The url to access your instance will be displayed once it's ready. Click on the url!</li>
+</ul>
+<p>See <a href="https://glam-workbench.net/using-nectar/">Using Nectar</a> for more information.</p>
+<h3 id="using-docker-or-podman">Using Docker or Podman<a class="headerlink" href="#using-docker-or-podman" title="Permanent link">&para;</a></h3>
+<p>You can use Docker or Podman to run a pre-built computing environment on your own computer. It will set up everything you need to run the notebooks in this repository. This is free, but requires more technical knowledge – you'll have to install Docker on your computer, and be able to use the command line.</p>
+<ul>
+<li>Install <a href="https://docs.docker.com/get-docker/">Docker Desktop</a> or <a href="https://podman.io/">Podman</a>.</li>
+<li>From the command line, run the following command for Docker:<br />
+  <div class="highlight"><pre><span></span><code>docker run -p 8888:8888 --name trove-newspaper-harvester quay.io/glamworkbench/trove-newspaper-harvester repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --ServerApp.token=&#39;&#39;
+</code></pre></div></li>
+<li>Or for Podman:<br />
+  <div class="highlight"><pre><span></span><code>podman run -p 8888:8888 --name trove-newspaper-harvester quay.io/glamworkbench/trove-newspaper-harvester repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --ServerApp.token=&#39;&#39;
+</code></pre></div></li>
+<li>It will take a while to download and configure the Docker image. Once it's ready you'll see a message saying that Jupyter Notebook is running.</li>
+<li>Point your web browser to <code>http://127.0.0.1:8888</code></li>
+</ul>
+<p>See <a href="https://glam-workbench.net/using-docker/">Using Docker</a> for more details.</p>
+<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/wragge">Tim Sherratt</a></li>
 </ul>
 <h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
 <p>Sherratt, Tim. (2024). GLAM-Workbench/trove-newspaper-harvester (version v2.1.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.11273197">https://doi.org/10.5281/zenodo.11273197</a>  </p>
@@ -11769,8 +11837,6 @@
 
 <!-- Was this page helpful? -->
 
-
-  
 
 
 
