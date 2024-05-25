@@ -7580,9 +7580,9 @@ a.anchor-link {
     <span class="c1"># Copy the base params</span>
     <span class="n">params</span> <span class="o">=</span> <span class="n">query_params</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="c1"># Add the date search to the query string</span>
-    <span class="n">params</span><span class="p">[</span>
-        <span class="s2">"q"</span>
-    <span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">query_params</span><span class="p">[</span><span class="s1">'q'</span><span class="p">]</span><span class="si">}</span><span class="s2"> date:[</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">-04-24T00:00:00Z TO </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">-04-25T00:00:00Z]"</span>
+    <span class="n">params</span><span class="p">[</span><span class="s2">"q"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">query_params</span><span class="p">[</span><span class="s1">'q'</span><span class="p">]</span><span class="si">}</span><span class="s2"> date:[</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">-04-24T00:00:00Z TO </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">-04-25T00:00:00Z]"</span>
+    <span class="p">)</span>
 
     <span class="c1"># Initialise the harvester</span>
     <span class="c1"># The data-dir parameter sets the parent directory, in this case "anzac-day"</span>

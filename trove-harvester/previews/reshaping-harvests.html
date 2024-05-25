@@ -7530,32 +7530,33 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">HarvestSlicer</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">harvest_id</span><span class="p">,</span> <span class="n">data_dir</span><span class="o">=</span><span class="s2">"data"</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">harvest_id</span><span class="p">,</span> <span class="n">data_dir</span><span class="o">=</span><span class="s2">"data"</span><span class="p">,</span> <span class="n">relevance_percent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialise the Slicer with details of the harvest.</span>
 <span class="sd">        """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">harvest_id</span> <span class="o">=</span> <span class="n">harvest_id</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">harvest_id</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">text_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">"results.csv"</span><span class="p">),</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relevance_percent</span> <span class="o">=</span> <span class="n">relevance_percent</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">"results.csv"</span><span class="p">),</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">relevance_percent</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                <span class="n">df</span><span class="p">[</span><span class="s2">"relevance"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s2">"relevance"</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">relevance_percent</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+            <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span>
 
     <span class="k">def</span> <span class="nf">get_years</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Get a list of the years in which articles in the current harvest were published.</span>
 <span class="sd">        """</span>
-        <span class="n">years</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">text_file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"*.txt"</span><span class="p">):</span>
-            <span class="n">years</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">text_file</span><span class="o">.</span><span class="n">name</span><span class="p">[:</span><span class="mi">4</span><span class="p">]))</span>
-        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">years</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">get_titles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Get a list of the newspaper titles in which articles in the current harvest were published.</span>
 <span class="sd">        """</span>
-        <span class="n">titles</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">text_file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">*.txt"</span><span class="p">):</span>
-            <span class="n">titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text_file</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"-"</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
-        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">titles</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s2">"newspaper_id"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">get_top_titles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">measure</span><span class="o">=</span><span class="s2">"articles"</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""</span>
@@ -7599,18 +7600,21 @@ a.anchor-link {
 <span class="sd">        - title: newspaper title identifier</span>
 <span class="sd">        - save_as: how to save the slice, either "zip" or "text"</span>
 <span class="sd">        """</span>
+        <span class="n">relevance</span> <span class="o">=</span> <span class="s2">""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">relevance_percent</span><span class="p">:</span>
+            <span class="n">relevance</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"-relevance-</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">relevance_percent</span><span class="si">}</span><span class="s2">"</span>
         <span class="k">if</span> <span class="n">period</span> <span class="ow">and</span> <span class="n">title</span><span class="p">:</span>
             <span class="n">glob_pattern</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2">*-</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">-*.txt"</span>
             <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="n">unit</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">period</span><span class="p">),</span> <span class="s2">"title"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">title</span><span class="p">)]</span>
-            <span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2">-title"</span><span class="p">)</span>
+            <span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2">-title</span><span class="si">{</span><span class="n">relevance</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">period</span><span class="p">:</span>
             <span class="n">glob_pattern</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2">*.txt"</span>
             <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="n">unit</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">period</span><span class="p">)]</span>
-            <span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+            <span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">unit</span><span class="si">}{</span><span class="n">relevance</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">title</span><span class="p">:</span>
             <span class="n">glob_pattern</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"*-</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">-*.txt"</span>
             <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"title"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">title</span><span class="p">)]</span>
-            <span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">"title"</span><span class="p">)</span>
+            <span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"title</span><span class="si">{</span><span class="n">relevance</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span>
         <span class="n">output_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -7728,6 +7732,9 @@ a.anchor-link {
 <p>By default, harvests are saved in the <code>data</code> directory. If your harvest is in a different directory, you need to supply a <code>data_dir</code> parameter set to the directory name. For example:</p>
 <div class="highlight"><pre><span></span><span class="n">slicer</span> <span class="o">=</span> <span class="n">HarvestSlicer</span><span class="p">(</span><span class="s2">"20240522025457"</span><span class="p">,</span> <span class="n">data_dir</span><span class="o">=</span><span class="s2">"myharvests"</span><span class="p">)</span>
 </pre></div>
+<p>By default, the HarvestSlicer will operate on <em>all</em> the results in the harvested dataset. However, you might want to do some initial filtering by making use of relevance scores. The relevance scores are calculated by Trove's search index and take into account things like where and the number of times your keywords appear in an article. Use the <code>relevance_percent</code> parameter to specify a cut-off value for inclusion. For example, if you set <code>relevance_percent</code> to <code>50</code> only articles with relevance scores in the top 50% of scores will be included in your dataset:</p>
+<div class="highlight"><pre><span></span><span class="n">slicer</span> <span class="o">=</span> <span class="n">HarvestSlicer</span><span class="p">(</span><span class="s2">"20240522025457"</span><span class="p">,</span> <span class="n">relevance_percent</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
 <p>Enter your harvest id below and run the cell to create a Harvest Slicer.</p>
 </div>
 </div>
@@ -7742,6 +7749,33 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Substitute your harvest identifier below</span>
 <span class="n">slicer</span> <span class="o">=</span> <span class="n">HarvestSlicer</span><span class="p">(</span><span class="s2">"[Your Harvest ID]"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c20a8103-e46b-40f9-b9c2-cddd12b41be8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Optionally filter your dataset by relevance score.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_nbval-skip" id="cell-id=dedac56c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Substitute your harvest identifier below</span>
+<span class="c1"># Change relevance_percent to your desired cutoff point</span>
+<span class="n">slicer</span> <span class="o">=</span> <span class="n">HarvestSlicer</span><span class="p">(</span><span class="s2">"[Your Harvest ID]"</span><span class="p">,</span> <span class="n">relevance_percent</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8079,6 +8113,7 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">filter_results</span><span class="p">(</span>
     <span class="n">harvest_id</span><span class="p">,</span>
     <span class="n">data_dir</span><span class="o">=</span><span class="s2">"data"</span><span class="p">,</span>
+    <span class="n">relevance_percent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">add_text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -8091,6 +8126,7 @@ a.anchor-link {
 <span class="sd">    Parameters:</span>
 <span class="sd">    - harvest_id: identifier of the harvest to filter</span>
 <span class="sd">    - data_dir: location of the harvest (default is 'data')</span>
+<span class="sd">    - relevance_percent: relevance score cut off</span>
 <span class="sd">    - year: eg '1950'</span>
 <span class="sd">    - title: Trove newspaper title identifier, eg '11'</span>
 <span class="sd">    - add_text: add OCRd text to CSV (default is True)</span>
@@ -8101,27 +8137,27 @@ a.anchor-link {
 <span class="sd">    """</span>
     <span class="n">data_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">harvest_id</span><span class="p">)</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">"results.csv"</span><span class="p">),</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">filters</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">relevance_percent</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"relevance"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s2">"relevance"</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">relevance_percent</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"relevance"</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">relevance_percent</span> <span class="o">/</span> <span class="mi">100</span><span class="p">))</span>
+        <span class="n">filters</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"relevance"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">relevance_percent</span><span class="p">)]</span>
     <span class="k">if</span> <span class="n">year</span> <span class="ow">and</span> <span class="n">title</span><span class="p">:</span>
-        <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
             <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"newspaper_id"</span><span class="p">]</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
         <span class="p">]</span>
-        <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"year"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">),</span> <span class="s2">"title"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">title</span><span class="p">)]</span>
+        <span class="n">filters</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"year"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">),</span> <span class="s2">"title"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">title</span><span class="p">)]</span>
     <span class="k">elif</span> <span class="n">year</span><span class="p">:</span>
-        <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">))]</span>
-        <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"year"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)]</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">))]</span>
+        <span class="n">filters</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"year"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)]</span>
     <span class="k">elif</span> <span class="n">title</span><span class="p">:</span>
-        <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"newspaper_id"</span><span class="p">]</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">title</span><span class="p">)]</span>
-        <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"title"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">title</span><span class="p">)]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="n">filters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"all"</span><span class="p">]</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"newspaper_id"</span><span class="p">]</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">title</span><span class="p">)]</span>
+        <span class="n">filters</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"title"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">title</span><span class="p">)]</span>
     <span class="k">if</span> <span class="n">add_text</span><span class="p">:</span>
-        <span class="n">filtered_df</span><span class="p">[</span><span class="s2">"full_text"</span><span class="p">]</span> <span class="o">=</span> <span class="n">filtered_df</span><span class="p">[</span><span class="s2">"text"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
-            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Path</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
-        <span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">"full_text"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"text"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Path</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">())</span>
         <span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"full_text"</span><span class="p">)</span>
         <span class="n">filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"text"</span><span class="p">)</span>
-    <span class="n">filtered_df</span><span class="p">[</span><span class="n">fields</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">fields</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
         <span class="n">Path</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"filtered-results-</span><span class="si">{</span><span class="s1">'-'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span><span class="si">}</span><span class="s2">.csv"</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">)</span>
 </pre></div>
@@ -8199,7 +8235,59 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">filter_results</span><span class="p">(</span><span class="s2">"20240522025457"</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1950</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">filter_results</span><span class="p">(</span><span class="s2">"[Your harvest id]"</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1950</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=04dee892-8d4a-4016-ac78-d35d893a6b29">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Filter the results set using the relevance scores of articles, saving results with scores in the top 50%, without adding the OCRd text to the CSV file.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_nbval-skip" id="cell-id=eb2ffc71">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Insert your harvest identifier between the quotes</span>
+<span class="n">filter_results</span><span class="p">(</span><span class="s2">"[Your harvest id]"</span><span class="p">,</span> <span class="n">relevance_percent</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">add_text</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bbed9c92-05e5-43b0-94bb-e7683795f8c3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Filter the results set using the relevance scores of articles, saving results with scores in the top 50%, and adding the OCRd text to the CSV file.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_nbval-skip" id="cell-id=e5830209">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Insert your harvest identifier between the quotes</span>
+<span class="n">filter_results</span><span class="p">(</span><span class="s2">"[Your harvest id]"</span><span class="p">,</span> <span class="n">relevance_percent</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8224,8 +8312,14 @@ a.anchor-link {
     <span class="n">harvest_id</span> <span class="o">=</span> <span class="n">harvester</span><span class="o">.</span><span class="n">harvest_dir</span><span class="o">.</span><span class="n">name</span>
     <span class="n">slicer</span> <span class="o">=</span> <span class="n">HarvestSlicer</span><span class="p">(</span><span class="n">harvest_id</span><span class="p">)</span>
     <span class="n">slicer</span><span class="o">.</span><span class="n">slice_titles</span><span class="p">()</span>
+    <span class="n">slicer</span><span class="o">.</span><span class="n">slice_years_top_titles</span><span class="p">(</span><span class="n">measure</span><span class="o">=</span><span class="s2">"words"</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="s2">"text"</span><span class="p">)</span>
     <span class="n">slicer</span><span class="o">.</span><span class="n">slice_years</span><span class="p">()</span>
     <span class="n">filter_results</span><span class="p">(</span><span class="n">harvest_id</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1946</span><span class="p">)</span>
+    <span class="n">slicer</span> <span class="o">=</span> <span class="n">HarvestSlicer</span><span class="p">(</span><span class="n">harvest_id</span><span class="p">,</span> <span class="n">relevance_percent</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">slicer</span><span class="o">.</span><span class="n">slice_titles</span><span class="p">()</span>
+    <span class="n">slicer</span><span class="o">.</span><span class="n">slice_years_top_titles</span><span class="p">(</span><span class="n">measure</span><span class="o">=</span><span class="s2">"words"</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="s2">"text"</span><span class="p">)</span>
+    <span class="n">slicer</span><span class="o">.</span><span class="n">slice_years</span><span class="p">()</span>
+    <span class="n">filter_results</span><span class="p">(</span><span class="n">harvest_id</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1946</span><span class="p">,</span> <span class="n">relevance_percent</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
     <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">harvester</span><span class="o">.</span><span class="n">harvest_dir</span><span class="p">)</span>
 </pre></div>
 </div>
