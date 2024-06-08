@@ -786,6 +786,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://glam-workbench.net/trove-maps/index-copy/</loc>
+         <lastmod>2024-06-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://glam-workbench.net/trove-maps/parse-coordinates/</loc>
          <lastmod>2024-06-08</lastmod>
          <changefreq>daily</changefreq>
@@ -797,6 +802,11 @@
     </url>
     <url>
          <loc>https://glam-workbench.net/trove-maps/single-maps-data/</loc>
+         <lastmod>2024-06-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://glam-workbench.net/trove-maps/trove-maps-data/</loc>
          <lastmod>2024-06-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
