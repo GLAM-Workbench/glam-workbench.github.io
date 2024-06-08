@@ -776,6 +776,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://glam-workbench.net/trove-maps/create-map-subsets/</loc>
+         <lastmod>2024-06-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://glam-workbench.net/trove-maps/exploring-digitised-maps/</loc>
          <lastmod>2024-06-08</lastmod>
          <changefreq>daily</changefreq>
