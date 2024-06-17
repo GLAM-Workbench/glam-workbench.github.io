@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11+insiders-4.53.0">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27+insiders-4.53.11">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.458d28d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.c0d16a3a.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -66,6 +66,54 @@
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  <script defer= data-domain="glam-workbench.net" src="../assets/external/plausible.io/js/plausible.js"></script>
+
+<script>
+  window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) };
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function () {
+    /* Set up search tracking */
+    if (document.forms.search) {
+      var query = document.forms.search.query;
+      query.addEventListener("blur", function() {
+        if (this.value) plausible("Search", { props: { search_term: this.value } });
+      })
+    }
+
+    /* Set up feedback, i.e. "Was this page helpful?" */
+    document$.subscribe(function () {
+      var feedback = document.forms.feedback;
+      if (typeof feedback === "undefined") return;
+
+      /* Send feedback to Plausible */
+      for (var button of feedback.querySelectorAll("[type=submit]")) {
+        button.addEventListener("click", function (ev) {
+          ev.preventDefault();
+
+          var page = document.location.pathname;
+          var value = this.getAttribute("data-md-value");
+          console.log("[feedback] User clicked", { value });
+          plausible(`Feedback: ${value}`);
+
+          /* Disable form and show note, if given */
+          feedback.firstElementChild.disabled = true;
+          var note = feedback.querySelector(".md-feedback__note [data-md-value='" + value + "']");
+          if (note) note.hidden = false;
+        })
+
+        /* Show feedback */
+        feedback.hidden = false;
+      }
+    });
+  });
+</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -214,7 +262,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -270,7 +318,7 @@
 
   <div class="md-source__icon md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
 
 <div class="md-source__repository">
@@ -399,7 +447,7 @@
 
   <div class="md-source__icon md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
 
 <div class="md-source__repository">
@@ -11427,6 +11475,23 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Browse by tag
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -11442,6 +11507,850 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tag:api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:amazon-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amazon s3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:csv-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:cloudstor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CloudStor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:collectionbuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CollectionBuilder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:datasette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datasette
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:eac-cpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EAC-CPF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:iiif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IIIF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:internet-archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internet Archive
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:national-archives-of-australia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        National Archives of Australia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:oai-pmh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAI-PMH
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:ocr-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR coordinates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:ocr-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR corrections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:ocr-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:omeka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Omeka
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:pymupdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PyMuPDF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLite
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:sru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRU
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:tesseract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tesseract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:upset-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpSet plot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:viaf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VIAF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:voilá" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voilá
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:wikidata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wikidata
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:zotero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zotero
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:choropleth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        choropleth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:collection-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collection history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coordinates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:copyright" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        copyright
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:creative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        creative
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:crowdsourcing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        crowdsourcing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:data-harvesting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        data harvesting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:data-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        data preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:exhibition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exhibition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:finding-aids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        finding aids
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:fun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fun
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:geospatial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        geospatial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:government" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        government
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:harvest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        harvest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        heatmap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:image-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        image dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        images
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:language-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        language detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:licensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        licensing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:manuscripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        manuscripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        metadata
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:network-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        network graph
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:newspaper-titles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        newspaper titles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:oral-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        oral history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:public-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        public domain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:pyvips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pyvips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:query-by-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        query by date
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:query-by-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        query by page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:random" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        random
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:scraper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scraper
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:screenscraping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        screenscraping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:search-facets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        search facets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        text
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:text-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        text analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:text-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        text dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:topic-modelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        topic modelling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:visualisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        visualisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:web-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        web app
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:web-archives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        web archives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:webdav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        webdav
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -11518,6 +12427,839 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tag:api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:amazon-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amazon s3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:csv-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:cloudstor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CloudStor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:collectionbuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CollectionBuilder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:datasette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datasette
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:eac-cpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EAC-CPF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:iiif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IIIF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:internet-archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internet Archive
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:national-archives-of-australia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        National Archives of Australia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:oai-pmh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAI-PMH
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:ocr-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR coordinates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:ocr-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR corrections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:ocr-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:omeka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Omeka
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:pymupdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PyMuPDF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLite
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:sru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRU
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:tesseract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tesseract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:upset-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpSet plot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:viaf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VIAF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:voilá" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voilá
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:wikidata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wikidata
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:zotero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zotero
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:choropleth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        choropleth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:collection-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collection history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coordinates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:copyright" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        copyright
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:creative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        creative
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:crowdsourcing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        crowdsourcing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:data-harvesting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        data harvesting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:data-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        data preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:exhibition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exhibition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:finding-aids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        finding aids
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:fun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fun
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:geospatial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        geospatial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:government" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        government
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:harvest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        harvest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        heatmap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:image-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        image dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        images
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:language-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        language detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:licensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        licensing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:manuscripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        manuscripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        metadata
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:network-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        network graph
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:newspaper-titles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        newspaper titles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:oral-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        oral history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:public-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        public domain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:pyvips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pyvips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:query-by-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        query by date
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:query-by-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        query by page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:random" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        random
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:scraper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scraper
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:screenscraping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        screenscraping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:search-facets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        search facets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        text
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:text-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        text analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:text-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        text dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:topic-modelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        topic modelling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:visualisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        visualisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:web-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        web app
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:web-archives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        web archives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:webdav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        webdav
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -11580,9 +13322,3211 @@
 <p class="admonition-title">Warning</p>
 <p>Under construction!</p>
 </div>
-<p>[TAGS]</p>
+
+
+  <h2 id="tag:api">
+
+
+<span class="md-tag">API</span><a class="headerlink" href="#tag:api" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../web-archives/compare-page-versions/">
+          Compare versions of a page
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/comparing-cdx-apis/">
+          Comparing CDX APIs
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/convert-a-trove-list-into-a-csv-file/">
+          Convert list to CSV
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/create-screenshots-over-time/">
+          Create a series of screenshots
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/create-screenshots/">
+          Create full-page screenshots
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/display-changes-in-text/">
+          Display changes in page text
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/exploring-powerpoints/">
+          Explore Powerpoints from a domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/exploring-govau-subdomains/">
+          Explore all subdomains from gov.au
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove/exploring-facets/">
+          Exploring Trove Facets
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/exploring-ia-cdx-api/">
+          Exploring the Internet Archive's CDX API
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/get-all-versions/">
+          Find all versions of a web page
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/find-when-text-appears/">
+          Find when text appears
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/get-memento/">
+          Get a Memento
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/complete_harvest/">
+          Harvest complete dataset
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/harvesting-domain-data/">
+          Harvest data about a domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/harvest-of-govau-subdomains/">
+          Harvest of subdomains under gov.au
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/harvesting-text/">
+          Harvest text from web pages
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/govau-subdomains-surt/">
+          List of unique gov.au subdomains
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/observing-change-over-time/">
+          Observe change in a page over time
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/timegates-timemaps-mementos/">
+          Timegates, Timemaps, and Mementos
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/timemaps-vs-cdx/">
+          Timemaps vs CDX APIs
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/govau-subdomains-split/">
+          Unique gov.au subdomains split into parts
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/govau-subdomains-visualisations/">
+          Visualisations of gov.au subdomains
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove/working-with-zones/">
+          Working with Trove Zones
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove/your-first-api-request/">
+          Your first Trove API request
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:amazon-s3">
+
+
+<span class="md-tag">Amazon s3</span><a class="headerlink" href="#tag:amazon-s3" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../libraries-tasmania/tas-pod-upload-images/">
+          Upload images to s3 for delivery via IIIF
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:csv">
+
+
+<span class="md-tag">CSV</span><a class="headerlink" href="#tag:csv" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/csv-aww-issues/">
+          Australian Women's Weekly issues, 1933 to 1982
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-complete-list-issues/">
+          Complete list of issues
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-newspaper-titles-from-web-archives-first-appearance/">
+          Newspaper titles harvested from web archives
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-newspaper-titles-from-web-archives/">
+          Newspaper titles harvested from web archives
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-newspapers-post-54/">
+          Newspapers with post-1954 articles
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-issues-per-year/">
+          Number of issues per year for each newspaper
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/trove-lists-metadata/">
+          Trove lists metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/trove-public-tags/">
+          Trove public tags
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/trove-tag-counts/">
+          Trove tag counts
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:csv-dataset">
+
+
+<span class="md-tag">CSV dataset</span><a class="headerlink" href="#tag:csv-dataset" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-journals/csv-journals-with-ocr/">
+          CSV formatted list of journals with OCRd text
+        </a>
+      </li>
+    
+      <li>
+        <a href="../nsw-state-archives/index-list/">
+          CSV list of indexes
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/csv-australian-books-in-ia/">
+          CSV of Australian books in IA
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/csv-books-in-digital-form/">
+          CSV of digital books in Trove
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/csv-digital-journals/">
+          List of digitised periodicals from search
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/ocrd-text-all-journals/">
+          OCRd text from all journals
+        </a>
+      </li>
+    
+      <li>
+        <a href="../nsw-state-archives/index-repository/">
+          Repository of harvested indexes
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/trove-images-rights-data/">
+          Rights applied to images by Trove contributors
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/csv-image-rights-by-institution/">
+          Rights applied to images by each Trove contributor
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/csv-out-of-copyright-photos-rights-by-institution/">
+          Rights applied to out-of-copyright photographs by each Trove contributor
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:cloudstor">
+
+
+<span class="md-tag">CloudStor</span><a class="headerlink" href="#tag:cloudstor" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../glam-tools/cloudstor-share-nested-links/">
+          CloudStor nested links
+        </a>
+      </li>
+    
+      <li>
+        <a href="../glam-tools/cloudstor-access-via-webdav/">
+          CloudStor using WebDAV
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:collectionbuilder">
+
+
+<span class="md-tag">CollectionBuilder</span><a class="headerlink" href="#tag:collectionbuilder" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-lists/convert-list-to-cb-exhibition/">
+          Convert list to CollectionBuilder
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:datasette">
+
+
+<span class="md-tag">Datasette</span><a class="headerlink" href="#tag:datasette" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-journals/create-text-db-indexed-by-line/">
+          Create database of text indexed by line
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-harvester/display-harvest-results-in-datasette/">
+          Displaying results in Datasette
+        </a>
+      </li>
+    
+      <li>
+        <a href="../libraries-tasmania/tas-pod-add-to-datasette/">
+          Load Post Office Directory contents into a database
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:eac-cpf">
+
+
+<span class="md-tag">EAC-CPF</span><a class="headerlink" href="#tag:eac-cpf" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-people/extract_aggregated_data_from_harvest/">
+          Extract data from harvest
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/get_sru_results_as_json/">
+          Get SRU results as JSON
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/complete_harvest/">
+          Harvest complete dataset
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/complete_harvest_oai/">
+          Harvest complete dataset using OAI-PMH
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:iiif">
+
+
+<span class="md-tag">IIIF</span><a class="headerlink" href="#tag:iiif" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-images/save-image-collection-iiif/">
+          Save a collection of digitised images as an IIIF manifest
+        </a>
+      </li>
+    
+      <li>
+        <a href="../libraries-tasmania/tas-pod-upload-images/">
+          Upload images to s3 for delivery via IIIF
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:internet-archive">
+
+
+<span class="md-tag">Internet Archive</span><a class="headerlink" href="#tag:internet-archive" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-books/csv-australian-books-in-ia/">
+          CSV of Australian books in IA
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/harvesting-text-from-books-in-ia/">
+          Harvesting text from Internet Archive
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/ocrd-text-from-ia/">
+          OCRd text from Australian books in IA
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:national-archives-of-australia">
+
+
+<span class="md-tag">National Archives of Australia</span><a class="headerlink" href="#tag:national-archives-of-australia" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../wikidata/govt-agencies-network/">
+          Network graph of govt departments
+        </a>
+      </li>
+    
+      <li>
+        <a href="../wikidata/agencies-gannt-timeline/">
+          Timeline of govt departments
+        </a>
+      </li>
+    
+      <li>
+        <a href="../wikidata/single-agency-network/">
+          View connections of a single agency
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:oai-pmh">
+
+
+<span class="md-tag">OAI-PMH</span><a class="headerlink" href="#tag:oai-pmh" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-people/complete_harvest_oai/">
+          Harvest complete dataset using OAI-PMH
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:ocr">
+
+
+<span class="md-tag">OCR</span><a class="headerlink" href="#tag:ocr" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../libraries-tasmania/tas-pod-ocr-with-tesseract/">
+          Extract text from PDF images with Tesseract
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:ocr-coordinates">
+
+
+<span class="md-tag">OCR coordinates</span><a class="headerlink" href="#tag:ocr-coordinates" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/trove-newspapers-get-coordinates-of-articles/">
+          Get article coordinates
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:ocr-corrections">
+
+
+<span class="md-tag">OCR corrections</span><a class="headerlink" href="#tag:ocr-corrections" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Create-a-Trove-corrections-ticker/">
+          Corrections ticker
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:ocr-quality">
+
+
+<span class="md-tag">OCR quality</span><a class="headerlink" href="#tag:ocr-quality" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Analysing_OCR_corrections/">
+          Analyse rates of OCR correction
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/find-non-english-newspapers/">
+          Finding non-English newspapers in Trove
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:omeka">
+
+
+<span class="md-tag">Omeka</span><a class="headerlink" href="#tag:omeka" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Upload-Trove-newspapers-to-Omeka/">
+          Upload articles to Omeka
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:pdf">
+
+
+<span class="md-tag">PDF</span><a class="headerlink" href="#tag:pdf" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../libraries-tasmania/tas-pod-save-text-images/">
+          Download Post Office Directory PDFs
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/harvest_newspaper_issues_as_pdfs/">
+          Harvest issues as PDFs
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Upload-Trove-newspapers-to-Omeka/">
+          Upload articles to Omeka
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:pymupdf">
+
+
+<span class="md-tag">PyMuPDF</span><a class="headerlink" href="#tag:pymupdf" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../libraries-tasmania/tas-pod-save-text-images/">
+          Download Post Office Directory PDFs
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:sqlite">
+
+
+<span class="md-tag">SQLite</span><a class="headerlink" href="#tag:sqlite" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../libraries-tasmania/tas-pod-add-to-datasette/">
+          Load Post Office Directory contents into a database
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:sru">
+
+
+<span class="md-tag">SRU</span><a class="headerlink" href="#tag:sru" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-people/get_sru_results_as_json/">
+          Get SRU results as JSON
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/complete_harvest/">
+          Harvest complete dataset
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:tesseract">
+
+
+<span class="md-tag">Tesseract</span><a class="headerlink" href="#tag:tesseract" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../libraries-tasmania/tas-pod-ocr-with-tesseract/">
+          Extract text from PDF images with Tesseract
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:upset-plot">
+
+
+<span class="md-tag">UpSet plot</span><a class="headerlink" href="#tag:upset-plot" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-people/intersections/">
+          Visualise data sources
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:viaf">
+
+
+<span class="md-tag">VIAF</span><a class="headerlink" href="#tag:viaf" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-people/viaf/">
+          Get VIAF links
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:voilá">
+
+
+<span class="md-tag">Voilá</span><a class="headerlink" href="#tag:voilá" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../csv-explorer/">
+          GLAM CSV Explorer
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-harvester/harvester-web-app/">
+          Trove Harvester web app
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:wikidata">
+
+
+<span class="md-tag">Wikidata</span><a class="headerlink" href="#tag:wikidata" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../wikidata/govt-agencies-network/">
+          Network graph of govt departments
+        </a>
+      </li>
+    
+      <li>
+        <a href="../wikidata/agencies-gannt-timeline/">
+          Timeline of govt departments
+        </a>
+      </li>
+    
+      <li>
+        <a href="../wikidata/single-agency-network/">
+          View connections of a single agency
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:zotero">
+
+
+<span class="md-tag">Zotero</span><a class="headerlink" href="#tag:zotero" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Upload-Trove-newspapers-to-Omeka/">
+          Upload articles to Omeka
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:analysis">
+
+
+<span class="md-tag">analysis</span><a class="headerlink" href="#tag:analysis" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../nsw-state-archives/summarise-index-details/">
+          Summarise index details
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:api">
+
+
+<span class="md-tag">api</span><a class="headerlink" href="#tag:api" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../heritage-council-of-victoria/introduction-victorian-heritage-api/">
+          Introduction to the Victorian Heritage Database API
+        </a>
+      </li>
+    
+      <li>
+        <a href="../heritage-council-of-victoria/shipwrecks/">
+          Shipwrecks in the Victorian Heritage Database
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:choropleth">
+
+
+<span class="md-tag">choropleth</span><a class="headerlink" href="#tag:choropleth" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-state/">
+          Map Trove newspaper results by state
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:collection-history">
+
+
+<span class="md-tag">collection history</span><a class="headerlink" href="#tag:collection-history" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/historical-data-newspaper-titles/">
+          When newspapers were added to Trove
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:coordinates">
+
+
+<span class="md-tag">coordinates</span><a class="headerlink" href="#tag:coordinates" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-maps/parse-coordinates/">
+          Parse map coordinates from metadata
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:copyright">
+
+
+<span class="md-tag">copyright</span><a class="headerlink" href="#tag:copyright" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Beyond_the_copyright_cliff_of_death/">
+          Beyond the copyright cliff of death
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/Exploring-unpublished-works-entering-public-domain/">
+          Explore works entering public domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/Finding-unpublished-works-entering-public-domain/">
+          Find works entering public domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-newspapers-post-54/">
+          Newspapers with post-1954 articles
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/trove-images-rights-data/">
+          Rights applied to images by Trove contributors
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/csv-image-rights-by-institution/">
+          Rights applied to images by each Trove contributor
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/csv-out-of-copyright-photos-rights-by-institution/">
+          Rights applied to out-of-copyright photographs by each Trove contributor
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/use-of-rights-statements/">
+          Rights statements applied to images
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:creative">
+
+
+<span class="md-tag">creative</span><a class="headerlink" href="#tag:creative" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/trove-newspapers-create-composite-from-words/">
+          Create composite image from snipped words
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/trove-newspapers-scissors-and-paste/">
+          Create scissors & paste messages
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Composite-thumbnails/">
+          Make composite image from thumbnails
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:crowdsourcing">
+
+
+<span class="md-tag">crowdsourcing</span><a class="headerlink" href="#tag:crowdsourcing" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Analysing_OCR_corrections/">
+          Analyse rates of OCR correction
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:data-harvesting">
+
+
+<span class="md-tag">data harvesting</span><a class="headerlink" href="#tag:data-harvesting" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-journals/create-list-digitised-journals/">
+          Create a list of digitised periodicals using search
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/create-map-subsets/">
+          Create a subset of digitised maps
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/create-text-db-indexed-by-line/">
+          Create database of text indexed by line
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/download-transcripts/">
+          Download oral history transcripts
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/exploring-powerpoints/">
+          Explore Powerpoints from a domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/exploring-govau-subdomains/">
+          Explore all subdomains from gov.au
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/exploring-digitised-maps/">
+          Exploring digitised maps in Trove
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/finding-editorial-cartoons-in-bulletin/">
+          Finding cartoons in the Bulletin
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/get-ocrd-text-from-digitised-journal/">
+          Get OCRd text from a periodical
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/get-ocrd-text-from-all-journals/">
+          Get OCRd text from all periodicals
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/get-covers-from-digitised-journal/">
+          Get cover images from a periodical
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/harvest-ned-periodicals/">
+          Get details of NED periodicals
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/periodicals-from-api/">
+          Get details of periodicals & issues using the API
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/harvest-abcrn/">
+          Harvest ABC RN records
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/harvest-aww-covers-and-newspaper-front-pages/">
+          Harvest AWW covers
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/create-datasets/">
+          Harvest Pandora subjects and collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/harvest-pandora-subject-collections/">
+          Harvest Pandora subjects and collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/harvest-pandora-titles/">
+          Harvest Pandora subjects and collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/complete_harvest/">
+          Harvest complete dataset
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/complete_harvest_oai/">
+          Harvest complete dataset using OAI-PMH
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/harvest-illustrations-from-periodicals/">
+          Harvest illustrations
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/harvest_newspaper_issues/">
+          Harvest information about newspaper issues
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/harvest_newspaper_issues_as_pdfs/">
+          Harvest issues as PDFs
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/harvest-summary-data-from-lists/">
+          Harvest lists data
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/harvest-oral-histories/">
+          Harvest oral histories
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/harvest-parliament-press-releases/">
+          Harvest parliament press releases from Trove
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/harvest-tags/">
+          Harvest tags data
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/harvesting-text/">
+          Harvest text from web pages
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-harvester/harvest-specific-days/">
+          Harvesting articles that mention "Anzac Day" on Anzac Day
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/harvesting-text-from-books-in-ia/">
+          Harvesting text from Internet Archive
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/harvesting-text-of-digitised-books/">
+          Harvesting text from digitised books
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/periodicals-enrich-for-datasette/">
+          Improve API data describing periodicals
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/pandora-collections-data/">
+          Pandora collections data
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/pandora-titles-data/">
+          Pandora titles data
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/save-series/">
+          Save oral history collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-harvester/harvester-web-app/">
+          Trove Harvester web app
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-harvester/using-troveharvester/">
+          Using the Trove Harvester
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-harvester/basic-harvester-example/">
+          Using the Trove Harvester as a Python package
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:data-preparation">
+
+
+<span class="md-tag">data preparation</span><a class="headerlink" href="#tag:data-preparation" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-harvester/reshaping-harvests/">
+          Reshaping your newspaper harvest
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:dataset">
+
+
+<span class="md-tag">dataset</span><a class="headerlink" href="#tag:dataset" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-music/abcrn-data/">
+          ABC RN metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/aggregated_datasets/">
+          Aggregated data from complete dataset
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/dataset-aww-covers/">
+          Australian Women's Weekly front covers, 1933 to 1982
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-aww-issues/">
+          Australian Women's Weekly issues, 1933 to 1982
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/complete_harvest_dataset/">
+          Complete dataset
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-complete-list-issues/">
+          Complete list of issues
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/trove-ned-periodicals-data/">
+          Details of NED periodicals
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/periodicals-data-api/">
+          Details of periodicals from the API
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-government/trove-parliamentary-papers-data/">
+          Digitised Parliamentary Papers in Trove
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/finding-aids-summary/">
+          Finding aid summaries
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/finding-aids-urls/">
+          Finding aid urls
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-newspaper-titles-from-web-archives-first-appearance/">
+          Newspaper titles harvested from web archives
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-newspaper-titles-from-web-archives/">
+          Newspaper titles harvested from web archives
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/list-non-english-newspapers/">
+          Newspapers with non-English content
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-newspapers-post-54/">
+          Newspapers with post-1954 articles
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-issues-per-year/">
+          Number of issues per year for each newspaper
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/trove-oral-histories/">
+          Oral histories metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/trove-oral-history-series/">
+          Oral history collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-government/trove-parliament-press-releases-covid/">
+          Press releases relating to COVID
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-government/trove-parliament-press-releases-refugees/">
+          Press releases relating to refugees
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-contributors/trove-contributors-zones/">
+          Total records by contributor & zone
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/single-maps-data/">
+          Trove digitised maps metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/trove-maps-data/">
+          Trove digitised maps metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/single-maps-coordinates-data/">
+          Trove digitised maps – coordinates
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/trove-lists-metadata/">
+          Trove lists metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/trove-public-tags/">
+          Trove public tags
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/trove-tag-counts/">
+          Trove tag counts
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/unpublished-entering-pd/">
+          Works entering public domain
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:documentation">
+
+
+<span class="md-tag">documentation</span><a class="headerlink" href="#tag:documentation" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../web-archives/get-all-versions/">
+          Find all versions of a web page
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/get-memento/">
+          Get a Memento
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/timegates-timemaps-mementos/">
+          Timegates, Timemaps, and Mementos
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:exhibition">
+
+
+<span class="md-tag">exhibition</span><a class="headerlink" href="#tag:exhibition" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-lists/convert-list-to-cb-exhibition/">
+          Convert list to CollectionBuilder
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:finding-aids">
+
+
+<span class="md-tag">finding aids</span><a class="headerlink" href="#tag:finding-aids" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-unpublished/get-info-finding-aids/">
+          Collect information about finding aids
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/convert-fa-to-json/">
+          Convert finding aid to JSON
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/find-finding-aids/">
+          Find digitised finding aids
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:fun">
+
+
+<span class="md-tag">fun</span><a class="headerlink" href="#tag:fun" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-books/recipe-generator/">
+          Recipe generator
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:geospatial">
+
+
+<span class="md-tag">geospatial</span><a class="headerlink" href="#tag:geospatial" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-harvester/exploring-troveharvester-data/">
+          Exploring harvested data
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:government">
+
+
+<span class="md-tag">government</span><a class="headerlink" href="#tag:government" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-books/government-publications-in-digital-form/">
+          Government publications in digital form
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:harvest">
+
+
+<span class="md-tag">harvest</span><a class="headerlink" href="#tag:harvest" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-unpublished/get-info-finding-aids/">
+          Collect information about finding aids
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-contributors/get_contributors/">
+          Create a list of contributors
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/find-finding-aids/">
+          Find digitised finding aids
+        </a>
+      </li>
+    
+      <li>
+        <a href="../nsw-state-archives/get-list-of-indexes/">
+          Get details of online indexes
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-contributors/get_contributors_totals_zone_format/">
+          Get totals by contributor, zone & format
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-government/harvest-parliamentary-papers/">
+          Harvest Parliamentary Papers
+        </a>
+      </li>
+    
+      <li>
+        <a href="../nsw-state-archives/harvest-indexes/">
+          Harvest online indexes
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-government/harvest-parliament-press-releases/">
+          Harvest press releases
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:heatmap">
+
+
+<span class="md-tag">heatmap</span><a class="headerlink" href="#tag:heatmap" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-place-of-publication/">
+          Map results by place of publication
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time/">
+          Map results by place over time
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:image">
+
+
+<span class="md-tag">image</span><a class="headerlink" href="#tag:image" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/dataset-aww-covers/">
+          Australian Women's Weekly front covers, 1933 to 1982
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/trove-newspapers-create-composite-from-words/">
+          Create composite image from snipped words
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/trove-newspapers-scissors-and-paste/">
+          Create scissors & paste messages
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Save-page-image/">
+          Download a page image
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Get-article-thumbnail/">
+          Generate an article thumbnail
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/harvest-aww-covers-and-newspaper-front-pages/">
+          Harvest AWW covers
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Composite-thumbnails/">
+          Make composite image from thumbnails
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Save-Trove-newspaper-article-as-image/">
+          Save article as an image
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Save-Trove-newspaper-article-as-image-app/">
+          Save article as an image web app
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Todays-news-yesterday/">
+          Today’s news yesterday
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Upload-Trove-newspapers-to-Omeka/">
+          Upload articles to Omeka
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:image-dataset">
+
+
+<span class="md-tag">image dataset</span><a class="headerlink" href="#tag:image-dataset" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-journals/bulletin-cartoons-collection/">
+          Editorial cartoons from The Bulletin, 1886 to 1952
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:images">
+
+
+<span class="md-tag">images</span><a class="headerlink" href="#tag:images" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../web-archives/create-screenshots-over-time/">
+          Create a series of screenshots
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/create-screenshots/">
+          Create full-page screenshots
+        </a>
+      </li>
+    
+      <li>
+        <a href="../libraries-tasmania/tas-pod-save-text-images/">
+          Download Post Office Directory PDFs
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/download-image-collection/">
+          Download a collection of digitised images
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/finding-editorial-cartoons-in-bulletin/">
+          Finding cartoons in the Bulletin
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/get-covers-from-digitised-journal/">
+          Get cover images from a periodical
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/harvest-illustrations-from-periodicals/">
+          Harvest illustrations
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/trove-images-rights-data/">
+          Rights applied to images by Trove contributors
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/csv-image-rights-by-institution/">
+          Rights applied to images by each Trove contributor
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/csv-out-of-copyright-photos-rights-by-institution/">
+          Rights applied to out-of-copyright photographs by each Trove contributor
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/use-of-rights-statements/">
+          Rights statements applied to images
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/save-image-collection-iiif/">
+          Save a collection of digitised images as an IIIF manifest
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:language-detection">
+
+
+<span class="md-tag">language detection</span><a class="headerlink" href="#tag:language-detection" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/find-non-english-newspapers/">
+          Finding non-English newspapers in Trove
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/list-non-english-newspapers/">
+          Newspapers with non-English content
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:licensing">
+
+
+<span class="md-tag">licensing</span><a class="headerlink" href="#tag:licensing" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-images/trove-images-rights-data/">
+          Rights applied to images by Trove contributors
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/csv-image-rights-by-institution/">
+          Rights applied to images by each Trove contributor
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/csv-out-of-copyright-photos-rights-by-institution/">
+          Rights applied to out-of-copyright photographs by each Trove contributor
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-images/use-of-rights-statements/">
+          Rights statements applied to images
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:manuscripts">
+
+
+<span class="md-tag">manuscripts</span><a class="headerlink" href="#tag:manuscripts" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-unpublished/get-info-finding-aids/">
+          Collect information about finding aids
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/convert-fa-to-json/">
+          Convert finding aid to JSON
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/Exploring-unpublished-works-entering-public-domain/">
+          Explore works entering public domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/find-finding-aids/">
+          Find digitised finding aids
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/Finding-unpublished-works-entering-public-domain/">
+          Find works entering public domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/finding-aids-summary/">
+          Finding aid summaries
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/finding-aids-urls/">
+          Finding aid urls
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/unpublished-entering-pd/">
+          Works entering public domain
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:map">
+
+
+<span class="md-tag">map</span><a class="headerlink" href="#tag:map" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-state/">
+          Map Trove newspaper results by state
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-place-of-publication/">
+          Map results by place of publication
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time/">
+          Map results by place over time
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:maps">
+
+
+<span class="md-tag">maps</span><a class="headerlink" href="#tag:maps" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-maps/create-map-subsets/">
+          Create a subset of digitised maps
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/exploring-digitised-maps/">
+          Exploring digitised maps in Trove
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/parse-coordinates/">
+          Parse map coordinates from metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/single-maps-data/">
+          Trove digitised maps metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/trove-maps-data/">
+          Trove digitised maps metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/single-maps-coordinates-data/">
+          Trove digitised maps – coordinates
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:metadata">
+
+
+<span class="md-tag">metadata</span><a class="headerlink" href="#tag:metadata" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-music/abcrn-data/">
+          ABC RN metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/aggregated_datasets/">
+          Aggregated data from complete dataset
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/csv-journals-with-ocr/">
+          CSV formatted list of journals with OCRd text
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/csv-australian-books-in-ia/">
+          CSV of Australian books in IA
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/csv-books-in-digital-form/">
+          CSV of digital books in Trove
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/get-info-finding-aids/">
+          Collect information about finding aids
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/complete_harvest_dataset/">
+          Complete dataset
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-complete-list-issues/">
+          Complete list of issues
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-contributors/get_contributors/">
+          Create a list of contributors
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/create-list-digitised-journals/">
+          Create a list of digitised periodicals using search
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/create-map-subsets/">
+          Create a subset of digitised maps
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/trove-ned-periodicals-data/">
+          Details of NED periodicals
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/periodicals-data-api/">
+          Details of periodicals from the API
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-government/trove-parliamentary-papers-data/">
+          Digitised Parliamentary Papers in Trove
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/exploring-digitised-maps/">
+          Exploring digitised maps in Trove
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/finding-aids-summary/">
+          Finding aid summaries
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/finding-aids-urls/">
+          Finding aid urls
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-contributors/trove-contributors-list/">
+          Flat list of contributors
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/trove-newspapers-get-coordinates-of-articles/">
+          Get article coordinates
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/harvest-ned-periodicals/">
+          Get details of NED periodicals
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/periodicals-from-api/">
+          Get details of periodicals & issues using the API
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-contributors/get_contributors_totals_zone_format/">
+          Get totals by contributor, zone & format
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/government-publications-in-digital-form/">
+          Government publications in digital form
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/harvest-abcrn/">
+          Harvest ABC RN records
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/create-datasets/">
+          Harvest Pandora subjects and collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/harvest-pandora-subject-collections/">
+          Harvest Pandora subjects and collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/harvest-pandora-titles/">
+          Harvest Pandora subjects and collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-government/harvest-parliamentary-papers/">
+          Harvest Parliamentary Papers
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/harvesting-domain-data/">
+          Harvest data about a domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/harvest-of-govau-subdomains/">
+          Harvest of subdomains under gov.au
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/harvest-oral-histories/">
+          Harvest oral histories
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/harvest-parliament-press-releases/">
+          Harvest parliament press releases from Trove
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-government/harvest-parliament-press-releases/">
+          Harvest press releases
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/periodicals-enrich-for-datasette/">
+          Improve API data describing periodicals
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/csv-digital-journals/">
+          List of digitised periodicals from search
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/journals-with-ocr/">
+          List of journals with OCRd text
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/govau-subdomains-surt/">
+          List of unique gov.au subdomains
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/metadata-for-digital-works/">
+          Metadata for digital works
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-issues-per-year/">
+          Number of issues per year for each newspaper
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/ocrd-text-all-journals/">
+          OCRd text from all journals
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/observing-change-over-time/">
+          Observe change in a page over time
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/trove-oral-histories/">
+          Oral histories metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/trove-oral-history-series/">
+          Oral history collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/pandora-collections-data/">
+          Pandora collections data
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/pandora-titles-data/">
+          Pandora titles data
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/parse-coordinates/">
+          Parse map coordinates from metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-government/trove-parliament-press-releases-covid/">
+          Press releases relating to COVID
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-government/trove-parliament-press-releases-refugees/">
+          Press releases relating to refugees
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/save-series/">
+          Save oral history collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-contributors/trove-contributors-zones/">
+          Total records by contributor & zone
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-contributors/trove-contributors-formats/">
+          Total records by contributor, zone & format
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/single-maps-data/">
+          Trove digitised maps metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/trove-maps-data/">
+          Trove digitised maps metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-maps/single-maps-coordinates-data/">
+          Trove digitised maps – coordinates
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/trove-lists-metadata/">
+          Trove lists metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/trove-public-tags/">
+          Trove public tags
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-lists/trove-tag-counts/">
+          Trove tag counts
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/govau-subdomains-split/">
+          Unique gov.au subdomains split into parts
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/govau-subdomains-visualisations/">
+          Visualisations of gov.au subdomains
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/unpublished-entering-pd/">
+          Works entering public domain
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:network-graph">
+
+
+<span class="md-tag">network graph</span><a class="headerlink" href="#tag:network-graph" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-people/intersections/">
+          Visualise data sources
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:newspaper-titles">
+
+
+<span class="md-tag">newspaper titles</span><a class="headerlink" href="#tag:newspaper-titles" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Get_newspaper_titles_not_including_gazettes/">
+          Get newspaper titles excluding gazettes
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:oral-history">
+
+
+<span class="md-tag">oral history</span><a class="headerlink" href="#tag:oral-history" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-music/download-transcripts/">
+          Download oral history transcripts
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/harvest-oral-histories/">
+          Harvest oral histories
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/save-series/">
+          Save oral history collections
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:public-domain">
+
+
+<span class="md-tag">public domain</span><a class="headerlink" href="#tag:public-domain" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-unpublished/Exploring-unpublished-works-entering-public-domain/">
+          Explore works entering public domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/Finding-unpublished-works-entering-public-domain/">
+          Find works entering public domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/finding-aids-summary/">
+          Finding aid summaries
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/finding-aids-urls/">
+          Finding aid urls
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-unpublished/unpublished-entering-pd/">
+          Works entering public domain
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:pyvips">
+
+
+<span class="md-tag">pyvips</span><a class="headerlink" href="#tag:pyvips" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../libraries-tasmania/tas-pod-upload-images/">
+          Upload images to s3 for delivery via IIIF
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:query-by-date">
+
+
+<span class="md-tag">query by date</span><a class="headerlink" href="#tag:query-by-date" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Todays-news-yesterday/">
+          Today’s news yesterday
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:query-by-page">
+
+
+<span class="md-tag">query by page</span><a class="headerlink" href="#tag:query-by-page" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Todays-news-yesterday/">
+          Today’s news yesterday
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:random">
+
+
+<span class="md-tag">random</span><a class="headerlink" href="#tag:random" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-random/random_newspaper_article/">
+          Random newspaper article
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-random/random_work_by_id/">
+          Random work by id
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-random/random_work_by_facets/">
+          Random work using facets
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:scraper">
+
+
+<span class="md-tag">scraper</span><a class="headerlink" href="#tag:scraper" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../nsw-state-archives/get-list-of-indexes/">
+          Get details of online indexes
+        </a>
+      </li>
+    
+      <li>
+        <a href="../nsw-state-archives/harvest-indexes/">
+          Harvest online indexes
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:screenscraping">
+
+
+<span class="md-tag">screenscraping</span><a class="headerlink" href="#tag:screenscraping" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-books/metadata-for-digital-works/">
+          Metadata for digital works
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:screenshots">
+
+
+<span class="md-tag">screenshots</span><a class="headerlink" href="#tag:screenshots" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../web-archives/create-screenshots-over-time/">
+          Create a series of screenshots
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/create-screenshots/">
+          Create full-page screenshots
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:search-facets">
+
+
+<span class="md-tag">search facets</span><a class="headerlink" href="#tag:search-facets" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-state/">
+          Map Trove newspaper results by state
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-place-of-publication/">
+          Map results by place of publication
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time/">
+          Map results by place over time
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/visualise-searches-over-time/">
+          Visualise Trove newspaper searches over time
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:text">
+
+
+<span class="md-tag">text</span><a class="headerlink" href="#tag:text" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../libraries-tasmania/tas-pod-save-text-images/">
+          Download Post Office Directory PDFs
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/download-transcripts/">
+          Download oral history transcripts
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/get-ocrd-text-from-digitised-journal/">
+          Get OCRd text from a periodical
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/get-ocrd-text-from-all-journals/">
+          Get OCRd text from all periodicals
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/harvest-parliament-press-releases/">
+          Harvest parliament press releases from Trove
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/harvesting-text/">
+          Harvest text from web pages
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:text-analysis">
+
+
+<span class="md-tag">text analysis</span><a class="headerlink" href="#tag:text-analysis" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../web-archives/compare-page-versions/">
+          Compare versions of a page
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/counting-words-and-phrases/">
+          Counting words and phrases
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/display-changes-in-text/">
+          Display changes in page text
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/exploring-digitised-books-adel-rahmani/">
+          Exploring Trove's digitised books
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-harvester/exploring-troveharvester-data/">
+          Exploring harvested data
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-harvester/exploring-troveharvester-text/">
+          Exploring harvested texts
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/find-when-text-appears/">
+          Find when text appears
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/recipe-generator/">
+          Recipe generator
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/topic-modelling-parliament-press-releases/">
+          Topic Modelling of Australian Parliamentary Press Releases by Adel Rahmani
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:text-dataset">
+
+
+<span class="md-tag">text dataset</span><a class="headerlink" href="#tag:text-dataset" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-journals/journals-with-ocr/">
+          List of journals with OCRd text
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/ocrd-text-from-ia/">
+          OCRd text from Australian books in IA
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-books/ocrd-text-from-trove-books/">
+          OCRd text from Trove books
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/ocrd-text-all-journals/">
+          OCRd text from all journals
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/politicans-press-releases-refugees/">
+          Politicians talking about 'immigrants' and 'refugees'
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/politicans-press-releases-covid/">
+          Politicians talking about COVID
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:topic-modelling">
+
+
+<span class="md-tag">topic modelling</span><a class="headerlink" href="#tag:topic-modelling" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-books/exploring-digitised-books-adel-rahmani/">
+          Exploring Trove's digitised books
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-journals/topic-modelling-parliament-press-releases/">
+          Topic Modelling of Australian Parliamentary Press Releases by Adel Rahmani
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:visualisation">
+
+
+<span class="md-tag">visualisation</span><a class="headerlink" href="#tag:visualisation" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-lists/analyse_tags/">
+          Analyse tags data
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/compare-page-versions/">
+          Compare versions of a page
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-music/explore-abcrn-data/">
+          Explore ABC RN metadata
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/exploring-govau-subdomains/">
+          Explore all subdomains from gov.au
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-harvester/exploring-troveharvester-data/">
+          Exploring harvested data
+        </a>
+      </li>
+    
+      <li>
+        <a href="../csv-explorer/">
+          GLAM CSV Explorer
+        </a>
+      </li>
+    
+      <li>
+        <a href="../nsw-state-archives/index-explorer/">
+          Index Explorer
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-state/">
+          Map Trove newspaper results by state
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-place-of-publication/">
+          Map results by place of publication
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time/">
+          Map results by place over time
+        </a>
+      </li>
+    
+      <li>
+        <a href="../wikidata/govt-agencies-network/">
+          Network graph of govt departments
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/observing-change-over-time/">
+          Observe change in a page over time
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/querypic/">
+          QueryPic
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/QueryPic_deconstructed/">
+          QueryPic Deconstructed
+        </a>
+      </li>
+    
+      <li>
+        <a href="../wikidata/agencies-gannt-timeline/">
+          Timeline of govt departments
+        </a>
+      </li>
+    
+      <li>
+        <a href="../wikidata/single-agency-network/">
+          View connections of a single agency
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/govau-subdomains-visualisations/">
+          Visualisations of gov.au subdomains
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/visualise-searches-over-time/">
+          Visualise Trove newspaper searches over time
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/visualise-total-newspaper-articles-by-state-year/">
+          Visualise articles by state & year
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-people/intersections/">
+          Visualise data sources
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:web-app">
+
+
+<span class="md-tag">web app</span><a class="headerlink" href="#tag:web-app" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../trove-newspapers/Save-page-image/">
+          Download a page image
+        </a>
+      </li>
+    
+      <li>
+        <a href="../csv-explorer/">
+          GLAM CSV Explorer
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Get-article-thumbnail/">
+          Generate an article thumbnail
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/Save-Trove-newspaper-article-as-image-app/">
+          Save article as an image web app
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-harvester/harvester-web-app/">
+          Trove Harvester web app
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:web-archives">
+
+
+<span class="md-tag">web archives</span><a class="headerlink" href="#tag:web-archives" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../web-archives/compare-page-versions/">
+          Compare versions of a page
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/comparing-cdx-apis/">
+          Comparing CDX APIs
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/create-screenshots-over-time/">
+          Create a series of screenshots
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/create-screenshots/">
+          Create full-page screenshots
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/display-changes-in-text/">
+          Display changes in page text
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/exploring-powerpoints/">
+          Explore Powerpoints from a domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/exploring-govau-subdomains/">
+          Explore all subdomains from gov.au
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/exploring-ia-cdx-api/">
+          Exploring the Internet Archive's CDX API
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/get-all-versions/">
+          Find all versions of a web page
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/find-when-text-appears/">
+          Find when text appears
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/get-memento/">
+          Get a Memento
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/create-datasets/">
+          Harvest Pandora subjects and collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/harvest-pandora-subject-collections/">
+          Harvest Pandora subjects and collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/harvest-pandora-titles/">
+          Harvest Pandora subjects and collections
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/harvesting-domain-data/">
+          Harvest data about a domain
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/harvesting-text/">
+          Harvest text from web pages
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-newspaper-titles-from-web-archives-first-appearance/">
+          Newspaper titles harvested from web archives
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/csv-newspaper-titles-from-web-archives/">
+          Newspaper titles harvested from web archives
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/observing-change-over-time/">
+          Observe change in a page over time
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/pandora-collections-data/">
+          Pandora collections data
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-web-archives/pandora-titles-data/">
+          Pandora titles data
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/timegates-timemaps-mementos/">
+          Timegates, Timemaps, and Mementos
+        </a>
+      </li>
+    
+      <li>
+        <a href="../web-archives/timemaps-vs-cdx/">
+          Timemaps vs CDX APIs
+        </a>
+      </li>
+    
+      <li>
+        <a href="../trove-newspapers/historical-data-newspaper-titles/">
+          When newspapers were added to Trove
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:webdav">
+
+
+<span class="md-tag">webdav</span><a class="headerlink" href="#tag:webdav" title="Permanent link">&para;</a></h2>
+  <ul>
+    
+      <li>
+        <a href="../glam-tools/cloudstor-access-via-webdav/">
+          CloudStor using WebDAV
+        </a>
+      </li>
+    
+    
+  </ul>
+
 
 <!-- Was this page helpful? -->
+
+  
 
 
 
@@ -11632,7 +16576,7 @@
     
     
     <a href="https://github.com/glam-workbench" target="_blank" rel="noopener" title="GLAM Workbench on GitHub" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
     
@@ -11642,7 +16586,7 @@
     
     
     <a href="https://hcommons.social/@wragge" target="_blank" rel="noopener me" title="@wragge@hcommons.social on Mastodon" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
     </a>
   
     
@@ -11650,7 +16594,7 @@
     
     
     <a href="https://www.facebook.com/glamworkbench/" target="_blank" rel="noopener" title="GLAM Workbench on Facebook" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"/></svg>
     </a>
   
     
@@ -11658,7 +16602,7 @@
     
     
     <a href="https://updates.timsherratt.org/categories/glamworkbench/" target="_blank" rel="noopener" title="Latest GLAMWorkbench news!" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zm0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zm0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
     </a>
   
     
@@ -11666,7 +16610,7 @@
     
     
     <a href="https://www.linkedin.com/company/glam-workbench/" target="_blank" rel="noopener" title="GLAM Workbench on Linked In" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
     </a>
   
 </div>
@@ -11684,7 +16628,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss", "content.tabs.link"], "search": "../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.82b033e4.min.js"></script>
+      <script src="../assets/javascripts/bundle.6e7f53b1.min.js"></script>
       
     
   </body>
