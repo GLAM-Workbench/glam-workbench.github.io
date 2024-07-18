@@ -122,7 +122,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#optional-settings" class="md-skip">
+        <a href="#quick-start" class="md-skip">
           Skip to content
         </a>
       
@@ -11556,6 +11556,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#optional-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -11613,6 +11624,95 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-your-dataset-as-a-csv-file-in-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save your dataset as a CSV file in GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-a-url-to-load-the-csv-in-datasette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate a url to load the CSV in Datasette
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-settings_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#index-text-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Index text columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-unwanted-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hide unwanted columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-link-to-more-information_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a link to more information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-and-alternatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations and alternatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -11677,7 +11777,8 @@
 
 
 <!-- Markdown content -->
-<p>This page generates a url that will publish a CSV file as a fully-searchable, online database using <a href="https://github.com/simonw/datasette-lite">Datasette-Lite</a>. All you need is the url of a CSV file  saved in a public GitHub repository. Additional documentation is provided below.</p>
+<p>This page generates a url that will publish a CSV file as a fully-searchable, online database using <a href="https://github.com/simonw/datasette-lite">Datasette-Lite</a>. All you need is the url of a CSV file  saved in a public GitHub repository. <a href="#documentation">Additional documentation</a> is provided below.</p>
+<h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <p>Just copy and paste the GitHub url that points to your CSV file.</p>
 <p><input id="github-url" type="text" class="md-input md-input--stretch" placeholder="GitHub CSV url"></p>
 <p><button id="create-url" class="md-button md-button--primary">Create url</button> <button id="clear-all" class="md-button">Clear</button></p>
@@ -11694,6 +11795,43 @@
 <p>Insert a url to a page with more infomation about your dataset.</p>
 <p><input id="about-url" type="text" class="md-input md-input--stretch" placeholder="link for more information"></p>
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<p>Often researchers compile data in spreadsheets. But how do you share this data with others in a form they can easily explore? <a href="https://datasette.io/">Datasette</a> is a tool that helps you publish your data as an interactive website. There's a few different varieties of Datasette, but <a href="https://github.com/simonw/datasette-lite">Datasette-Lite</a> is probably the easiest, as you don't need to install any software. Datasette-Lite runs completely within your web browser, converting your data into into a searchable database on demand.</p>
+<p>I'm using Datasette-Lite throughout the GLAM Workbench. For example, try clicking the <strong>Explore in Datasette</strong> buttons on any of these pages:</p>
+<ul>
+<li><a href="https://glam-workbench.net/trove-journals/periodicals-data-api/">digitised periodicals in Trove</a></li>
+<li><a href="https://glam-workbench.net/trove-journals/bulletin-cartoons-collection/">editorial cartoons from the Bulletin</a></li>
+<li><a href="https://glam-workbench.net/trove-music/trove-oral-histories/">oral histories in Trove</a></li>
+</ul>
+<p>The buttons are simply links that point my <a href="https://github.com/GLAM-Workbench/datasette-lite">customised version of Datasette-Lite</a> to a specific dataset. To explore your dataset in Datasette-Lite, all you need is a url that tells Datasette-Lite what to load. This tool helps you generate those urls.</p>
+<h3 id="save-your-dataset-as-a-csv-file-in-github">Save your dataset as a CSV file in GitHub<a class="headerlink" href="#save-your-dataset-as-a-csv-file-in-github" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Save your spreadsheet as a CSV file (if it's not already in CSV format)</li>
+<li><a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">Create a GitHub account</a> (it's free) and login</li>
+<li><a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories#create-a-repository">Create a new GitHub repository</a></li>
+<li>From the main page of your new repository, Click on the 'Add file' button and select 'Upload file'.</li>
+<li>Select your CSV data file (or drag it to your browser) to upload it.</li>
+<li>Once it has uploaded, click on the green 'Commit changes' button to save the file to your repository.</li>
+</ol>
+<h3 id="generate-a-url-to-load-the-csv-in-datasette">Generate a url to load the CSV in Datasette<a class="headerlink" href="#generate-a-url-to-load-the-csv-in-datasette" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click on the uploaded data file in your GiHub repository.</li>
+<li>Copy the url of the data file from your browser's location bar.</li>
+<li>Paste the url into GitHub url box above.</li>
+<li>Click on the <strong>Create url</strong> button and the new url will appear.</li>
+<li>Click on the url to load Datasette, or right click and select 'Copy link' to share your dataset with others.</li>
+</ol>
+<h3 id="optional-settings_1">Optional settings<a class="headerlink" href="#optional-settings_1" title="Permanent link">&para;</a></h3>
+<h4 id="index-text-columns">Index text columns<a class="headerlink" href="#index-text-columns" title="Permanent link">&para;</a></h4>
+<p>The GLAM Workbench version of Datasette-Lite includes an option to index selected full-text columns. When you add a full-text index, Datasette will automatically display a keyword search box. For example, you might have columns for <code>title</code> and <code>description</code> that contain long full-text values. If you  index these columns you'll be able to search them both simply by entering words or phrases in the search box.</p>
+<p>To tell Datasette which columns to index, enter the column names, separated by commas, in <a href="#add-full-text-index">Add full text index</a> box. For example, to index the <code>title</code> and <code>description</code> columns, you'd enter <code>title.description</code>. Click the <strong>Create url</strong> button when you've finished to update the Datasette-Lite url.</p>
+<h4 id="hide-unwanted-columns">Hide unwanted columns<a class="headerlink" href="#hide-unwanted-columns" title="Permanent link">&para;</a></h4>
+<p>There might be columns in your CSV dataset that you don't want to display in Datasette. You can tell Datasette to hide them by entering the column names, separated by commas, in the <a href="#drop-unwanted-columns">Drop unwanted columns</a> box. Click the <strong>Create url</strong> button when you've finished to update the Datasette-Lite url.</p>
+<h4 id="add-a-link-to-more-information_1">Add a link to more information<a class="headerlink" href="#add-a-link-to-more-information_1" title="Permanent link">&para;</a></h4>
+<p>If you have a webpage that provides more information about your dataset, you can add a link to it from Datasette. Just paste the url into the <a href="#add-a-link-to-more-information">Add a link to more information</a> box. Click the <strong>Create url</strong> button when you've finished to update the Datasette-Lite url.</p>
+<h3 id="limitations-and-alternatives">Limitations and alternatives<a class="headerlink" href="#limitations-and-alternatives" title="Permanent link">&para;</a></h3>
+<p>This tool makes it easy to share single CSV files as searchable databases. But if your CSV has millions of rows it'll probably make your web browser unhappy if you try and load it in Datasette-Lite. Instead you can make use of Datasette's 'publish' option to push your data to a dedicated Datasette instance running on a cloud server. You can also customise your instance by changing the theme or using canned queries.</p>
+<p>For example, the <a href="https://glam-workbench.net/name-search/">GLAM Name Index Search</a> contains more than 10 millions rows of data from multiple datasets, all aggregated through a single search interface. The <a href="https://glam-workbench.net/libraries-tasmania/tasmanian-post-office-directories/">Tasmanian Post Office Directories</a> provides full-text search across 48 digitised volumes and has a heavily customised interface that displays page images as well as the OCRd content. Both of these Datasette instances are hosted on Google Cloudrun.</p>
+<p>Similarly, the method described here is designed to work with single CSV files. If you have multiple, interconnected tables you'll probably want to generate your own SQLite database to use with Datasette. There's an example of how you can do this in the <a href="https://glam-workbench.net/trove-journals/periodicals-enrich-for-datasette/">Enrich the list of periodicals from the Trove API</a> notebook.</p>
 <script src="../../scripts/datasette-script.js"></src>
 
 <!-- Was this page helpful? -->
