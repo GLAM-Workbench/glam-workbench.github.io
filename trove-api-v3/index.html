@@ -11830,14 +11830,14 @@
 <p class="admonition-title">Info</p>
 <p>This is a temporary section of the the GLAM Workbench created to bring together information and examples relating to version 3 of the Trove API. It will probably disappear once the new version is officially released and I reorganise the Trove sections of the GLAM Workbench accordingly.</p>
 </div>
-<p><strong>Release 3 of the Trove API Version 3 beta</strong> is now available for testing. See the <a href="https://trove.nla.gov.au/sites/default/files/attachments/2023-06/Introducing%20Trove%20API%20v3%20-%20Release%203_0.pdf">introductory notes</a> for more details.</p>
+<p><strong>Version 2 of the Trove API has now been decommissioned, so you have to use v3. The Trove documentation describes v3 as 'finalised', but there are still <a href="https://github.com/GLAM-Workbench/trove-api-intro/issues/49">a number of outstanding bugs</a>.</strong></p>
 <h2 id="timeline">Timeline<a class="headerlink" href="#timeline" title="Permanent link">&para;</a></h2>
 <ul>
 <li>March 2023: Trove API v3 beta (release 1)</li>
 <li>May 2023: Trove API v3 beta (release 2)</li>
 <li>June 2023: Trove API v3 beta (release 3)</li>
 <li>silence for many months...</li>
-<li>September 2024: Trove API v2 decommissioned</li>
+<li>September 2024: Trove API v2 decommissioned without warning</li>
 </ul>
 <h2 id="trove-api-console">Trove API Console<a class="headerlink" href="#trove-api-console" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://troveconsole.herokuapp.com/">Trove API Console</a> has been updated to add examples from v3 of the API. It provides many sample queries that you can run and modify without the need for an API key.</p>
@@ -11913,7 +11913,7 @@
 <p class="admonition-title">Info</p>
 <p>This is a work in progress as I work my way through the API changes. Additions are very welcome.</p>
 </div>
-<p>This summary only includes <strong>breaking changes</strong> – the things you'll need to change in your code before v2 of the API is switched off in early 2024. For a full list of changes see the <a href="hhttps://trove.nla.gov.au/sites/default/files/attachments/2023-07/Introducing%20Trove%20API%20v3%20-%20Release%203%20updated.pdf">introduction to the v3 API</a>, and the <a href="https://trove.nla.gov.au/about/create-something/using-api/v3/api-technical-guide">v3 technical guide</a>.</p>
+<p>This summary only includes <strong>breaking changes</strong> – the things you'll need to change in your code before v2 of the API is switched off in early 2024. For a full list of changes see the <a href="https://trove.nla.gov.au/sites/default/files/attachments/2023-07/Introducing%20Trove%20API%20v3%20-%20Release%203%20updated.pdf">introduction to the v3 API</a>, and the <a href="https://trove.nla.gov.au/about/create-something/using-api/v3/api-technical-guide">v3 technical guide</a>.</p>
 <p>The release notes don't mention the changes to the JSON responses. In general, the changes flatten the JSON responses by removing top-level wrappers that served no function. This means the way you access data within responses has changed. For example, assuming that you've saved the JSON response as a variable called <code>data</code>, to access the title of a newspaper article retrieved via the <code>/newspaper/[article id]</code> endpoint in version 2 you would use:</p>
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="p">[</span><span class="s2">&quot;article&quot;</span><span class="p">][</span><span class="s2">&quot;heading&quot;</span><span class="p">]</span>
 </code></pre></div>
