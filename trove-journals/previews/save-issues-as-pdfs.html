@@ -7476,434 +7476,24 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eca7e8de-58b9-4e5a-a7ce-105481f8ad07">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Harvest-details-of-periodicals-submitted-to-Trove-through-the-National-edeposit-scheme-(NED)">Harvest details of periodicals submitted to Trove through the National edeposit scheme (NED)<a class="anchor-link" href="#Harvest-details-of-periodicals-submitted-to-Trove-through-the-National-edeposit-scheme-(NED)">¶</a></h1><p>This notebook harvests details of periodicals submitted to Trove through the National edeposit scheme (NED). It creates two datasets, one containing details of the periodical titles, and the other listing all the available issues.</p>
-<p>There are two main harvesting steps. The first is to search for periodicals using the API's <code>/result</code> endpoint using the following parameters:</p>
+<h1 id="Download-issues-of-a-periodical-as-PDFs">Download issues of a periodical as PDFs<a class="anchor-link" href="#Download-issues-of-a-periodical-as-PDFs">¶</a></h1><p>This notebook helps you download the issues of a digitised periodical as PDFs. You can download all digitised issues, or specify a range of years to include.</p>
+<p>There are three main steps:</p>
 <ul>
-<li><code>q</code> set to <code>"nla.obj" nuc:"ANL:NED"</code></li>
-<li><code>format</code> facet to <code>Periodical</code></li>
-<li>and <code>l-availability</code> set to <code>y</code></li>
+<li>get a list of all the <code>nla.obj</code> identifiers of the periodical's issues</li>
+<li>get the number of pages in each issue</li>
+<li>construct a url to download each issue as a PDF using the <code>nla.obj</code> identifier and the number of pages</li>
 </ul>
-<p>The work records returned by this search are unpacked, and individual versions saved to make sure we get everything. Once this is complete, any duplicate records are merged.</p>
-<p>The second step harvests details of issues by extracting a list of issues for each title from the collection viewer. It then supplements the issue metadata by extracting information for each issue from the journal viewer.</p>
+<p>Depending on the periodical, this could take many hours to complete and consume a lot of disk space.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Let's import the libraries we need.</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-
-<span class="kn">import</span> <span class="nn">arrow</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">requests_cache</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="kn">from</span> <span class="nn">requests.adapters</span> <span class="kn">import</span> <span class="n">HTTPAdapter</span>
-<span class="kn">from</span> <span class="nn">requests.packages.urllib3.util.retry</span> <span class="kn">import</span> <span class="n">Retry</span>
-<span class="kn">from</span> <span class="nn">sqlite_utils</span> <span class="kn">import</span> <span class="n">Database</span>
-<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
-
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
-<span class="n">retries</span> <span class="o">=</span> <span class="n">Retry</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">status_forcelist</span><span class="o">=</span><span class="p">[</span><span class="mi">502</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">504</span><span class="p">])</span>
-<span class="n">r</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"https://"</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retries</span><span class="p">))</span>
-<span class="n">r</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"http://"</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retries</span><span class="p">))</span>
-
-<span class="n">s</span> <span class="o">=</span> <span class="n">requests_cache</span><span class="o">.</span><span class="n">CachedSession</span><span class="p">(</span><span class="n">expire_after</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
-<span class="n">s</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"https://"</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retries</span><span class="p">))</span>
-<span class="n">s</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"http://"</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retries</span><span class="p">))</span>
-
-<span class="n">load_dotenv</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>True</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Add-your-Trove-API-key">Add your Trove API key<a class="anchor-link" href="#Add-your-Trove-API-key">¶</a></h2><p>You can get a Trove API key by <a href="https://trove.nla.gov.au/about/create-something/using-api">following these instructions</a>.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Insert your Trove API key</span>
-<span class="n">API_KEY</span> <span class="o">=</span> <span class="s2">"YOUR API KEY"</span>
-
-<span class="c1"># Use api key value from environment variables if it is available</span>
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"TROVE_API_KEY"</span><span class="p">):</span>
-    <span class="n">API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"TROVE_API_KEY"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Define-some-functions-to-do-the-work">Define some functions to do the work<a class="anchor-link" href="#Define-some-functions-to-do-the-work">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_total_results</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Get the total number of results for a search.</span>
-<span class="sd">    """</span>
-    <span class="n">these_params</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">these_params</span><span class="p">[</span><span class="s2">"n"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="s2">"https://api.trove.nla.gov.au/v3/result"</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">these_params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span>
-    <span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">"category"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"records"</span><span class="p">][</span><span class="s2">"total"</span><span class="p">])</span>
-
-
-<span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"value"</span><span class="p">]):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Get the values of a field.</span>
-<span class="sd">    Some fields are lists of dicts, if so use the `key` to get the value.</span>
-<span class="sd">    """</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="p">[])</span>
-    <span class="k">if</span> <span class="n">value</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">dict</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="k">return</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\s+"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
-            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-                <span class="k">pass</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">value</span>
-
-
-<span class="k">def</span> <span class="nf">merge_values</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"value"</span><span class="p">]):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Merges values from multiple fields, removing any duplicates.</span>
-<span class="sd">    """</span>
-    <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
-        <span class="n">values</span> <span class="o">+=</span> <span class="n">get_value</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
-    <span class="c1"># Remove duplicates and None value</span>
-    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]))</span>
-
-
-<span class="k">def</span> <span class="nf">flatten_values</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">"type"</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    If a field has a value and type, return the values as strings with this format: 'type: value'</span>
-<span class="sd">    """</span>
-    <span class="n">flattened</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">values</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="p">[])</span>
-    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
-            <span class="n">flattened</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">value</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">flattened</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s2">"value"</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">flattened</span>
-
-
-<span class="k">def</span> <span class="nf">flatten_identifiers</span><span class="p">(</span><span class="n">record</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Get a list of control numbers from the identifier field and flatten the values.</span>
-<span class="sd">    """</span>
-    <span class="n">ids</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">"identifier"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="n">v</span>
-            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"identifier"</span><span class="p">,</span> <span class="p">[])</span>
-            <span class="k">if</span> <span class="s2">"type"</span> <span class="ow">in</span> <span class="n">v</span> <span class="ow">and</span> <span class="n">v</span><span class="p">[</span><span class="s2">"type"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"control number"</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">flatten_values</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span> <span class="s2">"identifier"</span><span class="p">,</span> <span class="s2">"source"</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">get_fulltext_url</span><span class="p">(</span><span class="n">links</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Loop through the identifiers to find a link to the full text version of the book.</span>
-<span class="sd">    """</span>
-    <span class="n">urls</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span>
-            <span class="s2">"linktype"</span> <span class="ow">in</span> <span class="n">link</span>
-            <span class="ow">and</span> <span class="n">link</span><span class="p">[</span><span class="s2">"linktype"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"fulltext"</span>
-            <span class="ow">and</span> <span class="s2">"nla.obj"</span> <span class="ow">in</span> <span class="n">link</span><span class="p">[</span><span class="s2">"value"</span><span class="p">]</span>
-            <span class="ow">and</span> <span class="s2">"edeposit"</span> <span class="ow">in</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"linktext"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
-        <span class="p">):</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"^http\b"</span><span class="p">,</span> <span class="s2">"https"</span><span class="p">,</span> <span class="n">link</span><span class="p">[</span><span class="s2">"value"</span><span class="p">])</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"^https://www\."</span><span class="p">,</span> <span class="s2">"https://"</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
-            <span class="n">link_text</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"linktext"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
-            <span class="n">urls</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">"url"</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span> <span class="s2">"link_text"</span><span class="p">:</span> <span class="n">link_text</span><span class="p">})</span>
-    <span class="k">return</span> <span class="n">urls</span>
-
-
-<span class="k">def</span> <span class="nf">get_catalogue_url</span><span class="p">(</span><span class="n">links</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Loop through the identifiers to find a link to the NLA catalogue.</span>
-<span class="sd">    """</span>
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span>
-            <span class="s2">"linktype"</span> <span class="ow">in</span> <span class="n">link</span>
-            <span class="ow">and</span> <span class="n">link</span><span class="p">[</span><span class="s2">"linktype"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"notonline"</span>
-            <span class="ow">and</span> <span class="s2">"nla.cat"</span> <span class="ow">in</span> <span class="n">link</span><span class="p">[</span><span class="s2">"value"</span><span class="p">]</span>
-        <span class="p">):</span>
-            <span class="k">return</span> <span class="n">link</span><span class="p">[</span><span class="s2">"value"</span><span class="p">]</span>
-    <span class="k">return</span> <span class="s2">""</span>
-
-
-<span class="k">def</span> <span class="nf">has_fulltext_link</span><span class="p">(</span><span class="n">links</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Check if a list of identifiers includes a fulltext url pointing to an NLA resource.</span>
-<span class="sd">    """</span>
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span>
-            <span class="s2">"linktype"</span> <span class="ow">in</span> <span class="n">link</span>
-            <span class="ow">and</span> <span class="n">link</span><span class="p">[</span><span class="s2">"linktype"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"fulltext"</span>
-            <span class="ow">and</span> <span class="s2">"nla.obj"</span> <span class="ow">in</span> <span class="n">link</span><span class="p">[</span><span class="s2">"value"</span><span class="p">]</span>
-            <span class="ow">and</span> <span class="s2">"edeposit"</span> <span class="ow">in</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"linktext"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
-        <span class="p">):</span>
-            <span class="k">return</span> <span class="kc">True</span>
-
-
-<span class="k">def</span> <span class="nf">has_holding</span><span class="p">(</span><span class="n">holdings</span><span class="p">,</span> <span class="n">nucs</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Check if a list of holdings includes one of the supplied nucs.</span>
-<span class="sd">    """</span>
-    <span class="k">for</span> <span class="n">holding</span> <span class="ow">in</span> <span class="n">holdings</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">holding</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"nuc"</span><span class="p">)</span> <span class="ow">in</span> <span class="n">nucs</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">True</span>
-
-
-<span class="k">def</span> <span class="nf">get_digitised_versions</span><span class="p">(</span><span class="n">work</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Get the versions from the given work that have a fulltext url pointing to an NLA resource</span>
-<span class="sd">    in the `identifier` field.</span>
-<span class="sd">    """</span>
-    <span class="n">versions</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">version</span> <span class="ow">in</span> <span class="n">work</span><span class="p">[</span><span class="s2">"version"</span><span class="p">]:</span>
-        <span class="k">if</span> <span class="s2">"identifier"</span> <span class="ow">in</span> <span class="n">version</span> <span class="ow">and</span> <span class="n">has_fulltext_link</span><span class="p">(</span><span class="n">version</span><span class="p">[</span><span class="s2">"identifier"</span><span class="p">]):</span>
-            <span class="n">versions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">version</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">versions</span>
-
-
-<span class="k">def</span> <span class="nf">get_nuc_versions</span><span class="p">(</span><span class="n">work</span><span class="p">,</span> <span class="n">nucs</span><span class="o">=</span><span class="p">[</span><span class="s2">"ANL"</span><span class="p">,</span> <span class="s2">"ANL:DL"</span><span class="p">]):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Get the versions from the given work that are held by the NLA.</span>
-<span class="sd">    """</span>
-    <span class="n">versions</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">version</span> <span class="ow">in</span> <span class="n">work</span><span class="p">[</span><span class="s2">"version"</span><span class="p">]:</span>
-        <span class="k">if</span> <span class="s2">"holding"</span> <span class="ow">in</span> <span class="n">version</span> <span class="ow">and</span> <span class="n">has_holding</span><span class="p">(</span><span class="n">version</span><span class="p">[</span><span class="s2">"holding"</span><span class="p">],</span> <span class="p">[</span><span class="s2">"ANL"</span><span class="p">,</span> <span class="s2">"ANL:DL"</span><span class="p">]):</span>
-            <span class="n">versions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">version</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">versions</span>
-
-
-<span class="k">def</span> <span class="nf">harvest_works</span><span class="p">(</span>
-    <span class="n">params</span><span class="p">,</span>
-    <span class="n">filter_by</span><span class="o">=</span><span class="s2">"url"</span><span class="p">,</span>
-    <span class="n">nucs</span><span class="o">=</span><span class="p">[</span><span class="s2">"ANL"</span><span class="p">,</span> <span class="s2">"ANL:DL"</span><span class="p">],</span>
-    <span class="n">output_file</span><span class="o">=</span><span class="s2">"harvested-metadata.ndjson"</span><span class="p">,</span>
-<span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Harvest metadata relating to digitised works.</span>
-<span class="sd">    The filter_by parameter selects records for inclusion in the dataset, options:</span>
-<span class="sd">        * url -- only include versions that have an NLA fulltext url</span>
-<span class="sd">        * nuc -- only include versions that have an NLA nuc (ANL or ANL:DL)</span>
-<span class="sd">    """</span>
-    <span class="n">default_params</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
-        <span class="s2">"bulkHarvest"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
-        <span class="s2">"n"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="s2">"encoding"</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
-        <span class="s2">"include"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"links"</span><span class="p">,</span> <span class="s2">"workversions"</span><span class="p">,</span> <span class="s2">"holdings"</span><span class="p">],</span>
-    <span class="p">}</span>
-    <span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">default_params</span><span class="p">)</span>
-    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"X-API-KEY"</span><span class="p">:</span> <span class="n">API_KEY</span><span class="p">}</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="n">get_total_results</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="s2">"*"</span>
-    <span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">ndjson_file</span><span class="p">:</span>
-        <span class="k">with</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">total</span><span class="p">)</span> <span class="k">as</span> <span class="n">pbar</span><span class="p">:</span>
-            <span class="k">while</span> <span class="n">start</span><span class="p">:</span>
-                <span class="n">params</span><span class="p">[</span><span class="s2">"s"</span><span class="p">]</span> <span class="o">=</span> <span class="n">start</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-                    <span class="s2">"https://api.trove.nla.gov.au/v3/result"</span><span class="p">,</span>
-                    <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
-                    <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-                <span class="p">)</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-                <span class="n">items</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"category"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"records"</span><span class="p">][</span><span class="s2">"item"</span><span class="p">]</span>
-                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
-                    <span class="k">for</span> <span class="n">category</span><span class="p">,</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                        <span class="k">if</span> <span class="n">category</span> <span class="o">==</span> <span class="s2">"work"</span><span class="p">:</span>
-                            <span class="k">if</span> <span class="n">filter_by</span> <span class="o">==</span> <span class="s2">"nuc"</span><span class="p">:</span>
-                                <span class="n">versions</span> <span class="o">=</span> <span class="n">get_nuc_versions</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">nucs</span><span class="p">)</span>
-                            <span class="k">else</span><span class="p">:</span>
-                                <span class="n">versions</span> <span class="o">=</span> <span class="n">get_digitised_versions</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
-                                <span class="c1"># Sometimes there are fulltext links on work but not versions</span>
-                                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">versions</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">has_fulltext_link</span><span class="p">(</span>
-                                    <span class="n">record</span><span class="p">[</span><span class="s2">"identifier"</span><span class="p">]</span>
-                                <span class="p">):</span>
-                                    <span class="n">versions</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s2">"version"</span><span class="p">]</span>
-                            <span class="k">for</span> <span class="n">version</span> <span class="ow">in</span> <span class="n">versions</span><span class="p">:</span>
-                                <span class="k">for</span> <span class="n">sub_version</span> <span class="ow">in</span> <span class="n">version</span><span class="p">[</span><span class="s2">"record"</span><span class="p">]:</span>
-                                    <span class="n">metadata</span> <span class="o">=</span> <span class="n">sub_version</span><span class="p">[</span><span class="s2">"metadata"</span><span class="p">][</span><span class="s2">"dc"</span><span class="p">]</span>
-                                    <span class="c1"># Sometimes fulltext identifiers are only available on the</span>
-                                    <span class="c1"># version rather than the sub version. So we'll look in the</span>
-                                    <span class="c1"># sub version first, and if they're not there use the url from</span>
-                                    <span class="c1"># the version.</span>
-                                    <span class="c1"># Sometimes there are multiple fulltext urls associated with a version:</span>
-                                    <span class="c1"># eg a collection page and a publication. If so add records for both urls.</span>
-                                    <span class="c1"># They could end up pointing to the same digitised publication, but</span>
-                                    <span class="c1"># we can sort that out later. Aim here is to try and not miss any possible</span>
-                                    <span class="c1"># routes to digitised publications!</span>
-                                    <span class="n">urls</span> <span class="o">=</span> <span class="n">get_fulltext_url</span><span class="p">(</span>
-                                        <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"identifier"</span><span class="p">,</span> <span class="p">[])</span>
-                                    <span class="p">)</span>
-                                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                                        <span class="n">urls</span> <span class="o">=</span> <span class="n">get_fulltext_url</span><span class="p">(</span>
-                                            <span class="n">version</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"identifier"</span><span class="p">,</span> <span class="p">[])</span>
-                                        <span class="p">)</span>
-                                    <span class="c1"># Sometimes there are fulltext links on work but not versions</span>
-                                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                                        <span class="n">urls</span> <span class="o">=</span> <span class="n">get_fulltext_url</span><span class="p">(</span>
-                                            <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"identifier"</span><span class="p">,</span> <span class="p">[])</span>
-                                        <span class="p">)</span>
-                                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">filter_by</span> <span class="o">==</span> <span class="s2">"nuc"</span><span class="p">:</span>
-                                        <span class="n">urls</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">"url"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"link_text"</span><span class="p">:</span> <span class="s2">""</span><span class="p">}]</span>
-                                    <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
-                                        <span class="n">work</span> <span class="o">=</span> <span class="p">{</span>
-                                            <span class="c1"># This is not the full set of available fields,</span>
-                                            <span class="c1"># adjust as necessary.</span>
-                                            <span class="s2">"title"</span><span class="p">:</span> <span class="n">get_value</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="s2">"title"</span><span class="p">),</span>
-                                            <span class="s2">"work_url"</span><span class="p">:</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"troveUrl"</span><span class="p">),</span>
-                                            <span class="s2">"work_type"</span><span class="p">:</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="p">[]),</span>
-                                            <span class="s2">"contributor"</span><span class="p">:</span> <span class="n">merge_values</span><span class="p">(</span>
-                                                <span class="n">metadata</span><span class="p">,</span>
-                                                <span class="p">[</span><span class="s2">"creator"</span><span class="p">,</span> <span class="s2">"contributor"</span><span class="p">],</span>
-                                                <span class="p">[</span><span class="s2">"value"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">],</span>
-                                            <span class="p">),</span>
-                                            <span class="s2">"publisher"</span><span class="p">:</span> <span class="n">get_value</span><span class="p">(</span>
-                                                <span class="n">metadata</span><span class="p">,</span> <span class="s2">"publisher"</span>
-                                            <span class="p">),</span>
-                                            <span class="s2">"date"</span><span class="p">:</span> <span class="n">merge_values</span><span class="p">(</span>
-                                                <span class="n">metadata</span><span class="p">,</span> <span class="p">[</span><span class="s2">"date"</span><span class="p">,</span> <span class="s2">"issued"</span><span class="p">]</span>
-                                            <span class="p">),</span>
-                                            <span class="c1"># Using merge here because I've noticed some duplicate values</span>
-                                            <span class="s2">"type"</span><span class="p">:</span> <span class="n">merge_values</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="p">[</span><span class="s2">"type"</span><span class="p">]),</span>
-                                            <span class="s2">"format"</span><span class="p">:</span> <span class="n">get_value</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="s2">"format"</span><span class="p">),</span>
-                                            <span class="s2">"rights"</span><span class="p">:</span> <span class="n">merge_values</span><span class="p">(</span>
-                                                <span class="n">metadata</span><span class="p">,</span> <span class="p">[</span><span class="s2">"rights"</span><span class="p">,</span> <span class="s2">"licenseRef"</span><span class="p">]</span>
-                                            <span class="p">),</span>
-                                            <span class="s2">"language"</span><span class="p">:</span> <span class="n">get_value</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="s2">"language"</span><span class="p">),</span>
-                                            <span class="s2">"extent"</span><span class="p">:</span> <span class="n">get_value</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="s2">"extent"</span><span class="p">),</span>
-                                            <span class="s2">"subject"</span><span class="p">:</span> <span class="n">merge_values</span><span class="p">(</span>
-                                                <span class="n">metadata</span><span class="p">,</span> <span class="p">[</span><span class="s2">"subject"</span><span class="p">]</span>
-                                            <span class="p">),</span>
-                                            <span class="s2">"spatial"</span><span class="p">:</span> <span class="n">get_value</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="s2">"spatial"</span><span class="p">),</span>
-                                            <span class="c1"># Flattened type/value</span>
-                                            <span class="s2">"is_part_of"</span><span class="p">:</span> <span class="n">flatten_values</span><span class="p">(</span>
-                                                <span class="n">metadata</span><span class="p">,</span> <span class="s2">"isPartOf"</span>
-                                            <span class="p">),</span>
-                                            <span class="c1"># Only get control numbers and flatten</span>
-                                            <span class="s2">"identifier"</span><span class="p">:</span> <span class="n">flatten_identifiers</span><span class="p">(</span><span class="n">metadata</span><span class="p">),</span>
-                                            <span class="s2">"fulltext_url"</span><span class="p">:</span> <span class="n">url</span><span class="p">[</span><span class="s2">"url"</span><span class="p">],</span>
-                                            <span class="s2">"fulltext_url_text"</span><span class="p">:</span> <span class="n">url</span><span class="p">[</span><span class="s2">"link_text"</span><span class="p">],</span>
-                                            <span class="s2">"catalogue_url"</span><span class="p">:</span> <span class="n">get_catalogue_url</span><span class="p">(</span>
-                                                <span class="n">metadata</span><span class="p">[</span><span class="s2">"identifier"</span><span class="p">]</span>
-                                            <span class="p">),</span>
-                                            <span class="c1"># Could also add in data from bibliographicCitation</span>
-                                            <span class="c1"># Although the types used in citations seem to vary by work and format.</span>
-                                        <span class="p">}</span>
-                                        <span class="n">ndjson_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">work</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-                <span class="c1"># The nextStart parameter is used to get the next page of results.</span>
-                <span class="c1"># If there's no nextStart then it means we're on the last page of results.</span>
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="n">start</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"category"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"records"</span><span class="p">][</span><span class="s2">"nextStart"</span><span class="p">]</span>
-                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-                    <span class="n">start</span> <span class="o">=</span> <span class="kc">None</span>
-                <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Harvest-periodical-titles">Harvest periodical titles<a class="anchor-link" href="#Harvest-periodical-titles">¶</a></h2><p>The first step is to search for NED periodical titles and harvest all the version records.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"q"</span><span class="p">:</span> <span class="s1">'"nla.obj" nuc:"ANL:NED"'</span><span class="p">,</span>
-    <span class="s2">"l-format"</span><span class="p">:</span> <span class="s2">"Periodical"</span><span class="p">,</span>  <span class="c1"># Journals only</span>
-    <span class="s2">"l-availability"</span><span class="p">:</span> <span class="s2">"y"</span><span class="p">,</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=60bfee23-4458-4e53-85ac-12f3ad9879cc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7911,294 +7501,155 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">harvest_works</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="s2">"ned-periodicals.ndjson"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Let's import the libraries we need.</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">arrow</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests_cache</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">requests.adapters</span> <span class="kn">import</span> <span class="n">HTTPAdapter</span>
+<span class="kn">from</span> <span class="nn">requests.packages.urllib3.util.retry</span> <span class="kn">import</span> <span class="n">Retry</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">requests_cache</span><span class="o">.</span><span class="n">CachedSession</span><span class="p">(</span><span class="n">expire_after</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
+<span class="n">retries</span> <span class="o">=</span> <span class="n">Retry</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">status_forcelist</span><span class="o">=</span><span class="p">[</span><span class="mi">502</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">504</span><span class="p">])</span>
+<span class="n">s</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"https://"</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retries</span><span class="p">))</span>
+<span class="n">s</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"http://"</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retries</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=54470166-85a8-4a82-91a9-2bf019ebedeb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Remove-duplicates">Remove duplicates<a class="anchor-link" href="#Remove-duplicates">¶</a></h2><p>Because we've unpacked the work records and saved individual versions, there are likely to be some duplicates. Here we'll merge the duplicates records.</p>
+<h2 id="Set-your-parameters">Set your parameters<a class="anchor-link" href="#Set-your-parameters">¶</a></h2><p>Edit the cell below to insert the <code>nla.obj</code> identifier of the periodical. This identifier will point to the top-level collection page of a periodical in Trove's digitised object viewer. For example, the url of the top-level page of <em>The Bulletin</em> is <a href="https://nla.gov.au/nla.obj-68375465">https://nla.gov.au/nla.obj-68375465</a>, so the identifier is <code>nla.obj-68375465</code>. If you're viewing a digitised issue or page within a periodical, you can use the breadcrumbs link to navigate up to the top-level page.</p>
+<p>Finding digitised periodicals in Trove is not always easy – the Trove Data Guide <a href="https://tdg.glam-workbench.net/other-digitised-resources/periodicals/finding-periodicals.html">provides some hints</a>. You can also search this <a href="https://glam-workbench.net/datasette-lite/?url=https://github.com/GLAM-Workbench/trove-periodicals-data/blob/main/periodicals.db&amp;install=datasette-json-html&amp;install=datasette-template-sql&amp;metadata=https://github.com/GLAM-Workbench/trove-periodicals-data/blob/main/metadata.json#/periodicals/titles">database of digitised periodical titles</a>.</p>
+<p>By default, this notebook will download <em>all</em> the issues of a periodical. If you only want issues from a particular range of years, set the <code>start_year</code> and/or <code>end_year</code> values in the cell below. For exammple, setting <code>start_year = 1900</code> and <code>end_year = 1940</code> will download all issues published between 1900 and 1940.</p>
+<p>Once you've made your changes to the cell below, select 'Run &gt; Run All Cells' from the menu.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e6ac3af9-4cc7-4734-a48a-08d05263995d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">merge_column</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
-    <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-            <span class="n">values</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span> <span class="k">if</span> <span class="n">v</span><span class="p">]</span>
-        <span class="k">elif</span> <span class="n">value</span><span class="p">:</span>
-            <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
-    <span class="k">return</span> <span class="s2">" | "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">values</span><span class="p">)))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Insert the periodical's nla.obj identifier</span>
+<span class="n">periodical_id</span> <span class="o">=</span> <span class="s2">"nla.obj-8423556"</span>
 
-
-<span class="k">def</span> <span class="nf">merge_records</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="c1"># df["pages"].fillna(0, inplace=True)</span>
-    <span class="c1"># df.fillna("", inplace=True)</span>
-    <span class="c1"># df["pages"] = df["pages"].astype("Int64")</span>
-
-    <span class="c1"># Add base dataset with columns that will always have only one value</span>
-    <span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[[</span><span class="s2">"fulltext_url"</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()]</span>
-
-    <span class="c1"># Columns that potentially have multiple values which will be merged</span>
-    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s2">"title"</span><span class="p">,</span>
-        <span class="s2">"work_url"</span><span class="p">,</span>
-        <span class="s2">"work_type"</span><span class="p">,</span>
-        <span class="s2">"contributor"</span><span class="p">,</span>
-        <span class="s2">"publisher"</span><span class="p">,</span>
-        <span class="s2">"date"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">,</span>
-        <span class="s2">"format"</span><span class="p">,</span>
-        <span class="s2">"extent"</span><span class="p">,</span>
-        <span class="s2">"language"</span><span class="p">,</span>
-        <span class="s2">"subject"</span><span class="p">,</span>
-        <span class="s2">"spatial"</span><span class="p">,</span>
-        <span class="s2">"is_part_of"</span><span class="p">,</span>
-        <span class="s2">"identifier"</span><span class="p">,</span>
-        <span class="s2">"rights"</span><span class="p">,</span>
-        <span class="s2">"fulltext_url_text"</span><span class="p">,</span>
-        <span class="s2">"catalogue_url"</span><span class="p">,</span>
-    <span class="p">]</span>
-
-    <span class="c1"># Merge values from each column in turn, creating a new dataframe from each</span>
-    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
-        <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"fulltext_url"</span><span class="p">])[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">merge_column</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-        <span class="p">)</span>
-
-    <span class="c1"># Merge all the individual dataframes into one, linking on `text_file` value</span>
-    <span class="n">df_merged</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span>
-        <span class="k">lambda</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">"fulltext_url"</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">"left"</span><span class="p">),</span> <span class="n">dfs</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">df_merged</span>
+<span class="c1"># Optionally set a range of years</span>
+<span class="n">start_year</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">end_year</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=823d08a6-1aa6-41c1-9616-3adc8550c75e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Load the harvested data.</p>
+<h2 id="Get-issue-identifiers">Get issue identifiers<a class="anchor-link" href="#Get-issue-identifiers">¶</a></h2><p>Version 3 of the Trove API added a new endpoint to <a href="https://tdg.glam-workbench.net/other-digitised-resources/periodicals/accessing-data.html#using-the-magazine-titles-api-endpoint">provide information about periodical titles and issues</a>. However, the issues data provided by the API is incomplete. A more reliable alternative is to scrape the list of issues from the browse window in the digitised object viewer – see <a href="https://tdg.glam-workbench.net/other-digitised-resources/how-to/get-collection-items.html">HOW TO: Get a list of items from a digitised collection</a> in the <em>Trove Data Guide</em>.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=71793d17-1d9e-4eae-9435-6582a2c509f0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">"ned-periodicals.ndjson"</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>How many records are there?</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(8849, 18)</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Now we'll merge the duplicates.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">merge_records</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>How many records are there now?</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># How many journals are there?</span>
-<span class="n">df_merged</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>7973</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Do some reorganisation of the dataset and save it as a CSV file.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">save_ned_titles</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">"ned-periodicals.csv"</span><span class="p">):</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"fulltext_url"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_issue_ids</span><span class="p">(</span><span class="n">periodical_id</span><span class="p">):</span>
+    <span class="c1"># The initial startIdx value</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># Number of results per page, used to increment the startIdx value</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
 
-    <span class="n">df_titles</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span>
-        <span class="p">[</span>
-            <span class="s2">"id"</span><span class="p">,</span>
-            <span class="s2">"title"</span><span class="p">,</span>
-            <span class="s2">"contributor"</span><span class="p">,</span>
-            <span class="s2">"publisher"</span><span class="p">,</span>
-            <span class="s2">"date"</span><span class="p">,</span>
-            <span class="s2">"fulltext_url"</span><span class="p">,</span>
-            <span class="s2">"work_url"</span><span class="p">,</span>
-            <span class="s2">"work_type"</span><span class="p">,</span>
-            <span class="s2">"type"</span><span class="p">,</span>
-            <span class="s2">"format"</span><span class="p">,</span>
-            <span class="s2">"extent"</span><span class="p">,</span>
-            <span class="s2">"language"</span><span class="p">,</span>
-            <span class="s2">"subject"</span><span class="p">,</span>
-            <span class="s2">"spatial"</span><span class="p">,</span>
-            <span class="s2">"is_part_of"</span><span class="p">,</span>
-            <span class="s2">"identifier"</span><span class="p">,</span>
-            <span class="s2">"rights"</span><span class="p">,</span>
-            <span class="s2">"catalogue_url"</span><span class="p">,</span>
-        <span class="p">]</span>
-    <span class="p">]</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="n">tqdm</span><span class="p">()</span> <span class="k">as</span> <span class="n">pbar</span><span class="p">:</span>
+        <span class="c1"># If there aren't 20 results on the page then we've reached the end, so continue harvesting until that happens.</span>
+        <span class="k">while</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">periodical_id</span><span class="si">}</span><span class="s2">/browse?startIdx=</span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">&amp;rows=20&amp;op=c"</span>
 
-    <span class="n">df_titles</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">df_titles</span>
+            <span class="c1"># Get the browse page</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+            <span class="c1"># Beautifulsoup turns the HTML into an easily navigable structure</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
+
+            <span class="c1"># Find all the divs containing issue details and loop through them</span>
+            <span class="n">details</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s2">"l-item-info"</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">detail</span> <span class="ow">in</span> <span class="n">details</span><span class="p">:</span>
+                <span class="c1"># Look for the a tag with class "obj-reference content"</span>
+                <span class="n">item_id</span> <span class="o">=</span> <span class="n">detail</span><span class="o">.</span><span class="n">find</span><span class="p">(</span>
+                    <span class="k">lambda</span> <span class="n">tag</span><span class="p">:</span> <span class="n">tag</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">"a"</span>
+                    <span class="ow">and</span> <span class="n">tag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"class"</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"obj-reference"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">]</span>
+                <span class="p">)[</span><span class="s2">"href"</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+
+                <span class="c1"># Save the issue id</span>
+                <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">response</span><span class="o">.</span><span class="n">from_cache</span><span class="p">:</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+            <span class="c1"># Increment the startIdx</span>
+            <span class="n">start</span> <span class="o">+=</span> <span class="n">n</span>
+            <span class="c1"># Set n to the number of results on the current page</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">details</span><span class="p">)</span>
+            <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">items</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_nbval-skip">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ea08f164-f421-4010-9d9c-13dd95fc4b61">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_titles</span> <span class="o">=</span> <span class="n">save_ned_titles</span><span class="p">(</span><span class="n">df_merged</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">issue_ids</span> <span class="o">=</span> <span class="n">get_issue_ids</span><span class="p">(</span><span class="n">periodical_id</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c581f9ae-d6cc-4a66-8c1b-f77701f718c6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Get-details-of-issues">Get details of issues<a class="anchor-link" href="#Get-details-of-issues">¶</a></h2>
+<h2 id="Get-number-of-pages-in-each-issue">Get number of pages in each issue<a class="anchor-link" href="#Get-number-of-pages-in-each-issue">¶</a></h2><p>It's possible to scrape the number of pages along with the identifiers in the previous step. However, I'm not certain that the information is displayed consistently across all periodicals. To play it safe, I'm extracting embedded metadata from the digitised object viewer and getting the number of pages, issue dates, and publication details (if available). See <a href="https://tdg.glam-workbench.net/other-digitised-resources/how-to/extract-embedded-metadata.html">HOW TO: Extract additional metadata from the digitised resource viewer</a> in the <em>Trove Data Guide</em>.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b78126ce-e8ef-4984-aaf3-709c30a8ea59">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_metadata</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
@@ -8219,547 +7670,153 @@ a.anchor-link {
     <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">work_data</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">get_iso_date</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">date</span><span class="p">:</span>
-        <span class="n">iso_date</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">"ddd, D MMM YYYY"</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">"YYYY"</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">iso_date</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="k">return</span> <span class="n">iso_date</span>
+<span class="k">def</span> <span class="nf">get_issue_data</span><span class="p">(</span><span class="n">issue_ids</span><span class="p">):</span>
+    <span class="n">issues</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">issue_id</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">issue_ids</span><span class="p">):</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">get_metadata</span><span class="p">(</span><span class="n">issue_id</span><span class="p">)</span>
+        <span class="n">date</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"issueDate"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">iso_date</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">"ddd, D MMM YYYY"</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">"YYYY-MM-DD"</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">arrow</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">ParserMatchError</span><span class="p">:</span>
+            <span class="n">iso_date</span> <span class="o">=</span> <span class="s2">""</span>
+        <span class="n">issue</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">"id"</span><span class="p">:</span> <span class="n">issue_id</span><span class="p">,</span>
+            <span class="s2">"date"</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
+            <span class="s2">"iso_date"</span><span class="p">:</span> <span class="n">iso_date</span><span class="p">,</span>
+            <span class="s2">"details"</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"subUnitNo"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
+            <span class="s2">"pages"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"children"</span><span class="p">][</span><span class="s2">"page"</span><span class="p">]),</span>
+        <span class="p">}</span>
+        <span class="n">issues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">issue</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">issues</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=66a22530-6647-4fa0-b779-76c521814c27">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">issues</span> <span class="o">=</span> <span class="n">get_issue_data</span><span class="p">(</span><span class="n">issue_ids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=94c565a4-1754-40a9-af9b-2551f984e3af">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Download-PDFs">Download PDFs<a class="anchor-link" href="#Download-PDFs">¶</a></h2><p>Once we have the identifier and number of pages we can construct a url to download each issue. See: <a href="https://tdg.glam-workbench.net/other-digitised-resources/how-to/get-downloads.html">HOW TO: Get text, images, and PDFs using Trove’s download link</a> in the <em>Trove Data Guide</em>.</p>
+<p>The downloaded PDFs will be saved in the <code>pdfs</code> directory, within a subdirectory named using the periodical's <code>nla.obj</code> identifier.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fc955bca-411d-4409-85b4-6e4fad4df050">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">filter_issues</span><span class="p">(</span><span class="n">issues</span><span class="p">,</span> <span class="n">start_year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">start_year</span> <span class="ow">or</span> <span class="n">end_year</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">issues</span>
+    <span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">issues</span><span class="p">:</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s2">"iso_date"</span><span class="p">][:</span><span class="mi">4</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">year</span><span class="p">:</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">start_year</span> <span class="ow">and</span> <span class="n">end_year</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">year</span> <span class="o">&gt;=</span> <span class="n">start_year</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">&lt;=</span> <span class="n">end_year</span><span class="p">:</span>
+                    <span class="n">filtered</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">issue</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">start_year</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">year</span> <span class="o">&gt;=</span> <span class="n">start_year</span><span class="p">:</span>
+                    <span class="n">filtered</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">issue</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">end_year</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">year</span> <span class="o">&lt;=</span> <span class="n">end_year</span><span class="p">:</span>
+                    <span class="n">filtered</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">issue</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">filtered</span>
 
 
-<span class="k">def</span> <span class="nf">get_issues</span><span class="p">(</span><span class="n">parent_id</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Get the ids of issues that are children of the current record.</span>
-<span class="sd">    """</span>
-    <span class="n">start_url</span> <span class="o">=</span> <span class="s2">"https://nla.gov.au/</span><span class="si">{}</span><span class="s2">/browse?startIdx=</span><span class="si">{}</span><span class="s2">&amp;rows=20&amp;op=c"</span>
-    <span class="c1"># The initial startIdx value</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="c1"># Number of results per page</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
-    <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="c1"># If there aren't 20 results on the page then we've reached the end, so continue harvesting until that happens.</span>
-    <span class="k">while</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
-        <span class="c1"># Get the browse page</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">start_url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">parent_id</span><span class="p">,</span> <span class="n">start</span><span class="p">))</span>
-        <span class="c1"># Beautifulsoup turns the HTML into an easily navigable structure</span>
-        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">"lxml"</span><span class="p">)</span>
-        <span class="c1"># Find all the divs containing issue details and loop through them</span>
-        <span class="n">details</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s2">"l-item-info"</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">detail</span> <span class="ow">in</span> <span class="n">details</span><span class="p">:</span>
-            <span class="n">title</span> <span class="o">=</span> <span class="n">detail</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"h3"</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">title</span><span class="p">:</span>
-                <span class="n">issue_id</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">parent</span><span class="p">[</span><span class="s2">"href"</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">issue_id</span> <span class="o">=</span> <span class="n">detail</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)[</span><span class="s2">"href"</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
-            <span class="c1"># Get the issue id</span>
-            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">issue_id</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">download_pdfs</span><span class="p">(</span><span class="n">issues</span><span class="p">,</span> <span class="n">start_year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"pdfs"</span><span class="p">,</span> <span class="n">periodical_id</span><span class="p">)</span>
+    <span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">filter_issues</span><span class="p">(</span><span class="n">issues</span><span class="p">,</span> <span class="n">start_year</span><span class="p">,</span> <span class="n">end_year</span><span class="p">)):</span>
+        <span class="n">pdf_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">issue</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2">/download?downloadOption=pdf&amp;firstPage=0&amp;lastPage=</span><span class="si">{</span><span class="n">issue</span><span class="p">[</span><span class="s1">'pages'</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">"</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pdf_url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">issue</span><span class="p">[</span><span class="s2">"iso_date"</span><span class="p">]:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">issue</span><span class="p">[</span><span class="s1">'iso_date'</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">issue</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2">.pdf"</span>
+        <span class="n">Path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">write_bytes</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">response</span><span class="o">.</span><span class="n">from_cache</span><span class="p">:</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-        <span class="c1"># Increment the startIdx</span>
-        <span class="n">start</span> <span class="o">+=</span> <span class="n">n</span>
-        <span class="c1"># Set n to the number of results on the current page</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">details</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">parts</span>
-
-
-<span class="k">def</span> <span class="nf">harvest_all_issues</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="s2">"ned-periodicals.csv"</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">"ned-issues.ndjson"</span><span class="p">):</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">ndjson_file</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(),</span> <span class="n">total</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-            <span class="n">title_id</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">fulltext_url</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-            <span class="n">issues</span> <span class="o">=</span> <span class="n">get_issues</span><span class="p">(</span><span class="n">title_id</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">issue_id</span> <span class="ow">in</span> <span class="n">issues</span><span class="p">:</span>
-                <span class="n">metadata</span> <span class="o">=</span> <span class="n">get_metadata</span><span class="p">(</span><span class="n">issue_id</span><span class="p">)</span>
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="n">issue</span> <span class="o">=</span> <span class="p">{</span>
-                        <span class="s2">"id"</span><span class="p">:</span> <span class="n">metadata</span><span class="p">[</span><span class="s2">"pid"</span><span class="p">],</span>
-                        <span class="s2">"title_id"</span><span class="p">:</span> <span class="n">title_id</span><span class="p">,</span>
-                        <span class="s2">"title"</span><span class="p">:</span> <span class="n">metadata</span><span class="p">[</span><span class="s2">"title"</span><span class="p">],</span>
-                        <span class="s2">"description"</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"subUnitNo"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
-                        <span class="s2">"date"</span><span class="p">:</span> <span class="n">get_iso_date</span><span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"issueDate"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)),</span>
-                        <span class="s2">"url"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'pid'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
-                        <span class="s2">"ebook_type"</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"ebookType"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
-                        <span class="s2">"access_conditions"</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"accessConditions"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
-                        <span class="s2">"copyright_policy"</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"copyrightPolicy"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
-                    <span class="p">}</span>
-                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="n">title_id</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">ndjson_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">issue</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_nbval-skip">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bbeb182f-a707-49ea-89a3-c059a249963b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">harvest_all_issues</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">download_pdfs</span><span class="p">(</span><span class="n">issues</span><span class="p">,</span> <span class="n">start_year</span><span class="p">,</span> <span class="n">end_year</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>  0%|          | 0/7973 [00:00&lt;?, ?it/s]</pre>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2e179894-8885-479b-9658-99a4c5af69e8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-nla.obj-831175906
-</pre>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Save-metadata">Save metadata<a class="anchor-link" href="#Save-metadata">¶</a></h2><p>You can also save the harvested issue metadata as a CSV file. It will be saved in the same directory as the PDFs.</p>
 </div>
 </div>
 </div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ccf06f1f-3083-4213-a042-e4855fc6c879">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_issues</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span>
-    <span class="s2">"ned-issues.ndjson"</span><span class="p">,</span> <span class="n">convert_dates</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"date"</span><span class="p">:</span> <span class="s2">"Int64"</span><span class="p">},</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span>
-<span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name_parts</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">periodical_id</span><span class="p">,</span> <span class="s2">"issues"</span><span class="p">,</span> <span class="n">start_year</span><span class="p">,</span> <span class="n">end_year</span><span class="p">]</span> <span class="k">if</span> <span class="n">p</span><span class="p">]</span>
+<span class="n">csv_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">'-'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name_parts</span><span class="p">)</span><span class="si">}</span><span class="s2">.csv"</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">issues</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">"pdfs"</span><span class="p">,</span> <span class="n">periodical_id</span><span class="p">,</span> <span class="n">csv_filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_download_link</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">""</span>
-    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s2">"access_conditions"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"Unrestricted"</span><span class="p">:</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"https://nla.gov.au/</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2">/download?downloadOption=eBook&amp;firstPage=-1&amp;lastPage=-1"</span>
-    <span class="k">return</span> <span class="n">url</span>
-
-
-<span class="n">df_issues</span><span class="p">[</span><span class="s2">"download_link"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_issues</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">add_download_link</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_nbval-skip">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_issues</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"ned-periodical-issues.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_totals</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">df_issues</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_issues</span><span class="p">[</span><span class="s2">"access_conditions"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"Unrestricted"</span><span class="p">]</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"title_id"</span><span class="p">,</span> <span class="s2">"title"</span><span class="p">])</span>
-    <span class="o">.</span><span class="n">size</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_totals</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>title_id</th>
-<th>title</th>
-<th>0</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>1758</th>
-<td>nla.obj-1916881555</td>
-<td>Western Australian government gazette.</td>
-<td>1869</td>
-</tr>
-<tr>
-<th>4436</th>
-<td>nla.obj-2940864261</td>
-<td>The Australian Jewish News.</td>
-<td>1067</td>
-</tr>
-<tr>
-<th>2619</th>
-<td>nla.obj-2692666983</td>
-<td>APSjobs-vacancies daily ... daily gazette.</td>
-<td>1043</td>
-</tr>
-<tr>
-<th>4461</th>
-<td>nla.obj-2945379691</td>
-<td>Tweed link</td>
-<td>825</td>
-</tr>
-<tr>
-<th>2221</th>
-<td>nla.obj-2541626239</td>
-<td>Weekly notice</td>
-<td>798</td>
-</tr>
-<tr>
-<th>4435</th>
-<td>nla.obj-2940863963</td>
-<td>The Australian Jewish News.</td>
-<td>726</td>
-</tr>
-<tr>
-<th>35</th>
-<td>nla.obj-1252109725</td>
-<td>Queensland Health services bulletin</td>
-<td>700</td>
-</tr>
-<tr>
-<th>17</th>
-<td>nla.obj-1247944368</td>
-<td>Hyden Karlgarin Householder News.</td>
-<td>642</td>
-</tr>
-<tr>
-<th>769</th>
-<td>nla.obj-1775015332</td>
-<td>E-record : your news from across the Archdioce...</td>
-<td>640</td>
-</tr>
-<tr>
-<th>7194</th>
-<td>nla.obj-638303044</td>
-<td>Class ruling</td>
-<td>580</td>
-</tr>
-<tr>
-<th>2211</th>
-<td>nla.obj-2536144595</td>
-<td>Plantagenet news.</td>
-<td>574</td>
-</tr>
-<tr>
-<th>185</th>
-<td>nla.obj-1252305285</td>
-<td>Clermont rag : Community newspaper.</td>
-<td>514</td>
-</tr>
-<tr>
-<th>3402</th>
-<td>nla.obj-2815835489</td>
-<td>The Apollo Bay news.</td>
-<td>513</td>
-</tr>
-<tr>
-<th>1731</th>
-<td>nla.obj-1908935587</td>
-<td>Assessment reports and exam papers</td>
-<td>512</td>
-</tr>
-<tr>
-<th>5656</th>
-<td>nla.obj-3125539859</td>
-<td>The Peninsula community access news.</td>
-<td>506</td>
-</tr>
-<tr>
-<th>3956</th>
-<td>nla.obj-2859788676</td>
-<td>Council news : weekly information from us to you</td>
-<td>469</td>
-</tr>
-<tr>
-<th>43</th>
-<td>nla.obj-1252119874</td>
-<td>Rot-Ayr-Ian [electronic resource] : the offici...</td>
-<td>467</td>
-</tr>
-<tr>
-<th>4899</th>
-<td>nla.obj-2994765231</td>
-<td>Townsville Orchid Society Inc. bulletin.</td>
-<td>442</td>
-</tr>
-<tr>
-<th>141</th>
-<td>nla.obj-1252246096</td>
-<td>Palm Island Voice.</td>
-<td>428</td>
-</tr>
-<tr>
-<th>6264</th>
-<td>nla.obj-3267060622</td>
-<td>News &amp; views from George Cochrane.</td>
-<td>399</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_issues</span><span class="p">[</span><span class="s2">"access_conditions"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>access_conditions
-Unrestricted    138557
-View Only        12937
-Onsite Only       4657
-Name: count, dtype: int64</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_issues</span><span class="p">[</span><span class="s2">"ebook_type"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>ebook_type
-application/pdf         154976
-                          1075
-application/epub+zip       100
-Name: count, dtype: int64</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_nbval-skip">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">Database</span><span class="p">(</span><span class="s2">"ned-periodicals.db"</span><span class="p">,</span> <span class="n">recreate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df_titles</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
-    <span class="mi">0</span><span class="p">,</span>
-    <span class="s2">"thumbnail"</span><span class="p">,</span>
-    <span class="n">df_titles</span><span class="p">[</span><span class="s2">"fulltext_url"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
-        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'</span><span class="se">{{</span><span class="s1">"img_src": "</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"-t"</span><span class="si">}</span><span class="s1">"</span><span class="se">}}</span><span class="s1">'</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="s2">""</span>
-    <span class="p">),</span>
-<span class="p">)</span>
-<span class="n">db</span><span class="p">[</span><span class="s2">"titles"</span><span class="p">]</span><span class="o">.</span><span class="n">insert_all</span><span class="p">(</span><span class="n">df_titles</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"records"</span><span class="p">),</span> <span class="n">pk</span><span class="o">=</span><span class="s2">"id"</span><span class="p">)</span>
-<span class="n">db</span><span class="p">[</span><span class="s2">"titles"</span><span class="p">]</span><span class="o">.</span><span class="n">enable_fts</span><span class="p">([</span><span class="s2">"title"</span><span class="p">,</span> <span class="s2">"contributor"</span><span class="p">,</span> <span class="s2">"publisher"</span><span class="p">,</span> <span class="s2">"subject"</span><span class="p">])</span>
-
-
-<span class="n">df_issues</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
-    <span class="mi">0</span><span class="p">,</span>
-    <span class="s2">"thumbnail"</span><span class="p">,</span>
-    <span class="n">df_issues</span><span class="p">[</span><span class="s2">"url"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
-        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'</span><span class="se">{{</span><span class="s1">"img_src": "</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"-t"</span><span class="si">}</span><span class="s1">"</span><span class="se">}}</span><span class="s1">'</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="s2">""</span>
-    <span class="p">),</span>
-<span class="p">)</span>
-<span class="n">df_issues</span> <span class="o">=</span> <span class="n">df_issues</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">"title"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">db</span><span class="p">[</span><span class="s2">"issues"</span><span class="p">]</span><span class="o">.</span><span class="n">insert_all</span><span class="p">(</span><span class="n">df_issues</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"records"</span><span class="p">),</span> <span class="n">pk</span><span class="o">=</span><span class="s2">"id"</span><span class="p">)</span>
-<span class="n">db</span><span class="p">[</span><span class="s2">"issues"</span><span class="p">]</span><span class="o">.</span><span class="n">add_foreign_key</span><span class="p">(</span><span class="s2">"title_id"</span><span class="p">,</span> <span class="s2">"titles"</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;Table issues (thumbnail, id, title_id, description, date, url, ebook_type, access_conditions, copyright_policy, download_link)&gt;</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># IGNORE THIS CELL -- FOR TESTING ONLY</span>
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"GW_STATUS"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"dev"</span><span class="p">:</span>
-    <span class="n">df_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">"ned-periodicals.ndjson"</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
-    <span class="n">df_merged_test</span> <span class="o">=</span> <span class="n">merge_records</span><span class="p">(</span><span class="n">df_test</span><span class="p">)</span>
-    <span class="n">df_titles_test</span> <span class="o">=</span> <span class="n">save_ned_titles</span><span class="p">(</span><span class="n">df_merged_test</span><span class="p">,</span> <span class="s2">"ned-periodicals-test.csv"</span><span class="p">)</span>
-    <span class="n">harvest_all_issues</span><span class="p">(</span>
-        <span class="nb">input</span><span class="o">=</span><span class="s2">"ned-periodicals-test.csv"</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">"ned-periodicals-issues-test.ndjson"</span>
-    <span class="p">)</span>
-
-    <span class="n">Path</span><span class="p">(</span><span class="s2">"ned-periodicals-test.csv"</span><span class="p">)</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
-    <span class="n">Path</span><span class="p">(</span><span class="s2">"ned-periodicals-issues-test.ndjson"</span><span class="p">)</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>  0%|          | 0/18 [00:00&lt;?, ?it/s]</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(18, 19)</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=00eddc03-af37-46ab-9366-2403dba15000">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<p>Created by <a href="https://timsherratt.org/">Tim Sherratt</a> for the <a href="https://glam-workbench.github.io/">GLAM Workbench</a>.</p>
+<p>Created by <a href="https://timsherratt.au/">Tim Sherratt</a> for the <a href="https://glam-workbench.net/">GLAM Workbench</a>.</p>
 </div>
 </div>
 </div>
