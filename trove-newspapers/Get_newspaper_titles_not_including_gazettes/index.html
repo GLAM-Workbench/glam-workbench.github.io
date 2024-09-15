@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Trove API includes an option to retrieve details of digitised newspaper titles. Version 2 of the API added a separate option to get details of government gazettes. However the original `newspaper/titles` requests actually returns both the newspaper and gazette titles, so there's no way of getting just the newspaper titles. This notebook explains the problem and provides a simple workaround.">
+        <meta name="description" content="Deprecated">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -15,10 +15,6 @@
         <link rel="canonical" href="https://glam-workbench.net/trove-newspapers/Get_newspaper_titles_not_including_gazettes/">
       
       
-        <link rel="prev" href="../Create-a-Trove-corrections-ticker/">
-      
-      
-        <link rel="next" href="../trove-newspapers-get-coordinates-of-articles/">
       
       
         
@@ -92,20 +88,20 @@
             <meta name="dcterms.creator" content="Sherratt, Tim" />
         
         
-            <meta name="dcterms.issued" content="2022-06-26" />
+            <meta name="dcterms.issued" content="2024-09-14" />
         
         
-            <meta name="dcterms.identifier" content="https://doi.org/10.5281/zenodo.6746078" />
+            <meta name="dcterms.identifier" content="https://doi.org/10.5281/zenodo.4724339" />
         
         
-            <meta name="bibo.edition" content="v1.3.4" />
+            <meta name="bibo.edition" content="v2.0.0" />
         
     
 
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Get a list of Trove newspapers that doesn't include government gazettes - GLAM Workbench" />
-<meta property="og:description" content="The Trove API includes an option to retrieve details of digitised newspaper titles. Version 2 of the API added a separate option to get details of government gazettes. However the original `newspaper/titles` requests actually returns both the newspaper and gazette titles, so there's no way of getting just the newspaper titles. This notebook explains the problem and provides a simple workaround." />
+<meta property="og:description" content="Deprecated" />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-newspapers/Get_newspaper_titles_not_including_gazettes.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -113,7 +109,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-newspapers/Get_newspaper_titles_not_including_gazettes/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Get a list of Trove newspapers that doesn't include government gazettes - GLAM Workbench" />
-<meta property="twitter:description" content="The Trove API includes an option to retrieve details of digitised newspaper titles. Version 2 of the API added a separate option to get details of government gazettes. However the original `newspaper/titles` requests actually returns both the newspaper and gazette titles, so there's no way of getting just the newspaper titles. This notebook explains the problem and provides a simple workaround." />
+<meta property="twitter:description" content="Deprecated" />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-newspapers/Get_newspaper_titles_not_including_gazettes.png" />
 </head>
   
@@ -132,11 +128,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#other-options" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -302,7 +293,7 @@
 <div class="md-source__repository">
   trove-newspapers
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v1.3.4</li><li class="md-source__fact md-source__fact--stars">10</li><li class="md-source__fact md-source__fact--forks">5</li>
+  <li class="md-source__fact md-source__fact--version">v2.0.0</li><li class="md-source__fact md-source__fact--stars">10</li><li class="md-source__fact md-source__fact--forks">5</li>
 </ul>
 </div>
 </a>
@@ -433,7 +424,7 @@
 <div class="md-source__repository">
   trove-newspapers
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v1.3.4</li><li class="md-source__fact md-source__fact--stars">10</li><li class="md-source__fact md-source__fact--forks">5</li>
+  <li class="md-source__fact md-source__fact--version">v2.0.0</li><li class="md-source__fact md-source__fact--stars">10</li><li class="md-source__fact md-source__fact--forks">5</li>
 </ul>
 </div>
 </a>
@@ -1631,10 +1622,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1673,11 +1662,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1697,7 +1686,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1925,8 +1914,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1943,11 +1930,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
           
@@ -1975,7 +1962,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1992,14 +1979,10 @@
                 
   
   
-    
   
   
-  
     
     
-      
-        
       
         
       
@@ -2054,11 +2037,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" >
         
           
           <label class="md-nav__link" for="__nav_5_2_2" id="__nav_5_2_2_label" tabindex="0">
@@ -2078,7 +2061,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2660,119 +2643,6 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    Get newspaper titles excluding gazettes
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Get newspaper titles excluding gazettes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#other-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Other options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Additional documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Getting help
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cite-as" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cite as
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -2906,10 +2776,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -3009,67 +2875,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../csv-newspaper-titles-from-web-archives-first-appearance/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Newspaper titles harvested from web archives
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../csv-aww-issues/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Australian Women's Weekly issues, 1933 to 1982
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../dataset-aww-covers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Australian Women's Weekly front covers, 1933 to 1982
+    Australian Women's Weekly issues and front covers, 1933 to 1982
   
 
     
@@ -11743,58 +11555,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#other-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Other options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Additional documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Getting help
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cite-as" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cite as
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -11867,27 +11627,7 @@
 
 
 <!-- Markdown content -->
-<p>The Trove API includes an option to retrieve details of digitised newspaper titles. Version 2 of the API added a separate option to get details of government gazettes. However the original <code>newspaper/titles</code> requests actually returns both the newspaper and gazette titles, so there's no way of getting just the newspaper titles. This notebook explains the problem and provides a simple workaround.</p>
-<p><a class="md-button md-button--primary" href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-newspapers/HEAD?urlpath=/lab/tree/Get_newspaper_titles_not_including_gazettes.ipynb">Run live on ARDC Binder</a></p>
-<h3 id="other-options">Other options<a class="headerlink" href="#other-options" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-newspapers/HEAD?urlpath=/lab/tree/Get_newspaper_titles_not_including_gazettes.ipynb">Run live on Binder</a> (no authentication required)</li>
-<li><a href="https://github.com/GLAM-Workbench/trove-newspapers/blob/master/Get_newspaper_titles_not_including_gazettes.ipynb">Download from GitHub</a></li>
-<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspapers/blob/master/Get_newspaper_titles_not_including_gazettes.ipynb">View using NBViewer</a></li>
-</ul>
-<h3 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="../#run-these-notebooks">Run these notebooks</a></li>
-</ul>
-<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
-<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
-<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
-</ul>
-<h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
-<p>Sherratt, Tim. (2022). GLAM-Workbench/trove-newspapers (version v1.3.4). Zenodo. <a href="https://doi.org/10.5281/zenodo.6746078">https://doi.org/10.5281/zenodo.6746078</a>  </p>
-<p><a href="https://doi.org/10.5281/zenodo.6746078"><img alt="" src="../../assets/external/zenodo.org/badge/DOI/10.5281/zenodo.6746078.svg"></a></p>
+<p>This notebooks is no longer required as the API problem has been fixed.</p>
 
 <!-- Was this page helpful? -->
 
