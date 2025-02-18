@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums">
+        <meta name="description" content="Example of an SQLite database created by extracting and indexing the text content of a NED periodical. Also included is a metadata file for configuring Datasette.">
       
       
         <meta name="author" content="Tim Sherratt">
@@ -93,6 +93,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Searchable database of content from The Triangle - GLAM Workbench" />
+<meta property="og:description" content="Example of an SQLite database created by extracting and indexing the text content of a NED periodical. Also included is a metadata file for configuring Datasette." />
 <meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-ned/the-triangle.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -100,6 +101,7 @@
 <meta property="og:url" content="https://glam-workbench.net/trove-ned/the-triangle/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Searchable database of content from The Triangle - GLAM Workbench" />
+<meta property="twitter:description" content="Example of an SQLite database created by extracting and indexing the text content of a NED periodical. Also included is a metadata file for configuring Datasette." />
 <meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-ned/the-triangle.png" />
 </head>
   
@@ -118,6 +120,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#files" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -11616,6 +11623,86 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-triangledb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        the-triangle.db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadatajson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        metadata.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-of-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context of creation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples of use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -11695,7 +11782,50 @@
 
 
 <!-- Markdown content -->
+<p>Examples of SQLite databases created by extracting and indexing the text content of NED periodicals. Includes custom metadata files for Datasette configuration.</p>
 
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-ned-periodicals/archive/refs/heads/main.zip">Download complete dataset as zip</a></p>
+<h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
+<h3 id="the-triangledb">the-triangle.db<a class="headerlink" href="#the-triangledb" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2025-02-16</td></tr>
+<tr><td><b>format</b></td><td>db</td></tr><tr><td><b>file size</b></td><td>41.5 MB</td></tr>
+
+</tbody>
+</table>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-ned-periodicals/blob/main/dbs/the-triangle/the-triangle.db">Download from GitHub</a></p>
+<h3 id="metadatajson">metadata.json<a class="headerlink" href="#metadatajson" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2025-02-16</td></tr>
+<tr><td><b>format</b></td><td>application/json</td></tr><tr><td><b>file size</b></td><td>986 Bytes</td></tr>
+
+</tbody>
+</table>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-ned-periodicals/blob/main/dbs/the-triangle/metadata.json">Download from GitHub</a></p>
+<h2 id="context-of-creation">Context of creation<a class="headerlink" href="#context-of-creation" title="Permanent link">&para;</a></h2>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2025-02-16</td></tr>
+<tr><td><b>notebook</b></td><td><a href="https://glam-workbench.net/trove-ned/create-searchable-database/">Create a searchable database from issues of a NED periodical</a></td></tr>
+<tr><td><b>query</b></td><td><code>nla.obj-3121636851</code></td></tr>
+
+</tbody>
+</table>
+
+<h2 id="examples-of-use">Examples of use<a class="headerlink" href="#examples-of-use" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://glam-workbench.net/datasette-lite-search/?url=https%3A%2F%2Fgithub.com%2FGLAM-Workbench%2Ftrove-ned-periodicals%2Fblob%2Fmain%2Fdbs%2Fthe-triangle%2Fthe-triangle.db&amp;install=datasette-template-sql&amp;metadata=https://github.com/GLAM-Workbench/trove-ned-periodicals/blob/main/dbs/the-triangle/metadata.json">Explore using Datasette</a></li>
+</ul>
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
+<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
+<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
+</ul>
 
 <!-- Was this page helpful? -->
 
