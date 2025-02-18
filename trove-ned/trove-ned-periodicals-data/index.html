@@ -6,13 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums">
+        <meta name="description" content="This dataset contains details of periodical titles and issues submitted to the Trove through the NLA's National edeposit scheme. It includes CSV-formatted lists of titles and issues, and an SQLite database created for use with Datasette-Lite.">
       
       
         <meta name="author" content="Tim Sherratt">
       
       
-        <link rel="canonical" href="https://glam-workbench.net/trove-ned/create-searchable-database/">
+        <link rel="canonical" href="https://glam-workbench.net/trove-ned/trove-ned-periodicals-data/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>Create a searchable database from issues of a NED periodical - GLAM Workbench</title>
+        <title>Details of periodicals submitted to Trove through the National edeposit scheme (NED) - GLAM Workbench</title>
       
     
     
@@ -92,15 +92,17 @@
 
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Create a searchable database from issues of a NED periodical - GLAM Workbench" />
-<meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-ned/create-searchable-database.png" />
+<meta property="og:title" content="Details of periodicals submitted to Trove through the National edeposit scheme (NED) - GLAM Workbench" />
+<meta property="og:description" content="This dataset contains details of periodical titles and issues submitted to the Trove through the NLA's National edeposit scheme. It includes CSV-formatted lists of titles and issues, and an SQLite database created for use with Datasette-Lite." />
+<meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-ned/trove-ned-periodicals-data.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://glam-workbench.net/trove-ned/create-searchable-database/" />
+<meta property="og:url" content="https://glam-workbench.net/trove-ned/trove-ned-periodicals-data/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Create a searchable database from issues of a NED periodical - GLAM Workbench" />
-<meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-ned/create-searchable-database.png" />
+<meta property="twitter:title" content="Details of periodicals submitted to Trove through the National edeposit scheme (NED) - GLAM Workbench" />
+<meta property="twitter:description" content="This dataset contains details of periodical titles and issues submitted to the Trove through the NLA's National edeposit scheme. It includes CSV-formatted lists of titles and issues, and an SQLite database created for use with Datasette-Lite." />
+<meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-ned/trove-ned-periodicals-data.png" />
 </head>
   
   
@@ -120,7 +122,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-this-notebook" class="md-skip">
+        <a href="#files" class="md-skip">
           Skip to content
         </a>
       
@@ -156,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Create a searchable database from issues of a NED periodical
+              Details of periodicals submitted to Trove through the National edeposit scheme (NED)
             
           </span>
         </div>
@@ -278,7 +280,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/trove-ned" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/trove-ned-periodicals-data" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -286,7 +288,7 @@
   </div>
 
 <div class="md-source__repository">
-  trove-ned
+  trove-ned-periodicals-data
 <ul class="md-source__facts">
   
 </ul>
@@ -309,6 +311,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -407,7 +411,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/trove-ned" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/trove-ned-periodicals-data" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -415,7 +419,7 @@
   </div>
 
 <div class="md-source__repository">
-  trove-ned
+  trove-ned-periodicals-data
 <ul class="md-source__facts">
   
 </ul>
@@ -11607,7 +11611,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -11624,32 +11630,94 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-this-notebook" class="md-nav__link">
+  <a href="#files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using this notebook
+        Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ned-periodicalscsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ned-periodicals.csv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ned-periodicals.csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#related-datasets" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ned-periodical-issuescsv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Related datasets
+        ned-periodical-issues.csv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ned-periodical-issues.csv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#columns_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-documentation" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ned-periodicalsdb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Additional documentation
+        ned-periodicals.db
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-of-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context of creation
       
     </span>
   </a>
@@ -11707,7 +11775,7 @@
 
 
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/trove-ned/create-searchable-database.md" title="edit.link.title" class="md-content__button md-icon">
+<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/trove-ned/trove-ned-periodicals-data.md" title="edit.link.title" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
 </a>
 
@@ -11718,45 +11786,247 @@
   as the main headline.
 -->
 
-  <h1>Create a searchable database from issues of a NED periodical</h1>
+  <h1>Details of periodicals submitted to Trove through the National edeposit scheme (NED)</h1>
 
 
 <!-- Tags -->
 
   
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:dataset" class="md-tag">dataset</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:metadata" class="md-tag">metadata</a>
+      
+    
+  </nav>
 
 
 
 <!-- Markdown content -->
-<h2 id="using-this-notebook">Using this notebook<a class="headerlink" href="#using-this-notebook" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">ARDC Binder</label><label for="__tabbed_1_2">MyBinder</label><label for="__tabbed_1_3">Other options</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>To run this notebook using the ARDC Binder service you'll need to log in using an account from an Australian university or research organisation. If you don't have an account, try <a href="#__tabbed_1_2">MyBinder</a> instead.</p>
-<p><a class="md-button md-button--primary" href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/trove-ned/HEAD?urlpath=/lab/tree/create-searchable-database.ipynb">Run live on ARDC Binder</a></p>
-</div>
-<div class="tabbed-block">
-<p>The MyBinder service doesn't require any authentication, but it can be slow to start and will sometimes fail when busy. If you have a login at an Australian university, you'll probably get better results with <a href="#__tabbed_1_1">ARDC Binder</a>.</p>
-<p><a class="md-button md-button--primary" href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-ned/HEAD?urlpath=/lab/tree/create-searchable-database.ipynb">Run live on MyBinder</a></p>
-</div>
-<div class="tabbed-block">
-<p>Binder is great for experimentation and quick tasks, but for some projects you might need a dedicated, persistent environment in which to work. There's information on other options in the <a href="../#run-these-notebooks">run these notebooks</a> section.</p>
-</div>
-</div>
-</div>
-<h2 id="related-datasets">Related datasets<a class="headerlink" href="#related-datasets" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p><a href="metadata.json.md">metadata.json</a></p>
-</li>
-<li>
-<p><a href="the-triangle.db.md">the-triangle.db</a></p>
-</li>
-</ul>
-<h2 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../#run-these-notebooks">Run these notebooks</a></li>
-</ul>
+<p>This dataset contains details of periodical titles and issues submitted to the Trove through the NLA's National edeposit scheme. It includes CSV-formatted lists of titles and issues, and an SQLite database created for use with Datasette-Lite.</p>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-ned-periodicals-data/archive/refs/heads/main.zip">Download complete dataset as zip</a>
+<a class="md-button md-button--info" href="https://glam-workbench.net/datasette-lite/?url=https://github.com/GLAM-Workbench/trove-ned-periodicals-data/blob/main/ned-periodicals.db&amp;install=datasette-json-html&amp;install=datasette-template-sql&amp;metadata=https://github.com/GLAM-Workbench/trove-ned-periodicals-data/blob/main/metadata.json">Explore in Datasette</a></p>
+<h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
+<h3 id="ned-periodicalscsv">ned-periodicals.csv<a class="headerlink" href="#ned-periodicalscsv" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2025-02-16</td></tr>
+<tr><td><b>format</b></td><td>text/csv</td></tr><tr><td><b>file size</b></td><td>5.2 MB</td></tr><tr><td><b>number of rows</b></td><td>8,573</td></tr>
+
+</tbody>
+</table>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-ned-periodicals-data/raw/main/ned-periodicals.csv">Download from GitHub</a></p>
+<h4 id="columns">Columns<a class="headerlink" href="#columns" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>digital object identifier</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>title of the periodical; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>contributor</code></td>
+<td>string</td>
+<td>multiple values separated by</td>
+</tr>
+<tr>
+<td><code>publisher</code></td>
+<td>string</td>
+<td>multiple values separated by</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>string</td>
+<td>multiple values separated by</td>
+</tr>
+<tr>
+<td><code>fulltext_url</code></td>
+<td>string</td>
+<td>link to digitised viewer</td>
+</tr>
+<tr>
+<td><code>work_url</code></td>
+<td>string</td>
+<td>link to work record in Trove; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>work_type</code></td>
+<td>string</td>
+<td>Trove work format, eg: 'Periodical'; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>eg: 'text'; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>string</td>
+<td>eg: 'volume'; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>extent</code></td>
+<td>string</td>
+<td>size or physical dimensions; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>string</td>
+<td>publication language; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>subject</code></td>
+<td>string</td>
+<td>associated subject headings; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>spatial</code></td>
+<td>string</td>
+<td>related places; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>is_part_of</code></td>
+<td>string</td>
+<td>collections or series this publication is part of; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>identifier</code></td>
+<td>string</td>
+<td>library identifiers; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>rights</code></td>
+<td>string</td>
+<td>copyright and licensing information; multiple values separated by</td>
+</tr>
+<tr>
+<td><code>catalogue_url</code></td>
+<td>any</td>
+<td>link to NLA catalogue; multiple values separated by</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ned-periodical-issuescsv">ned-periodical-issues.csv<a class="headerlink" href="#ned-periodical-issuescsv" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2025-02-16</td></tr>
+<tr><td><b>format</b></td><td>text/csv</td></tr><tr><td><b>file size</b></td><td>45.8 MB</td></tr><tr><td><b>number of rows</b></td><td>179,512</td></tr>
+
+</tbody>
+</table>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-ned-periodicals-data/raw/main/ned-periodical-issues.csv">Download from GitHub</a></p>
+<h4 id="columns_1">Columns<a class="headerlink" href="#columns_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>issue's digital object identifier</td>
+</tr>
+<tr>
+<td><code>title_id</code></td>
+<td>string</td>
+<td>parent title's digital object identifier</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>parent title's name</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>usually contains additional publication information, eg 'Issue 66 (2019)'</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>integer</td>
+<td>year of publication</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>link to digitised viewer</td>
+</tr>
+<tr>
+<td><code>ebook_type</code></td>
+<td>string</td>
+<td>publication mimetype, eg: 'application/pdf', or 'application/epub+zip'</td>
+</tr>
+<tr>
+<td><code>access_conditions</code></td>
+<td>string</td>
+<td>indicates level of online access, eg 'Unrestricted', 'View only', or 'Onsite only'</td>
+</tr>
+<tr>
+<td><code>copyright_policy</code></td>
+<td>string</td>
+<td>copyright status, eg 'In copyright'</td>
+</tr>
+<tr>
+<td><code>download_link</code></td>
+<td>string</td>
+<td>link to download this issue from Trove</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ned-periodicalsdb">ned-periodicals.db<a class="headerlink" href="#ned-periodicalsdb" title="Permanent link">&para;</a></h3>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2025-02-16</td></tr>
+<tr><td><b>format</b></td><td>db</td></tr><tr><td><b>file size</b></td><td>65.4 MB</td></tr>
+
+</tbody>
+</table>
+
+<p>This SQLite database contains data relating to digitised periodical titles and issues from Trove. It was created for use with Datasette-Lite. There is a foreign key link between the issues and the titles, making it easy to find the issues from any title. Some extra columns have been added to include thumbnails and download links.</p>
+
+<p><a class="md-button md-button--primary" href="https://github.com/GLAM-Workbench/trove-ned-periodicals-data/raw/main/ned-periodicals.db">Download from GitHub</a></p>
+<h2 id="context-of-creation">Context of creation<a class="headerlink" href="#context-of-creation" title="Permanent link">&para;</a></h2>
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>2025-02-16</td></tr>
+<tr><td><b>notebook</b></td><td><a href="https://glam-workbench.net/trove-journals/harvest-ned-periodicals/">Harvest details of periodicals submitted to Trove through the National edeposit scheme (NED)</a></td></tr>
+
+
+</tbody>
+</table>
+
 <h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
@@ -11768,6 +12038,8 @@
 
   
 
+
+  
 
 
 
