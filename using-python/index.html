@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://glam-workbench.net/using-python/">
       
       
-        <link rel="prev" href="../using-docker/">
+        <link rel="prev" href="../using-containers/">
       
       
         <link rel="next" href="../glam-data-list/">
@@ -1154,14 +1154,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-docker/" class="md-nav__link">
+      <a href="../using-containers/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Using Docker
+    Running in a container on your own computer
   
 
     
@@ -1257,6 +1257,17 @@
     <span class="md-ellipsis">
       
         Running Jupyter Lab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#going-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
       
     </span>
   </a>
@@ -12512,6 +12523,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#going-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -12574,18 +12596,36 @@
 <h1 id="using-python-on-your-own-computer">Using Python on your own computer<a class="headerlink" href="#using-python-on-your-own-computer" title="Permanent link">&para;</a></h1>
 <p>To run one of the GLAM Workbench repositories within a dedicated Python environment on your own computer, you need to set up the necessary software. This approach requires familiarity with the command line and the ability to install and manage new software. You will, however, have full control over your working environment.</p>
 <h2 id="setting-up-your-local-environment">Setting up your local environment<a class="headerlink" href="#setting-up-your-local-environment" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Create and activate a Python virtual environment (Python &gt;= 3.8 should be ok). I use <a href="https://github.com/pyenv/pyenv">pyenv</a> and <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a> to create and manage Python versions and environments.</li>
-<li>On the command line, use <code>git clone</code> to create a local version of the GLAM Workbench repository, eg. <code>git clone https://github.com/GLAM-Workbench/trove-newspapers.git</code></li>
-<li>On the command line, use <code>cd</code> to move into the folder of the newly-cloned repository, eg. <code>cd trove-newspapers</code></li>
-<li>On the command line, run <code>pip install -r requirements.txt</code> to install the required Python packages.</li>
-</ol>
+<p>I use <a href="https://github.com/pyenv/pyenv">pyenv</a>, <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a>, and <a href="https://github.com/jazzband/pip-tools">pip-tools</a> to create and manage Python versions and environments.</p>
+<ul>
+<li>Create a Python virtual environment (Python &gt;= 3.10 should be ok): 
+    <div class="highlight"><pre><span></span><code>pyenv virtualenv 3.10.12 [GW REPO NAME]
+</code></pre></div></li>
+<li>Activate the virtual environment:
+    <div class="highlight"><pre><span></span><code>pyenv local [GW REPO NAME]
+</code></pre></div></li>
+<li>On the command line, use <code>git clone</code> to create a local version of the GLAM Workbench repository: 
+    <div class="highlight"><pre><span></span><code>git clone https://github.com/GLAM-Workbench/[GW REPO NAME].git
+</code></pre></div></li>
+<li>On the command line, use <code>cd</code> to move into the folder of the newly-cloned repository: 
+    <div class="highlight"><pre><span></span><code>cd [GW REPO NAME]
+</code></pre></div></li>
+<li>Install <code>pip-tools</code>:
+    <div class="highlight"><pre><span></span><code>pip install pip-tools
+</code></pre></div></li>
+<li>Use pip-tools to install the required Python packages:
+    <div class="highlight"><pre><span></span><code>pip-sync requirements.txt dev-requirements.txt
+</code></pre></div></li>
+</ul>
 <h2 id="running-jupyter-lab">Running Jupyter Lab<a class="headerlink" href="#running-jupyter-lab" title="Permanent link">&para;</a></h2>
-<ol>
+<ul>
 <li>On the command line, run <code>jupyter lab</code> – to start Jupyter.</li>
 <li>A browser window should open automatically. If not, copy and paste the url from the command line to your web browser.</li>
 <li>To shut down your Jupyter Lab session hit <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> on the command line.</li>
-</ol>
+</ul>
+<h2 id="going-further">Going further<a class="headerlink" href="#going-further" title="Permanent link">&para;</a></h2>
+<p>If you'd like to to modify notebooks and contribute the code back to the GLAM Workbench, see <a href="../get-involved/contribute-code/">Contribute code</a>.</p>
+<p>if you'd like to develop your own GLAM Workbench repositories, see <a href="../get-involved/developing-repositories/">Develop a new repository</a>.</p>
 
 <!-- Was this page helpful? -->
 
@@ -12691,7 +12731,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss", "content.tabs.link"], "search": "../assets/javascripts/workers/search.c7c1ca2c.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss", "content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.c7c1ca2c.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.f807c082.min.js"></script>

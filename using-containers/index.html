@@ -6,37 +6,37 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="CSV formatted file containing the total number of times each tag in Trove has been applied to resources.">
+        <meta name="description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums">
       
       
         <meta name="author" content="Tim Sherratt">
       
       
-        <link rel="canonical" href="https://glam-workbench.net/trove-lists/trove-tag-counts/">
+        <link rel="canonical" href="https://glam-workbench.net/using-containers/">
       
       
-        <link rel="prev" href="../trove-public-tags/">
+        <link rel="prev" href="../using-nectar/">
       
       
-        <link rel="next" href="../../trove-maps/">
+        <link rel="next" href="../using-python/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11+insiders-4.53.16">
     
     
       
-        <title>Trove tag counts - GLAM Workbench</title>
+        <title>Running in a container on your own computer - GLAM Workbench</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ade31302.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ade31302.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
   
@@ -58,14 +58,14 @@
         
         
         
-        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -86,35 +86,27 @@
         <meta name="z.type" content="computerProgram" />
         <meta name="z.libraryCatalog" content="Zenodo" />
         
-            <meta name="dcterms.title" content="Trove tag counts" />
+            <meta name="dcterms.title" content="" />
         
         
-            <meta name="dcterms.creator" content="Sherratt, Tim" />
         
         
-            <meta name="dcterms.issued" content="2024-06-06" />
-        
-        
-            <meta name="dcterms.identifier" content="https://doi.org/10.5281/zenodo.11496519" />
-        
-        
-            <meta name="bibo.edition" content="1.2" />
         
     
 
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Trove tag counts - GLAM Workbench" />
-<meta property="og:description" content="CSV formatted file containing the total number of times each tag in Trove has been applied to resources." />
-<meta property="og:image" content="https://glam-workbench.net/assets/images/social/trove-lists/trove-tag-counts.png" />
+<meta property="og:title" content="Running in a container on your own computer - GLAM Workbench" />
+<meta property="og:description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" />
+<meta property="og:image" content="https://glam-workbench.net/assets/images/social/using-containers.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://glam-workbench.net/trove-lists/trove-tag-counts/" />
+<meta property="og:url" content="https://glam-workbench.net/using-containers/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Trove tag counts - GLAM Workbench" />
-<meta property="twitter:description" content="CSV formatted file containing the total number of times each tag in Trove has been applied to resources." />
-<meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/trove-lists/trove-tag-counts.png" />
+<meta property="twitter:title" content="Running in a container on your own computer - GLAM Workbench" />
+<meta property="twitter:description" content="A collection of tools and examples to help you work with data from galleries, libraries, archives, and museums" />
+<meta property="twitter:image" content="https://glam-workbench.net/assets/images/social/using-containers.png" />
 </head>
   
   
@@ -134,7 +126,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#related-resources" class="md-skip">
+        <a href="#quick-start" class="md-skip">
           Skip to content
         </a>
       
@@ -150,7 +142,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="GLAM Workbench" class="md-header__button md-logo" aria-label="GLAM Workbench" data-md-component="logo">
+    <a href=".." title="GLAM Workbench" class="md-header__button md-logo" aria-label="GLAM Workbench" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.78 15.3 6 6 2.11-2.16-6-6zm3.72-5.2c-.39 0-.81-.05-1.14-.19L4.97 21.25l-2.11-2.11 7.41-7.4L8.5 9.96l-.72.7-1.45-1.41v2.86l-.7.7-3.52-3.56.7-.7h2.81l-1.4-1.41 3.56-3.56a2.976 2.976 0 0 1 4.22 0L9.89 5.74l1.41 1.4-.71.71 1.79 1.78 1.82-1.88c-.14-.33-.2-.75-.2-1.12a3.49 3.49 0 0 1 3.5-3.52c.59 0 1.11.14 1.58.42L16.41 6.2l1.5 1.5 2.67-2.67c.28.47.42.97.42 1.6 0 1.92-1.55 3.47-3.5 3.47"/></svg>
@@ -170,7 +162,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Trove tag counts
+              Running in a container on your own computer
             
           </span>
         </div>
@@ -295,7 +287,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/trove-lists" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -303,9 +295,9 @@
   </div>
 
 <div class="md-source__repository">
-  trove-lists
+  glam-workbench.github.io
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v1.1.0</li><li class="md-source__fact md-source__fact--stars">1</li>
+  
 </ul>
 </div>
 </a>
@@ -326,8 +318,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -371,7 +361,7 @@
   <!-- Site title -->
   <label class="md-nav__title" for="__drawer">
     <a
-      href="../.."
+      href=".."
       title="GLAM Workbench"
       class="md-nav__button md-logo"
       aria-label="GLAM Workbench"
@@ -426,7 +416,7 @@
 
 <!-- Repository containing source -->
 
-<a href="https://github.com/GLAM-Workbench/trove-lists" title="source.link.title" class="md-source" data-md-component="source-gw">
+<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io" title="source.link.title" class="md-source" data-md-component="source-gw">
 
   <div class="md-source__icon md-icon">
       
@@ -434,9 +424,9 @@
   </div>
 
 <div class="md-source__repository">
-  trove-lists
+  glam-workbench.github.io
 <ul class="md-source__facts">
-  <li class="md-source__fact md-source__fact--version">v1.1.0</li><li class="md-source__fact md-source__fact--stars">1</li>
+  
 </ul>
 </div>
 </a>
@@ -453,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -539,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   
@@ -567,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../presentations/" class="md-nav__link">
+      <a href="../presentations/" class="md-nav__link">
         
   
   
@@ -595,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../awards/" class="md-nav__link">
+      <a href="../awards/" class="md-nav__link">
         
   
   
@@ -623,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../citations/" class="md-nav__link">
+      <a href="../citations/" class="md-nav__link">
         
   
   
@@ -681,7 +671,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../get-involved/" class="md-nav__link ">
+            <a href="../get-involved/" class="md-nav__link ">
               
   
   
@@ -725,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-involved/supporters/" class="md-nav__link">
+      <a href="../get-involved/supporters/" class="md-nav__link">
         
   
   
@@ -753,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-involved/add-links/" class="md-nav__link">
+      <a href="../get-involved/add-links/" class="md-nav__link">
         
   
   
@@ -781,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-involved/editing-documentation/" class="md-nav__link">
+      <a href="../get-involved/editing-documentation/" class="md-nav__link">
         
   
   
@@ -809,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-involved/contribute-code/" class="md-nav__link">
+      <a href="../get-involved/contribute-code/" class="md-nav__link">
         
   
   
@@ -837,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-involved/developing-repositories/" class="md-nav__link">
+      <a href="../get-involved/developing-repositories/" class="md-nav__link">
         
   
   
@@ -865,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contributors/" class="md-nav__link">
+      <a href="../contributors/" class="md-nav__link">
         
   
   
@@ -905,8 +895,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -926,11 +918,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -951,7 +943,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -969,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
@@ -994,8 +986,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1015,11 +1009,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -1040,7 +1034,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1058,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-binder/" class="md-nav__link">
+      <a href="../using-binder/" class="md-nav__link">
         
   
   
@@ -1086,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-ardc-binder/" class="md-nav__link">
+      <a href="../using-ardc-binder/" class="md-nav__link">
         
   
   
@@ -1114,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-reclaim-cloud/" class="md-nav__link">
+      <a href="../using-reclaim-cloud/" class="md-nav__link">
         
   
   
@@ -1142,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-nectar/" class="md-nav__link">
+      <a href="../using-nectar/" class="md-nav__link">
         
   
   
@@ -1167,10 +1161,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../using-containers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running in a container on your own computer
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1186,6 +1205,90 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-and-reusing-a-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving and reusing a container
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-the-podman-run-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding the podman run command
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-your-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing your files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-a-glam-workbench-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating a GLAM Workbench image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Need help?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1198,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-python/" class="md-nav__link">
+      <a href="../using-python/" class="md-nav__link">
         
   
   
@@ -1461,7 +1564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glam-data-list/" class="md-nav__link">
+      <a href="../glam-data-list/" class="md-nav__link">
         
   
   
@@ -1509,7 +1612,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../glam-data-portals/" class="md-nav__link ">
+            <a href="../glam-data-portals/" class="md-nav__link ">
               
   
   
@@ -1606,7 +1709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glam-data-portals/gov-portals-data/" class="md-nav__link">
+      <a href="../glam-data-portals/gov-portals-data/" class="md-nav__link">
         
   
   
@@ -1634,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glam-datasets-from-gov-portals/" class="md-nav__link">
+      <a href="../glam-datasets-from-gov-portals/" class="md-nav__link">
         
   
   
@@ -1678,7 +1781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../csv-explorer/" class="md-nav__link">
+      <a href="../csv-explorer/" class="md-nav__link">
         
   
   
@@ -1706,7 +1809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../name-search/" class="md-nav__link">
+      <a href="../name-search/" class="md-nav__link">
         
   
   
@@ -1746,10 +1849,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1791,11 +1892,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1816,7 +1917,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1854,7 +1955,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove/" class="md-nav__link ">
+            <a href="../trove/" class="md-nav__link ">
               
   
   
@@ -1953,7 +2054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove/your-first-api-request/" class="md-nav__link">
+      <a href="../trove/your-first-api-request/" class="md-nav__link">
         
   
   
@@ -1981,7 +2082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove/working-with-zones/" class="md-nav__link">
+      <a href="../trove/working-with-zones/" class="md-nav__link">
         
   
   
@@ -2009,7 +2110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove/exploring-facets/" class="md-nav__link">
+      <a href="../trove/exploring-facets/" class="md-nav__link">
         
   
   
@@ -2075,7 +2176,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-newspapers/" class="md-nav__link ">
+            <a href="../trove-newspapers/" class="md-nav__link ">
               
   
   
@@ -2218,7 +2319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/visualise-total-newspaper-articles-by-state-year/" class="md-nav__link">
+      <a href="../trove-newspapers/visualise-total-newspaper-articles-by-state-year/" class="md-nav__link">
         
   
   
@@ -2246,7 +2347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Analysing_OCR_corrections/" class="md-nav__link">
+      <a href="../trove-newspapers/Analysing_OCR_corrections/" class="md-nav__link">
         
   
   
@@ -2274,7 +2375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/find-non-english-newspapers/" class="md-nav__link">
+      <a href="../trove-newspapers/find-non-english-newspapers/" class="md-nav__link">
         
   
   
@@ -2302,7 +2403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Beyond_the_copyright_cliff_of_death/" class="md-nav__link">
+      <a href="../trove-newspapers/Beyond_the_copyright_cliff_of_death/" class="md-nav__link">
         
   
   
@@ -2330,7 +2431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/historical-data-newspaper-titles/" class="md-nav__link">
+      <a href="../trove-newspapers/historical-data-newspaper-titles/" class="md-nav__link">
         
   
   
@@ -2358,7 +2459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/querypic/" class="md-nav__link">
+      <a href="../trove-newspapers/querypic/" class="md-nav__link">
         
   
   
@@ -2386,7 +2487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/QueryPic_deconstructed/" class="md-nav__link">
+      <a href="../trove-newspapers/QueryPic_deconstructed/" class="md-nav__link">
         
   
   
@@ -2414,7 +2515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/visualise-searches-over-time/" class="md-nav__link">
+      <a href="../trove-newspapers/visualise-searches-over-time/" class="md-nav__link">
         
   
   
@@ -2442,7 +2543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Map-newspaper-results-by-state/" class="md-nav__link">
+      <a href="../trove-newspapers/Map-newspaper-results-by-state/" class="md-nav__link">
         
   
   
@@ -2470,7 +2571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Map-newspaper-results-by-place-of-publication/" class="md-nav__link">
+      <a href="../trove-newspapers/Map-newspaper-results-by-place-of-publication/" class="md-nav__link">
         
   
   
@@ -2498,7 +2599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time/" class="md-nav__link">
+      <a href="../trove-newspapers/Map-newspaper-results-by-place-of-publication-over-time/" class="md-nav__link">
         
   
   
@@ -2526,7 +2627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/harvest_newspaper_issues/" class="md-nav__link">
+      <a href="../trove-newspapers/harvest_newspaper_issues/" class="md-nav__link">
         
   
   
@@ -2554,7 +2655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/harvest_newspaper_issues_as_pdfs/" class="md-nav__link">
+      <a href="../trove-newspapers/harvest_newspaper_issues_as_pdfs/" class="md-nav__link">
         
   
   
@@ -2582,7 +2683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/harvest-aww-covers-and-newspaper-front-pages/" class="md-nav__link">
+      <a href="../trove-newspapers/harvest-aww-covers-and-newspaper-front-pages/" class="md-nav__link">
         
   
   
@@ -2610,7 +2711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Save-Trove-newspaper-article-as-image/" class="md-nav__link">
+      <a href="../trove-newspapers/Save-Trove-newspaper-article-as-image/" class="md-nav__link">
         
   
   
@@ -2638,7 +2739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Save-Trove-newspaper-article-as-image-app/" class="md-nav__link">
+      <a href="../trove-newspapers/Save-Trove-newspaper-article-as-image-app/" class="md-nav__link">
         
   
   
@@ -2666,7 +2767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Save-page-image/" class="md-nav__link">
+      <a href="../trove-newspapers/Save-page-image/" class="md-nav__link">
         
   
   
@@ -2694,7 +2795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Get-article-thumbnail/" class="md-nav__link">
+      <a href="../trove-newspapers/Get-article-thumbnail/" class="md-nav__link">
         
   
   
@@ -2722,7 +2823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Upload-Trove-newspapers-to-Omeka/" class="md-nav__link">
+      <a href="../trove-newspapers/Upload-Trove-newspapers-to-Omeka/" class="md-nav__link">
         
   
   
@@ -2750,7 +2851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Todays-news-yesterday/" class="md-nav__link">
+      <a href="../trove-newspapers/Todays-news-yesterday/" class="md-nav__link">
         
   
   
@@ -2778,7 +2879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Create-a-Trove-corrections-ticker/" class="md-nav__link">
+      <a href="../trove-newspapers/Create-a-Trove-corrections-ticker/" class="md-nav__link">
         
   
   
@@ -2806,7 +2907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/trove-newspapers-get-coordinates-of-articles/" class="md-nav__link">
+      <a href="../trove-newspapers/trove-newspapers-get-coordinates-of-articles/" class="md-nav__link">
         
   
   
@@ -2834,7 +2935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/Composite-thumbnails/" class="md-nav__link">
+      <a href="../trove-newspapers/Composite-thumbnails/" class="md-nav__link">
         
   
   
@@ -2862,7 +2963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/trove-newspapers-scissors-and-paste/" class="md-nav__link">
+      <a href="../trove-newspapers/trove-newspapers-scissors-and-paste/" class="md-nav__link">
         
   
   
@@ -2890,7 +2991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/trove-newspapers-create-composite-from-words/" class="md-nav__link">
+      <a href="../trove-newspapers/trove-newspapers-create-composite-from-words/" class="md-nav__link">
         
   
   
@@ -2987,7 +3088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/data-newspaper-issues/" class="md-nav__link">
+      <a href="../trove-newspapers/data-newspaper-issues/" class="md-nav__link">
         
   
   
@@ -3015,7 +3116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/csv-newspaper-titles-from-web-archives/" class="md-nav__link">
+      <a href="../trove-newspapers/csv-newspaper-titles-from-web-archives/" class="md-nav__link">
         
   
   
@@ -3043,7 +3144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/dataset-aww-covers/" class="md-nav__link">
+      <a href="../trove-newspapers/dataset-aww-covers/" class="md-nav__link">
         
   
   
@@ -3071,7 +3172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/list-non-english-newspapers/" class="md-nav__link">
+      <a href="../trove-newspapers/list-non-english-newspapers/" class="md-nav__link">
         
   
   
@@ -3099,7 +3200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/csv-newspapers-post-54/" class="md-nav__link">
+      <a href="../trove-newspapers/csv-newspapers-post-54/" class="md-nav__link">
         
   
   
@@ -3127,7 +3228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-newspapers/csv-newspapers-corrections/" class="md-nav__link">
+      <a href="../trove-newspapers/csv-newspapers-corrections/" class="md-nav__link">
         
   
   
@@ -3191,7 +3292,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-harvester/" class="md-nav__link ">
+            <a href="../trove-harvester/" class="md-nav__link ">
               
   
   
@@ -3296,7 +3397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-harvester/harvester-web-app/" class="md-nav__link">
+      <a href="../trove-harvester/harvester-web-app/" class="md-nav__link">
         
   
   
@@ -3324,7 +3425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-harvester/using-troveharvester/" class="md-nav__link">
+      <a href="../trove-harvester/using-troveharvester/" class="md-nav__link">
         
   
   
@@ -3352,7 +3453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-harvester/harvest-specific-days/" class="md-nav__link">
+      <a href="../trove-harvester/harvest-specific-days/" class="md-nav__link">
         
   
   
@@ -3380,7 +3481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-harvester/display-harvest-results-in-datasette/" class="md-nav__link">
+      <a href="../trove-harvester/display-harvest-results-in-datasette/" class="md-nav__link">
         
   
   
@@ -3408,7 +3509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-harvester/exploring-troveharvester-data/" class="md-nav__link">
+      <a href="../trove-harvester/exploring-troveharvester-data/" class="md-nav__link">
         
   
   
@@ -3436,7 +3537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-harvester/exploring-troveharvester-text/" class="md-nav__link">
+      <a href="../trove-harvester/exploring-troveharvester-text/" class="md-nav__link">
         
   
   
@@ -3502,7 +3603,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-books/" class="md-nav__link ">
+            <a href="../trove-books/" class="md-nav__link ">
               
   
   
@@ -3607,7 +3708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-books/harvesting-text-of-digitised-books/" class="md-nav__link">
+      <a href="../trove-books/harvesting-text-of-digitised-books/" class="md-nav__link">
         
   
   
@@ -3635,7 +3736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-books/metadata-for-digital-works/" class="md-nav__link">
+      <a href="../trove-books/metadata-for-digital-works/" class="md-nav__link">
         
   
   
@@ -3663,7 +3764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-books/harvesting-text-from-books-in-ia/" class="md-nav__link">
+      <a href="../trove-books/harvesting-text-from-books-in-ia/" class="md-nav__link">
         
   
   
@@ -3691,7 +3792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-books/counting-words-and-phrases/" class="md-nav__link">
+      <a href="../trove-books/counting-words-and-phrases/" class="md-nav__link">
         
   
   
@@ -3719,7 +3820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-books/recipe-generator/" class="md-nav__link">
+      <a href="../trove-books/recipe-generator/" class="md-nav__link">
         
   
   
@@ -3747,7 +3848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-books/exploring-digitised-books-adel-rahmani/" class="md-nav__link">
+      <a href="../trove-books/exploring-digitised-books-adel-rahmani/" class="md-nav__link">
         
   
   
@@ -3842,7 +3943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-books/ocrd-text-from-trove-books/" class="md-nav__link">
+      <a href="../trove-books/ocrd-text-from-trove-books/" class="md-nav__link">
         
   
   
@@ -3870,7 +3971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-books/csv-books-in-digital-form/" class="md-nav__link">
+      <a href="../trove-books/csv-books-in-digital-form/" class="md-nav__link">
         
   
   
@@ -3898,7 +3999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-books/government-publications-in-digital-form/" class="md-nav__link">
+      <a href="../trove-books/government-publications-in-digital-form/" class="md-nav__link">
         
   
   
@@ -3926,7 +4027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-books/ocrd-text-from-ia/" class="md-nav__link">
+      <a href="../trove-books/ocrd-text-from-ia/" class="md-nav__link">
         
   
   
@@ -3954,7 +4055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-books/csv-australian-books-in-ia/" class="md-nav__link">
+      <a href="../trove-books/csv-australian-books-in-ia/" class="md-nav__link">
         
   
   
@@ -4020,7 +4121,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-contributors/" class="md-nav__link ">
+            <a href="../trove-contributors/" class="md-nav__link ">
               
   
   
@@ -4117,7 +4218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-contributors/get_contributors/" class="md-nav__link">
+      <a href="../trove-contributors/get_contributors/" class="md-nav__link">
         
   
   
@@ -4145,7 +4246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-contributors/get_contributors_totals_zone_format/" class="md-nav__link">
+      <a href="../trove-contributors/get_contributors_totals_zone_format/" class="md-nav__link">
         
   
   
@@ -4236,7 +4337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-contributors/trove-contributors-list/" class="md-nav__link">
+      <a href="../trove-contributors/trove-contributors-list/" class="md-nav__link">
         
   
   
@@ -4264,7 +4365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-contributors/trove-contributors-zones/" class="md-nav__link">
+      <a href="../trove-contributors/trove-contributors-zones/" class="md-nav__link">
         
   
   
@@ -4292,7 +4393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-contributors/trove-contributors-formats/" class="md-nav__link">
+      <a href="../trove-contributors/trove-contributors-formats/" class="md-nav__link">
         
   
   
@@ -4358,7 +4459,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-government/" class="md-nav__link ">
+            <a href="../trove-government/" class="md-nav__link ">
               
   
   
@@ -4455,7 +4556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-government/harvest-parliamentary-papers/" class="md-nav__link">
+      <a href="../trove-government/harvest-parliamentary-papers/" class="md-nav__link">
         
   
   
@@ -4483,7 +4584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-government/harvest-parliament-press-releases/" class="md-nav__link">
+      <a href="../trove-government/harvest-parliament-press-releases/" class="md-nav__link">
         
   
   
@@ -4574,7 +4675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-government/trove-parliamentary-papers-data/" class="md-nav__link">
+      <a href="../trove-government/trove-parliamentary-papers-data/" class="md-nav__link">
         
   
   
@@ -4602,7 +4703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-government/trove-parliament-press-releases-refugees/" class="md-nav__link">
+      <a href="../trove-government/trove-parliament-press-releases-refugees/" class="md-nav__link">
         
   
   
@@ -4630,7 +4731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-government/trove-parliament-press-releases-covid/" class="md-nav__link">
+      <a href="../trove-government/trove-parliament-press-releases-covid/" class="md-nav__link">
         
   
   
@@ -4698,7 +4799,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-journals/" class="md-nav__link ">
+            <a href="../trove-journals/" class="md-nav__link ">
               
   
   
@@ -4811,7 +4912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/periodicals-from-api/" class="md-nav__link">
+      <a href="../trove-journals/periodicals-from-api/" class="md-nav__link">
         
   
   
@@ -4839,7 +4940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/periodicals-enrich-for-datasette/" class="md-nav__link">
+      <a href="../trove-journals/periodicals-enrich-for-datasette/" class="md-nav__link">
         
   
   
@@ -4867,7 +4968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/create-list-digitised-journals/" class="md-nav__link">
+      <a href="../trove-journals/create-list-digitised-journals/" class="md-nav__link">
         
   
   
@@ -4895,7 +4996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/get-ocrd-text-from-digitised-journal/" class="md-nav__link">
+      <a href="../trove-journals/get-ocrd-text-from-digitised-journal/" class="md-nav__link">
         
   
   
@@ -4923,7 +5024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/get-ocrd-text-from-all-journals/" class="md-nav__link">
+      <a href="../trove-journals/get-ocrd-text-from-all-journals/" class="md-nav__link">
         
   
   
@@ -4951,7 +5052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/create-text-db-indexed-by-line/" class="md-nav__link">
+      <a href="../trove-journals/create-text-db-indexed-by-line/" class="md-nav__link">
         
   
   
@@ -4979,7 +5080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/get-covers-from-digitised-journal/" class="md-nav__link">
+      <a href="../trove-journals/get-covers-from-digitised-journal/" class="md-nav__link">
         
   
   
@@ -5007,7 +5108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/finding-editorial-cartoons-in-bulletin/" class="md-nav__link">
+      <a href="../trove-journals/finding-editorial-cartoons-in-bulletin/" class="md-nav__link">
         
   
   
@@ -5035,7 +5136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/harvest-illustrations-from-periodicals/" class="md-nav__link">
+      <a href="../trove-journals/harvest-illustrations-from-periodicals/" class="md-nav__link">
         
   
   
@@ -5063,7 +5164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/save-issues-as-pdfs/" class="md-nav__link">
+      <a href="../trove-journals/save-issues-as-pdfs/" class="md-nav__link">
         
   
   
@@ -5158,7 +5259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/periodicals-data-api/" class="md-nav__link">
+      <a href="../trove-journals/periodicals-data-api/" class="md-nav__link">
         
   
   
@@ -5186,7 +5287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/csv-digital-journals/" class="md-nav__link">
+      <a href="../trove-journals/csv-digital-journals/" class="md-nav__link">
         
   
   
@@ -5214,7 +5315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/trove-ned-periodicals-data/" class="md-nav__link">
+      <a href="../trove-journals/trove-ned-periodicals-data/" class="md-nav__link">
         
   
   
@@ -5242,7 +5343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/ocrd-text-all-journals/" class="md-nav__link">
+      <a href="../trove-journals/ocrd-text-all-journals/" class="md-nav__link">
         
   
   
@@ -5270,7 +5371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/bulletin-cartoons-collection/" class="md-nav__link">
+      <a href="../trove-journals/bulletin-cartoons-collection/" class="md-nav__link">
         
   
   
@@ -5359,7 +5460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/nsw-post-office-directories/" class="md-nav__link">
+      <a href="../trove-journals/nsw-post-office-directories/" class="md-nav__link">
         
   
   
@@ -5387,7 +5488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-journals/sydney-telephone-directories/" class="md-nav__link">
+      <a href="../trove-journals/sydney-telephone-directories/" class="md-nav__link">
         
   
   
@@ -5453,7 +5554,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-ned/" class="md-nav__link ">
+            <a href="../trove-ned/" class="md-nav__link ">
               
   
   
@@ -5550,7 +5651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-ned/harvest-ned-periodicals/" class="md-nav__link">
+      <a href="../trove-ned/harvest-ned-periodicals/" class="md-nav__link">
         
   
   
@@ -5578,7 +5679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-ned/create-searchable-database/" class="md-nav__link">
+      <a href="../trove-ned/create-searchable-database/" class="md-nav__link">
         
   
   
@@ -5667,7 +5768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-ned/trove-ned-periodicals-data/" class="md-nav__link">
+      <a href="../trove-ned/trove-ned-periodicals-data/" class="md-nav__link">
         
   
   
@@ -5695,7 +5796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-ned/the-triangle/" class="md-nav__link">
+      <a href="../trove-ned/the-triangle/" class="md-nav__link">
         
   
   
@@ -5736,8 +5837,6 @@
                 
   
   
-    
-  
   
   
     
@@ -5755,15 +5854,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../trove-lists/" class="md-nav__link ">
               
   
   
@@ -5787,7 +5886,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -5866,7 +5965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../convert-a-trove-list-into-a-csv-file/" class="md-nav__link">
+      <a href="../trove-lists/convert-a-trove-list-into-a-csv-file/" class="md-nav__link">
         
   
   
@@ -5894,7 +5993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../convert-list-to-cb-exhibition/" class="md-nav__link">
+      <a href="../trove-lists/convert-list-to-cb-exhibition/" class="md-nav__link">
         
   
   
@@ -5922,7 +6021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../harvest-summary-data-from-lists/" class="md-nav__link">
+      <a href="../trove-lists/harvest-summary-data-from-lists/" class="md-nav__link">
         
   
   
@@ -5950,7 +6049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../harvest-tags/" class="md-nav__link">
+      <a href="../trove-lists/harvest-tags/" class="md-nav__link">
         
   
   
@@ -5978,7 +6077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../analyse_tags/" class="md-nav__link">
+      <a href="../trove-lists/analyse_tags/" class="md-nav__link">
         
   
   
@@ -6011,10 +6110,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -6028,11 +6125,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9_3" >
         
           
           <label class="md-nav__link" for="__nav_5_9_3" id="__nav_5_9_3_label" tabindex="0">
@@ -6053,7 +6150,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_9_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_9_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_9_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -6071,7 +6168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-lists-metadata/" class="md-nav__link">
+      <a href="../trove-lists/trove-lists-metadata/" class="md-nav__link">
         
   
   
@@ -6099,7 +6196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trove-public-tags/" class="md-nav__link">
+      <a href="../trove-lists/trove-public-tags/" class="md-nav__link">
         
   
   
@@ -6124,35 +6221,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Trove tag counts
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../trove-lists/trove-tag-counts/" class="md-nav__link">
         
   
   
@@ -6168,57 +6240,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Getting help
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cite-as" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cite as
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -6271,7 +6292,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-maps/" class="md-nav__link ">
+            <a href="../trove-maps/" class="md-nav__link ">
               
   
   
@@ -6370,7 +6391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-maps/exploring-digitised-maps/" class="md-nav__link">
+      <a href="../trove-maps/exploring-digitised-maps/" class="md-nav__link">
         
   
   
@@ -6398,7 +6419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-maps/parse-coordinates/" class="md-nav__link">
+      <a href="../trove-maps/parse-coordinates/" class="md-nav__link">
         
   
   
@@ -6426,7 +6447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-maps/create-map-subsets/" class="md-nav__link">
+      <a href="../trove-maps/create-map-subsets/" class="md-nav__link">
         
   
   
@@ -6515,7 +6536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-maps/single-maps-data/" class="md-nav__link">
+      <a href="../trove-maps/single-maps-data/" class="md-nav__link">
         
   
   
@@ -6543,7 +6564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-maps/single-maps-coordinates-data/" class="md-nav__link">
+      <a href="../trove-maps/single-maps-coordinates-data/" class="md-nav__link">
         
   
   
@@ -6630,7 +6651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-maps/explore-maps/" class="md-nav__link">
+      <a href="../trove-maps/explore-maps/" class="md-nav__link">
         
   
   
@@ -6696,7 +6717,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-music/" class="md-nav__link ">
+            <a href="../trove-music/" class="md-nav__link ">
               
   
   
@@ -6799,7 +6820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-music/harvest-oral-histories/" class="md-nav__link">
+      <a href="../trove-music/harvest-oral-histories/" class="md-nav__link">
         
   
   
@@ -6827,7 +6848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-music/save-series/" class="md-nav__link">
+      <a href="../trove-music/save-series/" class="md-nav__link">
         
   
   
@@ -6855,7 +6876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-music/download-transcripts/" class="md-nav__link">
+      <a href="../trove-music/download-transcripts/" class="md-nav__link">
         
   
   
@@ -6883,7 +6904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-music/harvest-abcrn/" class="md-nav__link">
+      <a href="../trove-music/harvest-abcrn/" class="md-nav__link">
         
   
   
@@ -6911,7 +6932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-music/explore-abcrn-data/" class="md-nav__link">
+      <a href="../trove-music/explore-abcrn-data/" class="md-nav__link">
         
   
   
@@ -7002,7 +7023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-music/trove-oral-histories/" class="md-nav__link">
+      <a href="../trove-music/trove-oral-histories/" class="md-nav__link">
         
   
   
@@ -7030,7 +7051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-music/trove-oral-history-series/" class="md-nav__link">
+      <a href="../trove-music/trove-oral-history-series/" class="md-nav__link">
         
   
   
@@ -7058,7 +7079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-music/abcrn-data/" class="md-nav__link">
+      <a href="../trove-music/abcrn-data/" class="md-nav__link">
         
   
   
@@ -7124,7 +7145,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-people/" class="md-nav__link ">
+            <a href="../trove-people/" class="md-nav__link ">
               
   
   
@@ -7229,7 +7250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-people/complete_harvest/" class="md-nav__link">
+      <a href="../trove-people/complete_harvest/" class="md-nav__link">
         
   
   
@@ -7257,7 +7278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-people/complete_harvest_oai/" class="md-nav__link">
+      <a href="../trove-people/complete_harvest_oai/" class="md-nav__link">
         
   
   
@@ -7285,7 +7306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-people/extract_aggregated_data_from_harvest/" class="md-nav__link">
+      <a href="../trove-people/extract_aggregated_data_from_harvest/" class="md-nav__link">
         
   
   
@@ -7313,7 +7334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-people/get_sru_results_as_json/" class="md-nav__link">
+      <a href="../trove-people/get_sru_results_as_json/" class="md-nav__link">
         
   
   
@@ -7341,7 +7362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-people/intersections/" class="md-nav__link">
+      <a href="../trove-people/intersections/" class="md-nav__link">
         
   
   
@@ -7369,7 +7390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-people/viaf/" class="md-nav__link">
+      <a href="../trove-people/viaf/" class="md-nav__link">
         
   
   
@@ -7458,7 +7479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-people/complete_harvest_dataset/" class="md-nav__link">
+      <a href="../trove-people/complete_harvest_dataset/" class="md-nav__link">
         
   
   
@@ -7486,7 +7507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-people/aggregated_datasets/" class="md-nav__link">
+      <a href="../trove-people/aggregated_datasets/" class="md-nav__link">
         
   
   
@@ -7552,7 +7573,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-images/" class="md-nav__link ">
+            <a href="../trove-images/" class="md-nav__link ">
               
   
   
@@ -7651,7 +7672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-images/use-of-rights-statements/" class="md-nav__link">
+      <a href="../trove-images/use-of-rights-statements/" class="md-nav__link">
         
   
   
@@ -7679,7 +7700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-images/download-image-collection/" class="md-nav__link">
+      <a href="../trove-images/download-image-collection/" class="md-nav__link">
         
   
   
@@ -7707,7 +7728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-images/save-image-collection-iiif/" class="md-nav__link">
+      <a href="../trove-images/save-image-collection-iiif/" class="md-nav__link">
         
   
   
@@ -7794,7 +7815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-images/trove-images-rights-data/" class="md-nav__link">
+      <a href="../trove-images/trove-images-rights-data/" class="md-nav__link">
         
   
   
@@ -7860,7 +7881,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-web-archives/" class="md-nav__link ">
+            <a href="../trove-web-archives/" class="md-nav__link ">
               
   
   
@@ -7959,7 +7980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-web-archives/harvest-pandora-subject-collections/" class="md-nav__link">
+      <a href="../trove-web-archives/harvest-pandora-subject-collections/" class="md-nav__link">
         
   
   
@@ -7987,7 +8008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-web-archives/harvest-pandora-titles/" class="md-nav__link">
+      <a href="../trove-web-archives/harvest-pandora-titles/" class="md-nav__link">
         
   
   
@@ -8015,7 +8036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-web-archives/create-datasets/" class="md-nav__link">
+      <a href="../trove-web-archives/create-datasets/" class="md-nav__link">
         
   
   
@@ -8106,7 +8127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-web-archives/pandora-collections-data/" class="md-nav__link">
+      <a href="../trove-web-archives/pandora-collections-data/" class="md-nav__link">
         
   
   
@@ -8134,7 +8155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-web-archives/pandora-titles-data/" class="md-nav__link">
+      <a href="../trove-web-archives/pandora-titles-data/" class="md-nav__link">
         
   
   
@@ -8162,7 +8183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-web-archives/pandora-subject-hierarchy/" class="md-nav__link">
+      <a href="../trove-web-archives/pandora-subject-hierarchy/" class="md-nav__link">
         
   
   
@@ -8228,7 +8249,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-unpublished/" class="md-nav__link ">
+            <a href="../trove-unpublished/" class="md-nav__link ">
               
   
   
@@ -8331,7 +8352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-unpublished/Finding-unpublished-works-entering-public-domain/" class="md-nav__link">
+      <a href="../trove-unpublished/Finding-unpublished-works-entering-public-domain/" class="md-nav__link">
         
   
   
@@ -8359,7 +8380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-unpublished/Exploring-unpublished-works-entering-public-domain/" class="md-nav__link">
+      <a href="../trove-unpublished/Exploring-unpublished-works-entering-public-domain/" class="md-nav__link">
         
   
   
@@ -8387,7 +8408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-unpublished/find-finding-aids/" class="md-nav__link">
+      <a href="../trove-unpublished/find-finding-aids/" class="md-nav__link">
         
   
   
@@ -8415,7 +8436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-unpublished/get-info-finding-aids/" class="md-nav__link">
+      <a href="../trove-unpublished/get-info-finding-aids/" class="md-nav__link">
         
   
   
@@ -8443,7 +8464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-unpublished/convert-fa-to-json/" class="md-nav__link">
+      <a href="../trove-unpublished/convert-fa-to-json/" class="md-nav__link">
         
   
   
@@ -8534,7 +8555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-unpublished/unpublished-entering-pd/" class="md-nav__link">
+      <a href="../trove-unpublished/unpublished-entering-pd/" class="md-nav__link">
         
   
   
@@ -8562,7 +8583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-unpublished/finding-aids-urls/" class="md-nav__link">
+      <a href="../trove-unpublished/finding-aids-urls/" class="md-nav__link">
         
   
   
@@ -8590,7 +8611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-unpublished/finding-aids-summary/" class="md-nav__link">
+      <a href="../trove-unpublished/finding-aids-summary/" class="md-nav__link">
         
   
   
@@ -8654,7 +8675,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-random/" class="md-nav__link ">
+            <a href="../trove-random/" class="md-nav__link ">
               
   
   
@@ -8753,7 +8774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-random/random_newspaper_article/" class="md-nav__link">
+      <a href="../trove-random/random_newspaper_article/" class="md-nav__link">
         
   
   
@@ -8781,7 +8802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-random/random_work_by_id/" class="md-nav__link">
+      <a href="../trove-random/random_work_by_id/" class="md-nav__link">
         
   
   
@@ -8809,7 +8830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../trove-random/random_work_by_facets/" class="md-nav__link">
+      <a href="../trove-random/random_work_by_facets/" class="md-nav__link">
         
   
   
@@ -8871,7 +8892,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../trove-api-v3/" class="md-nav__link ">
+            <a href="../trove-api-v3/" class="md-nav__link ">
               
   
   
@@ -8925,7 +8946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../digitalnz/" class="md-nav__link">
+      <a href="../digitalnz/" class="md-nav__link">
         
   
   
@@ -9013,7 +9034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../anu-archives/" class="md-nav__link">
+      <a href="../anu-archives/" class="md-nav__link">
         
   
   
@@ -9096,7 +9117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recordsearch/" class="md-nav__link">
+      <a href="../recordsearch/" class="md-nav__link">
         
   
   
@@ -9124,7 +9145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../naa-wap/" class="md-nav__link">
+      <a href="../naa-wap/" class="md-nav__link">
         
   
   
@@ -9152,7 +9173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../naa-asio/" class="md-nav__link">
+      <a href="../naa-asio/" class="md-nav__link">
         
   
   
@@ -9210,7 +9231,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../nsw-state-archives/" class="md-nav__link ">
+            <a href="../nsw-state-archives/" class="md-nav__link ">
               
   
   
@@ -9280,7 +9301,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../nsw-state-archives/" class="md-nav__link ">
+            <a href="../nsw-state-archives/" class="md-nav__link ">
               
   
   
@@ -9324,7 +9345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nsw-state-archives/get-list-of-indexes/" class="md-nav__link">
+      <a href="../nsw-state-archives/get-list-of-indexes/" class="md-nav__link">
         
   
   
@@ -9352,7 +9373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nsw-state-archives/harvest-indexes/" class="md-nav__link">
+      <a href="../nsw-state-archives/harvest-indexes/" class="md-nav__link">
         
   
   
@@ -9380,7 +9401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nsw-state-archives/summarise-index-details/" class="md-nav__link">
+      <a href="../nsw-state-archives/summarise-index-details/" class="md-nav__link">
         
   
   
@@ -9408,7 +9429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nsw-state-archives/index-explorer/" class="md-nav__link">
+      <a href="../nsw-state-archives/index-explorer/" class="md-nav__link">
         
   
   
@@ -9497,7 +9518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nsw-state-archives/index-list/" class="md-nav__link">
+      <a href="../nsw-state-archives/index-list/" class="md-nav__link">
         
   
   
@@ -9525,7 +9546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nsw-state-archives/index-repository/" class="md-nav__link">
+      <a href="../nsw-state-archives/index-repository/" class="md-nav__link">
         
   
   
@@ -9620,7 +9641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archway/" class="md-nav__link">
+      <a href="../archway/" class="md-nav__link">
         
   
   
@@ -9676,7 +9697,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../prov/" class="md-nav__link ">
+            <a href="../prov/" class="md-nav__link ">
               
   
   
@@ -9771,7 +9792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../prov/getting-started/" class="md-nav__link">
+      <a href="../prov/getting-started/" class="md-nav__link">
         
   
   
@@ -9815,7 +9836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qsa/" class="md-nav__link">
+      <a href="../qsa/" class="md-nav__link">
         
   
   
@@ -9921,7 +9942,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../heritage-council-of-victoria/" class="md-nav__link ">
+            <a href="../heritage-council-of-victoria/" class="md-nav__link ">
               
   
   
@@ -10018,7 +10039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../heritage-council-of-victoria/introduction-victorian-heritage-api/" class="md-nav__link">
+      <a href="../heritage-council-of-victoria/introduction-victorian-heritage-api/" class="md-nav__link">
         
   
   
@@ -10046,7 +10067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../heritage-council-of-victoria/shipwrecks/" class="md-nav__link">
+      <a href="../heritage-council-of-victoria/shipwrecks/" class="md-nav__link">
         
   
   
@@ -10178,7 +10199,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../libraries-tasmania/" class="md-nav__link ">
+            <a href="../libraries-tasmania/" class="md-nav__link ">
               
   
   
@@ -10279,7 +10300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries-tasmania/tas-pod-save-text-images/" class="md-nav__link">
+      <a href="../libraries-tasmania/tas-pod-save-text-images/" class="md-nav__link">
         
   
   
@@ -10307,7 +10328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries-tasmania/tas-pod-upload-images/" class="md-nav__link">
+      <a href="../libraries-tasmania/tas-pod-upload-images/" class="md-nav__link">
         
   
   
@@ -10335,7 +10356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries-tasmania/tas-pod-ocr-with-tesseract/" class="md-nav__link">
+      <a href="../libraries-tasmania/tas-pod-ocr-with-tesseract/" class="md-nav__link">
         
   
   
@@ -10363,7 +10384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries-tasmania/tas-pod-add-to-datasette/" class="md-nav__link">
+      <a href="../libraries-tasmania/tas-pod-add-to-datasette/" class="md-nav__link">
         
   
   
@@ -10450,7 +10471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../libraries-tasmania/tasmanian-post-office-directories/" class="md-nav__link">
+      <a href="../libraries-tasmania/tasmanian-post-office-directories/" class="md-nav__link">
         
   
   
@@ -10600,7 +10621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../records-of-resistance/" class="md-nav__link">
+      <a href="../records-of-resistance/" class="md-nav__link">
         
   
   
@@ -10628,7 +10649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../facial-detection/" class="md-nav__link">
+      <a href="../facial-detection/" class="md-nav__link">
         
   
   
@@ -10656,7 +10677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../image-tagging/" class="md-nav__link">
+      <a href="../image-tagging/" class="md-nav__link">
         
   
   
@@ -10700,7 +10721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slsa/" class="md-nav__link">
+      <a href="../slsa/" class="md-nav__link">
         
   
   
@@ -10728,7 +10749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slv/" class="md-nav__link">
+      <a href="../slv/" class="md-nav__link">
         
   
   
@@ -10756,7 +10777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lac/" class="md-nav__link">
+      <a href="../lac/" class="md-nav__link">
         
   
   
@@ -10813,7 +10834,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../web-archives/" class="md-nav__link ">
+            <a href="../web-archives/" class="md-nav__link ">
               
   
   
@@ -10938,7 +10959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/timegates-timemaps-mementos/" class="md-nav__link">
+      <a href="../web-archives/timegates-timemaps-mementos/" class="md-nav__link">
         
   
   
@@ -10966,7 +10987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/exploring-ia-cdx-api/" class="md-nav__link">
+      <a href="../web-archives/exploring-ia-cdx-api/" class="md-nav__link">
         
   
   
@@ -10994,7 +11015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/comparing-cdx-apis/" class="md-nav__link">
+      <a href="../web-archives/comparing-cdx-apis/" class="md-nav__link">
         
   
   
@@ -11022,7 +11043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/timemaps-vs-cdx/" class="md-nav__link">
+      <a href="../web-archives/timemaps-vs-cdx/" class="md-nav__link">
         
   
   
@@ -11050,7 +11071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/get-memento/" class="md-nav__link">
+      <a href="../web-archives/get-memento/" class="md-nav__link">
         
   
   
@@ -11078,7 +11099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/get-all-versions/" class="md-nav__link">
+      <a href="../web-archives/get-all-versions/" class="md-nav__link">
         
   
   
@@ -11106,7 +11127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/harvesting-text/" class="md-nav__link">
+      <a href="../web-archives/harvesting-text/" class="md-nav__link">
         
   
   
@@ -11134,7 +11155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/harvesting-domain-data/" class="md-nav__link">
+      <a href="../web-archives/harvesting-domain-data/" class="md-nav__link">
         
   
   
@@ -11162,7 +11183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/exploring-powerpoints/" class="md-nav__link">
+      <a href="../web-archives/exploring-powerpoints/" class="md-nav__link">
         
   
   
@@ -11190,7 +11211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/exploring-govau-subdomains/" class="md-nav__link">
+      <a href="../web-archives/exploring-govau-subdomains/" class="md-nav__link">
         
   
   
@@ -11218,7 +11239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/compare-page-versions/" class="md-nav__link">
+      <a href="../web-archives/compare-page-versions/" class="md-nav__link">
         
   
   
@@ -11246,7 +11267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/observing-change-over-time/" class="md-nav__link">
+      <a href="../web-archives/observing-change-over-time/" class="md-nav__link">
         
   
   
@@ -11274,7 +11295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/create-screenshots/" class="md-nav__link">
+      <a href="../web-archives/create-screenshots/" class="md-nav__link">
         
   
   
@@ -11302,7 +11323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/create-screenshots-over-time/" class="md-nav__link">
+      <a href="../web-archives/create-screenshots-over-time/" class="md-nav__link">
         
   
   
@@ -11330,7 +11351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/display-changes-in-text/" class="md-nav__link">
+      <a href="../web-archives/display-changes-in-text/" class="md-nav__link">
         
   
   
@@ -11358,7 +11379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/find-when-text-appears/" class="md-nav__link">
+      <a href="../web-archives/find-when-text-appears/" class="md-nav__link">
         
   
   
@@ -11451,7 +11472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/harvest-of-govau-subdomains/" class="md-nav__link">
+      <a href="../web-archives/harvest-of-govau-subdomains/" class="md-nav__link">
         
   
   
@@ -11479,7 +11500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/govau-subdomains-split/" class="md-nav__link">
+      <a href="../web-archives/govau-subdomains-split/" class="md-nav__link">
         
   
   
@@ -11507,7 +11528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/govau-subdomains-surt/" class="md-nav__link">
+      <a href="../web-archives/govau-subdomains-surt/" class="md-nav__link">
         
   
   
@@ -11535,7 +11556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-archives/govau-subdomains-visualisations/" class="md-nav__link">
+      <a href="../web-archives/govau-subdomains-visualisations/" class="md-nav__link">
         
   
   
@@ -11633,7 +11654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nma/" class="md-nav__link">
+      <a href="../nma/" class="md-nav__link">
         
   
   
@@ -11661,7 +11682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tepapa/" class="md-nav__link">
+      <a href="../tepapa/" class="md-nav__link">
         
   
   
@@ -11689,7 +11710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../museumsvictoria/" class="md-nav__link">
+      <a href="../museumsvictoria/" class="md-nav__link">
         
   
   
@@ -11828,7 +11849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hansard/" class="md-nav__link">
+      <a href="../hansard/" class="md-nav__link">
         
   
   
@@ -11856,7 +11877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pm-transcripts/" class="md-nav__link">
+      <a href="../pm-transcripts/" class="md-nav__link">
         
   
   
@@ -11919,7 +11940,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../wikidata/" class="md-nav__link ">
+            <a href="../wikidata/" class="md-nav__link ">
               
   
   
@@ -12018,7 +12039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wikidata/agencies-gannt-timeline/" class="md-nav__link">
+      <a href="../wikidata/agencies-gannt-timeline/" class="md-nav__link">
         
   
   
@@ -12046,7 +12067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wikidata/govt-agencies-network/" class="md-nav__link">
+      <a href="../wikidata/govt-agencies-network/" class="md-nav__link">
         
   
   
@@ -12074,7 +12095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wikidata/single-agency-network/" class="md-nav__link">
+      <a href="../wikidata/single-agency-network/" class="md-nav__link">
         
   
   
@@ -12137,7 +12158,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../glam-tools/" class="md-nav__link ">
+            <a href="../glam-tools/" class="md-nav__link ">
               
   
   
@@ -12234,7 +12255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glam-tools/cloudstor-share-nested-links/" class="md-nav__link">
+      <a href="../glam-tools/cloudstor-share-nested-links/" class="md-nav__link">
         
   
   
@@ -12262,7 +12283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glam-tools/cloudstor-access-via-webdav/" class="md-nav__link">
+      <a href="../glam-tools/cloudstor-access-via-webdav/" class="md-nav__link">
         
   
   
@@ -12358,7 +12379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../more-glam-notebooks/" class="md-nav__link">
+      <a href="../more-glam-notebooks/" class="md-nav__link">
         
   
   
@@ -12386,7 +12407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glam-tools-interfaces/" class="md-nav__link">
+      <a href="../glam-tools-interfaces/" class="md-nav__link">
         
   
   
@@ -12421,7 +12442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tags/" class="md-nav__link">
+      <a href="../tags/" class="md-nav__link">
         
   
   
@@ -12501,9 +12522,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -12520,10 +12539,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Related resources
+        Quick start
       
     </span>
   </a>
@@ -12531,10 +12550,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-help" class="md-nav__link">
+  <a href="#saving-and-reusing-a-container" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Getting help
+        Saving and reusing a container
       
     </span>
   </a>
@@ -12542,10 +12561,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cite-as" class="md-nav__link">
+  <a href="#understanding-the-podman-run-command" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cite as
+        Understanding the podman run command
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-your-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing your files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-a-glam-workbench-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating a GLAM Workbench image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Need help?
       
     </span>
   </a>
@@ -12592,7 +12644,7 @@
 
 
 
-<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/trove-lists/trove-tag-counts.md" title="edit.link.title" class="md-content__button md-icon">
+<a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/edit/master/docs/using-containers.md" title="edit.link.title" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
 </a>
 
@@ -12603,86 +12655,97 @@
   as the main headline.
 -->
 
-  <h1>Trove tag counts</h1>
+  <h1>Running in a container on your own computer</h1>
 
 
 <!-- Tags -->
 
   
-  
-
-
-  <nav class="md-tags" >
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:csv" class="md-tag">CSV</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:dataset" class="md-tag">dataset</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:metadata" class="md-tag">metadata</a>
-      
-    
-  </nav>
 
 
 
 <!-- Markdown content -->
-<p><em>Harvested: 6 June 2024</em></p>
-<p>CSV formatted file containing the total number of times each tag in Trove has been applied to resources.</p>
-<p>CSV formatted file containing the following fields:  </p>
-<table>
-<thead>
-<tr>
-<th>Column</th>
-<th>Contents</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>tag</code></td>
-<td>the tag string</td>
-</tr>
-<tr>
-<td><code>count</code></td>
-<td>number of resources the tag has been applied to</td>
-</tr>
-</tbody>
-</table>
-<p><a class="md-button md-button--primary" href="https://zenodo.org/doi/10.5281/zenodo.7563922">Download from Zenodo</a></p>
-<h3 id="related-resources">Related resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h3>
+<p>GLAM Workbench repositories are stored as pre-built container images on <a href="https://quay.io/organization/glamworkbench">quay.io</a>. You can run these containers on your own computer to set up a virtual machine with everything you need to use the notebooks. This is free, but requires more technical knowledge – you'll have to install <a href="https://podman.io/">Podman</a> on your computer, and be able to use the command line.</p>
+<div class="admonition warning">
+<p class="admonition-title">Under construction</p>
+<p>I'm still adding the necessary configuration files to all the GLAM Workbench repositories. If you don't see an option to use a container, it means I haven't set that section up yet.</p>
+</div>
+<h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<p>The GLAM Workbench repositories are stored as pre-built 'Images' on <a href="https://quay.io/organization/glamworkbench">Quay.io</a>. To download and run one of these images for the first time, you need to:</p>
 <ul>
-<li><a href="../harvest-tags/">Harvest public tags from Trove zones </a></li>
-<li><a href="../analyse_tags/">Analyse public tags added to Trove</a></li>
+<li>Install <a href="https://podman.io/docs/installation">Podman</a>.</li>
+<li>Run the following command in a terminal, replacing <code>[REPOSITORY NAME]</code> with the name of a GLAM Workbench repository, for example, 'trove-newspapers':<br />
+  <div class="highlight"><pre><span></span><code>podman --rm run -p 8888:8888 glamworkbench/[REPOSITORY NAME] jupyter lab --ip=0.0.0.0 --port=8888 --ServerApp.token=&quot;&quot; --LabApp.default_url=&quot;/lab/tree/index.ipynb&quot;
+</code></pre></div></li>
+<li>It will take a while to download the image and configure the container. Once it's ready you'll see a message saying that Jupyter Server is running.</li>
+<li>Point your web browser to <code>http://127.0.0.1:8888</code></li>
+<li>To stop the container enter <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> in ther terminal.</li>
 </ul>
-<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<div class="admonition failure">
+<p class="admonition-title">Error: address already in use</p>
+<p>If you get an error telling you 'address already in use', it means that there's already a server running on the <code>8888</code> port. All you need to do is change <code>8888</code> in the command above to some other number, such as <code>8889</code> or <code>9999</code>. for example:</p>
+<p><div class="highlight"><pre><span></span><code>podman --rm run -p 8889:8889 glamworkbench/[REPOSITORY NAME] jupyter lab --ip=0.0.0.0 --port=8889 --ServerApp.token=&quot;&quot; --LabApp.default_url=&quot;/lab/tree/index.ipynb&quot;
+</code></pre></div>
+Once the Jupyter server has started you'd access it at the url: <code>http://127.0.0.1:8889</code></p>
+</div>
+<h2 id="saving-and-reusing-a-container">Saving and reusing a container<a class="headerlink" href="#saving-and-reusing-a-container" title="Permanent link">&para;</a></h2>
+<p>The quick start instructions run a container once and delete it when you've finished. Any changes you've made to the notebooks, or data you've harvested, will be lost unless you download them from the Jupyter Lab interface before you shut down the container. But sometimes you might want to save a container with any changes and run it again later. To do this, you should give a name to your container using the <code>--name</code> parameter, and instead of using the <code>--rm</code> parameter to delete the notebook when you've finished, add the <code>--detach</code> parameter. So the command to run the container would be:</p>
+<div class="highlight"><pre><span></span><code>podman run --detach --name [YOUR CONTAINER NAME] -p 8888:8888 glamworkbench/[REPOSITORY NAME] jupyter lab --ip=0.0.0.0 --port=8888 --ServerApp.token=&quot;&quot; --LabApp.default_url=&quot;/lab/tree/index.ipynb&quot;
+</code></pre></div>
+<p>Running this in a terminal will return you to the command prompt, so you can enter additional instructions. To stop a running container (saving any changes):</p>
+<div class="highlight"><pre><span></span><code>podman stop [YOUR CONTAINER NAME]
+</code></pre></div>
+<p>To restart a stopped container:</p>
+<div class="highlight"><pre><span></span><code>podman start [YOUR CONTAINER NAME]
+</code></pre></div>
+<p>Then open the Jupyter url in your browser – <code>http://127.0.0.1:8888</code> (unless you've changed the port number).</p>
+<p>To delete a container:</p>
+<div class="highlight"><pre><span></span><code>podman rm [YOUR CONTAINER NAME]
+</code></pre></div>
+<div class="admonition failure">
+<p class="admonition-title">Error: the container name is already in use</p>
+<p>If you get an error telling you 'the container name is already in use', it means that there's already a container with your supplied name. If you want to restart an existing container use:</p>
+<p><div class="highlight"><pre><span></span><code>podman start [YOUR CONTAINER NAME]
+</code></pre></div>
+If you want to replace the existing container and start afresh, first delete the existing container using:</p>
+<div class="highlight"><pre><span></span><code>podman rm [YOUR CONTAINER NAME]
+</code></pre></div>
+<p>Then re-enter the <code>podman run</code> command.</p>
+</div>
+<h2 id="understanding-the-podman-run-command">Understanding the <code>podman run</code> command<a class="headerlink" href="#understanding-the-podman-run-command" title="Permanent link">&para;</a></h2>
+<p>In case you're wondering what all the options after the <code>podman run</code> command actually do, I've listed them below.</p>
 <ul>
-<li><a href="https://ozglam.chat/c/glam-workbench/8">Ask a question at OzGLAM Help</a></li>
-<li><a href="https://github.com/GLAM-Workbench/glam-workbench.github.io/issues">Report a problem</a></li>
-<li><a href="https://calendly.com/timsherratt/30minchat">Book an appointment</a></li>
+<li><code>--rm</code> – Automatically deletes the container when you shut it down.</li>
+<li><code>--detach</code> – Returns you to the command prompt once the container is running.</li>
+<li><code>-p 8888:8888</code> – Sets the port number that you use to access the Jupyter server. If you already have an application using the '8888' port you can change the first value to something else, like '9999'. You'd then access Jupyter at <code>http://127.0.0.1:9999</code>.</li>
+<li><code>--name [REPOSITORY NAME]</code> – When you use <code>docker run</code> to download and run an image, you create a 'container' that wraps around the image, saving its files and configuration. The <code>name</code> value sets the name of this container. You can then use this value to manage the container. You can set the name to anything you want, but naming it after the GLAM Workbench repository seems to make sense.</li>
+<li><code>glamworkbench/[REPOSITORY NAME]</code> – This is the name of the image you want to install from Docker Hub.</li>
+<li><code>jupyter lab --ip=0.0.0.0 --port=8888</code> – This is the command to start up Jupyter Lab. Setting the IP address to '0.0.0.0' ensures that the Jupyter server will be accessible from outside the container.</li>
+<li><code>--NotebookApp.token=''</code> – Because you're running Jupyter locally, there's no reason to secure it with a token or password. This just says that no token is needed.</li>
+<li><code>--LabApp.default_url='/lab/tree/index.ipynb'</code> – This sets a default landing page for Jupyter Lab. You could change this to point to a specific notebook, or just leave it out.</li>
 </ul>
-<h2 id="cite-as">Cite as<a class="headerlink" href="#cite-as" title="Permanent link">&para;</a></h2>
-<p>Sherratt, Tim. (2024). Trove tag counts (version 1.2). Zenodo. <a href="https://doi.org/10.5281/zenodo.11496519">https://doi.org/10.5281/zenodo.11496519</a>  </p>
-<p><a href="https://doi.org/10.5281/zenodo.11496519"><img alt="" src="../../assets/external/zenodo.org/badge/DOI/10.5281/zenodo.11496519.svg"></a></p>
+<h2 id="accessing-your-files">Accessing your files<a class="headerlink" href="#accessing-your-files" title="Permanent link">&para;</a></h2>
+<p>You can't access files in the container from your local filesystem. So to use files outside of the GLAM Workbench container, you need to download them from Jupyter.</p>
+<p>Many of the notebooks in the GLAM Workbench will display download links when you create a new dataset. But you can also just use the file explorer built into Jupyter Lab.</p>
+<ul>
+<li>Right click on a file in the file explorer.</li>
+<li>Select <strong>Download</strong>.</li>
+</ul>
+<p><img alt="Screencap of downloading a file from Jupyter" src="../images/jupyter_download.png" /></p>
+<p>Many GLAM Workbench repositories also include the <a href="https://github.com/jupyterlab-contrib/jupyter-archive">jupyter-archive</a> extension. This extension adds a 'Download as an archive' option to the file manager's right click menu. Selecting this option will download a complete folder as a <code>.zip</code> file.</p>
+<h2 id="updating-a-glam-workbench-image">Updating a GLAM Workbench image<a class="headerlink" href="#updating-a-glam-workbench-image" title="Permanent link">&para;</a></h2>
+<p>When GLAM Workbench repositories are updated, a new container image is saved in quay.io. However, if you've previously run a container, the image won't be automatically updated the next time you use <code>podman run</code>. To make sure you're using the latest image:</p>
+<ul>
+<li>In a terminal enter <code>docker pull [REPOSITORY NAME]</code> – this updates the image on your computer.</li>
+<li>Now when you enter <code>podman run</code> the new image will be used.</li>
+</ul>
+<h2 id="need-help">Need help?<a class="headerlink" href="#need-help" title="Permanent link">&para;</a></h2>
+<p>There's more details than you would ever want in the official <a href="https://docs.docker.com/">Podman docs</a>.</p>
 
 <!-- Was this page helpful? -->
 
   
 
-
-  
 
 
 
@@ -12783,10 +12846,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.c7c1ca2c.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss", "content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.c7c1ca2c.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f807c082.min.js"></script>
+      <script src="../assets/javascripts/bundle.f807c082.min.js"></script>
       
     
   </body>

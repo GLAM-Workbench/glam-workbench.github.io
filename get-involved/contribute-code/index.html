@@ -1267,14 +1267,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-docker/" class="md-nav__link">
+      <a href="../../using-containers/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Using Docker
+    Running in a container on your own computer
   
 
     
@@ -12662,12 +12662,16 @@
 <h1 id="contribute-code-to-a-glam-workbench-repository">Contribute code to a GLAM Workbench repository<a class="headerlink" href="#contribute-code-to-a-glam-workbench-repository" title="Permanent link">&para;</a></h1>
 <p>If you want to improve the GLAM Workbench's Jupyter notebooks, or add new notebooks to an existing repository, you can contribute your code by setting up a local development environment.</p>
 <h2 id="setting-up-your-local-environment">Setting up your local environment<a class="headerlink" href="#setting-up-your-local-environment" title="Permanent link">&para;</a></h2>
+<p>I use <a href="https://github.com/pyenv/pyenv">pyenv</a>, <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a>, and <a href="https://github.com/jazzband/pip-tools">pip-tools</a> to create and manage Python versions and environments. </p>
 <ol>
-<li>Create and activate a Python virtual environment (Python &gt;= 3.8 should be ok). I use <a href="https://github.com/pyenv/pyenv">pyenv</a> and <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a> to create and manage Python versions and environments.</li>
-<li>Create your own <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">fork</a> of the GLAM Workbench repository.</li>
-<li><a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">Clone</a> <strong>your newly-forked</strong> GLAM Workbench repository to your own computer, eg. <code>git clone https://github.com/mygithubuser/trove-newspapers.git</code></li>
-<li>On the command line, use <code>cd</code> to move into the <code>notebooks</code> folder of the newly-cloned repository, eg. <code>cd trove-newspapers/notebooks</code></li>
-<li>On the command line, run <code>pip install -r requirements.txt</code> to install the required Python packages.</li>
+<li>Create and activate a Python virtual environment (Python &gt;= 3.10 should be ok).</li>
+<li>Use <code>git clone</code> to create a local version of the GLAM Workbench repository, eg. <code>git clone https://github.com/GLAM-Workbench/prov.git</code></li>
+<li>Use <code>cd</code> to move into the newly-cloned folder, eg. <code>cd prov</code></li>
+<li>Run <code>pip install pip-tools</code> to install <code>pip-tools</code>.</li>
+<li>Run <code>pip-compile requirements.in</code> – generates a <code>requirements.txt</code> file containing all the packages needed for your notebooks</li>
+<li>Run <code>pip-compile dev-requirements.in</code> – generates a <code>dev-requirements.txt</code> file containing all the packages needed for development</li>
+<li>Run <code>pip-sync requirements.txt dev-requirements.txt</code> – to install the latest versions of required packages</li>
+<li>Run <code>pre-commit install</code> to set up the Git pre-commit hooks.</li>
 </ol>
 <h2 id="running-jupyter-lab">Running Jupyter Lab<a class="headerlink" href="#running-jupyter-lab" title="Permanent link">&para;</a></h2>
 <ol>
@@ -12802,7 +12806,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.c7c1ca2c.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.c7c1ca2c.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.f807c082.min.js"></script>

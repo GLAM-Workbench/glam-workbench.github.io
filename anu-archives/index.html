@@ -1168,14 +1168,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-docker/" class="md-nav__link">
+      <a href="../using-containers/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Using Docker
+    Running in a container on your own computer
   
 
     
@@ -9130,10 +9130,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-docker" class="md-nav__link">
+  <a href="#running-in-a-container-on-your-own-computer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using Docker
+        Running in a container on your own computer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-on-your-own-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up on your own computer
       
     </span>
   </a>
@@ -12801,10 +12812,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-docker" class="md-nav__link">
+  <a href="#running-in-a-container-on-your-own-computer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using Docker
+        Running in a container on your own computer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-on-your-own-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up on your own computer
       
     </span>
   </a>
@@ -12964,19 +12986,21 @@
 <li>Full data about missing, misplaced, and duplicated pages is saved in <a href="https://github.com/GLAM-Workbench/anu-archives/blob/master/page_data_master.py"><code>page_data_master.py</code></a>. This data is combined with the holiday data to generate the complete page and date lists above.</li>
 <li>Print and handwritten data extracted from the images using Amazon Textract have been saved in a <a href="https://cloudstor.aarnet.edu.au/plus/s/RwRrCpisBac7N38">series of CSV files available from Cloudstor</a>. There's one file per year, and each row in the CSV represents a single column row. This data is in the process of being checked and cleaned, and is likely to change. The easiest way to explore this data is through the <a href="https://sydney-stock-exchange-xqtkxtd5za-ts.a.run.app">Datasette interface</a> which provides fulltext and structured searching.</li>
 </ul>
+<!-- START RUN INFO -->
+
 <h2 id="run-these-notebooks">Run these notebooks<a class="headerlink" href="#run-these-notebooks" title="Permanent link">&para;</a></h2>
-<p>There are a number of different ways to use these notebooks. Binder is quickest and easiest, but it doesn't save your data. I've listed a number of options below from easiest to most complicated (requiring more technical knowledge). See the <a href="https://glam-workbench.net/running-notebooks/">running Jupyter notebooks</a> page for more details and additional options.</p>
+<p>There are a number of different ways to use these notebooks. Binder is quickest and easiest, but it doesn't save your data. I've listed the options below from easiest to most complicated (requiring more technical knowledge).</p>
 <h3 id="using-ardc-binder">Using ARDC Binder<a class="headerlink" href="#using-ardc-binder" title="Permanent link">&para;</a></h3>
 <p><a href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/anu-archives/HEAD?urlpath=lab/tree/index.ipynb"><img alt="Launch on ARDC Binder" src="../images/launch-ARDC-binder.svg" /></a></p>
 <p>Click on the button above to launch the notebooks in this repository using the <a href="https://mybinder.org/">ARDC Binder</a> service. This is a free service available to researchers in Australian universities. You'll be asked to log in with your university credentials. Note that sessions will close if you stop using the notebooks, and no data will be preserved. Make sure you download any changed notebooks or harvested data that you want to save.</p>
 <p>See <a href="https://glam-workbench.net/using-ardc-binder/">Using ARDC Binder</a> for more details.</p>
 <h3 id="using-binder">Using Binder<a class="headerlink" href="#using-binder" title="Permanent link">&para;</a></h3>
-<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/anu-archives/master/?urlpath=lab"><img alt="Launch on Binder" src="../assets/external/mybinder.org/badge_logo.svg"></a></p>
+<p><a href="https://mybinder.org/v2/gh/GLAM-Workbench/trove-contributors/master/?urlpath=lab/tree/index.ipynb"><img alt="Launch on Binder" src="../assets/external/mybinder.org/badge_logo.svg"></a></p>
 <p>Click on the button above to launch the notebooks in this repository using the <a href="https://mybinder.org/">Binder</a> service (it might take a little while to load). This is a free service, but note that sessions will close if you stop using the notebooks, and no data will be saved. Make sure you download any changed notebooks or harvested data that you want to save.</p>
-<p>See <a href="https://glam-workbench.net/using-binder/">Using Binder</a> for more information.</p>
+<p>See <a href="https://glam-workbench.net/using-binder/">Using Binder</a> for more details.</p>
 <h3 id="using-reclaim-cloud">Using Reclaim Cloud<a class="headerlink" href="#using-reclaim-cloud" title="Permanent link">&para;</a></h3>
 <p><a href="https://app.my.reclaim.cloud/?manifest=https://raw.githubusercontent.com/GLAM-Workbench/anu-archives/master/reclaim-manifest.jps"><img alt="Launch on Reclaim Cloud" src="../assets/external/glam-workbench.github.io/images/launch-on-reclaim-cloud.svg"></a></p>
-<p><a href="https://reclaim.cloud/">Reclaim Cloud</a> is a paid hosting service, aimed particularly at supported digital scholarship in the humanities. Unlike Binder, the environments you create on Reclaim Cloud will save your data – even if you switch them off! To run this repository on Reclaim Cloud for the first time:</p>
+<p><a href="https://reclaim.cloud/">Reclaim Cloud</a> is a paid hosting service, aimed particularly at supported digital scholarship in hte humanities. Unlike Binder, the environments you create on Reclaim Cloud will save your data – even if you switch them off! To run this repository on Reclaim Cloud for the first time:</p>
 <ul>
 <li>Create a <a href="https://reclaim.cloud/">Reclaim Cloud</a> account and log in.</li>
 <li>Click on the button above to start the installation process.</li>
@@ -12984,19 +13008,35 @@
 <li>Sit back and wait for the installation to complete!</li>
 <li>Once the installation is finished click on the 'Open in Browser' button of your newly created environment (note that you might need to wait a few minutes before everything is ready).</li>
 </ul>
-<p>See <a href="https://glam-workbench.net/using-reclaim-cloud/">Using Reclaim Cloud</a> for more information.</p>
-<h3 id="using-docker">Using Docker<a class="headerlink" href="#using-docker" title="Permanent link">&para;</a></h3>
-<p>You can use Docker to run a pre-built computing environment on your own computer. It will set up everything you need to run the notebooks in this repository. This is free, but requires more technical knowledge – you'll have to install Docker on your computer, and be able to use the command line.</p>
+<p>See <a href="/using-reclaim-cloud/">Using Reclaim Cloud</a> for more details.</p>
+<h3 id="running-in-a-container-on-your-own-computer">Running in a container on your own computer<a class="headerlink" href="#running-in-a-container-on-your-own-computer" title="Permanent link">&para;</a></h3>
+<p>GLAM Workbench repositories are stored as pre-built container images on <a href="https://quay.io/organization/glamworkbench">quay.io</a>. You can run these containers on your own computer to set up a virtual machine with everything you need to use the notebooks. This is free, but requires more technical knowledge – you'll have to install <a href="https://podman.io/">Podman</a> on your computer, and be able to use the command line.</p>
 <ul>
-<li>Install <a href="https://docs.docker.com/get-docker/">Docker Desktop</a>.</li>
-<li>Create a new directory for this repository and open it from the command line.</li>
-<li>From the command line, run the following command:<br />
-  <div class="highlight"><pre><span></span><code>docker run -p 8888:8888 --name anu-archives -v &quot;$PWD&quot;:/home/jovyan/work quay.io/glamworkbench/anu-archives repo2docker-entrypoint jupyter lab --ip 0.0.0.0 --NotebookApp.token=&#39;&#39; --LabApp.default_url=&#39;/lab/tree/index.ipynb&#39;
+<li>Install <a href="https://podman.io/docs/installation">Podman</a>.</li>
+<li>In a terminal, run the following command:<br />
+  <div class="highlight"><pre><span></span><code>podman run --rm -p 8888:8888 quay.io/glamworkbench/anu-archives jupyter lab --ip=0.0.0.0 --port=8888 --ServerApp.token=&quot;&quot; --LabApp.default_url=&quot;/lab/tree/index.ipynb&quot;
 </code></pre></div></li>
-<li>It will take a while to download and configure the Docker image. Once it's ready you'll see a message saying that Jupyter Notebook is running.</li>
+<li>It will take a while to download and configure the container image. Once it's ready you'll see a message saying that Jupyter Notebook is running.</li>
 <li>Point your web browser to <code>http://127.0.0.1:8888</code></li>
+<li>When you've finished, download any files or data you want to keep from Jupyter Lab, and enter <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> int the terminal.</li>
 </ul>
-<p>See <a href="https://glam-workbench.net/using-docker/">Using Docker</a> for more information.</p>
+<p>See <a href="/using-containers/">Running in a container on your own computer</a> for more details.</p>
+<h3 id="setting-up-on-your-own-computer">Setting up on your own computer<a class="headerlink" href="#setting-up-on-your-own-computer" title="Permanent link">&para;</a></h3>
+<p>If you know your way around the command line and are comfortable installing software, you might want to set up your own computer to run these notebooks. You'll need to have recent versions of Python and Git installed. I use <a href="https://github.com/pyenv/pyenv">pyenv</a>, <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a>, and <a href="https://github.com/jazzband/pip-tools">pip-tools</a> to create and manage Python versions and environments.</p>
+<p>In a terminal:</p>
+<ul>
+<li>Create a Python virtual environment (Python &gt;= 3.10 should be ok): <code>pyenv virtualenv 3.10.12 anu-archives</code></li>
+<li>Activate the virtual environment: <code>pyenv local anu-archives</code></li>
+<li>Use <code>git clone</code> to create a local version of the GLAM Workbench repository: <code>git clone https://github.com/GLAM-Workbench/anu-archives.git</code></li>
+<li>Use <code>cd</code> to move into the newly-cloned folder: <code>cd anu-archives</code></li>
+<li>Run <code>pip install pip-tools</code> to install <code>pip-tools</code>.</li>
+<li>Run <code>pip-sync requirements.txt dev-requirements.txt</code> to install the required Python packages.</li>
+<li>Start Jupyter with <code>jupyter lab</code> – a browser window should open automatically. If not, copy and paste the url from the command line to your web browser.</li>
+<li>To shut down your Jupyter Lab session enter <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> in the terminal.</li>
+</ul>
+<p>See <a href="/using-python/">Using Python on your own computer</a> for more details.</p>
+<!-- END RUN INFO -->
+
 <h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/wragge">Tim Sherratt</a></li>
@@ -13109,7 +13149,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss", "content.tabs.link"], "search": "../assets/javascripts/workers/search.c7c1ca2c.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "announce.dismiss", "content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.c7c1ca2c.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.f807c082.min.js"></script>
