@@ -12757,27 +12757,40 @@
 <h1 id="using-python-on-your-own-computer">Using Python on your own computer<a class="headerlink" href="#using-python-on-your-own-computer" title="Permanent link">&para;</a></h1>
 <p>To run one of the GLAM Workbench repositories within a dedicated Python environment on your own computer, you need to set up the necessary software. This approach requires familiarity with the command line and the ability to install and manage new software. You will, however, have full control over your working environment.</p>
 <h2 id="setting-up-your-local-environment">Setting up your local environment<a class="headerlink" href="#setting-up-your-local-environment" title="Permanent link">&para;</a></h2>
-<p>I use <a href="https://github.com/pyenv/pyenv">pyenv</a>, <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a>, and <a href="https://github.com/jazzband/pip-tools">pip-tools</a> to create and manage Python versions and environments.</p>
-<ul>
-<li>Create a Python virtual environment (Python &gt;= 3.10 should be ok): 
-    <div class="highlight"><pre><span></span><code>pyenv virtualenv 3.10.12 [GW REPO NAME]
-</code></pre></div></li>
-<li>Activate the virtual environment:
-    <div class="highlight"><pre><span></span><code>pyenv local [GW REPO NAME]
-</code></pre></div></li>
-<li>On the command line, use <code>git clone</code> to create a local version of the GLAM Workbench repository: 
-    <div class="highlight"><pre><span></span><code>git clone https://github.com/GLAM-Workbench/[GW REPO NAME].git
-</code></pre></div></li>
-<li>On the command line, use <code>cd</code> to move into the folder of the newly-cloned repository: 
-    <div class="highlight"><pre><span></span><code>cd [GW REPO NAME]
-</code></pre></div></li>
-<li>Install <code>pip-tools</code>:
-    <div class="highlight"><pre><span></span><code>pip install pip-tools
-</code></pre></div></li>
-<li>Use pip-tools to install the required Python packages:
-    <div class="highlight"><pre><span></span><code>pip-sync requirements.txt dev-requirements.txt
-</code></pre></div></li>
-</ul>
+<p>I use <a href="https://github.com/pyenv/pyenv">pyenv</a>, <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a>, and <a href="https://github.com/jazzband/pip-tools">pip-tools</a> to create and manage Python versions and environments. If you prefer other tools for managing Python environments, adjust the steps below as required.</p>
+<p>GLAM Workbench repositories currently use Python 3.10.12, but later versions should be ok. You can install multiple Python versions using pyenv:
+<div class="highlight"><pre><span></span><code>pyenv install 3.10.12
+</code></pre></div>
+Go to the GitHub repository of the GLAM Workbench section you're interested in. There's a link to the repository in the top-right navigation bar of each GLAM Workbench section.</p>
+<p><img alt="" src="../images/repo-link.png" /></p>
+<p>Click on the repository's green <strong>Code</strong> button and copy the web url used for cloning.</p>
+<p><img alt="" src="../images/github-clone.png" /></p>
+<p>In a terminal, use <code>git clone</code> command to create a local version of the GLAM Workbench repository:
+<div class="highlight"><pre><span></span><code>git clone https://github.com/GLAM-Workbench/[REPO NAME].git`
+</code></pre></div></p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>git clone https://github.com/GLAM-Workbench/state-library-victoria.git`
+</code></pre></div></p>
+<p>Use <code>cd</code> to move into the newly-cloned folder:
+<div class="highlight"><pre><span></span><code>cd [REPO NAME]
+</code></pre></div></p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>cd state-library-victoria
+</code></pre></div></p>
+<p>Create and activate a Python virtual environment (I find it easiest to name the environment after the repository):
+<div class="highlight"><pre><span></span><code>pyenv virtualenv 3.10.12 [YOUR ENVIRONMENT NAME]
+pyenv local
+</code></pre></div></p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>pyenv virtualenv 3.10.12 state-library-victoria
+pyenv local
+</code></pre></div></p>
+<p>Install <a href="https://github.com/jazzband/pip-tools">pip-tools</a> in the new virtual environment:
+<div class="highlight"><pre><span></span><code>pip install pip-tools
+</code></pre></div></p>
+<p>Install all the required Python packages using <code>pip-sync</code>:
+<div class="highlight"><pre><span></span><code>pip-sync requirements.txt dev-requirements.txt
+</code></pre></div></p>
 <h2 id="running-jupyter-lab">Running Jupyter Lab<a class="headerlink" href="#running-jupyter-lab" title="Permanent link">&para;</a></h2>
 <ul>
 <li>On the command line, run <code>jupyter lab</code> – to start Jupyter.</li>
