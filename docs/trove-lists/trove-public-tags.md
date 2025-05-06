@@ -12,9 +12,9 @@ hide:
   - toc
 ---
 
-*Harvested: 6 July 2022*
+*Harvested: 6 June 2024*
 
-This dataset contains details of 2,201,090 unique public tags added to 9,370,614 resources in Trove between August 2008 and July 2022. It is saved as a CSV file with the following columns:
+This dataset contains details of 2,495,958 unique public tags added to 10,403,650 resources in Trove between August 2008 and June 2024. It is saved as a CSV file with the following columns:
 
 | Column | Contents |
 |--------|----------|
@@ -36,7 +36,7 @@ Notes:
 - While most of the tags were added by Trove users, more than 500,000 tags were added by Trove itself in November 2009. I think these tags were automatically generated from related Wikipedia pages. Depending on your needs, you might want to exclude these by limiting the date range or zones.
 - User content added to Trove, including tags, is available for reuse under a CC-BY-NC licence.
 
-[Download from Zenodo](https://doi.org/10.5281/zenodo.6814722){ .md-button .md-button--primary }
+[Download from Zenodo](https://zenodo.org/doi/10.5281/zenodo.5094313){ .md-button .md-button--primary }
 
 ### Related resources
 

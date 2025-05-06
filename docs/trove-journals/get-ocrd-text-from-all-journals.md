@@ -10,30 +10,8 @@ tags:
   - text
 hide:
   - toc
+page_type: notebook
+rocrate: "https://github.com/GLAM-Workbench/trove-journals/raw/master/ro-crate-metadata.json"
 ---
 
-Using the code and data from other notebooks in this repository, you can download the OCRd text from every digitised journal. If you're going to try this, you'll need a lots of patience and lots of disk space. Needless to say, don't try this on a cloud service like Binder. Fortunately you don't have to do it yourself, as I've already run the harvest and made all the text files available. See below for details. I repeat, you probably don't want to do this yourself. The point of this notebook is really to document the methodology used to create the repository.
-
-[Run live on ARDC Binder](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}){ .md-button .md-button--primary }
-
-### Other options
-
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}) (no authentication required)
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-journals/blob/master/Download-text-for-all-digitised-journals.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Download-text-for-all-digitised-journals.ipynb)
-
-### Related resources
-
-* [OCRd text from Trove digitised journals](ocrd-text-all-journals.md)
-* [List of journals with OCRd text](journals-with-ocr.md)
-* [CSV formatted list of journals with OCRd text](csv-journals-with-ocr.md)
-
-### Additional documentation
-
-* [Run these notebooks](../#run-these-notebooks)
-
---8<-- "help.md"
-
-## Cite as
-
-{{ zenodo_citation() }}
+{% include "notebook.md" %}

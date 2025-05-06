@@ -9,7 +9,7 @@ site_url: 'https://glam-workbench.net/'
 repo_name: glam-workbench.github.io
 repo_url: 'https://github.com/GLAM-Workbench/glam-workbench.github.io'
 edit_uri: "edit/master/docs/"
-
+docs_dir: /home/tim/mywork/glam-workbench/glam-workbench-docs/site/docs
 # Copyright
 copyright: 'Copyright &copy; 2022 <a href="/contributors/">GLAM Workbench contributors</a>.<br/>Documentation is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br/>Original code is licensed under an <a href="https://opensource.org/licenses/MIT">MIT Licence</a>.'
 
@@ -34,6 +34,8 @@ theme:
     - search.share
     - search.suggest
     - announce.dismiss
+    - content.tabs.link
+    - content.code.copy
     # - toc.integrate
   palette:
     # Palette toggle for light mode
@@ -64,20 +66,25 @@ extra:
     - icon: 'fontawesome/brands/github'
       link: 'https://github.com/glam-workbench'
       name: 'GLAM Workbench on GitHub'
-    - name: '@wragge on Twitter'
-      icon: 'fontawesome/brands/twitter'
-      link: 'https://twitter.com/wragge'
+    - name: '@wragge@hcommons.social on Mastodon'
+      icon: 'fontawesome/brands/mastodon'
+      link: 'https://hcommons.social/@wragge'
     - icon: 'fontawesome/brands/facebook'
-      link: 'https://www.facebook.com/101dhhacks/'
-      name: '101 DH Hacks on Facebook'
+      link: 'https://www.facebook.com/glamworkbench/'
+      name: 'GLAM Workbench on Facebook'
     - icon: 'fontawesome/solid/rss'
       link: 'https://updates.timsherratt.org/categories/glamworkbench/'
       name: 'Latest GLAMWorkbench news!'
+    - icon: 'fontawesome/brands/linkedin'
+      link: 'https://www.linkedin.com/company/glam-workbench/'
+      name: 'GLAM Workbench on Linked In'
 
 extra_css:
   - 'stylesheets/extra.css'
 
 # extra_javascript:
+#  - "https://code.jquery.com/jquery-3.7.1.min.js"
+#  - "scripts/script.js"
 #  - 'https://hypothes.is/embed.js'
 
 # Extensions
@@ -95,6 +102,9 @@ markdown_extensions:
       check_paths: True
   - attr_list
   - md_in_html
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - toc_ext:
       permalink: true
       patch_mkdocs: false
@@ -102,18 +112,30 @@ markdown_extensions:
   - def_list
   - tables
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
     - macros:
         on_undefined: keep
+        include_dir: /home/tim/mywork/glam-workbench/glam-workbench-docs/site/includes
     - redirects:
         redirect_maps:
             'trove_newspapers.md': 'trove-newspapers/index.md'
             'name-search.md': 'https://glam-name-indexes-yajhxrvxsa-ts.a.run.app/'
             'tasmanian-post-office-directories.md': 'libraries-tasmania/tasmanian-post-office-directories.md'
-            supporters.md: get-involved/supporters.md
+            'supporters.md': 'get-involved/supporters.md'
+            'slv.md': 'state-library-victoria/index.md'
+            'trove-journals/harvest-parliament-press-releases.md': 'trove-government/harvest-parliament-press-releases.md'
+            'trove-journals/csv-journals-with-ocr.md': 'trove-journals/periodicals-data-api.md'
+            'trove-journals/journals-with-ocr.md': 'trove-journals/periodicals-data-api.md'
+            'trove-journals/politicans-press-releases-covid.md': 'trove-government/trove-parliament-press-releases-covid.md'
+            'trove-journals/politicans-press-releases-refugees.md': 'trove-government/trove-parliament-press-releases-refugees.md'
+            'trove-newspaper-harvester.md': 'trove-harvester/index.md'
+            'trove-newspapers/csv-issues-per-year.md': 'trove-newspapers/data-newspaper-issues.md'
+            'trove-newspapers/csv-complete-list-issues.md': 'trove-newspapers/data-newspaper-issues.md'
+            'trove-newspapers/csv-aww-issues.md': 'trove-newspapers/dataset-aww-covers.md'
+            'trove-newspapers/csv-newspaper-titles-from-web-archives-first-appearance.md': 'trove-newspapers/csv-newspaper-titles-from-web-archives.md'
 
 nav:
     - Home: index.md
@@ -137,7 +159,7 @@ nav:
             - using-ardc-binder.md
             - using-reclaim-cloud.md
             - using-nectar.md
-            - using-docker.md
+            - using-containers.md
             - using-python.md
         - Help videos: https://www.youtube.com/playlist?list=PLAclcciEeCD2z2BWQ2r3xD_Q8c05HppfP
         - Suggest a topic: https://github.com/GLAM-Workbench/glam-workbench.github.io/issues
@@ -146,9 +168,11 @@ nav:
     - GLAM data:
         - Australia:
             - glam-data-list.md
-            - Open data portals:
-                - glam-data-portals.md
-                - glam-datasets-from-gov-portals.md
+            - Government data portals:
+                - glam-data-portals/index.md
+                - Data:
+                    - Datasets in government portals: glam-data-portals/gov-portals-data.md
+                    - List of GLAM datasets: glam-datasets-from-gov-portals.md
             - csv-explorer.md
             - GLAM Name Index Search: name-search.md
     - Trove:
@@ -182,20 +206,17 @@ nav:
                 - Upload articles to Omeka: trove-newspapers/Upload-Trove-newspapers-to-Omeka.md
                 - trove-newspapers/Todays-news-yesterday.md
                 - Corrections ticker: trove-newspapers/Create-a-Trove-corrections-ticker.md
-                - Get newspaper titles excluding gazettes: trove-newspapers/Get_newspaper_titles_not_including_gazettes.md
                 - Get article coordinates: trove-newspapers/trove-newspapers-get-coordinates-of-articles.md
                 - Make composite image from thumbnails: trove-newspapers/Composite-thumbnails.md
                 - Create scissors & paste messages: trove-newspapers/trove-newspapers-scissors-and-paste.md
                 - Create composite image from snipped words: trove-newspapers/trove-newspapers-create-composite-from-words.md
             - Data:
-                - Number of issues per year for each newspaper: trove-newspapers/csv-issues-per-year.md
-                - Complete list of issues: trove-newspapers/csv-complete-list-issues.md
+                - Newspaper issues datas: trove-newspapers/data-newspaper-issues.md
                 - trove-newspapers/csv-newspaper-titles-from-web-archives.md
-                - trove-newspapers/csv-newspaper-titles-from-web-archives-first-appearance.md
-                - trove-newspapers/csv-aww-issues.md
                 - trove-newspapers/dataset-aww-covers.md
                 - Newspapers with non-English content: trove-newspapers/list-non-english-newspapers.md
                 - Newspapers with post-1954 articles: trove-newspapers/csv-newspapers-post-54.md
+                - trove-newspapers/csv-newspapers-corrections.md
         - Trove newspaper & gazette harvester:
             - trove-harvester/index.md
             - Notebooks:
@@ -229,28 +250,45 @@ nav:
                 - Flat list of contributors: trove-contributors/trove-contributors-list.md
                 - Total records by contributor & zone: trove-contributors/trove-contributors-zones.md
                 - Total records by contributor, zone & format: trove-contributors/trove-contributors-formats.md
-        - Trove journals:
+        - Trove government:
+            - trove-government/index.md
+            - Notebooks:
+                - Harvest Parliamentary Papers: trove-government/harvest-parliamentary-papers.md
+                - Harvest press releases: trove-government/harvest-parliament-press-releases.md
+            - Data:
+                - trove-government/trove-parliamentary-papers-data.md
+                - trove-government/trove-parliament-press-releases-refugees.md
+                - trove-government/trove-parliament-press-releases-covid.md
+        - Trove periodicals:
             - trove-journals/index.md
             - Notebooks:
-                - Create a list of digitised journals: trove-journals/create-list-digitised-journals.md
-                - Get OCRd text from a journal: trove-journals/get-ocrd-text-from-digitised-journal.md
-                - Get OCRd text from all journals: trove-journals/get-ocrd-text-from-all-journals.md
-                - Get cover images from a journal: trove-journals/get-covers-from-digitised-journal.md
-                - Finding cartoons in the Bulletin: trove-journals/finding-editorial-cartoons-in-bulletin.md
-                - Harvest Parliament press releases: trove-journals/harvest-parliament-press-releases.md
+                - Get details of periodicals & issues using the API: trove-journals/periodicals-from-api.md
+                - Improve API data describing periodicals: trove-journals/periodicals-enrich-for-datasette.md
+                - Create a list of digitised periodicals using search: trove-journals/create-list-digitised-journals.md
+                - Get OCRd text from a periodical: trove-journals/get-ocrd-text-from-digitised-journal.md
+                - Get OCRd text from all periodicals: trove-journals/get-ocrd-text-from-all-journals.md
                 - Create database of text indexed by line: trove-journals/create-text-db-indexed-by-line.md
-                - Topic modelling Parliament press releases: trove-journals/topic-modelling-parliament-press-releases.md
+                - Get cover images from a periodical: trove-journals/get-covers-from-digitised-journal.md
+                - Finding cartoons in the Bulletin: trove-journals/finding-editorial-cartoons-in-bulletin.md
+                - Harvest illustrations: trove-journals/harvest-illustrations-from-periodicals.md
+                - Download issues as PDFs: trove-journals/save-issues-as-pdfs.md
             - Data:
-                - CSV list of digital journals: trove-journals/csv-digital-journals.md
-                - CSV list of journals with OCR: trove-journals/csv-journals-with-ocr.md
-                - List of journals with OCR: trove-journals/journals-with-ocr.md
+                - Details of periodicals from the API: trove-journals/periodicals-data-api.md
+                - List of digitised periodicals from search: trove-journals/csv-digital-journals.md
+                - Details of NED periodicals: trove-journals/trove-ned-periodicals-data.md
                 - OCRd text from all journals: trove-journals/ocrd-text-all-journals.md
                 - trove-journals/bulletin-cartoons-collection.md
-                - Politicians talking about 'refugees': trove-journals/politicans-press-releases-refugees.md
-                - Politicians talking about COVID: trove-journals/politicans-press-releases-covid.md
             - Links:
                 - NSW Post Office Directories: trove-journals/nsw-post-office-directories.md
                 - Sydney Telephone Directories: trove-journals/sydney-telephone-directories.md
+        - Trove NED:
+            - trove-ned/index.md
+            - Notebooks:
+                - Harvest details of all NED periodicals: trove-ned/harvest-ned-periodicals.md
+                - Create a searchable database from a NED periodical: trove-ned/create-searchable-database.md
+            - Datasets:
+                - Details of NED periodicals: trove-ned/trove-ned-periodicals-data.md
+                - Searchable database of content from The Triangle: trove-ned/the-triangle.md
         - Trove lists & tags:
             - trove-lists/index.md
             - Notebooks:
@@ -268,15 +306,23 @@ nav:
             - Notebooks:
                 - trove-maps/exploring-digitised-maps.md
                 - trove-maps/parse-coordinates.md
+                - Create a subset of digitised maps: trove-maps/create-map-subsets.md
             - Data:
                 - trove-maps/single-maps-data.md
                 - trove-maps/single-maps-coordinates-data.md
-        - Trove music & sound: 
+            - Links:
+                - trove-maps/explore-maps.md
+        - Trove music, sound, & oral histories: 
             - trove-music/index.md
             - Notebooks:
+                - Harvest oral histories: trove-music/harvest-oral-histories.md
+                - Save oral history collections: trove-music/save-series.md
+                - Download oral history transcripts: trove-music/download-transcripts.md
                 - Harvest ABC RN records: trove-music/harvest-abcrn.md
                 - Explore ABC RN metadata: trove-music/explore-abcrn-data.md
             - Data:
+                - Oral histories metadata: trove-music/trove-oral-histories.md
+                - Oral history collections: trove-music/trove-oral-history-series.md
                 - ABC RN metadata: trove-music/abcrn-data.md
         - Trove people & organisations:
             - trove-people/index.md
@@ -294,9 +340,20 @@ nav:
             - trove-images/index.md
             - Notebooks:
                 - Rights statements applied to images: trove-images/use-of-rights-statements.md
+                - Download a collection of digitised images: trove-images/download-image-collection.md
+                - Save a collection of digitised images as an IIIF manifest: trove-images/save-image-collection-iiif.md
             - Data:
-                - CSV of rights applied to images: trove-images/csv-image-rights-by-institution.md
-                - CSV of rights applied to out-of-copyright photos: trove-images/csv-out-of-copyright-photos-rights-by-institution.md
+                - Rights applied to images by Trove contributors: trove-images/trove-images-rights-data.md
+        - Trove web archive collections (Pandora):
+            - trove-web-archives/index.md
+            - Notebooks: 
+                - trove-web-archives/harvest-pandora-subject-collections.md
+                - trove-web-archives/harvest-pandora-titles.md
+                - trove-web-archives/create-datasets.md
+            - Data:
+                - trove-web-archives/pandora-collections-data.md
+                - trove-web-archives/pandora-titles-data.md
+                - trove-web-archives/pandora-subject-hierarchy.md
         - Trove unpublished:
             - trove-unpublished/index.md
             - Notebooks:
@@ -337,6 +394,10 @@ nav:
                 - nsw-state-archives/index-repository.md
         - National Archives of NZ:
             - archway.md
+        - Public Record Office Victoria:
+            - prov/index.md
+            - Notebooks:
+                - prov/getting-started.md
         - qsa.md
     - Heritage:
         - Heritage Council of Victoria:
@@ -360,7 +421,11 @@ nav:
                 - facial-detection.md
                 - image-tagging.md
         - slsa.md
-        - slv.md
+        - State Library of Victoria:
+            - state-library-victoria/index.md
+            - Notebooks:
+                - Download and image using Handle and IIIF: state-library-victoria/download_image_from_iiif.md
+                - state-library-victoria/more_fun_with_iiif.md
         - lac.md
     - Web archives:
         - web-archives/index.md

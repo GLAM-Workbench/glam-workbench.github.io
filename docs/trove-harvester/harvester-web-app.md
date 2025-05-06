@@ -17,16 +17,26 @@ A simple web interface to the Trove Newspaper and Gazette Harvester – the easi
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WKFuJR6lLF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Run live on ARDC Binder using Voilá](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=voila/render/{{notebook}}){ .md-button .md-button--primary } [Run live on ARDC Binder](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}){ .md-button }
+## Using this notebook
 
-### Other options
+=== "ARDC Binder"
 
-* [Run live on Binder in Voilá](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=voila/render/{{notebook}}) (no authentication required)
-* [Run live on Binder in Jupyter Lab](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}) (no authentication required)
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/newspaper_harvester_app.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/newspaper_harvester_app.ipynb)
+    To run this notebook using the ARDC Binder service you'll need to log in using an account from an Australian university or research organisation. If you don't have an account, try [MyBinder](#__tabbed_1_2) instead.
 
-### Additional documentation
+    [Run live on ARDC Binder](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=voila/render/{{notebook}}){ .md-button .md-button--primary }
+
+=== "MyBinder"
+
+    The MyBinder service doesn't require any authentication, but it can be slow to start and will sometimes fail when busy. If you have a login at an Australian university, you'll probably get better results with [ARDC Binder](#__tabbed_1_1).
+
+    [Run live on MyBinder](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=voila/render/{{notebook}}){ .md-button .md-button--primary }
+
+=== "Other options"
+
+    Binder is great for experimentation and quick tasks, but for some projects you might need a dedicated, persistent environment in which to work. There's information on other options in the [run these notebooks](../#run-these-notebooks) section.
+
+
+## Additional documentation
 
 * [Understanding your harvested data](../#your-harvested-data)
 * [Run these notebooks](../#run-these-notebooks)

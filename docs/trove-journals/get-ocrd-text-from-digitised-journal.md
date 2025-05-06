@@ -10,24 +10,9 @@ tags:
   - text
 hide:
   - toc
+page_type: notebook
+rocrate: "https://github.com/GLAM-Workbench/trove-journals/raw/master/ro-crate-metadata.json"
 ---
 
-Many of the digitised journals available in Trove make OCRd text available for download – one text file for each journal issue. However, while there are records for journals and articles in Trove (and available through the API), there are no records for issues. So how do we find them? This notebook shows how to extract issue data from a digitised journal and download OCRd text for each issue.
+{% include "notebook.md" %}
 
-[Run live on ARDC Binder](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}){ .md-button .md-button--primary }
-
-### Other options
-
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}) (no authentication required)
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-journals/blob/master/Get-text-from-a-Trove-journal.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-journals/blob/master/Get-text-from-a-Trove-journal.ipynb)
-
-### Additional documentation
-
-* [Run these notebooks](../#run-these-notebooks)
-
---8<-- "help.md"
-
-## Cite as
-
-{{ zenodo_citation() }}

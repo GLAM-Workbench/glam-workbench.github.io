@@ -1,10 +1,8 @@
 ---
 title: Trove digitised maps – coordinates
-description: This dataset contains was generated from the harvest of digitised maps metadata. Coordinate strings in the metadata (points and bounding boxes) were parsed and converted to decimal values.
-repo_url: https://github.com/GLAM-Workbench/trove-maps
-repo_name: trove-maps
-zenodo_concept_id: 7591970
-notebook: parse-coordinates.ipynb
+description: This dataset was generated from the harvest of digitised maps metadata. Coordinate strings in the metadata (points and bounding boxes) were parsed and converted to decimal values.
+repo_url: https://github.com/GLAM-Workbench/trove-maps-data
+repo_name: trove-maps-data
 tags:
   - maps
   - metadata
@@ -12,6 +10,8 @@ tags:
 hide:
   - toc
 ---
+
+*Harvested 6 June 2024*
 
 {{ description }}
 
@@ -29,7 +29,7 @@ The dataset is formatted as a CSV file and contains the following columns:
 `east` | east bounds of box
 `west` | west bounds of box
 
-[Download from GitHub](https://raw.githubusercontent.com/GLAM-Workbench/trove-maps-data/main/single_maps_20230131_coordinates.csv){ .md-button .md-button--primary }
+[Download from GitHub](https://raw.githubusercontent.com/GLAM-Workbench/trove-maps-data/main/single_maps_coordinates.csv){ .md-button .md-button--primary }
 
 ### Related resources
 

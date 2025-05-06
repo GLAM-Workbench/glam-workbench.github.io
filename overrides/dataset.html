@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+{% block content %}
+{{ super() }}
+{{ page.meta.rocrate_description }}
+
+<h2>Files</h2>
+
+{% for dataset in page.meta.datasets %}
+<h3>{{ dataset.name }}</h3>
+
+
+<table>
+<tbody>
+<tr><td><b>date harvested</b></td><td>{{ dataset["dateModified"] }}</td></tr>
+{%- if dataset["encodingFormat"] %}<tr><td><b>format</b></td><td>{{ dataset["encodingFormat"] }}</td></tr>{% endif %}
+{%- if dataset["contentSize"] %}<tr><td><b>file size</b></td><td>{{ dataset["contentSize"] | filesizeformat}}</td></tr>{% endif %}
+{%- if "results" in dataset["@id"] %}<tr><td><b>number of rows</b></td><td>{{ "{:,}".format(dataset["size"])}}</td></tr>{% endif %}
+{% if "results" not in dataset["@id"] %}<tr><td><b>number of files</b></td><td>{{ "{:,}".format(dataset["size"])}}</td></tr>{% endif %}
+</tbody>
+</table>
+
+{% if dataset.description %}<p>{{ dataset.description|markdown }}</p>{% endif %}
+
+{% endfor %}
+
+{% endblock %}

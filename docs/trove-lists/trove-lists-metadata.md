@@ -12,7 +12,7 @@ hide:
   - toc
 ---
 
-*Harvested: 5 July 2022*
+*Harvested: 29 May 2024*
 
 {{ description }}
 
@@ -26,7 +26,7 @@ CSV formatted file containing the following fields:
 `title` | title of list
 `updated` | date last updated
 
-[Download from Zenodo](https://doi.org/10.5281/zenodo.6827253){ .md-button .md-button--primary }
+[Download from Zenodo](https://doi.org/10.5281/zenodo.6827077){ .md-button .md-button--primary }
 
 ### Other options
 

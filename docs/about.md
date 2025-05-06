@@ -48,3 +48,4 @@ Yes, I think so. To me, a sustainable project is one that is open to the future.
 * **Promote use and welcome collaboration** – It's obvious, but important. The more a project is used and shared, the more likely it is to be maintained and developed. Outreach is hard, but crucial. One of my priorities at the moment is making it easier for others to contribute resources to the GLAM Workbench.
 
 The GLAM Workbench is itself an experiment, but it's already outlasted some well-funded research infrastructure projects. It won't live on forever in it's current form, but that doesn't mean it can't have a long-term impact. 
+

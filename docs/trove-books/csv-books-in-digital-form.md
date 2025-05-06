@@ -1,62 +1,82 @@
 ---
-title: CSV formatted list of Trove books available in digital form
-description: This file provides metadata of 42,174 works in the Trove book zone that are available in digital form.
-repo_url: https://github.com/GLAM-Workbench/trove-books
-repo_name: trove-books
-zenodo_concept_id: 3549480
+title: CSV formatted list of digitised books in Trove
+description: This file provides metadata of 21,218 digitised works with the format `Book`. 
+repo_url: https://github.com/GLAM-Workbench/trove-books-data
+repo_name: trove-books-data
 tags:
   - CSV dataset
   - metadata
 hide:
   - toc
-file_url: https://github.com/GLAM-Workbench/trove-books/blob/master/trove_digitised_books_with_ocr.csv
+file_url: https://github.com/GLAM-Workbench/trove-books-data/blob/master/trove-books.csv
 ---
 
-**Harvested: August 2021**
+This file provides metadata of 21,218 digitised works with the format `Book`. Unlike previous harvests, this dataset attempts to exclude Parliamentary Papers, which have been harvested separately.
 
-This file provides metadata of 42,174 works in the Trove book zone that are available in digital form. 
+<table id="T_bd33e">
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_bd33e_level0_row0" class="row_heading level0 row0" >date harvested</th>
+      <td id="T_bd33e_row0_col0" class="data row0 col0" >2024-02-14</td>
+    </tr>
+    <tr>
+      <th id="T_bd33e_level0_row1" class="row_heading level0 row1" >file size</th>
+      <td id="T_bd33e_row1_col0" class="data row1 col0" >20.3 MB</td>
+    </tr>
+    <tr>
+      <th id="T_bd33e_level0_row2" class="row_heading level0 row2" >format</th>
+      <td id="T_bd33e_row2_col0" class="data row2 col0" >text/csv</td>
+    </tr>
+    <tr>
+      <th id="T_bd33e_level0_row3" class="row_heading level0 row3" >created by</th>
+      <td id="T_bd33e_row3_col0" class="data row3 col0" ><a href='https://github.com/GLAM-Workbench/trove-books/blob/master/Harvesting-digitised-books.ipynb'>Harvesting the text of digitised books (and ephemera)</a></td>
+    </tr>
+    <tr>
+      <th id="T_bd33e_level0_row4" class="row_heading level0 row4" >number of rows</th>
+      <td id="T_bd33e_row4_col0" class="data row4 col0" >21,218</td>
+    </tr>
+  </tbody>
+</table>
 
-[Download from GitHub](file_url){ .md-button .md-button--primary } [Explore in Datasette](https://glam-workbench.net/datasette-lite/?csv=https://github.com/GLAM-Workbench/trove-books/blob/master/trove-digital-books-datasette.csv){ .md-button .md-button--info }
+[Download from GitHub]({{file_url}}){ .md-button .md-button--primary } [Explore in Datasette](https://glam-workbench.net/datasette-lite/?csv={{file_url}}&fts=title,sub_title,is_part_of&drop=work_type,fulltext_url_text,parent,parent_url,children,text_file){ .md-button .md-button--info }
 
-The CSV file includes the following columns:
+### Columns
 
-| Column | Contents |
-|--------|----------|
-`title` | title of the work
-`url` | link to the metadata record in Trove
-`contributors` | pipe-separated names of contributors
-`date` | publication date
-`format` | the type of work, eg 'Book' or 'Government publication', can have multiple values (pipe-separated)
-`fulltext_url` | link to the digital version
-`trove_id` | unique identifier of the digital version
-`language` | main language of the work
-`rights` | copyright status
-`pages` | number of pages
-`form` | work format, generally one of 'Book', 'Multi volume book', or 'Digital publication'
-`volume` | volume/part number
-`children` | pipe-separated ids of any child works
-`parent` | id of parent work (if any)
-`text_downloaded` | file name of the downloaded OCR text
-`text_file` | True/False is there any OCRd text
+| name                | type    | description                                                                                                        |
+|:--------------------|:--------|:-------------------------------------------------------------------------------------------------------------------|
+| `title`             | string  | title of the work                                                                                                  |
+| `sub_title`         | string  | additional title or publication information, eg: 'Volume 1'                                                        |
+| `contributor`       | string  | contributors including authors, editors, translators; multiple values separated by | symbol                        |
+| `publisher`         | string  | multiple values separated by | symbol                                                                              |
+| `date`              | string  | publication date; multiple values separated by | symbol                                                            |
+| `type`              | string  | eg: 'text'; multiple values separated by | symbol                                                                  |
+| `format`            | string  | eg: 'Book', 'volume'; multiple values separated by | symbol                                                        |
+| `extent`            | string  | size or physical dimensions, can include number of pages or number of words; multiple values separated by | symbol |
+| `language`          | string  | publication language; multiple values separated by | symbol                                                        |
+| `subject`           | string  | associated subject headings; multiple values separated by | symbol                                                 |
+| `spatial`           | string  | associated places (mostly using Library of Congress geographic area codes); multiple values separated by | symbol  |
+| `is_part_of`        | string  | collections or series this publication is part of; multiple values separated by | symbol                           |
+| `identifier`        | string  | library identifiers; multiple values separated by | symbol                                                         |
+| `rights`            | string  | copyright and licensing information; multiple values separated by | symbol                                         |
+| `pages`             | integer | number of digitised pages                                                                                          |
+| `fulltext_url`      | string  | link to digitised book viewer                                                                                      |
+| `fulltext_url_text` | string  | text of link to digitised book viewer                                                                              |
+| `text_download_url` | string  | link to download OCRd text of book                                                                                 |
+| `catalogue_url`     | string  | link to NLA catalogue; multiple values separated by | symbol                                                                            |
+| `work_url`          | string  | link to work record in Trove; multiple values separated by | symbol                                                |
+| `work_type`         | string  | Trove work format, eg: 'Book'; multiple values separated by | symbol                                               |
+| `parent`            | string  | parent work identifiers; multiple values separated by | symbol                                                     |
+| `parent_url`        | string  | parent work links; multiple values separated by | symbol                                                           |
+| `children`          | any     | child work identifiers; multiple values separated by | symbol                                                      |
+| `text_file`         | string  | file name of downloaded text   
 
-The Datasette version renames and reorders some columns for clarity, and adds live links to download OCRd text.
 
-| Column | Contents |
-|--------|----------|
-`title` | title of the work
-`contributors` | pipe-separated names of contributors
-`date` | publication date
-`format` | the type of work, eg 'Book' or 'Government publication', can have multiple values (pipe-separated)
-`language` | main language of the work
-`copyright` | copyright status
-`pages` | number of pages
-`view_details_url` | link to the metadata record in Trove
-`view_book_url` | link to the digital version
-`download_text_url` | link to download the OCRd text
-`form` | work format, generally one of 'Book', 'Multi volume book', or 'Digital publication'
-`volume` | volume/part number
-`parent` | id of parent work (if any)
-`children` | pipe-separated ids of any child works
+### Examples of use
+
+- [Explore using Datasette](https://glam-workbench.net/datasette-lite/?csv=https://github.com/GLAM-Workbench/trove-books-data/blob/main/trove-books.csv&fts=title,sub_title,is_part_of&drop=work_type,fulltext_url_text,parent,parent_url,children,text_file)
+- [Visualised in the *Trove Data Guide*](https://tdg.glam-workbench.net/other-digitised-resources/books/overview.html)
 
 ### Related resources
 

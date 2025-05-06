@@ -9,7 +9,7 @@ title: Using ARDC Binder
 
 The ARDC BinderHub service is quick, convenient, and easy to use, but it has important limits. Use it for exploration, workshops, and short-running tasks.
 
-There are two ways to launch ARDC Binder from the GLAM Workbench. Each section in the workbench includes a ![ARDC Binder](images/explore-live-on-ardc-binder.svg) button – just click it to start up Jupyter in the ARDC BinderHub service. All the notebooks in that GLAW Workbench section will be ready to run from the Jupyter Lab interface.
+There are two ways to launch ARDC Binder from the GLAM Workbench. Most sections in the workbench include a ![ARDC Binder](images/explore-live-on-ardc-binder.svg) button – just click it to start up Jupyter in the ARDC BinderHub service. All the notebooks in that GLAW Workbench section will be ready to run from the Jupyter Lab interface.
 
 Alternatively, you can find your way to a specific notebook and click on the 'Run live on ARDC Binder' button. This will also start Jupyter in the ARDC BinderHub service, but will then open your selected notebook. All the other notebooks in the section will still be available from the Jupyter Lab interface.
 

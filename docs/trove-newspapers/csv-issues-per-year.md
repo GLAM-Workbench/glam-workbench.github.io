@@ -3,7 +3,7 @@ title: Total number of issues per year for each newspaper in Trove
 description: CSV formatted dataset containing the number of newspaper issues available on Trove.
 repo_url: https://github.com/GLAM-Workbench/trove-newspapers
 repo_name: trove-newspapers
-zenodo_concept_id: 3521724
+zenodo_concept_id: 12547036
 tags:
   - metadata
   - dataset
@@ -11,7 +11,7 @@ tags:
 hide:
   - toc
 ---
-*Harvested 18 October 2021*
+*Harvested 26 June 2024*
 
 {{ description }}
 
@@ -22,10 +22,10 @@ The dataset contains the following columns:
 `title` | newspaper title
 `title_id` | newspaper id
 `state` | place of publication
-`issue_id` | issue identifier
-`issue_date` | date of publication (YYYY-MM-DD)
+`year` | year published
+`issues` | number of issues
 
-[Download from Cloudstor (2.1mb)](https://cloudstor.aarnet.edu.au/plus/s/e4IdDT8Zbg0A27S){ .md-button .md-button--primary }
+[Download from Zenodo](https://doi.org/10.5281/zenodo.12547036){ .md-button .md-button--primary }
 
 ### Related resources
 

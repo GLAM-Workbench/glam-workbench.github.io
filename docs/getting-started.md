@@ -33,9 +33,9 @@ But that's just the beginning. To make full use of the GLAM Workbench you need t
 
 If you'd like to see what Jupyter notebooks can do, I've created an introductory notebook that walks you through the basic conventions and lets you play with some live data from the National Museum of Australia. This notebook is presented in the 'classic' notebook view, with all the code exposed. **Don't let the code make you nervous!** No programming knowledge is needed to use this notebook, or many of the other notebooks in the GLAM Workbench.
 
-[Click here to launch the Getting Started notebook](https://mybinder.org/v2/gh/GLAM-Workbench/getting-started/master/?urlpath=lab/tree/Using_Jupyter_notebooks.ipynb).
+[Click here to launch the Getting Started notebook](https://glam-workbench.net/getting-started-jlite/lab/index.html?path=using_jupyter_notebooks.ipynb).
 
-Once again, clicking this link will transfer you to [Binder](https://mybinder.org/), a service that loads Jupyter notebooks in the cloud. Binder will set up a customised computing environment that includes all the software you'll need to run the notebook in your browser. It can take 30 seconds or more to load everything, so be patient. Once the notebook has loaded, just follow the instructions!
+Clicking this link will open the getting started notebook using [Jupyter Lite](https://jupyterlite.readthedocs.io/en/stable/), a version of Jupyter that runs completely in your browser.
 
 Notebooks are made up up cells that can contain text or code. You can run the code cells to do things – get some data, or create a visualisation. You can also edit the code cells to enter your own information, or change the results. This slideshow provides a quick primer.
 

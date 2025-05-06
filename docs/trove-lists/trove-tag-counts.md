@@ -12,7 +12,7 @@ hide:
   - toc
 ---
 
-*Harvested: 6 July 2022*
+*Harvested: 6 June 2024*
 
 {{ description }}
 
@@ -24,7 +24,7 @@ CSV formatted file containing the following fields:
 `count` | number of resources the tag has been applied to
 
 
-[Download from Zenodo](https://doi.org/10.5281/zenodo.7563995){ .md-button .md-button--primary }
+[Download from Zenodo](https://zenodo.org/doi/10.5281/zenodo.7563922){ .md-button .md-button--primary }
 
 ### Related resources
 

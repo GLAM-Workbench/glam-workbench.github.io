@@ -9,3 +9,5 @@ site
 .env
 requirements-dev.*
 mkdocs.insiders.yml
+requirements.txt.old
+mkdocs.insiders.deploy.yml

@@ -50,6 +50,8 @@ A list of urls pointing to the National Library of Australia's digitised manuscr
 
 This dataset includes summary information describing each finding aid. 
 
+{% include "nb-run-info.md" %}
+
 ## Contributors
 
 {{ repo_contributors() }}

@@ -1,9 +1,8 @@
 ---
 title: Trove digitised maps metadata
 description: This dataset contains metadata describing digitised maps in Trove, harvested from the Trove API and other sources.
-repo_url: https://github.com/GLAM-Workbench/trove-maps
-repo_name: trove-maps
-zenodo_concept_id: 7591970
+repo_url: https://github.com/GLAM-Workbench/trove-maps-data
+repo_name: trove-maps-data
 notebook: parse-coordinates.ipynb
 tags:
   - maps
@@ -11,9 +10,11 @@ tags:
   - dataset
 hide:
   - toc
+rocrate: https://raw.githubusercontent.com/GLAM-Workbench/trove-maps-data/v1.1/ro-crate-metadata.json
+page_type: dataset
 ---
 
-*Harvested 31 January 2023*
+*Harvested 6 June 2024*
 
 {{ description }}
 
@@ -37,11 +38,11 @@ The dataset is formatted as a CSV file and contains the following columns:
 `width` | width of TIFF in pixels
 `height` | height of TIFF in pixels
 
-[Download from GitHub](https://raw.githubusercontent.com/GLAM-Workbench/trove-maps-data/main/single_maps_20230131.csv){ .md-button .md-button--primary }
+[Download from GitHub](https://raw.githubusercontent.com/GLAM-Workbench/trove-maps-data/main/single_maps.csv){ .md-button .md-button--primary }
 
 ### Related resources
 
-* [Exploring digitised maps in Trove](exploring-digitised-maps.md) (dataset)
+* [Exploring digitised maps in Trove](exploring-digitised-maps.md) 
 
 ### Additional documentation
 

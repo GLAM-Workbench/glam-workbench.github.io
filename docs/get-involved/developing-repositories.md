@@ -100,7 +100,7 @@ Your new repository will contain the following files, updated by `cookiecutter` 
 
 You've created a brand new GLAM Workbench repository on GitHub, but to start adding notebooks you need to set up a local development environment on your computer.
 
-1. Create and activate a Python virtual environment (Python >= 3.8 should be ok). I use [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) to create and manage Python versions and environments.
+1. Create and activate a Python virtual environment (Python >= 3.10 should be ok). I use [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) to create and manage Python versions and environments.
 2. Use `git clone` to create a local version of your new repository, eg. `git clone https://github.com/GLAM-Workbench/my-new-museum.git`
 3. Use `cd` to move into the newly-cloned folder, eg. `cd my-new-museum`
 4. Run `pip install pip-tools` to install `pip-tools`.

@@ -4,11 +4,80 @@ If you want to improve the GLAM Workbench's Jupyter notebooks, or add new notebo
 
 ## Setting up your local environment
 
-1. Create and activate a Python virtual environment (Python >= 3.8 should be ok). I use [pyenv](https://github.com/pyenv/pyenv) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) to create and manage Python versions and environments.
-2. Create your own [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the GLAM Workbench repository.
-3. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) **your newly-forked** GLAM Workbench repository to your own computer, eg. `git clone https://github.com/mygithubuser/trove-newspapers.git`
-4. On the command line, use `cd` to move into the `notebooks` folder of the newly-cloned repository, eg. `cd trove-newspapers/notebooks`
-5. On the command line, run `pip install -r requirements.txt` to install the required Python packages.
+I use [pyenv](https://github.com/pyenv/pyenv), [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv), and [pip-tools](https://github.com/jazzband/pip-tools) to create and manage Python versions and environments. If you prefer other tools for managing Python environments, adjust the steps below as required.
+
+GLAM Workbench repositories currently use Python 3.10.12, but later versions should be ok. You can install multiple Python versions using pyenv:
+```
+pyenv install 3.10.12
+```
+Go to the GitHub repository of the GLAM Workbench section you're interested in. There's a link to the repository in the top-right navigation bar of each GLAM Workbench section.
+
+![](../images/repo-link.png)
+
+Click on the repository's green **Code** button and copy the web url used for cloning.
+
+![](../images/github-clone.png)
+
+In a terminal, use `git clone` command to create a local version of the GLAM Workbench repository:
+```
+git clone https://github.com/GLAM-Workbench/[REPO NAME].git`
+```
+
+For example:
+```
+git clone https://github.com/GLAM-Workbench/state-library-victoria.git`
+```
+
+Use `cd` to move into the newly-cloned folder:
+```
+cd [REPO NAME]
+```
+
+For example:
+```
+cd state-library-victoria
+```
+
+Create and activate a Python virtual environment (I find it easiest to name the environment after the repository):
+```
+pyenv virtualenv 3.10.12 [YOUR ENVIRONMENT NAME]
+pyenv local
+```
+
+For example:
+```
+pyenv virtualenv 3.10.12 state-library-victoria
+pyenv local
+```
+
+Install [pip-tools](https://github.com/jazzband/pip-tools) in the new virtual environment:
+```
+pip install pip-tools
+```
+
+If you undertaking development work, you probably want to install the latest versions of the required Python packages. First delete the old `requirements.txt` file and create a new one using `pip-compile`.:
+
+```
+rm requirements.txt
+pip-compile requirements.in
+```
+
+Repeat this for `dev-requirements.in` to add the additional packages necessary for local development:
+
+```
+rm dev-requirements.txt
+pip-compile dev-requirements.in
+```
+
+Install all the required packages using `pip-sync`:
+```
+pip-sync requirements.txt dev-requirements.txt
+```
+
+Set up the Git pre-commit hooks. These do some testing and linting of the notebook code when you add new commits.
+```
+pre-commit install
+```
 
 ## Running Jupyter Lab
 

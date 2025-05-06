@@ -9,25 +9,8 @@ tags:
   - data harvesting
 hide:
   - toc
+rocrate: "https://raw.githubusercontent.com/GLAM-Workbench/trove-newspaper-harvester/master/ro-crate-metadata.json"
+page_type: "notebook"
 ---
 
-This notebook provides an introduction to the Trove Newspaper and Gazette Harvester command line tool. Edit a few cells and you'll be harvesting metadata and full text of thousands of articles in minutes. This gives you you more control over your harvest than the simple web app, including the ability to restart a failed harvest.
-
-[Run live on ARDC Binder](https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}){ .md-button .md-button--primary }
-
-### Other options
-
-* [Run live on Binder](https://mybinder.org/v2/gh/GLAM-Workbench/{{repo_name}}/HEAD?urlpath=/lab/tree/{{notebook}}) (no authentication required)
-* [Download from GitHub](https://github.com/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb)
-* [View using NBViewer](https://nbviewer.jupyter.org/github/GLAM-Workbench/trove-newspaper-harvester/blob/master/Using-TroveHarvester-to-get-newspaper-articles-in-bulk.ipynb)
-
-### Additional documentation
-
-* [Understanding your harvested data](../#your-harvested-data)
-* [Run these notebooks](../#run-these-notebooks)
-
---8<-- "help.md"
-
-## Cite as
-
-{{ zenodo_citation() }}
+{% include "notebook.md" %}
