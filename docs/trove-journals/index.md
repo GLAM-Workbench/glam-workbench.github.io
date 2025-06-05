@@ -12,6 +12,7 @@ categories:
     - Harvesting images
 ---
 
+{% include "trove-notice.md" %}
 
 {{ git_latest_tag() }}
 

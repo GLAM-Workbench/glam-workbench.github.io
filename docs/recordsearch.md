@@ -6,6 +6,9 @@ zenodo_concept_id: 3544753
 
 # RecordSearch
 
+!!! danger "RecordSearch data no longer accessible"
+    **[Changes made to RecordSearch in May 2025](https://updates.timsherratt.org/2025/05/19/no-more-harvesting-data-from.html) have blocked the screen scrapers used by these notebooks to extract data from web pages. As a result, most of these notebooks will no longer work. I'll keep them here for reference purposes and hope that the National Archives of Australia provides an alternative method of accessing its collection data.**
+
 {{ git_latest_tag() }}
 
 [RecordSearch](https://recordsearch.naa.gov.au/) is the online collection database of the National Archives of Australia. Based on the [series system](https://www.naa.gov.au/help-your-research/getting-started/commonwealth-record-series-crs-system), RecordSearch provides rich, contextual information about series, items, agencies, and functions.

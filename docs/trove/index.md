@@ -6,6 +6,8 @@ repo_name: trove-api-intro
 zenodo_concept_id: 3549550
 ---
 
+{% include "trove-notice.md" %}
+
 Trove provides access to much of its data through APIs (Application Programming Interfaces). These include:
 
 * the main Trove API delivers data from aggregated collections, digitised resources (including newspapers), and user activity (such as lists and tags)

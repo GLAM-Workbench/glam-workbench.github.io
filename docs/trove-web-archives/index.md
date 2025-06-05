@@ -8,6 +8,8 @@ rocrate: "https://github.com/GLAM-Workbench/trove-web-archives/raw/master/ro-cra
 zenodo_concept_id: 11118559
 ---
 
+{% include "trove-notice.md" %}
+
 {{ git_latest_tag() }}
 
 {{ page.meta.description}}

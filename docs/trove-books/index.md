@@ -6,6 +6,8 @@ repo_name: trove-books
 zenodo_concept_id: 3549480
 ---
 
+{% include "trove-notice.md" %}
+
 Trove's 'book' zone includes books (of course), but also ephemera (like pamphlets and leaflets) and theses. You can access metadata from the book zone through the Trove API.
 
 See below for information on [running these notebooks](#run-these-notebooks) in a live computing environment. Or just take them for a spin using Binder.

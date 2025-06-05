@@ -6,6 +6,8 @@ repo_name: trove-music
 zenodo_concept_id: 7659567
 ---
 
+{% include "trove-notice.md" %}
+
 {{ git_latest_tag() }}
 
 Trove's 'music' category includes music, oral history interviews, and radio programs. You can access metadata from the music category through the Trove API.

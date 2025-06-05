@@ -8,6 +8,8 @@ page_type: repo
 rocrate: "https://github.com/GLAM-Workbench/trove-images/raw/master/ro-crate-metadata.json"
 ---
 
+{% include "trove-notice.md" %}
+
 {{ git_latest_tag() }}
 
 {{ page.meta.description}}

@@ -5,7 +5,10 @@ repo_url: https://github.com/GLAM-Workbench/trove-government
 repo_name: trove-government
 page_type: repo
 rocrate: https://raw.githubusercontent.com/GLAM-Workbench/trove-government/master/ro-crate-metadata.json
+zenodo_concept_id: 15354169
 ---
+
+{% include "trove-notice.md" %}
 
 {{ git_latest_tag() }}
 

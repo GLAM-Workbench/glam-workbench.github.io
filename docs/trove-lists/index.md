@@ -11,6 +11,8 @@ categories:
     - Tags
 ---
 
+{% include "trove-notice.md" %}
+
 {{ git_latest_tag() }}
 
 {{ page.meta.description}}

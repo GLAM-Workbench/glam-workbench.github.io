@@ -5,6 +5,8 @@ repo_url: https://github.com/glam-workbench/trove-newspapers
 zenodo_concept_id: 3521724
 ---
 
+{% include "trove-notice.md" %}
+
 {{ git_latest_tag() }}
 
 Assorted experiments and examples working with Trove’s digitised newspapers.

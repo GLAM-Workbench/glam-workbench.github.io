@@ -3,8 +3,7 @@ title: Trove API v3
 description: Information about changes to the Trove API coming in version 3.
 ---
 
-!!! info
-    This is a temporary section of the the GLAM Workbench created to bring together information and examples relating to version 3 of the Trove API. It will probably disappear once the new version is officially released and I reorganise the Trove sections of the GLAM Workbench accordingly.
+{% include "trove-notice.md" %}
 
 **Version 2 of the Trove API has now been decommissioned, so you have to use v3. The Trove documentation describes v3 as 'finalised', but there are still [a number of outstanding bugs](https://github.com/GLAM-Workbench/trove-api-intro/issues/49).**
 

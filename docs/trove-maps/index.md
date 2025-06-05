@@ -7,6 +7,8 @@ rocrate: https://raw.githubusercontent.com/GLAM-Workbench/trove-maps/master/ro-c
 page_type: repo
 ---
 
+{% include "trove-notice.md" %}
+
 {{ git_latest_tag() }}
 
 The Trove 'map' zone includes single maps, as well as map series, atlases, and aerial photographs. You can access metadata from the map zone through the Trove API.

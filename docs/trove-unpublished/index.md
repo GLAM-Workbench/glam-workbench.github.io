@@ -5,6 +5,8 @@ repo_name: trove-unpublished
 zenodo_concept_id: 3549343
 ---
 
+{% include "trove-notice.md" %}
+
 {{ git_latest_tag() }}
 
 Experiments and examples relating to Trove's 'Diaries, letters, and archives' zone.

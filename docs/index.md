@@ -1,14 +1,11 @@
 ---
 title: Welcome to the GLAM Workbench
 zenodo_concept_id: 5603059
+template: home.html
 ---
 
 # Welcome to the GLAM Workbench
 
-!!! warning ""
-    **:material-bullhorn-outline: The National Library of Australia has [cancelled my Trove API key](https://updates.timsherratt.org/2025/02/24/years-of-work-on-trove.html). This makes it difficult to maintain or develop the Trove sections of the GLAM Workbench.**
-
-    **Trove API users should also be aware of [changes to the terms of use](https://updates.timsherratt.org/2025/03/02/trove-api-users-beware-the.html) which limit access to content of resources, including the full text of digitised newspaper articles.**
 
 Here you’ll find a collection of tools, tutorials, examples, and hacks to help you work with data from galleries, libraries, archives, and museums (the GLAM sector). The primary focus is Australia and New Zealand, but new collections are being added all the time. Let me know if there’s some GLAM data you’d like me to explore – [suggestions](/suggest-a-topic/) are always welcome!
 

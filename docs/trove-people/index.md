@@ -6,6 +6,8 @@ repo_name: trove-people
 zenodo_concept_id: 7645058
 ---
 
+{% include "trove-notice.md" %}
+
 {{ git_latest_tag() }}
 
 Trove's People and Organisations zone aggregates information about individuals and organisations, bringing multiple sources together under a single identifier.

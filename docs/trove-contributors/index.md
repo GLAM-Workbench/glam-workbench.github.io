@@ -6,6 +6,8 @@ repo_name: trove-contributors
 zenodo_concept_id: 7736765
 ---
 
+{% include "trove-notice.md" %}
+
 {{ git_latest_tag() }}
 
 

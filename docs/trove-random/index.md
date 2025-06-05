@@ -5,6 +5,8 @@ repo_name: trove-random
 zenodo_concept_id: 3549403
 ---
 
+{% include "trove-notice.md" %}
+
 {{ git_latest_tag() }}
 
 Changes to the Trove API mean that the techniques I've previously used to select resources at random [will no longer work](https://updates.timsherratt.org/2019/10/09/creators-and-users.html). This repository includes some alternative ways of retrieving *random-ish* works and newspaper articles from Trove. While I've tried to mix things up and get as deep into the results set as possible, it's likely that some items are still inaccessible. So while the results will appear random, they may in fact be filtered due to the way facets are applied and delivered through the API. I hope that in the future Trove will provide a random sort option to avoid these problems.

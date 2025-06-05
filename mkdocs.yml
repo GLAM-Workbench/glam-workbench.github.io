@@ -36,6 +36,7 @@ theme:
     - announce.dismiss
     - content.tabs.link
     - content.code.copy
+    - announce.dismiss
     # - toc.integrate
   palette:
     # Palette toggle for light mode
