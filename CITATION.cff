@@ -5,11 +5,11 @@ authors:
     given-names: Tim
     orcid: https://orcid.org/0000-0001-7956-4498
 title: GLAM Workbench
-version: v1.0.0
+version: v2.0.0
 identifiers:
   - type: url
     value: https://glam-workbench.net/
     description: "The website generated from this repository."
-doi: 10.5281/zenodo.5603060
-date-released: 2021-10-27
+doi: 10.5281/zenodo.5603059
+date-released: 2025-06-05
 license: CC-BY
