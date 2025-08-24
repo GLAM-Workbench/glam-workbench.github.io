@@ -134,7 +134,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#other-options" class="md-skip">
+        <a href="#using-this-notebook" class="md-skip">
           Skip to content
         </a>
       
@@ -12054,6 +12054,8 @@
       
         
       
+        
+      
     
     
     
@@ -12185,10 +12187,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#other-options" class="md-nav__link">
+  <a href="#using-this-notebook" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Other options
+        Using this notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples of use
       
     </span>
   </a>
@@ -12252,6 +12265,34 @@
     
   
     View connections of a single agency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualise_all_people_ids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visualise people identifiers
   
 
     
@@ -12690,10 +12731,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#other-options" class="md-nav__link">
+  <a href="#using-this-notebook" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Other options
+        Using this notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples of use
       
     </span>
   </a>
@@ -12821,17 +12873,36 @@
 
 
 <!-- Markdown content -->
-<p>This notebook visualises changes in Australian government departments over time, using data from Wikidata. It creates a hierarchically-ordered network graph where each agency is represented as a node whose position and colour is determined by the decade in which the agency was created. The size of the node indicates how long the agency was in existence, while edges between nodes connect agencies to their successors. Earliest agencies will be at the top of the graph.</p>
-<p><img alt="Screenshot of network graph" src="../../images/agencies-network-3.png" /></p>
+<p>This notebook visualises changes in Australian government departments over time, using data from Wikidata. It creates a hierarchically-ordered network graph where each agency is represented as a node whose position and colour is determined by the decade in which the agency was created.</p>
+
 <p>You can <a href="https://w.wiki/5tVh">view the query</a> used to generate this graph using the Wikidata Query Service.</p>
-<p><a class="md-button md-button--primary" href="https://mybinder.org/v2/gh/GLAM-Workbench/wikidata/master?urlpath=lab/tree/govt-agencies-network.ipynb">Run live on Binder</a></p>
-<h3 id="other-options">Other options<a class="headerlink" href="#other-options" title="Permanent link">&para;</a></h3>
+
+<div class="admonition preview">
+<p class="admonition-title">Preview</p>
+<p><iframe class='nb-preview' loading='lazy' src='/wikidata/previews/govt-agencies-network.html'></iframe>
+<a href="/wikidata/previews/govt-agencies-network.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 4 4 4V4m0 12-4 4h4M8 20l-4-4v4M4 8l4-4H4m12.95 3.05a7.007 7.007 0 0 0-9.9 0 7.007 7.007 0 0 0 0 9.9 7.007 7.007 0 0 0 9.9 0c2.73-2.73 2.73-7.16 0-9.9m-1.1 8.8a5.4 5.4 0 0 1-7.7 0 5.4 5.4 0 0 1 0-7.7 5.4 5.4 0 0 1 7.7 0 5.4 5.4 0 0 1 0 7.7"/></svg></span> Expand</a></p>
+</div>
+<h2 id="using-this-notebook">Using this notebook<a class="headerlink" href="#using-this-notebook" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">ARDC Binder</label><label for="__tabbed_1_2">MyBinder</label><label for="__tabbed_1_3">Other options</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To run this notebook using the ARDC Binder service you'll need to log in using an account from an Australian university or research organisation. If you don't have an account, try <a href="#__tabbed_1_2">MyBinder</a> instead.</p>
+<p><a class="md-button md-button--primary" href="https://binderhub.rc.nectar.org.au/v2/gh/GLAM-Workbench/wikidata/HEAD?urlpath=/lab/tree/govt-agencies-network.ipynb">Run live on ARDC Binder</a></p>
+</div>
+<div class="tabbed-block">
+<p>The MyBinder service doesn't require any authentication, but it can be slow to start and will sometimes fail when busy. If you have a login at an Australian university, you'll probably get better results with <a href="#__tabbed_1_1">ARDC Binder</a>.</p>
+<p><a class="md-button md-button--primary" href="https://mybinder.org/v2/gh/GLAM-Workbench/wikidata/HEAD?urlpath=/lab/tree/govt-agencies-network.ipynb">Run live on MyBinder</a></p>
+</div>
+<div class="tabbed-block">
+<p>Binder is great for experimentation and quick tasks, but for some projects you might need a dedicated, persistent environment in which to work. There's information on other options in the <a href="../#run-these-notebooks">run these notebooks</a> section.</p>
+</div>
+</div>
+</div>
+<h2 id="examples-of-use">Examples of use<a class="headerlink" href="#examples-of-use" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../examples/govt-agencies-network.html">View the interactive graph</a></li>
-<li><a href="https://github.com/GLAM-Workbench/wikidata/blob/master/govt-agencies-network.ipynb">Download from GitHub</a></li>
-<li><a href="https://nbviewer.jupyter.org/github/GLAM-Workbench/wikidata/blob/master/govt-agencies-network.ipynb">View using NBViewer</a></li>
+<li><a href="https://glam-workbench.net/wikidata/examples/govt-agencies-network.html">View the interactive graph</a></li>
 </ul>
-<h3 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h3>
+<h2 id="additional-documentation">Additional documentation<a class="headerlink" href="#additional-documentation" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../#run-these-notebooks">Run these notebooks</a></li>
 </ul>
